@@ -1,33 +1,100 @@
-site_name: "Notes de cours - Applications mobiles Android avec Jetpack Compose, A-2026"
-site_url: "https://vos-notes.com/android-compose"
+site_name: "Notes de cours - Applications mobiles Android avec Jetpack Compose"
+site_description: "Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI"
+site_author: "Christiane Lagacé"
 
-nav:
-  - "Introduction": "index.md#introduction"
-  - "Installation": "installation.md"
-  - "Où trouver de l'aide": "aide"
-  - "Référence Kotlin & Gradle":
-    - "Gradle": "reference/gradle.md"
-    - "Kotlin": "reference/kotlin.md"
-    - "Interface utilisateur": "reference/interface-utilisateur.md"
-    - "Modificateurs": "reference/modificateurs.md"
-  - "Création d'une application Android":
-    - "Android Studio": "android-studio.md"
-    - "Création du projet": "creation-projet-android.md"
-    - "Prévisualiser vs émulateur": "preview-vs-emulateur"
-    - "Jetpack Compose - Bases": "jetpack-compose-basics.md"
-  - "Interface utilisateur avancée":
-    - "Scaffold": "scaffold.md"
-    - "Variables d'état": "variables-etat.md"
-    - "Icônes & Préférences": "icones-preferences-utilisateur.md"
-    - "KDoc documentation": "kdoc-documentation.md"
-  - "État persistant":
-    - "État dans Jetpack Compose": "etat-persistant.md"
-    - "ViewModel": "viewmodel.md"
-    - "Sons MP3": "sons-mp3.md"
-  - "Données & Stockage":
-    - "Room": "room.md"
-    - "Fichiers émulateur": "systeme-fichiers-emulateur.md"
-  - "Dépannage": "troubleshooting.md"
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji
 
 plugins:
   - search
+
+nav:
+  - "Accueil": "index.md"
+  - "1. Environnement":
+      - "Présentation du cours": "01-environnement/index.md"
+      - "Installation & Outils": "01-environnement/installation.md"
+      - "Création du projet": "01-environnement/premier-projet.md"
+      - "Android Studio & Ressources": "01-environnement/android-studio.md"
+      - "Prévisualiser vs Émulateur": "01-environnement/preview-vs-emulateur.md"
+      - "Débogage & Dépannage": "01-environnement/debogage-et-depannage.md"
+      - "Publication d'application": "01-environnement/publication.md"
+  - "2. Kotlin & Gradle":
+      - "Gradle & Dépendances": "02-kotlin-gradle/gradle.md"
+      - "Kotlin - Fondamentaux": "02-kotlin-gradle/kotlin-bases.md"
+      - "Normes & Documentation KDoc": "02-kotlin-gradle/normes-et-kdoc.md"
+  - "3. Interface Compose":
+      - "Bases de Jetpack Compose": "03-interface-compose/jetpack-compose-bases.md"
+      - "Éléments d'interface (UI)": "03-interface-compose/elements-ui.md"
+      - "Modificateurs (Modifiers)": "03-interface-compose/modificateurs.md"
+      - "Mise en page & Scaffold": "03-interface-compose/mise-en-page-scaffold.md"
+      - "Saisie & Clavier virtuel": "03-interface-compose/saisie-et-clavier.md"
+      - "Couleurs, Thèmes & Hasard": "03-interface-compose/couleurs-et-ressources.md"
+      - "Icônes & Images": "03-interface-compose/icones-et-images.md"
+      - "Fenêtres Popup & Dialogues": "03-interface-compose/fenetres-popup.md"
+      - "Listes dynamiques (LazyColumn)": "03-interface-compose/listes-dynamiques.md"
+  - "4. État & Architecture":
+      - "État dans Compose": "04-etat-architecture/etat-dans-compose.md"
+      - "État avancé & State Hoisting": "04-etat-architecture/etat-avance.md"
+      - "Architecture ViewModel": "04-etat-architecture/viewmodel.md"
+      - "Effets secondaires (Side Effects)": "04-etat-architecture/effets-secondaires.md"
+      - "Programmation asynchrone": "04-etat-architecture/programmation-asynchrone.md"
+  - "5. Persistance & Données":
+      - "Préférences utilisateur": "05-donnees-persistance/preferences-utilisateur.md"
+      - "Système de fichiers émulateur": "05-donnees-persistance/systeme-fichiers.md"
+      - "Base de données Room": "05-donnees-persistance/room-base-de-donnees.md"
+      - "Room avancé": "05-donnees-persistance/room-avance.md"
+      - "Formulaires CRUD": "05-donnees-persistance/formulaires-crud.md"
+      - "Données distantes & API": "05-donnees-persistance/donnees-distantes-api.md"
+  - "6. Fonctionnalités avancées":
+      - "Audio & Sons MP3": "06-fonctionnalites-avancees/audio-mp3.md"
+      - "Navigation multi-écrans": "06-fonctionnalites-avancees/navigation.md"
+      - "Internationalisation (i18n)": "06-fonctionnalites-avancees/internationalisation.md"
+      - "Liens hypertexte": "06-fonctionnalites-avancees/liens-hypertexte.md"
+      - "Capteurs (Sensors)": "06-fonctionnalites-avancees/capteurs.md"
+      - "Optimisation": "06-fonctionnalites-avancees/optimisation.md"
+      - "Notifications": "06-fonctionnalites-avancees/notifications.md"
+  - "7. Exercices & Évaluations":
+      - "Exercices Partie 1 (1 à 4)": "07-exercices-evaluations/exercices-partie1.md"
+      - "Exercices Partie 2 (5 à 8 & Formatif)": "07-exercices-evaluations/exercices-partie2.md"
+      - "Exercices Partie 3 (9 à 14)": "07-exercices-evaluations/exercices-partie3.md"
+      - "Examens & Épreuve finale": "07-exercices-evaluations/examens.md"
