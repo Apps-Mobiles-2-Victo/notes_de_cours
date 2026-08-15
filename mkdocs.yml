@@ -1,0 +1,33 @@
+site_name: "Notes de cours - Applications mobiles Android avec Jetpack Compose, A-2026"
+site_url: "https://vos-notes.com/android-compose"
+
+nav:
+  - "Introduction": "index.md#introduction"
+  - "Installation": "installation.md"
+  - "Où trouver de l'aide": "aide"
+  - "Référence Kotlin & Gradle":
+    - "Gradle": "reference/gradle.md"
+    - "Kotlin": "reference/kotlin.md"
+    - "Interface utilisateur": "reference/interface-utilisateur.md"
+    - "Modificateurs": "reference/modificateurs.md"
+  - "Création d'une application Android":
+    - "Android Studio": "android-studio.md"
+    - "Création du projet": "creation-projet-android.md"
+    - "Prévisualiser vs émulateur": "preview-vs-emulateur"
+    - "Jetpack Compose - Bases": "jetpack-compose-basics.md"
+  - "Interface utilisateur avancée":
+    - "Scaffold": "scaffold.md"
+    - "Variables d'état": "variables-etat.md"
+    - "Icônes & Préférences": "icones-preferences-utilisateur.md"
+    - "KDoc documentation": "kdoc-documentation.md"
+  - "État persistant":
+    - "État dans Jetpack Compose": "etat-persistant.md"
+    - "ViewModel": "viewmodel.md"
+    - "Sons MP3": "sons-mp3.md"
+  - "Données & Stockage":
+    - "Room": "room.md"
+    - "Fichiers émulateur": "systeme-fichiers-emulateur.md"
+  - "Dépannage": "troubleshooting.md"
+
+plugins:
+  - search
