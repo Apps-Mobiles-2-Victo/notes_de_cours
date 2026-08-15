@@ -230,19 +230,25 @@ fun MainContent( innerPadding: PaddingValues ) {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_111_img_02_300x638.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_111_img_01_300x635.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_111_img_02_300x638.png)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_111_img_03_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+
+
+![Illustration](../images/page_111_img_01_300x635.png)
+
+
+
+
+
+
+![Illustration](../images/page_111_img_03_300x633.png)
+
+
 
 
 Bonne utilisation du innerPadding
@@ -366,19 +372,25 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 Voici le visuel de chacune de ces versions.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_113_img_03_300x638.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_113_img_02_300x636.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_113_img_03_300x638.png)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_113_img_01_300x635.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+
+
+![Illustration](../images/page_113_img_02_300x636.png)
+
+
+
+
+
+
+![Illustration](../images/page_113_img_01_300x635.png)
+
+
 
 
 Version A
@@ -396,9 +408,11 @@ téléphone. Dans une application avec une barre de titre, par exemple, l'espace
 Sur l'image qui suit, la fonction modulable est identique à la version A présentée plus haut. Seul le scaffold s'est vu ajouter un titre.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_113_img_04_300x635.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_113_img_04_300x635.png)
+
+
 
 
 Dans la version B, il n'y a aucune utilisation du modifieur reçu en paramètre. Chaque composable initialise un modifieur vierge (celui avec un M majuscule) sans tenir
@@ -422,15 +436,14 @@ assurera une apparence constante entre les écrans.
 #### Pour plus d'information
 
 
-« Barres d'application ». Android Developer. https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr
+* [« Barres d'application » - Android Developer](https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr)
 
 
-« Composants et mises en page Material - Barres d'application ». Android Developpers. https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-
+* [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-)
 bars
 
 
-### « Should I use Scaffold in every screen ? what are best practices while using topBar, bottomBar, drawer, etc. in compose ». StackOverflow.
-https://stackoverflow.com/questions/69060612/should-i-use-scaffold-in-every-screen-what-are-best-practices-while-using-topb
+### * [« Should I use Scaffold in every screen ? what are best practices while using topBar, bottomBar, drawer, etc. in compose » - StackOverflow](https://stackoverflow.com/questions/69060612/should-i-use-scaffold-in-every-screen-what-are-best-practices-while-using-topb)
 27.2 topBar
 
 
@@ -497,9 +510,11 @@ Scaffold(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_114_img_01_300x119.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_114_img_01_300x119.png)
+
+
 
 
 ### Barre de titre en dehors d'un Scaffold?
@@ -537,10 +552,10 @@ fun MainScreen(innerPadding: PaddingValues) {
 #### Pour plus d'information
 
 
-« Barres d'application ». Android Developer. https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr
+* [« Barres d'application » - Android Developer](https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr)
 
 
-### « Composants et mises en page Material - Barres d'application ». Android Developpers. https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-
+### * [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-)
 bars
 28. Aller plus loin avec les variables d'état
 

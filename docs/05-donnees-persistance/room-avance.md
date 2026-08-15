@@ -90,9 +90,11 @@ En preuve de ce que j'avance, la documentation de la classe Callback spécifie :
 ### are created.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_175_img_01_800x567.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_175_img_01_800x567.png)
+
+
 
 
 ### 58.2 Modifier la structure de la base de données en phase de développement
@@ -154,9 +156,11 @@ données.
 58.3 Gérer les versions de la base de données
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_176_img_01_58x40.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_176_img_01_58x40.png)
+
+
 
 
 Il est très rare que pendant la vie utile d'une application, sa base de données ne subisse aucun changement.
@@ -338,7 +342,7 @@ Vous devrez à ce moment définir des spécifications de migration automatiques
 #### Pour plus d'information
 
 
-### « Migrer votre base de données Room ». Android Developer. https://developer.android.com/training/data-storage/room/migrating-db-versions?hl=fr
+### * [« Migrer votre base de données Room » - Android Developer](https://developer.android.com/training/data-storage/room/migrating-db-versions?hl=fr)
 59. Internationalisation
 
 

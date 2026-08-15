@@ -200,15 +200,15 @@ L'interface doit définir, pour chaque type de requête à réaliser :
 #### le point d'accès (endpoint), c'est-à-dire la partie qui suit l'URL de base de la requête à exécuter.
 
 
-Par exemple, si on appelle l'API https://monapi.com/v1/items , le point d'accès est items. Avec l'API https://monapi.com/v1/ajouter.php , le point d'accès
+Par exemple, si on appelle l'API [https://monapi.com/v1/items](https://monapi.com/v1/items) , le point d'accès est items. Avec l'API [https://monapi.com/v1/ajouter.php](https://monapi.com/v1/ajouter.php) , le point d'accès
 est ajouter.php.
 
 
-Pour un URL qui contient des paramètres dans son chemin , par exemple  https://monapi.com/v1/items/12 , le point d'accès est items/ {id} . Les
+Pour un URL qui contient des paramètres dans son chemin , par exemple  [https://monapi.com/v1/items/12](https://monapi.com/v1/items/12) , le point d'accès est items/ {id} . Les
 paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
 
 
-Dans le cas où l'URL utilise des paramètres de requête , par exemple https://monapi.com/v1/items? id =12 , le point d'accès est items. Les paramètres
+Dans le cas où l'URL utilise des paramètres de requête , par exemple [https://monapi.com/v1/items?](https://monapi.com/v1/items?) id =12 , le point d'accès est items. Les paramètres
 de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
 
 
@@ -502,7 +502,7 @@ try {
 Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman]**, Bruno
  ou curl
 . Vous devez concaténer la valeur de la constante BASE_URL avec le point
-d'accès précisé à la suite du @GET ou du @POST (ex :  https://monapi.com/v1/ liste ).
+d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
 
 
 Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateur. Ceci arrive parfois si on utilise l'émulateur dans différents réseaux, par exemple à l'école
@@ -593,7 +593,7 @@ mécanisme qui se chargera d'effectuer ces modifications sur la base de données
 
 
 Il est possible de programmer une application Android avec Jetpack Compose pour qu'elle réagisse lorsqu'elle détecte un changement de la
-connectivité : https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915
+connectivité : [https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915](https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915)
 
 
 ### 72.4 Service Web pour synchroniser les données
@@ -848,7 +848,7 @@ uuidgen
 ### Site Web générateur de UUID
 
 
-Vous pouvez également travailler à partir d'un site générateur de UUID, par exemple https://www.uuidgenerator.net
+Vous pouvez également travailler à partir d'un site générateur de UUID, par exemple [https://www.uuidgenerator.net](https://www.uuidgenerator.net)
 .
 
 
@@ -1275,11 +1275,11 @@ Une fois le service Web écrit et testé, vous êtes prêts à le consommer dans
 #### Pour plus d'information
 
 
-« How to Test and Play with Web APIs the Easy Way with Postman ». Free Code Camp. https://www.freecodecamp.org/news/how-to-test-and-play-with-web-apis-
+* [« How to Test and Play with Web APIs the Easy Way with Postman » - Free Code Camp](https://www.freecodecamp.org/news/how-to-test-and-play-with-web-apis-)
 the-easy-way-with-postman
 
 
-### « Debug a PHP HTTP request ». phpStorm. https://www.jetbrains.com/help/phpstorm/debugging-a-php-http-request.html#create_http_request_debug_config
+### * [« Debug a PHP HTTP request » - phpStorm](https://www.jetbrains.com/help/phpstorm/debugging-a-php-http-request.html#create_http_request_debug_config)
 73. Exercice 13
 
 

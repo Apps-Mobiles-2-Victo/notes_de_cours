@@ -47,7 +47,7 @@ id ("org.jetbrains.kotlin.android") version " 2.0.21 " apply false
 ### Retrouver la version de kps correspondante
 
 
-Vous trouverez la liste des versions de kps (Kotlin Symbol Processing) sur le site https://github.com/google/ksp/releases
+Vous trouverez la liste des versions de kps (Kotlin Symbol Processing) sur le site [https://github.com/google/ksp/releases](https://github.com/google/ksp/releases)
 .
 
 
@@ -119,7 +119,7 @@ app/build.gradle.kts).
 #### Pour plus d'information
 
 
-### « Enregistrer des données dans une base de données locale à l'aide de Room ». Android Developers. https://developer.android.com/training/data-storage/room?
+### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?)
 hl=fr
 53.2 Modèle pour représenter les données (classe d'entité)
 
@@ -194,10 +194,10 @@ data class Item(
 #### Pour plus d'information
 
 
-« Définir des données à l'aide d'entités Room ». Android Developers. https://developer.android.com/training/data-storage/room/defining-data?hl=fr
+* [« Définir des données à l'aide d'entités Room » - Android Developers](https://developer.android.com/training/data-storage/room/defining-data?hl=fr)
 
 
-### « Entity ». Android Developers. https://developer.android.com/reference/androidx/room/Entity
+### * [« Entity » - Android Developers](https://developer.android.com/reference/androidx/room/Entity)
 53.3 Le DAO : couche intermédiaire entre l'application et la BD
 
 
@@ -257,13 +257,13 @@ Rappel : il n'est pas acceptable de faire ORDER BY id puisque l'identifiant est 
 #### Pour plus d'information
 
 
-« Accéder aux données à l'aide des DAO Room ». Android Developers. https://developer.android.com/training/data-storage/room/accessing-data?hl=fr
+* [« Accéder aux données à l'aide des DAO Room » - Android Developers](https://developer.android.com/training/data-storage/room/accessing-data?hl=fr)
 
 
-« Écrire des requêtes DAO asynchrones ». Android Developers. https://developer.android.com/training/data-storage/room/async-queries?hl=fr
+* [« Écrire des requêtes DAO asynchrones » - Android Developers](https://developer.android.com/training/data-storage/room/async-queries?hl=fr)
 
 
-« Créer le DAO ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#5
+* [« Créer le DAO » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#5)
 
 
 ### 53.4 Le dépôt de données (repository)
@@ -296,7 +296,7 @@ class CategorieRepository(
 #### Pour plus d'information
 
 
-### « Implémenter le dépôt ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#7
+### * [« Implémenter le dépôt » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#7)
 53.5 La classe qui hérite de RoomDatabase
 
 
@@ -348,11 +348,11 @@ abstract class MonprojetDatabase : RoomDatabase() {
 #### Pour plus d'information
 
 
-« Créer une instance de base de données ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?
+* [« Créer une instance de base de données » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?)
 hl=fr#6
 
 
-« Create ROOM Schema Export Directory ». Medium. https://medium.com/@vontonnie/create-room-schema-export-directory-7066d427eae8
+* [« Create ROOM Schema Export Directory » - Medium](https://medium.com/@vontonnie/create-room-schema-export-directory-7066d427eae8)
 
 
 ### 53.6 Utiliser le dépôt de données via le ViewModel
@@ -486,7 +486,7 @@ fun MainContent(paddingValues: PaddingValues, categorieViewModel: CategorieViewM
 #### Pour plus d'information
 
 
-### « viewModelScope.launch(Dispatchers.IO) purpose ». Stack Overflow. https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-
+### * [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-)
 purpose
 54. Le système de fichiers de l'émulateur
 

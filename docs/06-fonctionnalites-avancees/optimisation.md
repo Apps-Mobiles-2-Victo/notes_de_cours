@@ -14,8 +14,7 @@ title: "Optimisation des performances Compose"
 #### Pour plus d'information
 
 
-« Suivez les bonnes pratiques - Reporter les lectures le plus longtemps possible ». Android Developers.
-https://developer.android.com/jetpack/compose/performance/bestpractices?hl=fr#defer-reads
+* [« Suivez les bonnes pratiques - Reporter les lectures le plus longtemps possible » - Android Developers](https://developer.android.com/jetpack/compose/performance/bestpractices?hl=fr#defer-reads)
 
 
 ### 80.2 Afficher le nombre de recompostion de chaque fonction modulable
@@ -37,9 +36,11 @@ Pour afficher le nombre de recompositions de chaque fonction modulable :
 #### Show Recomposition Counts .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_221_img_01_413x212.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_221_img_01_413x212.png)
+
+
 
 
 #### Lancez votre application **dans un émulateur]**.
@@ -57,9 +58,11 @@ Pour afficher le nombre de recompositions de chaque fonction modulable :
 #### en gris : le nombre de recompositions ignorées
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_222_img_01_670x960.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_222_img_01_670x960.png)
+
+
 
 
 ## 81. La programmation asynchrone

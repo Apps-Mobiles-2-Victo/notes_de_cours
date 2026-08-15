@@ -310,10 +310,10 @@ navController.navigate("detailsItem")
 #### Pour plus d'information
 
 
-« Naviguer avec Compose ». Android Developers. https://developer.android.com/jetpack/compose/navigation?hl=fr
+* [« Naviguer avec Compose » - Android Developers](https://developer.android.com/jetpack/compose/navigation?hl=fr)
 
 
-### « Navigation et pile "Retour" ». Android Developers. https://developer.android.com/guide/navigation/backstack?hl=fr
+### « Navigation et pile "Retour* [«  » - Android Developers](https://developer.android.com/guide/navigation/backstack?hl=fr)
 63.2 Le ViewModel et la navigation
 
 
@@ -410,26 +410,30 @@ Et voici le résultat.
 Notez que l'espacement entre les icônes doit être effectué manuellement.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_189_img_01_350x101.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_189_img_01_350x101.png)
+
+
 
 
 Voici un exemple de barre de navigation qui utilise des Button plutôt que des icônes.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_189_img_02_350x103.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_189_img_02_350x103.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Barres d'application ». Android Developer. https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr
+* [« Barres d'application » - Android Developer](https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr)
 
 
-### « Composants et mises en page Material - Barres d'application ». Android Developpers. https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-
+### * [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-)
 bars
 63.4 NavigationBar
 
@@ -524,14 +528,16 @@ Remarquez que les icônes sont automatiquement espacés pour prendre toute la la
 De plus, un indicatif visuel marque l'icône qui correpond à la page active.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_190_img_01_350x101.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_190_img_01_350x101.png)
+
+
 
 
 > **Source** : 
 
-### 1. « androidx.compose.material3 - NavigationBar ». Android Developers. https://developer.android.com/reference/kotlin/androidx/compose/material3/package-
+### 1. * [« androidx.compose.material3 - NavigationBar » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
 summary#navigationbar
 64. Exercice 11
 

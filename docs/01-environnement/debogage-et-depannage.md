@@ -14,9 +14,11 @@ title: "Débogage et dépannage (Troubleshooting)"
 Lorsque vous tentez de lancer l'émulateur Android sous IntelliJ, vous obtenez le message « Failed to start monitoring emulator - 5554 ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_061_img_01_500x56.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_061_img_01_500x56.png)
+
+
 
 
 ### Contexte :
@@ -110,9 +112,11 @@ ou encore à partir d'IntelliJ  :
 le ou les fichiers .lock et les suprpimer.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_062_img_01_600x587.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_062_img_01_600x587.png)
+
+
 
 
 ### 7.2 Erreur « The emulator process for AVD has terminated »
@@ -124,9 +128,11 @@ le ou les fichiers .lock et les suprpimer.
 Lorsque vous tentez de lancer l'émulateur Android, vous obtenez le message « Device Manager - The emulator process for AVD has terminated ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_062_img_02_400x156.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_062_img_02_400x156.png)
+
+
 
 
 ### Contexte :
@@ -199,9 +205,11 @@ Lorsque vous utilisez une fonctionnalité expérimentale, vous obtenez le messag
 future. ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_063_img_01_800x122.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_063_img_01_800x122.png)
+
+
 
 
 ### Contexte :
@@ -691,9 +699,11 @@ Lorsque vous tentez de lancer l'émulateur Android sous Android Studio, vous obt
 delete ...\.lock and try again. ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_067_img_01_1000x65.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_067_img_01_1000x65.png)
+
+
 
 
 ### Contexte :
@@ -753,9 +763,11 @@ Pour avoir un indice sur ce qui s'est passé, ouvrez le Logcat d'Android Studio.
 En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui donne des détails sur ce qui a fait planter l'application.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_068_img_01_1000x162.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_068_img_01_1000x162.png)
+
+
 
 
 ### 7.14 Erreur « Contenu non autorisé dans le prologue »
@@ -768,9 +780,11 @@ Lorsque vous tentez de compiler votre application dans Android Studio, vous obte
 « Content is not allowed in prolog. ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_068_img_02_800x167.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_068_img_02_800x167.png)
+
+
 
 
 ### Contexte :
@@ -816,9 +830,11 @@ Lorsque vous testez votre application dans un émulateur avec Android Studio, vo
 isn't responding » et ce, sans arrêt dans une fenêtre popup.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_069_img_01_300x634.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_069_img_01_300x634.png)
+
+
 
 
 ### Contexte :
@@ -920,9 +936,11 @@ Quand votre application ne compile pas, Andoid Studio vous présente à prime ab
 Il est possible à ce stade de cliquer sur une flèche pour déployer une section puis de double-cliquer sur une ligne pour atteindre directement le code en erreur.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_103_img_01_1000x212.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_103_img_01_1000x212.png)
+
+
 
 
 ### 25.2 Le débogueur d'Android Studio
@@ -937,9 +955,11 @@ Pour trouver ce qui ne fonctionne pas dans une application, il n'y a rien comme 
 Vous pouvez placer un point d'arrêt dans votre code à l'endroit désiré en cliquant dans la marge gauche.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_104_img_01_400x169.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_104_img_01_400x169.png)
+
+
 
 
 Pour que l'application puisse s'arrêter sur un point d'arrêt, elle doit avoir été lancée en mode débogage.
@@ -949,9 +969,11 @@ Une fois que vous avez **configuré un périphérique virtuel]**, démarrez l'ap
 cliquant sur l'icône Debug .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_104_img_02_400x88.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_104_img_02_400x88.png)
+
+
 
 
 Lorsque le programme atteint le point d'arrêt, vous pouvez :
@@ -961,9 +983,11 @@ Lorsque le programme atteint le point d'arrêt, vous pouvez :
 par View / Tool Windows / Debug ).
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_104_img_03_1000x286.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_104_img_03_1000x286.png)
+
+
 
 
 #### Entrer une expression à évaluer dans la zone Evaluate expression or add a watch .
@@ -1003,9 +1027,11 @@ Si vous demandez d'évaluer une variable dans la zone Evaluate expression or add
 Dans certaines situations, le débogueur vous affichera un lien get() à côté de la valeur d'une variable.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_104_img_04_450x48.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_104_img_04_450x48.png)
+
+
 
 
 Cliquez sur ce lien afin d'obtenir la valeur.
@@ -1014,7 +1040,7 @@ Cliquez sur ce lien afin d'obtenir la valeur.
 #### Pour plus d'information
 
 
-### « Debugging Jetpack Compose ». Youtube. https://www.youtube.com/watch?v=Kp-aiSU8qCU
+### * [« Debugging Jetpack Compose » - Youtube](https://www.youtube.com/watch?v=Kp-aiSU8qCU)
 25.3 Écrire dans Logcat
 
 
@@ -1097,7 +1123,7 @@ at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
 #### Pour plus d'information
 
 
-### « How to Debug Jetpack Compose Recomposition with Logging? ». Vincent Tsen - AndroidDev Blog. https://vtsen.hashnode.dev/how-to-debug-jetpack-compose-
+### * [« How to Debug Jetpack Compose Recomposition with Logging? » - Vincent Tsen - AndroidDev Blog](https://vtsen.hashnode.dev/how-to-debug-jetpack-compose-)
 recomposition-with-logging
 25.4 Déboguer une application qui se referme sans préavis
 
@@ -1115,9 +1141,11 @@ La préponse se trouve dans le Logcat d'Android Studio. S'il n'est pas affiché,
 En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui donne des détails sur ce qui a fait planter l'application.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_105_img_01_1000x162.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_105_img_01_1000x162.png)
+
+
 
 
 ### 25.5 Layout Inspector
@@ -1153,9 +1181,11 @@ un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez ent
 affichés.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_106_img_01_800x726.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_106_img_01_800x726.png)
+
+
 
 
 #### Pour revenir à l'affichage normal dans l'émulateur, refaites  Tools / Layout Inspector .
@@ -1164,7 +1194,7 @@ affichés.
 #### Pour plus d'information
 
 
-### « Déboguer votre mise en page avec l'outil d'inspection de la mise en page ». Android Developer. https://developer.android.com/studio/debug/layout-inspector?
+### * [« Déboguer votre mise en page avec l'outil d'inspection de la mise en page » - Android Developer](https://developer.android.com/studio/debug/layout-inspector?)
 hl=fr
 26. Le clavier virtuel
 

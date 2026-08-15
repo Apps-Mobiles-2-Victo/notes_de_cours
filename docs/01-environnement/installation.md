@@ -18,7 +18,7 @@ Il est basé sur IntelliJ, l'application de la suite JetBrains pour développer 
 Android Studio est complètement gratuit.
 
 
-Pour l'installer, rendez-vous sur https://developer.android.com/
+Pour l'installer, rendez-vous sur [https://developer.android.com/](https://developer.android.com/)
  puis téléchargez la version qui correspond à votre système d'exploitation.
 
 
@@ -29,13 +29,15 @@ Si vous travaillez avec l'environnement de développement intrégré (IDE) Intel
 n'avez pas besoin d'installer Kotlin. Tout ce qui est nécessaire a été installé avec l'IDE.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_009_img_01_55x54.jpeg" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_009_img_01_55x54.jpeg)
+
+
 
 
 Dans le cas contaire, vous pouvez installer Kotlin en suivant les instructions ici :
-https://kotlinlang.org/docs/command-line.html
+[https://kotlinlang.org/docs/command-line.html](https://kotlinlang.org/docs/command-line.html)
 .
 
 
@@ -59,10 +61,10 @@ La version la plus utilisée a été développée par Google. C'est une version 
 #### Pour plus d'information
 
 
-« What is Android - The platform changing what mobile can do. ». Android Developers. https://www.android.com/what-is-android/
+* [« What is Android - The platform changing what mobile can do. » - Android Developers](https://www.android.com/what-is-android/)
 
 
-« Android (operating system) ». Wikipedia. https://en.wikipedia.org/wiki/Android_(operating_system)
+* [« Android (operating system) » - Wikipedia](https://en.wikipedia.org/wiki/Android_(operating_system))
 
 
 ### 11.2 Les versions d'Android
@@ -229,7 +231,7 @@ l'interne)
 #### 29
 septembre
 2019
-https://developer.android.com/about/versions/10/behavior-
+[https://developer.android.com/about/versions/10/behavior-](https://developer.android.com/about/versions/10/behavior-)
 changes-10?hl=fr
 
 
@@ -242,7 +244,7 @@ l'interne)
 #### 30
 septembre
 2020
-https://developer.android.com/about/versions/11/behavior-
+[https://developer.android.com/about/versions/11/behavior-](https://developer.android.com/about/versions/11/behavior-)
 changes-11?hl=fr
 
 
@@ -255,7 +257,7 @@ l'interne)
 #### 31-32
 octobre
 2021
-https://developer.android.com/about/versions/12/behavior-
+[https://developer.android.com/about/versions/12/behavior-](https://developer.android.com/about/versions/12/behavior-)
 changes-12?hl=fr
 
 
@@ -267,7 +269,7 @@ l'interne)
 
 #### 33
 août 2022
-https://developer.android.com/about/versions/13/behavior-
+[https://developer.android.com/about/versions/13/behavior-](https://developer.android.com/about/versions/13/behavior-)
 changes-13?hl=fr
 
 
@@ -280,7 +282,7 @@ l'interne)
 #### 34
 octobre
 2023
-https://developer.android.com/about/versions/14/behavior-
+[https://developer.android.com/about/versions/14/behavior-](https://developer.android.com/about/versions/14/behavior-)
 changes-14?hl=fr
 
 
@@ -293,7 +295,7 @@ l'interne)
 #### 35
 septembre
 2024
-https://developer.android.com/about/versions/15/behavior-
+[https://developer.android.com/about/versions/15/behavior-](https://developer.android.com/about/versions/15/behavior-)
 changes-15?hl=fr
 
 
@@ -305,13 +307,15 @@ l'interne)
 
 #### 36
 juin 2025
-https://developer.android.com/about/versions/16/behavior-
+[https://developer.android.com/about/versions/16/behavior-](https://developer.android.com/about/versions/16/behavior-)
 changes-16?hl=fr
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_076_img_01_1000x460.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_076_img_01_1000x460.png)
+
+
 
 
 Sculptures à l'effigie des versions d'Android, Silicon Valley, 2015
@@ -319,16 +323,16 @@ Sculptures à l'effigie des versions d'Android, Silicon Valley, 2015
 
 > **Source** : 
 
-## 1. « Android version history ». Wikipedia. https://en.wikipedia.org/wiki/Android_version_history
+## 1. * [« Android version history » - Wikipedia](https://en.wikipedia.org/wiki/Android_version_history)
 
 
 #### Pour plus d'information
 
 
-« Historique des versions d'Android ». Wikipédia. https://fr.wikipedia.org/wiki/Historique_des_versions_d%27Android
+« Historique des versions d'Android ». Wikipédia. [https://fr.wikipedia.org/wiki/Historique_des_versions_d%27Android](https://fr.wikipedia.org/wiki/Historique_des_versions_d%27Android)
 
 
-### « Android API Levels ». API Levels. https://apilevels.com/
+### * [« Android API Levels » - API Levels](https://apilevels.com/)
 11.3 Quel langage pour programmer une application mobile Android?
 
 
@@ -363,7 +367,7 @@ sur **Jetpack Compose]**.
 #### Pour plus d'information
 
 
-« What's the best tech stack for your mobile app in 2023? ». Imaginary cloud. https://www.imaginarycloud.com/blog/techstack-mobile-app/
+* [« What's the best tech stack for your mobile app in 2023? » - Imaginary cloud](https://www.imaginarycloud.com/blog/techstack-mobile-app/)
 
 
 ### 11.4 Kotlin, le langage recommandé par Google pour Android
@@ -410,31 +414,31 @@ recommandé par le géant américain Google pour le développement des applicati
 
 > **Source** : 
 
-## 1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage)
+## 1. « Kotlin (langage) ». Wikipédia. [https://fr.wikipedia.org/wiki/Kotlin_(langage](https://fr.wikipedia.org/wiki/Kotlin_(langage))
 
 
 #### Pour plus d'information
 
 
-« Get started with Kotlin ». Kotlin. https://kotlinlang.org/docs/getting-started.html
+* [« Get started with Kotlin » - Kotlin](https://kotlinlang.org/docs/getting-started.html)
 
 
-« Formation Kotlin pour les programmeurs ». Android Developers. https://developer.android.com/courses/kotlin-bootcamp/overview?hl=fr
+* [« Formation Kotlin pour les programmeurs » - Android Developers](https://developer.android.com/courses/kotlin-bootcamp/overview?hl=fr)
 
 
-« Kotlin docs ». Kotlin. https://kotlinlang.org/docs/home.html
+* [« Kotlin docs » - Kotlin](https://kotlinlang.org/docs/home.html)
 
 
-« Kotlin quick reference ». Alvin Alexander. https://kotlin-quick-reference.com/
+* [« Kotlin quick reference » - Alvin Alexander](https://kotlin-quick-reference.com/)
 
 
-« Keywords and operators ». Kotlin. https://kotlinlang.org/docs/keyword-reference.html
+* [« Keywords and operators » - Kotlin](https://kotlinlang.org/docs/keyword-reference.html)
 
 
-« Guide de l'architecture des applications ». Android Developers. https://developer.android.com/topic/architecture?hl=fr
+* [« Guide de l'architecture des applications » - Android Developers](https://developer.android.com/topic/architecture?hl=fr)
 
 
-### « Principes de base d'Android avec Compose ». Android Developers. https://developer.android.com/courses/android-basics-compose/course?hl=fr
+### * [« Principes de base d'Android avec Compose » - Android Developers](https://developer.android.com/courses/android-basics-compose/course?hl=fr)
 11.5 Quel IDE pour programmer une application mobile Android?
 
 

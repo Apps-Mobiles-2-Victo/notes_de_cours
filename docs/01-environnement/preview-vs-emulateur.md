@@ -49,9 +49,11 @@ fun DefaultPreview() {
 #### Cliquez sur le premier icône ( Code ) pour fermer l'aperçu et redonner toute la place au code.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_089_img_02_800x609.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_089_img_02_800x609.png)
+
+
 
 
 #### Notez que si vous n'avez pas encore compilé votre application lorsque vous cliquez sur Split , vous verrez le message
@@ -60,9 +62,11 @@ fun DefaultPreview() {
 #### « A successful build is needed before the preview can be displayed ». Cliquez sur le lien pour compiler l'application.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_089_img_01_500x462.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_089_img_01_500x462.png)
+
+
 
 
 ### 14.2 Configurer un périphérique virtuel (émulateur)
@@ -87,18 +91,22 @@ Dans Android Studio, vous pouvez configurer un périphérique virtuel comme suit
 #### Choisissez les spécifications du téléphone Android que vous désirez simuler puis cliquez sur Next .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_090_img_01_1000x681.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_090_img_01_1000x681.png)
+
+
 
 
 #### Vous devez maintenant sélectionner la version Android qui sera émulée. Si la version désirée est suivie d'une l'icône
 de téléchargement, il vous faudra cliquer sur l'icône pour la télécharger. Cliquez ensuite sur Next .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_090_img_02_1000x681.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_090_img_02_1000x681.png)
+
+
 
 
 #### Vérifiez la configuration puis cliquez sur Finish .
@@ -109,17 +117,21 @@ cliquez sur le bouton vert  Run , toujours dans la barre d'outils. Le bouton peu
 ou en forme de flèche circulaire.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_091_img_01_400x299.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_091_img_01_400x299.png)
+
+
 
 
 #### L'application apparaît désormais dans l'émulateur.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_091_img_02_400x556.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_091_img_02_400x556.png)
+
+
 
 
 Notez que l'émulateur peut être configuré pour apparaître dans sa propre fenêtre afin de laisser plus de place au code dans la fenêtre principale :
@@ -195,10 +207,10 @@ ou
 #### Pour plus d'information
 
 
-« Configurer les options pour les développeurs sur l'appareil ». Android Developer. https://developer.android.com/studio/debug/dev-options?hl=fr
+* [« Configurer les options pour les développeurs sur l'appareil » - Android Developer](https://developer.android.com/studio/debug/dev-options?hl=fr)
 
 
-### « Exécuter des applications sur un appareil  ». Android Developer. https://developer.android.com/studio/run/device?hl=fr
+### * [« Exécuter des applications sur un appareil » - Android Developer](https://developer.android.com/studio/run/device?hl=fr)
 14.5 Clavier virtuel de l'émulateur
 
 
@@ -239,9 +251,11 @@ AndroidManifest.xml .
 Le clavier virtuel apparaîtra automatiquement lorsque requis, par exemple quand l'usager mettra le focus dans une case de saisie.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_092_img_01_500x736.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_092_img_01_500x736.png)
+
+
 
 
 ### Afficher le clavier virtuel manuellement
@@ -257,15 +271,17 @@ focus.
 L'option Show on-screen keyboard fera apparaître le clavier virtuel.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_093_img_01_500x736.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_093_img_01_500x736.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Gérer la visibilité du mode de saisie ». Android Developer. https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/visibility?hl=fr
+### * [« Gérer la visibilité du mode de saisie » - Android Developer](https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/visibility?hl=fr)
 15. Jetpack Compose
 
 

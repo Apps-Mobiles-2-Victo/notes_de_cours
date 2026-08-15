@@ -51,31 +51,31 @@ recommandé par le géant américain Google pour le développement des applicati
 
 > **Source** : 
 
-## 1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage)
+## 1. « Kotlin (langage) ». Wikipédia. [https://fr.wikipedia.org/wiki/Kotlin_(langage](https://fr.wikipedia.org/wiki/Kotlin_(langage))
 
 
 #### Pour plus d'information
 
 
-« Get started with Kotlin ». Kotlin. https://kotlinlang.org/docs/getting-started.html
+* [« Get started with Kotlin » - Kotlin](https://kotlinlang.org/docs/getting-started.html)
 
 
-« Formation Kotlin pour les programmeurs ». Android Developers. https://developer.android.com/courses/kotlin-bootcamp/overview?hl=fr
+* [« Formation Kotlin pour les programmeurs » - Android Developers](https://developer.android.com/courses/kotlin-bootcamp/overview?hl=fr)
 
 
-« Kotlin docs ». Kotlin. https://kotlinlang.org/docs/home.html
+* [« Kotlin docs » - Kotlin](https://kotlinlang.org/docs/home.html)
 
 
-« Kotlin quick reference ». Alvin Alexander. https://kotlin-quick-reference.com/
+* [« Kotlin quick reference » - Alvin Alexander](https://kotlin-quick-reference.com/)
 
 
-« Keywords and operators ». Kotlin. https://kotlinlang.org/docs/keyword-reference.html
+* [« Keywords and operators » - Kotlin](https://kotlinlang.org/docs/keyword-reference.html)
 
 
-« Guide de l'architecture des applications ». Android Developers. https://developer.android.com/topic/architecture?hl=fr
+* [« Guide de l'architecture des applications » - Android Developers](https://developer.android.com/topic/architecture?hl=fr)
 
 
-« Principes de base d'Android avec Compose ». Android Developers. https://developer.android.com/courses/android-basics-compose/course?hl=fr
+* [« Principes de base d'Android avec Compose » - Android Developers](https://developer.android.com/courses/android-basics-compose/course?hl=fr)
 
 
 ### 4.2 Où sont les points-virgules?
@@ -136,7 +136,7 @@ bonne_reponse
 #### Pour plus d'information
 
 
-### « Coding conventions ». Kotlin. https://kotlinlang.org/docs/coding-conventions.html
+### * [« Coding conventions » - Kotlin](https://kotlinlang.org/docs/coding-conventions.html)
 4.4 Variables et constantes
 
 
@@ -255,10 +255,10 @@ const val QUANTITE_MINIMALE = 10
 #### Pour plus d'information
 
 
-« 2. Task: Learn about operators and types ». Android Developers. https://developer.android.com/codelabs/kotlin-bootcamp-basics#1
+* [« 2. Task: Learn about operators and types » - Android Developers](https://developer.android.com/codelabs/kotlin-bootcamp-basics#1)
 
 
-### « Basic types ». Kotlin. https://kotlinlang.org/docs/basic-types.html
+### * [« Basic types » - Kotlin](https://kotlinlang.org/docs/basic-types.html)
 4.5 Structures de contrôle en Kotlin (if, for, while, etc.)
 
 
@@ -452,13 +452,13 @@ repeat(5) { index ->
 #### Pour plus d'information
 
 
-« Conditions and loops ». Kotlin. https://kotlinlang.org/docs/control-flow.html
+* [« Conditions and loops » - Kotlin](https://kotlinlang.org/docs/control-flow.html)
 
 
-« Basic syntax ». Kotlin. https://kotlinlang.org/docs/basic-syntax.html
+* [« Basic syntax » - Kotlin](https://kotlinlang.org/docs/basic-syntax.html)
 
 
-### « Idioms ». Kotlin. https://kotlinlang.org/docs/idioms.html
+### * [« Idioms » - Kotlin](https://kotlinlang.org/docs/idioms.html)
 4.6 Qu'est-ce que Unit?
 
 
@@ -563,21 +563,23 @@ Text(text = nom?.length?.toString() ?: "0")
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_018_img_01_400x489.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-Source de l'image originale : https://openclipart.org/download/232294/Elvis.svg
+![Illustration](../images/page_018_img_01_400x489.png)
+
+
+
+
+Source de l'image originale : [https://openclipart.org/download/232294/Elvis.svg](https://openclipart.org/download/232294/Elvis.svg)
 
 
 #### Pour plus d'information
 
 
-« Null safety ». Kotlin. https://kotlinlang.org/docs/null-safety.html
+* [« Null safety » - Kotlin](https://kotlinlang.org/docs/null-safety.html)
 
 
-### « Safe calls(?.) vs Null checks(!!) in Kotlin ». Ballu. https://agrawalsuneet.github.io/blogs/safe-calls-vs-null-checks-in-kotlin/
+### * [« Safe calls(?.) vs Null checks(!!) in Kotlin » - Ballu](https://agrawalsuneet.github.io/blogs/safe-calls-vs-null-checks-in-kotlin/)
 4.8 Les modèles de chaîne (chaîne qui contient des variables)
 
 
@@ -608,7 +610,7 @@ Text(text = "Bonjour $ { ami.nom } ")
 #### Pour plus d'information
 
 
-« Strings - String templates ». Kotlin. https://kotlinlang.org/docs/strings.html#string-templates
+* [« Strings - String templates » - Kotlin](https://kotlinlang.org/docs/strings.html#string-templates)
 
 
 ### 4.9 Les collections
@@ -620,10 +622,10 @@ Le langage Kotlin offre une foule de classes pour gérer des collections, par ex
 #### Pour plus d'information
 
 
-« Collections overview ». Kotlin. https://kotlinlang.org/docs/collections-overview.html
+* [« Collections overview » - Kotlin](https://kotlinlang.org/docs/collections-overview.html)
 
 
-« Utiliser les collections en Kotlin ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-collections?hl=fr#0
+* [« Utiliser les collections en Kotlin » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-collections?hl=fr#0)
 
 
 ### 4.10 Les tableaux
@@ -679,7 +681,7 @@ Column() {
 #### Pour plus d'information
 
 
-« Arrays ». Kotlin. https://kotlinlang.org/docs/arrays.html
+* [« Arrays » - Kotlin](https://kotlinlang.org/docs/arrays.html)
 
 
 ### 4.11 Les listes
@@ -842,10 +844,10 @@ Column() {
 #### Pour plus d'information
 
 
-« Utiliser les collections en Kotlin - Les listes ». Kotlin. https://developer.android.com/codelabs/basic-android-kotlin-collections?hl=fr#2
+* [« Utiliser les collections en Kotlin - Les listes » - Kotlin](https://developer.android.com/codelabs/basic-android-kotlin-collections?hl=fr#2)
 
 
-### « Working With Lists in Kotlin ». Baeldung. https://www.baeldung.com/kotlin/lists
+### * [« Working With Lists in Kotlin » - Baeldung](https://www.baeldung.com/kotlin/lists)
 4.12 Les fonctions
 
 
@@ -863,7 +865,7 @@ fun maFonction(unParamatre: Int, unAutreParametre: String = "valeurParDefaut"): 
 #### Pour plus d'information
 
 
-« Functions ». Kotlin. https://kotlinlang.org/docs/functions.html
+* [« Functions » - Kotlin](https://kotlinlang.org/docs/functions.html)
 
 
 ### 4.13 Read-Eval-Print Loop (REPL)
@@ -879,35 +881,41 @@ Il se peut que vous obteniez le message « 'CommandLineWrapper' is ill-suited fo
 change it to "@argfile". Otherwise, please contact support. ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_021_img_01_1000x285.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_021_img_01_1000x285.png)
+
+
 
 
 À ce moment, laissez la fenêtre ouverte et refaites  Tools / Kotlin / Kotlin REPL . Une fenêtre contextuelle vous demandera de choisir un module. Sélectionnez le tout
 premier, celui qui ne se termine pas par .app.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_021_img_02_300x246.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_021_img_02_300x246.png)
+
+
 
 
 Cette fois, vous avez accès à la console REPL. Entrez une commande puis appuyez sur  Ctrl + Entrée (Windows) ou  ⌘ Cmd + ↵ Entrée (Mac) pour l'exécuter.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_021_img_03_1000x390.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_021_img_03_1000x390.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« REPL in Kotlin ». Medium. https://medium.com/android-news/repl-in-kotlin-4d7091236961
+* [« REPL in Kotlin » - Medium](https://medium.com/android-news/repl-in-kotlin-4d7091236961)
 
 
-### « Run Kotlin in interactive console ». JetBrains. https://www.jetbrains.com/help/idea/kotlin-repl.html
+### * [« Run Kotlin in interactive console » - JetBrains](https://www.jetbrains.com/help/idea/kotlin-repl.html)
 4.14 Les classes
 
 
@@ -999,10 +1007,10 @@ MaClasse.maMethodeDeClasse()
 #### Pour plus d'information
 
 
-« Classes ». Kotlin. https://kotlinlang.org/docs/classes.html
+* [« Classes » - Kotlin](https://kotlinlang.org/docs/classes.html)
 
 
-« Kotlin Constructors ». Programiz. https://www.programiz.com/kotlin-programming/constructors
+* [« Kotlin Constructors » - Programiz](https://www.programiz.com/kotlin-programming/constructors)
 
 
 ### 4.15 Les énumérations
@@ -1074,13 +1082,13 @@ Text(text = "Vous avez choisi la catégorie ${categorie.code}")
 #### Pour plus d'information
 
 
-« Enum classes ». Kotlin. https://kotlinlang.org/docs/enum-classes.html
+* [« Enum classes » - Kotlin](https://kotlinlang.org/docs/enum-classes.html)
 
 
-« Enum classes in Kotlin ». Kt Academy. https://kt.academy/article/kfde-enum
+* [« Enum classes in Kotlin » - Kt Academy](https://kt.academy/article/kfde-enum)
 
 
-« A complete guide to enum classes in Kotlin ». LogRocket. https://blog.logrocket.com/kotlin-enum-classes-complete-guide/
+* [« A complete guide to enum classes in Kotlin » - LogRocket](https://blog.logrocket.com/kotlin-enum-classes-complete-guide/)
 
 
 ### 4.16 Flow : flux de données observable
@@ -1093,10 +1101,10 @@ base de données.
 #### Pour plus d'information
 
 
-« Kotlin Flow with Jetpack Compose ». Answertopia. https://www.answertopia.com/jetpack-compose/kotlin-flow-with-jetpack-compose/
+* [« Kotlin Flow with Jetpack Compose » - Answertopia](https://www.answertopia.com/jetpack-compose/kotlin-flow-with-jetpack-compose/)
 
 
-« Flux Kotlin sur Android ». Android Developers. https://developer.android.com/kotlin/flow?hl=fr
+* [« Flux Kotlin sur Android » - Android Developers](https://developer.android.com/kotlin/flow?hl=fr)
 
 
 ### 4.17 Les expressions lambda
@@ -1582,10 +1590,10 @@ val secondes = TimeUnit.MILLISECONDS.toSeconds(difference)
 #### Pour plus d'information
 
 
-« Get the Current Date/Time in Kotlin ». Baeldung. https://www.baeldung.com/kotlin/current-date-time
+* [« Get the Current Date/Time in Kotlin » - Baeldung](https://www.baeldung.com/kotlin/current-date-time)
 
 
-### « Mastering Date and Time Handling in Kotlin for Android Developers ». BugFender. https://bugfender.com/blog/kotlin-dates/
+### * [« Mastering Date and Time Handling in Kotlin for Android Developers » - BugFender](https://bugfender.com/blog/kotlin-dates/)
 4.20 Effectuer une pause
 
 

@@ -98,9 +98,11 @@ contient une variable, Android saura gérer.
 #### Cliquez sur Extract string resource .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_178_img_01_400x277.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_178_img_01_400x277.png)
+
+
 
 
 #### Donnez un nom à la ressource. Les normes de programmation demandent d'utiliser la **casse serpent]** pour nommer les ressources.
@@ -110,9 +112,11 @@ contient une variable, Android saura gérer.
 Cochez donc chacun des dossiers de ressource présentés au bas de la fenêtre.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_179_img_01_400x446.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_179_img_01_400x446.png)
+
+
 
 
 #### Lorsque vous cliquez sur OK, il se passe deux choses :
@@ -149,9 +153,11 @@ n'est pas supportée par l'application.
 #### Entrez la chaîne à utiliser pour chacune des localisations supportées par l'application.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_179_img_02_800x118.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_179_img_02_800x118.png)
+
+
 
 
 #### Cette traduction sera automatiquement transposée dans le fichier strings.xml de la localisation correspondante. Pas
@@ -170,13 +176,13 @@ besoin d'éditer manuellement les fichiers de ressources!
 #### Pour plus d'information
 
 
-« Localiser votre application ». Android Developers. https://developer.android.com/guide/topics/resources/localization?hl=fr
+* [« Localiser votre application » - Android Developers](https://developer.android.com/guide/topics/resources/localization?hl=fr)
 
 
-« Localiser l'interface utilisateur avec l'éditeur de traductions ». Android Developers. https://developer.android.com/studio/write/translations-editor?hl=fr
+* [« Localiser l'interface utilisateur avec l'éditeur de traductions » - Android Developers](https://developer.android.com/studio/write/translations-editor?hl=fr)
 
 
-### « A Deep Dive into Internationalizing Jetpack Compose Android Apps ». Phrase. https://phrase.com/blog/posts/internationalizing-jetpack-compose-android-apps/
+### * [« A Deep Dive into Internationalizing Jetpack Compose Android Apps » - Phrase](https://phrase.com/blog/posts/internationalizing-jetpack-compose-android-apps/)
 59.2 Retrouver la configuration de localisation par programmation
 
 

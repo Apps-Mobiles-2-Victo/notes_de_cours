@@ -59,14 +59,18 @@ pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une ca
 Voici le TextField vide puis avec focus ou rempli.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_191_img_01_448x100.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_191_img_02_449x104.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_191_img_01_448x100.png)
+
+
+
+
+
+
+![Illustration](../images/page_191_img_02_449x104.png)
+
+
 
 
 ### OutlinedTextField
@@ -92,14 +96,18 @@ La différence entre TextField et OutlinedTextField est au niveau de l'apparence
 Voici le OutlinedTextField vide puis avec focus ou rempli.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_191_img_03_451x105.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_191_img_04_453x104.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_191_img_03_451x105.png)
+
+
+
+
+
+
+![Illustration](../images/page_191_img_04_453x104.png)
+
+
 
 
 ### supportingText
@@ -124,9 +132,11 @@ OutlinedTextField(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_01_453x139.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_192_img_01_453x139.png)
+
+
 
 
 ### Type de clavier
@@ -159,29 +169,39 @@ Les principaux types de clavier sont :
 #### Uri (semblable à Text mais la virgule est remplacée par un /)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_05_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_04_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_192_img_05_200x146.png)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_02_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_03_200x128.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_192_img_06_200x128.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_192_img_04_200x146.png)
+
+
+
+
+
+
+![Illustration](../images/page_192_img_02_200x146.png)
+
+
+
+
+
+
+![Illustration](../images/page_192_img_03_200x128.png)
+
+
+
+
+
+
+![Illustration](../images/page_192_img_06_200x128.png)
+
+
 
 
 KeyboardType.Text
@@ -252,21 +272,20 @@ class HomeViewModel: ViewModel() {
 #### Pour plus d'information
 
 
-«  Handle user input ». Android Developers. https://developer.android.com/jetpack/compose/text/user-input
+* [« Handle user input » - Android Developers](https://developer.android.com/jetpack/compose/text/user-input)
 
 
-« Jetpack Compose Basics - How to use text field composables to meet the Material design specification ». Good Request.
-https://www.goodrequest.com/blog/jetpack-compose-basics-text-input
+* [« Jetpack Compose Basics - How to use text field composables to meet the Material design specification » - Good Request](https://www.goodrequest.com/blog/jetpack-compose-basics-text-input)
 
 
-« Textfields ». Material Design 3. https://m3.material.io/components/text-fields/overview
+* [« Textfields » - Material Design 3](https://m3.material.io/components/text-fields/overview)
 
 
-« androidx.compose.material3 - TextField ». Android Developers. https://developer.android.com/reference/kotlin/androidx/compose/material3/package-
+* [« androidx.compose.material3 - TextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
 summary#textfield
 
 
-### « androidx.compose.material3 - OutlinedTextField ». Android Developers. https://developer.android.com/reference/kotlin/androidx/compose/material3/package-
+### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
 summary
 66.2 Validation
 

@@ -159,24 +159,26 @@ Row(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_030_img_01_422x61.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_030_img_01_422x61.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Texte dans Compose ». Android Developers. https://developer.android.com/jetpack/compose/text?hl=fr
+* [« Texte dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/text?hl=fr)
 
 
-« Typography - Type scale ». Material Design 3. https://m3.material.io/styles/typography/type-scale-tokens
+* [« Typography - Type scale » - Material Design 3](https://m3.material.io/styles/typography/type-scale-tokens)
 
 
-« Appliquer un style au texte ». Android Developers. https://developer.android.com/develop/ui/compose/text/style-text?hl=fr
+* [« Appliquer un style au texte » - Android Developers](https://developer.android.com/develop/ui/compose/text/style-text?hl=fr)
 
 
-### « Composing AnnotatedString — Poetry, Music, Code, Blogs, Expandables and Beyond ». Medium. https://proandroiddev.com/composing-annotatedstring-poetry-
+### * [« Composing AnnotatedString — Poetry, Music, Code, Blogs, Expandables and Beyond » - Medium](https://proandroiddev.com/composing-annotatedstring-poetry-)
 music-code-blogs-expandables-and-beyond-b5f7ec35a49b
 5.2 Column()
 
@@ -271,13 +273,13 @@ Column(
 #### Pour plus d'information
 
 
-« Listes et grilles ». Android Developers. https://developer.android.com/jetpack/compose/lists?hl=fr
+* [« Listes et grilles » - Android Developers](https://developer.android.com/jetpack/compose/lists?hl=fr)
 
 
-« 07 Compose - Layout – Column + Row + Spacer ». DEV Community. https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j
+* [« 07 Compose - Layout – Column + Row + Spacer » - DEV Community](https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j)
 
 
-### « Principes de base de la mise en page dans Compose ». Android Developers. https://developer.android.com/jetpack/compose/layouts/basics?hl=fr
+### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
 5.3 Row()
 
 
@@ -360,13 +362,13 @@ Row(
 #### Pour plus d'information
 
 
-« Listes et grilles ». Android Developers. https://developer.android.com/jetpack/compose/lists?hl=fr
+* [« Listes et grilles » - Android Developers](https://developer.android.com/jetpack/compose/lists?hl=fr)
 
 
-« 07 Compose - Layout – Column + Row + Spacer ». DEV Community. https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j
+* [« 07 Compose - Layout – Column + Row + Spacer » - DEV Community](https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j)
 
 
-### « Principes de base de la mise en page dans Compose ». Android Developers. https://developer.android.com/jetpack/compose/layouts/basics?hl=fr
+### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
 5.4 Box()
 
 
@@ -387,9 +389,11 @@ fun UneFonction() {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_032_img_01_186x58.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_032_img_01_186x58.png)
+
+
 
 
 Il est également possible d'utiliser un Box pour dessiner des rectangles. Il faudra prendre soin de les placer dans un Column ou dans un Row pour ne pas qu'ils
@@ -417,9 +421,11 @@ Column(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_032_img_02_300x632.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_032_img_02_300x632.png)
+
+
 
 
 Un box peut aussi servir à encadrer autre chose.
@@ -440,9 +446,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_033_img_01_300x94.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_033_img_01_300x94.png)
+
+
 
 
 Une utilisation intéressante du box : réserver de l'espace pour des éléments graphiques qui ne sont affichés que lorsqu'une condition est remplie.
@@ -500,13 +508,13 @@ Box(
 #### Pour plus d'information
 
 
-« Listes et grilles ». Android Developers. https://developer.android.com/jetpack/compose/lists?hl=fr
+* [« Listes et grilles » - Android Developers](https://developer.android.com/jetpack/compose/lists?hl=fr)
 
 
-« 07 Compose - Layout – Column + Row + Spacer ». DEV Community. https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j
+* [« 07 Compose - Layout – Column + Row + Spacer » - DEV Community](https://dev.to/one_past_last_jedi/07-compose-layout-column-row-spacer-291j)
 
 
-### « Principes de base de la mise en page dans Compose ». Android Developers. https://developer.android.com/jetpack/compose/layouts/basics?hl=fr
+### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
 5.5 Image()
 
 
@@ -624,13 +632,13 @@ if (ressourceId != 0) {
 #### Pour plus d'information
 
 
-« Utiliser des images ». Android Developer. https://developer.android.com/jetpack/compose/graphics/images?hl=fr
+* [« Utiliser des images » - Android Developer](https://developer.android.com/jetpack/compose/graphics/images?hl=fr)
 
 
-« Supported media formats - Image support ». Adroid Developers. https://developer.android.com/guide/topics/media/platform/supported-formats#image-formats
+* [« Supported media formats - Image support » - Adroid Developers](https://developer.android.com/guide/topics/media/platform/supported-formats#image-formats)
 
 
-### « Personnaliser une image ». Android Developers. https://developer.android.com/jetpack/compose/graphics/images/customize?hl=fr
+### * [« Personnaliser une image » - Android Developers](https://developer.android.com/jetpack/compose/graphics/images/customize?hl=fr)
 5.6 AsyncImage()
 
 
@@ -686,17 +694,21 @@ Icon(imageVector = Icons.Default.Home, contentDescription = "home")
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_035_img_01_142x140.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_035_img_01_142x140.png)
+
+
 
 
 Pour connaître la liste des icônes disponibles par défaut, entrez Icons.Default. puis parcourez la liste de suggestions.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_035_img_02_800x339.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_035_img_02_800x339.png)
+
+
 
 
 Chaque icône peut être affichée dans différents styles.
@@ -714,9 +726,11 @@ Row() {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_036_img_01_864x158.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_036_img_01_864x158.png)
+
+
 
 
 Il est possible d'appliquer des attributs et des modifieurs afin de mieux contrôler l'apparence de l'icône.
@@ -732,9 +746,11 @@ Icon(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_036_img_02_168x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_036_img_02_168x164.png)
+
+
 
 
 Autre exemple :
@@ -804,7 +820,7 @@ Icon(imageVector = Icons.Default.SwipeUp, contentDescription = "Glisser vers le 
 #### Pour plus d'information
 
 
-### « Introducing Material Symbols ». Google. https://fonts.google.com/icons?hl=fr
+### * [« Introducing Material Symbols » - Google](https://fonts.google.com/icons?hl=fr)
 5.8 Les couleurs
 
 
@@ -825,9 +841,11 @@ Dans l'image qui suit, celle qui n'est pas visible s'appelle Color.Transparent ;
 J'ai légèrement grisé le fond d'écran pour qu'on puisse voir le blanc.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_037_img_01_200x362.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_037_img_01_200x362.png)
+
+
 
 
 Pour utiliser une de ces constantes :
@@ -873,9 +891,11 @@ Les couleurs du thème par défaut sont illustrées sur le site de Material Desi
 . J'ai reproduit l'image ici pour plus de commodité.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_038_img_01_2048x1224.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_038_img_01_2048x1224.png)
+
+
 
 
 En utilisant le rôle d'une couleur (ex : MaterialTheme.colorScheme.primary) plutôt qu'un nom (ex : Color.Black) ou un code hexadécimal (ex : #000000), on laisse
@@ -933,9 +953,11 @@ Modifier.background(color = MaterialTheme.colorScheme.tertiaryContainer).padding
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_039_img_01_295x1791.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_039_img_01_295x1791.png)
+
+
 
 
 ```kotlin
@@ -1033,9 +1055,11 @@ fun HelloWorldTheme(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_040_img_01_295x1791.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_040_img_01_295x1791.png)
+
+
 
 
 ```kotlin
@@ -1054,13 +1078,13 @@ pas. Il se sert plutôt du fichier Color.kt.
 #### Pour plus d'information
 
 
-« Color System - Tokens ». Material Design 3. https://m3.material.io/styles/color/the-color-system/tokens
+* [« Color System - Tokens » - Material Design 3](https://m3.material.io/styles/color/the-color-system/tokens)
 
 
-« Understanding Themes in Jetpack Compose ». SemicolonSpace. https://semicolonspace.com/jetpack-compose-theme/
+* [« Understanding Themes in Jetpack Compose » - SemicolonSpace](https://semicolonspace.com/jetpack-compose-theme/)
 
 
-### « Using Hex Colors in Jetpack Compose ». DeveloperMemos. https://developermemos.com/posts/using-hex-colors-compose
+### * [« Using Hex Colors in Jetpack Compose » - DeveloperMemos](https://developermemos.com/posts/using-hex-colors-compose)
 5.9 Spacer()
 
 
@@ -1149,10 +1173,10 @@ Column {
 #### Pour plus d'information
 
 
-« Spacer ». Jetpack Compose Playground. https://foso.github.io/Jetpack-Compose-Playground/foundation/layout/spacer/
+* [« Spacer » - Jetpack Compose Playground](https://foso.github.io/Jetpack-Compose-Playground/foundation/layout/spacer/)
 
 
-### « Support different pixel densities ». Android Developers. https://developer.android.com/training/multiscreen/screendensities
+### * [« Support different pixel densities » - Android Developers](https://developer.android.com/training/multiscreen/screendensities)
 5.10 Surface()
 
 
@@ -1180,15 +1204,17 @@ Surface(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_041_img_01_324x202.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_041_img_01_324x202.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Beware of this pitfall in Jetpack Compose! ». Medium. https://medium.com/@theAndroidDeveloper/beware-of-this-pitfall-in-jetpack-compose-e39eb0949c6e
+* [« Beware of this pitfall in Jetpack Compose! » - Medium](https://medium.com/@theAndroidDeveloper/beware-of-this-pitfall-in-jetpack-compose-e39eb0949c6e)
 
 
 ### 5.11 Les formes
@@ -1241,10 +1267,10 @@ Image(
 #### Pour plus d'information
 
 
-« Canvas in Jetpack Compose ». Medium. https://blog.kotlin-academy.com/canvas-in-jetpack-compose-c6e7b651fd9b
+* [« Canvas in Jetpack Compose » - Medium](https://blog.kotlin-academy.com/canvas-in-jetpack-compose-c6e7b651fd9b)
 
 
-« Jetpack Compose in Many Shapes and Forms ». Cups of Code. https://cupsofcode.com/post/jetpack_compose_comes_in_many_shapes_path_forms/
+* [« Jetpack Compose in Many Shapes and Forms » - Cups of Code](https://cupsofcode.com/post/jetpack_compose_comes_in_many_shapes_path_forms/)
 
 
 ### 5.12 Button()
@@ -1302,7 +1328,7 @@ Button(
 #### Pour plus d'information
 
 
-« Buttons in Jetpack Compose ». Jetpack Compose. https://www.jetpackcompose.net/buttons-in-jetpack-compose
+* [« Buttons in Jetpack Compose » - Jetpack Compose](https://www.jetpackcompose.net/buttons-in-jetpack-compose)
 
 
 ### 5.13 Popup()
@@ -1394,15 +1420,17 @@ Popup(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_043_img_01_300x630.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_043_img_01_300x630.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Jetpack Compose Popup — Master It! ». Medium. https://medium.com/mobile-app-development-publication/jetpack-compose-popup-master-it-98accb23da36
+### * [« Jetpack Compose Popup — Master It! » - Medium](https://medium.com/mobile-app-development-publication/jetpack-compose-popup-master-it-98accb23da36)
 5.14 Card()
 
 
@@ -1421,9 +1449,11 @@ Card {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_044_img_01_156x76.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_044_img_01_156x76.png)
+
+
 
 
 Si on fait Ctrl +Clic sur le mot Card dans Android Studio, on voit que le Card est simplement un composable Surface qui contient un Column.
@@ -1444,9 +1474,11 @@ Card {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_044_img_02_216x136.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_044_img_02_216x136.png)
+
+
 
 
 Il est possible de modifier l'apparence du Card à l'aide de ses propriétés, par exemple sa couleur, le rayon de ses coins et sa bordure.
@@ -1470,9 +1502,11 @@ Card (
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_044_img_03_222x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_044_img_03_222x146.png)
+
+
 
 
 On peut aussi ajouter de l'élévation pour modifier légèrement le visuel.
@@ -1497,9 +1531,11 @@ Card (
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_045_img_01_240x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_045_img_01_240x164.png)
+
+
 
 
 Il existe également le composable ElevatedCard qui contient une élévation par défaut.
@@ -1523,9 +1559,11 @@ ElevatedCard  {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_045_img_02_216x133.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_045_img_02_216x133.png)
+
+
 
 
 Je vous présente ici quelques exemples intéressants de configurations avec Card ou ElevatedCard.
@@ -1545,9 +1583,11 @@ Card(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_045_img_03_220x136.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_045_img_03_220x136.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1572,9 +1612,11 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_046_img_01_220x138.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_046_img_01_220x138.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1596,9 +1638,11 @@ Card(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_046_img_02_400x98.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_046_img_02_400x98.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1633,9 +1677,11 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_046_img_03_286x234.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_046_img_03_286x234.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1671,15 +1717,17 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_047_img_01_342x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_047_img_01_342x164.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Card ». Android Developers. https://developer.android.com/jetpack/compose/components/card
+### * [« Card » - Android Developers](https://developer.android.com/jetpack/compose/components/card)
 5.15 TextField() et OutlinedTextField()
 
 
@@ -1734,14 +1782,18 @@ pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une ca
 Voici le TextField vide puis avec focus ou rempli.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_047_img_02_448x100.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_048_img_01_449x104.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_047_img_02_448x100.png)
+
+
+
+
+
+
+![Illustration](../images/page_048_img_01_449x104.png)
+
+
 
 
 ### OutlinedTextField
@@ -1767,14 +1819,18 @@ La différence entre TextField et OutlinedTextField est au niveau de l'apparence
 Voici le OutlinedTextField vide puis avec focus ou rempli.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_048_img_02_451x105.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_048_img_03_453x104.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_048_img_02_451x105.png)
+
+
+
+
+
+
+![Illustration](../images/page_048_img_03_453x104.png)
+
+
 
 
 ### supportingText
@@ -1799,9 +1855,11 @@ OutlinedTextField(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_048_img_04_453x139.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_048_img_04_453x139.png)
+
+
 
 
 ### Type de clavier
@@ -1834,29 +1892,39 @@ Les principaux types de clavier sont :
 #### Uri (semblable à Text mais la virgule est remplacée par un /)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_049_img_04_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_049_img_03_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_049_img_04_200x146.png)
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_049_img_01_200x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_049_img_02_200x128.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_049_img_05_200x128.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_049_img_03_200x146.png)
+
+
+
+
+
+
+![Illustration](../images/page_049_img_01_200x146.png)
+
+
+
+
+
+
+![Illustration](../images/page_049_img_02_200x128.png)
+
+
+
+
+
+
+![Illustration](../images/page_049_img_05_200x128.png)
+
+
 
 
 KeyboardType.Text
@@ -1927,21 +1995,20 @@ class HomeViewModel: ViewModel() {
 #### Pour plus d'information
 
 
-«  Handle user input ». Android Developers. https://developer.android.com/jetpack/compose/text/user-input
+* [« Handle user input » - Android Developers](https://developer.android.com/jetpack/compose/text/user-input)
 
 
-« Jetpack Compose Basics - How to use text field composables to meet the Material design specification ». Good Request.
-https://www.goodrequest.com/blog/jetpack-compose-basics-text-input
+* [« Jetpack Compose Basics - How to use text field composables to meet the Material design specification » - Good Request](https://www.goodrequest.com/blog/jetpack-compose-basics-text-input)
 
 
-« Textfields ». Material Design 3. https://m3.material.io/components/text-fields/overview
+* [« Textfields » - Material Design 3](https://m3.material.io/components/text-fields/overview)
 
 
-« androidx.compose.material3 - TextField ». Android Developers. https://developer.android.com/reference/kotlin/androidx/compose/material3/package-
+* [« androidx.compose.material3 - TextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
 summary#textfield
 
 
-### « androidx.compose.material3 - OutlinedTextField ». Android Developers. https://developer.android.com/reference/kotlin/androidx/compose/material3/package-
+### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
 summary
 5.16 Alignement et espacement
 
@@ -2059,19 +2126,19 @@ Text(
 #### Pour plus d'information
 
 
-« Column ». Jetpack Compose Playground. https://foso.github.io/Jetpack-Compose-Playground/layout/column/
+* [« Column » - Jetpack Compose Playground](https://foso.github.io/Jetpack-Compose-Playground/layout/column/)
 
 
-« Row ». Jetpack Compose Playground. https://foso.github.io/Jetpack-Compose-Playground/layout/row/
+* [« Row » - Jetpack Compose Playground](https://foso.github.io/Jetpack-Compose-Playground/layout/row/)
 
 
-« Composing Alignment & Arrangement ». Medium. https://zoewave.medium.com/composing-alignment-arrangement-4917d41640e9
+* [« Composing Alignment & Arrangement » - Medium](https://zoewave.medium.com/composing-alignment-arrangement-4917d41640e9)
 
 
-« Jetpack Compose: filling max width or height ». Medium. https://medium.com/rocknnull/jetpack-compose-filling-max-width-or-height-94e3af129a7b
+* [« Jetpack Compose: filling max width or height » - Medium](https://medium.com/rocknnull/jetpack-compose-filling-max-width-or-height-94e3af129a7b)
 
 
-### « Cheatsheet for centering items in Jetpack Compose ». Medium. https://proandroiddev.com/cheatsheet-for-centering-items-in-jetpack-compose-1e3534415237
+### * [« Cheatsheet for centering items in Jetpack Compose » - Medium](https://proandroiddev.com/cheatsheet-for-centering-items-in-jetpack-compose-1e3534415237)
 5.17 Changer le fond d'écran
 
 
@@ -2152,14 +2219,18 @@ fun MonApplicationTheme(
 Sans rien changer de plus, le fond d'écran sera jaune pâle ou jaune foncé selon que l'appareil est en mode clair ou en mode sombre.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_052_img_01_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_052_img_02_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_052_img_01_300x633.png)
+
+
+
+
+
+
+![Illustration](../images/page_052_img_02_300x633.png)
+
+
 
 
 ### Couleur des barres d'application
@@ -2227,9 +2298,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_053_img_01_300x640.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_053_img_01_300x640.png)
+
+
 
 
 ### Couleur des barres d'application - technique 1
@@ -2341,9 +2414,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_055_img_01_300x642.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_055_img_01_300x642.png)
+
+
 
 
 ### Image sous les barres d'application
@@ -2398,9 +2473,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_056_img_01_300x646.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_056_img_01_300x646.png)
+
+
 
 
 ### 5.18 Les fonctions expérimentales
@@ -2416,9 +2493,11 @@ API is experimental and is likely to change or to be removed in the future. ».
 Par exemple, voici ce qu'on obtenais lorsque la fonction modulable Card était expérimentale.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_056_img_02_800x122.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_056_img_02_800x122.png)
+
+
 
 
 Vous devez ajouter l'annotation ExperimentalMaterial3Api

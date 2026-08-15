@@ -15,16 +15,18 @@ Pour générer une icône pour votre application Android :
 (AppIcon). Elle doit faire idéalement 512x512 px.
 
 
-#### Rendez-vous sur le site Web IconKitchen : https://icon.kitchen
+#### Rendez-vous sur le site Web IconKitchen : [https://icon.kitchen](https://icon.kitchen)
  (il s'agit du successeur d'Android Asset Studio).
 
 
 #### Téléversez votre image puis ajustez les paramètres.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_125_img_01_1000x428.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_125_img_01_1000x428.png)
+
+
 
 
 #### Quand le résultat est satisfaisant, téléchargez le résultat.
@@ -33,9 +35,11 @@ Pour générer une icône pour votre application Android :
 #### Décompressez le fichier. Les fichiers qui nous intéressent sont dans le dossier android/res .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_125_img_02_350x424.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_125_img_02_350x424.png)
+
+
 
 
 #### Placez votre gestionnaire de fichiers et Android Studio côte-à-côte et faites glisser les icônes dans les dossiers
@@ -119,9 +123,11 @@ Vous ne pouvez cependant pas copier ce fichier directement sur le téléphone pu
 obtiendrez le message « L'application n'a pas été installée, car elle ne semble pas être valide. ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_126_img_01_311x652.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_126_img_01_311x652.png)
+
+
 
 
 Pour générer un fichier APK de débogage qui pourra être installé sur le téléphone :
@@ -130,9 +136,11 @@ Pour générer un fichier APK de débogage qui pourra être installé sur le té
 #### Dans Android Studio, rendez-vous dans le menu Build / Build App Bundle(s)/APK(s) / Build APK(s) .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_127_img_01_300x307.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_127_img_01_300x307.png)
+
+
 
 
 #### Ceci générera le fichier app-debug.apk dans le dossier app/build/outputs/apk/debug .
@@ -148,33 +156,41 @@ Pour générer un fichier APK de production :
 avec votre compte Google.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_127_img_02_300x212.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_127_img_02_300x212.png)
+
+
 
 
 #### Rendez-vous dans le menu Build / Generate Signed App Bundle/APK .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_127_img_03_300x425.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_127_img_03_300x425.png)
+
+
 
 
 #### Dans la fenêtre qui suit, sélectionnez APK.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_128_img_01_500x361.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_128_img_01_500x361.png)
+
+
 
 
 #### Cliquez sur Create New .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_128_img_02_500x361.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_128_img_02_500x361.png)
+
+
 
 
 #### Remplissez les informations demandées :
@@ -209,13 +225,15 @@ choisi d'appeler le gestionnaire de clés  release-key.jks .
 
 
 #### Remplissez les informations demandées. Les codes de pays peuvent être trouvés
-ici : https://countrycode.org
+ici : [https://countrycode.org](https://countrycode.org)
 .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_129_img_01_500x553.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_129_img_01_500x553.png)
+
+
 
 
 #### Dans le dernier écran, choisissez release  puis cliquez sur Create .
@@ -233,13 +251,13 @@ Une fois le fichier APK généré, il est possible de l'installer **à partir de
 #### Pour plus d'information
 
 
-« Préparer la publication de votre application ». Android Developer. https://developer.android.com/studio/publish/preparing?hl=fr
+* [« Préparer la publication de votre application » - Android Developer](https://developer.android.com/studio/publish/preparing?hl=fr)
 
 
-« Signer votre application en vue de sa publication sur Google Play ». Android Developer. https://developer.android.com/studio/publish/app-signing?hl=fr
+* [« Signer votre application en vue de sa publication sur Google Play » - Android Developer](https://developer.android.com/studio/publish/app-signing?hl=fr)
 
 
-### « Methods of Generating APK of Android Application ». Geeks for Geeks. https://www.geeksforgeeks.org/methods-of-generating-apk-of-android-application/
+### * [« Methods of Generating APK of Android Application » - Geeks for Geeks](https://www.geeksforgeeks.org/methods-of-generating-apk-of-android-application/)
 33.3 Publier une application sur Google Play Store
 
 
@@ -271,11 +289,11 @@ système Android
 #### L'application doit offrir une bonne expérience utilisateur
 
 
-#### Elle doit être signée à l'aide d'un certificat numérique : https://developer.android.com/studio/publish/app-signing?
+#### Elle doit être signée à l'aide d'un certificat numérique : [https://developer.android.com/studio/publish/app-signing?](https://developer.android.com/studio/publish/app-signing?)
 hl=fr
 
 
-#### Elle doit également répondre à des exigences de tests : https://support.google.com/googleplay/android-
+#### Elle doit également répondre à des exigences de tests : [https://support.google.com/googleplay/android-](https://support.google.com/googleplay/android-)
 developer/answer/14151465?sjid=9146892187004698062-NC
 
 
@@ -315,10 +333,10 @@ Les étapes de publication sont bien détaillés dans cet article : Comment publ
 #### Pour plus d'information
 
 
-« Créer et configurer votre application ». Google. https://support.google.com/googleplay/android-developer/answer/9859152?hl=fr-CA
+* [« Créer et configurer votre application » - Google](https://support.google.com/googleplay/android-developer/answer/9859152?hl=fr-CA)
 
 
-### « Publier votre application ». Google. https://support.google.com/googleplay/android-developer/answer/9859751?hl=fr-CA
+### * [« Publier votre application » - Google](https://support.google.com/googleplay/android-developer/answer/9859751?hl=fr-CA)
 33.4 Publier une application sans passer par Google Play Store
 
 
@@ -371,9 +389,11 @@ Si vous tentez d'installer l'application alors que le téléphone n'est pas conf
 provenance de sources inconnues.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_130_img_01_308x654.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_130_img_01_308x654.png)
+
+
 
 
 Vous pouvez aussi activer cette option manuellement :
@@ -388,26 +408,30 @@ Vous pouvez aussi activer cette option manuellement :
 #### Sélectionnez la source d'où provient l'application que vous désirez installer (ex : Chrome).
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_131_img_01_309x654.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_131_img_01_309x654.png)
+
+
 
 
 #### Cochez Autoriser à partir de cette source .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_131_img_02_309x653.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_131_img_02_309x653.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Différentes options de distribution ». Google Developer. https://developer.android.com/distribute/marketing-tools/alternative-distribution?hl=fr
+* [« Différentes options de distribution » - Google Developer](https://developer.android.com/distribute/marketing-tools/alternative-distribution?hl=fr)
 
 
-### « Comment installer des apps Android de sources inconnues ? ». Appaloosa. https://www.appaloosa.io/fr/blog/guides/comment-installer-app-source-inconnue-
+### * [« Comment installer des apps Android de sources inconnues ? » - Appaloosa](https://www.appaloosa.io/fr/blog/guides/comment-installer-app-source-inconnue-)
 android
 34. Exercice 4
 

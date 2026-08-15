@@ -46,9 +46,11 @@ Pour y arriver, cliquez sur les trois points verticaux dans le coin supérieur d
 fenêtre Extended Controls .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_213_img_01_400x165.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_213_img_01_400x165.png)
+
+
 
 
 L'onglet Virtual Sensors est celui qui nous intéresse ici.
@@ -57,20 +59,24 @@ L'onglet Virtual Sensors est celui qui nous intéresse ici.
 Remarquez qu'il y a deux onglets dans le haut de la page : Device Pose et Additional sensors .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_213_img_02_800x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_214_img_01_800x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_213_img_02_800x633.png)
+
+
+
+
+
+
+![Illustration](../images/page_214_img_01_800x633.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Sensors overview ». Android Developers. https://developer.android.com/guide/topics/sensors/sensors_overview
+### * [« Sensors overview » - Android Developers](https://developer.android.com/guide/topics/sensors/sensors_overview)
 75.2 Déclarer l'utilisation des capteurs
 
 
@@ -123,10 +129,10 @@ Si l'application utilise un capteur qui fournit des données sensibles, par exem
 #### Pour plus d'information
 
 
-« Demander l'autorisation d'accéder à la position ». Android Developers. https://developer.android.com/training/location/permissions?hl=fr
+* [« Demander l'autorisation d'accéder à la position » - Android Developers](https://developer.android.com/training/location/permissions?hl=fr)
 
 
-« Understanding Sensor Rate Limitations in Android 13 ». Geeks for Geeks. https://www.geeksforgeeks.org/understanding-sensor-rate-limitations-in-android-13/
+* [« Understanding Sensor Rate Limitations in Android 13 » - Geeks for Geeks](https://www.geeksforgeeks.org/understanding-sensor-rate-limitations-in-android-13/)
 
 
 ### 75.3 Utiliser un capteur sur un téléphone Android
@@ -345,18 +351,18 @@ fun MonComposable() {
 
 > **Source** : 
 
-### 1. « Présentation des capteurs ». Android Developer. https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview?hl=fr#unregister-
+### 1. * [« Présentation des capteurs » - Android Developer](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview?hl=fr#unregister-)
 sensor-listeners
 
 
 #### Pour plus d'information
 
 
-« How to Implement Motion Sensor in a Kotlin App ». JetRuby Agency JetRuby Agency. https://expertise.jetruby.com/how-to-implement-motion-sensor-in-a-kotlin-
+* [« How to Implement Motion Sensor in a Kotlin App » - JetRuby Agency JetRuby Agency](https://expertise.jetruby.com/how-to-implement-motion-sensor-in-a-kotlin-)
 app-b70db1b5b8e5
 
 
-### « How to Use Device Sensors the Right Way in Android - Android Studio Tutorial ». YouTube. https://www.youtube.com/watch?v=IU-EAtITRRM
+### * [« How to Use Device Sensors the Right Way in Android - Android Studio Tutorial » - YouTube](https://www.youtube.com/watch?v=IU-EAtITRRM)
 76. Exercice 14
 
 

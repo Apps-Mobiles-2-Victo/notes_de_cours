@@ -21,17 +21,21 @@ Icon(imageVector = Icons.Default.Home, contentDescription = "home")
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_118_img_01_142x140.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_118_img_01_142x140.png)
+
+
 
 
 Pour connaître la liste des icônes disponibles par défaut, entrez Icons.Default. puis parcourez la liste de suggestions.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_118_img_02_800x339.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_118_img_02_800x339.png)
+
+
 
 
 Chaque icône peut être affichée dans différents styles.
@@ -49,9 +53,11 @@ Row() {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_118_img_03_864x158.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_118_img_03_864x158.png)
+
+
 
 
 Il est possible d'appliquer des attributs et des modifieurs afin de mieux contrôler l'apparence de l'icône.
@@ -67,9 +73,11 @@ Icon(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_119_img_01_168x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_119_img_01_168x164.png)
+
+
 
 
 Autre exemple :
@@ -139,7 +147,7 @@ Icon(imageVector = Icons.Default.SwipeUp, contentDescription = "Glisser vers le 
 #### Pour plus d'information
 
 
-### « Introducing Material Symbols ». Google. https://fonts.google.com/icons?hl=fr
+### * [« Introducing Material Symbols » - Google](https://fonts.google.com/icons?hl=fr)
 32. Les préférences utilisateur
 
 

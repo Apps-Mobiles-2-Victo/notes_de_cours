@@ -95,9 +95,11 @@ Card {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_181_img_01_156x76.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_181_img_01_156x76.png)
+
+
 
 
 Si on fait Ctrl +Clic sur le mot Card dans Android Studio, on voit que le Card est simplement un composable Surface qui contient un Column.
@@ -118,9 +120,11 @@ Card {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_181_img_02_216x136.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_181_img_02_216x136.png)
+
+
 
 
 Il est possible de modifier l'apparence du Card à l'aide de ses propriétés, par exemple sa couleur, le rayon de ses coins et sa bordure.
@@ -144,9 +148,11 @@ Card (
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_181_img_03_222x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_181_img_03_222x146.png)
+
+
 
 
 On peut aussi ajouter de l'élévation pour modifier légèrement le visuel.
@@ -171,9 +177,11 @@ Card (
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_182_img_01_240x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_182_img_01_240x164.png)
+
+
 
 
 Il existe également le composable ElevatedCard qui contient une élévation par défaut.
@@ -197,9 +205,11 @@ ElevatedCard  {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_182_img_02_216x133.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_182_img_02_216x133.png)
+
+
 
 
 Je vous présente ici quelques exemples intéressants de configurations avec Card ou ElevatedCard.
@@ -219,9 +229,11 @@ Card(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_182_img_03_220x136.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_182_img_03_220x136.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -246,9 +258,11 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_183_img_01_220x138.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_183_img_01_220x138.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -270,9 +284,11 @@ Card(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_183_img_02_400x98.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_183_img_02_400x98.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -307,9 +323,11 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_183_img_03_286x234.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_183_img_03_286x234.png)
+
+
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -345,15 +363,17 @@ ElevatedCard(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_184_img_01_342x164.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_184_img_01_342x164.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Card ». Android Developers. https://developer.android.com/jetpack/compose/components/card
+### * [« Card » - Android Developers](https://developer.android.com/jetpack/compose/components/card)
 61. Exercice 10
 
 

@@ -94,15 +94,17 @@ Popup(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_144_img_01_300x630.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_144_img_01_300x630.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Jetpack Compose Popup — Master It! ». Medium. https://medium.com/mobile-app-development-publication/jetpack-compose-popup-master-it-98accb23da36
+### * [« Jetpack Compose Popup — Master It! » - Medium](https://medium.com/mobile-app-development-publication/jetpack-compose-popup-master-it-98accb23da36)
 39.2 AlertDialog()
 
 
@@ -180,15 +182,17 @@ AlertDialog(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_145_img_01_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_145_img_01_300x633.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Alert dialog ». Android Developers. https://developer.android.com/jetpack/compose/components/dialog#alert
+### * [« Alert dialog » - Android Developers](https://developer.android.com/jetpack/compose/components/dialog#alert)
 39.3 Snackbar : notification de courte durée avec possibilité d'action
 
 
@@ -246,9 +250,11 @@ fun MainContent(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_146_img_01_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_146_img_01_300x633.png)
+
+
 
 
 ### Snackbar refermable
@@ -312,9 +318,11 @@ pressé
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_148_img_01_300x639.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_148_img_01_300x639.png)
+
+
 
 
 ### Snackbar avec action
@@ -353,20 +361,20 @@ Button(
 #### Pour plus d'information
 
 
-« Snackbar ». Android Developers. https://developer.android.com/jetpack/compose/components/snackbar
+* [« Snackbar » - Android Developers](https://developer.android.com/jetpack/compose/components/snackbar)
 
 
-« How to show Snackbar in Jetpack Compose? ». Medium. https://medium.com/@jurajkunier/how-to-show-snackbar-in-jetpack-compose-3f2d81891f87
+* [« How to show Snackbar in Jetpack Compose? » - Medium](https://medium.com/@jurajkunier/how-to-show-snackbar-in-jetpack-compose-3f2d81891f87)
 
 
-« Snackbars ». Material Design. https://m2.material.io/components/snackbars/android
+* [« Snackbars » - Material Design](https://m2.material.io/components/snackbars/android)
 
 
-« Advanced work with the Snackbar in the Jetpack Compose ». Medium. https://proandroiddev.com/advanced-work-with-the-snackbar-in-the-jetpack-compose-
+* [« Advanced work with the Snackbar in the Jetpack Compose » - Medium](https://proandroiddev.com/advanced-work-with-the-snackbar-in-the-jetpack-compose-)
 9bb7b7a30d60
 
 
-### « How to Show Snackbars Across Multiple Screens in Jetpack Compose ». Medium. https://betterprogramming.pub/how-to-show-snackbars-across-multiple-
+### * [« How to Show Snackbars Across Multiple Screens in Jetpack Compose » - Medium](https://betterprogramming.pub/how-to-show-snackbars-across-multiple-)
 screen-in-jetpack-compose-dd4b40c6829a
 39.4 Toast : notification de courte durée
 
@@ -406,21 +414,23 @@ Button(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_149_img_01_338x86.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_149_img_01_338x86.png)
+
+
 
 
 > **Source** : 
 
-### 1. « Présentation des notifications toast - Alternatives à l'utilisation des toasts ». Android Developers. https://developer.android.com/guide/topics/ui/notifiers/toasts?
+### 1. * [« Présentation des notifications toast - Alternatives à l'utilisation des toasts » - Android Developers](https://developer.android.com/guide/topics/ui/notifiers/toasts?)
 hl=fr#alternatives_to_using_toasts
 
 
 #### Pour plus d'information
 
 
-### « Présentation des notifications toast ». Android Developers. https://developer.android.com/guide/topics/ui/notifiers/toasts?hl=fr
+### * [« Présentation des notifications toast » - Android Developers](https://developer.android.com/guide/topics/ui/notifiers/toasts?hl=fr)
 40. Exercice 5
 
 

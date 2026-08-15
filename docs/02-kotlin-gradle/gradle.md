@@ -43,20 +43,19 @@ Un même projet peut contenir des fichiers de configurations dans l'un et l'autr
 
 > **Source** : 
 
-## 1. « Configurer votre build ». Android Developers. https://developer.android.com/studio/build?hl=fr
+## 1. * [« Configurer votre build » - Android Developers](https://developer.android.com/studio/build?hl=fr)
 
 
 #### Pour plus d'information
 
 
-« Conseils pratiques et recettes Gradle ». Android Developers. https://developer.android.com/studio/build/gradle-tips?hl=fr
+* [« Conseils pratiques et recettes Gradle » - Android Developers](https://developer.android.com/studio/build/gradle-tips?hl=fr)
 
 
-« Migrating build logic from Groovy to Kotlin ». Gradle.
-https://docs.gradle.org/current/userguide/migrating_from_groovy_to_kotlin_dsl.html#migrating_groovy_kotlin
+* [« Migrating build logic from Groovy to Kotlin » - Gradle](https://docs.gradle.org/current/userguide/migrating_from_groovy_to_kotlin_dsl.html#migrating_groovy_kotlin)
 
 
-### « What is Gradle Kotlin DSL ? ». Medium. https://medium.com/@talhafaki/what-is-gradle-kotlin-dsl-a995aafc5e5c
+### * [« What is Gradle Kotlin DSL ? » - Medium](https://medium.com/@talhafaki/what-is-gradle-kotlin-dsl-a995aafc5e5c)
 3.2 Fichier build.gradle ou build.gradle.kts
 
 
@@ -155,10 +154,10 @@ dependencies {
 #### Pour plus d'information
 
 
-« Configurer votre build ». Android Developers. https://developer.android.com/build?hl=fr
+* [« Configurer votre build » - Android Developers](https://developer.android.com/build?hl=fr)
 
 
-### « Differences between CompileSDK,MinSDK and TargetSDK Version ». Medium. https://hey-agrawal.medium.com/differences-between-compilesdk-minsdk-and-
+### * [« Differences between CompileSDK,MinSDK and TargetSDK Version » - Medium](https://hey-agrawal.medium.com/differences-between-compilesdk-minsdk-and-)
 targetsdk-version-6d5f720a6c8a
 3.3 Ajouter une dépendance au projet
 
@@ -190,17 +189,21 @@ Ceci peut être réalisé de différentes façons :
 #### en cliquant sur le lien Sync Now sur le bandeau qui apparaît.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_011_img_01_1000x49.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_011_img_01_1000x49.png)
+
+
 
 
 #### en cliquant sur l'icône Sync Project with Gradle Files .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_011_img_02_436x114.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_011_img_02_436x114.png)
+
+
 
 
 #### à partir de la fenêtre Build ( View / Tool Windows / Build ) en cliquant sur l'onglet Sync puis sur l'icône
@@ -237,9 +240,11 @@ Dans jetpack compose, quand vous ajoutez une dépendance dans le fichier build.g
 catalog instead. Replace with new library catalog declaration for ... ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_011_img_03_1000x112.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_011_img_03_1000x112.png)
+
+
 
 
 Ceci est dû au fait que votre projet utilise un catalogue de versions avec les numéros de versions configurés dans le fichier gradle/libs.versions.toml .
@@ -327,9 +332,11 @@ androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "medi
 Un problème subsiste : un mot apparaît en rouge avec le message « Unresolved reference ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_012_img_01_1000x99.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_012_img_01_1000x99.png)
+
+
 
 
 ### Le problème sera automatiquement réglé quand vous demanderez de **resynchroniser le

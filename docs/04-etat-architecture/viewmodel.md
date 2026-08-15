@@ -11,9 +11,11 @@ title: "Architecture avec ViewModel"
 Dans un projet Jetpack Compose de base, Android Studio montre les dossiers ui et theme fuisionnés puisqu'il n'y a rien d'autre que le dossier theme sous ui .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_153_img_01_306x192.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_153_img_01_306x192.png)
+
+
 
 
 Si vous désirez ajouter un fichier directement dans le dossier ui  :
@@ -28,17 +30,21 @@ Si vous désirez ajouter un fichier directement dans le dossier ui  :
 #### Nommez le fichier en débutant par ui suivi d'un point (ex : ui.HomeViewModel.kt).
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_153_img_02_347x280.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_153_img_02_347x280.png)
+
+
 
 
 Le fichier sera correctement créé sous le dossier ui .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_153_img_03_302x240.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_153_img_03_302x240.png)
+
+
 
 
 ### 44.2 class vs data class
@@ -70,10 +76,10 @@ val monObjet = MaClasse(1, "Une donnée")
 #### Pour plus d'information
 
 
-« Data classes ». Kotlin. https://kotlinlang.org/docs/data-classes.html
+* [« Data classes » - Kotlin](https://kotlinlang.org/docs/data-classes.html)
 
 
-### « Kotlin data class — Behind the mask ». Medium. https://proandroiddev.com/kotlin-data-class-behind-the-mask-51a05ad92ae9
+### * [« Kotlin data class — Behind the mask » - Medium](https://proandroiddev.com/kotlin-data-class-behind-the-mask-51a05ad92ae9)
 44.3 Le ViewModel comme conteneur d'état
 
 
@@ -378,9 +384,11 @@ La copie utilisera un paramètre implicite nommé it, qui représente l'objet _u
 On peut d'ailleurs voir ce paramètre dans l'IDE :
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_156_img_01_516x50.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_156_img_01_516x50.png)
+
+
 
 
 Voici un exemple de logique métier qui met à jour l'état :
@@ -622,26 +630,26 @@ build.gradle.kts (voir plus haut)
 
 > **Source** : 
 
-## 1. « Présentation de ViewModel ». Android Developers. https://developer.android.com/topic/libraries/architecture/viewmodel?hl=fr
+## 1. * [« Présentation de ViewModel » - Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=fr)
 
 
 #### Pour plus d'information
 
 
-« ViewModel et l'état dans Compose ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?
+* [« ViewModel et l'état dans Compose » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?)
 hl=fr#0
 
 
-« ViewModel Jetpack Compose Android Simple Example ». Bigknol. https://bigknol.com/jetpack-compose/viewmodel-jetpack-compose-android-simple-example/
+* [« ViewModel Jetpack Compose Android Simple Example » - Bigknol](https://bigknol.com/jetpack-compose/viewmodel-jetpack-compose-android-simple-example/)
 
 
-« Make sure to update your StateFlow safely in Kotlin! ». Droidcon. https://www.droidcon.com/2021/08/25/make-sure-to-update-your-stateflow-safely-in-kotlin/
+* [« Make sure to update your StateFlow safely in Kotlin! » - Droidcon](https://www.droidcon.com/2021/08/25/make-sure-to-update-your-stateflow-safely-in-kotlin/)
 
 
-« View Model Creation in Jetpack Compose ». dev.to. https://dev.to/vtsen/view-model-creation-in-jetpack-compose-2b9e
+* [« View Model Creation in Jetpack Compose » - dev.to](https://dev.to/vtsen/view-model-creation-in-jetpack-compose-2b9e)
 
 
-### « Getting started with Jetpack Compose - StateFlow ». Sentry. https://blog.sentry.io/getting-started-with-jetpack-compose/#stateflow
+### * [« Getting started with Jetpack Compose - StateFlow » - Sentry](https://blog.sentry.io/getting-started-with-jetpack-compose/#stateflow)
 44.4 Plus petit ancêtre commun des fonctions qui ont besoin du ViewModel
 
 
@@ -858,11 +866,11 @@ Par contre, cette technique pourrait être intéressante des différentes situat
 #### Pour plus d'information
 
 
-« Créer des ViewModels avec des dépendances ». Android Developers. https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories?
+* [« Créer des ViewModels avec des dépendances » - Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories?)
 hl=fr
 
 
-### « Why Use ViewModel Factory? Understanding Parameterized ViewModels ». Medium. https://medium.com/@dilip2882/why-use-viewmodel-factory-understanding-
+### * [« Why Use ViewModel Factory? Understanding Parameterized ViewModels » - Medium](https://medium.com/@dilip2882/why-use-viewmodel-factory-understanding-)
 parameterized-viewmodels-2dbfcf92a11d
 70. Exercice 12
 

@@ -17,17 +17,21 @@ Comme première application Android, comme le veut la tradition, nous allons aff
 #### Dans l'écran d'accueil d'Android Studio, cliquez sur New Project .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_078_img_01_800x650.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_078_img_01_800x650.png)
+
+
 
 
 #### Dans la zone de gauche, sélectionnez Phone and Tablet . Dans la zone de droite, choisissez Empty Activity .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_078_img_02_800x603.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_078_img_02_800x603.png)
+
+
 
 
 #### Configurez votre projet en suivant ces consignes :
@@ -77,25 +81,31 @@ Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJ
 #### Build configuration language  : entrez Kotlin DSL.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_079_img_01_800x604.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_079_img_01_800x604.png)
+
+
 
 
 #### Quand vous cliquez sur Create , Android Studio télécharge les bibliothèques requises et crée les fichiers de base.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_079_img_02_1000x551.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_079_img_02_1000x551.png)
+
+
 
 
 #### Même lorsque le projet semble prêt, vous devez continuer à patienter.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_080_img_01_400x119.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_080_img_01_400x119.png)
+
+
 
 
 #### Quand le projet est prêt, vous pouvez obtenir un aperçu de l'application. Cliquez sur Split dans le coin supérieur
@@ -104,17 +114,21 @@ Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJ
 #### droit. Un message vous indique que vous devez d'abord compiler l'application. Cliquez sur le lien Build & Refresh .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_080_img_02_500x462.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_080_img_02_500x462.png)
+
+
 
 
 #### Une prévisualisation de l'écran apparaît dans la zone de droite.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_080_img_03_1000x551.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_080_img_03_1000x551.png)
+
+
 
 
 #### Pour voir l'application telle qu'elle apparaîtra sur un téléphone, cliquez sur l'icône  Run dans la barre d'outils (icône
@@ -128,15 +142,17 @@ créera un.
 #### téléphone. Le visuel est beaucoup plus intéressant qu'avec la simple prévisualisation.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_081_img_01_1000x551.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_081_img_01_1000x551.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Démarrage rapide ». Android Developers. https://developer.android.com/jetpack/compose/setup?hl=fr
+### * [« Démarrage rapide » - Android Developers](https://developer.android.com/jetpack/compose/setup?hl=fr)
 13. Android Studio
 
 
@@ -159,18 +175,22 @@ Si vous ne le faites pas, Android Studio mettra le nom de la classe en rouge pou
 Vous pouvez placer la souris sur le mot en rouge pour voir ce que l'éditeur propose. Un clic sur import vous permettra d'ajouter l'instruction manquante.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_097_img_02_400x77.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_097_img_02_400x77.png)
+
+
 
 
 Au lieu de pointer le mot en rouge, vous pouvez cliquer dessus. Vous pourrez alors appuyer sur Alt + Entrée (Windows) ou ⌥ Option + Entrée (Mac) pour
 ajouter l'instruction import manquante.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_097_img_03_800x106.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_097_img_03_800x106.png)
+
+
 
 
 Dans les deux cas, si plusieurs options sont disponibles, vous serez invités à choisir celle qui vous convient.

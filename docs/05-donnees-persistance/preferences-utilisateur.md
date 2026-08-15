@@ -285,9 +285,11 @@ Il est possible de consulter le contenu du Preferences DataStore à l'aide d'And
 n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_122_img_01_1000x347.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_122_img_01_1000x347.png)
+
+
 
 
 #### Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide
@@ -346,28 +348,28 @@ context.filesDir.resolve("settings.preferences_pb").absolutePath }
 #### Pour plus d'information
 
 
-« DataStore ». Android Developer. https://developer.android.com/topic/libraries/architecture/datastore?hl=fr#kts
+* [« DataStore » - Android Developer](https://developer.android.com/topic/libraries/architecture/datastore?hl=fr#kts)
 
 
-« Utiliser Preferences DataStore - 4. DataStore : principes de base ». Android Developers. https://developer.android.com/codelabs/android-preferences-datastore?
+* [« Utiliser Preferences DataStore - 4. DataStore : principes de base » - Android Developers](https://developer.android.com/codelabs/android-preferences-datastore?)
 hl=fr#3
 
 
-« Persistent Data Storage Using DataStore (Preferences) in Jetpack Compose ». Medium. https://medium.com/@rowaido.game/persistent-data-storage-using-
+* [« Persistent Data Storage Using DataStore (Preferences) in Jetpack Compose » - Medium](https://medium.com/@rowaido.game/persistent-data-storage-using-)
 datastore-preferences-in-jetpack-compose-90c481bfed12
 
 
-« Demystifying DataStore: A Comprehensive Guide to Using DataStore with Jetpack Compose ». Medium. https://proandroiddev.com/demystifying-datastore-a-
+* [« Demystifying DataStore: A Comprehensive Guide to Using DataStore with Jetpack Compose » - Medium](https://proandroiddev.com/demystifying-datastore-a-)
 comprehensive-guide-to-using-datastore-with-jetpack-compose-d89c813232d7
 
 
-« If use Jetpack compose don't use Shared Preference ». dev.to. https://dev.to/thecoder93/if-use-jetpack-compose-dont-use-shared-preference-p8p
+* [« If use Jetpack compose don't use Shared Preference » - dev.to](https://dev.to/thecoder93/if-use-jetpack-compose-dont-use-shared-preference-p8p)
 
 
-« Preference DataStore (The Generic Way) ». Medium. https://proandroiddev.com/preference-datastore-the-generic-way-d26b11f1075f
+* [« Preference DataStore (The Generic Way) » - Medium](https://proandroiddev.com/preference-datastore-the-generic-way-d26b11f1075f)
 
 
-### « Consuming flows safely in Jetpack Compose ». Manuel.vivo.dev. https://manuelvivo.dev/consuming-flows-compose
+### * [« Consuming flows safely in Jetpack Compose » - Manuel.vivo.dev](https://manuelvivo.dev/consuming-flows-compose)
 32.2 Travailler avec le Preferences DataStore dans une fonction non composable
 
 
@@ -474,13 +476,13 @@ Selon la documentation officielle de Android Developers
 
 > **Source** : 
 
-## 1. « DataStore ». Android Developers. https://developer.android.com/topic/libraries/architecture/datastore?hl=fr
+## 1. * [« DataStore » - Android Developers](https://developer.android.com/topic/libraries/architecture/datastore?hl=fr)
 
 
 #### Pour plus d'information
 
 
-### «  Enregistrer des données simples avec SharedPreferences ». Android Developers. https://developer.android.com/training/data-storage/shared-preferences?hl=fr
+### * [« Enregistrer des données simples avec SharedPreferences » - Android Developers](https://developer.android.com/training/data-storage/shared-preferences?hl=fr)
 33. Publier une application
 
 

@@ -178,10 +178,10 @@ Voici quelques pistes de solution :
 #### b. J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
 
 
-#### https://github.com/erdo/commercial-template/blob/main/change_package.sh
+#### [https://github.com/erdo/commercial-template/blob/main/change_package.sh](https://github.com/erdo/commercial-template/blob/main/change_package.sh)
  (discussion reddit qui m'a
 mené à ce script :
-https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?
+[https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?)
 tl=fr
 )
 
@@ -309,7 +309,7 @@ les questions théoriques. Répondez-y en équipe de deux.
 
 
 ### 3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
-Cat Facts : https://catfact.ninja
+Cat Facts : [https://catfact.ninja](https://catfact.ninja)
 .
 
 

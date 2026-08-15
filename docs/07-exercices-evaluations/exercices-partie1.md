@@ -32,7 +32,7 @@ Android à l'écran]** et faites-la tourner dans l'émulateur (pas seulement dan
 
 
 ### 4. Créez une nouvelle application nommée Tutoriel. Suivez le
-tutoriel https://developer.android.com/jetpack/compose/tutorial?hl=fr
+tutoriel [https://developer.android.com/jetpack/compose/tutorial?hl=fr](https://developer.android.com/jetpack/compose/tutorial?hl=fr)
 
 
 ## 20. Pour le prochain cours
@@ -276,9 +276,11 @@ sideload).
 une autre petite application à partir de son fichier .apk
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_132_img_01_300x300.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_132_img_01_300x300.png)
+
+
 
 
 ### 9. Fournissez le fichier APK de votre application à un de vos collègues pour qu'il l'installe sur son téléphone (publication

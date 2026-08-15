@@ -185,14 +185,14 @@ fun Jouer(points: Int, onPointsChange: (Int) -> Unit ) {
 #### Pour plus d'information
 
 
-« État et Jetpack Compose - Hisser un état ». Android Developers. https://developer.android.com/jetpack/compose/state?hl=fr#state-hoisting
+* [« État et Jetpack Compose - Hisser un état » - Android Developers](https://developer.android.com/jetpack/compose/state?hl=fr#state-hoisting)
 
 
-« Unlock the Power of State Hoisting in Jetpack Compose ». Medium. https://medium.com/@tenigada/unlock-the-power-of-state-hoisting-in-jetpack-compose-
+* [« Unlock the Power of State Hoisting in Jetpack Compose » - Medium](https://medium.com/@tenigada/unlock-the-power-of-state-hoisting-in-jetpack-compose-)
 574f742c4721
 
 
-### « Où hisser l'état? ». Android Developers. https://developer.android.com/jetpack/compose/state-hoisting?hl=fr
+### * [« Où hisser l'état? » - Android Developers](https://developer.android.com/jetpack/compose/state-hoisting?hl=fr)
 29. Exercice 3
 
 
@@ -226,11 +226,10 @@ if (afficherFinPartie) {
 #### Pour plus d'information
 
 
-« Effets secondaires dans Compose - derivedStateOf : convertir un ou plusieurs objets d'état en un autre état ». Android Developers.
-https://developer.android.com/jetpack/compose/side-effects?hl=fr#derivedstateof
+* [« Effets secondaires dans Compose - derivedStateOf : convertir un ou plusieurs objets d'état en un autre état » - Android Developers](https://developer.android.com/jetpack/compose/side-effects?hl=fr#derivedstateof)
 
 
-« Jetpack Compose: remember, mutableStateOf, derivedStateOf and rememberSaveable explained ». Medium. https://stefma.medium.com/jetpack-compose-
+* [« Jetpack Compose: remember, mutableStateOf, derivedStateOf and rememberSaveable explained » - Medium](https://stefma.medium.com/jetpack-compose-)
 remember-mutablestateof-derivedstateof-and-remembersaveable-explained-270dbaa61b8
 
 
@@ -436,21 +435,19 @@ private fun AfficherItems(items: List<String>) {
 
 > **Source** : 
 
-## 1. « État et Jetpack Compose ». Android Developers. https://developer.android.com/jetpack/compose/state?hl=fr
+## 1. * [« État et Jetpack Compose » - Android Developers](https://developer.android.com/jetpack/compose/state?hl=fr)
 
 
-## 2. « État et Jetpack Compose ». Android Developers. https://developer.android.com/jetpack/compose/state?hl=fr
+## 2. * [« État et Jetpack Compose » - Android Developers](https://developer.android.com/jetpack/compose/state?hl=fr)
 
 
 #### Pour plus d'information
 
 
-« Can I use State<ArrayList> or State<mutableListOf()> for observed by Compose to trigger recomposition when they change? ». Stack Overflow.
-https://stackoverflow.com/questions/71151322/can-i-use-statearraylistt-or-statemutablelistof-for-observed-by-compose
+* [« Can I use State<ArrayList> or State<mutableListOf()> for observed by Compose to trigger recomposition when they change? » - Stack Overflow](https://stackoverflow.com/questions/71151322/can-i-use-statearraylistt-or-statemutablelistof-for-observed-by-compose)
 
 
-### « There are three ways to declare a MutableState object in a composable ». Reddit.
-https://www.reddit.com/r/androiddev/comments/rqdv5g/there_are_three_ways_to_declare_a_mutablestate/
+### * [« There are three ways to declare a MutableState object in a composable » - Reddit](https://www.reddit.com/r/androiddev/comments/rqdv5g/there_are_three_ways_to_declare_a_mutablestate/)
 80. Optimiser l'application
 
 

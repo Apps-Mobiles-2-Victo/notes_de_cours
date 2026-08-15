@@ -35,9 +35,11 @@ Text(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_057_img_01_290x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_057_img_01_290x146.png)
+
+
 
 
 ```kotlin title="Kotlin"
@@ -50,9 +52,11 @@ Text(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_057_img_02_254x74.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_057_img_02_254x74.png)
+
+
 
 
 ```kotlin title="Kotlin"
@@ -65,9 +69,11 @@ Text(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_057_img_03_254x126.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_057_img_03_254x126.png)
+
+
 
 
 ```kotlin title="Kotlin"
@@ -80,9 +86,11 @@ Text(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_057_img_04_392x146.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_057_img_04_392x146.png)
+
+
 
 
 ### 6.2 size()
@@ -119,15 +127,17 @@ Column(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_058_img_01_300x640.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_058_img_01_300x640.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « androidx.compose.foundation.layout - size ». Android Developer. https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-
+### * [« androidx.compose.foundation.layout - size » - Android Developer](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-)
 summary#size
 6.3 style()
 
@@ -210,9 +220,11 @@ Row() {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_059_img_01_300x638.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_059_img_01_300x638.png)
+
+
 
 
 Si le poids est donné dans une colonne, il affectera la hauteur du composable.
@@ -240,9 +252,11 @@ Column() {
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_060_img_01_300x638.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_060_img_01_300x638.png)
+
+
 
 
 ### 6.6 .clickable()
@@ -282,7 +296,7 @@ Image(
 #### Pour plus d'information
 
 
-« Using the Clickable Modifier in Jetpack Compose ». DeveloperMemos. https://developermemos.com/posts/jetpack-compose-clickable
+* [« Using the Clickable Modifier in Jetpack Compose » - DeveloperMemos](https://developermemos.com/posts/jetpack-compose-clickable)
 
 
 ### 6.7 Modifieur conditionnel

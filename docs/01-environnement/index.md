@@ -48,9 +48,11 @@ title: "Introduction et vue d'ensemble du cours"
 ### 1.1 Horaire et coordonnées de Christiane Lagacé - session d'automne
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_002_img_01_93x95.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_002_img_01_93x95.png)
+
+
 
 
 ### Christiane Lagacé, Automne 2025
@@ -1414,9 +1416,9 @@ Apical, Teams
 ### Médiagraphie
 
 
-Android Jetpack, https://developer.android.com/jetpack
+Android Jetpack, [https://developer.android.com/jetpack](https://developer.android.com/jetpack)
  (Page consultée le 7 juillet 2021)
-React Native, https://reactnative.dev/
+React Native, [https://reactnative.dev/](https://reactnative.dev/)
  (Page consultée le 29 avril 2024)
 
 
@@ -1430,13 +1432,15 @@ Au moins un appareil mobile Android fourni par le département, partagé par les
 ### 1.3 Site Web du département
 
 
-Une foule de renseignements ont été consignés à votre intention sur le site https://techinfo.profinfo.ca
+Une foule de renseignements ont été consignés à votre intention sur le site [https://techinfo.profinfo.ca](https://techinfo.profinfo.ca)
 .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_009_img_02_1000x491.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_009_img_02_1000x491.png)
+
+
 
 
 ## 2. Installation sur votre portable
@@ -1449,9 +1453,11 @@ Une foule de renseignements ont été consignés à votre intention sur le site 
 ### 8.1 Grille de cours du programme Techniques de l'informatique
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_071_img_01_2916x4512.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_071_img_01_2916x4512.png)
+
+
 
 
 ## 9. Extraits de code tirés des notes de cours ou du Web
@@ -1470,9 +1476,11 @@ Pendant que je vous donne des explications en début de période, vous devez pla
 De cette façon, vous serez plus disponibles pour recevoir ce que je vous communique.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_074_img_01_800x533.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_074_img_01_800x533.png)
+
+
 
 
 Image générée à l'aide de l'intelligence artificielle

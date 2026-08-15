@@ -14,7 +14,7 @@ title: "Notifications Android"
 #### Pour plus d'information
 
 
-« Créer une notification ». Android Developer. https://developer.android.com/develop/ui/views/notifications/build-notification?hl=fr
+* [« Créer une notification » - Android Developer](https://developer.android.com/develop/ui/views/notifications/build-notification?hl=fr)
 
 
 

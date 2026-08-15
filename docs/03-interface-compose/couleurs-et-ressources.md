@@ -85,14 +85,18 @@ fun MonApplicationTheme(
 Sans rien changer de plus, le fond d'écran sera jaune pâle ou jaune foncé selon que l'appareil est en mode clair ou en mode sombre.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_138_img_01_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_138_img_02_300x633.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_138_img_01_300x633.png)
+
+
+
+
+
+
+![Illustration](../images/page_138_img_02_300x633.png)
+
+
 
 
 ### Couleur des barres d'application
@@ -160,9 +164,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_139_img_01_300x640.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_139_img_01_300x640.png)
+
+
 
 
 ### Couleur des barres d'application - technique 1
@@ -274,9 +280,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_141_img_01_300x642.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_141_img_01_300x642.png)
+
+
 
 
 ### Image sous les barres d'application
@@ -331,9 +339,11 @@ Box(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_142_img_01_300x646.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_142_img_01_300x646.png)
+
+
 
 
 ## 38. Le hasard
@@ -389,7 +399,7 @@ val nombre = Random.nextInt(10)   // nombre entre 0 (inclus) et 10 (exclu)
 #### Pour plus d'information
 
 
-« Finding out random numbers in Kotlin ». Code vs Color. https://www.codevscolor.com/kotlin-random-numbers
+* [« Finding out random numbers in Kotlin » - Code vs Color](https://www.codevscolor.com/kotlin-random-numbers)
 
 
 ### 38.2 Sélectionner au hasard un élément d'une collection

@@ -59,9 +59,11 @@ LazyColumn(
 ```
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_173_img_01_700x872.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_173_img_01_700x872.png)
+
+
 
 
 ### Erreur No value passed for parameter 'count'
@@ -70,9 +72,11 @@ LazyColumn(
 Si vous ajoutez un LazyColumn et que vous obtenez l'erreur « No value passed for parameter 'count' », c'est probablement dû à une erreur de import.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_173_img_02_800x345.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_173_img_02_800x345.png)
+
+
 
 
 Pour corriger le problème, vous devez ajouter cette instruction import.
@@ -89,7 +93,7 @@ import androidx.compose.foundation.lazy.items
 #### Pour plus d'information
 
 
-### « Mises en page de base dans Compose - Grille de collections préférées : grilles différées ». Android Developers. https://developer.android.com/codelabs/jetpack-
+### * [« Mises en page de base dans Compose - Grille de collections préférées : grilles différées » - Android Developers](https://developer.android.com/codelabs/jetpack-)
 compose-layouts?hl=fr#7
 56. Exercice 9
 

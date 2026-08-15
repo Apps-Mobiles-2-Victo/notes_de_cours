@@ -27,7 +27,7 @@ Autre exemple : l'effet secondaire **DisposableEffect** permet d'effectuer des t
 
 > **Source** : 
 
-## 1. « Effets secondaires dans Compose ». Android Developer. https://developer.android.com/develop/ui/compose/side-effects?hl=fr
+## 1. * [« Effets secondaires dans Compose » - Android Developer](https://developer.android.com/develop/ui/compose/side-effects?hl=fr)
 
 
 ### 67.2 LaunchedEffect
@@ -66,11 +66,11 @@ fun MainScreen() {
 #### Pour plus d'information
 
 
-«  Jetpack Compose Side Effects — LaunchedEffect With Example ». Medium. https://betterprogramming.pub/jetpack-compose-side-effects-launchedeffect-with-
+* [« Jetpack Compose Side Effects — LaunchedEffect With Example » - Medium](https://betterprogramming.pub/jetpack-compose-side-effects-launchedeffect-with-)
 example-99c2f51ff463
 
 
-« How to Use Render Effects in Jetpack Compose for Stunning Visuals ». Canopas. https://canopas.com/how-to-use-render-effects-in-jetpack-compose-for-
+* [« How to Use Render Effects in Jetpack Compose for Stunning Visuals » - Canopas](https://canopas.com/how-to-use-render-effects-in-jetpack-compose-for-)
 stunning-visuals-01287d7f00db
 
 

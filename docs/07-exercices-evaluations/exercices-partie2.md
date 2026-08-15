@@ -505,7 +505,7 @@ Vous disposez d' un cours pour acquérir les connaissances théoriques et finali
 ### 48.1 Jeu Simon
 
 
-Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon
+Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : [https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon](https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon)
 ).
 
 
@@ -572,7 +572,7 @@ séquence.
 
 
 #### OPTIONNEL : associez un son à chacun des boutons, comme dans le vrai jeu (vous pouvez utiliser ces sons :
-https://sounddino.com/en/effects/notes/
+[https://sounddino.com/en/effects/notes/](https://sounddino.com/en/effects/notes/)
 ). Le son sera entendu quand l'application montre la séquence à reproduire
 de même que quand l'usager cliquera sur les boutons.
 

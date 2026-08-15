@@ -59,9 +59,11 @@ Si vous utilisez la syntaxe by remember et que vous oubliez les deux import, vou
 KProperty<*>)' and thus it cannot serve as a delegate ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_099_img_01_800x79.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_099_img_01_800x79.png)
+
+
 
 
 !!! warning "Attention : si vous "
@@ -72,7 +74,7 @@ fiche : « **mutablelistof_comme_variable_d_etat** ».
 #### Pour plus d'information
 
 
-« What does 'by' keyword do in Kotlin? ». StackOverflow. https://stackoverflow.com/questions/38250022/what-does-by-keyword-do-in-kotlin
+* [« What does 'by' keyword do in Kotlin? » - StackOverflow](https://stackoverflow.com/questions/38250022/what-does-by-keyword-do-in-kotlin)
 
 
 ### 21.2 Où déclarer les variables d'état?
@@ -173,8 +175,7 @@ fun MainScreen() {
 
 > **Source** : 
 
-### 1. « Structurer votre interface utilisateur Compose - Les événements dans Compose ». Android Developers.
-https://developer.android.com/jetpack/compose/architecture?hl=fr#architecture-events
+### 1. * [« Structurer votre interface utilisateur Compose - Les événements dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/architecture?hl=fr#architecture-events)
 
 
 ## 22. Case de saisie

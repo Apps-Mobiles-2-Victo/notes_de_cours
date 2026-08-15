@@ -37,22 +37,22 @@ fun Greeting(name: String) {
 #### Pour plus d'information
 
 
-« Créez de meilleures applications plus rapidement avec Jetpack Compose ». Android Developers. https://developer.android.com/jetpack/compose?hl=fr
+* [« Créez de meilleures applications plus rapidement avec Jetpack Compose » - Android Developers](https://developer.android.com/jetpack/compose?hl=fr)
 
 
-« Tutoriel Jetpack Compose ». Android Developers. https://developer.android.com/jetpack/compose/tutorial?hl=fr
+* [« Tutoriel Jetpack Compose » - Android Developers](https://developer.android.com/jetpack/compose/tutorial?hl=fr)
 
 
-« Qu’est ce que Jetpack Compose ? Conseils,  ». mobiskill. https://mobiskill.fr/blog/conseils-emploi-tech/quest-ce-que-jetpack-compose/
+* [« Qu’est ce que Jetpack Compose ? Conseils, » - mobiskill](https://mobiskill.fr/blog/conseils-emploi-tech/quest-ce-que-jetpack-compose/)
 
 
-« Flutter est mort; Vive Jetpack Compose. ». Kossi Mathias KALIPE. https://fr.linkedin.com/pulse/flutter-est-mort-vive-jetpack-compose-mathias-kalipe-
+* [« Flutter est mort; Vive Jetpack Compose. » - Kossi Mathias KALIPE](https://fr.linkedin.com/pulse/flutter-est-mort-vive-jetpack-compose-mathias-kalipe-)
 
 
-« The Ultimate Jetpack Compose Cheat Sheet ». HackerNoon. https://hackernoon.com/the-ultimate-jetpack-compose-cheat-sheet
+* [« The Ultimate Jetpack Compose Cheat Sheet » - HackerNoon](https://hackernoon.com/the-ultimate-jetpack-compose-cheat-sheet)
 
 
-« Introducing the Compose Material Catalog ». Material Design Blog. https://material.io/blog/jetpack-compose-catalog
+* [« Introducing the Compose Material Catalog » - Material Design Blog](https://material.io/blog/jetpack-compose-catalog)
 
 
 ### 15.2 Les fonctions modulables
@@ -81,13 +81,13 @@ fun Greeting(name: String) {
 #### Pour plus d'information
 
 
-« Lifecycle of composables ». Android Developer. https://developer.android.com/develop/ui/compose/lifecycle
+* [« Lifecycle of composables » - Android Developer](https://developer.android.com/develop/ui/compose/lifecycle)
 
 
-« Compose layout basics ». Android Developer. https://developer.android.com/develop/ui/compose/layouts/basics
+* [« Compose layout basics » - Android Developer](https://developer.android.com/develop/ui/compose/layouts/basics)
 
 
-« Thinking in Compose ». Android Developer. https://developer.android.com/develop/ui/compose/mental-model
+* [« Thinking in Compose » - Android Developer](https://developer.android.com/develop/ui/compose/mental-model)
 
 
 ### 15.3 Par où commence le code de mon application?

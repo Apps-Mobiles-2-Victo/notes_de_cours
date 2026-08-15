@@ -129,15 +129,15 @@ mention « Code généré par » suivie de la référence au format Auteur. (Ann
 artificielle (version) [Type de modèle]. URL
 
 
-Ex : Code généré par OpenAI. (2023). ChatGPT (version 15 mars 2023) [Modèle massif de langage]. https://chat.openai.com/chat
+Ex : Code généré par OpenAI. (2023). ChatGPT (version 15 mars 2023) [Modèle massif de langage]. [https://chat.openai.com/chat](https://chat.openai.com/chat)
 
 
 ou encore : Code généré par Microsoft. (2024). Microsoft Copilot (version novembre 2024) [Modèle de langage basé sur l'IA].
-https://www.microsoft.com/copilot
+[https://www.microsoft.com/copilot](https://www.microsoft.com/copilot)
 
 
 ou encore : Code généré par Google AI. (2023). Gemini (version 1.2.3, 15 octobre 2023) [Modèle de langage de grande taille].
-https://gemini.google.com
+[https://gemini.google.com](https://gemini.google.com)
 
 
 #### Si vous avez adapté le code :
@@ -249,19 +249,19 @@ Afin d'éviter l'autoplagiat, vous devez obtenir la permission de l'enseignante 
 > **Source** : 
 
 ### 1. Christopher Fuhrman et Frédérick Henri, « Comment réutiliser correctement du code source dans un cours de programmation ». École de Technologie Supérieure.
-https://www.etsmtl.ca/docs/etudes/citer-pas-plagier/documents/programmation-plagiat-ets
+[https://www.etsmtl.ca/docs/etudes/citer-pas-plagier/documents/programmation-plagiat-ets](https://www.etsmtl.ca/docs/etudes/citer-pas-plagier/documents/programmation-plagiat-ets)
 
 
-## 2. « Tricherie et intégrité académique - Qu'est-ce que l'autoplagiat? ». UQAM. https://r18.uqam.ca/7-faq/13-qu-est-ce-que-l-autoplagiat.html
+## 2. * [« Tricherie et intégrité académique - Qu'est-ce que l'autoplagiat? » - UQAM](https://r18.uqam.ca/7-faq/13-qu-est-ce-que-l-autoplagiat.html)
 
 
 #### Pour plus d'information
 
 
-« Programmation et plagiat ». École de Technologie Supérieure. https://cours.etsmtl.ca/log725/private/notes/plagiat.pdf
+« Programmation et plagiat ». École de Technologie Supérieure. [https://cours.etsmtl.ca/log725/private/notes/plagiat.pdf](https://cours.etsmtl.ca/log725/private/notes/plagiat.pdf)
 
 
-### « How open source licenses work and how to add them to your projects ». freeCodeCamp. https://www.freecodecamp.org/news/how-open-source-licenses-work-
+### * [« How open source licenses work and how to add them to your projects » - freeCodeCamp](https://www.freecodecamp.org/news/how-open-source-licenses-work-)
 and-how-to-add-them-to-your-projects-34310c3cf94/
 10. Pour vous aider dans ce cours
 
@@ -385,10 +385,10 @@ HTML **à l'aide de Dokka]**.
 #### Pour plus d'information
 
 
-« Document Kotlin code: KDoc ». Kotlin. https://kotlinlang.org/docs/kotlin-doc.html
+* [« Document Kotlin code: KDoc » - Kotlin](https://kotlinlang.org/docs/kotlin-doc.html)
 
 
-« Documentation with KDoc for Kotlin/Android ». Medium. https://medium.com/@drflakelorenzgerman/documentation-with-kdoc-for-kotlin-android-a93c99dfe74
+* [« Documentation with KDoc for Kotlin/Android » - Medium](https://medium.com/@drflakelorenzgerman/documentation-with-kdoc-for-kotlin-android-a93c99dfe74)
 
 
 ### 36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc
@@ -614,14 +614,18 @@ Pour générer la documentation :
 liens qu'il propose, vous reconnaîtrez la documentation KDoc que vous avez ajoutée à votre code et même plus!
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_136_img_01_1000x738.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_136_img_02_1000x733.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_136_img_01_1000x738.png)
+
+
+
+
+
+
+![Illustration](../images/page_136_img_02_1000x733.png)
+
+
 
 
 ## 37. La couleur de fond

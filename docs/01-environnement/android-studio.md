@@ -566,7 +566,7 @@ Afficher la définition de la fonction sans se déplacer vers cette définition.
 #### Pour plus d'information
 
 
-### « Keyboard shortcuts ». Android Developers. https://developer.android.com/studio/intro/keyboard-shortcuts
+### * [« Keyboard shortcuts » - Android Developers](https://developer.android.com/studio/intro/keyboard-shortcuts)
 13.2 Certains dossiers ne s'affichent pas dans Android Studio
 
 
@@ -576,9 +576,11 @@ Android Studio vous offre plusieurs modes pour afficher les fichiers du projet.
 Selon le mode choisi, il est possible de ne voir que certains dossiers.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_085_img_01_400x284.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_085_img_01_400x284.png)
+
+
 
 
 Si certains fichiers ou dossiers ne sont pas visibles, par exemple le dossier src , c'est que le mode d'affichage réorganise les fichiers plutôt que de les montrer tels
@@ -592,17 +594,21 @@ Si vous préférez l'affichage qui correspond au système d'exploitation, clique
 sélectionnez Project  ou Project Files .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_085_img_02_400x444.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_085_img_02_400x444.png)
+
+
 
 
 Vous verrez désormais l'intégralité des fichiers et dossiers.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_086_img_01_400x749.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_086_img_01_400x749.png)
+
+
 
 
 ### 13.3 Renommer un projet
@@ -719,17 +725,21 @@ Quand on code avec Jetpack Compose, il faut ajouter de nombreuses instructions i
 Par exemple, si vous ajoutez une colonne, le mot Column ne sera à prime abord pas reconnu alors il apparaîtra en rouge.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_087_img_01_300x166.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_087_img_01_300x166.png)
+
+
 
 
 Il faut alors ajouter une instruction import. Ceci est possible entre autres en pointant la souris sur le mot Column puis en cliquant sur « Import function 'Column' ».
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_087_img_02_636x180.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_087_img_02_636x180.png)
+
+
 
 
 Cette manipulation devra être effectuée à de très nombreuses reprises pendant que vous codez.
@@ -741,9 +751,11 @@ Parfois, l'instruction import est ambigüe, c'est-à-dire qu'il faut choisir par
 Quand c'est le cas, le bon choix est souvent celui qui parle de compose ou de material3.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_088_img_01_1000x197.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_088_img_01_1000x197.png)
+
+
 
 
 ### Automatiser les import
@@ -764,9 +776,11 @@ Dans la zone Kotlin au bas de l'écran, cochez Add unambiguous imports on the fl
 Il est également possible de demander à Android Studio, de retirer les instructions import qui ne sont pas utile en cochant Optimize imports on the fly .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_088_img_02_1000x736.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_088_img_02_1000x736.png)
+
+
 
 
 ## 14. Prévisualiser vs lancer l'application dans émulateur
@@ -796,9 +810,11 @@ plantage avec le message « trying to draw too large bitmap. ».
 #### Dans Android Studio, rendez-vous dans le gestionnaire de ressources : View / Tool Windows / Resource Manager .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_095_img_01_400x326.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_095_img_01_400x326.png)
+
+
 
 
 #### Vous pouvez ajouter une image en la faisant glisser directement dans la fenêtre Resource Manager ou encore en
@@ -807,9 +823,11 @@ plantage avec le message « trying to draw too large bitmap. ».
 #### cliquant sur le + dans le coin supérieur gauche de la fenêtre et en choisissant  Import Drawables .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_096_img_01_300x283.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_096_img_01_300x283.png)
+
+
 
 
 #### Une fois l'image choisie ou glissée, la fenêtre Import Drawables montre l'image que vous êtes sur le point d'importer.
@@ -823,9 +841,11 @@ programmation.
 serpent]** pour nommer les ressources.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_096_img_02_800x560.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_096_img_02_800x560.png)
+
+
 
 
 #### Pour l'instant, cliquez simplement sur Next puis sur Import . L'image est importée dans le dossier
@@ -838,19 +858,21 @@ Si le dossier src n'est pas visible dans Android Studio, cliquez sur la liste d�
 sélectionnez Project .
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_097_img_01_400x444.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_097_img_01_400x444.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Gérer les ressources d'UI de votre application avec le gestionnaire de ressources ». Android Developers. https://developer.android.com/studio/write/resource-
+* [« Gérer les ressources d'UI de votre application avec le gestionnaire de ressources » - Android Developers](https://developer.android.com/studio/write/resource-)
 manager?hl=fr
 
 
-### « Android Resources Naming Convention ». Softeq Development Corp. https://softeq.github.io/XToolkit.WhiteLabel/articles/practices/android-res-naming.html
+### * [« Android Resources Naming Convention » - Softeq Development Corp](https://softeq.github.io/XToolkit.WhiteLabel/articles/practices/android-res-naming.html)
 17. Instructions import
 
 

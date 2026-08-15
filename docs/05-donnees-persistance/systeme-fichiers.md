@@ -35,17 +35,21 @@ la base de données.
 #### Cliquez sur le nom d'une table pour voir sa structure.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_170_img_01_400x336.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_170_img_01_400x336.png)
+
+
 
 
 #### Double-cliquez sur le nom d'une table pour voir ses données.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_170_img_02_1000x182.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_170_img_02_1000x182.png)
+
+
 
 
 #### Cliquez sur l'icône Open New Query Tab pour pouvoir entrer une requête SQL. Vous pouvez ensuite faire des requête
@@ -54,14 +58,18 @@ la base de données.
 #### SELECT, INSERT, UPDATE ou DELETE afin d'affecter les données de la base de données.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_170_img_03_236x70.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_170_img_04_1000x182.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+![Illustration](../images/page_170_img_03_236x70.png)
+
+
+
+
+
+
+![Illustration](../images/page_170_img_04_1000x182.png)
+
+
 
 
 ### Database closed
@@ -74,9 +82,11 @@ Effectuez une opération qui requiert une requête à la base de données, par e
 de données dans l'outil Inspection de bases de données.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_171_img_01_634x258.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_171_img_01_634x258.png)
+
+
 
 
 ### [DETACHED]
@@ -101,9 +111,11 @@ Un redémarrage de l'émulateur pourrait régler le problème :
 Si cette technique ne fonctionne pas, un redémarrage de Android Studio pourrait faire l'affaire.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_171_img_02_897x228.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_171_img_02_897x228.png)
+
+
 
 
 ### No debuggable processes detected
@@ -113,19 +125,21 @@ Dans le cas où l'inspecteur d'application ne vous donne pas du tout accès à v
 l'émulateur pourrait également régler le problème (procédure ci-haut).
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_171_img_03_1014x264.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_171_img_03_1014x264.png)
+
+
 
 
 #### Pour plus d'information
 
 
-« Déboguer votre base de données avec l'outil d'inspection de bases de données ». Android Developers. https://developer.android.com/studio/inspect/database?
+* [« Déboguer votre base de données avec l'outil d'inspection de bases de données » - Android Developers](https://developer.android.com/studio/inspect/database?)
 hl=fr
 
 
-### «  Afficher le contenu de la base de données à l'aide de l'outil d'inspection  ». Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-
+### * [« Afficher le contenu de la base de données à l'aide de l'outil d'inspection » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-)
 compose-persisting-data-room?hl=fr#9
 54.2 Voir les fichiers stockés sur un émulateur Android
 
@@ -149,15 +163,17 @@ Pour voir les fichiers stockés sur l'émulateur dans Android Studio :
 l'émulateur, etc.
 
 
-<div style="text-align: center; margin: 1.5em 0;">
-  <img src="../images/page_172_img_01_800x439.png" alt="Illustration" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" />
-</div>
+
+
+![Illustration](../images/page_172_img_01_800x439.png)
+
+
 
 
 #### Pour plus d'information
 
 
-### « Afficher les fichiers stockés sur l'appareil à l'aide de l'Explorateur de l'appareil ». Android Developers. https://developer.android.com/studio/debug/device-file-
+### * [« Afficher les fichiers stockés sur l'appareil à l'aide de l'Explorateur de l'appareil » - Android Developers](https://developer.android.com/studio/debug/device-file-)
 explorer?hl=fr
 55. Lister des données
 
