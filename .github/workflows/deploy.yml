@@ -1,0 +1,31 @@
+name: Build MkDocs then Deploy to GitHub Pages (gh-pages branch)
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+permissions:
+  contents: write # Required to allow commits to the gh-pages branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install mkdocs-material neoteroi-mkdocs # Add any other plugins here
+
+      - name: Configure Git Credentials (authorisation handled by GitHub Actions but user/mail needed in commit)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "invalid+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build and Commit to gh-pages Branch (default dest. branch name)
+        run: |
+          mkdocs gh-deploy --force
