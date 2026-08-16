@@ -53,6 +53,7 @@ La version la plus utilisée a été développée par Google. C'est une version 
 Les concepteurs d'Android ont pris l'habitude de nommer les différentes versions à l'aide d'un nom de dessert. Les noms suivent un ordre alphabétique à mesure que les versions augmentent.
 
 Voici une liste de ces versions tirée de Wikipédia.
+
 | Numéro | Nom | Niveau API | Date de sortie | Nouveautés |
 |--------|-----|------------|----------------|------------|
 | 1.0 | --- | 1 | septembre 2008 | |
@@ -77,7 +78,10 @@ Voici une liste de ces versions tirée de Wikipédia.
 | 11 | Snow Cone | (nom utilisé à l'interne) | 33 | septembre 2023 |
 | 12 | Tiramisu | (nom utilisé à l'interne) | 34 | octobre 2024 |
 | 13 | Upside Down Cake | (nom utilisé à l'interne) | 35 | juin 2025 |
-
+| 14 | Vegan Ice Cream | (nom utilisé à l'interne) | 36 | juillet 2025 |
+| 15 | Vanilla Ice Cream | (nom utilisé à l'interne) | 35 | septembre 3, 2024 |
+| 16 | Baklava | (nom utilisé à l'interne) | 36 | juin 10, 2025 |
+| 17 | Cinnamon Bun | (nom utilisé à l'interne) | 37 | juin 16, 2026 |
 
 ![Illustration](../images/page_076_img_01_1000x460.png)
 
