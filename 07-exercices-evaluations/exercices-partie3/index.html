@@ -1,0 +1,4612 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Christiane Lagacé">
+      
+      
+      
+        <link rel="prev" href="../exercices-partie2/">
+      
+      
+        <link rel="next" href="../examens/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Exercices pratiques - Partie 3 (9 à 14) - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercices-pratiques-partie-3-9-a-14" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercices pratiques - Partie 3 (9 à 14)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-environnement/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-kotlin-gradle/gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-environnement/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/normes-et-kdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/systeme-fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#561-gestionnaire-de-signets-partie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        56.1 Gestionnaire de signets - partie 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creez-le-modele-de-donnees-qui-permettra-de-stocker-dans-une-base-de-donnees-sqlite-lurl-du-signet-ainsi-quune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créez le modèle de données qui permettra de stocker dans une base de données SQLite l'URL du signet ainsi qu'une
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creez-le-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Créez le DAO.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creez-le-depot-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Créez le dépôt de données.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creez-la-classe-qui-herite-de-roomdatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Créez la classe qui hérite de RoomDatabase.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creez-le-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Créez le ViewModel.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Créez le ViewModel.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-dans-la-fonction-mainscreen-la-votre-pourrait-porter-un-nom-different-faites-le-necessaire-pour-faire-afficher-la-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pendant-que-lapplication-est-en-execution-dans-lemulateur-ouvrez-la-base-de-donnees-de-lemulateur-a-laide-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide du
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        57. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="57. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        57.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-room-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        58. Room (suite)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="58. Room (suite)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-gestionnaire-de-signets-partie-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        61.1 Gestionnaire de signets - partie 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-modifiez-votre-application-pour-que-quelques-signets-soient-automatiquement-inseres-dans-la-base-de-donnees-lors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lancez-a-nouveau-votre-application-afin-de-voir-les-signets-enregistres-si-vous-ne-les-voyez-pas-cest-que-vous-avez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prenez-le-temps-de-soigner-la-structure-et-lapparence-de-votre-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prenez le temps de soigner la structure et l'apparence de votre application.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prenez le temps de soigner la structure et l&#39;apparence de votre application.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-laffichage-dun-signet-doit-etre-realise-dans-sa-propre-fonction-composable-la-liste-de-signets-fera-appel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-ce-composable-dans-sa-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        à ce composable dans sa boucle.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-chaque-signet-doit-etre-affiche-dans-un-rectangle-de-lapparence-de-votre-choix-suggestion-utilisez-un" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-jouez-avec-les-couleurs-bordures-ombrages-espacements-polices-ou-tout-autre-aspect-de-votre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-comme-toujours-il-ne-doit-y-avoir-aucun-texte-colle-sur-le-bord-de-lecran-ou-colle-sur-une-bordure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Comme toujours, il ne doit y avoir aucun texte collé sur le bord de l'écran ou collé sur une bordure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-le-lien-hypertexte-doit-etre-cliquable-et-mener-vers-la-page-web-appropriee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Le lien hypertexte doit être cliquable et mener vers la page Web appropriée.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-effectuez-linternationalisation-puis-la-localisation-de-votre-application-votre-application-doit-pouvoir-etre-affichee-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Effectuez l'internationalisation puis la localisation de votre application. Votre application doit pouvoir être affichée en
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="62. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-application-avec-plusieurs-ecrans-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        63. Application avec plusieurs écrans (navigation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="63. Application avec plusieurs écrans (navigation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641-gestionnaire-de-signets-partie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        64.1 Gestionnaire de signets - partie 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-votre-application-doit-contenir-les-pages-suivantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Votre application doit contenir les pages suivantes.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Votre application doit contenir les pages suivantes.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-page-daccueil-pour-linstant-elle-ne-fera-quafficher-un-message-ou-une-image-de-votre-choix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-page-qui-liste-vos-signets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page qui liste vos signets.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-page-pour-ajouter-un-signet-pour-linstant-elle-ne-fera-quafficher-a-venir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dans-la-barre-du-bas-lapplication-doit-presenter-des-icones-pour-naviguer-vers-chacune-des-pages-la-barre-du-bas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-les-icones-de-la-barre-du-bas-doivent-etre-espaces-pour-remplir-toute-la-largeur-de-lecran" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l&#39;écran.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-assurez-vous-que-chaque-page-ait-en-plus-du-titre-de-lapplication-un-sous-titre-qui-definit-ce-quelle-affiche-vous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-vous-devez-soigner-lapparence-de-votre-application-couleurs-agreables-espacements-suffisants-icones-assez-gros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-optionnel-vous-constatez-certainement-que-la-creation-dun-nouveau-projet-exige-la-creation-de-nombreux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. OPTIONNEL : vous constatez certainement que la création d&#39;un nouveau projet exige la création de nombreux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-je-nai-pas-trouve-de-fonctionnalites-integree-dans-android-studio-pour-effectuer-ce-type-de-tache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saurez-vous-en-trouver-une" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saurez-vous en trouver une?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-jai-vu-un-script-bash-qui-semblait-faire-a-peu-pres-cette-tache-mais-je-ne-lai-pas-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httpsgithubcomerdocommercial-templateblobmainchange_packagesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        https://github.com/erdo/commercial-template/blob/main/change_package.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-la-solution-passe-peut-etre-par-la-copie-du-dossier-de-base-et-le-apical_lien_interne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. La solution passe peut-être par la copie du dossier de base et le [apical_lien_interne]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renommer_un_projetrenommage-du-projetapical_lien_interne-saurez-vous-trouver-la-technique-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [renommer_un_projet,renommage du projet][/apical_lien_interne]. Saurez-vous trouver la technique la
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        65. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="65. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        65.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-formulaire-dajout-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        66. Formulaire d'ajout de données
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="66. Formulaire d&#39;ajout de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#701-gestionnaire-de-signets-partie-4-et-questions-theoriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        70.1 Gestionnaire de signets - partie 4 et questions théoriques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-afin-de-bien-comprendre-le-code-du-viewmodelfactory-demandez-a-votre-outil-dia-favori-de-vous-expliquer-ce-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Afin de bien comprendre le code du ViewModelFactory, demandez à votre outil d'IA favori de vous expliquer ce code.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vous-avez-desormais-en-main-tous-les-morceaux-pour-finaliser-le-crud-de-vos-signets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-developpez-le-formulaire-dajout-de-donnees-et-faites-le-necessaire-pour-que-le-contenu-qui-y-est-entre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puisse-etre-enregistre-dans-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        puisse être enregistré dans la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-effectuez-la-validation-requise-pour-lurl-et-la-description-assurez-vous-quil-ne-soit-pas-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desquiver-les-validations-en-cliquant-directement-sur-le-bouton-denregistrement-sans-cliquer-dabord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-lapplication-doit-retourner-automatiquement-a-la-liste-des-signets-apres-lajout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. L'application doit retourner automatiquement à la liste des signets après l'ajout.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-dans-la-liste-des-signets-chaque-entree-doit-afficher-une-icone-dedition-et-une-icone-de-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-un-clic-sur-licone-dedition-retrouvera-les-informations-dans-la-base-de-donnees-puis-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affichera-dans-le-formulaire-dedition-le-bouton-denregistrement-modifiera-les-donnees-dans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-lorsque-lusager-clique-sur-licone-de-suppression-une-boite-de-confirmation-affiche-le" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-desirez-vous-vraiment-supprimer-le-signet-xxx-les-xxx-doivent-etre-remplaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-asurez-vous-que-laffichage-soit-correct-dans-le-cas-ou-un-signet-a-un-tres-long-titre-ou-un-tres-long-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Asurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-assurez-vous-que-toutes-les-chaines-soient-correctement-internationalisees-et-localisees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-optionnel-faites-en-sorte-que-le-meme-formulaire-soit-utilise-lors-de-lajout-et-lors-de-la-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dun-signet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d'un signet.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-pour-le-prochain-cours-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        71. Pour le prochain cours (deux cours)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="71. Pour le prochain cours (deux cours)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-je-me-prepare-pour-lexercice-suivant-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        71.1 Je me prépare pour l'exercice suivant (deux cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-donnees-distantes-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        72. Données distantes (API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="72. Données distantes (API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-api-apk-et-questions-theoriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        73.1 API, APK et questions théoriques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-au-debut-du-second-cours-consacre-a-cet-exercice-demandez-a-votre-prof-de-vous-remettre-une-nouvelle-feuille-avec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Au début du second cours consacré à cet exercice, demandez à votre prof de vous remettre une nouvelle feuille avec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vous-devez-coder-une-application-qui-affiche-des-donnees-sur-les-chats-ces-donnees-sont-obtenues-a-partir-de-lapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l&#39;API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-pour-bien-comprendre-le-type-dinformations-retournees-par-lapi-effectuez-differents-appels-a-laide-dun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testeur-de-requetes-rest-comme-postman-bruno-ou-curl-faites-vos-tests-par-exemple-en-utilisant-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-testez-un-appel-a-lapi-errone-afin-de-voir-ce-qui-se-passe-lorsque-le-point-de-terminaison-nexiste-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ecrivez-une-application-android-avec-jetpack-compose-qui-affiche-de-facon-aleatoire-un-fait-sur-les-chats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Écrivez une application Android avec Jetpack Compose qui affiche de façon aléatoire un fait sur les chats.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-fait-est-affiche-des-le-demarrage-de-lapplication-un-bouton-permet-dafficher-un-autre-fait-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un premier fait est affiché dès le démarrage de l'application. Un bouton permet d'afficher un autre fait de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-assurez-vous-quen-cas-de-probleme-quel-quil-soit-lusager-soit-bien-informe-de-ce-qui-se-passe-par" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-modifiez-le-point-dacces-pour-simuler-ce-qui-se-passerait-si-lapi-changeait-et-que-le-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-modifiez-licone-dapplication-de-votre-application-sur-les-chats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Modifiez l'icône d'application de votre application sur les chats.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-quand-votre-projet-est-termine-generez-un-fichier-apk-de-production-et-fournissez-ce-fichier-a-un-de-vos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collegues-pour-quil-linstalle-sur-son-telephone-publication-en-sideload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collègues pour qu'il l'installe sur son téléphone (publication en sideload).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-optionnel-bonifiez-votre-application-pour-quelle-utilise-un-api-qui-fournit-des-photos-de-chat-a-chaque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fois-que-les-donnees-sur-les-chats-changent-on-aura-une-nouvelle-photo-qui-apparaitra-a-vous-de-trouver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-pour-le-prochain-cours-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74. Pour le prochain cours (deux cours)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="74. Pour le prochain cours (deux cours)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-je-me-prepare-pour-lexercice-suivant-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74.1 Je me prépare pour l'exercice suivant (deux cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-les-capteurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        75. Les capteurs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="75. Les capteurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#761-travailler-avec-des-capteurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        76.1 Travailler avec des capteurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-si-le-capteur-detecte-quun-objet-est-pres-lecran-sera-entierement-vert-et-il-sera-ecrit-en-gros-pres-sinon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Si le capteur détecte qu'un objet est près, l'écran sera entièrement vert et il sera écrit en gros « PRÈS ». Sinon,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prenez-le-temps-de-tester-votre-application-sur-un-vrai-telephone-car-les-valeurs-retournees-par-le-capteur-peuvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prenez le temps de tester votre application sur un vrai téléphone car les valeurs retournées par le capteur peuvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        77. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="77. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        77.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-examen-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        78. Examen 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#561-gestionnaire-de-signets-partie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        56.1 Gestionnaire de signets - partie 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creez-le-modele-de-donnees-qui-permettra-de-stocker-dans-une-base-de-donnees-sqlite-lurl-du-signet-ainsi-quune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créez le modèle de données qui permettra de stocker dans une base de données SQLite l'URL du signet ainsi qu'une
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creez-le-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Créez le DAO.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creez-le-depot-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Créez le dépôt de données.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creez-la-classe-qui-herite-de-roomdatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Créez la classe qui hérite de RoomDatabase.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creez-le-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Créez le ViewModel.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Créez le ViewModel.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-dans-la-fonction-mainscreen-la-votre-pourrait-porter-un-nom-different-faites-le-necessaire-pour-faire-afficher-la-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pendant-que-lapplication-est-en-execution-dans-lemulateur-ouvrez-la-base-de-donnees-de-lemulateur-a-laide-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide du
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        57. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="57. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        57.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-room-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        58. Room (suite)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="58. Room (suite)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-gestionnaire-de-signets-partie-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        61.1 Gestionnaire de signets - partie 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-modifiez-votre-application-pour-que-quelques-signets-soient-automatiquement-inseres-dans-la-base-de-donnees-lors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lancez-a-nouveau-votre-application-afin-de-voir-les-signets-enregistres-si-vous-ne-les-voyez-pas-cest-que-vous-avez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prenez-le-temps-de-soigner-la-structure-et-lapparence-de-votre-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prenez le temps de soigner la structure et l'apparence de votre application.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prenez le temps de soigner la structure et l&#39;apparence de votre application.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-laffichage-dun-signet-doit-etre-realise-dans-sa-propre-fonction-composable-la-liste-de-signets-fera-appel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-ce-composable-dans-sa-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        à ce composable dans sa boucle.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-chaque-signet-doit-etre-affiche-dans-un-rectangle-de-lapparence-de-votre-choix-suggestion-utilisez-un" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-jouez-avec-les-couleurs-bordures-ombrages-espacements-polices-ou-tout-autre-aspect-de-votre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-comme-toujours-il-ne-doit-y-avoir-aucun-texte-colle-sur-le-bord-de-lecran-ou-colle-sur-une-bordure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Comme toujours, il ne doit y avoir aucun texte collé sur le bord de l'écran ou collé sur une bordure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-le-lien-hypertexte-doit-etre-cliquable-et-mener-vers-la-page-web-appropriee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Le lien hypertexte doit être cliquable et mener vers la page Web appropriée.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-effectuez-linternationalisation-puis-la-localisation-de-votre-application-votre-application-doit-pouvoir-etre-affichee-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Effectuez l'internationalisation puis la localisation de votre application. Votre application doit pouvoir être affichée en
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="62. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-application-avec-plusieurs-ecrans-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        63. Application avec plusieurs écrans (navigation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="63. Application avec plusieurs écrans (navigation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641-gestionnaire-de-signets-partie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        64.1 Gestionnaire de signets - partie 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-votre-application-doit-contenir-les-pages-suivantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Votre application doit contenir les pages suivantes.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Votre application doit contenir les pages suivantes.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-page-daccueil-pour-linstant-elle-ne-fera-quafficher-un-message-ou-une-image-de-votre-choix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-page-qui-liste-vos-signets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page qui liste vos signets.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-page-pour-ajouter-un-signet-pour-linstant-elle-ne-fera-quafficher-a-venir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dans-la-barre-du-bas-lapplication-doit-presenter-des-icones-pour-naviguer-vers-chacune-des-pages-la-barre-du-bas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-les-icones-de-la-barre-du-bas-doivent-etre-espaces-pour-remplir-toute-la-largeur-de-lecran" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l&#39;écran.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-assurez-vous-que-chaque-page-ait-en-plus-du-titre-de-lapplication-un-sous-titre-qui-definit-ce-quelle-affiche-vous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-vous-devez-soigner-lapparence-de-votre-application-couleurs-agreables-espacements-suffisants-icones-assez-gros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-optionnel-vous-constatez-certainement-que-la-creation-dun-nouveau-projet-exige-la-creation-de-nombreux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. OPTIONNEL : vous constatez certainement que la création d&#39;un nouveau projet exige la création de nombreux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-je-nai-pas-trouve-de-fonctionnalites-integree-dans-android-studio-pour-effectuer-ce-type-de-tache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saurez-vous-en-trouver-une" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saurez-vous en trouver une?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-jai-vu-un-script-bash-qui-semblait-faire-a-peu-pres-cette-tache-mais-je-ne-lai-pas-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httpsgithubcomerdocommercial-templateblobmainchange_packagesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        https://github.com/erdo/commercial-template/blob/main/change_package.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-la-solution-passe-peut-etre-par-la-copie-du-dossier-de-base-et-le-apical_lien_interne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. La solution passe peut-être par la copie du dossier de base et le [apical_lien_interne]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renommer_un_projetrenommage-du-projetapical_lien_interne-saurez-vous-trouver-la-technique-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [renommer_un_projet,renommage du projet][/apical_lien_interne]. Saurez-vous trouver la technique la
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        65. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="65. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        65.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-formulaire-dajout-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        66. Formulaire d'ajout de données
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="66. Formulaire d&#39;ajout de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#701-gestionnaire-de-signets-partie-4-et-questions-theoriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        70.1 Gestionnaire de signets - partie 4 et questions théoriques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-afin-de-bien-comprendre-le-code-du-viewmodelfactory-demandez-a-votre-outil-dia-favori-de-vous-expliquer-ce-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Afin de bien comprendre le code du ViewModelFactory, demandez à votre outil d'IA favori de vous expliquer ce code.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vous-avez-desormais-en-main-tous-les-morceaux-pour-finaliser-le-crud-de-vos-signets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-developpez-le-formulaire-dajout-de-donnees-et-faites-le-necessaire-pour-que-le-contenu-qui-y-est-entre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puisse-etre-enregistre-dans-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        puisse être enregistré dans la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-effectuez-la-validation-requise-pour-lurl-et-la-description-assurez-vous-quil-ne-soit-pas-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desquiver-les-validations-en-cliquant-directement-sur-le-bouton-denregistrement-sans-cliquer-dabord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-lapplication-doit-retourner-automatiquement-a-la-liste-des-signets-apres-lajout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. L'application doit retourner automatiquement à la liste des signets après l'ajout.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-dans-la-liste-des-signets-chaque-entree-doit-afficher-une-icone-dedition-et-une-icone-de-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-un-clic-sur-licone-dedition-retrouvera-les-informations-dans-la-base-de-donnees-puis-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affichera-dans-le-formulaire-dedition-le-bouton-denregistrement-modifiera-les-donnees-dans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-lorsque-lusager-clique-sur-licone-de-suppression-une-boite-de-confirmation-affiche-le" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-desirez-vous-vraiment-supprimer-le-signet-xxx-les-xxx-doivent-etre-remplaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-asurez-vous-que-laffichage-soit-correct-dans-le-cas-ou-un-signet-a-un-tres-long-titre-ou-un-tres-long-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Asurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-assurez-vous-que-toutes-les-chaines-soient-correctement-internationalisees-et-localisees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-optionnel-faites-en-sorte-que-le-meme-formulaire-soit-utilise-lors-de-lajout-et-lors-de-la-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dun-signet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d'un signet.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-pour-le-prochain-cours-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        71. Pour le prochain cours (deux cours)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="71. Pour le prochain cours (deux cours)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-je-me-prepare-pour-lexercice-suivant-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        71.1 Je me prépare pour l'exercice suivant (deux cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-donnees-distantes-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        72. Données distantes (API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="72. Données distantes (API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-api-apk-et-questions-theoriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        73.1 API, APK et questions théoriques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-au-debut-du-second-cours-consacre-a-cet-exercice-demandez-a-votre-prof-de-vous-remettre-une-nouvelle-feuille-avec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Au début du second cours consacré à cet exercice, demandez à votre prof de vous remettre une nouvelle feuille avec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vous-devez-coder-une-application-qui-affiche-des-donnees-sur-les-chats-ces-donnees-sont-obtenues-a-partir-de-lapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l&#39;API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-pour-bien-comprendre-le-type-dinformations-retournees-par-lapi-effectuez-differents-appels-a-laide-dun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testeur-de-requetes-rest-comme-postman-bruno-ou-curl-faites-vos-tests-par-exemple-en-utilisant-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-testez-un-appel-a-lapi-errone-afin-de-voir-ce-qui-se-passe-lorsque-le-point-de-terminaison-nexiste-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ecrivez-une-application-android-avec-jetpack-compose-qui-affiche-de-facon-aleatoire-un-fait-sur-les-chats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Écrivez une application Android avec Jetpack Compose qui affiche de façon aléatoire un fait sur les chats.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-fait-est-affiche-des-le-demarrage-de-lapplication-un-bouton-permet-dafficher-un-autre-fait-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un premier fait est affiché dès le démarrage de l'application. Un bouton permet d'afficher un autre fait de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-assurez-vous-quen-cas-de-probleme-quel-quil-soit-lusager-soit-bien-informe-de-ce-qui-se-passe-par" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-modifiez-le-point-dacces-pour-simuler-ce-qui-se-passerait-si-lapi-changeait-et-que-le-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-modifiez-licone-dapplication-de-votre-application-sur-les-chats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Modifiez l'icône d'application de votre application sur les chats.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-quand-votre-projet-est-termine-generez-un-fichier-apk-de-production-et-fournissez-ce-fichier-a-un-de-vos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collegues-pour-quil-linstalle-sur-son-telephone-publication-en-sideload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collègues pour qu'il l'installe sur son téléphone (publication en sideload).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-optionnel-bonifiez-votre-application-pour-quelle-utilise-un-api-qui-fournit-des-photos-de-chat-a-chaque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fois-que-les-donnees-sur-les-chats-changent-on-aura-une-nouvelle-photo-qui-apparaitra-a-vous-de-trouver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-pour-le-prochain-cours-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74. Pour le prochain cours (deux cours)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="74. Pour le prochain cours (deux cours)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-je-me-prepare-pour-lexercice-suivant-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74.1 Je me prépare pour l'exercice suivant (deux cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-les-capteurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        75. Les capteurs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="75. Les capteurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#761-travailler-avec-des-capteurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        76.1 Travailler avec des capteurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-si-le-capteur-detecte-quun-objet-est-pres-lecran-sera-entierement-vert-et-il-sera-ecrit-en-gros-pres-sinon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Si le capteur détecte qu'un objet est près, l'écran sera entièrement vert et il sera écrit en gros « PRÈS ». Sinon,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prenez-le-temps-de-tester-votre-application-sur-un-vrai-telephone-car-les-valeurs-retournees-par-le-capteur-peuvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prenez le temps de tester votre application sur un vrai téléphone car les valeurs retournées par le capteur peuvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        77. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="77. Pour le prochain cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771-je-me-prepare-pour-lexercice-suivant-un-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        77.1 Je me prépare pour l'exercice suivant (un cours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-examen-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        78. Examen 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exercices-pratiques-partie-3-9-a-14">Exercices pratiques - Partie 3 (9 à 14)<a class="headerlink" href="#exercices-pratiques-partie-3-9-a-14" title="Permanent link">&para;</a></h1>
+<h3 id="561-gestionnaire-de-signets-partie-1">56.1 Gestionnaire de signets - partie 1<a class="headerlink" href="#561-gestionnaire-de-signets-partie-1" title="Permanent link">&para;</a></h3>
+<p>Vous devez développer une application Android qui permet de gérer vos signets vers des pages Web (favoris, bookmarks).</p>
+<p>Dans cette première version, n'utilisez pas de Scaffold. Nous allons voir plus tard comment bien structurer ce type d'application.</p>
+<h3 id="1-creez-le-modele-de-donnees-qui-permettra-de-stocker-dans-une-base-de-donnees-sqlite-lurl-du-signet-ainsi-quune">1. Créez le modèle de données qui permettra de stocker dans une base de données SQLite l'URL du signet ainsi qu'une<a class="headerlink" href="#1-creez-le-modele-de-donnees-qui-permettra-de-stocker-dans-une-base-de-donnees-sqlite-lurl-du-signet-ainsi-quune" title="Permanent link">&para;</a></h3>
+<p>courte description.</p>
+<h2 id="2-creez-le-dao">2. Créez le DAO.<a class="headerlink" href="#2-creez-le-dao" title="Permanent link">&para;</a></h2>
+<h2 id="3-creez-le-depot-de-donnees">3. Créez le dépôt de données.<a class="headerlink" href="#3-creez-le-depot-de-donnees" title="Permanent link">&para;</a></h2>
+<h2 id="4-creez-la-classe-qui-herite-de-roomdatabase">4. Créez la classe qui hérite de RoomDatabase.<a class="headerlink" href="#4-creez-la-classe-qui-herite-de-roomdatabase" title="Permanent link">&para;</a></h2>
+<h2 id="5-creez-le-viewmodel">5. Créez le ViewModel.<a class="headerlink" href="#5-creez-le-viewmodel" title="Permanent link">&para;</a></h2>
+<h3 id="6-dans-la-fonction-mainscreen-la-votre-pourrait-porter-un-nom-different-faites-le-necessaire-pour-faire-afficher-la-liste">6. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste<a class="headerlink" href="#6-dans-la-fonction-mainscreen-la-votre-pourrait-porter-un-nom-different-faites-le-necessaire-pour-faire-afficher-la-liste" title="Permanent link">&para;</a></h3>
+<p>des signets. Dans un premier temps, un message approprié apparaîtra à l'écran pour indique que la BD est vide. Par
+contre, ceci fera en sorte que la base de données sera créée physiquement dans l'émulateur.</p>
+<h3 id="7-pendant-que-lapplication-est-en-execution-dans-lemulateur-ouvrez-la-base-de-donnees-de-lemulateur-a-laide-du">7. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide du<a class="headerlink" href="#7-pendant-que-lapplication-est-en-execution-dans-lemulateur-ouvrez-la-base-de-donnees-de-lemulateur-a-laide-du" title="Permanent link">&para;</a></h3>
+<p>Database Inspector puis exécutez des requêtes SQL pour ajouter ou modifier quelques enregistrements. Voyez les
+modifications qui se réflètent à l'écran sans nécessiter de rechargement.</p>
+<h2 id="57-pour-le-prochain-cours">57. Pour le prochain cours<a class="headerlink" href="#57-pour-le-prochain-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="571-je-me-prepare-pour-lexercice-suivant-un-cours">57.1 Je me prépare pour l'exercice suivant (un cours)<a class="headerlink" href="#571-je-me-prepare-pour-lexercice-suivant-un-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="58-room-suite">58. Room (suite)<a class="headerlink" href="#58-room-suite" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="611-gestionnaire-de-signets-partie-2">61.1 Gestionnaire de signets - partie 2<a class="headerlink" href="#611-gestionnaire-de-signets-partie-2" title="Permanent link">&para;</a></h3>
+<p>Vous devez poursuivre le développement de votre application Android qui permet de gérer vos signets vers des pages Web.</p>
+<h3 id="1-modifiez-votre-application-pour-que-quelques-signets-soient-automatiquement-inseres-dans-la-base-de-donnees-lors">1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors<a class="headerlink" href="#1-modifiez-votre-application-pour-que-quelques-signets-soient-automatiquement-inseres-dans-la-base-de-donnees-lors" title="Permanent link">&para;</a></h3>
+<p>de sa création.</p>
+<h3 id="2-lancez-a-nouveau-votre-application-afin-de-voir-les-signets-enregistres-si-vous-ne-les-voyez-pas-cest-que-vous-avez">2. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez<a class="headerlink" href="#2-lancez-a-nouveau-votre-application-afin-de-voir-les-signets-enregistres-si-vous-ne-les-voyez-pas-cest-que-vous-avez" title="Permanent link">&para;</a></h3>
+<p>oublié de faire le nécessaire pour que la base de données soit recréée.</p>
+<h2 id="3-prenez-le-temps-de-soigner-la-structure-et-lapparence-de-votre-application">3. Prenez le temps de soigner la structure et l'apparence de votre application.<a class="headerlink" href="#3-prenez-le-temps-de-soigner-la-structure-et-lapparence-de-votre-application" title="Permanent link">&para;</a></h2>
+<h4 id="a-laffichage-dun-signet-doit-etre-realise-dans-sa-propre-fonction-composable-la-liste-de-signets-fera-appel">a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel<a class="headerlink" href="#a-laffichage-dun-signet-doit-etre-realise-dans-sa-propre-fonction-composable-la-liste-de-signets-fera-appel" title="Permanent link">&para;</a></h4>
+<h4 id="a-ce-composable-dans-sa-boucle">à ce composable dans sa boucle.<a class="headerlink" href="#a-ce-composable-dans-sa-boucle" title="Permanent link">&para;</a></h4>
+<h4 id="b-chaque-signet-doit-etre-affiche-dans-un-rectangle-de-lapparence-de-votre-choix-suggestion-utilisez-un">b. Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un<a class="headerlink" href="#b-chaque-signet-doit-etre-affiche-dans-un-rectangle-de-lapparence-de-votre-choix-suggestion-utilisez-un" title="Permanent link">&para;</a></h4>
+<h4 id="card-jouez-avec-les-couleurs-bordures-ombrages-espacements-polices-ou-tout-autre-aspect-de-votre">Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre<a class="headerlink" href="#card-jouez-avec-les-couleurs-bordures-ombrages-espacements-polices-ou-tout-autre-aspect-de-votre" title="Permanent link">&para;</a></h4>
+<p>choix afin d'obtenir une apparence professionnelle.</p>
+<h4 id="c-comme-toujours-il-ne-doit-y-avoir-aucun-texte-colle-sur-le-bord-de-lecran-ou-colle-sur-une-bordure">c. Comme toujours, il ne doit y avoir aucun texte collé sur le bord de l'écran ou collé sur une bordure.<a class="headerlink" href="#c-comme-toujours-il-ne-doit-y-avoir-aucun-texte-colle-sur-le-bord-de-lecran-ou-colle-sur-une-bordure" title="Permanent link">&para;</a></h4>
+<h4 id="d-le-lien-hypertexte-doit-etre-cliquable-et-mener-vers-la-page-web-appropriee">d. Le lien hypertexte doit être cliquable et mener vers la page Web appropriée.<a class="headerlink" href="#d-le-lien-hypertexte-doit-etre-cliquable-et-mener-vers-la-page-web-appropriee" title="Permanent link">&para;</a></h4>
+<h3 id="4-effectuez-linternationalisation-puis-la-localisation-de-votre-application-votre-application-doit-pouvoir-etre-affichee-en">4. Effectuez l'internationalisation puis la localisation de votre application. Votre application doit pouvoir être affichée en<a class="headerlink" href="#4-effectuez-linternationalisation-puis-la-localisation-de-votre-application-votre-application-doit-pouvoir-etre-affichee-en" title="Permanent link">&para;</a></h3>
+<p>français et en anglais. Les données tirées de la base de données n'ont pas besoin d'être internationalisées.</p>
+<h2 id="62-pour-le-prochain-cours">62. Pour le prochain cours<a class="headerlink" href="#62-pour-le-prochain-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="621-je-me-prepare-pour-lexercice-suivant-un-cours">62.1 Je me prépare pour l'exercice suivant (un cours)<a class="headerlink" href="#621-je-me-prepare-pour-lexercice-suivant-un-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="63-application-avec-plusieurs-ecrans-navigation">63. Application avec plusieurs écrans (navigation)<a class="headerlink" href="#63-application-avec-plusieurs-ecrans-navigation" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="641-gestionnaire-de-signets-partie-3">64.1 Gestionnaire de signets - partie 3<a class="headerlink" href="#641-gestionnaire-de-signets-partie-3" title="Permanent link">&para;</a></h3>
+<h2 id="1-votre-application-doit-contenir-les-pages-suivantes">1. Votre application doit contenir les pages suivantes.<a class="headerlink" href="#1-votre-application-doit-contenir-les-pages-suivantes" title="Permanent link">&para;</a></h2>
+<h4 id="une-page-daccueil-pour-linstant-elle-ne-fera-quafficher-un-message-ou-une-image-de-votre-choix">Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.<a class="headerlink" href="#une-page-daccueil-pour-linstant-elle-ne-fera-quafficher-un-message-ou-une-image-de-votre-choix" title="Permanent link">&para;</a></h4>
+<h4 id="une-page-qui-liste-vos-signets">Une page qui liste vos signets.<a class="headerlink" href="#une-page-qui-liste-vos-signets" title="Permanent link">&para;</a></h4>
+<h4 id="une-page-pour-ajouter-un-signet-pour-linstant-elle-ne-fera-quafficher-a-venir">Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».<a class="headerlink" href="#une-page-pour-ajouter-un-signet-pour-linstant-elle-ne-fera-quafficher-a-venir" title="Permanent link">&para;</a></h4>
+<h3 id="2-dans-la-barre-du-bas-lapplication-doit-presenter-des-icones-pour-naviguer-vers-chacune-des-pages-la-barre-du-bas">2. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas<a class="headerlink" href="#2-dans-la-barre-du-bas-lapplication-doit-presenter-des-icones-pour-naviguer-vers-chacune-des-pages-la-barre-du-bas" title="Permanent link">&para;</a></h3>
+<p>doit être définie dans un composable placé dans son propre fichier.</p>
+<h2 id="3-les-icones-de-la-barre-du-bas-doivent-etre-espaces-pour-remplir-toute-la-largeur-de-lecran">3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.<a class="headerlink" href="#3-les-icones-de-la-barre-du-bas-doivent-etre-espaces-pour-remplir-toute-la-largeur-de-lecran" title="Permanent link">&para;</a></h2>
+<h3 id="4-assurez-vous-que-chaque-page-ait-en-plus-du-titre-de-lapplication-un-sous-titre-qui-definit-ce-quelle-affiche-vous">4. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous<a class="headerlink" href="#4-assurez-vous-que-chaque-page-ait-en-plus-du-titre-de-lapplication-un-sous-titre-qui-definit-ce-quelle-affiche-vous" title="Permanent link">&para;</a></h3>
+<p>pouvez utiliser un simple Text() pour y parvenir.</p>
+<h3 id="5-vous-devez-soigner-lapparence-de-votre-application-couleurs-agreables-espacements-suffisants-icones-assez-gros">5. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros<a class="headerlink" href="#5-vous-devez-soigner-lapparence-de-votre-application-couleurs-agreables-espacements-suffisants-icones-assez-gros" title="Permanent link">&para;</a></h3>
+<p>ou suffisamment espacés pour les gros doigts, etc.</p>
+<h3 id="6-optionnel-vous-constatez-certainement-que-la-creation-dun-nouveau-projet-exige-la-creation-de-nombreux">6. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux<a class="headerlink" href="#6-optionnel-vous-constatez-certainement-que-la-creation-dun-nouveau-projet-exige-la-creation-de-nombreux" title="Permanent link">&para;</a></h3>
+<p>fichiers, l'ajout de dépendances, etc.</p>
+<p>Pour faciliter votre travail, il serait intéressant de pouvoir avoir un projet modèle qui servirait de base à vos prochains projets.</p>
+<p>Je vous propose d'automatiser la tâche qui consiste à créer un nouveau projet à partir d'un projet de base.</p>
+<p>Voici quelques pistes de solution :</p>
+<h4 id="a-je-nai-pas-trouve-de-fonctionnalites-integree-dans-android-studio-pour-effectuer-ce-type-de-tache">a. Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.<a class="headerlink" href="#a-je-nai-pas-trouve-de-fonctionnalites-integree-dans-android-studio-pour-effectuer-ce-type-de-tache" title="Permanent link">&para;</a></h4>
+<h4 id="saurez-vous-en-trouver-une">Saurez-vous en trouver une?<a class="headerlink" href="#saurez-vous-en-trouver-une" title="Permanent link">&para;</a></h4>
+<h4 id="b-jai-vu-un-script-bash-qui-semblait-faire-a-peu-pres-cette-tache-mais-je-ne-lai-pas-teste">b. J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :<a class="headerlink" href="#b-jai-vu-un-script-bash-qui-semblait-faire-a-peu-pres-cette-tache-mais-je-ne-lai-pas-teste" title="Permanent link">&para;</a></h4>
+<h4 id="httpsgithubcomerdocommercial-templateblobmainchange_packagesh"><a href="https://github.com/erdo/commercial-template/blob/main/change_package.sh">https://github.com/erdo/commercial-template/blob/main/change_package.sh</a><a class="headerlink" href="#httpsgithubcomerdocommercial-templateblobmainchange_packagesh" title="Permanent link">&para;</a></h4>
+<p>(discussion reddit qui m'a
+mené à ce script :
+<a href="https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?">https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?</a>
+tl=fr
+)</p>
+<h4 id="c-la-solution-passe-peut-etre-par-la-copie-du-dossier-de-base-et-le-apical_lien_interne">c. La solution passe peut-être par la copie du dossier de base et le [apical_lien_interne]<a class="headerlink" href="#c-la-solution-passe-peut-etre-par-la-copie-du-dossier-de-base-et-le-apical_lien_interne" title="Permanent link">&para;</a></h4>
+<h4 id="renommer_un_projetrenommage-du-projetapical_lien_interne-saurez-vous-trouver-la-technique-la">[renommer_un_projet,renommage du projet][/apical_lien_interne]. Saurez-vous trouver la technique la<a class="headerlink" href="#renommer_un_projetrenommage-du-projetapical_lien_interne-saurez-vous-trouver-la-technique-la" title="Permanent link">&para;</a></h4>
+<p>plus efficace pour y parvenir?</p>
+<h2 id="65-pour-le-prochain-cours">65. Pour le prochain cours<a class="headerlink" href="#65-pour-le-prochain-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="651-je-me-prepare-pour-lexercice-suivant-un-cours">65.1 Je me prépare pour l'exercice suivant (un cours)<a class="headerlink" href="#651-je-me-prepare-pour-lexercice-suivant-un-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="66-formulaire-dajout-de-donnees">66. Formulaire d'ajout de données<a class="headerlink" href="#66-formulaire-dajout-de-donnees" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="701-gestionnaire-de-signets-partie-4-et-questions-theoriques">70.1 Gestionnaire de signets - partie 4 et questions théoriques<a class="headerlink" href="#701-gestionnaire-de-signets-partie-4-et-questions-theoriques" title="Permanent link">&para;</a></h3>
+<h3 id="1-afin-de-bien-comprendre-le-code-du-viewmodelfactory-demandez-a-votre-outil-dia-favori-de-vous-expliquer-ce-code">1. Afin de bien comprendre le code du ViewModelFactory, demandez à votre outil d'IA favori de vous expliquer ce code.<a class="headerlink" href="#1-afin-de-bien-comprendre-le-code-du-viewmodelfactory-demandez-a-votre-outil-dia-favori-de-vous-expliquer-ce-code" title="Permanent link">&para;</a></h3>
+<p>Posez-lui des questions jusqu'à ce que vous saisissiez bien le rôle de chaque ligne de code.</p>
+<h2 id="2-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux">2. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.<a class="headerlink" href="#2-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" title="Permanent link">&para;</a></h2>
+<h2 id="3-vous-avez-desormais-en-main-tous-les-morceaux-pour-finaliser-le-crud-de-vos-signets">3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.<a class="headerlink" href="#3-vous-avez-desormais-en-main-tous-les-morceaux-pour-finaliser-le-crud-de-vos-signets" title="Permanent link">&para;</a></h2>
+<h4 id="a-developpez-le-formulaire-dajout-de-donnees-et-faites-le-necessaire-pour-que-le-contenu-qui-y-est-entre">a. Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré<a class="headerlink" href="#a-developpez-le-formulaire-dajout-de-donnees-et-faites-le-necessaire-pour-que-le-contenu-qui-y-est-entre" title="Permanent link">&para;</a></h4>
+<h4 id="puisse-etre-enregistre-dans-la-base-de-donnees">puisse être enregistré dans la base de données.<a class="headerlink" href="#puisse-etre-enregistre-dans-la-base-de-donnees" title="Permanent link">&para;</a></h4>
+<h4 id="b-effectuez-la-validation-requise-pour-lurl-et-la-description-assurez-vous-quil-ne-soit-pas-possible">b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible<a class="headerlink" href="#b-effectuez-la-validation-requise-pour-lurl-et-la-description-assurez-vous-quil-ne-soit-pas-possible" title="Permanent link">&para;</a></h4>
+<h4 id="desquiver-les-validations-en-cliquant-directement-sur-le-bouton-denregistrement-sans-cliquer-dabord">d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord<a class="headerlink" href="#desquiver-les-validations-en-cliquant-directement-sur-le-bouton-denregistrement-sans-cliquer-dabord" title="Permanent link">&para;</a></h4>
+<p>dans les cases de saisie.</p>
+<h4 id="c-lapplication-doit-retourner-automatiquement-a-la-liste-des-signets-apres-lajout">c. L'application doit retourner automatiquement à la liste des signets après l'ajout.<a class="headerlink" href="#c-lapplication-doit-retourner-automatiquement-a-la-liste-des-signets-apres-lajout" title="Permanent link">&para;</a></h4>
+<h4 id="d-dans-la-liste-des-signets-chaque-entree-doit-afficher-une-icone-dedition-et-une-icone-de-suppression">d. Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.<a class="headerlink" href="#d-dans-la-liste-des-signets-chaque-entree-doit-afficher-une-icone-dedition-et-une-icone-de-suppression" title="Permanent link">&para;</a></h4>
+<h4 id="i-un-clic-sur-licone-dedition-retrouvera-les-informations-dans-la-base-de-donnees-puis-les">i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les<a class="headerlink" href="#i-un-clic-sur-licone-dedition-retrouvera-les-informations-dans-la-base-de-donnees-puis-les" title="Permanent link">&para;</a></h4>
+<h4 id="affichera-dans-le-formulaire-dedition-le-bouton-denregistrement-modifiera-les-donnees-dans">affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans<a class="headerlink" href="#affichera-dans-le-formulaire-dedition-le-bouton-denregistrement-modifiera-les-donnees-dans" title="Permanent link">&para;</a></h4>
+<p>la BD.</p>
+<h4 id="ii-lorsque-lusager-clique-sur-licone-de-suppression-une-boite-de-confirmation-affiche-le">ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le<a class="headerlink" href="#ii-lorsque-lusager-clique-sur-licone-de-suppression-une-boite-de-confirmation-affiche-le" title="Permanent link">&para;</a></h4>
+<h4 id="message-desirez-vous-vraiment-supprimer-le-signet-xxx-les-xxx-doivent-etre-remplaces">message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés<a class="headerlink" href="#message-desirez-vous-vraiment-supprimer-le-signet-xxx-les-xxx-doivent-etre-remplaces" title="Permanent link">&para;</a></h4>
+<p>par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si
+l'usager clique sur Oui.</p>
+<h4 id="e-asurez-vous-que-laffichage-soit-correct-dans-le-cas-ou-un-signet-a-un-tres-long-titre-ou-un-tres-long-url">e. Asurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.<a class="headerlink" href="#e-asurez-vous-que-laffichage-soit-correct-dans-le-cas-ou-un-signet-a-un-tres-long-titre-ou-un-tres-long-url" title="Permanent link">&para;</a></h4>
+<h4 id="f-assurez-vous-que-toutes-les-chaines-soient-correctement-internationalisees-et-localisees">f. Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.<a class="headerlink" href="#f-assurez-vous-que-toutes-les-chaines-soient-correctement-internationalisees-et-localisees" title="Permanent link">&para;</a></h4>
+<h4 id="g-optionnel-faites-en-sorte-que-le-meme-formulaire-soit-utilise-lors-de-lajout-et-lors-de-la-modification">g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification<a class="headerlink" href="#g-optionnel-faites-en-sorte-que-le-meme-formulaire-soit-utilise-lors-de-lajout-et-lors-de-la-modification" title="Permanent link">&para;</a></h4>
+<h4 id="dun-signet">d'un signet.<a class="headerlink" href="#dun-signet" title="Permanent link">&para;</a></h4>
+<h2 id="71-pour-le-prochain-cours-deux-cours">71. Pour le prochain cours (deux cours)<a class="headerlink" href="#71-pour-le-prochain-cours-deux-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="711-je-me-prepare-pour-lexercice-suivant-deux-cours">71.1 Je me prépare pour l'exercice suivant (deux cours)<a class="headerlink" href="#711-je-me-prepare-pour-lexercice-suivant-deux-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez de deux cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="72-donnees-distantes-api">72. Données distantes (API)<a class="headerlink" href="#72-donnees-distantes-api" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="731-api-apk-et-questions-theoriques">73.1 API, APK et questions théoriques<a class="headerlink" href="#731-api-apk-et-questions-theoriques" title="Permanent link">&para;</a></h3>
+<h2 id="1-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux">1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques.  Répondez-y en équipe de deux.<a class="headerlink" href="#1-demandez-a-votre-prof-de-vous-remettre-une-feuille-avec-les-questions-theoriques-repondez-y-en-equipe-de-deux" title="Permanent link">&para;</a></h2>
+<h3 id="2-au-debut-du-second-cours-consacre-a-cet-exercice-demandez-a-votre-prof-de-vous-remettre-une-nouvelle-feuille-avec">2. Au début du second cours consacré à cet exercice, demandez à votre prof de vous remettre une nouvelle feuille avec<a class="headerlink" href="#2-au-debut-du-second-cours-consacre-a-cet-exercice-demandez-a-votre-prof-de-vous-remettre-une-nouvelle-feuille-avec" title="Permanent link">&para;</a></h3>
+<p>les questions théoriques. Répondez-y en équipe de deux.</p>
+<h3 id="3-vous-devez-coder-une-application-qui-affiche-des-donnees-sur-les-chats-ces-donnees-sont-obtenues-a-partir-de-lapi">3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API<a class="headerlink" href="#3-vous-devez-coder-une-application-qui-affiche-des-donnees-sur-les-chats-ces-donnees-sont-obtenues-a-partir-de-lapi" title="Permanent link">&para;</a></h3>
+<p>Cat Facts : <a href="https://catfact.ninja">https://catfact.ninja</a>
+.</p>
+<h4 id="a-pour-bien-comprendre-le-type-dinformations-retournees-par-lapi-effectuez-differents-appels-a-laide-dun">a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un<a class="headerlink" href="#a-pour-bien-comprendre-le-type-dinformations-retournees-par-lapi-effectuez-differents-appels-a-laide-dun" title="Permanent link">&para;</a></h4>
+<h4 id="testeur-de-requetes-rest-comme-postman-bruno-ou-curl-faites-vos-tests-par-exemple-en-utilisant-les">testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les<a class="headerlink" href="#testeur-de-requetes-rest-comme-postman-bruno-ou-curl-faites-vos-tests-par-exemple-en-utilisant-les" title="Permanent link">&para;</a></h4>
+<p>points de terminaison fact, facts et breeds.</p>
+<h4 id="b-testez-un-appel-a-lapi-errone-afin-de-voir-ce-qui-se-passe-lorsque-le-point-de-terminaison-nexiste-pas">b. Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.<a class="headerlink" href="#b-testez-un-appel-a-lapi-errone-afin-de-voir-ce-qui-se-passe-lorsque-le-point-de-terminaison-nexiste-pas" title="Permanent link">&para;</a></h4>
+<h4 id="c-ecrivez-une-application-android-avec-jetpack-compose-qui-affiche-de-facon-aleatoire-un-fait-sur-les-chats">c. Écrivez une application Android avec Jetpack Compose qui affiche de façon aléatoire un fait sur les chats.<a class="headerlink" href="#c-ecrivez-une-application-android-avec-jetpack-compose-qui-affiche-de-facon-aleatoire-un-fait-sur-les-chats" title="Permanent link">&para;</a></h4>
+<h4 id="un-premier-fait-est-affiche-des-le-demarrage-de-lapplication-un-bouton-permet-dafficher-un-autre-fait-de">Un premier fait est affiché dès le démarrage de l'application. Un bouton permet d'afficher un autre fait de<a class="headerlink" href="#un-premier-fait-est-affiche-des-le-demarrage-de-lapplication-un-bouton-permet-dafficher-un-autre-fait-de" title="Permanent link">&para;</a></h4>
+<p>façon aléatoire.</p>
+<h4 id="d-assurez-vous-quen-cas-de-probleme-quel-quil-soit-lusager-soit-bien-informe-de-ce-qui-se-passe-par">d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par<a class="headerlink" href="#d-assurez-vous-quen-cas-de-probleme-quel-quil-soit-lusager-soit-bien-informe-de-ce-qui-se-passe-par" title="Permanent link">&para;</a></h4>
+<h4 id="exemple-modifiez-le-point-dacces-pour-simuler-ce-qui-se-passerait-si-lapi-changeait-et-que-le-point">exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point<a class="headerlink" href="#exemple-modifiez-le-point-dacces-pour-simuler-ce-qui-se-passerait-si-lapi-changeait-et-que-le-point" title="Permanent link">&para;</a></h4>
+<p>d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not
+Found » ne sont pas acceptables.</p>
+<h4 id="e-modifiez-licone-dapplication-de-votre-application-sur-les-chats">e. Modifiez l'icône d'application de votre application sur les chats.<a class="headerlink" href="#e-modifiez-licone-dapplication-de-votre-application-sur-les-chats" title="Permanent link">&para;</a></h4>
+<h4 id="f-quand-votre-projet-est-termine-generez-un-fichier-apk-de-production-et-fournissez-ce-fichier-a-un-de-vos">f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos<a class="headerlink" href="#f-quand-votre-projet-est-termine-generez-un-fichier-apk-de-production-et-fournissez-ce-fichier-a-un-de-vos" title="Permanent link">&para;</a></h4>
+<h4 id="collegues-pour-quil-linstalle-sur-son-telephone-publication-en-sideload">collègues pour qu'il l'installe sur son téléphone (publication en sideload).<a class="headerlink" href="#collegues-pour-quil-linstalle-sur-son-telephone-publication-en-sideload" title="Permanent link">&para;</a></h4>
+<h4 id="g-optionnel-bonifiez-votre-application-pour-quelle-utilise-un-api-qui-fournit-des-photos-de-chat-a-chaque">g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque<a class="headerlink" href="#g-optionnel-bonifiez-votre-application-pour-quelle-utilise-un-api-qui-fournit-des-photos-de-chat-a-chaque" title="Permanent link">&para;</a></h4>
+<h4 id="fois-que-les-donnees-sur-les-chats-changent-on-aura-une-nouvelle-photo-qui-apparaitra-a-vous-de-trouver">fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver<a class="headerlink" href="#fois-que-les-donnees-sur-les-chats-changent-on-aura-une-nouvelle-photo-qui-apparaitra-a-vous-de-trouver" title="Permanent link">&para;</a></h4>
+<p>un API qui fournit de telles photos.</p>
+<h2 id="74-pour-le-prochain-cours-deux-cours">74. Pour le prochain cours (deux cours)<a class="headerlink" href="#74-pour-le-prochain-cours-deux-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="741-je-me-prepare-pour-lexercice-suivant-deux-cours">74.1 Je me prépare pour l'exercice suivant (deux cours)<a class="headerlink" href="#741-je-me-prepare-pour-lexercice-suivant-deux-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez de deux cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="75-les-capteurs">75. Les capteurs<a class="headerlink" href="#75-les-capteurs" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="761-travailler-avec-des-capteurs">76.1 Travailler avec des capteurs<a class="headerlink" href="#761-travailler-avec-des-capteurs" title="Permanent link">&para;</a></h3>
+<p>Écrivez une petite application Android avec Jetpack Compose qui détecte si un objet est près ou loin du téléphone. Elle utilisera pour cela le capteur de proximité
+.</p>
+<h3 id="1-si-le-capteur-detecte-quun-objet-est-pres-lecran-sera-entierement-vert-et-il-sera-ecrit-en-gros-pres-sinon">1. Si le capteur détecte qu'un objet est près, l'écran sera entièrement vert et il sera écrit en gros « PRÈS ». Sinon,<a class="headerlink" href="#1-si-le-capteur-detecte-quun-objet-est-pres-lecran-sera-entierement-vert-et-il-sera-ecrit-en-gros-pres-sinon" title="Permanent link">&para;</a></h3>
+<p>l'écran sera bleu et il sera écrit « LOIN ». À vous de déterminer quelle distance est considérée près ou loin.</p>
+<h3 id="2-prenez-le-temps-de-tester-votre-application-sur-un-vrai-telephone-car-les-valeurs-retournees-par-le-capteur-peuvent">2. Prenez le temps de tester votre application sur un vrai téléphone car les valeurs retournées par le capteur peuvent<a class="headerlink" href="#2-prenez-le-temps-de-tester-votre-application-sur-un-vrai-telephone-car-les-valeurs-retournees-par-le-capteur-peuvent" title="Permanent link">&para;</a></h3>
+<p>être différentes de celles rendues possibles dans l'émulateur.</p>
+<h2 id="77-pour-le-prochain-cours">77. Pour le prochain cours<a class="headerlink" href="#77-pour-le-prochain-cours" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="771-je-me-prepare-pour-lexercice-suivant-un-cours">77.1 Je me prépare pour l'exercice suivant (un cours)<a class="headerlink" href="#771-je-me-prepare-pour-lexercice-suivant-un-cours" title="Permanent link">&para;</a></h3>
+<p>Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.</p>
+<p>Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.</p>
+<h2 id="78-examen-2">78. Examen 2<a class="headerlink" href="#78-examen-2" title="Permanent link">&para;</a></h2>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

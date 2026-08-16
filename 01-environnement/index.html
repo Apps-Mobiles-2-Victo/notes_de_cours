@@ -1,0 +1,5342 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Christiane Lagacé">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="installation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Introduction et vue d'ensemble du cours - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-et-vue-densemble-du-cours" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction et vue d'ensemble du cours
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-kotlin-gradle/gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-donnees-persistance/preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07-exercices-evaluations/exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kotlin-gradle/gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kotlin-gradle/kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-kotlin-gradle/normes-et-kdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/systeme-fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-donnees-persistance/donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exercices-evaluations/exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exercices-evaluations/exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exercices-evaluations/exercices-partie3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-exercices-evaluations/examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#60-liens-hypertexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        60. Liens hypertexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-pour-le-prochain-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        65. Pour le prochain cours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70-exercice-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        70. Exercice 12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-pour-le-prochain-cours-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74. Pour le prochain cours (deux cours)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-examen-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        78. Examen 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ou-trouver-de-laide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Où trouver de l'aide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Où trouver de l&#39;aide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-horaire-et-coordonnees-de-christiane-lagace-session-dautomne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Horaire et coordonnées de Christiane Lagacé - session d'automne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#christiane-lagace-automne-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Christiane Lagacé, Automne 2025
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Christiane Lagacé, Automne 2025">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lundi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lundi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#209" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        209
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9h15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#209_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        209
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10h15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11h15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14h15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15h15
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-plan-de-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Plan de cours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Plan de cours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composante-de-la-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composante de la formation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sanction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sanction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cours-prealables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cours préalables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ponderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pondération
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Durée
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adoption-par-le-departement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adoption par le département
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enseignantes-et-enseignants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enseignantes et enseignants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enseignantes et enseignants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#christiane-lagace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Christiane Lagacé
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-aux-devis-ministeriels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Référence aux devis ministériels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Référence aux devis ministériels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#competence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compétence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-effectuer-le-developpement-dapplications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS : Effectuer le développement d’applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-analyser-le-projet-de-developpement-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 - Analyser le projet de développement de l’application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-preliminaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes préliminaires
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cible-de-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cible de formation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demarche-pedagogique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarche pédagogique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequences-dapprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Séquences d'apprentissage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-1-analyser-le-projet-de-developpement-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 1 : Analyser le projet de développement de l’application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 1 : Analyser le projet de développement de l’application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choisir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choisir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environnements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environnements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choisir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choisir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mécanismes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-2-preparer-lenvironnement-de-developpement-informatique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 2 : Préparer l’environnement de développement informatique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 2 : Préparer l’environnement de développement informatique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procédures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environnement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-3-preparer-la-ou-les-bases-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 3 : Préparer la ou les bases de données
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 3 : Préparer la ou les bases de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examens_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-4-generer-ou-programmer-linterface-graphique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 4 : Générer ou programmer l’interface graphique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 4 : Générer ou programmer l’interface graphique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prendre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prendre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examens_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intégrer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appliquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appliquer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-5-programmer-la-logique-applicative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 5 : Programmer la logique applicative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 5 : Programmer la logique applicative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mécanismes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examens_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanismes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mécanismes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripheriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        périphériques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opérations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techniques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-6-controler-la-qualite-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 6 : Contrôler la qualité de l’application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 6 : Contrôler la qualité de l’application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appliquer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appliquer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effectuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effectuer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#au-moins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Au moins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suivi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suivi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-7-participer-a-la-mise-en-service-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 7 : Participer à la mise en service de l’application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 7 : Participer à la mise en service de l’application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déployer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expliquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expliquer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#00ss-8-rediger-la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        00SS - 8 : Rédiger la documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="00SS - 8 : Rédiger la documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#habiletes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habiletés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activites_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générateurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rediger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rédiger
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercices_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examens_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluations-sommatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Évaluations sommatives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Évaluations sommatives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Évaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examen-1-ensemble-de-la-competence-natif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examen 1 - Ensemble de la compétence - natif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35 %
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epreuve-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Épreuve finale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Épreuve finale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ponderation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pondération :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40 %
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-finale-exigee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance finale exigée
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexte-de-realisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte de réalisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sous-forme-dexamen-pratique-individuel-a-la-semaine-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sous forme d'examen pratique individuel à la semaine 15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-doutils-de-programmation-native-ou-multi-plateformes-au-choix-de-lenseignante-ou-de-lenseignant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À l'aide d'outils de programmation native ou multi-plateformes, au choix de l'enseignante ou de l'enseignant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-partir-du-devis-fourni-par-lenseignante-ou-lenseignant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À partir du devis fourni par l'enseignante ou l'enseignant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-de-la-documentation-existante-notes-de-cours-sites-web-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À l'aide de la documentation existante : notes de cours, sites Web, etc.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur ordinateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-presence-de-lenseignante-ou-de-lenseignant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En présence de l'enseignante ou de l'enseignant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dune-duree-de-2-heures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'une durée de 2 heures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criteres-devaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critères d'évaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-ou-adaptation-correctes-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création ou adaptation correctes de la base de données
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choix-et-utilisation-appropries-des-elements-graphiques-pour-laffichage-et-la-saisie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choix et utilisation appropriés des éléments graphiques pour l’affichage et la saisie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmation-correcte-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmation correcte de l'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulation-correcte-des-donnees-de-la-ou-des-bases-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulation correcte des données de la ou des bases de données
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-rigoureuse-des-techniques-de-programmation-securisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application rigoureuse des techniques de programmation sécurisée
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#politique-departementale-devaluation-des-apprentissages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Politique départementale d'évaluation des apprentissages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#departement-informatique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Département : Informatique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-presence-aux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Présence aux cours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-evaluations-sommatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Évaluations sommatives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Évaluations sommatives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#56-en-cas-derreur-lors-de-la-remise-dune-evaluation-sommative-une-recidive-tous-cours-dinformatique-confondus-entrainera-la-note-de-0-pour-levaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 En cas d’erreur lors de la remise d’une évaluation sommative, une récidive, tous cours d’informatique confondus, entraînera la note de 0 pour l’évaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditions-pedagogiques-particulieres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions pédagogiques particulières
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environnement-numerique-dapprentissage-plateforme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environnement numérique d’apprentissage (plateforme)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediagraphie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Médiagraphie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materiel-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matériel requis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-site-web-du-departement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Site Web du département
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-sur-votre-portable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation sur votre portable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation sur votre portable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-grille-de-cours-du-programme-techniques-de-linformatique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Grille de cours du programme Techniques de l'informatique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-extraits-de-code-tires-des-notes-de-cours-ou-du-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Extraits de code tirés des notes de cours ou du Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Extraits de code tirés des notes de cours ou du Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-ecouter-le-prof-sans-cellulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Écouter le prof sans cellulaire
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-outils-pour-developper-une-application-mobile-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Outils pour développer une application mobile Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-et-vue-densemble-du-cours">Introduction et vue d'ensemble du cours<a class="headerlink" href="#introduction-et-vue-densemble-du-cours" title="Permanent link">&para;</a></h1>
+<h3 id="60-liens-hypertexte">60. Liens hypertexte<a class="headerlink" href="#60-liens-hypertexte" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Exercice 10</li>
+<li>Pour le prochain cours</li>
+<li>Application avec plusieurs écrans (navigation)</li>
+<li>Exercice 11</li>
+</ol>
+<h3 id="65-pour-le-prochain-cours">65. Pour le prochain cours<a class="headerlink" href="#65-pour-le-prochain-cours" title="Permanent link">&para;</a></h3>
+<p>────────── Semaine 8 ──────────
+66. Formulaire d'ajout de données
+67. Effets secondaires (side effects)
+68. Formulaire de modification de données
+69. Amélioration du ViewModel</p>
+<h3 id="70-exercice-12">70. Exercice 12<a class="headerlink" href="#70-exercice-12" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Pour le prochain cours (deux cours)
+────────── Semaine 9 ──────────</li>
+<li>Données distantes (API)</li>
+<li>Exercice 13</li>
+</ol>
+<h3 id="74-pour-le-prochain-cours-deux-cours">74. Pour le prochain cours (deux cours)<a class="headerlink" href="#74-pour-le-prochain-cours-deux-cours" title="Permanent link">&para;</a></h3>
+<p>────────── Semaine 10 ──────────
+75. Les capteurs
+76. Exercice 14
+77. Pour le prochain cours</p>
+<h3 id="78-examen-2">78. Examen 2<a class="headerlink" href="#78-examen-2" title="Permanent link">&para;</a></h3>
+<p>────────── Chapitres supplémentaires à utiliser au besoin ──────────
+79. Aller plus loin avec les variables d'état (suite)
+80. Optimiser l'application
+81. La programmation asynchrone
+82. Les notifications</p>
+<h2 id="1-ou-trouver-de-laide">1. Où trouver de l'aide<a class="headerlink" href="#1-ou-trouver-de-laide" title="Permanent link">&para;</a></h2>
+<h3 id="11-horaire-et-coordonnees-de-christiane-lagace-session-dautomne">1.1 Horaire et coordonnées de Christiane Lagacé - session d'automne<a class="headerlink" href="#11-horaire-et-coordonnees-de-christiane-lagace-session-dautomne" title="Permanent link">&para;</a></h3>
+<p><img alt="Illustration" src="../images/page_002_img_01_93x95.png" /></p>
+<h3 id="christiane-lagace-automne-2025">Christiane Lagacé, Automne 2025<a class="headerlink" href="#christiane-lagace-automne-2025" title="Permanent link">&para;</a></h3>
+<p>Bureau : C-207 au pavillon central
+Courriel : lagace.christiane@cegepvicto.ca</p>
+<h4 id="lundi">Lundi<a class="headerlink" href="#lundi" title="Permanent link">&para;</a></h4>
+<p>Mardi
+Mercredi
+Jeudi
+Vendredi</p>
+<p>8h15
+à
+9h05
+Objets connectés 1
+C-</p>
+<p>Objets connectés 1
+C-</p>
+<h4 id="209">209<a class="headerlink" href="#209" title="Permanent link">&para;</a></h4>
+<p>Réunion</p>
+<p>Objets connectés 1
+C-</p>
+<p>Objets connectés 1
+C-</p>
+<h4 id="9h15">9h15<a class="headerlink" href="#9h15" title="Permanent link">&para;</a></h4>
+<p>à
+10h05
+Programmation</p>
+<h4 id="209_1">209<a class="headerlink" href="#209_1" title="Permanent link">&para;</a></h4>
+<p>Réunion</p>
+<h4 id="10h15">10h15<a class="headerlink" href="#10h15" title="Permanent link">&para;</a></h4>
+<p>à
+11h05
+Programmation
+ Disponible
+Trou horaire
+Disponible</p>
+<h4 id="11h15">11h15<a class="headerlink" href="#11h15" title="Permanent link">&para;</a></h4>
+<p>à
+12h05
+Programmation
+Disponible
+Trou horaire
+Disponible</p>
+<p>12h15
+à
+13h05</p>
+<p>13h15
+à
+14h05
+ App. mobiles 2
+C-209</p>
+<h4 id="14h15">14h15<a class="headerlink" href="#14h15" title="Permanent link">&para;</a></h4>
+<p>à
+15h05
+Programmation
+ App. mobiles 2
+C-209
+Disponible
+Disponible</p>
+<h4 id="15h15">15h15<a class="headerlink" href="#15h15" title="Permanent link">&para;</a></h4>
+<p>à
+16h05
+Programmation
+Disponible 
+Disponible 
+ App. mobiles 2
+C-209</p>
+<p>16h15
+à
+17h05
+Programmation
+ App. mobiles 2
+C-209</p>
+<p>17h15
+à
+18h05</p>
+<p>Je suis très souvent à mon bureau entre mes cours, même en dehors des périodes marquées « Disponible ».</p>
+<p>Vous pouvez simplement passer me voir ou encore me contacter via Teams, ça me fera plaisir de vous aider!</p>
+<h3 id="12-plan-de-cours">1.2 Plan de cours<a class="headerlink" href="#12-plan-de-cours" title="Permanent link">&para;</a></h3>
+<h4 id="programme">Programme<a class="headerlink" href="#programme" title="Permanent link">&para;</a></h4>
+<p>420 : Techniques de l'informatique</p>
+<h4 id="profil">Profil<a class="headerlink" href="#profil" title="Permanent link">&para;</a></h4>
+<p>B0 : Profil par défaut</p>
+<h4 id="composante-de-la-formation">Composante de la formation<a class="headerlink" href="#composante-de-la-formation" title="Permanent link">&para;</a></h4>
+<p>Spécifique</p>
+<h4 id="sanction">Sanction<a class="headerlink" href="#sanction" title="Permanent link">&para;</a></h4>
+<p>diplôme d'études collégiales (DEC)</p>
+<h4 id="cours-prealables">Cours préalables<a class="headerlink" href="#cours-prealables" title="Permanent link">&para;</a></h4>
+<p>420-2A6-VI : Programmation 2</p>
+<h4 id="ponderation">Pondération<a class="headerlink" href="#ponderation" title="Permanent link">&para;</a></h4>
+<p>2-2-2</p>
+<h4 id="duree">Durée<a class="headerlink" href="#duree" title="Permanent link">&para;</a></h4>
+<p>60 heures</p>
+<h4 id="unites">Unités<a class="headerlink" href="#unites" title="Permanent link">&para;</a></h4>
+<p>2</p>
+<h4 id="adoption-par-le-departement">Adoption par le département<a class="headerlink" href="#adoption-par-le-departement" title="Permanent link">&para;</a></h4>
+<p>18 août 2025</p>
+<h3 id="enseignantes-et-enseignants">Enseignantes et enseignants<a class="headerlink" href="#enseignantes-et-enseignants" title="Permanent link">&para;</a></h3>
+<h4 id="nom">Nom<a class="headerlink" href="#nom" title="Permanent link">&para;</a></h4>
+<p>Bureau
+Courriel</p>
+<h4 id="christiane-lagace">Christiane Lagacé<a class="headerlink" href="#christiane-lagace" title="Permanent link">&para;</a></h4>
+<p>C-207
+lagace.christiane@cegepvicto.ca</p>
+<h3 id="reference-aux-devis-ministeriels">Référence aux devis ministériels<a class="headerlink" href="#reference-aux-devis-ministeriels" title="Permanent link">&para;</a></h3>
+<h4 id="competence">Compétence<a class="headerlink" href="#competence" title="Permanent link">&para;</a></h4>
+<p>Éléments de compétence</p>
+<h4 id="00ss-effectuer-le-developpement-dapplications">00SS : Effectuer le développement d’applications<a class="headerlink" href="#00ss-effectuer-le-developpement-dapplications" title="Permanent link">&para;</a></h4>
+<p>natives avec base de données</p>
+<h4 id="1-analyser-le-projet-de-developpement-de-lapplication">1 - Analyser le projet de développement de l’application<a class="headerlink" href="#1-analyser-le-projet-de-developpement-de-lapplication" title="Permanent link">&para;</a></h4>
+<p>2 - Préparer l’environnement de développement informatique
+3 - Préparer la ou les bases de données
+4 - Générer ou programmer l’interface graphique
+5 - Programmer la logique applicative
+6 - Contrôler la qualité de l’application
+7 - Participer à la mise en service de l’application
+8 - Rédiger la documentation</p>
+<h3 id="notes-preliminaires">Notes préliminaires<a class="headerlink" href="#notes-preliminaires" title="Permanent link">&para;</a></h3>
+<p>Le cours 420-5B4-VI : Applications mobiles 2 fait partie de la formation menant au diplôme d'études collégiales (DEC) dans le programme 420.B0 : Techniques de
+l'informatique .</p>
+<p>e</p>
+<p>Il est offert en 5 session.</p>
+<p>L'atteinte de la compétence 00SS : Effectuer le développement d’applications natives avec base de données est complétée dans ce cours.</p>
+<p>e</p>
+<p>Son acquisition a débuté dans le cours 420-4D4-VI : Applications mobiles 1 à la 4 session.</p>
+<p>Le choix des technologies est à la discrétion de l'enseignante ou de l'enseignant mais doit être approuvé en département au début de la session.</p>
+<p>Programmation native avec Jetpack Compose et programmation multi-plateformes avec React Native.</p>
+<h3 id="cible-de-formation">Cible de formation<a class="headerlink" href="#cible-de-formation" title="Permanent link">&para;</a></h3>
+<p>À la fin de ce cours, l'élève sera capable d'effectuer le développement d’applications mobiles avec bases de données dans l'environnement Android. Le
+développement sera réalisé à l'aide de programmation native et à l'aide de programmation multi-plateformes.</p>
+<h3 id="demarche-pedagogique">Démarche pédagogique<a class="headerlink" href="#demarche-pedagogique" title="Permanent link">&para;</a></h3>
+<p>Courtes périodes d’enseignement théorique suivies d’application au fur et à mesure à l’aide d’exercices formatifs.</p>
+<p>Des références de sites Web seront fournies par le professeur. L’élève devra enrichir ces sources d’information par ses propres recherches.</p>
+<p>Des activités en classe seront proposées pour favoriser la coopération entre les élèves, l’échange des connaissances et la prise en charge de son apprentissage par
+l'élève.</p>
+<p>Certaines évaluations formatives peuvent être auto-corrigées par l’élève ou encore co-corrigées par un collègue de la classe.</p>
+<p>Bien que certains travaux ne fassent pas l’objet d’évaluation sommative, les élèves doivent absolument les compléter afin d’être prêts pour l’épreuve finale.</p>
+<h3 id="sequences-dapprentissage">Séquences d'apprentissage<a class="headerlink" href="#sequences-dapprentissage" title="Permanent link">&para;</a></h3>
+<h3 id="00ss-1-analyser-le-projet-de-developpement-de-lapplication">00SS - 1 : Analyser le projet de développement de l’application<a class="headerlink" href="#00ss-1-analyser-le-projet-de-developpement-de-lapplication" title="Permanent link">&para;</a></h3>
+<p>Durée : 2 heures</p>
+<h4 id="habiletes">Habiletés<a class="headerlink" href="#habiletes" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites">Activités<a class="headerlink" href="#activites" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_1">Activités<a class="headerlink" href="#activites_1" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres">Critères<a class="headerlink" href="#criteres" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="programmation">Programmation<a class="headerlink" href="#programmation" title="Permanent link">&para;</a></h4>
+<p>native
+vs
+multi-
+plateformes</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>Exercices formatifs
+obligatoires (F)</p>
+<p>1 - Analyse juste des
+documents de
+conception
+2 - Détermination
+correcte des tâches à
+effectuer</p>
+<h4 id="choisir">Choisir<a class="headerlink" href="#choisir" title="Permanent link">&para;</a></h4>
+<p>un
+environnement</p>
+<h4 id="lectures">Lectures<a class="headerlink" href="#lectures" title="Permanent link">&para;</a></h4>
+<h4 id="mise-en">Mise en<a class="headerlink" href="#mise-en" title="Permanent link">&para;</a></h4>
+<p>pratique
+des</p>
+<h4 id="de">de<a class="headerlink" href="#de" title="Permanent link">&para;</a></h4>
+<p>développement</p>
+<h4 id="environnements">Environnements<a class="headerlink" href="#environnements" title="Permanent link">&para;</a></h4>
+<p>de
+développement
+Android
+Studio,
+VS
+Code,
+IntelliJ
+etc.</p>
+<h4 id="notions">notions<a class="headerlink" href="#notions" title="Permanent link">&para;</a></h4>
+<p>au fur et
+à mesure</p>
+<h4 id="choisir_1">Choisir<a class="headerlink" href="#choisir_1" title="Permanent link">&para;</a></h4>
+<p>entre
+base de
+données
+locale,
+base de
+données
+distante
+ou les
+deux</p>
+<h4 id="mise-en_1">Mise en<a class="headerlink" href="#mise-en_1" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="mecanismes">Mécanismes<a class="headerlink" href="#mecanismes" title="Permanent link">&para;</a></h4>
+<p>d'enregistrement
+de
+données
+locales
+et
+distantes</p>
+<h3 id="00ss-2-preparer-lenvironnement-de-developpement-informatique">00SS - 2 : Préparer l’environnement de développement informatique<a class="headerlink" href="#00ss-2-preparer-lenvironnement-de-developpement-informatique" title="Permanent link">&para;</a></h3>
+<p>Durée : 1 heures</p>
+<h4 id="habiletes_1">Habiletés<a class="headerlink" href="#habiletes_1" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_2">Activités<a class="headerlink" href="#activites_2" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_3">Activités<a class="headerlink" href="#activites_3" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_1">Critères<a class="headerlink" href="#criteres_1" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="procedures">Procédures<a class="headerlink" href="#procedures" title="Permanent link">&para;</a></h4>
+<p>d'installation</p>
+<p>Installer les logiciels et
+les bibliothèques</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Installation
+correcte des logiciels
+et des bibliothèques
+sur la plateforme hôte
+2 - Configuration
+appropriée de la
+plateforme cible
+3 - Configuration
+appropriée du système
+de gestion de versions
+4 - Importation
+correcte du code
+source</p>
+<h4 id="lectures_1">Lectures<a class="headerlink" href="#lectures_1" title="Permanent link">&para;</a></h4>
+<h4 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_2">Mise en<a class="headerlink" href="#mise-en_2" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<p>Configurer le système
+de gestion de versions</p>
+<h4 id="environnement">Environnement<a class="headerlink" href="#environnement" title="Permanent link">&para;</a></h4>
+<p>réel vs
+environnement
+simulé
+dans
+l'IDE</p>
+<p>Importer du code
+source</p>
+<h4 id="examens">Examens<a class="headerlink" href="#examens" title="Permanent link">&para;</a></h4>
+<p>1, 2 et 3
+(S)</p>
+<h4 id="mise-en_3">Mise en<a class="headerlink" href="#mise-en_3" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="examen">Examen<a class="headerlink" href="#examen" title="Permanent link">&para;</a></h4>
+<p>formatif
+formel
+(FF)</p>
+<h3 id="00ss-3-preparer-la-ou-les-bases-de-donnees">00SS - 3 : Préparer la ou les bases de données<a class="headerlink" href="#00ss-3-preparer-la-ou-les-bases-de-donnees" title="Permanent link">&para;</a></h3>
+<p>Durée : 4 heures</p>
+<h4 id="habiletes_2">Habiletés<a class="headerlink" href="#habiletes_2" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_4">Activités<a class="headerlink" href="#activites_4" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_5">Activités<a class="headerlink" href="#activites_5" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_2">Critères<a class="headerlink" href="#criteres_2" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="creation">Création<a class="headerlink" href="#creation" title="Permanent link">&para;</a></h4>
+<p>et
+manipulation
+d'une
+base
+de
+données
+locale</p>
+<p>Créer et adapter la
+base de données à
+partir d'un modèle de
+données</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Création ou
+adaptation correctes
+de la base de données
+locale ou de la base de
+données distante
+2 - Insertion correcte
+des données initiales
+ou des données de
+tests
+3 - Respect du modèle
+de données</p>
+<h4 id="lectures_2">Lectures<a class="headerlink" href="#lectures_2" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_1">Exercices<a class="headerlink" href="#exercices_1" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_4">Mise en<a class="headerlink" href="#mise-en_4" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<p>Insérer les données
+initiales ou les
+données de tests</p>
+<h4 id="examens_1">Examens<a class="headerlink" href="#examens_1" title="Permanent link">&para;</a></h4>
+<p>1, 2 et 3
+(S)</p>
+<h4 id="creation_1">Création<a class="headerlink" href="#creation_1" title="Permanent link">&para;</a></h4>
+<p>et
+manipulation
+d'une
+base
+de
+données
+distante</p>
+<h4 id="mise-en_5">Mise en<a class="headerlink" href="#mise-en_5" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="examen_1">Examen<a class="headerlink" href="#examen_1" title="Permanent link">&para;</a></h4>
+<p>formatif
+formel
+(FF)</p>
+<h3 id="00ss-4-generer-ou-programmer-linterface-graphique">00SS - 4 : Générer ou programmer l’interface graphique<a class="headerlink" href="#00ss-4-generer-ou-programmer-linterface-graphique" title="Permanent link">&para;</a></h3>
+<p>Durée : 6 heures</p>
+<h4 id="habiletes_3">Habiletés<a class="headerlink" href="#habiletes_3" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_6">Activités<a class="headerlink" href="#activites_6" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_7">Activités<a class="headerlink" href="#activites_7" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_3">Critères<a class="headerlink" href="#criteres_3" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<p>En programmation
+native ET en
+programmation multi-
+plateforme :</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Choix et utilisation
+appropriés des
+éléments graphiques
+pour l’affichage et la
+saisie
+2 - Intégration
+correcte des images
+3 - Adaptation de
+l’interface en fonction
+du format d’affichage
+et de la résolution</p>
+<h4 id="prendre">Prendre<a class="headerlink" href="#prendre" title="Permanent link">&para;</a></h4>
+<p>connaissance
+de
+l'existence
+d'outils
+pour
+créer les
+interfaces</p>
+<h4 id="lectures_3">Lectures<a class="headerlink" href="#lectures_3" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_2">Exercices<a class="headerlink" href="#exercices_2" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_6">Mise en<a class="headerlink" href="#mise-en_6" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<h4 id="composants">Composants<a class="headerlink" href="#composants" title="Permanent link">&para;</a></h4>
+<p>disponibles</p>
+<h4 id="examens_2">Examens<a class="headerlink" href="#examens_2" title="Permanent link">&para;</a></h4>
+<p>1, 2 et 3
+(S)</p>
+<h4 id="adaptation">Adaptation<a class="headerlink" href="#adaptation" title="Permanent link">&para;</a></h4>
+<p>selon
+l'orientation
+et la
+taille
+de
+l'appareil</p>
+<h4 id="mise-en_7">Mise en<a class="headerlink" href="#mise-en_7" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="examen_2">Examen<a class="headerlink" href="#examen_2" title="Permanent link">&para;</a></h4>
+<p>formatif
+formel
+(FF)</p>
+<h4 id="integrer">Intégrer<a class="headerlink" href="#integrer" title="Permanent link">&para;</a></h4>
+<p>des
+composants</p>
+<h4 id="appliquer">Appliquer<a class="headerlink" href="#appliquer" title="Permanent link">&para;</a></h4>
+<p>les
+principes
+de mise
+en page
+et de
+disposition</p>
+<h3 id="00ss-5-programmer-la-logique-applicative">00SS - 5 : Programmer la logique applicative<a class="headerlink" href="#00ss-5-programmer-la-logique-applicative" title="Permanent link">&para;</a></h3>
+<p>Durée : 40 heures</p>
+<h4 id="habiletes_4">Habiletés<a class="headerlink" href="#habiletes_4" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_8">Activités<a class="headerlink" href="#activites_8" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_9">Activités<a class="headerlink" href="#activites_9" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_4">Critères<a class="headerlink" href="#criteres_4" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<p>En programmation
+native ET en
+programmation multi-
+plateforme :</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Programmation ou
+intégration correctes
+de mécanismes
+d’authentification et
+d’autorisation
+2 - Programmation
+correcte des
+interactions entre
+l’interface graphique
+et l’utilisatrice ou
+l’utilisateur
+3 - Choix approprié
+des clauses, des
+opérateurs, des
+commandes ou des
+paramètres dans les
+requêtes à la base de
+données
+4 - Manipulation
+correcte des données</p>
+<h4 id="programmer">Programmer<a class="headerlink" href="#programmer" title="Permanent link">&para;</a></h4>
+<p>l'application</p>
+<h4 id="lectures_4">Lectures<a class="headerlink" href="#lectures_4" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_3">Exercices<a class="headerlink" href="#exercices_3" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_8">Mise en<a class="headerlink" href="#mise-en_8" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<h4 id="mecanismes_1">Mécanismes<a class="headerlink" href="#mecanismes_1" title="Permanent link">&para;</a></h4>
+<p>d'authentification
+sur un
+serveur
+distant</p>
+<h4 id="examens_3">Examens<a class="headerlink" href="#examens_3" title="Permanent link">&para;</a></h4>
+<p>1, 2 et 3
+(S)</p>
+<h4 id="mise-en_9">Mise en<a class="headerlink" href="#mise-en_9" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la</p>
+<h4 id="examen_3">Examen<a class="headerlink" href="#examen_3" title="Permanent link">&para;</a></h4>
+<p>formatif
+formel
+(FF)</p>
+<h4 id="mecanismes_2">Mécanismes<a class="headerlink" href="#mecanismes_2" title="Permanent link">&para;</a></h4>
+<p>d'autorisation
+pour
+accéder
+aux</p>
+<p>de la base de données
+5 - Programmation
+correcte de la
+synchronisation des
+données
+6 - Utilisation
+appropriée des
+services d’échange de
+données
+7 - Application
+correcte des
+techniques
+d’internationalisation
+8 - Application
+rigoureuse des
+techniques de
+programmation
+sécurisée</p>
+<h4 id="peripheriques">périphériques<a class="headerlink" href="#peripheriques" title="Permanent link">&para;</a></h4>
+<p>de
+l'appareil</p>
+<h4 id="production">production<a class="headerlink" href="#production" title="Permanent link">&para;</a></h4>
+<p>d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="utilisation">Utilisation<a class="headerlink" href="#utilisation" title="Permanent link">&para;</a></h4>
+<p>des
+capteurs</p>
+<h4 id="operations">Opérations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h4>
+<p>CRUD
+sur les
+données</p>
+<h4 id="synchronisation">Synchronisation<a class="headerlink" href="#synchronisation" title="Permanent link">&para;</a></h4>
+<p>des
+bases
+de
+données
+locale
+et
+distante</p>
+<h4 id="techniques">Techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h4>
+<p>d'internationalisation</p>
+<h4 id="techniques_1">Techniques<a class="headerlink" href="#techniques_1" title="Permanent link">&para;</a></h4>
+<p>de
+programmation
+sécurisée</p>
+<h3 id="00ss-6-controler-la-qualite-de-lapplication">00SS - 6 : Contrôler la qualité de l’application<a class="headerlink" href="#00ss-6-controler-la-qualite-de-lapplication" title="Permanent link">&para;</a></h3>
+<p>Durée : 4 heures</p>
+<h4 id="habiletes_5">Habiletés<a class="headerlink" href="#habiletes_5" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_10">Activités<a class="headerlink" href="#activites_10" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_11">Activités<a class="headerlink" href="#activites_11" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_5">Critères<a class="headerlink" href="#criteres_5" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<p>En programmation
+native ET en
+programmation multi-
+plateforme :</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Application
+rigoureuse des plans
+de tests sur
+l’émulateur et sur la
+plateforme cible
+2 - Revues de code et
+de sécurité
+rigoureuses
+3 - Pertinence des
+correctifs
+4 - Respect des
+procédures de suivi
+des problèmes et de
+gestion des versions
+5 - Respect des
+documents de
+conception</p>
+<h4 id="appliquer_1">Appliquer<a class="headerlink" href="#appliquer_1" title="Permanent link">&para;</a></h4>
+<p>les plans
+de tests</p>
+<h4 id="lectures_5">Lectures<a class="headerlink" href="#lectures_5" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_4">Exercices<a class="headerlink" href="#exercices_4" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_10">Mise en<a class="headerlink" href="#mise-en_10" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<h4 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h4>
+<p>fonctionnels</p>
+<h4 id="effectuer">Effectuer<a class="headerlink" href="#effectuer" title="Permanent link">&para;</a></h4>
+<p>le suivi
+des
+versions</p>
+<h4 id="au-moins">Au moins<a class="headerlink" href="#au-moins" title="Permanent link">&para;</a></h4>
+<p>un
+examen
+(à
+déterminer)
+(S)</p>
+<h4 id="suivi">Suivi<a class="headerlink" href="#suivi" title="Permanent link">&para;</a></h4>
+<p>des
+versions</p>
+<h4 id="mise-en_11">Mise en<a class="headerlink" href="#mise-en_11" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h3 id="00ss-7-participer-a-la-mise-en-service-de-lapplication">00SS - 7 : Participer à la mise en service de l’application<a class="headerlink" href="#00ss-7-participer-a-la-mise-en-service-de-lapplication" title="Permanent link">&para;</a></h3>
+<p>Durée : 2 heures</p>
+<h4 id="habiletes_6">Habiletés<a class="headerlink" href="#habiletes_6" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_12">Activités<a class="headerlink" href="#activites_12" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_13">Activités<a class="headerlink" href="#activites_13" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_6">Critères<a class="headerlink" href="#criteres_6" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<p>En programmation
+native ET en
+programmation multi-
+plateforme :</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Préparation
+appropriée de
+l’application en vue de
+son déploiement ou de
+son installation
+2 - Déploiement ou
+installation corrects de
+l’application</p>
+<h4 id="deployer">Déployer<a class="headerlink" href="#deployer" title="Permanent link">&para;</a></h4>
+<p>l'application
+directement
+sur un
+appareil
+mobile</p>
+<h4 id="lectures_6">Lectures<a class="headerlink" href="#lectures_6" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_5">Exercices<a class="headerlink" href="#exercices_5" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_12">Mise en<a class="headerlink" href="#mise-en_12" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<h4 id="processus">Processus<a class="headerlink" href="#processus" title="Permanent link">&para;</a></h4>
+<p>de
+déploiement
+direct
+sur
+l'appareil</p>
+<h4 id="expliquer">Expliquer<a class="headerlink" href="#expliquer" title="Permanent link">&para;</a></h4>
+<p>les
+concepts
+de
+publication
+d'une
+application
+sur
+Google
+Play</p>
+<h4 id="mise-en_13">Mise en<a class="headerlink" href="#mise-en_13" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="processus_1">Processus<a class="headerlink" href="#processus_1" title="Permanent link">&para;</a></h4>
+<p>de
+publication
+sur
+Google
+Play</p>
+<h3 id="00ss-8-rediger-la-documentation">00SS - 8 : Rédiger la documentation<a class="headerlink" href="#00ss-8-rediger-la-documentation" title="Permanent link">&para;</a></h3>
+<p>Durée : 1 heures</p>
+<h4 id="habiletes_7">Habiletés<a class="headerlink" href="#habiletes_7" title="Permanent link">&para;</a></h4>
+<p>Contenu
+Activités
+d'enseignement</p>
+<h4 id="activites_14">Activités<a class="headerlink" href="#activites_14" title="Permanent link">&para;</a></h4>
+<p>d'apprentissage</p>
+<h4 id="activites_15">Activités<a class="headerlink" href="#activites_15" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="criteres_7">Critères<a class="headerlink" href="#criteres_7" title="Permanent link">&para;</a></h4>
+<p>d'évaluation</p>
+<h4 id="generateurs">Générateurs<a class="headerlink" href="#generateurs" title="Permanent link">&para;</a></h4>
+<p>de
+documentation</p>
+<p>Théorie parfois
+accompagnée d'une
+démonstration</p>
+<p>1 - Détermination
+correcte de
+l’information à rédiger
+2 - Notation claire du
+travail effectué</p>
+<h4 id="rediger">Rédiger<a class="headerlink" href="#rediger" title="Permanent link">&para;</a></h4>
+<p>la
+documentation</p>
+<h4 id="lectures_7">Lectures<a class="headerlink" href="#lectures_7" title="Permanent link">&para;</a></h4>
+<h4 id="exercices_6">Exercices<a class="headerlink" href="#exercices_6" title="Permanent link">&para;</a></h4>
+<p>formatifs
+obligatoires
+(F)</p>
+<h4 id="mise-en_14">Mise en<a class="headerlink" href="#mise-en_14" title="Permanent link">&para;</a></h4>
+<p>pratique
+des
+notions
+au fur et
+à mesure</p>
+<h4 id="examens_4">Examens<a class="headerlink" href="#examens_4" title="Permanent link">&para;</a></h4>
+<p>1, 2 et 3
+(S)</p>
+<h4 id="mise-en_15">Mise en<a class="headerlink" href="#mise-en_15" title="Permanent link">&para;</a></h4>
+<p>place des
+éléments
+nécessaires
+à la
+production
+d’un
+exercice
+sommatif
+qui
+s’échelonnera
+sur
+plusieurs
+semaines</p>
+<h4 id="examen_4">Examen<a class="headerlink" href="#examen_4" title="Permanent link">&para;</a></h4>
+<p>formatif
+formel
+(FF)</p>
+<h3 id="evaluations-sommatives">Évaluations sommatives<a class="headerlink" href="#evaluations-sommatives" title="Permanent link">&para;</a></h3>
+<h4 id="evaluation">Évaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h4>
+<p>Pondération
+Échéancier</p>
+<h4 id="examen-1-ensemble-de-la-competence-natif">Examen 1 - Ensemble de la compétence - natif<a class="headerlink" href="#examen-1-ensemble-de-la-competence-natif" title="Permanent link">&para;</a></h4>
+<p>25 %
+Vers la semaine 5
+Examen 2 - Ensemble de la compétence, plus
+approfondi - natif (l'épreuve finale sera en
+programmation multi-plateforme)</p>
+<h4 id="35">35 %<a class="headerlink" href="#35" title="Permanent link">&para;</a></h4>
+<p>Vers la semaine 10</p>
+<h3 id="epreuve-finale">Épreuve finale<a class="headerlink" href="#epreuve-finale" title="Permanent link">&para;</a></h3>
+<h4 id="ponderation_1">Pondération :<a class="headerlink" href="#ponderation_1" title="Permanent link">&para;</a></h4>
+<h4 id="40">40 %<a class="headerlink" href="#40" title="Permanent link">&para;</a></h4>
+<h4 id="performance-finale-exigee">Performance finale exigée<a class="headerlink" href="#performance-finale-exigee" title="Permanent link">&para;</a></h4>
+<p>L'élève produira une application mobile répondant à un devis. L'application mobile aura une quantité définie d'écrans à réaliser et interagira avec une base de
+données.</p>
+<h4 id="contexte-de-realisation">Contexte de réalisation<a class="headerlink" href="#contexte-de-realisation" title="Permanent link">&para;</a></h4>
+<h4 id="sous-forme-dexamen-pratique-individuel-a-la-semaine-15">Sous forme d'examen pratique individuel à la semaine 15<a class="headerlink" href="#sous-forme-dexamen-pratique-individuel-a-la-semaine-15" title="Permanent link">&para;</a></h4>
+<h4 id="a-laide-doutils-de-programmation-native-ou-multi-plateformes-au-choix-de-lenseignante-ou-de-lenseignant">À l'aide d'outils de programmation native ou multi-plateformes, au choix de l'enseignante ou de l'enseignant<a class="headerlink" href="#a-laide-doutils-de-programmation-native-ou-multi-plateformes-au-choix-de-lenseignante-ou-de-lenseignant" title="Permanent link">&para;</a></h4>
+<h4 id="a-partir-du-devis-fourni-par-lenseignante-ou-lenseignant">À partir du devis fourni par l'enseignante ou l'enseignant<a class="headerlink" href="#a-partir-du-devis-fourni-par-lenseignante-ou-lenseignant" title="Permanent link">&para;</a></h4>
+<h4 id="a-laide-de-la-documentation-existante-notes-de-cours-sites-web-etc">À l'aide de la documentation existante : notes de cours, sites Web, etc.<a class="headerlink" href="#a-laide-de-la-documentation-existante-notes-de-cours-sites-web-etc" title="Permanent link">&para;</a></h4>
+<h4 id="sur-ordinateur">Sur ordinateur<a class="headerlink" href="#sur-ordinateur" title="Permanent link">&para;</a></h4>
+<h4 id="en-presence-de-lenseignante-ou-de-lenseignant">En présence de l'enseignante ou de l'enseignant<a class="headerlink" href="#en-presence-de-lenseignante-ou-de-lenseignant" title="Permanent link">&para;</a></h4>
+<h4 id="dune-duree-de-2-heures">D'une durée de 2 heures<a class="headerlink" href="#dune-duree-de-2-heures" title="Permanent link">&para;</a></h4>
+<h4 id="criteres-devaluation">Critères d'évaluation<a class="headerlink" href="#criteres-devaluation" title="Permanent link">&para;</a></h4>
+<h4 id="creation-ou-adaptation-correctes-de-la-base-de-donnees">Création ou adaptation correctes de la base de données<a class="headerlink" href="#creation-ou-adaptation-correctes-de-la-base-de-donnees" title="Permanent link">&para;</a></h4>
+<h4 id="choix-et-utilisation-appropries-des-elements-graphiques-pour-laffichage-et-la-saisie">Choix et utilisation appropriés des éléments graphiques pour l’affichage et la saisie<a class="headerlink" href="#choix-et-utilisation-appropries-des-elements-graphiques-pour-laffichage-et-la-saisie" title="Permanent link">&para;</a></h4>
+<h4 id="programmation-correcte-de-lapplication">Programmation correcte de l'application<a class="headerlink" href="#programmation-correcte-de-lapplication" title="Permanent link">&para;</a></h4>
+<h4 id="manipulation-correcte-des-donnees-de-la-ou-des-bases-de-donnees">Manipulation correcte des données de la ou des bases de données<a class="headerlink" href="#manipulation-correcte-des-donnees-de-la-ou-des-bases-de-donnees" title="Permanent link">&para;</a></h4>
+<h4 id="application-rigoureuse-des-techniques-de-programmation-securisee">Application rigoureuse des techniques de programmation sécurisée<a class="headerlink" href="#application-rigoureuse-des-techniques-de-programmation-securisee" title="Permanent link">&para;</a></h4>
+<h3 id="politique-departementale-devaluation-des-apprentissages">Politique départementale d'évaluation des apprentissages<a class="headerlink" href="#politique-departementale-devaluation-des-apprentissages" title="Permanent link">&para;</a></h3>
+<h3 id="departement-informatique">Département : Informatique<a class="headerlink" href="#departement-informatique" title="Permanent link">&para;</a></h3>
+<h2 id="2-presence-aux-cours">2. Présence aux cours<a class="headerlink" href="#2-presence-aux-cours" title="Permanent link">&para;</a></h2>
+<p>2.1. La présence aux cours est obligatoire. En cas d’absence prévue ou de départ prématuré, l’élève doit toujours informer son enseignante ou son enseignant. En
+cas d’absence non prévue, il ou elle doit justifier son absence dans un délai de 2 jours ouvrables, sinon l’absence est considérée non justifiée.</p>
+<h2 id="5-evaluations-sommatives">5. Évaluations sommatives<a class="headerlink" href="#5-evaluations-sommatives" title="Permanent link">&para;</a></h2>
+<p>5.1. Lors d’une absence ou d’un retard pour une épreuve sommative, aucune reprise ni prolongation n’est possible sauf lorsqu’une justification acceptable est
+présentée à l’enseignante ou à l’enseignant (billet médecin, mortalité dans la famille immédiate, etc.). La justification doit être transmise à l’enseignante ou à
+l’enseignant dans un délai de 2 jours ouvrables.</p>
+<p>5.2. Un élève qui oublie son matériel essentiel devra réaliser l’épreuve avec les moyens dont il dispose. L’enseignant ou l’enseignante n’a aucune obligation de lui
+fournir le matériel manquant. Le fait de retourner chercher ledit matériel n’est pas considéré comme une justification acceptable de retard.</p>
+<p>5.3. Aucune reprise n’est possible pour un échec lors d’une épreuve sommative.</p>
+<p>5.4. Les élèves peuvent consulter les documents contenant leurs épreuves sommatives (ex: questionnaire) mais l’enseignante ou l’enseignant les conserve après la
+consultation.</p>
+<p>5.5. L’élève est responsable de la remise de ses travaux. Il doit vérifier s’il a remis les bons documents, que les documents sont lisibles et qu’il a bien confirmé la
+remise selon les modalités de la plateforme utilisée.</p>
+<h3 id="56-en-cas-derreur-lors-de-la-remise-dune-evaluation-sommative-une-recidive-tous-cours-dinformatique-confondus-entrainera-la-note-de-0-pour-levaluation">5.6 En cas d’erreur lors de la remise d’une évaluation sommative, une récidive, tous cours d’informatique confondus, entraînera la note de 0 pour l’évaluation<a class="headerlink" href="#56-en-cas-derreur-lors-de-la-remise-dune-evaluation-sommative-une-recidive-tous-cours-dinformatique-confondus-entrainera-la-note-de-0-pour-levaluation" title="Permanent link">&para;</a></h3>
+<p>concernée. Aucun document altéré après la date de remise ne sera accepté.</p>
+<p>Texte complet de la PDEA</p>
+<h3 id="conditions-pedagogiques-particulieres">Conditions pédagogiques particulières<a class="headerlink" href="#conditions-pedagogiques-particulieres" title="Permanent link">&para;</a></h3>
+<p>Au meilleur se son jugement, l'enseignante ou l'enseignant créera les conditions nécessaires pour que l'élève typique consacre en moyenne le temps requis pondéré
+pour ce cours.</p>
+<p>L'élève doit comprendre que si les heures travaillées en classe ne sont pas de qualité, le temps perdu devra être repris hors classe en plus des heures prévues à la
+pondération.</p>
+<p>Si un élève croit que le nombre d'heures de travail hors classe est trop élevé, il est de sa responsabilité d'aviser l'enseignante ou l'enseignant qui jugera de l'action
+pédagogique à réaliser.</p>
+<h3 id="environnement-numerique-dapprentissage-plateforme">Environnement numérique d’apprentissage (plateforme)<a class="headerlink" href="#environnement-numerique-dapprentissage-plateforme" title="Permanent link">&para;</a></h3>
+<p>Apical, Teams</p>
+<h3 id="mediagraphie">Médiagraphie<a class="headerlink" href="#mediagraphie" title="Permanent link">&para;</a></h3>
+<p>Android Jetpack, <a href="https://developer.android.com/jetpack">https://developer.android.com/jetpack</a>
+ (Page consultée le 7 juillet 2021)
+React Native, <a href="https://reactnative.dev/">https://reactnative.dev/</a>
+ (Page consultée le 29 avril 2024)</p>
+<h3 id="materiel-requis">Matériel requis<a class="headerlink" href="#materiel-requis" title="Permanent link">&para;</a></h3>
+<p>Ordinateur portable
+Au moins un appareil mobile Android fourni par le département, partagé par les élèves.</p>
+<h3 id="13-site-web-du-departement">1.3 Site Web du département<a class="headerlink" href="#13-site-web-du-departement" title="Permanent link">&para;</a></h3>
+<p>Une foule de renseignements ont été consignés à votre intention sur le site <a href="https://techinfo.profinfo.ca">https://techinfo.profinfo.ca</a>
+.</p>
+<p><img alt="Illustration" src="../images/page_009_img_02_1000x491.png" /></p>
+<h2 id="2-installation-sur-votre-portable">2. Installation sur votre portable<a class="headerlink" href="#2-installation-sur-votre-portable" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="81-grille-de-cours-du-programme-techniques-de-linformatique">8.1 Grille de cours du programme Techniques de l'informatique<a class="headerlink" href="#81-grille-de-cours-du-programme-techniques-de-linformatique" title="Permanent link">&para;</a></h3>
+<p><img alt="Illustration" src="../images/page_071_img_01_2916x4512.png" /></p>
+<h2 id="9-extraits-de-code-tires-des-notes-de-cours-ou-du-web">9. Extraits de code tirés des notes de cours ou du Web<a class="headerlink" href="#9-extraits-de-code-tires-des-notes-de-cours-ou-du-web" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="101-ecouter-le-prof-sans-cellulaire">10.1 Écouter le prof sans cellulaire<a class="headerlink" href="#101-ecouter-le-prof-sans-cellulaire" title="Permanent link">&para;</a></h3>
+<p>Pendant que je vous donne des explications en début de période, vous devez placer votre cellulaire sur la table, face cachée.</p>
+<p>De cette façon, vous serez plus disponibles pour recevoir ce que je vous communique.</p>
+<p><img alt="Illustration" src="../images/page_074_img_01_800x533.png" /></p>
+<p>Image générée à l'aide de l'intelligence artificielle</p>
+<h2 id="11-outils-pour-developper-une-application-mobile-android">11. Outils pour développer une application mobile Android<a class="headerlink" href="#11-outils-pour-developper-une-application-mobile-android" title="Permanent link">&para;</a></h2>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
