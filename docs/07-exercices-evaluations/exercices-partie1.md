@@ -4,61 +4,28 @@ title: "Exercices pratiques - Partie 1 (1 à 4)"
 
 # Exercices pratiques - Partie 1 (1 à 4)
 
-
-### 19.1 Exploration de Jetpack Compose
-
-
-### 1. **Installez Android Studio]** sur votre poste de
-travail.
+## 1. Exploration de Jetpack Compose
 
 
-### 2. Afin de vous familiariser un peu avec l'environnement, **créez l'application qui affiche Hello
-Android à l'écran]** et faites-la tourner dans l'émulateur (pas seulement dans la prévisualisation).
+- Installez **Android Studio** sur votre poste de travail.
+    - Afin de vous familiariser un peu avec l'environnement, créez l'application qui affiche Hello Android à l'écran et faites-la tourner dans l'émulateur (pas seulement dans la prévisualisation).
 
 
-## 3. Ouvrez le **fichier build.gradle.kts du dossier app]** et repérez les configurations minSdk et targetSdk.
+- Ouvrez le **fichier build.gradle.kts du dossier app** et repérez les configurations minSdk et targetSdk.
 
+- Demandez à votre outil d'IA favori quel est le rôle de chacune?
 
-#### a. Demandez à votre outil d'IA favori quel est le rôle de chacune?
+- Quand on crée un projet, est-ce que c'est le *minSdk* ou le *targetSdk* qui est sélectionné sur l'écran de configuration?
 
+- Votre projet pourra-t-il être publié sur Google Play avec cette configuration?
 
-#### b. Quand on crée un projet, est-ce que c'est le minSdk ou le targetSdk qui est sélectionné sur l'écran de
-
-
-#### configuration?
-
-
-#### c. Votre projet pourra-t-il être publié sur Google Play avec cette configuration?
-
-
-### 4. Créez une nouvelle application nommée Tutoriel. Suivez le
+- Créez une nouvelle application nommée Tutoriel. Suivez le
 tutoriel [https://developer.android.com/jetpack/compose/tutorial?hl=fr](https://developer.android.com/jetpack/compose/tutorial?hl=fr)
 
 
-## 20. Pour le prochain cours
 
 
-
----
-
-
-### 20.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 21. L'état dans Jetpack Compose
-
-
-
----
-
-
-### 23.1 Jeu de devinette - partie 1
+### 2. L'état dans Jetpack Compose: Jeu de devinette - partie 1
 
 
 Vous devez développer une application Android avec Kotlin et Jetpack Compose. Il s'agit d'un petit jeu de devinette simpliste.
@@ -67,73 +34,32 @@ Vous devez développer une application Android avec Kotlin et Jetpack Compose. I
 Je vous suggère pour cet exercice de ne pas faire appel aux outils d'IA générative.
 
 
-L'application contient un mot codé en dur. Elle affiche la première et la dernière lettre du mot et l'usager doit deviner ce qu'il y a entre les deux. S'il réussit, une
-image apparaît pour le féliciter. Sinon, une image illustre qu'il n'a pas réussi.
+L'application contient un mot codé en dur. Elle affiche la première et la dernière lettre du mot et l'usager doit deviner ce qu'il y a entre les deux. S'il réussit, une image apparaît pour le féliciter. Sinon, une image illustre qu'il n'a pas réussi.
 
 
-### 1. Commencez par effectuer une lecture rapide des fiches des chapitres de référence. À ce stade, vous n'avez pas
+- Commencez par effectuer une lecture rapide des fiches des chapitres de référence. À ce stade, vous n'avez pas
 besoin de tout comprendre. Il s'agit simplement de savoir où retrouver l'information en cas de besoin.
 
-
-### 2. Créez un nouveau projet. Attention : votre application doit utiliser un nom de domaine en format inverse approprié
+- Créez un nouveau projet. Attention : votre application doit utiliser un nom de domaine en format inverse approprié
 (par défaut, on voit com.example.monprojet mais l'utilisation de com.example n'est pas acceptable puisque votre
 application pourrait ne pas être identifiée de façon unique dans Google Play).
 
-
-### 3. Dessinez sur une feuille ce à quoi l'écran principal de votre application devrait ressembler. Vous êtes libres de vos
+- Dessinez sur une feuille ce à quoi l'écran principal de votre application devrait ressembler. Vous êtes libres de vos
 choix de disposition mais l'écran doit être facile à utiliser et agréable à regarder.
 
 
-## 4. Importez les images pour illustrer la réussite et l'échec.
+- Importez les images pour illustrer la réussite et l'échec.
+    - Ces images ne seront utilisées que lors du prochain exercice.
+    - Les images choisies doivent être libres de droits (suggestion de site pour en obtenir: Pixabay).
+    - Assurez-vous que chacune porte un nom en casse serpent.
+    - Au besoin, conservez l'original de chaque image ainsi que les licences d'utilisation dans le dossier dev de votre application, vous pourriez en avoir besoin au prochain exercice.
 
+- Affichez la première et la dernière lettre du mot (trouvées par programmation - à vous de trouver comment).
+- Déclarez une variable d'état qui contiendra le mot saisi par l'usager.
+- Faites en sorte que l'usager puisse saisir le mot à deviner. Le traitement sera réalisé dans le prochain exercice.
+- Assurez-vous que les textes et autres composables ne soient pas collés au bord de l'écran.
+- Testez l'apparence de votre application en mode clair puis en mode sombre.
 
-#### a. Ces images ne seront utilisées que lors du prochain exercice.
-
-
-#### b. Les images choisies doivent être libres de droits (suggestions :
-
-
-#### **Banques_d_images_professionnelles**).
-
-
-#### c. Assurez-vous que chacune porte un nom en casse serpent.
-
-
-#### d. Au besoin, conservez l'original de chaque image ainsi que les licences d'utilisation dans le dossier dev de
-
-
-#### votre application, vous pourriez en avoir besoin au prochain exercice.
-
-
-## 5. Affichez la première et la dernière lettre du mot (trouvées par programmation - à vous de trouver comment).
-
-
-## 6. Déclarez une variable d'état qui contiendra le mot saisi par l'usager.
-
-
-## 7. Faites en sorte que l'usager puisse saisir le mot à deviner. Le traitement sera réalisé dans le prochain exercice.
-
-
-## 8. Assurez-vous que les textes et autres composables ne soient pas collés au bord de l'écran.
-
-
-## 9. Testez l'apparence de votre application en mode clair puis en mode sombre.
-
-
-## 24. Pour le prochain cours
-
-
-
----
-
-
-### 24.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
 
 
 ## 25. Déboguer une application Android
