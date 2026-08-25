@@ -15,11 +15,10 @@ Jetpack Compose implémente Material Design
 , une bibliothèque spécialisée pour bâtir des interfaces utilisateur.
 
 
-Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack Compose, l'interface sera décrite par programmation à l'aide de **fonctions modulables]**.
+Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack Compose, l'interface sera décrite par programmation à l'aide de **fonctions modulables**.
 
 
-Si vous avez déjà programmé des applications mobiles pour iPhone avec SwiftUI ou des applications pour iPhone ou Android avec Flutter, vous trouverez plusieurs
-ressemblances entre ces technologies.
+Si vous avez déjà programmé des applications mobiles pour iPhone avec SwiftUI ou des applications pour iPhone ou Android avec Flutter, vous trouverez plusieurs ressemblances entre ces technologies.
 
 
 À titre d'exemple, voici une fonction modulable qui permet d'afficher le mot Hello suivi d'une information reçue en paramètre. Chaque fonction modulable est en fait
@@ -177,33 +176,13 @@ fun GreetingPreview() {
 
 Quelques explications :
 
-
-#### La classe MainActivity hérite de ComponentActivity (). Vous pouvez consulter le code de cette classe en faisant
-
-
-#### Ctrl +Clic (Windows) ou  ⌘ Cmd +Clic (Mac) sur son nom.
-
-
-#### Dans son constructeur, on commence par exécuter le constructeur de la classe parent. On définit ensuite que
-l'application utilise le thème nommé HelloWorldTheme . Ce thème est défini dans le fichier
-
-
-#### app/src/main/java/com.mondomaine.helloworld/ui.theme/Theme.kt . On peut y accéder facilement en faisant Ctrl +Clic
-
-
-#### (Windows) ou  ⌘ Cmd +Clic (Mac) sur son nom.
-
-
-#### Le constructeur spécifie ensuite la structure de l'écran ( **Scaffold]** ) et son contenu.
-
-
-#### Le contenu est défini par la fonction modulable Greeting() .
-
-
-### Au bas du fichier, on remarque l'annotation @Preview . Ceci permet d'avoir un aperçu en temps réel de l'interface
+- La classe MainActivity hérite de ComponentActivity (). Vous pouvez consulter le code de cette classe en faisant
+-  Ctrl +Clic (Windows) ou  ⌘ Cmd +Clic (Mac) sur son nom.
+- Dans son constructeur, on commence par exécuter le constructeur de la classe parent. On définit ensuite que l'application utilise le thème nommé HelloWorldTheme . Ce thème est défini dans le fichier
+- `app/src/main/java/com.mondomaine.helloworld/ui.theme/Theme.kt` . On peut y accéder facilement en faisant Ctrl +Clic (Windows) ou  ⌘ Cmd +Clic (Mac) sur son nom.
+- Le constructeur spécifie ensuite la structure de l'écran ( **Scaffold** ) et son contenu.
+- Le contenu est défini par la fonction modulable *Greeting()* .
+- Au bas du fichier, on remarque l'annotation @Preview . Ceci permet d'avoir un aperçu en temps réel de l'interface
 utilisateur dans l'environnement de développement sans avoir à lancer l'application.
-16. Le gestionnaire de ressources
 
 
-
----
