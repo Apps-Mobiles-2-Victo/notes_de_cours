@@ -35,7 +35,6 @@ Je vous suggère pour cet exercice de ne pas faire appel aux outils d'IA génér
 
 L'application contient un mot codé en dur. Elle affiche la première et la dernière lettre du mot et l'usager doit deviner ce qu'il y a entre les deux. S'il réussit, une image apparaît pour le féliciter. Sinon, une image illustre qu'il n'a pas réussi.
 
-
 - Commencez par effectuer une lecture rapide des fiches des chapitres de référence. À ce stade, vous n'avez pas
 besoin de tout comprendre. Il s'agit simplement de savoir où retrouver l'information en cas de besoin.
 

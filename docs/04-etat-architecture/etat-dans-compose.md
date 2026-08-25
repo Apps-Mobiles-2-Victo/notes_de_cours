@@ -8,9 +8,7 @@ title: "Gestion de l'état dans Jetpack Compose"
 ### 21.1 Les variables d'état
 
 
-Dans un projet Android avec Jetpack Compose, la vue est rafraîchie à chaque fois qu'une variable d'état change de valeur. Ce concept s'appelle la programmation
-réactive
-.
+Dans un projet Android avec Jetpack Compose, la vue est rafraîchie à chaque fois qu'une variable d'état change de valeur. Ce concept s'appelle la programmation réactive.
 
 
 Jetpack Compose est donc un cadre d'application réactif au même titre que React ou encore SwiftUI.
@@ -31,8 +29,7 @@ Il est possible de spécifier le type si désiré :
 var maVariable: String by remember { mutableStateOf("valeurOriginale") }
 ```
 
-
-Important : avec cette syntaxe qui utilise les mots by remember, vous devez ajouter deux instructions import.
+Important : avec cette syntaxe qui utilise les mots *by remember*, vous devez ajouter deux instructions import.
 
 
 ```kotlin title="Kotlin"
@@ -40,39 +37,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 ```
 
+Ceci est nécessaire puisque la syntaxe *by remember* vous permettra d'accéder directement à la variable par son nom.
 
-Ceci est nécessaire puisque la syntaxe by remember vous permettra d'accéder directement à la variable par son nom.
-
-
-Dans l'expression by remember, le mot-clé by s'appelle délégué de propriété (en anglais, delegated property
-).
+Dans l'expression *by remember*, le mot-clé *by* s'appelle délégué de propriété (en anglais, delegated property).
 
 
-Il aurait également été possible d'omettre le mot-clé by.
+Il aurait également été possible d'omettre le mot-clé *by*.
 
+À ce moment, plus besoin des deux import. Cependant, la variable créé serait alors de type MutableState<...> et pour accéderà sa valeur, il faudrait faire suivre son nom par .value.
 
-À ce moment, plus besoin des deux import. Cependant, la variable créé serait alors de type MutableState<...> et pour accéder à sa valeur, il faudrait faire suivre
-son nom par .value.
-
-
-Si vous utilisez la syntaxe by remember et que vous oubliez les deux import, vous obtiendrez l'erreur « Type 'TypeVariable(T) has no method 'getValue(Nothing?,
-KProperty<*>)' and thus it cannot serve as a delegate ».
-
-
+Si vous utilisez la syntaxe *by remember* et que vous oubliez les deux import, vous obtiendrez l'erreur `Type 'TypeVariable(T) has no method 'getValue(Nothing?, KProperty<*>)' and thus it cannot serve as a delegate`.
 
 
 ![Illustration](../images/page_099_img_01_800x79.png)
 
 
-
-
 !!! warning "Attention : si vous "
-    Attention : si vous désirez utiliser une liste d'objets comme variable d'état, vous devez apporter quelques ajustements à votre code comme démontré sur cette
-fiche : « **mutablelistof_comme_variable_d_etat** ».
+    Attention : si vous désirez utiliser une liste d'objets comme variable d'état, vous devez apporter quelques ajustements à votre code comme démontré sur cette fiche : « **mutablelistof_comme_variable_d_etat** ».
 
 
 #### Pour plus d'information
-
 
 * [« What does 'by' keyword do in Kotlin? » - StackOverflow](https://stackoverflow.com/questions/38250022/what-does-by-keyword-do-in-kotlin)
 
@@ -80,12 +64,9 @@ fiche : « **mutablelistof_comme_variable_d_etat** ».
 ### 21.2 Où déclarer les variables d'état?
 
 
-Avec Jetpack Compose, si l'application n'utilise pas les **ViewModels]**, les
-variables d'état doivent être déclarées dans une fonction modulable.
+Avec Jetpack Compose, si l'application n'utilise pas les **ViewModels**, les variables d'état doivent être déclarées dans une fonction modulable.
 
-
-La plupart du temps, elles seront déclarées dans la toute première fonction modulable. Cette fonction peut porter n'importe quel nom. Cependant, on lui donnera
-souvent le nom MainScreen.
+La plupart du temps, elles seront déclarées dans la toute première fonction modulable. Cette fonction peut porter n'importe quel nom. Cependant, on lui donnera souvent le nom *MainScreen*.
 
 
 ```kotlin title="Kotlin"
@@ -112,8 +93,7 @@ fun MainScreen (innerPadding: PaddingValues) {
 }
 ```
 
-
-### Dans le cas où une autre fonction modulable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état]**.
+### Dans le cas où une autre fonction modulable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état**.
 21.3 Où peut-on modifier la valeur d'une variable d'état
 
 
@@ -126,32 +106,24 @@ Il faut faire attention à l'endroit où la modification d'une variable d'état 
 Si vous effectuez la modification à un endroit inapproprié, l'application aura un fonctionnement erratique.
 
 
-Selon la documentation officielle de Android Developers
- :
+Selon la documentation officielle de Android Developers:
 
 
-### La couche de l'UI ne doit jamais changer d'état en dehors d'un gestionnaire d'événements, car cela
+```
+La couche de l'UI ne doit jamais changer d'état en dehors d'un gestionnaire d'événements, car cela peut entraîner des incohérences et des bugs dans votre application.
+```
 
 
-### peut entraîner des incohérences et des bugs dans votre application.
-
-
-Par exemple, dans l'application mal codée présentée plus bas, dès qu'un caractère est entré dans la boîte de saisie, l'heure est réinitialisée puis réaffichée dans une
-boucle infinie. Ceci n'est pas acceptable :-o
+Par exemple, dans l'application mal codée présentée plus bas, dès qu'un caractère est entré dans la boîte de saisie, l'heure est réinitialisée puis réaffichée dans une boucle infinie. Ceci n'est pas acceptable :-o
 
 
 Ce comportement s'explique comme suit :
 
 
-#### L'entrée d'un caractère modifie la valeur de la variable d'état valeur, ce qui cause la recomposition du composable
+- L'entrée d'un caractère modifie la valeur de la variable d'état valeur, ce qui cause la recomposition du composable
 qui lit cette variable d'état, soit MainScreen().
-
-
-#### Ceci cause une nouvelle initialisation de l'heure.
-
-
-#### Puisque l'heure est une variable d'état, ceci cause une recomposition du composable qui lit l'heure, soit
-MainScreen(). Et voilà, la boucle est partie!
+-  Ceci cause une nouvelle initialisation de l'heure.
+- Puisque l'heure est une variable d'état, ceci cause une recomposition du composable qui lit l'heure, soit *MainScreen()*. Et voilà, la boucle est partie!
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -178,17 +150,14 @@ fun MainScreen() {
 ### 1. * [« Structurer votre interface utilisateur Compose - Les événements dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/architecture?hl=fr#architecture-events)
 
 
-## 22. Case de saisie
-
-
 
 ---
 
 
-### 43.1 Survivre à la recréation de l'activité
+### 43.1 Survivre à la recréation de l'activité (ex. suite au changement d'orientation)
 
 
-Avez-vous déjà essayé de changer l'orientation du téléphone alors qu'une petite application qui utilise une variable d'état est en  cours d'exécution?
+Avez-vous déjà essayé de changer l'orientation du téléphone alors qu'une petite application qui utilise une variable d'état est en cours d'exécution?
 
 
 Prenons cet exemple :
