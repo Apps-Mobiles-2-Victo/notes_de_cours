@@ -197,7 +197,7 @@ Dans les deux cas, si plusieurs options sont disponibles, vous serez invités à
 
 
 Prenez note qu'il est possible de **configurer Android Studio pour ajouter automatiquement les instructions
-import non ambugües]**.
+import non ambugües**.
 
 
 ## 18. Structurer une application Android avec Kotlin et Jetpack Compose
@@ -256,11 +256,10 @@ fun MainScreen (modifier: Modifier = Modifier) {
 
 
 L'interface d'une application Android avec Jetpack Compose est définie en appelant différentes **fonctions
-modulables]**.
+modulables**.
 
 
-Il est important que Jetpack Compose sache dès le chargement de l'application quels éléments doivent être affichés. C'est pourquoi les fonctions modulables ne
-peuvent pas être appelées dans un gestionnaire d'événement.
+Il est important que Jetpack Compose sache dès le chargement de l'application quels éléments doivent être affichés. C'est pourquoi les fonctions modulables ne peuvent pas être appelées dans un gestionnaire d'événement.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -274,8 +273,7 @@ Button(
 ```
 
 
-Si vous appelez une fonction modulable dans un gestionnaire d'événement, vous obtiendrez à la compilation le message d'erreur « @Composable invocations can
-only happen from the context of a @Composable function ».
+Si vous appelez une fonction modulable dans un gestionnaire d'événement, vous obtiendrez à la compilation le message d'erreur ` @Composable invocations can only happen from the context of a @Composable function `.
 
 
 Dans un autre contexte, le composable doit être déclaré directement dans la fonction composable ou encore dans un autre composable, en autant que ce ne soit

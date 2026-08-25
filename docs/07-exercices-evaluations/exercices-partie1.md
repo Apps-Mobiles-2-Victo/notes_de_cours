@@ -8,10 +8,9 @@ title: "Exercices pratiques - Partie 1 (1 à 4)"
 
 
 - Installez **Android Studio** sur votre poste de travail.
-    - Afin de vous familiariser un peu avec l'environnement, créez l'application qui affiche Hello Android à l'écran et faites-la tourner dans l'émulateur (pas seulement dans la prévisualisation).
+    - Afin de vous familiariser un peu avec l'environnement, vous allez créez un projet de type *Activité Vide* / *Empty Activity* qui affiche Hello Android à l'écran puis le faire tourner dans l'émulateur (pas seulement dans la prévisualisation).s
 
-
-- Ouvrez le **fichier build.gradle.kts du dossier app** et repérez les configurations minSdk et targetSdk.
+- Ouvrez le fichier **app/build.gradle.kts** (vue *Project Files*) et repérez les configurations minSdk et targetSdk.
 
 - Demandez à votre outil d'IA favori quel est le rôle de chacune?
 
