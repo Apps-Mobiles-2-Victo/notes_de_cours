@@ -187,15 +187,10 @@ Au lieu de pointer le mot en rouge, vous pouvez cliquer dessus. Vous pourrez alo
 Dans les deux cas, si plusieurs options sont disponibles, vous serez invités à choisir celle qui vous convient.
 
 
-Prenez note qu'il est possible de **configurer Android Studio pour ajouter automatiquement les instructions import non ambugües**.
+Prenez note qu'il est possible de **configurer Android Studio pour ajouter automatiquement les instructions import non ambiguës**.
 
 
 ## 18. Structurer une application Android avec Kotlin et Jetpack Compose
-
-
-
----
-
 
 ### 18.1 Comment nommer la fonction modulable de base
 
@@ -290,9 +285,3 @@ fun MainScreen() {
 }
 ```
 
-
-## 19. Exercice 1
-
-
-
----
