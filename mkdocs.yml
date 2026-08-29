@@ -1,6 +1,6 @@
 site_name: "Notes de cours - Applications mobiles Android avec Jetpack Compose"
 site_description: "Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI"
-site_author: "Christiane Lagacé"
+site_author: "Sébastien Trottier, Christiane Lagacé, Cégep de Victoriaville"
 
 theme:
   name: material
