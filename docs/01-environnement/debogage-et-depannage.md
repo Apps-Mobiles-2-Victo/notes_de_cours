@@ -898,17 +898,11 @@ fun getDatabase(context: Context): MonprojetDatabase {
 ```
 
 
-## 8. Situation du cours dans le programme d'études
-
-
-
----
-
 
 ### 25.1 Atteindre rapidement la ligne qui cause une erreur de compilation
 
 
-Quand votre application ne compile pas, Andoid Studio vous présente à prime abord un écran qui donne de l'information sur l'erreur. Il s'agit de l'onglet Build .
+Quand votre application ne compile pas, Android Studio vous présente à prime abord un écran qui donne de l'information sur l'erreur. Il s'agit de l'onglet *Build* .
 
 
 Il est possible à ce stade de cliquer sur une flèche pour déployer une section puis de double-cliquer sur une ligne pour atteindre directement le code en erreur.
@@ -956,27 +950,15 @@ Une fois que vous avez **configuré un périphérique virtuel**, démarrez l'app
 Lorsque le programme atteint le point d'arrêt, vous pouvez :
 
 
-#### Consulter la valeur des variables dans la fenêtre Debug (si elle n'apparaît pas automatiquement, vous pouvez l'ouvrir
-par View / Tool Windows / Debug ).
-
-
+- Consulter la valeur des variables dans la fenêtre Debug (si elle n'apparaît pas automatiquement, vous pouvez l'ouvrir par View / Tool Windows / Debug ).
 
 
 ![Illustration](../images/page_104_img_03_1000x286.png)
 
 
-
-
-#### Entrer une expression à évaluer dans la zone Evaluate expression or add a watch .
-
-
-#### Exécuter les lignes une à la fois à l'aide des icônes Step Over , Step Into et Step Out .
-
-
-#### Modifier la valeur d'une variable.
-
-
-#### etc.
+- Entrer une expression à évaluer dans la zone Evaluate expression or add a watch .
+- Exécuter les lignes une à la fois à l'aide des icônes Step Over , Step Into et Step Out .
+- Modifier la valeur d'une variable.
 
 
 ### Connaître la valeur d'une variable
@@ -994,7 +976,7 @@ Comme dans tous les langages de programmation, le débogueur ne montrera que les
 Même les variables d'état n'échappent pas à cette règle.
 
 
-Si vous demandez d'évaluer une variable dans la zone Evaluate expression or add a watch  et que cette variable est hors de portée, vous obtiendrez le message « Unresolved reference » ou « Cannot find local variable » ou encore « org.jetbrains.kotlin.backend.common.BackendException : Backend Internal error ».
+Si vous demandez d'évaluer une variable dans la zone *Evaluate expression or add a watch* et que cette variable est hors de portée, vous obtiendrez le message « Unresolved reference » ou « Cannot find local variable » ou encore « org.jetbrains.kotlin.backend.common.BackendException : Backend Internal error ».
 
 
 ### Variables avec un lien get()
@@ -1006,7 +988,6 @@ Dans certaines situations, le débogueur vous affichera un lien get() à côté 
 
 
 ![Illustration](../images/page_104_img_04_450x48.png)
-
 
 
 
@@ -1127,17 +1108,10 @@ En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui don
 Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs facteurs peuvent venir influencer l'apparence et l'alignement des composables, par exemple :
 
 
-#### L'utilisation de composables d'alignement comme Row(), Column() ou Box()
-
-
-#### Les modifieurs appliqués aux composables d'alignement (ex : verticalAlignment = Alignment.Bottom)
-
-
-#### L'ordre dans lequel les modifieurs sont appliqués à un composable (ex : border avant ou après padding)
-
-
-#### Les espacements (ex : modifieurs des composables d'alignement, Spacer)
-
+- L'utilisation de composables d'alignement comme Row(), Column() ou Box()
+- Les modifieurs appliqués aux composables d'alignement (ex : verticalAlignment = Alignment.Bottom)
+- L'ordre dans lequel les modifieurs sont appliqués à un composable (ex : border avant ou après padding)
+- Les espacements (ex : modifieurs des composables d'alignement, Spacer)
 
 Afin de mieux visualiser l'emplacement de chaque composable, vous pouvez travailler avec le Layout Inspector d'Android Studio.
 
@@ -1148,8 +1122,7 @@ Afin de mieux visualiser l'emplacement de chaque composable, vous pouvez travail
 #### Rendez-vous dans le menu Tools / Layout Inspector .
 
 
-#### Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez
-un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
+#### Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
 
 
 

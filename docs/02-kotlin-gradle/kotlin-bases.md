@@ -11,16 +11,10 @@ title: "Le langage Kotlin - Fondamentaux"
 Kotlin est un langage de programmation orienté objet qui permet de développer différents types d'applications :
 
 
-#### applications natives pour Android
-
-
-#### applications multi-plateformes pour appareils mobiles
-
-
-#### applications Web côté client (front-end)
-
-
-#### applications Web côté serveur (back-end) et services Web
+- applications natives pour Android
+- applications multi-plateformes pour appareils mobiles
+- applications Web côté client (front-end)
+- applications Web côté serveur (back-end) et services Web
 
 
 Il s'agit du langage de programmation recommandé par Google pour la programmation Android depuis 2019.
@@ -435,7 +429,7 @@ repeat(5) { index ->
 4.6 Qu'est-ce que Unit?
 
 
-En Kotlin, Unit est semblable à void dans d'autres langages.
+En Kotlin, *Unit* est semblable à void dans d'autres langages.
 
 
 Par exemple, pour déclarer une fonction qui n'a pas de valeur de retour :
@@ -448,7 +442,7 @@ fun faireQuelqueChose(): Unit {
 ```
 
 
-Dans la plupart des cas, on précisera le type Unit simplement pour  clarifier le code puisque Kotlin saura l'inférer s'il n'est pas précisé.
+Dans la plupart des cas, on précisera le type Unit simplement pour clarifier le code puisque Kotlin saura l'inférer s'il n'est pas précisé.
 
 
 ```kotlin title="Kotlin"
