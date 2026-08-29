@@ -44,7 +44,7 @@ Dans l'expression *by remember*, le mot-clé *by* s'appelle délégué de propri
 
 Il aurait également été possible d'omettre le mot-clé *by*.
 
-À ce moment, plus besoin des deux import. Cependant, la variable créé serait alors de type MutableState<...> et pour accéderà sa valeur, il faudrait faire suivre son nom par .value.
+À ce moment, plus besoin des deux import. Cependant, la variable créé serait alors de type MutableState<...> et pour accéder à sa valeur, il faudrait faire suivre son nom par .value.
 
 Si vous utilisez la syntaxe *by remember* et que vous oubliez les deux import, vous obtiendrez l'erreur `Type 'TypeVariable(T) has no method 'getValue(Nothing?, KProperty<*>)' and thus it cannot serve as a delegate`.
 
