@@ -31,13 +31,11 @@ courte description.
 
 
 ### 6. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste
-des signets. Dans un premier temps, un message approprié apparaîtra à l'écran pour indique que la BD est vide. Par
-contre, ceci fera en sorte que la base de données sera créée physiquement dans l'émulateur.
+des signets. Dans un premier temps, un message approprié apparaîtra à l'écran pour indique que la BD est vide. Par contre, ceci fera en sorte que la base de données sera créée physiquement dans l'émulateur.
 
 
 ### 7. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide du
-Database Inspector puis exécutez des requêtes SQL pour ajouter ou modifier quelques enregistrements. Voyez les
-modifications qui se réflètent à l'écran sans nécessiter de rechargement.
+Database Inspector puis exécutez des requêtes SQL pour ajouter ou modifier quelques enregistrements. Voyez les modifications qui se réflètent à l'écran sans nécessiter de rechargement.
 
 
 ## 57. Pour le prochain cours
@@ -179,11 +177,7 @@ Voici quelques pistes de solution :
 
 
 #### [https://github.com/erdo/commercial-template/blob/main/change_package.sh](https://github.com/erdo/commercial-template/blob/main/change_package.sh)
- (discussion reddit qui m'a
-mené à ce script :
-[https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?)
-tl=fr
-)
+(discussion reddit qui m'a mené à ce script : [https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?) tl=fr )
 
 
 #### c. La solution passe peut-être par la copie du dossier de base et le [apical_lien_interne]
@@ -259,8 +253,7 @@ la BD.
 
 
 #### message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
-par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si
-l'usager clique sur Oui.
+par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si l'usager clique sur Oui.
 
 
 #### e. Asurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.
@@ -309,8 +302,7 @@ les questions théoriques. Répondez-y en équipe de deux.
 
 
 ### 3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
-Cat Facts : [https://catfact.ninja](https://catfact.ninja)
-.
+Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 
 
 #### a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un
@@ -334,8 +326,7 @@ façon aléatoire.
 
 
 #### exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point
-d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not
-Found » ne sont pas acceptables.
+d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not Found » ne sont pas acceptables.
 
 
 #### e. Modifiez l'icône d'application de votre application sur les chats.
@@ -380,8 +371,7 @@ Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exerc
 ### 76.1 Travailler avec des capteurs
 
 
-Écrivez une petite application Android avec Jetpack Compose qui détecte si un objet est près ou loin du téléphone. Elle utilisera pour cela le capteur de proximité
-.
+Écrivez une petite application Android avec Jetpack Compose qui détecte si un objet est près ou loin du téléphone. Elle utilisera pour cela le capteur de proximité .
 
 
 ### 1. Si le capteur détecte qu'un objet est près, l'écran sera entièrement vert et il sera écrit en gros « PRÈS ». Sinon,

@@ -49,9 +49,7 @@ Text(
 ```
 
 
-Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de
-Compose Foundation 1.7.0
- en 2024.
+Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de Compose Foundation 1.7.0 en 2024.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -80,8 +78,7 @@ ClickableText(
 ### 60.2 Card()
 
 
-La fonction modulable Card
- permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
+La fonction modulable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
 
 
 Voici un exemple de base du Card.

@@ -14,8 +14,7 @@ La fonction modulable Popup permet d'afficher un composable à l'écran par-dess
 Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()]**.
 
 
-Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire
-partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
+Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -108,8 +107,7 @@ Popup(
 39.2 AlertDialog()
 
 
-AlertDialog()
- permet d'afficher une fenêtre popup de confirmation.
+AlertDialog() permet d'afficher une fenêtre popup de confirmation.
 
 
 Il est important de montrer clairement à l'usager qu'il peut accepter (ex : bouton OK ou Oui) ou refuser (ex : bouton Annuler ou Non) ce qui lui est demandé.
@@ -199,8 +197,7 @@ AlertDialog(
 Le snackbar est une notification qui apparaît au bas de l'écran pour informer l'usager du résultat d'une opération.
 
 
-Le snackbar est préférable au **toast]** puisqu'il offre plus de possibilités, notamment la
-possibilité qu'il se referme de lui-même après un laps de temps ou sur un clic de l'usager ou les deux.
+Le snackbar est préférable au **toast]** puisqu'il offre plus de possibilités, notamment la possibilité qu'il se referme de lui-même après un laps de temps ou sur un clic de l'usager ou les deux.
 
 
 De plus, il se charge de gérer la file de notifications à afficher.
@@ -260,8 +257,7 @@ fun MainContent(
 ### Snackbar refermable
 
 
-Il est possible d'ajouter un texte cliquable qui permet à l'usager de refermer le snackbar dès qu'il le désire plutôt que de le forcer à attendre que le snackbar s'efface
-de lui-même.
+Il est possible d'ajouter un texte cliquable qui permet à l'usager de refermer le snackbar dès qu'il le désire plutôt que de le forcer à attendre que le snackbar s'efface de lui-même.
 
 
 Il est même possible de configurer le snackbar pour qu'il ne s'efface jamais de lui-même.
@@ -375,20 +371,16 @@ Button(
 
 
 ### * [« How to Show Snackbars Across Multiple Screens in Jetpack Compose » - Medium](https://betterprogramming.pub/how-to-show-snackbars-across-multiple-)
-screen-in-jetpack-compose-dd4b40c6829a
-39.4 Toast : notification de courte durée
+screen-in-jetpack-compose-dd4b40c6829a 39.4 Toast : notification de courte durée
 
 
-Tout comme le **snackbar]**, un toast est une petite fenêtre popup qui apparaît au bas de l'écran pour informer
-l'usager du résultat d'une opération.
+Tout comme le **snackbar]**, un toast est une petite fenêtre popup qui apparaît au bas de l'écran pour informer l'usager du résultat d'une opération.
 
 
 Le toast se referme de lui-même après un laps de temps.
 
 
-Selon la documentation officielle d'Android
- :
-1
+Selon la documentation officielle d'Android : 1
 
 
 ### Si votre application est exécutée au premier plan, envisagez d'utiliser un snackbar au lieu d'un
@@ -397,8 +389,7 @@ Selon la documentation officielle d'Android
 ### toast.
 
 
-Si vous êtes en train de développer une nouvelle application, suivez plutôt les exemples présentés sur cette fiche :
-« **snackbar** »
+Si vous êtes en train de développer une nouvelle application, suivez plutôt les exemples présentés sur cette fiche : « **snackbar** »
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

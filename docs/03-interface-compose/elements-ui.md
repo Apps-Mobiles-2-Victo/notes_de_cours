@@ -8,8 +8,7 @@ title: "Éléments d'interface utilisateur Compose"
 ### 5.1 Text()
 
 
-La fonction modulable Text
- permet d'afficher un texte à l'écran.
+La fonction modulable Text permet d'afficher un texte à l'écran.
 
 
 ```kotlin title="Kotlin"
@@ -53,8 +52,7 @@ Text(
 ### Texte enrichi
 
 
-buildAnnotatedString
- permet de créer du texte enrichi.
+buildAnnotatedString permet de créer du texte enrichi.
 
 
 Il est possible, par exemple, d'appliquer un style sur une partie précise d'une chaîne de caractères.
@@ -119,16 +117,13 @@ Text(
 ```
 
 
-Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de
-Compose Foundation 1.7.0
- en 2024.
+Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de Compose Foundation 1.7.0 en 2024.
 
 
 ### Limiter la longuer du texte affiché à l'écran
 
 
-Prenons le cas où on a une ligne (Row()) avec du texte à gauche et une icône à droite. Dans le cas où le texte est plus long que la largeur de l'écran, l'icône ne sera
-plus visible.
+Prenons le cas où on a une ligne (Row()) avec du texte à gauche et une icône à droite. Dans le cas où le texte est plus long que la largeur de l'écran, l'icône ne sera plus visible.
 
 
 Pour corriger la situation, on peut limiter la largeur du texte à la place disponible et indiquer comment on veut que le débordement se comporte.
@@ -179,12 +174,10 @@ Row(
 
 
 ### * [« Composing AnnotatedString — Poetry, Music, Code, Blogs, Expandables and Beyond » - Medium](https://proandroiddev.com/composing-annotatedstring-poetry-)
-music-code-blogs-expandables-and-beyond-b5f7ec35a49b
-5.2 Column()
+music-code-blogs-expandables-and-beyond-b5f7ec35a49b 5.2 Column()
 
 
-La fonction modulable Column
- permet de placer les composants en colonne, l'un sous l'autre.
+La fonction modulable Column permet de placer les composants en colonne, l'un sous l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -226,9 +219,7 @@ Column(
 Ici, on ajoute de l'espace alentour du contenu de la colonne.
 
 
-!!! warning "Attention : le conce"
-    Attention : le concept est différent du padding qu'on connaît en Web avec les feuilles de style. Dans JetPack compose, le padding est l'équivalent d'un margin en
-CSS. En effet, si la colonne avait une couleur de fond, l'espace créé par le padding ne prendrait pas la couleur de fond.
+!!! warning "Attention : le conce" Attention : le concept est différent du padding qu'on connaît en Web avec les feuilles de style. Dans JetPack compose, le padding est l'équivalent d'un margin en CSS. En effet, si la colonne avait une couleur de fond, l'espace créé par le padding ne prendrait pas la couleur de fond.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -283,8 +274,7 @@ Column(
 5.3 Row()
 
 
-La fonction modulable Row
- permet de placer les composants en rangée, l'un à côté de l'autre.
+La fonction modulable Row permet de placer les composants en rangée, l'un à côté de l'autre.
 
 
 ```kotlin title="Kotlin"
@@ -372,8 +362,7 @@ Row(
 5.4 Box()
 
 
-La fonction modulable Box
- permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
+La fonction modulable Box permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -396,8 +385,7 @@ fun UneFonction() {
 
 
 
-Il est également possible d'utiliser un Box pour dessiner des rectangles. Il faudra prendre soin de les placer dans un Column ou dans un Row pour ne pas qu'ils
-soient empilés l'un sur l'autre.
+Il est également possible d'utiliser un Box pour dessiner des rectangles. Il faudra prendre soin de les placer dans un Column ou dans un Row pour ne pas qu'ils soient empilés l'un sur l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -598,17 +586,14 @@ Row {
 Dans les exemples précédents, le nom de l'image, ou plutôt son identifiant, était une propriété de R.drawable. Ce n'était pas une chaîne de caractères.
 
 
-Lorsque le nom de l'image est contenu dans une variable sous forme de chaîne de caractères, il faut utiliser une technique pour retrouver l'identifiant de la ressource
-à partir de cette chaîne.
+Lorsque le nom de l'image est contenu dans une variable sous forme de chaîne de caractères, il faut utiliser une technique pour retrouver l'identifiant de la ressource à partir de cette chaîne.
 
 
 ### Attention : cette technique nuit à l'optimisation du code et devrait être réservée pour les cas où il n'est pas possible
 de fournir directement l'identifiant de l'image.
 
 
-Android Studio générera d'ailleurs cet avertissement : « Use of this function is discouraged because resource reflection makes it harder to perform build
-optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar",
-"foo", null)). ».
+Android Studio générera d'ailleurs cet avertissement : « Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). ».
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -642,8 +627,7 @@ if (ressourceId != 0) {
 5.6 AsyncImage()
 
 
-Avec AsyncImage()
-, il est possible d'afficher une image à partir d'un URL.
+Avec AsyncImage() , il est possible d'afficher une image à partir d'un URL.
 
 
 D'abord, il faut ajouter une dépendance.
@@ -662,8 +646,7 @@ dependencies {
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 Pour afficher l'image :
@@ -681,12 +664,10 @@ AsyncImage(
 ### 5.7 Icône avec la bibliothèque Material Symbols
 
 
-La fonction modulable Icon
- permet d'afficher une icône à l'écran.
+La fonction modulable Icon permet d'afficher une icône à l'écran.
 
 
-Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons
-.
+Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -768,8 +749,7 @@ Icon(
 ### Icône cliquable
 
 
-Pour rendre l'icône cliquable, il faut l'intégrer dans un IconButton
-.
+Pour rendre l'icône cliquable, il faut l'intégrer dans un IconButton .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -784,8 +764,7 @@ IconButton(onClick = {
 ### Pour avoir accès à plus d'icônes
 
 
-Pour avoir accès à une plus grande quantité d'icônes, soit aux icônes de la bibliothèque Material Symbols
-, il faut ajouter une dépendance au projet.
+Pour avoir accès à une plus grande quantité d'icônes, soit aux icônes de la bibliothèque Material Symbols , il faut ajouter une dépendance au projet.
 
 
 Ajoutez cette ligne dans le fichier build.gradle.kts  qui se trouve dans le dossier app .
@@ -805,8 +784,7 @@ dependencies {
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 Vous avez désormais accès à plus d'icônes.
@@ -824,15 +802,13 @@ Icon(imageVector = Icons.Default.SwipeUp, contentDescription = "Glisser vers le 
 5.8 Les couleurs
 
 
-La gestion des couleurs dans une application Android basée sur Jetpack Compose est réalisée à l'aide de la bibliothèque Material Design 3
-.
+La gestion des couleurs dans une application Android basée sur Jetpack Compose est réalisée à l'aide de la bibliothèque Material Design 3 .
 
 
 ### Constantes de couleur
 
 
-Pour défiir une couleur, Kotlin met à votre disposition des constantes pour identifier les principales couleurs
-, par exemple Color.Black.
+Pour défiir une couleur, Kotlin met à votre disposition des constantes pour identifier les principales couleurs , par exemple Color.Black.
 
 
 Dans l'image qui suit, celle qui n'est pas visible s'appelle Color.Transparent ;-)
@@ -887,8 +863,7 @@ val couleur = "#20A1C9".toColor()
 Lorsque vous créez un projet basé sur Jetpack Compose, le projet est automatiquement basé sur un thème.
 
 
-Les couleurs du thème par défaut sont illustrées sur le site de Material Design 3
-. J'ai reproduit l'image ici pour plus de commodité.
+Les couleurs du thème par défaut sont illustrées sur le site de Material Design 3 . J'ai reproduit l'image ici pour plus de commodité.
 
 
 
@@ -898,8 +873,7 @@ Les couleurs du thème par défaut sont illustrées sur le site de Material Desi
 
 
 
-En utilisant le rôle d'une couleur (ex : MaterialTheme.colorScheme.primary) plutôt qu'un nom (ex : Color.Black) ou un code hexadécimal (ex : #000000), on laisse
-le soin au système d'adapter la couleur selon que l'appareil mobile utilise le thème clair ou foncé.
+En utilisant le rôle d'une couleur (ex : MaterialTheme.colorScheme.primary) plutôt qu'un nom (ex : Color.Black) ou un code hexadécimal (ex : #000000), on laisse le soin au système d'adapter la couleur selon que l'appareil mobile utilise le thème clair ou foncé.
 
 
 ### Attention : avec Material Design 2, on utilisait la méthode color alors qu'avec Material Design 3, c'est plutôt
@@ -1038,13 +1012,10 @@ private val LightColorScheme = lightColorScheme(
 ```
 
 
-Par défaut, le thème utilise des couleurs dynamiques
- c'est-à-dire que les couleurs s'adaptent
-automatiquement aux couleurs du papier peint installé sur l'appareil mobile.
+Par défaut, le thème utilise des couleurs dynamiques c'est-à-dire que les couleurs s'adaptent automatiquement aux couleurs du papier peint installé sur l'appareil mobile.
 
 
-Si vous désirez imposer les couleurs que vous venez de configurer, vous devrez désactiver les couleurs
-dynamiques.
+Si vous désirez imposer les couleurs que vous venez de configurer, vous devrez désactiver les couleurs dynamiques.
 
 
 ```kotlin title="Fichier Theme.kt"
@@ -1069,10 +1040,7 @@ fun HelloWorldTheme(
 ```
 
 
-!!! warning "Attention : n'utilis"
-    Attention : n'utilisez pas le gestionnaire de ressources pour configurer les couleurs du thème. Il permet de définir des couleurs qui seront synchronisées avec le
-fichier XML app/src/main/res/values/colors.xml . Ce fichier est utilisé avec l'approche traditionnelle pour définir des interfaces utilisateur. Jetpack Compose ne l'utilise
-pas. Il se sert plutôt du fichier Color.kt.
+!!! warning "Attention : n'utilis" Attention : n'utilisez pas le gestionnaire de ressources pour configurer les couleurs du thème. Il permet de définir des couleurs qui seront synchronisées avec le fichier XML app/src/main/res/values/colors.xml . Ce fichier est utilisé avec l'approche traditionnelle pour définir des interfaces utilisateur. Jetpack Compose ne l'utilise pas. Il se sert plutôt du fichier Color.kt.
 
 
 #### Pour plus d'information
@@ -1094,8 +1062,7 @@ Un espaceur (Spacer) est un composable qui permet d'ajouter de l'espace entre de
 Pour ajouter de l'espace entre deux éléments dans un Column, on précisera la hauteur de l'espaceur.
 
 
-Ici, l'unité .dp représente des pixels indépendants de la densité (density-independent pixels), aussi appelés pixels indépendants de l'appareil (device-independent
-pixels).
+Ici, l'unité .dp représente des pixels indépendants de la densité (density-independent pixels), aussi appelés pixels indépendants de l'appareil (device-independent pixels).
 
 
 ```kotlin title="Kotlin"
@@ -1140,8 +1107,7 @@ Plutôt que l'utiliser les unités .dp pour spécifier une taille, il est possib
 Le poids sera un nombre de type float donc il sera suivi de la lettre f.
 
 
-La valeur 1 signifie 1 fois l'espace restant. Dans cet exemple, le mot Hello sera dans le haut de l'écran et le mot World sera dans le bas puisque l'espaceur remplira
-l'espace disponible.
+La valeur 1 signifie 1 fois l'espace restant. Dans cet exemple, le mot Hello sera dans le haut de l'écran et le mot World sera dans le bas puisque l'espaceur remplira l'espace disponible.
 
 
 ```kotlin title="Kotlin"
@@ -1180,8 +1146,7 @@ Column {
 5.10 Surface()
 
 
-Le composable Surface() représente une surface matérielle à laquelle on peut appliquer des modifieurs différents styles comme une forme, une couleur et même
-une élévation.
+Le composable Surface() représente une surface matérielle à laquelle on peut appliquer des modifieurs différents styles comme une forme, une couleur et même une élévation.
 
 
 On placera d'autres composables à l'intérieur de la surface.
@@ -1223,12 +1188,10 @@ Surface(
 ### Dessiner une forme
 
 
-La fonction modulable Canvas
- permet de dessiner une forme.
+La fonction modulable Canvas permet de dessiner une forme.
 
 
-Vous utiliserez une des méthodes proposées
-, par exemple drawRect, drawRoundRect, drawCircle, drawLine, drawOval, drawArc, drawPoints.
+Vous utiliserez une des méthodes proposées , par exemple drawRect, drawRoundRect, drawCircle, drawLine, drawOval, drawArc, drawPoints.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1248,8 +1211,7 @@ Canvas (
 ### Forme d'une image
 
 
-Jetpack Compose vous propose différents composables qui permettent notamment de délimiter une image : CircleShape, RectangleShape, RoundedCornerShape
-et CutCornerShape.
+Jetpack Compose vous propose différents composables qui permettent notamment de délimiter une image : CircleShape, RectangleShape, RoundedCornerShape et CutCornerShape.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1276,8 +1238,7 @@ Image(
 ### 5.12 Button()
 
 
-Avec Jetpack Compose, un bouton est défini à l'aide de la fonction modulable Button
-.
+Avec Jetpack Compose, un bouton est défini à l'aide de la fonction modulable Button .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1340,8 +1301,7 @@ La fonction modulable Popup permet d'afficher un composable à l'écran par-dess
 Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()]**.
 
 
-Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire
-partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
+Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1434,8 +1394,7 @@ Popup(
 5.14 Card()
 
 
-La fonction modulable Card
- permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
+La fonction modulable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
 
 
 Voici un exemple de base du Card.
@@ -1731,9 +1690,7 @@ ElevatedCard(
 5.15 TextField() et OutlinedTextField()
 
 
-Une case de saisie peut être ajoutée à l'aide du composble TextField()
- ou de OutlinedTextField()
-.
+Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
 
 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
@@ -1774,9 +1731,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack
-Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez
-pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -1839,8 +1794,7 @@ Voici le OutlinedTextField vide puis avec focus ou rempli.
 Depuis Jetpack Compose 1.3, il est possible d'ajouter un texte d'accompagnement sous la boîte de saisie.
 
 
-Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin
-d'afficher un texte contextualisé.
+Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin d'afficher un texte contextualisé.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1927,11 +1881,7 @@ Les principaux types de clavier sont :
 
 
 
-KeyboardType.Text
-KeyboardType.Number
-KeyboardType.Email
-KeyboardType.Password
-KeyboardType.Phone
+KeyboardType.Text KeyboardType.Number KeyboardType.Email KeyboardType.Password KeyboardType.Phone
 
 
 Pour spécifier le type clavier désiré :
@@ -1950,8 +1900,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la
-syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.
@@ -2009,8 +1958,7 @@ summary#textfield
 
 
 ### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
-summary
-5.16 Alignement et espacement
+summary 5.16 Alignement et espacement
 
 
 Il existe plusieurs techniques pour spécifier l'alignement et l'espacement des composables dans Jetpack Compose.
@@ -2236,8 +2184,7 @@ Sans rien changer de plus, le fond d'écran sera jaune pâle ou jaune foncé sel
 ### Couleur des barres d'application
 
 
-Dans le cas où l'application comprend une barre de titre ou une barre de navigation, il faudra préciser que leur couleur de fond est transparente pour que la couleur
-dictée par le thème les affecte.
+Dans le cas où l'application comprend une barre de titre ou une barre de navigation, il faudra préciser que leur couleur de fond est transparente pour que la couleur dictée par le thème les affecte.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -2271,12 +2218,10 @@ Scaffold(
 ### Configurer une couleur de fond d'écran par programmation
 
 
-Dans certaines applications, on voudra plutôt modifier la couleur dynamiquement. Ici, j'ai utilisé des couleurs codées en dur mais il serait facile d'adapter ce code
-pour que les couleurs proviennent de variables.
+Dans certaines applications, on voudra plutôt modifier la couleur dynamiquement. Ici, j'ai utilisé des couleurs codées en dur mais il serait facile d'adapter ce code pour que les couleurs proviennent de variables.
 
 
-Puisque, dans cet exemple, la couleur est spécifiée dans le contenu de l'application (paramètre content du Scaffold ou partie entre accolades), la couleur de fond
-ne sera pas appliquée à la barre de titre ni à la barre de navigation.
+Puisque, dans cet exemple, la couleur est spécifiée dans le contenu de l'application (paramètre content du Scaffold ou partie entre accolades), la couleur de fond ne sera pas appliquée à la barre de titre ni à la barre de navigation.
 
 
 Remarquez la condition pour spécifier la couleur en mode clair et en mode sombre.
@@ -2308,8 +2253,7 @@ Box(
 ### Couleur des barres d'application - technique 1
 
 
-Pour appliquer une couleur de fond partout, il faut placer le Scaffold à l'intérieur du Box et préciser que la couleur de fond du Scaffold, de la barre de titre et de la
-barre de navigation sont transparentes.
+Pour appliquer une couleur de fond partout, il faut placer le Scaffold à l'intérieur du Box et préciser que la couleur de fond du Scaffold, de la barre de titre et de la barre de navigation sont transparentes.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -2424,15 +2368,13 @@ Box(
 ### Image sous les barres d'application
 
 
-Ici encore, si on veut que l'image soit également derrière la barre de titre et la barre de navigation, il faut travailler au niveau du Scaffold. Cette fois, j'ai placé le
-Scaffold dans un Box qui spécifie le fond d'écran et j'ai mis le fond en transparence pour le contenu, la barre de titre et la barre de navigation.
+Ici encore, si on veut que l'image soit également derrière la barre de titre et la barre de navigation, il faut travailler au niveau du Scaffold. Cette fois, j'ai placé le Scaffold dans un Box qui spécifie le fond d'écran et j'ai mis le fond en transparence pour le contenu, la barre de titre et la barre de navigation.
 
 
 Plus besoin du Box dans le contenu.
 
 
-Je n'ai pas modifié les couleurs dans la barre de titre ni dans la barre de navigation afin d'illustrer les dangers au niveau de la lisibilité lorsque l'image de fond couvre
-tout l'écran.
+Je n'ai pas modifié les couleurs dans la barre de titre ni dans la barre de navigation afin d'illustrer les dangers au niveau de la lisibilité lorsque l'image de fond couvre tout l'écran.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -2486,8 +2428,7 @@ Box(
 Selon la version de Jetpack Compose que vous utilisez, certaines fonctions peuvent être marquées comme expérimentales.
 
 
-Il est permis d'utiliser les fonctions expérimentales. Cependant, si vous ne prenez pas certaines précautions, vous obtiendrez le message d'erreur « This material
-API is experimental and is likely to change or to be removed in the future. ».
+Il est permis d'utiliser les fonctions expérimentales. Cependant, si vous ne prenez pas certaines précautions, vous obtiendrez le message d'erreur « This material API is experimental and is likely to change or to be removed in the future. ».
 
 
 Par exemple, voici ce qu'on obtenais lorsque la fonction modulable Card était expérimentale.
@@ -2500,8 +2441,7 @@ Par exemple, voici ce qu'on obtenais lorsque la fonction modulable Card était e
 
 
 
-Vous devez ajouter l'annotation ExperimentalMaterial3Api
- pour aviser Jetpack Compose que vous acceptez d'utiliser une fonction expérimentale.
+Vous devez ajouter l'annotation ExperimentalMaterial3Api pour aviser Jetpack Compose que vous acceptez d'utiliser une fonction expérimentale.
 
 
 ```kotlin title="Jetpack Compose"

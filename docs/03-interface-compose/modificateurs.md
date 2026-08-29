@@ -11,9 +11,7 @@ title: "Modificateurs (Modifiers)"
 Le modificateur .padding() est une autre façon d'ajouter de l'espace dans une interface utilisateur.
 
 
-Contrairement à **Spacer()]**, qui est un composable en lui-même, .padding() est une méthode de la classe
-Modifier
-. Il doit être appliqué à un composable.
+Contrairement à **Spacer()]**, qui est un composable en lui-même, .padding() est une méthode de la classe Modifier . Il doit être appliqué à un composable.
 
 
 De plus, Spacer() ajoute de l'espace entre des éléments alors que .padding() ajoute de l'espace alentour de l'élément auquel il est appliqué.
@@ -96,8 +94,7 @@ Text(
 ### 6.2 size()
 
 
-Comme son nom l'indique, le modifieur size()
- permet de déterminer la taille d'un composable, par exemple une image.
+Comme son nom l'indique, le modifieur size() permet de déterminer la taille d'un composable, par exemple une image.
 
 
 Par défaut, l'image ne sera ni étirée, ni tronquée. J'ai ajouté un fond noir pour mieux illustrer comment la taille est calculée.
@@ -138,8 +135,7 @@ Column(
 
 
 ### * [« androidx.compose.foundation.layout - size » - Android Developer](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-)
-summary#size
-6.3 style()
+summary#size 6.3 style()
 
 
 La méthode style() permet de préciser la typographie du texte.
@@ -163,8 +159,7 @@ Text(
 ### 6.4 .background()
 
 
-Le modifieur .background()
- permet de spécifier la couleur de fond d'un composable.
+Le modifieur .background() permet de spécifier la couleur de fond d'un composable.
 
 
 .background() doit être appliqué à la classe Modifier.
@@ -184,15 +179,13 @@ Row(
 ### 6.5 .weight()
 
 
-Le modifieur .weight()
- permet de spécifier le poids d'un composable dans une ligne ou une colonne.
+Le modifieur .weight() permet de spécifier le poids d'un composable dans une ligne ou une colonne.
 
 
 S'il est utilisé dans une ligne, le poids aura une incidence sur la largeur du composable.
 
 
-Je vous fais la démonstration ici à l'aide du composable Surface. Il aurait été possible d'appliquer le modifieur .weight() à d'autres composables, par exemple à une
-image.
+Je vous fais la démonstration ici à l'aide du composable Surface. Il aurait été possible d'appliquer le modifieur .weight() à d'autres composables, par exemple à une image.
 
 
 Dans cet exemple, j'ai imposé une taille pour que chaque surface ait une certaine hauteur même si je n'y ai ajouté aucun contenu.

@@ -8,9 +8,7 @@ title: "Formulaires de données (Ajout, Modification, Suppression)"
 ### 66.1 TextField() et OutlinedTextField()
 
 
-Une case de saisie peut être ajoutée à l'aide du composble TextField()
- ou de OutlinedTextField()
-.
+Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
 
 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
@@ -51,9 +49,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack
-Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez
-pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -116,8 +112,7 @@ Voici le OutlinedTextField vide puis avec focus ou rempli.
 Depuis Jetpack Compose 1.3, il est possible d'ajouter un texte d'accompagnement sous la boîte de saisie.
 
 
-Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin
-d'afficher un texte contextualisé.
+Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin d'afficher un texte contextualisé.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -204,11 +199,7 @@ Les principaux types de clavier sont :
 
 
 
-KeyboardType.Text
-KeyboardType.Number
-KeyboardType.Email
-KeyboardType.Password
-KeyboardType.Phone
+KeyboardType.Text KeyboardType.Number KeyboardType.Email KeyboardType.Password KeyboardType.Phone
 
 
 Pour spécifier le type clavier désiré :
@@ -227,8 +218,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la
-syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.
@@ -286,8 +276,7 @@ summary#textfield
 
 
 ### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
-summary
-66.2 Validation
+summary 66.2 Validation
 
 
 C'est dans un ViewModel que la logique de validation sera codée.
@@ -306,8 +295,7 @@ Ceci permet de mieux séparer les responsabilités (Single Responsibility Princi
 Repository)
 
 
-Je vous suggère d'ajouter la validation à la méthode qui met à jour la valeur saisie. En effet, si vous travaillez avec deux méthodes séparées, vous n'aurez pas de
-garantie que le _uiState.update qui met à jour la valeur saisie soit terminé avant qu'une autre méthode, telle la validation, tente d'utiliser cette valeur.
+Je vous suggère d'ajouter la validation à la méthode qui met à jour la valeur saisie. En effet, si vous travaillez avec deux méthodes séparées, vous n'aurez pas de garantie que le _uiState.update qui met à jour la valeur saisie soit terminé avant qu'une autre méthode, telle la validation, tente d'utiliser cette valeur.
 
 
 Voici un exemple simple :
@@ -345,8 +333,7 @@ OutlinedTextField(
 ```
 
 
-Pour afficher le message, vous pouvez utiliser l'attribut supportingText
- si votre projet est bâti sous Compose 1.3 ou plus récent.
+Pour afficher le message, vous pouvez utiliser l'attribut supportingText si votre projet est bâti sous Compose 1.3 ou plus récent.
 
 
 Sinon, un simple Text() fera l'affaire.
@@ -370,8 +357,7 @@ OutlinedTextField(
 ```
 
 
-!!! warning "Attention : ceci fai"
-    Attention : ceci fait en sorte que la validation n'aura lieu que lorsque le texte est modifié.
+!!! warning "Attention : ceci fai" Attention : ceci fait en sorte que la validation n'aura lieu que lorsque le texte est modifié.
 
 
 À vous de vous assurer que la validation ait lieu même si rien n'est entré dans la case de saisie alors que cette information est obligatoire.
@@ -383,8 +369,7 @@ OutlinedTextField(
 Je vous propose une technique pour internationaliser les message d'erreur de validation dans le ViewModel.
 
 
-On sait que pour **retrouver une chaîne internationalisée]**, il
-est possible d'utiliser stringResource.
+On sait que pour **retrouver une chaîne internationalisée]**, il est possible d'utiliser stringResource.
 
 
 ```kotlin title="Composable (Kotlin)"
@@ -406,8 +391,7 @@ val message = application.applicationContext.getString(R.string.le_titre_est_req
 ```
 
 
-Mais, lorsque possible, il est préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel afin de faciliter les tests unitaires. Le
-contexte de l'application n'est alors plus disponible.
+Mais, lorsque possible, il est préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel afin de faciliter les tests unitaires. Le contexte de l'application n'est alors plus disponible.
 
 
 Pour internationaliser les messages d'erreur, une solution intéressante consiste à initialiser dans le ViewModel seulement l'identifiant de la chaîne.
@@ -516,8 +500,7 @@ Le texte a depuis été mis à jour mais cette affirmation demeure pertinente :
 
 
 ### anti-modèle. Chaque destination doit être responsable de charger les données de l'interface
-utilisateur en fonction des informations minimales nécessaires, telles que les ID des éléments. Cela
-simplifie la recréation des processus et évite d'éventuelles incohérences dans les données.
+utilisateur en fonction des informations minimales nécessaires, telles que les ID des éléments. Cela simplifie la recréation des processus et évite d'éventuelles incohérences dans les données.
 
 
 En effet, si on voulait passer un objet complet :
@@ -540,9 +523,7 @@ Vous devrez :
 
 
 #### **Dans le DAO]** :
-ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un
-identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une
-fonction qui retourne un Flow<T>.
+ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
 
 
 Remarquez que cette fonction n'a pas besoin d'être suspendue car le mécanisme de flux gère l'exécution asynchrone.
@@ -556,10 +537,7 @@ fait appel à la fonction du Dao pour retrouver les données.
 définir une fonction qui fait appel au dépôt de données.
 
 
-Remarquez que cette fonction utilise firstOrNull()
- pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la
-fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect]**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où
-elles doivent être utilisées.
+Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect]**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
 
 
 Cette fois, la fonction doit être suspendue car elle utilise la fonction suspendue firstOrNull().

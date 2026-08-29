@@ -11,8 +11,7 @@ title: "Navigation multi-écrans"
 Beaucoup d'applications mobiles nécessitent un système de navigation pour gérer comment l'application passe d'un écran à l'autre.
 
 
-Je vous propose ici une technique à appliquer dans une application mobile Android avec JetPack Compose qui utilise l'API NavController
-.
+Je vous propose ici une technique à appliquer dans une application mobile Android avec JetPack Compose qui utilise l'API NavController .
 
 
 Dans cette fiche :
@@ -60,8 +59,7 @@ dependencies {
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 ### NavController
@@ -89,9 +87,7 @@ Scaffold(
 ### NavHost
 
 
-La liste des composables qui peuvent être rejoints par navigation sera définie dans un NavHost
-. Cette liste est en fait une liste des routes possibles dans
-l'application. Ces routes sont parfois appelées itinéraires ou destinations.
+La liste des composables qui peuvent être rejoints par navigation sera définie dans un NavHost . Cette liste est en fait une liste des routes possibles dans l'application. Ces routes sont parfois appelées itinéraires ou destinations.
 
 
 Le NavHost sera placé dans une fonction modulable que l'on codera dans son propre fichier, placé au même niveau que MainActivity.kt .
@@ -100,8 +96,7 @@ Le NavHost sera placé dans une fonction modulable que l'on codera dans son prop
 Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction modulable à appeler.
 
 
-Lorsque l'application contient une **barre de navigation]**, la route passera le navController en paramètre
-seulement si la fonction modulable a besoin de travailler avec cette variable.
+Lorsque l'application contient une **barre de navigation]**, la route passera le navController en paramètre seulement si la fonction modulable a besoin de travailler avec cette variable.
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -197,8 +192,7 @@ Button(
 ```
 
 
-Pour revenir à la page d'avant et ainsi la sortir de la pile, on utilisera .popBackStack()
-.
+Pour revenir à la page d'avant et ainsi la sortir de la pile, on utilisera .popBackStack() .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -225,8 +219,7 @@ NavHost(navController = navController, startDestination = "home") {
 ```
 
 
-Le composable qui recevra un paramètre devra le déclarer comme pouvant être nul. Sachez cependant que si vous ne passez pas de paramètre lorsque vous
-naviguez vers cette route, le programme plantera.
+Le composable qui recevra un paramètre devra le déclarer comme pouvant être nul. Sachez cependant que si vous ne passez pas de paramètre lorsque vous naviguez vers cette route, le programme plantera.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -317,12 +310,10 @@ navController.navigate("detailsItem")
 63.2 Le ViewModel et la navigation
 
 
-On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux
-fonctions modulables qui en ont besoin.
+On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux fonctions modulables qui en ont besoin.
 
 
-Dans le cas où une application qui travaille avec un ViewModel a besoin de navigation, une solution consiste à déclarer le ViewModel dans le NavigationHost puis à
-le passer en paramètre aux composables dans les routes où c'est nécessaire.
+Dans le cas où une application qui travaille avec un ViewModel a besoin de navigation, une solution consiste à déclarer le ViewModel dans le NavigationHost puis à le passer en paramètre aux composables dans les routes où c'est nécessaire.
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -374,8 +365,7 @@ fun NavigationHost(navController: NavHostController, categorieViewModel: Categor
 ### 63.3 BottomAppBar
 
 
-La classe BottomAppBar
- permet de définir ce qui apparaîtra dans le bas de l'écran.
+La classe BottomAppBar permet de définir ce qui apparaîtra dans le bas de l'écran.
 
 
 La barre de navigation ainsi obtenue est très versatile.
@@ -434,17 +424,13 @@ Voici un exemple de barre de navigation qui utilise des Button plutôt que des i
 
 
 ### * [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-)
-bars
-63.4 NavigationBar
+bars 63.4 NavigationBar
 
 
-Lorsqu'une application Android avec Jetpack Compose comprend de 3 à 5 icônes de navigation, il est possible d'utiliser un NavigationBar
- plutôt que de styliser
-manuellement les liens de navigation.
+Lorsqu'une application Android avec Jetpack Compose comprend de 3 à 5 icônes de navigation, il est possible d'utiliser un NavigationBar plutôt que de styliser manuellement les liens de navigation.
 
 
-Cette limite du nombre d'icônes provient de la documentation du NavigationBar
- :
+Cette limite du nombre d'icônes provient de la documentation du NavigationBar :
 
 
 ### NavigationBar should contain three to five NavigationBarItems, each representing a singular

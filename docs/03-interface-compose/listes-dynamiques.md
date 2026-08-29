@@ -8,8 +8,7 @@ title: "Affichage de listes dynamiques (LazyColumn / LazyRow)"
 ### 55.1 LazyColumn
 
 
-Le composable LazyColumn()
- permet d'afficher une liste en composant seulement les éléments actuellement visibles à l'écran.
+Le composable LazyColumn() permet d'afficher une liste en composant seulement les éléments actuellement visibles à l'écran.
 
 
 Ceci est efficace particulièrement dans le cas de listes qui peuvent contenir de nombreux éléments, par exemple une liste d'items tirés de la base de données.
@@ -42,8 +41,7 @@ Pour gérer les espaces dans la liste :
 
 
 #### contentPadding : espace alentour du contenu, même si pas visible. Contrairement à un padding appliqué sur le
-parent du LazyColumn, le contentPadding assure que si un item n'est visible qu'à moitié dans le bas de l'écran, il n'y
-aura pas de barre blanche entre ce qu'on voit et le bas de l'écran.
+parent du LazyColumn, le contentPadding assure que si un item n'est visible qu'à moitié dans le bas de l'écran, il n'y aura pas de barre blanche entre ce qu'on voit et le bas de l'écran.
 
 
 #### verticalArrangement = Arrangement.spacedBy : espace entre chaque élément

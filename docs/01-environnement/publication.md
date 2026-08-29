@@ -16,7 +16,7 @@ Pour générer une icône pour votre application Android :
 
 
 #### Rendez-vous sur le site Web IconKitchen : [https://icon.kitchen](https://icon.kitchen)
- (il s'agit du successeur d'Android Asset Studio).
+(il s'agit du successeur d'Android Asset Studio).
 
 
 #### Téléversez votre image puis ajustez les paramètres.
@@ -102,8 +102,7 @@ Il existe deux types de fichiers APK :
 
 
 #### Le fichier de débogage, généralement nommé app-debug.apk .  Il ne peut pas être utilisé pour déployer l'application
-sur Google Play Store ni sur la plupart des autres plateformes de distribution mais il peut être utilisé pour installer
-manuellement l'application sur un téléphone pour des fins de tests.
+sur Google Play Store ni sur la plupart des autres plateformes de distribution mais il peut être utilisé pour installer manuellement l'application sur un téléphone pour des fins de tests.
 
 
 #### Le fichier de production aussi appelé fichier APK signé ou fichier APK prêt à être publié. Il peut être généré à l'aide
@@ -119,8 +118,7 @@ Lorsque vous lancez une application dans l'émulateur, un fichier APK de déboga
 Ce fichier sera utilisé si vous lancez l'application dans Android Studio en utilisant le téléphone comme cible plutôt qu'un émulateur.
 
 
-Vous ne pouvez cependant pas copier ce fichier directement sur le téléphone puisqu'il requiert l'utilisation d'Android Studio. Si vous tentez de l'installer, vous
-obtiendrez le message « L'application n'a pas été installée, car elle ne semble pas être valide. ».
+Vous ne pouvez cependant pas copier ce fichier directement sur le téléphone puisqu'il requiert l'utilisation d'Android Studio. Si vous tentez de l'installer, vous obtiendrez le message « L'application n'a pas été installée, car elle ne semble pas être valide. ».
 
 
 
@@ -197,9 +195,7 @@ avec votre compte Google.
 
 
 #### Key store path : entrez le chemin et le nom du fichier qui contiendra les différentes clés générées.
-Suggestion : placez-le dans un dossier différent de votre application car il pourra contenir les clés de
-différentes applications. Ici, puisque je désire générer une clé qui servira à une version de production, j'ai
-choisi d'appeler le gestionnaire de clés  release-key.jks .
+Suggestion : placez-le dans un dossier différent de votre application car il pourra contenir les clés de différentes applications. Ici, puisque je désire générer une clé qui servira à une version de production, j'ai choisi d'appeler le gestionnaire de clés  release-key.jks .
 
 
 #### Password : Le mot de passe qui permettra d'accéder au gestionnaire de clés.
@@ -225,8 +221,7 @@ choisi d'appeler le gestionnaire de clés  release-key.jks .
 
 
 #### Remplissez les informations demandées. Les codes de pays peuvent être trouvés
-ici : [https://countrycode.org](https://countrycode.org)
-.
+ici : [https://countrycode.org](https://countrycode.org) .
 
 
 
@@ -264,8 +259,7 @@ Une fois le fichier APK généré, il est possible de l'installer **à partir de
 Publier une application Android sur Google Play Store permet de rendre cette application disponible à un nombre impressionnant d'utilisateurs. Intéressant!
 
 
-D'abord, voyons quelles sont les exigences pour que Google Play Store accepte de publier votre application. Nous verrons ensuite les grandes lignes à suivre pour
-publier l'application.
+D'abord, voyons quelles sont les exigences pour que Google Play Store accepte de publier votre application. Nous verrons ensuite les grandes lignes à suivre pour publier l'application.
 
 
 ### Exigences de l'application
@@ -278,9 +272,7 @@ Avant de vous lancer dans le processus de publication, assurez que votre applica
 
 
 #### L'application doit respecter les règles de Google Play Store
-, par exemple ne présenter aucun contenu nuisible ou
-inapproprié, respecter la propriété intellectuelle ou encore être conforme aux exigences d'optimisation par défaut du
-système Android
+, par exemple ne présenter aucun contenu nuisible ou inapproprié, respecter la propriété intellectuelle ou encore être conforme aux exigences d'optimisation par défaut du système Android
 
 
 #### L'application doit être exempte de bogues
@@ -323,8 +315,7 @@ impressions d'écrans, catégorie, contact, etc.
 #### Patienter!
 
 
-Sachez que l'application pourrait être soumise à une vérification, ce qui peut entraîner des délais d'environ 7 jours. Sinon, la première application prendra environ 48
-heures avant d'être disponible alors que les publications subséquentes ne nécessiteront que quelques heures.
+Sachez que l'application pourrait être soumise à une vérification, ce qui peut entraîner des délais d'environ 7 jours. Sinon, la première application prendra environ 48 heures avant d'être disponible alors que les publications subséquentes ne nécessiteront que quelques heures.
 
 
 Les étapes de publication sont bien détaillés dans cet article : Comment publier une application sur le Play Store de Google ?
@@ -373,7 +364,7 @@ débogage si l'application est distribuée pour des fins de tests).
 
 
 #### à l'aide d'un code QR
- publié sur un site Web
+publié sur un site Web
 
 
 #### en transférant le fichier directement entre l'ordinateur et l'appareil Android
@@ -385,8 +376,7 @@ débogage si l'application est distribuée pour des fins de tests).
 Pour que l'installation puisse être réalisée, l'usager devra autoriser l'installation d'une application provenant de source non reconnue.
 
 
-Si vous tentez d'installer l'application alors que le téléphone n'est pas configuré à cet effet, une notification vous permettra d'activer l'installation d'applications en
-provenance de sources inconnues.
+Si vous tentez d'installer l'application alors que le téléphone n'est pas configuré à cet effet, une notification vous permettra d'activer l'installation d'applications en provenance de sources inconnues.
 
 
 

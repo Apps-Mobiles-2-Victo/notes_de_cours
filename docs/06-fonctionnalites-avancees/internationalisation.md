@@ -8,8 +8,7 @@ title: "Internationalisation et localisation"
 ### 59.1 Internationalisation et localisation d'une application Android
 
 
-L'internationalisation est constituée des techniques à mettre en place pour assurer que le texte, les images, les symboles monétaires, voire même les couleurs et les
-images puissent être adaptés à différentes langues et régions.
+L'internationalisation est constituée des techniques à mettre en place pour assurer que le texte, les images, les symboles monétaires, voire même les couleurs et les images puissent être adaptés à différentes langues et régions.
 
 
 La localisation, quant-à-elle, est l'adaptation qui a été faite pour une langue et une région précise.
@@ -71,15 +70,13 @@ Pour ajouter une langue et région dans un projet dans Android Studio :
 
 
 #### d'ajouter un dossier dont le nom débute par values et se termine par le code de localisation avec un r
-devant le code de région (ex : values-fr-rCA ). C'est dans ce dossier que le fichier de ressources pour cette
-langue et région sera enregistré.
+devant le code de région (ex : values-fr-rCA ). C'est dans ce dossier que le fichier de ressources pour cette langue et région sera enregistré.
 
 
 ### Extraire les chaînes à internationaliser (internationaliser l'application)
 
 
-Il est intéressant de se préoccuper de l'internationalisation dès le début d'un projet car, avec Android Studio ou IntelliJ, il faut créer manuellement une ressource
-pour chacune des chaînes à localiser.
+Il est intéressant de se préoccuper de l'internationalisation dès le début d'un projet car, avec Android Studio ou IntelliJ, il faut créer manuellement une ressource pour chacune des chaînes à localiser.
 
 
 Heureusement, un petit raccourci permet de nous sauver du travail :
@@ -146,8 +143,7 @@ Pour entrer les textes qui seront effectivement utilisés par l'application selo
 
 
 #### Pour chacune des ressources, la valeur par défaut est celle qui avait été sélectionnée lors de l'extraction de la chaîne.
-Vous pouvez la changer au besoin. C'est cette valeur qui sera utilisée si aucune des langues configurées sur l'appareil
-n'est pas supportée par l'application.
+Vous pouvez la changer au besoin. C'est cette valeur qui sera utilisée si aucune des langues configurées sur l'appareil n'est pas supportée par l'application.
 
 
 #### Entrez la chaîne à utiliser pour chacune des localisations supportées par l'application.
@@ -186,8 +182,7 @@ besoin d'éditer manuellement les fichiers de ressources!
 59.2 Retrouver la configuration de localisation par programmation
 
 
-Si votre application Jetpack Compose a besoin de réagir différemment selon la langue configurée sur l'appareil mobile, ou simplement d'afficher cette configuration,
-vous pouvez faire ceci :
+Si votre application Jetpack Compose a besoin de réagir différemment selon la langue configurée sur l'appareil mobile, ou simplement d'afficher cette configuration, vous pouvez faire ceci :
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

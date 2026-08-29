@@ -14,8 +14,7 @@ Je vous démontre ici comment ajouter du son à une application Android avec Jet
 Je vais créer une petite application qui joue une note de musique quand on appuie sur une touche.
 
 
-J'utilise Media3 ExoPlayer tel que recommandé par Android
-. Il s'agit d'une bibliothèque plus intéressante que le traditionnel MediaPlayer.
+J'utilise Media3 ExoPlayer tel que recommandé par Android . Il s'agit d'une bibliothèque plus intéressante que le traditionnel MediaPlayer.
 
 
 ### Dépendances
@@ -37,8 +36,7 @@ habituels (Play/Pause/Stop)
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 ### Ajouter les fichiers de son au projet
@@ -105,9 +103,7 @@ fun initialiserExoPlayer(context: Context, media: String): ExoPlayer {
 Il est également possible de travailler avec des sons disponibles directement en ligne.
 
 
-Il faudra d'abord demander la permission d'utiliser une ressource en ligne en ajoutant cette balise uses-permission
- dans le fichier AndroidManifest.xml que l'on
-retrouve dans le dossier app/src/main .
+Il faudra d'abord demander la permission d'utiliser une ressource en ligne en ajoutant cette balise uses-permission dans le fichier AndroidManifest.xml que l'on retrouve dans le dossier app/src/main .
 
 
 Sans cette permission, le son ne sera jamais joué et on obtiendra ce message dans le logcat : « Unexpected exception loading stream ».
@@ -155,8 +151,7 @@ Pour instancier l'ExoPlayer qui sera rattaché à un son, qu'il soit en ligne ou
 On prendra soin de libérer les ressources lorsqu'elles ne sont plus utilisées.
 
 
-Remarquez qu'ici, l'utilisation de remember est tout à fait correcte puisqu'un si on avait utilisé **rememberSaveable]**, l'objet ExoPlayer n'aurait pas pu être conservé lors de la destruction de l'activité
-étant donné qu'il n'est pas sérialisable.
+Remarquez qu'ici, l'utilisation de remember est tout à fait correcte puisqu'un si on avait utilisé **rememberSaveable]**, l'objet ExoPlayer n'aurait pas pu être conservé lors de la destruction de l'activité étant donné qu'il n'est pas sérialisable.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -186,8 +181,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
 Faire jouer le son peut prendre différentes formes.
 
 
-Par exemple, si le son est très court, il suffit d'appeler la méthode play. Par contre, il faudra prendre soin de remettre le pointeur de lectuer au début du son pour
-permettre de le jouer à nouveau.
+Par exemple, si le son est très court, il suffit d'appeler la méthode play. Par contre, il faudra prendre soin de remettre le pointeur de lectuer au début du son pour permettre de le jouer à nouveau.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

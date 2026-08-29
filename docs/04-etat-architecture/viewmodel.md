@@ -61,8 +61,7 @@ data class MaClasse(
 ```
 
 
-L'avantage, c'est que certaines méthodes sont automatiquement créées pour vous aider à manipuler ces données, par exemple hashcode(), equals(), copy() et
-toString().
+L'avantage, c'est que certaines méthodes sont automatiquement créées pour vous aider à manipuler ces données, par exemple hashcode(), equals(), copy() et toString().
 
 
 Pour instancier un objet de cette classe :
@@ -83,8 +82,7 @@ val monObjet = MaClasse(1, "Une donnée")
 44.3 Le ViewModel comme conteneur d'état
 
 
-Selon la documentation Android
- :
+Selon la documentation Android :
 
 
 ### La classe ViewModel est une logique métier ou un conteneur d'état au niveau de l'écran. Elle
@@ -193,8 +191,7 @@ class HomeViewModel : ViewModel() {
 ### Propriétés de support
 
 
-Il est conseillé de créer des propriétés privées. Chaque propriété utilisera une propriété de support
- (backing property) pour fournir une valeur au monde extérieur.
+Il est conseillé de créer des propriétés privées. Chaque propriété utilisera une propriété de support (backing property) pour fournir une valeur au monde extérieur.
 
 
 ### Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même
@@ -236,12 +233,10 @@ Le ViewModel utilisera une instance de cette classe comme variable d'état.
 ### Dans le cadre de ce cours, un ViewModel qui n'utilise pas le UiState de façon appropriée ne sera pas accepté.
 
 
-Cette classe, qui est en fait une **classe de données]** peut être déclarée dans le même fichier que le
-ViewModel.
+Cette classe, qui est en fait une **classe de données]** peut être déclarée dans le même fichier que le ViewModel.
 
 
-Afin d'améliorer les performances de l'application
-, les propriétés de la classe UiState doivent être déclarées avec val et non avec var.
+Afin d'améliorer les performances de l'application , les propriétés de la classe UiState doivent être déclarées avec val et non avec var.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -273,17 +268,13 @@ data class HomeUiState (
 ```
 
 
-Notez que dans le UiState, les variables peuvent avoir un get() mais pas de set() car ce sont les méthodes de logique métier du ViewModel qui sont en charge de
-modifier l'état de façon sûre (thread safe).
+Notez que dans le UiState, les variables peuvent avoir un get() mais pas de set() car ce sont les méthodes de logique métier du ViewModel qui sont en charge de modifier l'état de façon sûre (thread safe).
 
 
-On peut désormais ajouter au ViewModel une propriété, nommée ici _uiState, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés
-distinctes.
+On peut désormais ajouter au ViewModel une propriété, nommée ici _uiState, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
 
 
-Cette propriété est de type MutableStateFlow
-, c'est-à-dire un **flux observable]** dont
-la valeur peut être modifiée.
+Cette propriété est de type MutableStateFlow , c'est-à-dire un **flux observable]** dont la valeur peut être modifiée.
 
 
 La propriété privée _uiState pourra être modifiée à l'intérieur de la classe HomeViewModel à l'aide de _uiState.update().
@@ -307,8 +298,7 @@ class HomeViewModel : ViewModel() {
 ```
 
 
-Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous
-créerons un **ViewModel qui interagit avec une base de données]**.
+Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous créerons un **ViewModel qui interagit avec une base de données]**.
 
 
 Dans un projet qui n'a pas besoin de flux pour les variables d'état, le ViewModel pourrait faire référence au uiState comme suit :
@@ -320,8 +310,7 @@ var uiState by mutableStateOf(HomeUiState())
 ```
 
 
-J'ai barré ces lignes parce que, étant donné qu'on utilisera prochainement le ViewModel avec Room pour accéder à une base de données et qu'on désire être réactif
-quand les données de la BD changent, il est plus simple d'utiliser la syntaxe avec flux tout de suite.
+J'ai barré ces lignes parce que, étant donné qu'on utilisera prochainement le ViewModel avec Room pour accéder à une base de données et qu'on désire être réactif quand les données de la BD changent, il est plus simple d'utiliser la syntaxe avec flux tout de suite.
 
 
 ### Le travail avec uiState sans flux n'est pas accepté dans le cadre de ce cours à moins d'avis contraire.
@@ -348,8 +337,7 @@ Ces méthodes sont le seul endroit où les variables d'état peuvent être modif
 Si le ViewModel a besoin de connaître la valeur d'une propriété du UiState, il doit utiliser uiState.value.nomPropriete.
 
 
-Le mot-clé value est requis puisque la variable uiState est un flux. C'est un flux et non la valeur qu'il contient. uiState.value permet d'obtenir la valeur courante de
-ce flux.
+Le mot-clé value est requis puisque la variable uiState est un flux. C'est un flux et non la valeur qu'il contient. uiState.value permet d'obtenir la valeur courante de ce flux.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -440,9 +428,7 @@ data class HomeUiState(
 ```
 
 
-!!! warning "Attention : pour ajo"
-    Attention : pour ajouter un élément au tableau, il n'est pas possible de faire  _monTableau = it.monTableau.toMutableList.add(...)  puisque la
-méthode add() retourne un booléen.
+!!! warning "Attention : pour ajo" Attention : pour ajouter un élément au tableau, il n'est pas possible de faire  _monTableau = it.monTableau.toMutableList.add(...)  puisque la méthode add() retourne un booléen.
 
 
 Vous devrez plutôt faire ceci :
@@ -485,15 +471,10 @@ Il doit y avoir une seule instance du ViewModel dans l'application.
 Une variable, nommée ici viewModel, sera instaanciée dans la classe MainActivity et elle sera passée en paramètre à ses descendants.
 
 
-Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions modulables
-. Cependant, dans le cadre de ce cours, cette pratique est autorisée
-afin de faciliter votre travail.
+Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions modulables . Cependant, dans le cadre de ce cours, cette pratique est autorisée afin de faciliter votre travail.
 
 
-Une variable uiState sera initialisée dans chacun des composables où elle est requise, en utilisant le ViewModel reçu en paramètre. Avant de pouvoir l'utiliser, il faut
-lui appliquer la méthode collectAsState()
- qui se charge recuillir les valeurs d'un flux (Flow
-) et de représenter la dernière valeur émise en tant que variable d'état.
+Une variable uiState sera initialisée dans chacun des composables où elle est requise, en utilisant le ViewModel reçu en paramètre. Avant de pouvoir l'utiliser, il faut lui appliquer la méthode collectAsState() qui se charge recuillir les valeurs d'un flux (Flow ) et de représenter la dernière valeur émise en tant que variable d'état.
 
 
 ```kotlin title="Fichier MainActivity.kt"
@@ -530,13 +511,10 @@ fun MainScreen( viewModel: HomeViewModel ) {
 Grâce à collectAsState(), l'interface utilisateur (UI) sera rafraîchie quand une variable du ViewModel est mise à jour.
 
 
-Le code qui suit est réservé aux fonctions non composables, par exemple dans une méthode du cycle de vie
- (onStop, onPause, ...). Il permet de connaître les
-valeurs du uiState au moment actuel mais ne demeure pas à l'écoute pour les actualiser lorsqu'elles sont modifiées.
+Le code qui suit est réservé aux fonctions non composables, par exemple dans une méthode du cycle de vie (onStop, onPause, ...). Il permet de connaître les valeurs du uiState au moment actuel mais ne demeure pas à l'écoute pour les actualiser lorsqu'elles sont modifiées.
 
 
-Si on avait utilisé ce code dans un composable, on n'aurait vu aucun changement à l'écran. De plus, on aurait reçu l'avertissement « StateFlow.value should not be
-called within composition ».
+Si on avait utilisé ce code dans un composable, on n'aurait vu aucun changement à l'écran. De plus, on aurait reçu l'avertissement « StateFlow.value should not be called within composition ».
 
 
 ```kotlin title="Fichier MainActivity.kt"
@@ -551,8 +529,7 @@ fun MonComposable(viewModel: HomeViewModel) {
 ### Instancier le ViewModel dans un composable plutôt que dans la classe MainActivity
 
 
-Pour éviter de passer le ViewModel en paramètre à une foule de fonctions, il est possible de l'instancier dans le plus petit ancêtre commun, c'est-à-dire dans la
-fonction composable qui est le plus proche parent des composables qui en ont besoin.
+Pour éviter de passer le ViewModel en paramètre à une foule de fonctions, il est possible de l'instancier dans le plus petit ancêtre commun, c'est-à-dire dans la fonction composable qui est le plus proche parent des composables qui en ont besoin.
 
 
 Pour instancier le ViewModel dans un composable, il faudra apporter quelques ajustements au projet.
@@ -578,8 +555,7 @@ dependencies {
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 Pour instancier le ViewModel dans une fonction composable, procédez comme suit.
@@ -594,8 +570,7 @@ fun MonComposable() {
 ```
 
 
-Grâce à la dépendance ajoutée plus tôt, Android Studio sera capable de suggérer le import requis pour permettre l'utilisation de la fonction composable
-viewModel().
+Grâce à la dépendance ajoutée plus tôt, Android Studio sera capable de suggérer le import requis pour permettre l'utilisation de la fonction composable viewModel().
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -603,16 +578,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 ```
 
 
-Remarquez l'absence du mot-clé by (délégué de propriété
-) lorsque le ViewModel est instancié dans un composable alors qu'il était obligatoire quand il était
-instancié dans la classe.
+Remarquez l'absence du mot-clé by (délégué de propriété ) lorsque le ViewModel est instancié dans un composable alors qu'il était obligatoire quand il était instancié dans la classe.
 
 
 ### Ajustements pour le Preview
 
 
-Dans le cas où la fonction composable principale (souvent nommée MainScreen) reçoit le ViewModel en paramètre, il faut faire un petit ajustement si vous désirez
-utiliser la fonctionnalité de prévisualisation dans votre IDE.
+Dans le cas où la fonction composable principale (souvent nommée MainScreen) reçoit le ViewModel en paramètre, il faut faire un petit ajustement si vous désirez utiliser la fonctionnalité de prévisualisation dans votre IDE.
 
 
 ```kotlin title="Fichier MainActivity.kt"
@@ -790,8 +762,7 @@ L'utilisation de viewModels() ou de viewModel() assure que le ViewModel ne sera 
 ### Application avec base de données
 
 
-Dans le **modèle proposé jusqu'ici pour un ViewModel qui interagit avec la base de données]**, le constructeur a besoin de recevoir l'application en paramètre. Pas de problème, les fonctions viewModels() et  viewModel() se chargeront
-d'injecter l'objet de type Application dans le constructeur.
+Dans le **modèle proposé jusqu'ici pour un ViewModel qui interagit avec la base de données]**, le constructeur a besoin de recevoir l'application en paramètre. Pas de problème, les fonctions viewModels() et  viewModel() se chargeront d'injecter l'objet de type Application dans le constructeur.
 
 
 Mais si le ViewModel avait besoin d'un autre paramètre?
@@ -800,8 +771,7 @@ Mais si le ViewModel avait besoin d'un autre paramètre?
 Il faut savoir que viewModels() et viewModel() ne  permettent pas de passer des paramètres personnalisés. Il faut donc trouver une technique pour y arriver.
 
 
-L'approche suivante fonctionne mais elle a un défaut de taille : le ViewModel sera recréé à chaque fois que l'activité est recréée. Ce sera le cas notamment quand le
-téléphone passe du mode portrait au mode paysage et vice-versa.
+L'approche suivante fonctionne mais elle a un défaut de taille : le ViewModel sera recréé à chaque fois que l'activité est recréée. Ce sera le cas notamment quand le téléphone passe du mode portrait au mode paysage et vice-versa.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

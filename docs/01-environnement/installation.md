@@ -25,8 +25,7 @@ Si vous travaillez avec l'environnement de développement intrégré (IDE) Intel
 ![Illustration](../images/page_009_img_01_55x54.jpeg)
 
 
-Dans le cas contraire, vous pouvez installer Kotlin en suivant les instructions ici :
-[https://kotlinlang.org/docs/command-line.html](https://kotlinlang.org/docs/command-line.html).
+Dans le cas contraire, vous pouvez installer Kotlin en suivant les instructions ici : [https://kotlinlang.org/docs/command-line.html](https://kotlinlang.org/docs/command-line.html).
 
 
 ## 3. Gradle

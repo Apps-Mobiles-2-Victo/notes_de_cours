@@ -87,20 +87,16 @@ dependencies {
 ```
 
 
-Une fois les dépendances ajoutées, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois les dépendances ajoutées, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
-!!! warning "Note : si vous obten"
-    Note : si vous obtenez un message du genre « Unresolved reference retrofit2 », rendez-vous dans le menu File / Invalidate Caches .
+!!! warning "Note : si vous obten" Note : si vous obtenez un message du genre « Unresolved reference retrofit2 », rendez-vous dans le menu File / Invalidate Caches .
 
 
 ### Permission d'accéder au réseau
 
 
-Pour qu'une application Android puisse utiliser une ressource en ligne, il faut ajouter une balise uses-permission
- dans le fichier  AndroidManifest.xml  que l'on
-retrouve dans le dossier  app/src/main .
+Pour qu'une application Android puisse utiliser une ressource en ligne, il faut ajouter une balise uses-permission dans le fichier  AndroidManifest.xml  que l'on retrouve dans le dossier  app/src/main .
 
 
 Sans cette permission, le programme plantera avec le message « Permission denied (missing INTERNET permission?) ».
@@ -146,8 +142,7 @@ De plus, si vous travaillez avec un URL non sécurisé (http://) pendant le dév
 Lorsque l'application fera un appel à l'API, elle stockera les données reçues dans une instance d'une classe spécialisée.
 
 
-Cette classe, qui est une **classe de données]**, sera placée dans un dossier nommé  data  qui est au
-même niveau que le fichier MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Item.kt .
+Cette classe, qui est une **classe de données]**, sera placée dans un dossier nommé  data  qui est au même niveau que le fichier MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Item.kt .
 
 
 Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /  New  /  Package .
@@ -167,8 +162,7 @@ data class Item(
 ```
 
 
-La conversion des données JSON retournées par l'API en objets Kotlin utilisés par l'application sera automatisée grâce à l'instruction
-addConverterFactory(GsonConverterFactory.create()) dans l'instance Retrofit que nous créerons plus bas.
+La conversion des données JSON retournées par l'API en objets Kotlin utilisés par l'application sera automatisée grâce à l'instruction addConverterFactory(GsonConverterFactory.create()) dans l'instance Retrofit que nous créerons plus bas.
 
 
 Notez que si l'API retourne des informations dont la clé n'a pas de propriété correspondante, ces informations ne seront simplement pas traitées par l'application.
@@ -177,8 +171,7 @@ Notez que si l'API retourne des informations dont la clé n'a pas de propriété
 Inversement, si la classe contient des propriétés qui ne sont pas retournées par l'API, ces propriétés auront toujours la valeur null.
 
 
-Mais attention : si vous devez envoyer des données de ce type dans le corps de la requête, par exemple pour ajouter une donnée, une erreur dans le nom des
-champs des données attendues par l'API générera une erreur 404 (ou 500 selon la façon dont l'API a été programmée).
+Mais attention : si vous devez envoyer des données de ce type dans le corps de la requête, par exemple pour ajouter une donnée, une erreur dans le nom des champs des données attendues par l'API générera une erreur 404 (ou 500 selon la façon dont l'API a été programmée).
 
 
 ### Interface pour accéder à l'API
@@ -187,8 +180,7 @@ champs des données attendues par l'API générera une erreur 404 (ou 500 selon 
 Il faut créer une interface qui fera le lien entre l'application et l'API.
 
 
-Cette interface sera codée dans un fichier dont le nom se termine par Api, placé dans le dossier service  qui est au même niveau que le fichier  MainActiviy.kt , par
-exemple  app/src/main/java/com/monnom/monprojet/service/ItemApi.kt .
+Cette interface sera codée dans un fichier dont le nom se termine par Api, placé dans le dossier service  qui est au même niveau que le fichier  MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/service/ItemApi.kt .
 
 
 L'interface doit définir, pour chaque type de requête à réaliser :
@@ -200,44 +192,35 @@ L'interface doit définir, pour chaque type de requête à réaliser :
 #### le point d'accès (endpoint), c'est-à-dire la partie qui suit l'URL de base de la requête à exécuter.
 
 
-Par exemple, si on appelle l'API [https://monapi.com/v1/items](https://monapi.com/v1/items) , le point d'accès est items. Avec l'API [https://monapi.com/v1/ajouter.php](https://monapi.com/v1/ajouter.php) , le point d'accès
-est ajouter.php.
+Par exemple, si on appelle l'API [https://monapi.com/v1/items](https://monapi.com/v1/items) , le point d'accès est items. Avec l'API [https://monapi.com/v1/ajouter.php](https://monapi.com/v1/ajouter.php) , le point d'accès est ajouter.php.
 
 
-Pour un URL qui contient des paramètres dans son chemin , par exemple  [https://monapi.com/v1/items/12](https://monapi.com/v1/items/12) , le point d'accès est items/ {id} . Les
-paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
+Pour un URL qui contient des paramètres dans son chemin , par exemple  [https://monapi.com/v1/items/12](https://monapi.com/v1/items/12) , le point d'accès est items/ {id} . Les paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
 
 
-Dans le cas où l'URL utilise des paramètres de requête , par exemple [https://monapi.com/v1/items?](https://monapi.com/v1/items?) id =12 , le point d'accès est items. Les paramètres
-de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
+Dans le cas où l'URL utilise des paramètres de requête , par exemple [https://monapi.com/v1/items?](https://monapi.com/v1/items?) id =12 , le point d'accès est items. Les paramètres de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
 
 
 #### Le nom de la fonction que l'application utilisera pour effectuer l'appel de l'API, avec ses paramètres et son type de
-retour. Cette fonction ne contient aucun code. Lorsqu'elle est appelée, elle effectue automatiquement l'appel API à
-l'aide du point d'accès spécifié dans l'interface.
+retour. Cette fonction ne contient aucun code. Lorsqu'elle est appelée, elle effectue automatiquement l'appel API à l'aide du point d'accès spécifié dans l'interface.
 
 
-Notez que si le type de retour est Response<...>
-, il sera possible de retrouver le code d'état HTTP retourné par l'API.
+Notez que si le type de retour est Response<...> , il sera possible de retrouver le code d'état HTTP retourné par l'API.
 
 
 #### S'il y a lieu, les données à envoyer dans le corps du message, identifiées avec @Body.
 
 
-Voici un exemple d'interface qui définit quelques appels. Le premier permet de retrouver tous les items et le second, un seul item retrouvé par son identifiant, passé
-comme paramètre de requête (ex : ?id=12).
+Voici un exemple d'interface qui définit quelques appels. Le premier permet de retrouver tous les items et le second, un seul item retrouvé par son identifiant, passé comme paramètre de requête (ex : ?id=12).
 
 
-Le nom du paramètre n'a pas d'importance. Je l'ai appelé identifiant pour illustrer que ça n'a pas besoin d'être le même nom que dans l'API. Sa valeur sera spécifiée
-lors de l'appel à cette fonction (voir correspondance de couleur plus bas).
+Le nom du paramètre n'a pas d'importance. Je l'ai appelé identifiant pour illustrer que ça n'a pas besoin d'être le même nom que dans l'API. Sa valeur sera spécifiée lors de l'appel à cette fonction (voir correspondance de couleur plus bas).
 
 
 Un troisième appel permet d'ajouter un item dans la base de données distante.
 
 
-!!! warning "Attention : si vous "
-    Attention : si vous effectuez le mauvais import pour la classe Retrofit, vous obtiendrez une erreur du genre « No type arguments expected for class Response :
-Closeable. ».
+!!! warning "Attention : si vous " Attention : si vous effectuez le mauvais import pour la classe Retrofit, vous obtiendrez une erreur du genre « No type arguments expected for class Response : Closeable. ».
 
 
 ```kotlin title="Fichier service/ItemApi.kt"
@@ -264,15 +247,13 @@ suspend fun retrouverUnItem( @Path("id") identifiant : Int): Response<Item>
 ```
 
 
-!!! warning "Note : si vous effec"
-    Note : si vous effectuez des recherches sur le Web ou dans des anciens projets, vous rencontrerez parfois des instructions du genre :
+!!! warning "Note : si vous effec" Note : si vous effectuez des recherches sur le Web ou dans des anciens projets, vous rencontrerez parfois des instructions du genre :
 
 
 fun retrouverUnItem(@Path("id") identifiant: Int): Call<Item>.
 
 
-Ce type de code était utilisé avant l'arrivée des coroutine de Kotlin. Bien qu'il fonctionne encore, il est préférable d'utiliser l'approche avec coroutines (avec le mot-
-clé suspend, tel qu'illustré plus haut) puisque le code sera plus facile à écrire, à lire et à maintenir.
+Ce type de code était utilisé avant l'arrivée des coroutine de Kotlin. Bien qu'il fonctionne encore, il est préférable d'utiliser l'approche avec coroutines (avec le mot- clé suspend, tel qu'illustré plus haut) puisque le code sera plus facile à écrire, à lire et à maintenir.
 
 
 ### Dans le cadre de ce cours, la forme avec Call est interdite.
@@ -287,9 +268,7 @@ L'application travaillera avec une seule instance de Retrofit.
 L'instanciation sera codée dans le fichier service/RetrofitInstance.kt .
 
 
-On utilisera le mot-clé object
- et non class. En Kotlin, le mot-clé object permet de déclarer une classe et d'instancier un singleton de cette classe, tout ça en une
-seule étape.
+On utilisera le mot-clé object et non class. En Kotlin, le mot-clé object permet de déclarer une classe et d'instancier un singleton de cette classe, tout ça en une seule étape.
 
 
 Il s'agit de spécifier l'URL de base, d'effectuer l'instanciation en tant que telle et de faire le lien avec l'interface (fichier créé plus tôt, dont le nom se termine par Api).
@@ -314,12 +293,10 @@ object RetrofitInstance {
 ```
 
 
-Dans cet extrait de code, l'instruction addConverterFactory(GsonConverterFactory.create()) permet d'automatiser la conversion de données JSON en objets
-Kotlin et vice versa.
+Dans cet extrait de code, l'instruction addConverterFactory(GsonConverterFactory.create()) permet d'automatiser la conversion de données JSON en objets Kotlin et vice versa.
 
 
-Remarquez l'utilisation de by lazy
- qui fait en sorte que le code de l'initialisation ne sera exécuté que lors du premier accès à la variable.
+Remarquez l'utilisation de by lazy qui fait en sorte que le code de l'initialisation ne sera exécuté que lors du premier accès à la variable.
 
 
 ### Effectuer un appel à l'API
@@ -331,12 +308,10 @@ Il est maintenant temps de coder les fonctions qui permettent d'appeler l'API. C
 Je leur ai volontairement donné des noms différents de ceux spécifiés dans l'interface afin de mieux illustrer qu'est-ce qui fait quoi.
 
 
-Chacune de ces fonctions fera appel à la fonction dont le nom a été spécifié dans l'interface. Une fois l'appel réalisé, elle stockera dans une variable d'état les
-informations retournées par l'API .
+Chacune de ces fonctions fera appel à la fonction dont le nom a été spécifié dans l'interface. Une fois l'appel réalisé, elle stockera dans une variable d'état les informations retournées par l'API .
 
 
-Remarquez que dans cet extrait, il n'est pas utile de déclarer le uiState comme un flux puisque l'application n'écoute pas pour recevoir les modifications aux
-données distantes.
+Remarquez que dans cet extrait, il n'est pas utile de déclarer le uiState comme un flux puisque l'application n'écoute pas pour recevoir les modifications aux données distantes.
 
 
 J'ai mis en caractères gras le code qui diffère lorsque le uiState n'est pas un flux.
@@ -481,8 +456,7 @@ ReponseAvecMessage ::class.java)
 ### Erreur « Unable to resolve host "....com": No address associated with hostname »
 
 
-L'erreur «Erreur « Unable to resolve host "....com": No address associated with hostname » indique qu'il y a un problème avec le serveur DNS qui doit traduire un
-URL en adresse IP.
+L'erreur «Erreur « Unable to resolve host "....com": No address associated with hostname » indique qu'il y a un problème avec le serveur DNS qui doit traduire un URL en adresse IP.
 
 
 Cette erreur est généralement silencieuse. Vous la verrez seulement si vous avez pris soin de réagir à un problème lors de l'appel de l'API.
@@ -499,14 +473,10 @@ try {
 ```
 
 
-Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman]**, Bruno
- ou curl
-. Vous devez concaténer la valeur de la constante BASE_URL avec le point
-d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
+Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman]**, Bruno ou curl . Vous devez concaténer la valeur de la constante BASE_URL avec le point d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
 
 
-Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateur. Ceci arrive parfois si on utilise l'émulateur dans différents réseaux, par exemple à l'école
-et à la maison.
+Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateur. Ceci arrive parfois si on utilise l'émulateur dans différents réseaux, par exemple à l'école et à la maison.
 
 
 Pour régler ce problème :
@@ -522,8 +492,7 @@ Pour régler ce problème :
 
 
 ### Il peut arriver qu'une action plus costaude soit nécessaire. Toujours dans Device Manager, cliquez sur les trois points
-verticaux vis-à-vis l'émulateur que vous utilisez puis choisissez Wipe Data . Relancez ensuite votre application.
-72.2 Appeler deux API dans la même application
+verticaux vis-à-vis l'émulateur que vous utilisez puis choisissez Wipe Data . Relancez ensuite votre application. 72.2 Appeler deux API dans la même application
 
 
 Si votre application Jetpack Compose a besoin de faire appel à deux API :
@@ -581,26 +550,22 @@ val reponse = RetrofitInstance. abc Api.retrouverDonnees()
 ### 72.3 Synchroniser les données locales avec les données distantes
 
 
-Une application mobile qui travaille avec des données locales a tout avantage à synchroniser ses données avec une base de données distante afin de s'assurer de ne
-rien perdre en cas de bris du téléphone.
+Une application mobile qui travaille avec des données locales a tout avantage à synchroniser ses données avec une base de données distante afin de s'assurer de ne rien perdre en cas de bris du téléphone.
 
 
 En temps normal, l'application effectuera chacune des opérations avec la base de données locales ET avec la base de données distante.
 
 
-Mais dans le cas où l'application roule alors qu'elle n'a pas accès à Internet, seules les données locales pourront être modifiées. Il faut donc mettre en place un
-mécanisme qui se chargera d'effectuer ces modifications sur la base de données distante dès que l'accès à Internet sera retrouvé.
+Mais dans le cas où l'application roule alors qu'elle n'a pas accès à Internet, seules les données locales pourront être modifiées. Il faut donc mettre en place un mécanisme qui se chargera d'effectuer ces modifications sur la base de données distante dès que l'accès à Internet sera retrouvé.
 
 
-Il est possible de programmer une application Android avec Jetpack Compose pour qu'elle réagisse lorsqu'elle détecte un changement de la
-connectivité : [https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915](https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915)
+Il est possible de programmer une application Android avec Jetpack Compose pour qu'elle réagisse lorsqu'elle détecte un changement de la connectivité : [https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915](https://blog.devgenius.io/monitoring-internet-connection-on-android-jetpack-writing-e007b3d61915)
 
 
 ### 72.4 Service Web pour synchroniser les données
 
 
-Je vous démontre ici comment écrire un service Web en PHP qui interagit avec une base de données MySQL afin de recopier des données locales dans une base de
-données distante.
+Je vous démontre ici comment écrire un service Web en PHP qui interagit avec une base de données MySQL afin de recopier des données locales dans une base de données distante.
 
 
 Ce service peut être utilisé avec une application mobile pour iOS ou pour Android de même qu'avec tout autre type d'application qui utilise des données locales.
@@ -655,15 +620,13 @@ locales sont synchronisées avec les données distantes.
 Ces deux figures de cas sont complémentaires.
 
 
-En temps normal, l'application utilisera la première approche : chacune des opérations sera effectuée avec la base de données locales ET avec la base de données
-distante.
+En temps normal, l'application utilisera la première approche : chacune des opérations sera effectuée avec la base de données locales ET avec la base de données distante.
 
 
 Mais dans le cas où l'application roule alors qu'elle n'a pas accès à Internet, seules les données locales pourront être modifiées.
 
 
-C'est là qu'entre en jeu la synchronisation. Elle permet de comparer les données locales et les données distantes afin d'effectuer les opérations d'ajout, de
-modification et de suppression qui n'ont pas encore été effectuées sur les données distantes.
+C'est là qu'entre en jeu la synchronisation. Elle permet de comparer les données locales et les données distantes afin d'effectuer les opérations d'ajout, de modification et de suppression qui n'ont pas encore été effectuées sur les données distantes.
 
 
 Dans cette fiche, je vous montre comment développer un service Web qui permettra d'effectuer cette synchronisation.
@@ -675,24 +638,19 @@ Dans cette fiche, je vous montre comment développer un service Web qui permettr
 Pour effectuer la copie des données locales, il faut que l'application mobile ait accès à un service Web qui interagira avec la base de données distante.
 
 
-Pendant la phase de développement de votre application, le service Web peut tourner localement. Vous aurez besoin d'un serveur HTTP et d'un serveur de bases de
-données.
+Pendant la phase de développement de votre application, le service Web peut tourner localement. Vous aurez besoin d'un serveur HTTP et d'un serveur de bases de données.
 
 
-Ces serveurs peuvent être installés sur votre ordinateur à l'aide d'un environnement de développement Web tel que Devilbox
-, un outil qui préconfigure des
-conteneurs **Docker]** qui font rouler Apache ou Ngnix, MySQL, etc.
+Ces serveurs peuvent être installés sur votre ordinateur à l'aide d'un environnement de développement Web tel que Devilbox , un outil qui préconfigure des conteneurs **Docker]** qui font rouler Apache ou Ngnix, MySQL, etc.
 
 
-Quand vous aurez terminé le développement et la phase de tests de votre service Web, vous pourrez le mettre en ligne chez un hébergeur, comme vous le feriez
-pour un site Web.
+Quand vous aurez terminé le développement et la phase de tests de votre service Web, vous pourrez le mettre en ligne chez un hébergeur, comme vous le feriez pour un site Web.
 
 
 ### Structure des informations envoyées au service Web puis retournées par le service Web
 
 
-Le format **JSON]** est très utilisé pour échanger des données entre
-applications.
+Le format **JSON]** est très utilisé pour échanger des données entre applications.
 
 
 L'application mobile doit fournir au service Web une représentation JSON des données à synchroniser.
@@ -704,8 +662,7 @@ De son côté, le service Web recevra ces données  et il s'en servira dans son 
 Il  remplira un tableau associatif avec les informations qu'il souhaite fournir en retour à l'application mobile.
 
 
-À la fin du traitement, le service convertira ce tableau au format JSON puis il fera un echo de cette valeur. C'est ce echo qui sera la valeur de retour du service
-Web.
+À la fin du traitement, le service convertira ce tableau au format JSON puis il fera un echo de cette valeur. C'est ce echo qui sera la valeur de retour du service Web.
 
 
 L'application mobile pourra lire l'information retournée et réagir en conséquence.
@@ -741,8 +698,7 @@ Tout service Web qui manipule des données doit se soucier des problèmes de sé
 Entre autres, il faut mettre en place un mécanisme d'authentification qui assurera que seules les applications autorisées peuvent faire appel au service Web.
 
 
-Les concepts de l'authentifications auprès d'un service Web sont expliqués dans la fiche
-« **l_authentification_aupres_du_service_web** ».
+Les concepts de l'authentifications auprès d'un service Web sont expliqués dans la fiche « **l_authentification_aupres_du_service_web** ».
 
 
 ### Branchement à la base de données
@@ -794,19 +750,16 @@ Il faut distinguer trois figures de cas :
 À première vue, on pourrait utiliser l'identifiant d'un enregistrement pour comparer sa présence dans la BD locale et dans la BD distante.
 
 
-Le problème, c'est qu'en cas d'ajout, il faudrait forcer l'identifiant afin d'assurer que les deux bases de données puissent demeurer synchronisées. Ceci empêcherait
-la synchronisation à partir de plusieurs applications différentes puisque chacune pourrait faire un ajout local avec le même identifiant.
+Le problème, c'est qu'en cas d'ajout, il faudrait forcer l'identifiant afin d'assurer que les deux bases de données puissent demeurer synchronisées. Ceci empêcherait la synchronisation à partir de plusieurs applications différentes puisque chacune pourrait faire un ajout local avec le même identifiant.
 
 
 ### UUID ou ULID
 
 
-Pour permettre la synchronisation à partir de plusieurs sources, il est possible d'utiliser un **identifiant unique
-universel** (Universally unique identifier, UUID) comme valeur de base pour la synchronisation.
+Pour permettre la synchronisation à partir de plusieurs sources, il est possible d'utiliser un **identifiant unique universel** (Universally unique identifier, UUID) comme valeur de base pour la synchronisation.
 
 
-L'utilisation d'un **ULID** (Universally Unique Lexicographically sortable IDentifier) est
-également possible.
+L'utilisation d'un **ULID** (Universally Unique Lexicographically sortable IDentifier) est également possible.
 
 
 Ici, le UUID a été utilisé.
@@ -836,8 +789,7 @@ Pour remplir manuellement ce champ dans une base de données existante, je vous 
 ### Terminal
 
 
-Il est très simple de générer un UUID dans le Terminal macOS à l'aide de la commande uuidgen
-.
+Il est très simple de générer un UUID dans le Terminal macOS à l'aide de la commande uuidgen .
 
 
 ```kotlin title="Terminal"
@@ -848,8 +800,7 @@ uuidgen
 ### Site Web générateur de UUID
 
 
-Vous pouvez également travailler à partir d'un site générateur de UUID, par exemple [https://www.uuidgenerator.net](https://www.uuidgenerator.net)
-.
+Vous pouvez également travailler à partir d'un site générateur de UUID, par exemple [https://www.uuidgenerator.net](https://www.uuidgenerator.net) .
 
 
 ### Avec MySQL

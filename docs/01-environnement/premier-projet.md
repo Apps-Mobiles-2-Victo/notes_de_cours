@@ -44,8 +44,7 @@ caractères accentués.
 #### Package name  : nom qui identifie l'application de façon unique dans l'écosystème Android.
 
 
-Entrez votre nom de domaine en format inverse (en anglais : reverse domain name service notation ou reverse-DNS notation) suivi du
-nom de l'application sans espaces ni accents, par exemple com.mondomaine.monapplication.
+Entrez votre nom de domaine en format inverse (en anglais : reverse domain name service notation ou reverse-DNS notation) suivi du nom de l'application sans espaces ni accents, par exemple com.mondomaine.monapplication.
 
 
 Si vous ne possédez pas de nom de domaine, entrez une chaine du genre com.nomfamilleprenom.monapplication.
@@ -63,19 +62,13 @@ Notez que cette configuration modifie le niveau de SDK minimal pour que l'applic
 ciblé par l'application.
 
 
-La documentation Android et différents sites Web mentionnent qu'il faut au moins l'API 21 pour travailler avec Jetpack Compose
- et au
-moins l'API 35 pour qu'une application puisse être publiée sur Google Play
-. Il s'agit du niveau de SDK ciblé.
+La documentation Android et différents sites Web mentionnent qu'il faut au moins l'API 21 pour travailler avec Jetpack Compose et au moins l'API 35 pour qu'une application puisse être publiée sur Google Play . Il s'agit du niveau de SDK ciblé.
 
 
-Dans le cas présent, pour le niveau de SDK minimal, vous pouvez entrer la valeur désirée en considérant que plus la version minimale est
-récente, plus de fonctionnalités seront disponibles mais moins d'appareils pourront supporter votre application. Android Studio vous
-indiquera le pourcentage d'appareils qui supportent la version choisie.
+Dans le cas présent, pour le niveau de SDK minimal, vous pouvez entrer la valeur désirée en considérant que plus la version minimale est récente, plus de fonctionnalités seront disponibles mais moins d'appareils pourront supporter votre application. Android Studio vous indiquera le pourcentage d'appareils qui supportent la version choisie.
 
 
-Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJDK 17
-.
+Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJDK 17 .
 
 
 #### Build configuration language  : entrez Kotlin DSL.
@@ -132,8 +125,7 @@ Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJ
 
 
 #### Pour voir l'application telle qu'elle apparaîtra sur un téléphone, cliquez sur l'icône  Run dans la barre d'outils (icône
-de triangle vers la droite ou de flèche circulaire). Si aucun périphérique virtuel n'est configuré, Android Studio en
-créera un.
+de triangle vers la droite ou de flèche circulaire). Si aucun périphérique virtuel n'est configuré, Android Studio en créera un.
 
 
 #### À chaque fois que vous cliquez sur l'icône  Run dans la barre d'outils, vous voyez l'application telle qu'elle sera sur le
@@ -182,8 +174,7 @@ Vous pouvez placer la souris sur le mot en rouge pour voir ce que l'éditeur pro
 
 
 
-Au lieu de pointer le mot en rouge, vous pouvez cliquer dessus. Vous pourrez alors appuyer sur Alt + Entrée (Windows) ou ⌥ Option + Entrée (Mac) pour
-ajouter l'instruction import manquante.
+Au lieu de pointer le mot en rouge, vous pouvez cliquer dessus. Vous pourrez alors appuyer sur Alt + Entrée (Windows) ou ⌥ Option + Entrée (Mac) pour ajouter l'instruction import manquante.
 
 
 
@@ -196,8 +187,7 @@ ajouter l'instruction import manquante.
 Dans les deux cas, si plusieurs options sont disponibles, vous serez invités à choisir celle qui vous convient.
 
 
-Prenez note qu'il est possible de **configurer Android Studio pour ajouter automatiquement les instructions
-import non ambugües**.
+Prenez note qu'il est possible de **configurer Android Studio pour ajouter automatiquement les instructions import non ambugües**.
 
 
 ## 18. Structurer une application Android avec Kotlin et Jetpack Compose
@@ -210,8 +200,7 @@ import non ambugües**.
 ### 18.1 Comment nommer la fonction modulable de base
 
 
-Dans l'application de base obtenue lorsqu'on crée un nouveau projet Android avec Kotlin et Jetpack Compose, la classe MainActivity appelle une fonction nommée
-Greeting().
+Dans l'application de base obtenue lorsqu'on crée un nouveau projet Android avec Kotlin et Jetpack Compose, la classe MainActivity appelle une fonction nommée Greeting().
 
 
 Ce nom est correct pour une application qui ne fait qu'une salutation mais il n'est pas approprié pour la majorité des applications que vous développerez.
@@ -223,8 +212,7 @@ Alors, comment nommer cette fonction pour qu'elle ait du sens peu importe l'appl
 Je vous propose de l'appeler simplement MainScreen(). Ce nom sera toujours le même, peu importe le projet en cours.
 
 
-J'ai aussi vu que plusieurs développeurs utilisaient un nom sous la forme MonApplicationApp(). Par exemple, si l'application s'appelle TicTacToe, la fonction
-s'appellera TicTacToeApp().
+J'ai aussi vu que plusieurs développeurs utilisaient un nom sous la forme MonApplicationApp(). Par exemple, si l'application s'appelle TicTacToe, la fonction s'appellera TicTacToeApp().
 
 
 À vous de choisir l'appellation qui vous convient!
@@ -255,8 +243,7 @@ fun MainScreen (modifier: Modifier = Modifier) {
 ### 18.2 À quel endroit peut-on appeler une fonction modulable
 
 
-L'interface d'une application Android avec Jetpack Compose est définie en appelant différentes **fonctions
-modulables**.
+L'interface d'une application Android avec Jetpack Compose est définie en appelant différentes **fonctions modulables**.
 
 
 Il est important que Jetpack Compose sache dès le chargement de l'application quels éléments doivent être affichés. C'est pourquoi les fonctions modulables ne peuvent pas être appelées dans un gestionnaire d'événement.
@@ -276,8 +263,7 @@ Button(
 Si vous appelez une fonction modulable dans un gestionnaire d'événement, vous obtiendrez à la compilation le message d'erreur ` @Composable invocations can only happen from the context of a @Composable function `.
 
 
-Dans un autre contexte, le composable doit être déclaré directement dans la fonction composable ou encore dans un autre composable, en autant que ce ne soit
-pas dans un gestionnaire d'événement.
+Dans un autre contexte, le composable doit être déclaré directement dans la fonction composable ou encore dans un autre composable, en autant que ce ne soit pas dans un gestionnaire d'événement.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

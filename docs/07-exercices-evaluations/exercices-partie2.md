@@ -8,8 +8,7 @@ title: "Exercices pratiques - Partie 2 (5 à 8 & formatif)"
 ### 40.1 Couleur de fond
 
 
-Comme dans tous vous exercices formatifs ou sommatifs, assurez-vous de bien citer vos sources lorsque vous vous inspirez de code trouvé sur Internet ou généré
-par une IA ou lorsque vous utilisez une technique différente de celle enseignée.
+Comme dans tous vous exercices formatifs ou sommatifs, assurez-vous de bien citer vos sources lorsque vous vous inspirez de code trouvé sur Internet ou généré par une IA ou lorsque vous utilisez une technique différente de celle enseignée.
 
 
 Ceci assurera que lors de travaux sommatifs, vous puissiez encore citer ces sources afin de limiter les risques d'être accusés de plagiat.
@@ -125,41 +124,25 @@ Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exerc
 Voici la grille de correction qui sera utilisée à l'examen formatif formel en Applications mobiles 2.
 
 
-Dans tout le code que vous écrirez, vous devez respecter les techniques, les pratiques et les normes de nomenclature enseignées en classe. Plusieurs sont
-implicites, par exemple bien découper le code, bien nommer les ressources, mention claire de code emprunté pour tout code inspiré de contenu trouvé en dehors
-des notes de cours.
+Dans tout le code que vous écrirez, vous devez respecter les techniques, les pratiques et les normes de nomenclature enseignées en classe. Plusieurs sont implicites, par exemple bien découper le code, bien nommer les ressources, mention claire de code emprunté pour tout code inspiré de contenu trouvé en dehors des notes de cours.
 
 
-25 points
-Excellent
-Satisfaisant
-Minimal
-Faible
-Insuffisant
+25 points Excellent Satisfaisant Minimal Faible Insuffisant
 
 
-Il y a au moins
-un aspect non
-conforme.
+Il y a au moins un aspect non conforme.
 
 
-Il y a au moins
-deux aspects non
-conformes.
+Il y a au moins deux aspects non conformes.
 
 
-Il y a au moins trois
-aspects non
-conformes.
+Il y a au moins trois aspects non conformes.
 
 
-Il y a au moins quatre
-aspects non
-conformes.
+Il y a au moins quatre aspects non conformes.
 
 
-Les éléments graphiques répondent à ce qui a
-été demandé et sont correctement configurés.
+Les éléments graphiques répondent à ce qui a été demandé et sont correctement configurés.
 
 
 Éléments graphiques
@@ -177,29 +160,19 @@ Les éléments graphiques répondent à ce qui a
 3 points
 
 
-La programmation répond à ce qui a été
-demandé : choix des types de données,
-initialisations, paramètres, conversions de
-type, conditions, boucles, traitements,
-contenu du Scaffold et des gestionnaires
-d'événements dans leurs propres fonctions,
-etc.
+La programmation répond à ce qui a été demandé : choix des types de données, initialisations, paramètres, conversions de type, conditions, boucles, traitements, contenu du Scaffold et des gestionnaires d'événements dans leurs propres fonctions, etc.
 
 
-Il y a au moins
-une erreur.
+Il y a au moins une erreur.
 
 
-Il y a au moins
-deux erreurs.
+Il y a au moins deux erreurs.
 
 
-Il y a au moins trois
-erreurs.
+Il y a au moins trois erreurs.
 
 
-Il y a au moins quatre
-erreurs.
+Il y a au moins quatre erreurs.
 
 
 #### Structure du code
@@ -218,40 +191,23 @@ et logique
 15 points
 
 
-L'apparence générale (espacements, tailles,
-couleurs et autres mises en forme, utilisation
-du innerPadding du Scaffold) répond à tout ce
-qui a été demandé. L'ensemble donne une
-apparence esthétique.
+L'apparence générale (espacements, tailles, couleurs et autres mises en forme, utilisation du innerPadding du Scaffold) répond à tout ce qui a été demandé. L'ensemble donne une apparence esthétique.
 
 
 #### Apparence
-générale et
-documentation
-Dokka
+générale et documentation Dokka
 
 
-Il y a au moins un
-aspect non
-conforme ou non
-esthétique.
+Il y a au moins un aspect non conforme ou non esthétique.
 
 
-Il y a au moins deux
-aspects non
-conformes ou non
-esthétiques.
+Il y a au moins deux aspects non conformes ou non esthétiques.
 
 
-Il y a au moins trois
-aspects non
-conformes ou non
-esthétiques.
+Il y a au moins trois aspects non conformes ou non esthétiques.
 
 
-Les commentaires KDoc sont correctement
-formulés et la documentation Dokka est bien
-générée.
+Les commentaires KDoc sont correctement formulés et la documentation Dokka est bien générée.
 
 
 2 points
@@ -263,43 +219,26 @@ générée.
 3 points
 
 
-Les standards et les bonnes pratiques ont été
-respectés. Par exemple : respecter la
-nomenclature, éviter la codification en dur des
-couleurs lorsque le contexte s'y prête, nom de
-domaine en format inverse approprié, aucune
-directive import inutilisée, etc.
+Les standards et les bonnes pratiques ont été respectés. Par exemple : respecter la nomenclature, éviter la codification en dur des couleurs lorsque le contexte s'y prête, nom de domaine en format inverse approprié, aucune directive import inutilisée, etc.
 
 
-Il y a au moins un
-standard ou une
-bonne pratique non
-respectée.
+Il y a au moins un standard ou une bonne pratique non respectée.
 
 
 #### Respect des
-standards et des
-bonnes pratiques
+standards et des bonnes pratiques
 
 
 1 point
 
 
-Plus d'une réponse
-est presque
-complète ou presque
-exacte.
+Plus d'une réponse est presque complète ou presque exacte.
 
 
-Au moins une
-réponse est
-presque complète
-ou presque
-exacte.
+Au moins une réponse est presque complète ou presque exacte.
 
 
-Les réponses sont
-insatisfaisantes.
+Les réponses sont insatisfaisantes.
 
 
 #### Questions de
@@ -315,9 +254,7 @@ ou
 3 points
 
 
-Au moins une
-réponse est
-insatisfaisante.
+Au moins une réponse est insatisfaisante.
 
 
 2 points
@@ -402,8 +339,7 @@ paramètre à la fonction non composable? Soyez précis dans votre réponse.
 
 
 ### sous la forme onMaVariableDEtatChange = { maVariableDEtat = it }. Expliquez clairement, dans vos
-propres mots, d'où le mot it prend sa valeur et pourquoi il porte ce nom.
-────────── Semaine 4 ──────────
+propres mots, d'où le mot it prend sa valeur et pourquoi il porte ce nom. ────────── Semaine 4 ──────────
 
 
 ## 43. État persistant
@@ -439,8 +375,7 @@ d'utiliser listOf()).
 #### être obtenues facilement à l'aide de LocalDateTime.now().
 
 
-Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans _uiState.update et mettre le code dans it.copy. Prenez soin
-d'utiliser la bonne syntaxe pour mettre à jour un tableau.
+Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans _uiState.update et mettre le code dans it.copy. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
 
 
 #### e. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne
@@ -476,9 +411,7 @@ entrée.
 
 
 ### 2. OPTIONNEL : Prenez le code présenté dans la fiche
-« **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il
-utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si
-l'état est conservé quand l'activité est recréée.
+« **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si l'état est conservé quand l'activité est recréée.
 
 
 ## 46. Pour le prochain cours
@@ -505,8 +438,7 @@ Vous disposez d' un cours pour acquérir les connaissances théoriques et finali
 ### 48.1 Jeu Simon
 
 
-Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : [https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon](https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon)
-).
+Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : [https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon](https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon) ).
 
 
 Voici le fonctionnement normal du jeu :
@@ -552,8 +484,7 @@ le ViewModel (ou son uiState) qui est responsable de dire si le jeu est terminé
 
 
 #### Soignez l'apparence des boutons afin que le jeu ait une apparence professionnelle. Par exemple, ajoutez un ombrage,
-une bordure, un point lumineux pour donner un effet 3D. Le code pour afficher un bouton sera placé dans sa propre
-fonction composable.
+une bordure, un point lumineux pour donner un effet 3D. Le code pour afficher un bouton sera placé dans sa propre fonction composable.
 
 
 #### Une fois le jeu fonctionnel, modifiez-le pour que la séquence à reproduire soit générée au hasard. Ceci sera codé
@@ -561,25 +492,19 @@ dans une méthode du ViewModel.
 
 
 #### OPTIONNEL : ajustez le jeu pour qu'il génère d'abord une série d'un seul bouton à cliquer. Une fois la série
-correctement reproduite par l'usager, il en ajoutera un 2e puis un 3e, etc., comme dans le vrai jeu. Ici encore, le jeu se
-termine quand l'usager fait une erreur. S'il est très bon, la séquence peut devenir très longue.
+correctement reproduite par l'usager, il en ajoutera un 2e puis un 3e, etc., comme dans le vrai jeu. Ici encore, le jeu se termine quand l'usager fait une erreur. S'il est très bon, la séquence peut devenir très longue.
 
 
 #### OPTIONNEL : quand l'usager clique sur le bouton « Démarrer », les boutons s'illuminent selon la séquence.
-L'illumination peut être une modification dans l'opacité de la couleur, l'ajout d'une bordure ou tout autre effet visuel
-de votre choix. Une fois la séquence jouée, un texte invite l'usager à cliquer sur les boutons pour reproduire la
-séquence.
+L'illumination peut être une modification dans l'opacité de la couleur, l'ajout d'une bordure ou tout autre effet visuel de votre choix. Une fois la séquence jouée, un texte invite l'usager à cliquer sur les boutons pour reproduire la séquence.
 
 
 #### OPTIONNEL : associez un son à chacun des boutons, comme dans le vrai jeu (vous pouvez utiliser ces sons :
-[https://sounddino.com/en/effects/notes/](https://sounddino.com/en/effects/notes/)
-). Le son sera entendu quand l'application montre la séquence à reproduire
-de même que quand l'usager cliquera sur les boutons.
+[https://sounddino.com/en/effects/notes/](https://sounddino.com/en/effects/notes/) ). Le son sera entendu quand l'application montre la séquence à reproduire de même que quand l'usager cliquera sur les boutons.
 
 
 #### OPTIONNEL : assurez-vous que les boutons ne soient cliquable que lorsque c'est opportun dans le jeu. Par exemple,
-il ne doit pas être possible de cliquer sur les boutons de couleur pendant que le jeu illumine les boutons pour montrer
-la séquence.
+il ne doit pas être possible de cliquer sur les boutons de couleur pendant que le jeu illumine les boutons pour montrer la séquence.
 
 
 ### Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication

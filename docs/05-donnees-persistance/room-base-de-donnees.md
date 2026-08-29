@@ -8,9 +8,7 @@ title: "Base de données locale avec Room"
 ### 53.1 Installation de Room
 
 
-Room
- est une bibliothèque de persistance de données pour Android Jetpack Compose. Elle fournit une couche d'abstraction entre votre application et une base
-de données SQLite.
+Room est une bibliothèque de persistance de données pour Android Jetpack Compose. Elle fournit une couche d'abstraction entre votre application et une base de données SQLite.
 
 
 Pour utiliser Room, vous devez d'abord ajouter des dépendances au projet.
@@ -25,8 +23,7 @@ La ligne à ajouter dépend de la version de Kotlin utilisée dans le projet.
 ### Retrouver la version de Kotlin du projet
 
 
-Si votre projet utilise des catalogues de versions
- (présence d'un fichier gradle/libs.versions.toml ), la version de Kotlin est disponible à cette ligne :
+Si votre projet utilise des catalogues de versions (présence d'un fichier gradle/libs.versions.toml ), la version de Kotlin est disponible à cette ligne :
 
 
 ```toml title="Fichier libs.versions.toml"
@@ -47,8 +44,7 @@ id ("org.jetbrains.kotlin.android") version " 2.0.21 " apply false
 ### Retrouver la version de kps correspondante
 
 
-Vous trouverez la liste des versions de kps (Kotlin Symbol Processing) sur le site [https://github.com/google/ksp/releases](https://github.com/google/ksp/releases)
-.
+Vous trouverez la liste des versions de kps (Kotlin Symbol Processing) sur le site [https://github.com/google/ksp/releases](https://github.com/google/ksp/releases) .
 
 
 ### Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
@@ -60,8 +56,7 @@ Par exemple, pour Kotlin 2.0.21, il faut utiliser KPS 2.0.21-1.0.28.
 ### Ajout au fichier
 
 
-Dans le fichier build.gradle.kts  principal (aussi appelé top-level build.gradle file), soit celui présent directement à la racine du projet, ajoutez ceci en prenant
-soin d'utiliser la version de l'API KPS qui correspond à votre version de Kotlin.
+Dans le fichier build.gradle.kts  principal (aussi appelé top-level build.gradle file), soit celui présent directement à la racine du projet, ajoutez ceci en prenant soin d'utiliser la version de l'API KPS qui correspond à votre version de Kotlin.
 
 
 ```kotlin title="Fichier build.gradle.kts principal"
@@ -120,15 +115,13 @@ app/build.gradle.kts).
 
 
 ### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?)
-hl=fr
-53.2 Modèle pour représenter les données (classe d'entité)
+hl=fr 53.2 Modèle pour représenter les données (classe d'entité)
 
 
 Il est possible de générer vos tables dans une BD SQLite sans même avoir à utiliser du code SQL ni même un outil de gestion de base de données.
 
 
-Chaque table sera définie dans une classe Kotlin précédée de l'annotation @Entity. On dira de cette classe que c'est une entité de données ou encore un modèle de
-données, parfois également appelée classe d'entité.
+Chaque table sera définie dans une classe Kotlin précédée de l'annotation @Entity. On dira de cette classe que c'est une entité de données ou encore un modèle de données, parfois également appelée classe d'entité.
 
 
 Toutes les entités de données seront placées dans un dossier nommé  data .
@@ -201,29 +194,22 @@ data class Item(
 53.3 Le DAO : couche intermédiaire entre l'application et la BD
 
 
-Plusieurs cadres d'application offrent une couche d'abstraction entre l'application et la base de données, généralement sous forme de classes qui représentent les
-tables de la BD. Cette couche d'abstraction est connue sous l'acronyme ORM (Object Relational Mapper).
+Plusieurs cadres d'application offrent une couche d'abstraction entre l'application et la base de données, généralement sous forme de classes qui représentent les tables de la BD. Cette couche d'abstraction est connue sous l'acronyme ORM (Object Relational Mapper).
 
 
 Avec Jetpack Compose et Room, la couche d'abstraction utilise une interface DAO (Data Access Object ou objet d'accès aux données).
 
 
-Grâce à la **classe d'entité]**, Room est capable de générer lui-même les requêtes
-INSERT, UPDATE et DELETE pour gérer les données. Il suffit d'utiliser l'annotation appropriée (@Insert, @Update ou @Delete) et de passer une instance du modèle
-en paramètre à la fonction.
+Grâce à la **classe d'entité]**, Room est capable de générer lui-même les requêtes INSERT, UPDATE et DELETE pour gérer les données. Il suffit d'utiliser l'annotation appropriée (@Insert, @Update ou @Delete) et de passer une instance du modèle en paramètre à la fonction.
 
 
-Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé
-suspend.
+Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé suspend.
 
 
-Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera
-l'annotation @Query. La fonction retournera l'information sous le type Flow
-., soit un flux de données asynchrone observable.
+Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera l'annotation @Query. La fonction retournera l'information sous le type Flow ., soit un flux de données asynchrone observable.
 
 
-Le nom de l'interface du DAO – et du fichier – se terminera par Dao. Lorsque le DAO interagit avec une seule table, le nom sera sous la forme EntiteDao, par exemple
-CategorieDao.
+Le nom de l'interface du DAO – et du fichier – se terminera par Dao. Lorsque le DAO interagit avec une seule table, le nom sera sous la forme EntiteDao, par exemple CategorieDao.
 
 
 Tous les DAO seront placés dans un dossier nommé  data .
@@ -272,9 +258,7 @@ Rappel : il n'est pas acceptable de faire ORDER BY id puisque l'identifiant est 
 Une autre étape est nécessaire pour gérer les données locales à partir de l'application Android : définir le dépôt de données (en anglais : repository).
 
 
-Dans une application qui utilise un DAO, l'application passera toujours par le dépôt de données pour accéder aux données. Le dépôt de données est une sorte
-d'isolant entre la source de données et le reste de l'application. Il est le seul à savoir d'où proviennent les données qu'il fournit à l'application, par exemple si elles
-proviennent directement de la base de données ou de la mémoire cache.
+Dans une application qui utilise un DAO, l'application passera toujours par le dépôt de données pour accéder aux données. Le dépôt de données est une sorte d'isolant entre la source de données et le reste de l'application. Il est le seul à savoir d'où proviennent les données qu'il fournit à l'application, par exemple si elles proviennent directement de la base de données ou de la mémoire cache.
 
 
 C'est le dépôt qui fera appel aux méthodes définies dans l'interface **du DAO]**.
@@ -300,8 +284,7 @@ class CategorieRepository(
 53.5 La classe qui hérite de RoomDatabase
 
 
-Tous les  **DAO]** seront réunis dans une classe qui représente
-la base de données en tant que telle.
+Tous les  **DAO]** seront réunis dans une classe qui représente la base de données en tant que telle.
 
 
 Le code utilise le patron de conception du singleton, c'est-à-dire qu'il y aura un et un seul objet instancié.
@@ -310,8 +293,7 @@ Le code utilise le patron de conception du singleton, c'est-à-dire qu'il y aura
 La base de données peut porter n'importe quel nom. Une bonne pratique consiste à lui donner le même nom que l'application.
 
 
-La classe qui définit la base de données de même que le fichier dans lequel elle est codée porteront un nom qui débute par le nom de la base de données et qui se
-termine par Database. Ex : MonprojetDatabase.
+La classe qui définit la base de données de même que le fichier dans lequel elle est codée porteront un nom qui débute par le nom de la base de données et qui se termine par Database. Ex : MonprojetDatabase.
 
 
 Le fichier sera placé dans le dossier data .
@@ -364,12 +346,10 @@ C'est le ViewModel qui créera la base de données si elle n'existe pas puis qui
 Ce fichier sera placé dans le dossier ui .
 
 
-Ici, le fait de déclarer le uiState avec MutableStateFlow assure que les informations seront automatiquement mises à jour lorsqu'il y a des changements dans les
-données de la BD.
+Ici, le fait de déclarer le uiState avec MutableStateFlow assure que les informations seront automatiquement mises à jour lorsqu'il y a des changements dans les données de la BD.
 
 
-Remarquez que viewModelScope.launch(Dispatchers.IO) retournera une tâche (objet de type Job
-), c'est-à-dire une référence (handle) vers une coroutine.
+Remarquez que viewModelScope.launch(Dispatchers.IO) retournera une tâche (objet de type Job ), c'est-à-dire une référence (handle) vers une coroutine.
 
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
@@ -426,9 +406,7 @@ automatiquement si la BD change.
 ```
 
 
-!!! warning "Note : il est généra"
-    Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires.
-Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory]**.
+!!! warning "Note : il est généra" Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory]**.
 
 
 Comme toujours, chaque ViewModel ne doit exister qu'en un seul exemplaire.
@@ -440,9 +418,7 @@ Une variable viewModel sera instanciée dans le plus proche parent des composabl
 Dans cet exemple, elle est instanciée directement dans l'écran principal.
 
 
-!!! warning "Attention : il faut "
-    Attention : il faut **ajouter une dépendance** pour que ce
-code fonctionne puisque le ViewModel est instancié dans un composable.
+!!! warning "Attention : il faut " Attention : il faut **ajouter une dépendance** pour que ce code fonctionne puisque le ViewModel est instancié dans un composable.
 
 
 ```kotlin title="Fichier MainsActivity.kt"

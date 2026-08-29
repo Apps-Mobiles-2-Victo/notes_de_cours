@@ -8,8 +8,7 @@ title: "Utilisation des capteurs (Sensors)"
 ### 75.1 Les capteurs d'un téléphone Android
 
 
-Un téléphone Android peut être muni de capteur physiques et de capteur logiques. Les capteur logiques sont ceux  dont les valeurs sont calculées à partir des
-valeurs d'un ou de plusieurs autres capteurs.
+Un téléphone Android peut être muni de capteur physiques et de capteur logiques. Les capteur logiques sont ceux  dont les valeurs sont calculées à partir des valeurs d'un ou de plusieurs autres capteurs.
 
 
 Parmi les capteurs qui peuvent être disponibles sur un téléphone Android, notons :
@@ -42,8 +41,7 @@ Parmi les capteurs qui peuvent être disponibles sur un téléphone Android, not
 Fait intéressant, depuis l'API 14, l'émulateur dans Android Studio permet de simuler les capteurs d'un téléphone.
 
 
-Pour y arriver, cliquez sur les trois points verticaux dans le coin supérieur droit de la fenêtre de l'émulateur, là où on retrouve le bouton Power , afin d'ouvrir la
-fenêtre Extended Controls .
+Pour y arriver, cliquez sur les trois points verticaux dans le coin supérieur droit de la fenêtre de l'émulateur, là où on retrouve le bouton Power , afin d'ouvrir la fenêtre Extended Controls .
 
 
 
@@ -89,8 +87,7 @@ Et si ce capteur utilise des données sensibles, elle doit en plus demander une 
 ### uses-feature
 
 
-La balise uses-feature
- permet de préciser à Google Play que l'application utilise un capteur.
+La balise uses-feature permet de préciser à Google Play que l'application utilise un capteur.
 
 
 L'attribut required, s'il est à true, fera en sorte que l'application ne sera proposée que si l'appareil est équipé de ce capteur.
@@ -114,8 +111,7 @@ Si l'utilisation du capteur n'est pas requise pour que l'application fonctionne,
 ### uses-permission
 
 
-La balise uses-permission
- permet de demander la permission à l'usager afin d'avoir accès à une fonctionnalité.
+La balise uses-permission permet de demander la permission à l'usager afin d'avoir accès à une fonctionnalité.
 
 
 Si l'application utilise un capteur qui fournit des données sensibles, par exemple des données de localisation, il est requis de demander une permission d'exécution.
@@ -168,12 +164,10 @@ Dans cette fiche :
 Un objet de type SensorManager doit être instancié pour accéder aux valeurs d'un capteur.
 
 
-Ce travail sera effectué dans un ViewModel qui doit implémenter l'interface SensorEventListener
-.
+Ce travail sera effectué dans un ViewModel qui doit implémenter l'interface SensorEventListener .
 
 
-Le ViewModel devra également implémenter l'interface DefaultLifecycleObserver
- afin de permettre de gérer les méthodes onPause et onResume (voir plus bas).
+Le ViewModel devra également implémenter l'interface DefaultLifecycleObserver afin de permettre de gérer les méthodes onPause et onResume (voir plus bas).
 
 
 Le SensorManager sera déclaré directement dans le ViewModel et non dans le uiState puisqu'il ne s'agit pas d'une variable en lien direct avec l'interface utilisateur.
@@ -182,9 +176,7 @@ Le SensorManager sera déclaré directement dans le ViewModel et non dans le uiS
 L'instanciation sera réalisée dans le constructeur (init). Ceci permet notamment de réagir si le capteur n'est pas disponible.
 
 
-Notez qu'il existe d'autres techniques pour travailler avec un SensorManager. Sachez cependant que si le travail était réalisé sans prendre les précautions
-appropriées, on obtiendrait tôt ou tard le message d'erreur « the sensor listeners size has exceeded the maximum limit 128 », dû au fait que les variables seraient
-recréées à chaque fois que la vue est recomposée.
+Notez qu'il existe d'autres techniques pour travailler avec un SensorManager. Sachez cependant que si le travail était réalisé sans prendre les précautions appropriées, on obtiendrait tôt ou tard le message d'erreur « the sensor listeners size has exceeded the maximum limit 128 », dû au fait que les variables seraient recréées à chaque fois que la vue est recomposée.
 
 
 ### Dans le cadre de ce cours, la déclaration du SensorManager doit être réalisée dans un ViewModel.
@@ -222,18 +214,13 @@ data class SensorUiState(
 ### Enregistrer le listener lorsque l'application prend le focus
 
 
-Puisque le ViewModel implémente l'interface SensorEventListener, il est possible d'enregistrer un listener qui permettra à l'application de recevoir les notifications
-du SensorManager lorsque les valeur du capteur changent.
+Puisque le ViewModel implémente l'interface SensorEventListener, il est possible d'enregistrer un listener qui permettra à l'application de recevoir les notifications du SensorManager lorsque les valeur du capteur changent.
 
 
-De plus, puisqu'il implémente l'interface DefaultLifecycleObserver, on pourra le faire seulement lorsque l'application prend le focus et ainsi économiser la batterie
-de l'appareil mobile. Sans gestion du cycle de vie, ceci aurait pu être réalisé dans le init.
+De plus, puisqu'il implémente l'interface DefaultLifecycleObserver, on pourra le faire seulement lorsque l'application prend le focus et ainsi économiser la batterie de l'appareil mobile. Sans gestion du cycle de vie, ceci aurait pu être réalisé dans le init.
 
 
-!!! warning "Attention : il pourr"
-    Attention : il pourrait arriver que le capteur ne soit pas disponible sur l'appareil. C'est pourquoi le code utilise un bloc let
-  précédé d'un **opérateur d'appel sécurisé** (?.). À l'intérieur de ce bloc, Kotlin est certain que l'exécution n'a eu lieu que si
-_lightSensor n'est pas null.
+!!! warning "Attention : il pourr" Attention : il pourrait arriver que le capteur ne soit pas disponible sur l'appareil. C'est pourquoi le code utilise un bloc let précédé d'un **opérateur d'appel sécurisé** (?.). À l'intérieur de ce bloc, Kotlin est certain que l'exécution n'a eu lieu que si _lightSensor n'est pas null.
 
 
 ```kotlin title="ViewModel (Kotlin)"
@@ -245,8 +232,7 @@ override fun onResume(owner: LifecycleOwner) {
 ```
 
 
-!!! warning "Attention : pour que"
-    Attention : pour que la méthode onResume soit exécutée, un composable devra être enregistré comme observateur du cycle de vie (voir plus bas).
+!!! warning "Attention : pour que" Attention : pour que la méthode onResume soit exécutée, un composable devra être enregistré comme observateur du cycle de vie (voir plus bas).
 
 
 ### Initialiser une variable d'état à partir de la valeur du capteur
@@ -297,8 +283,7 @@ override fun onCleared() {
 Afin d'économiser la batterie de l'appareil mobile, on s'assurera que le capteur cesse ses activités quand l'application n'est pas en avant-plan.
 
 
-En effet, selon la documentation officielle d'Android
- :
+En effet, selon la documentation officielle d'Android :
 
 
 ### Si un écouteur de capteur est enregistré et que son activité est suspendue, le capteur continuera
@@ -307,8 +292,7 @@ En effet, selon la documentation officielle d'Android
 ### d'acquérir des données et d'utiliser les ressources de la batterie, sauf si vous le désenregistrez.
 
 
-Puisque le ViewModel implémente l'interface DefaultLifecycleObserver, il est possible d'arrêter d'écouter quand l'application passe en arrière-plan puis de
-recommencer quand elle redevient active (le onResume a déjà été présenté plus haut).
+Puisque le ViewModel implémente l'interface DefaultLifecycleObserver, il est possible d'arrêter d'écouter quand l'application passe en arrière-plan puis de recommencer quand elle redevient active (le onResume a déjà été présenté plus haut).
 
 
 ```kotlin title="ViewModel (Kotlin)"
@@ -321,8 +305,7 @@ override fun onPause(owner: LifecycleOwner) {
 Mais pour que les méthodes onPause et onResume soient exécutées, un composable devra être enregistré comme observateur du cycle de vie.
 
 
-Remarquez l'utilisation de l'effet secondaire DisposableEffect
- qui permet d'effectuer du nettoyage lorsque le composable quitte l'écran.
+Remarquez l'utilisation de l'effet secondaire DisposableEffect qui permet d'effectuer du nettoyage lorsque le composable quitte l'écran.
 
 
 Il se charge de passer des informations du cycle de vie vers l'objet qui a été passé en paramètre à lifecycleOwner.lifecycle.addObserver (ici : sensorViewModel).

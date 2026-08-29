@@ -8,8 +8,7 @@ title: "Système de fichiers de l'émulateur"
 ### 54.1 Database Inspector pour voir la base de données dans l'émulateur
 
 
-Dans Android Studio, l'outil Inspection de bases de données (Database Inspector) vous permet de voir le contenu de la base de données SQLite présente sur
-l'émulateur.
+Dans Android Studio, l'outil Inspection de bases de données (Database Inspector) vous permet de voir le contenu de la base de données SQLite présente sur l'émulateur.
 
 
 Pour voir votre base de données :
@@ -25,8 +24,7 @@ la base de données.
 #### Rendez-vous dans le menu View / Tool Windows / App Inspection / onglet Database Inspector .
 
 
-!!! warning "Note : si vous voyez"
-    Note : si vous voyez le message « No devices detected », rendez-vous dans le menu  File / Invalidate Caches .
+!!! warning "Note : si vous voyez" Note : si vous voyez le message « No devices detected », rendez-vous dans le menu  File / Invalidate Caches .
 
 
 #### Au besoin, cliquez sur le nom de l'émulateur et sélectionnez votre application parmi les processus disponibles.
@@ -78,8 +76,7 @@ la base de données.
 Si vous voyez la mention (closed) à côté de la base de données, c'est que l'application qui roule dans l'émulateur n'a pas encore fait appel à la base de données.
 
 
-Effectuez une opération qui requiert une requête à la base de données, par exemple afficher la liste des enregistrements d'une table, puis vous aurez accès à la base
-de données dans l'outil Inspection de bases de données.
+Effectuez une opération qui requiert une requête à la base de données, par exemple afficher la liste des enregistrements d'une table, puis vous aurez accès à la base de données dans l'outil Inspection de bases de données.
 
 
 
@@ -92,8 +89,7 @@ de données dans l'outil Inspection de bases de données.
 ### [DETACHED]
 
 
-Dans le cas où vous voyez [DETACHED] à côté du nom de votre application dans l'inspecteur d'applications, les requêtes SQL que vous tenterez d'exécuter dans
-l'inspecteur demeureront sans effet sur la base de données.
+Dans le cas où vous voyez [DETACHED] à côté du nom de votre application dans l'inspecteur d'applications, les requêtes SQL que vous tenterez d'exécuter dans l'inspecteur demeureront sans effet sur la base de données.
 
 
 Un redémarrage de l'émulateur pourrait régler le problème :
@@ -121,8 +117,7 @@ Si cette technique ne fonctionne pas, un redémarrage de Android Studio pourrait
 ### No debuggable processes detected
 
 
-Dans le cas où l'inspecteur d'application ne vous donne pas du tout accès à votre projet (message No debuggable processes detected), un redémarrage de
-l'émulateur pourrait également régler le problème (procédure ci-haut).
+Dans le cas où l'inspecteur d'application ne vous donne pas du tout accès à votre projet (message No debuggable processes detected), un redémarrage de l'émulateur pourrait également régler le problème (procédure ci-haut).
 
 
 
@@ -140,8 +135,7 @@ hl=fr
 
 
 ### * [« Afficher le contenu de la base de données à l'aide de l'outil d'inspection » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-)
-compose-persisting-data-room?hl=fr#9
-54.2 Voir les fichiers stockés sur un émulateur Android
+compose-persisting-data-room?hl=fr#9 54.2 Voir les fichiers stockés sur un émulateur Android
 
 
 Pour voir les fichiers stockés sur l'émulateur dans Android Studio :

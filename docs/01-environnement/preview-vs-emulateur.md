@@ -110,8 +110,7 @@ de téléchargement, il vous faudra cliquer sur l'icône pour la télécharger. 
 
 
 #### Maintenant, pour exécuter votre application sur l'émulateur, sélectionnez l'émulateur dans la barre d'outils puis
-cliquez sur le bouton vert  Run , toujours dans la barre d'outils. Le bouton peut être en forme de triangle vers la droite
-ou en forme de flèche circulaire.
+cliquez sur le bouton vert  Run , toujours dans la barre d'outils. Le bouton peut être en forme de triangle vers la droite ou en forme de flèche circulaire.
 
 
 
@@ -160,8 +159,7 @@ L'émulateur d'Android Studio fonctionne un peu comme un téléphone physique po
 Si vous avez en main un téléphone Android, il est possible de configurer Android Studio pour tester l'application directement sur cet appareil.
 
 
-Même si vous avez l'habitude de tester vos applications **sur un périphérique virtuel**, il
-faut prendre le temps de tester l'application sur un périphérique physique afin de s'assurer que tout fonctionnera correctement lorsque l'application sera déployée.
+Même si vous avez l'habitude de tester vos applications **sur un périphérique virtuel**, il faut prendre le temps de tester l'application sur un périphérique physique afin de s'assurer que tout fonctionnera correctement lorsque l'application sera déployée.
 
 
 Pour tester une application sur un téléphone physique (notez que les options de menu peuvent être passablement différentes selon le modèle du téléphone) :
@@ -188,16 +186,13 @@ Pour tester une application sur un téléphone physique (notez que les options d
 
 14.5 Clavier virtuel de l'émulateur
 
-Quand vous lancez une application dans l'émulateur d'Android Studio, il peut arriver que le clavier virtuel ne soit pas visible. À ce moment, seul le clavier physique de
-votre ordinateur peut interagir avec l'émulateur.
+Quand vous lancez une application dans l'émulateur d'Android Studio, il peut arriver que le clavier virtuel ne soit pas visible. À ce moment, seul le clavier physique de votre ordinateur peut interagir avec l'émulateur.
 
 
 Je vous présente ici deux techniques pour faire apparaître le clavier virtuel dans l'émulateur.
 
 
-!!! warning "Attention : quand vo"
-    Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone
-physique, vous devez utiliser exclusivement le clavier virtuel.
+!!! warning "Attention : quand vo" Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel.
 
 
 ### Afficher le clavier virtuel automatiquement
@@ -238,8 +233,7 @@ Le clavier virtuel apparaîtra automatiquement lorsque requis, par exemple quand
 Si vous souhaitez faire apparaître le clavier virtuel seulement au besoin, n'ajoutez pas l'instruction windowSoftInputMode dans le fichier AndroidManifest.xml .
 
 
-Plutôt, quand vous lancerez l'application dans l'émulateur, vous cliquerez sur le menu rond qui apparaît au centre gauche de l'écran quand une case de saisie a le
-focus.
+Plutôt, quand vous lancerez l'application dans l'émulateur, vous cliquerez sur le menu rond qui apparaît au centre gauche de l'écran quand une case de saisie a le focus.
 
 
 L'option Show on-screen keyboard fera apparaître le clavier virtuel.

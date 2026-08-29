@@ -26,8 +26,7 @@ Kotlin est un langage de programmation orienté objet qui permet de développer 
 Il s'agit du langage de programmation recommandé par Google pour la programmation Android depuis 2019.
 
 
-En effet, selon Wikipédia
-:
+En effet, selon Wikipédia :
 
 
 ### Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui
@@ -37,16 +36,14 @@ En effet, selon Wikipédia
 
 
 ### natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs
-chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St.
-Pétersbourg).
+chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).
 
 
 ### Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de
 
 
 ### programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors
-de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et
-recommandé par le géant américain Google pour le développement des applications Android.
+de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.
 
 
 > **Source** : 
@@ -101,13 +98,11 @@ Exemple
 
 
 #### Nom des variables
-casse chameau
-var premiereLettre: Char
+casse chameau var premiereLettre: Char
 
 
 #### Nom des constantes
-casse serpent majuscule
-const val NOMBRE_TOURS = 5
+casse serpent majuscule const val NOMBRE_TOURS = 5
 
 
 #### Nom des classes
@@ -115,8 +110,7 @@ casse Pascal, expression au singulier data class CategorieItem(...)
 
 
 #### Nom des fonctions
-casse chameau
-fun recommencerPartie() {...}
+casse chameau fun recommencerPartie() {...}
 
 
 @Composable
@@ -129,8 +123,7 @@ fun ImageRonde(...) {...}
 
 
 #### Nom des ressources
-casse serpent
-bonne_reponse
+casse serpent bonne_reponse
 
 
 #### Pour plus d'information
@@ -167,8 +160,7 @@ Les principaux types de données sont :
 #### Boolean
 
 
-Le type Unit
- correspond au type void dans d'autres langages.
+Le type Unit correspond au type void dans d'autres langages.
 
 
 ### Variables
@@ -185,8 +177,7 @@ var quantiteEnStock = 10
 ```
 
 
-Il est possible de préciser le type de la variable lors de sa déclaration. Ceci est optionnel si la variable est immédiatement initialisée mais obligatoire si elle est
-déclarée sans valeur initiale.
+Il est possible de préciser le type de la variable lors de sa déclaration. Ceci est optionnel si la variable est immédiatement initialisée mais obligatoire si elle est déclarée sans valeur initiale.
 
 
 ```kotlin title="Kotlin"
@@ -204,8 +195,7 @@ var valeur = 0.0f
 ```
 
 
-Dans le cas où vous précisez le type lors de la déclaration, il faut tout de même ajouter le f sans quoi vous obtiendrez l'erreur « The floating-point literal does not
-conform to the expected type Float ».
+Dans le cas où vous précisez le type lors de la déclaration, il faut tout de même ajouter le f sans quoi vous obtiendrez l'erreur « The floating-point literal does not conform to the expected type Float ».
 
 
 ```kotlin title="Kotlin"
@@ -213,9 +203,7 @@ var valeur: Float = 0.0f
 ```
 
 
-Les chaînes de caractères (String
-) seront entourées de guillemets. Les apostrophes sont réservées aux caractères uniques (Char
-).
+Les chaînes de caractères (String ) seront entourées de guillemets. Les apostrophes sont réservées aux caractères uniques (Char ).
 
 
 ```kotlin title="Kotlin"
@@ -238,13 +226,10 @@ val DATE_DU_JOUR = LocalDate.now()
 ```
 
 
-!!! warning "Note : dans certains"
-    Note : dans certains contextes, il est possible de déclarer une constante dont la valeur est connue au moment de la compilation (compile-time constant) en ajoutant
-le mot-clé const devant val.
+!!! warning "Note : dans certains" Note : dans certains contextes, il est possible de déclarer une constante dont la valeur est connue au moment de la compilation (compile-time constant) en ajoutant le mot-clé const devant val.
 
 
-Seuls les types primitifs peuvent initialiser ce type de constante. Il n'est pas possible de l'initialiser à l'aide d'une fonction, par exemple pour initialiser la date du
-jour.
+Seuls les types primitifs peuvent initialiser ce type de constante. Il n'est pas possible de l'initialiser à l'aide d'une fonction, par exemple pour initialiser la date du jour.
 
 
 ```kotlin title="Kotlin"
@@ -318,8 +303,7 @@ when {
 ### Boucles for
 
 
-L'instruction for
- permet de boucler un nombre défini de fois :
+L'instruction for permet de boucler un nombre défini de fois :
 
 
 ```kotlin title="Kotlin"
@@ -354,8 +338,7 @@ for (nom in noms) {
 ### Boucles while
 
 
-Encore ici, le fonctionnement de while
- ressemble aux autres langages.
+Encore ici, le fonctionnement de while ressemble aux autres langages.
 
 
 ```kotlin title="Kotlin"
@@ -422,8 +405,7 @@ monTableau.forEachIndexed { index, valeur ->
 ### Boucle repeat
 
 
-Avec l'instruction repeat
-, il est possible de boucler un nombre défini de fois.
+Avec l'instruction repeat , il est possible de boucler un nombre défini de fois.
 
 
 Il offre une syntaxe plus simple que for mais il est moins versatile. Par exemple, repeat ne peut pas boucler sur une collection et l'index de départ est toujours 0.
@@ -462,8 +444,7 @@ repeat(5) { index ->
 4.6 Qu'est-ce que Unit?
 
 
-En Kotlin, Unit
- est semblable à void dans d'autres langages.
+En Kotlin, Unit est semblable à void dans d'autres langages.
 
 
 Par exemple, pour déclarer une fonction qui n'a pas de valeur de retour :
@@ -522,8 +503,7 @@ if (nom != null) {
 ### Opérateur !!
 
 
-L'opérateur !!, que l'on appelle opérateur d'assertion non nul ou, en anglais, non-null assertion operator, permet de dire au compilateur qu'il est absolument certain
-que la variable n'a pas la valeur null.
+L'opérateur !!, que l'on appelle opérateur d'assertion non nul ou, en anglais, non-null assertion operator, permet de dire au compilateur qu'il est absolument certain que la variable n'a pas la valeur null.
 
 
 Mais attention : si vous utilisez ce symbole alors que la variable est nulle, le programme plantera.
@@ -539,8 +519,7 @@ Text(text = nom !! )
 ### Opérateur d'appel sécurisé (?.)
 
 
-L'opérateur ?., que l'on appelle opérateur d'appel sécurisé ou, en anglais, safe-call operator, permet d'accéder aux proprités ou aux méthodes d'un objet sans que
-l'application ne plante si jamais l'objet était nul.
+L'opérateur ?., que l'on appelle opérateur d'appel sécurisé ou, en anglais, safe-call operator, permet d'accéder aux proprités ou aux méthodes d'un objet sans que l'application ne plante si jamais l'objet était nul.
 
 
 ```kotlin title="Kotlin"
@@ -589,8 +568,7 @@ Les modèles de chaînes, en anglais string templates, permettent d'utiliser une
 Le concept des modèles de chaînes est parfois appelé interpolation de chaîne.
 
 
-Pour créer un modèle de chaîne, il suffit d'ajouter du texte entre guillements et, dans ce texte, faire précéder les noms de variables du signe $. Les variables seront
-alors interprétées, comme en PHP.
+Pour créer un modèle de chaîne, il suffit d'ajouter du texte entre guillements et, dans ce texte, faire précéder les noms de variables du signe $. Les variables seront alors interprétées, comme en PHP.
 
 
 ```kotlin title="Kotlin"
@@ -687,9 +665,7 @@ Column() {
 ### 4.11 Les listes
 
 
-L'interface List
- permet de créer une liste immuable. On crée une liste immuable avec la fonction listOf()
-.
+L'interface List permet de créer une liste immuable. On crée une liste immuable avec la fonction listOf() .
 
 
 ```kotlin title="Kotlin"
@@ -706,9 +682,7 @@ liste
 ```
 
 
-Dans le cas où vous avez besoin de modifier la liste, il faut plutôt travailler avec une MutableList
- et la fonction mutableListOf()
-.
+Dans le cas où vous avez besoin de modifier la liste, il faut plutôt travailler avec une MutableList et la fonction mutableListOf() .
 
 
 ```kotlin title="Kotlin"
@@ -802,9 +776,7 @@ amis.remove("Loïc")
 ```
 
 
-Dans le cas d'une liste immuable, il est possible de travailler avec drop()
-. Lors de l'exécution du drop(), Kotlin crée une nouvelle liste temporaire à partir des
-informations de la liste immuable donc la liste originale n'est effectivement pas modifiée.
+Dans le cas d'une liste immuable, il est possible de travailler avec drop() . Lors de l'exécution du drop(), Kotlin crée une nouvelle liste temporaire à partir des informations de la liste immuable donc la liste originale n'est effectivement pas modifiée.
 
 
 Il est nécessaire de réinitialiser la variable à partir du résultat pour que l'opération soit prise en compte.
@@ -877,8 +849,7 @@ La console REPL (Read-Eval-Print Loop) permet d'exécuter du code Kotlin sans av
 Pour ouvrir la console REPL à partir d'Android Studio, rendez-vous dans le menu  Tools / Kotlin / Kotlin REPL .
 
 
-Il se peut que vous obteniez le message « 'CommandLineWrapper' is ill-suited for lauhching apps on Java 9+. If the run configuration uses "classpath file", please
-change it to "@argfile". Otherwise, please contact support. ».
+Il se peut que vous obteniez le message « 'CommandLineWrapper' is ill-suited for lauhching apps on Java 9+. If the run configuration uses "classpath file", please change it to "@argfile". Otherwise, please contact support. ».
 
 
 
@@ -888,8 +859,7 @@ change it to "@argfile". Otherwise, please contact support. ».
 
 
 
-À ce moment, laissez la fenêtre ouverte et refaites  Tools / Kotlin / Kotlin REPL . Une fenêtre contextuelle vous demandera de choisir un module. Sélectionnez le tout
-premier, celui qui ne se termine pas par .app.
+À ce moment, laissez la fenêtre ouverte et refaites  Tools / Kotlin / Kotlin REPL . Une fenêtre contextuelle vous demandera de choisir un module. Sélectionnez le tout premier, celui qui ne se termine pas par .app.
 
 
 
@@ -950,8 +920,7 @@ redéclarées
 Chaque classe devrait être dans son propre fichier et le fichier portera le même nom que la classe.
 
 
-Il existe différentes façons de structurer les fichiers du projet. Dans la structure qui a été retenue ici, les classes qui représentent des données seront placées dans
-un dossier nommé models .
+Il existe différentes façons de structurer les fichiers du projet. Dans la structure qui a été retenue ici, les classes qui représentent des données seront placées dans un dossier nommé models .
 
 
 Ce dossier sera au même niveau que le fichier MainActiviy.kt , par exemple app/src/main/java/com/monnom/monprojet/models/MaClasse.kt .
@@ -980,8 +949,7 @@ Une méthode de classe est une fonction qui, pour être exécutée, doit être p
 Dans plusieurs langages de programmation orientés objet, les méthodes de classe sont déclarées à l'aide du mot-clé static.
 
 
-En Kotlin, on marquera plutôt la méthode de classe à l'aide du mot-clé companion
-.
+En Kotlin, on marquera plutôt la méthode de classe à l'aide du mot-clé companion .
 
 
 ```kotlin title="Kotlin"
@@ -1016,8 +984,7 @@ MaClasse.maMethodeDeClasse()
 ### 4.15 Les énumérations
 
 
-Une énumération est un modèle de données qui permet de définir un type de données qui comporte une liste définie de valeurs possibles, qu'on appellera
-constantes.
+Une énumération est un modèle de données qui permet de définir un type de données qui comporte une liste définie de valeurs possibles, qu'on appellera constantes.
 
 
 Par exemple, on pourrait avoir un type Categorie qui accepte les constantes ROUTE, HORS_PISTE et HYBRIDE.
@@ -1070,8 +1037,7 @@ Text(text = categorie. code )
 ```
 
 
-Pour l'utiliser dans un **modèle de chaîne]**, il faut ajouter des
-accolades.
+Pour l'utiliser dans un **modèle de chaîne]**, il faut ajouter des accolades.
 
 
 ```kotlin title="Kotlin"
@@ -1094,8 +1060,7 @@ Text(text = "Vous avez choisi la catégorie ${categorie.code}")
 ### 4.16 Flow : flux de données observable
 
 
-Un flux de données observables, ou simplement flux (en anglais : flow), permet de recevoir une série de valeurs de façon séquentielle, par exemple à partir d'une
-base de données.
+Un flux de données observables, ou simplement flux (en anglais : flow), permet de recevoir une série de valeurs de façon séquentielle, par exemple à partir d'une base de données.
 
 
 #### Pour plus d'information
@@ -1110,8 +1075,7 @@ base de données.
 ### 4.17 Les expressions lambda
 
 
-Dans le langage Kotlin, les expressions lambda
- offrent une syntaxe allégée pour définir des fonctions.
+Dans le langage Kotlin, les expressions lambda offrent une syntaxe allégée pour définir des fonctions.
 
 
 La syntaxe d'une expression lambda est la suivante :
@@ -1178,8 +1142,7 @@ Lorsqu'une expression lambda ne reçoit qu'un seul paramètre, il est possible d
 4.18 Paramètre implicite it
 
 
-Dans le code Kotlin, il est fréquent de voir une variable qui s'appelle it
-. Mais d'où vient cette variable et que représente-t-elle?
+Dans le code Kotlin, il est fréquent de voir une variable qui s'appelle it . Mais d'où vient cette variable et que représente-t-elle?
 
 
 Il s'agit du paramètre reçu dans une **expression lambda]** qui ne contient qu'un seul paramètre.
@@ -1237,8 +1200,7 @@ Column {
 ### Paramètre implicite d'un Scaffold
 
 
-Lorsqu'on définit le contenu d'un **Scaffold]**, le paramètre implicite est de type
-PaddingValues et il représente les marges verticales à respecter pour ne pas que le contenu se retrouve sous les zones réservées en haut et en bas de l'écran.
+Lorsqu'on définit le contenu d'un **Scaffold]**, le paramètre implicite est de type PaddingValues et il représente les marges verticales à respecter pour ne pas que le contenu se retrouve sous les zones réservées en haut et en bas de l'écran.
 
 
 ```kotlin title="Kotlin"
@@ -1330,9 +1292,7 @@ Il existe deux principales classes pour représenter une date en Kotlin : LocalD
 ### Objet de type LocalDateTime
 
 
-Une technique largement répandue pour représenter la date courante consite à utiliser la classe LocalDateTime
- avec sa méthode now()
- :
+Une technique largement répandue pour représenter la date courante consite à utiliser la classe LocalDateTime avec sa méthode now() :
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1346,9 +1306,7 @@ Text("$dateActuelle")   // affichera la date au format 2025-08-23T09:26:46.71469
 ### Objet de type Date
 
 
-Il est encore possible de travailler avec la classe Date
- même si cette technique n'est plus encouragée
- (le code est barré pour cette raison) :
+Il est encore possible de travailler avec la classe Date même si cette technique n'est plus encouragée (le code est barré pour cette raison) :
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1362,16 +1320,13 @@ Text("$dateActuelleTypeDate")   // affichera la date au format Fri Aug 23 09:26:
 ### Représenter une date quelconque
 
 
-La classe LocalDateTime
-, avec sa méthode parse()
-, permet de représenter une date donnée.
+La classe LocalDateTime , avec sa méthode parse() , permet de représenter une date donnée.
 
 
 ### Chaîne au format ISO 8601
 
 
-La chaîne qui représente la date doit être au format ISO 8601
-.
+La chaîne qui représente la date doit être au format ISO 8601 .
 
 
 ```kotlin title="Kotlin"
@@ -1382,8 +1337,7 @@ Text("$uneDate")   // affichera la date au format 2022-07-15T13:55
 ```
 
 
-Si la chaîne représente une date sans heure, il faut plutôt utiliser LocalDate.parse()
- pour initialiser la date.
+Si la chaîne représente une date sans heure, il faut plutôt utiliser LocalDate.parse() pour initialiser la date.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1400,8 +1354,7 @@ Text("$uneDate")   // affichera la date au format 2022-07-15
 Si on souhaite fournir une chaîne qui représente la date dans un format différent, un second paramètre permet de spécifier le format de la chaîne.
 
 
-Ce paramètre sera initialisé avec DateTimeFormatter.ofPattern()
-.
+Ce paramètre sera initialisé avec DateTimeFormatter.ofPattern() .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1414,13 +1367,10 @@ Text("$uneDate")   // affichera la date au format 1999-04-18T08:30
 ```
 
 
-Remarquez que si la chaîne ne correspond pas au format spécifié, l'application plantera avec le message « java.time.format.DateTimeParseException: Text '...' could
-not be parsed ... ».
+Remarquez que si la chaîne ne correspond pas au format spécifié, l'application plantera avec le message « java.time.format.DateTimeParseException: Text '...' could not be parsed ... ».
 
 
-Ici aussi, si la chaîne représente une date sans heure, il faut plutôt utiliser LocalDate.parse()
- pour initialiser la date. Le format sera tout de même spécifié avec
-DateTimeFormatter.
+Ici aussi, si la chaîne représente une date sans heure, il faut plutôt utiliser LocalDate.parse() pour initialiser la date. Le format sera tout de même spécifié avec DateTimeFormatter.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1445,12 +1395,10 @@ La technique dépendra de la façon dont la date a été créée, ce qui influen
 ### Objet de type LocalDateTime
 
 
-Avec un objet de type LocalDateTime, il est possible de travailler avec un DateTimeFormatter
-.
+Avec un objet de type LocalDateTime, il est possible de travailler avec un DateTimeFormatter .
 
 
-Le plus simple consiste à utiliser un des styles prédéfinis
-.
+Le plus simple consiste à utiliser un des styles prédéfinis .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1463,8 +1411,7 @@ Text(dateActuelle.format(dateTimeFormatter))   // affichera la date au format 20
 ```
 
 
-Il est également possible d'utiliser des styles qui tiennent compte de la localisation configurée sur le téléphone
-.
+Il est également possible d'utiliser des styles qui tiennent compte de la localisation configurée sur le téléphone .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1525,8 +1472,7 @@ Text(DateFormat.getDateInstance().format(dateActuelleTypeDate))   // affichera l
 ```
 
 
-Toujours avec un objet de type Date, il est possible de forcer le format à l'aide d'un SimpleDateFormat
-.
+Toujours avec un objet de type Date, il est possible de forcer le format à l'aide d'un SimpleDateFormat .
 
 
 Cette technique est cependant à utiliser seulement pour les cas d'exception puisque la date ne répondra plus au format d'affichage configuré sur le téléphone.
@@ -1550,8 +1496,7 @@ Il est possible de déterminer l'écart entre deux dates afin de calculer un dé
 ### Objets de type LocalDateTime
 
 
-La classe Duration
- permet d'instancier un objet qui représente le temps écoulé entre deux dates.
+La classe Duration permet d'instancier un objet qui représente le temps écoulé entre deux dates.
 
 
 À partir d'un objet Duration, on pourra spécifier dans quelle unité on désire travailler.
@@ -1564,8 +1509,7 @@ val millisecondes = duree.toMillis()
 ```
 
 
-L'énumération ChronoUnit
-, quant à elle, permet de spécifier directement dans quelle unité la différence doit être calculée.
+L'énumération ChronoUnit , quant à elle, permet de spécifier directement dans quelle unité la différence doit être calculée.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1597,13 +1541,10 @@ val secondes = TimeUnit.MILLISECONDS.toSeconds(difference)
 4.20 Effectuer une pause
 
 
-En Kotlin, il est possible d'effectuer une pause pendant un traitement en appelant la fonction asynchrone delay()
-.
+En Kotlin, il est possible d'effectuer une pause pendant un traitement en appelant la fonction asynchrone delay() .
 
 
-L'appel de cette fonction devra donc être réalisé à l'intérieur d'un scope.launch()
- afin de ne pas bloquer le fil d'exécution. Sans cette précaution, vous obtiendrez
-l'erreur suivante lors de la compilation : « Suspend function 'delay' should be called only from a coroutine or another suspend function ».
+L'appel de cette fonction devra donc être réalisé à l'intérieur d'un scope.launch() afin de ne pas bloquer le fil d'exécution. Sans cette précaution, vous obtiendrez l'erreur suivante lors de la compilation : « Suspend function 'delay' should be called only from a coroutine or another suspend function ».
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

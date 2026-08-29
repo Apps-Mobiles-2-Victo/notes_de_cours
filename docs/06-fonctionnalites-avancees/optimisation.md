@@ -20,8 +20,7 @@ title: "Optimisation des performances Compose"
 ### 80.2 Afficher le nombre de recompostion de chaque fonction modulable
 
 
-Avec IntelliJ, il est possible d'afficher le nombre de fois qu'une fonction modulable est recomposée. Ceci est utile pour cibler les endroits où il y a perte de
-performance.
+Avec IntelliJ, il est possible d'afficher le nombre de fois qu'une fonction modulable est recomposée. Ceci est utile pour cibler les endroits où il y a perte de performance.
 
 
 Pour afficher le nombre de recompositions de chaque fonction modulable :

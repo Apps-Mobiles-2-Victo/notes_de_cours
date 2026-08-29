@@ -8,20 +8,16 @@ title: "Variables d'état avancées et State Hoisting"
 ### 28.1 Hisser l'état (state hoisting)
 
 
-Lorsqu'une fonction modulable déclare une variable d'état et qu'elle appelle une autre fonction (modulable ou non) qui doit modifier cette variable d'état, il faut
-utiliser un mécanisme qui s'appelle hissage d'état (en anglais : state hoisting) pour y parvenir.
+Lorsqu'une fonction modulable déclare une variable d'état et qu'elle appelle une autre fonction (modulable ou non) qui doit modifier cette variable d'état, il faut utiliser un mécanisme qui s'appelle hissage d'état (en anglais : state hoisting) pour y parvenir.
 
 
-Il s'agit de passer en paramètre une **expression lambda]** qui permet de modifier la variable
-d'état.
+Il s'agit de passer en paramètre une **expression lambda]** qui permet de modifier la variable d'état.
 
 
-Cette technique est nécessaire puisqu'en Kotlin, les paramètres sont immuables. Il n'est donc pas possible de passer une variable d'état en paramètre à une
-fonction qui doit modifier cet état.
+Cette technique est nécessaire puisqu'en Kotlin, les paramètres sont immuables. Il n'est donc pas possible de passer une variable d'état en paramètre à une fonction qui doit modifier cet état.
 
 
-Pour éviter d'avoir à hisser l'état trop de fois, le propriétaire d'état (la fonction modulable dans laquelle la variable d'état est déclarée) devra être le plus petit ancêtre
-commun des fonctions modulables qui doivent lire ou écrire dans cette variable.
+Pour éviter d'avoir à hisser l'état trop de fois, le propriétaire d'état (la fonction modulable dans laquelle la variable d'état est déclarée) devra être le plus petit ancêtre commun des fonctions modulables qui doivent lire ou écrire dans cette variable.
 
 
 Le nom du paramètre de l'expression lamba sera habituellement du genre onXXXChange où XXX représente le nom de la variable d'état.
@@ -74,8 +70,7 @@ fun faireQuelqueChose( onMaVariableDEtatChange : ( String ) -> Unit) {
 Un scénario souvent rencontré pour le hissage d'état consiste à assigner à une variable d'état la valeur d'une case de saisie.
 
 
-Dans le cas le plus simple, on n'a pas à déclarer la fonction qui reçoit l'expression lambda. C'est la fonction modulable TextField qui le fait pour nous. Il suffit
-d'appeler la fonction en lui passant l'expression lambda appropriée.
+Dans le cas le plus simple, on n'a pas à déclarer la fonction qui reçoit l'expression lambda. C'est la fonction modulable TextField qui le fait pour nous. Il suffit d'appeler la fonction en lui passant l'expression lambda appropriée.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -93,8 +88,7 @@ TextField(
 Dans ce second exemple, on travaille avec une fonction modulable qui affiche un texte suivi d'une case de saisie.
 
 
-Il est ici nécessaire de passer en paramètre la variable d'état (pour afficher sa valeur dans la case) en plus de l'expression lambda (pour modifier la valeur selon ce
-qui est saisi).
+Il est ici nécessaire de passer en paramètre la variable d'état (pour afficher sa valeur dans la case) en plus de l'expression lambda (pour modifier la valeur selon ce qui est saisi).
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -206,8 +200,7 @@ fun Jouer(points: Int, onPointsChange: (Int) -> Unit ) {
 Afin d'améliorer les performances de votre application Android, il est possible d'utiliser derivedStateOf() afiin d'éviter les recompositions superflues.
 
 
-Prenons l'exemple d'une application qui se termine après 10 itérations. Il n'est pas souhaitable qu'à chaque fois que l'itération est incrémentée, l'application soit
-recomposée.
+Prenons l'exemple d'une application qui se termine après 10 itérations. Il n'est pas souhaitable qu'à chaque fois que l'itération est incrémentée, l'application soit recomposée.
 
 
 Pour que la recomposition n'ait lieu qu'après les 10 itérations, la variable pourra être déclarée avec derivedStateOf() comme suit :
@@ -236,8 +229,7 @@ remember-mutablestateof-derivedstateof-and-remembersaveable-explained-270dbaa61b
 ### 79.2 mutableListOf comme variable d'état
 
 
-Selon la documentation officielle de Android
- :
+Selon la documentation officielle de Android :
 
 
 ### Attention : Si vous utilisez des objets modifiables tels que ArrayList<T> ou mutableListOf() en tant
@@ -284,8 +276,7 @@ private fun AfficherItems(items: List<String>) {
 Il faut donc utiliser une astuce pour forcer le rafraîchissement de l'écran si une variable d'état a été créée avec mutableListOf().
 
 
-Cette astuce consiste à copier les valeurs de la liste dans une liste temporaire, à effectuer les modifications désirées dans cette liste temporaire puis à réassigner la
-liste originale.
+Cette astuce consiste à copier les valeurs de la liste dans une liste temporaire, à effectuer les modifications désirées dans cette liste temporaire puis à réassigner la liste originale.
 
 
 Cette réassignation crée une nouvelle copie de la liste et cette fois, Compose détectera le changement et rafraîchira l'écran.
@@ -388,8 +379,7 @@ private fun AfficherItems(items: List<String>) {
 Pour compléter l'étude de ce concept, je vous présente une autre version qui utilise une syntaxe différente.
 
 
-En effet, selon la documentation officielle de Android
- :
+En effet, selon la documentation officielle de Android :
 
 
 ### Il existe trois façons de déclarer un objet MutableState dans un composable :

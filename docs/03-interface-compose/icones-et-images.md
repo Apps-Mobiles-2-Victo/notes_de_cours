@@ -8,12 +8,10 @@ title: "Icônes et gestion d'images"
 ### 31.1 Icône avec la bibliothèque Material Symbols
 
 
-La fonction modulable Icon
- permet d'afficher une icône à l'écran.
+La fonction modulable Icon permet d'afficher une icône à l'écran.
 
 
-Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons
-.
+Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -95,8 +93,7 @@ Icon(
 ### Icône cliquable
 
 
-Pour rendre l'icône cliquable, il faut l'intégrer dans un IconButton
-.
+Pour rendre l'icône cliquable, il faut l'intégrer dans un IconButton .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -111,8 +108,7 @@ IconButton(onClick = {
 ### Pour avoir accès à plus d'icônes
 
 
-Pour avoir accès à une plus grande quantité d'icônes, soit aux icônes de la bibliothèque Material Symbols
-, il faut ajouter une dépendance au projet.
+Pour avoir accès à une plus grande quantité d'icônes, soit aux icônes de la bibliothèque Material Symbols , il faut ajouter une dépendance au projet.
 
 
 Ajoutez cette ligne dans le fichier build.gradle.kts  qui se trouve dans le dossier app .
@@ -132,8 +128,7 @@ dependencies {
 ```
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 Vous avez désormais accès à plus d'icônes.

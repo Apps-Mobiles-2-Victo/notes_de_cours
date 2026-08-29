@@ -8,9 +8,7 @@ title: "Mise en page et Scaffold"
 ### 27.1 Structure de l'écran avec Scaffold
 
 
-Le composable Scaffold
- (qui peut être traduit par échafaud ou structure) offre des emplacement préprogrammés, notamment des barres d'application pour le
-haut de l'écran (barre de titre) et pour le bas de l'écran (barre de navigation).
+Le composable Scaffold (qui peut être traduit par échafaud ou structure) offre des emplacement préprogrammés, notamment des barres d'application pour le haut de l'écran (barre de titre) et pour le bas de l'écran (barre de navigation).
 
 
 Dans cette fiche :
@@ -110,8 +108,7 @@ Scaffold(
 ```
 
 
-Plutôt que de placer le contenu de l'application sous le paramètre content, il est possible d'ouvrir des accolades après les paramètres du scaffold pour y coder ce
-contenu.
+Plutôt que de placer le contenu de l'application sous le paramètre content, il est possible d'ouvrir des accolades après les paramètres du scaffold pour y coder ce contenu.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -161,13 +158,10 @@ fun MainContent(...) {
 ### Paramètre innerPadding (ou it)
 
 
-Le contenu de l'application  (paramètre content ou partie entre accolades) reçoit automatiquement du scaffold un paramètre qui lui indique notamment la taille des
-différentes  barres : barre de titre de l'application, barre de navigation de l'application et barre d'état du téléphone (celle où on retrouve l'heure et les icônes de
-notification).
+Le contenu de l'application  (paramètre content ou partie entre accolades) reçoit automatiquement du scaffold un paramètre qui lui indique notamment la taille des différentes  barres : barre de titre de l'application, barre de navigation de l'application et barre d'état du téléphone (celle où on retrouve l'heure et les icônes de notification).
 
 
-Ce paramètre est de type PaddingValues
-.
+Ce paramètre est de type PaddingValues .
 
 
 Il est possible de nommer le paramètre comme bon vous semble, par exemple innerPadding.
@@ -204,8 +198,7 @@ Dans cet exemple, il est passé en paramètre à une fonction modulable.
 des barres.
 
 
-Il est à noter que même si une application n'a pas de barre de titre, ses composables pourraient être affichés sous la barre d'état du téléphone (celle où on retrouve
-l'heure et les icônes de notification) si ce paramètre n'est pas correctement utilisé.
+Il est à noter que même si une application n'a pas de barre de titre, ses composables pourraient être affichés sous la barre d'état du téléphone (celle où on retrouve l'heure et les icônes de notification) si ce paramètre n'est pas correctement utilisé.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -251,9 +244,7 @@ fun MainContent( innerPadding: PaddingValues ) {
 
 
 
-Bonne utilisation du innerPadding
-innerPadding pas utilisé
-Aucune barre de titre et innerPadding pas utilisé
+Bonne utilisation du innerPadding innerPadding pas utilisé Aucune barre de titre et innerPadding pas utilisé
 
 
 ### Modifier vs modifier
@@ -275,8 +266,7 @@ Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 ```
 
 
-Si vous conservez cette approche dans votre projet, vous devez être conscients de la différence entre l'utilisation de Modifier (M majuscule) et modifier (m
-minuscule) à l'intérieur de la fonction modulable.
+Si vous conservez cette approche dans votre projet, vous devez être conscients de la différence entre l'utilisation de Modifier (M majuscule) et modifier (m minuscule) à l'intérieur de la fonction modulable.
 
 
 Selon vous, laquelle de ces approche est correcte ?
@@ -393,16 +383,13 @@ Voici le visuel de chacune de ces versions.
 
 
 
-Version A
-Version B
-Version C
+Version A Version B Version C
 
 
 Dans la version A, chaque composable utilise le modifieur reçu en paramètre (celui avec un m minuscule). Il y a donc toujours un padding appliqué.
 
 
-Le problème avec cette approche, c'est que le padding a été calculé par Jetpack Compose pour tenir compte des barres de l'application et de la barre d'état du
-téléphone. Dans une application avec une barre de titre, par exemple, l'espacement devriendrait inutilement trop grand entre les composables.
+Le problème avec cette approche, c'est que le padding a été calculé par Jetpack Compose pour tenir compte des barres de l'application et de la barre d'état du téléphone. Dans une application avec une barre de titre, par exemple, l'espacement devriendrait inutilement trop grand entre les composables.
 
 
 Sur l'image qui suit, la fonction modulable est identique à la version A présentée plus haut. Seul le scaffold s'est vu ajouter un titre.
@@ -415,12 +402,10 @@ Sur l'image qui suit, la fonction modulable est identique à la version A prése
 
 
 
-Dans la version B, il n'y a aucune utilisation du modifieur reçu en paramètre. Chaque composable initialise un modifieur vierge (celui avec un M majuscule) sans tenir
-compte du innerPadding calculé par Jetpack Compose. C'est pourquoi les composables se retrouvent sous la barre d'état du téléphone.
+Dans la version B, il n'y a aucune utilisation du modifieur reçu en paramètre. Chaque composable initialise un modifieur vierge (celui avec un M majuscule) sans tenir compte du innerPadding calculé par Jetpack Compose. C'est pourquoi les composables se retrouvent sous la barre d'état du téléphone.
 
 
-La version C est la plus intéressante. Le composable englobant (ici, c'est le Column) utilise le modifieur reçu en paramètre. Ceci assure que rien ne sera affiché sous
-les barres. Les autres composables initialisent un modifieur vierge qu'ils sont libres de personnaliser selon le besoin.
+La version C est la plus intéressante. Le composable englobant (ici, c'est le Column) utilise le modifieur reçu en paramètre. Ceci assure que rien ne sera affiché sous les barres. Les autres composables initialisent un modifieur vierge qu'ils sont libres de personnaliser selon le besoin.
 
 
 ### Un seul scaffold par application ou un scaffold par écran?
@@ -429,8 +414,7 @@ les barres. Les autres composables initialisent un modifieur vierge qu'ils sont 
 Il n'y pas de recommendation officielle quand au nombre de scaffold qu'on peut utiliser dans une application.
 
 
-Cependant, gardez en tête que s'il n'y a qu'un seul scaffold dans l'application, la barre de titre et la barre de navigation seront définies à un seul endroit, ce qui
-assurera une apparence constante entre les écrans.
+Cependant, gardez en tête que s'il n'y a qu'un seul scaffold dans l'application, la barre de titre et la barre de navigation seront définies à un seul endroit, ce qui assurera une apparence constante entre les écrans.
 
 
 #### Pour plus d'information
@@ -472,9 +456,7 @@ fun MainScreen() {
 Notez qu'au moment d'écrire ces lignes, CenterAlignedTopAppBar et les autres fonctions pour définir la barre de titre **étaient encore expérimentales]** .
 
 
-!!! warning "Attention : avec Mat"
-    Attention : avec Material Design 2, la barre du haut utilisait TopAppBar. Avec Material Design 3, il faut utiliser CenterAlignedTopAppBar, SmallTopAppBar,
-MediumTopAppBar ou LargeTopAppBar.
+!!! warning "Attention : avec Mat" Attention : avec Material Design 2, la barre du haut utilisait TopAppBar. Avec Material Design 3, il faut utiliser CenterAlignedTopAppBar, SmallTopAppBar, MediumTopAppBar ou LargeTopAppBar.
 
 
 ### Icônes dans une barre
@@ -520,8 +502,7 @@ Scaffold(
 ### Barre de titre en dehors d'un Scaffold?
 
 
-Grâce au Scaffold, Jetpack Compose est capable de calculer l'espace qui doit être ajouté alentour du contenu principal (content) afin que ce dernier ne soit pas
-caché par les barres de l'application. C'est d'ailleurs cette valeur qui apparaît comme paramètre implicite dans le contenu principal.
+Grâce au Scaffold, Jetpack Compose est capable de calculer l'espace qui doit être ajouté alentour du contenu principal (content) afin que ce dernier ne soit pas caché par les barres de l'application. C'est d'ailleurs cette valeur qui apparaît comme paramètre implicite dans le contenu principal.
 
 
 Si vous tentez de définir une barre de titre directement dans une application qui n'a pas de Scaffold, Jetpack Compose ne sera pas capable de calculer cet espace.

@@ -8,8 +8,7 @@ title: "Effets secondaires (Side Effects)"
 ### 67.1 Qu'est-ce qu'un effet secondaire?
 
 
-Selon la documentation Android
- :
+Selon la documentation Android :
 
 
 ### Un effet secondaire est un changement d'état de l'application qui se produit en dehors du champ
@@ -18,8 +17,7 @@ Selon la documentation Android
 ### d'application d'une fonction modulable.
 
 
-Par exemple, on pourrait utiliser l'effet secondaire **LaunchedEffect()]** qui permet d'appeler une fonction
-asynchrone lorsqu'une condition survient, par exemple lors du chargement initial d'un composable ou encore lorsqu'une variable d'état change de valeur.
+Par exemple, on pourrait utiliser l'effet secondaire **LaunchedEffect()]** qui permet d'appeler une fonction asynchrone lorsqu'une condition survient, par exemple lors du chargement initial d'un composable ou encore lorsqu'une variable d'état change de valeur.
 
 
 Autre exemple : l'effet secondaire **DisposableEffect** permet d'effectuer des tâches de nettoyage à certaines étapes du cycle de vie.
@@ -33,9 +31,7 @@ Autre exemple : l'effet secondaire **DisposableEffect** permet d'effectuer des t
 ### 67.2 LaunchedEffect
 
 
-L'effet secondaire LauchedEffect()
- permet d'effectuer un appel asynchrone lors du premier chargement d'un composable ou encore à chaque fois que la valeur
-de sa clé est modifiée.
+L'effet secondaire LauchedEffect() permet d'effectuer un appel asynchrone lors du premier chargement d'un composable ou encore à chaque fois que la valeur de sa clé est modifiée.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

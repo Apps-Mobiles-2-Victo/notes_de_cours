@@ -102,8 +102,7 @@ Sans rien changer de plus, le fond d'écran sera jaune pâle ou jaune foncé sel
 ### Couleur des barres d'application
 
 
-Dans le cas où l'application comprend une barre de titre ou une barre de navigation, il faudra préciser que leur couleur de fond est transparente pour que la couleur
-dictée par le thème les affecte.
+Dans le cas où l'application comprend une barre de titre ou une barre de navigation, il faudra préciser que leur couleur de fond est transparente pour que la couleur dictée par le thème les affecte.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -137,12 +136,10 @@ Scaffold(
 ### Configurer une couleur de fond d'écran par programmation
 
 
-Dans certaines applications, on voudra plutôt modifier la couleur dynamiquement. Ici, j'ai utilisé des couleurs codées en dur mais il serait facile d'adapter ce code
-pour que les couleurs proviennent de variables.
+Dans certaines applications, on voudra plutôt modifier la couleur dynamiquement. Ici, j'ai utilisé des couleurs codées en dur mais il serait facile d'adapter ce code pour que les couleurs proviennent de variables.
 
 
-Puisque, dans cet exemple, la couleur est spécifiée dans le contenu de l'application (paramètre content du Scaffold ou partie entre accolades), la couleur de fond
-ne sera pas appliquée à la barre de titre ni à la barre de navigation.
+Puisque, dans cet exemple, la couleur est spécifiée dans le contenu de l'application (paramètre content du Scaffold ou partie entre accolades), la couleur de fond ne sera pas appliquée à la barre de titre ni à la barre de navigation.
 
 
 Remarquez la condition pour spécifier la couleur en mode clair et en mode sombre.
@@ -174,8 +171,7 @@ Box(
 ### Couleur des barres d'application - technique 1
 
 
-Pour appliquer une couleur de fond partout, il faut placer le Scaffold à l'intérieur du Box et préciser que la couleur de fond du Scaffold, de la barre de titre et de la
-barre de navigation sont transparentes.
+Pour appliquer une couleur de fond partout, il faut placer le Scaffold à l'intérieur du Box et préciser que la couleur de fond du Scaffold, de la barre de titre et de la barre de navigation sont transparentes.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -290,15 +286,13 @@ Box(
 ### Image sous les barres d'application
 
 
-Ici encore, si on veut que l'image soit également derrière la barre de titre et la barre de navigation, il faut travailler au niveau du Scaffold. Cette fois, j'ai placé le
-Scaffold dans un Box qui spécifie le fond d'écran et j'ai mis le fond en transparence pour le contenu, la barre de titre et la barre de navigation.
+Ici encore, si on veut que l'image soit également derrière la barre de titre et la barre de navigation, il faut travailler au niveau du Scaffold. Cette fois, j'ai placé le Scaffold dans un Box qui spécifie le fond d'écran et j'ai mis le fond en transparence pour le contenu, la barre de titre et la barre de navigation.
 
 
 Plus besoin du Box dans le contenu.
 
 
-Je n'ai pas modifié les couleurs dans la barre de titre ni dans la barre de navigation afin d'illustrer les dangers au niveau de la lisibilité lorsque l'image de fond couvre
-tout l'écran.
+Je n'ai pas modifié les couleurs dans la barre de titre ni dans la barre de navigation afin d'illustrer les dangers au niveau de la lisibilité lorsque l'image de fond couvre tout l'écran.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -405,8 +399,7 @@ val nombre = Random.nextInt(10)   // nombre entre 0 (inclus) et 10 (exclu)
 ### 38.2 Sélectionner au hasard un élément d'une collection
 
 
-Quand on a en main une collection, par exemple une liste déclarée avec listOf() ou un tableau déclaré avec arrayOf(), la méthode random() permet de sélectionner
-au hasard un élément du tableau.
+Quand on a en main une collection, par exemple une liste déclarée avec listOf() ou un tableau déclaré avec arrayOf(), la méthode random() permet de sélectionner au hasard un élément du tableau.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

@@ -11,8 +11,7 @@ title: "Gestion de projet et dépendances avec Gradle"
 Gradle est un outil de construction (build script) qui permet de compiler une application Kotlin.
 
 
-Selon la documentation Android
- :
+Selon la documentation Android :
 
 
 ### Le système de compilation Android compile des ressources d'application et du code source, puis
@@ -79,9 +78,7 @@ plugins {
 
 
 #### Le fichier de compilation de module (module-level build file) est présent dans le dossier app du projet ou dans un
-sous-dossier d'un module lorsque le projet est organisé en plusieurs modules. Il permet de préciser des options de
-compilation du module et, au besoin, de modifier des options définies dans le fichier de compilation de premier
-niveau.
+sous-dossier d'un module lorsque le projet est organisé en plusieurs modules. Il permet de préciser des options de compilation du module et, au besoin, de modifier des options définies dans le fichier de compilation de premier niveau.
 
 
 ```kotlin title="Fichier build.gradle.kts de module (Kotlin DSL)"
@@ -158,8 +155,7 @@ dependencies {
 
 
 ### * [« Differences between CompileSDK,MinSDK and TargetSDK Version » - Medium](https://hey-agrawal.medium.com/differences-between-compilesdk-minsdk-and-)
-targetsdk-version-6d5f720a6c8a
-3.3 Ajouter une dépendance au projet
+targetsdk-version-6d5f720a6c8a 3.3 Ajouter une dépendance au projet
 
 
 Plusieurs fonctionnalités nécessitent l'ajout de dépendances au projet.
@@ -236,8 +232,7 @@ Si vous croyez que les modifications que vous avez apportées ne sont pas correc
 ### 3.4 Use version catalog instead
 
 
-Dans jetpack compose, quand vous ajoutez une dépendance dans le fichier build.gradle.kts , il peut arriver que vous obteniez un message du genre « Use version
-catalog instead. Replace with new library catalog declaration for ... ».
+Dans jetpack compose, quand vous ajoutez une dépendance dans le fichier build.gradle.kts , il peut arriver que vous obteniez un message du genre « Use version catalog instead. Replace with new library catalog declaration for ... ».
 
 
 

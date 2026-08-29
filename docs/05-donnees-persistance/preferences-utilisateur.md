@@ -8,8 +8,7 @@ title: "Préférences utilisateur"
 ### 32.1 Preferences DataStore
 
 
-Une préférence utilisateur est une configuration qui est choisie par l'utilisateur et enregistrée dans l'application de sorte qu'elle est toujours active lors du prochain
-démarrage de l'application.
+Une préférence utilisateur est une configuration qui est choisie par l'utilisateur et enregistrée dans l'application de sorte qu'elle est toujours active lors du prochain démarrage de l'application.
 
 
 Il s'agit d'une information simple représentée par une paire clé-valeur.
@@ -55,8 +54,7 @@ dependencies {
 Notez que la version de la dépendance pourrait être différente. Android Studio vous le fera savoir si une version plus récente est disponible.
 
 
-Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de
-l'ajout**.
+Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
 ### Classe pour gérer la lecture et l'enregistrement
@@ -145,8 +143,7 @@ Quelques explications :
 
 
 #### Le companion object
- en Kotlin est semblable aux propriétés statiques dans d'autres langages. On pourra accéder à
-ces propriétés directement à l'aide du nom de la classe.
+en Kotlin est semblable aux propriétés statiques dans d'autres langages. On pourra accéder à ces propriétés directement à l'aide du nom de la classe.
 
 
 #### La lecture et l'écriture sont réalisées de façon asynchrone. C'est pourquoi la lecture retourne un Flow<String> plutôt
@@ -226,8 +223,7 @@ utilisateur. On utilisera collectAsState qui se charge de collecter un flux (Flo
 
 
 #### Pour enregistrer la valeur, il faut utiliser scope.launch()
- afin de ne pas bloquer le fil d'exécution lors de l'appel
-asynchrone.
+afin de ne pas bloquer le fil d'exécution lors de l'appel asynchrone.
 
 
 ### Supprimer une paire clé-valeur
@@ -293,8 +289,7 @@ n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
 
 
 #### Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide
-du **Logcat]**, en autant qu'on ait une variable d'état qui
-écoute pour connaître la valeur.
+du **Logcat]**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -376,8 +371,7 @@ comprehensive-guide-to-using-datastore-with-jetpack-compose-d89c813232d7
 La façon dont vous structurez votre application a un impact important sur la technique à utiliser pour travailler avec le **Preferences DataStore]**.
 
 
-Par exemple, si vous choisissez de placer tout le code d'un gestionnaire d'événement dans une fonction, les instructions qui requièrent d'être appelées dans une
-fonction modulable ne pourront pas être placées dans cette fonction.
+Par exemple, si vous choisissez de placer tout le code d'un gestionnaire d'événement dans une fonction, les instructions qui requièrent d'être appelées dans une fonction modulable ne pourront pas être placées dans cette fonction.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -464,8 +458,7 @@ fun traiter(
 ### 32.3 SharedPreferences
 
 
-Selon la documentation officielle de Android Developers
- :
+Selon la documentation officielle de Android Developers :
 
 
 ### Si vous utilisez actuellement SharedPreferences pour stocker des données, nous vous

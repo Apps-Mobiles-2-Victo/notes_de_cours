@@ -52,8 +52,7 @@ Si vous utilisez la syntaxe *by remember* et que vous oubliez les deux import, v
 ![Illustration](../images/page_099_img_01_800x79.png)
 
 
-!!! warning "Attention : si vous "
-    Attention : si vous désirez utiliser une liste d'objets comme variable d'état, vous devez apporter quelques ajustements à votre code comme démontré sur cette fiche : « **mutablelistof_comme_variable_d_etat** ».
+!!! warning "Attention : si vous " Attention : si vous désirez utiliser une liste d'objets comme variable d'état, vous devez apporter quelques ajustements à votre code comme démontré sur cette fiche : « **mutablelistof_comme_variable_d_etat** ».
 
 
 #### Pour plus d'information
@@ -216,8 +215,7 @@ Quand on change l'orientation du téléphone pour le mettre en position horizont
 C'est parce que remember permet de survivre seulement aux recompositions.
 
 
-Quand on change l'orientation du téléphone, c'est tout l'objet MainActivity qui est détruit puis recréé. Lors de la recréation, les variables d'état déclarées avec
-remember sont réinitialisées.
+Quand on change l'orientation du téléphone, c'est tout l'objet MainActivity qui est détruit puis recréé. Lors de la recréation, les variables d'état déclarées avec remember sont réinitialisées.
 
 
 ### Survivre à la recréation de l'activité
@@ -229,9 +227,7 @@ Il existe différentes techniques pour survivre à la recréation d'une activit�
 ### rememberSaveable
 
 
-Pour régler ce problème dans une petite application, il suffit de déclarer avec rememberSaveable
- les variables d'état qui doivent conserver leur valeur lors de la
-recréation de l'activité.
+Pour régler ce problème dans une petite application, il suffit de déclarer avec rememberSaveable les variables d'état qui doivent conserver leur valeur lors de la recréation de l'activité.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -239,12 +235,10 @@ var nombre by rememberSaveable { mutableStateOf(0) }
 ```
 
 
-Lorsque vous voyez du code dans des notes de cours, sur le Web ou suggéré par une IA, il arrive fréquemment que les extraits de code soient donnés avec
-remember plutôt que rememberSaveable.
+Lorsque vous voyez du code dans des notes de cours, sur le Web ou suggéré par une IA, il arrive fréquemment que les extraits de code soient donnés avec remember plutôt que rememberSaveable.
 
 
-La raison première est pédagogique : remember est un concept plus simple. Donc, rememberSaveable est généralement introduit plus tard pour aider à
-comprendre ce que chacun fait.
+La raison première est pédagogique : remember est un concept plus simple. Donc, rememberSaveable est généralement introduit plus tard pour aider à comprendre ce que chacun fait.
 
 
 ### Contexte où l'utilisation de remember est correcte

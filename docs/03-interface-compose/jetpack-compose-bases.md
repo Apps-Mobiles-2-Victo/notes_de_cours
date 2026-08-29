@@ -11,8 +11,7 @@ title: "Bases de Jetpack Compose"
 Jetpack Compose est une boîte d'outils qui permet de définir des interfaces utilisateur (UI) pour applications Android écrites avec Kotlin.
 
 
-Jetpack Compose implémente Material Design
-, une bibliothèque spécialisée pour bâtir des interfaces utilisateur.
+Jetpack Compose implémente Material Design , une bibliothèque spécialisée pour bâtir des interfaces utilisateur.
 
 
 Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack Compose, l'interface sera décrite par programmation à l'aide de **fonctions modulables**.
@@ -21,8 +20,7 @@ Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack 
 Si vous avez déjà programmé des applications mobiles pour iPhone avec SwiftUI ou des applications pour iPhone ou Android avec Flutter, vous trouverez plusieurs ressemblances entre ces technologies.
 
 
-À titre d'exemple, voici une fonction modulable qui permet d'afficher le mot Hello suivi d'une information reçue en paramètre. Chaque fonction modulable est en fait
-un élément graphique.
+À titre d'exemple, voici une fonction modulable qui permet d'afficher le mot Hello suivi d'une information reçue en paramètre. Chaque fonction modulable est en fait un élément graphique.
 
 
 ```kotlin title="Kotlin"
@@ -101,9 +99,7 @@ Afin de bien comprendre où le code doit être placé, il faut avoir une vue glo
 C'est ce fichier qui détermine quel autre fichier démarrera l'application.
 
 
-Voici son code initial. On y voit que la classe de départ
- s'appelle MainActivity. Le point qui précède ce nom indique que la classe fait partie de l'espace de nom
-spécifié dans le fichier  app/build.gradle.kts .
+Voici son code initial. On y voit que la classe de départ s'appelle MainActivity. Le point qui précède ce nom indique que la classe fait partie de l'espace de nom spécifié dans le fichier  app/build.gradle.kts .
 
 
 ```xml title="Fichier AndroidManifest.xml"

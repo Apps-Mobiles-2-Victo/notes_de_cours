@@ -8,9 +8,7 @@ title: "Saisie de texte et clavier virtuel"
 ### 22.1 TextField() et OutlinedTextField()
 
 
-Une case de saisie peut être ajoutée à l'aide du composble TextField()
- ou de OutlinedTextField()
-.
+Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
 
 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
@@ -51,9 +49,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack
-Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez
-pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -116,8 +112,7 @@ Voici le OutlinedTextField vide puis avec focus ou rempli.
 Depuis Jetpack Compose 1.3, il est possible d'ajouter un texte d'accompagnement sous la boîte de saisie.
 
 
-Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin
-d'afficher un texte contextualisé.
+Dans la forme la plus simple, un texte statique sera affiché. Mais puisque le code est entre accolades, ceci ouvre la porte à une panoplie de possibilités afin d'afficher un texte contextualisé.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -204,11 +199,7 @@ Les principaux types de clavier sont :
 
 
 
-KeyboardType.Text
-KeyboardType.Number
-KeyboardType.Email
-KeyboardType.Password
-KeyboardType.Phone
+KeyboardType.Text KeyboardType.Number KeyboardType.Email KeyboardType.Password KeyboardType.Phone
 
 
 Pour spécifier le type clavier désiré :
@@ -227,8 +218,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la
-syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.
@@ -297,16 +287,13 @@ summary
 ### 26.1 Clavier virtuel de l'émulateur
 
 
-Quand vous lancez une application dans l'émulateur d'Android Studio, il peut arriver que le clavier virtuel ne soit pas visible. À ce moment, seul le clavier physique de
-votre ordinateur peut interagir avec l'émulateur.
+Quand vous lancez une application dans l'émulateur d'Android Studio, il peut arriver que le clavier virtuel ne soit pas visible. À ce moment, seul le clavier physique de votre ordinateur peut interagir avec l'émulateur.
 
 
 Je vous présente ici deux techniques pour faire apparaître le clavier virtuel dans l'émulateur.
 
 
-!!! warning "Attention : quand vo"
-    Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone
-physique, vous devez utiliser exclusivement le clavier virtuel.
+!!! warning "Attention : quand vo" Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel.
 
 
 ### Afficher le clavier virtuel automatiquement
@@ -347,8 +334,7 @@ Le clavier virtuel apparaîtra automatiquement lorsque requis, par exemple quand
 Si vous souhaitez faire apparaître le clavier virtuel seulement au besoin, n'ajoutez pas l'instruction windowSoftInputMode dans le fichier AndroidManifest.xml .
 
 
-Plutôt, quand vous lancerez l'application dans l'émulateur, vous cliquerez sur le menu rond qui apparaît au centre gauche de l'écran quand une case de saisie a le
-focus.
+Plutôt, quand vous lancerez l'application dans l'émulateur, vous cliquerez sur le menu rond qui apparaît au centre gauche de l'écran quand une case de saisie a le focus.
 
 
 L'option Show on-screen keyboard fera apparaître le clavier virtuel.
@@ -371,8 +357,7 @@ L'option Show on-screen keyboard fera apparaître le clavier virtuel.
 Lorsqu'un usager clique sur une zone d'édition dans une application Android, le clavier virtuel apparaît automatiquement.
 
 
-Si ce comportement est généralement souhaitable, il peut arriver que ce clavier cache une partie importante de l'écran. D'où l'importance de pouvoir le cacher
-lorsqu'il n'est plus utile.
+Si ce comportement est généralement souhaitable, il peut arriver que ce clavier cache une partie importante de l'écran. D'où l'importance de pouvoir le cacher lorsqu'il n'est plus utile.
 
 
 Une technique intéressante pour y arriver conciste à enlever le focus de la zone d'édition.

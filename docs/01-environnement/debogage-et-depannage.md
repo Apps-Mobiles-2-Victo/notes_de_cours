@@ -33,8 +33,7 @@ Lorsque vous tentez de lancer l'émulateur Android sous IntelliJ, vous obtenez l
 L'éditeur croit que l'émulateur est déjà en cour d'exécution.
 
 
-Vous saurez que c'est le cas quand vous lancez l'émulateur en ligne de commande et que vous obtenez le message « Running multiple emulators with the same AVD
-is an experimental feature. ».
+Vous saurez que c'est le cas quand vous lancez l'émulateur en ligne de commande et que vous obtenez le message « Running multiple emulators with the same AVD is an experimental feature. ».
 
 
 #### Ouvrez une fenêtre Terminal.
@@ -201,8 +200,7 @@ travailler avec un vrai téléphone Android branché à l'ordinateur.
 ### Problème :
 
 
-Lorsque vous utilisez une fonctionnalité expérimentale, vous obtenez le message « This material API is experimental and is likely to change or to be removed in the
-future. ».
+Lorsque vous utilisez une fonctionnalité expérimentale, vous obtenez le message « This material API is experimental and is likely to change or to be removed in the future. ».
 
 
 
@@ -236,8 +234,7 @@ Vous utilisez une fonctionnalité expérimentale et Jetpack Compose vous empêch
 ### Solution proposée :
 
 
-Ajoutez une instruction @OptIn
- en haut de la fonction modulable qui utilise la fonctionnalité expérimentale.
+Ajoutez une instruction @OptIn en haut de la fonction modulable qui utilise la fonctionnalité expérimentale.
 
 
 C'est par cette instruction que vous donnez votre consentement.
@@ -259,8 +256,7 @@ fun ...() {
 ### Problème :
 
 
-Lorsque vous tentez de lancer dans l'émulateur une application Android qui utilise Room, vous obtenez le message « 'compileDebugJavaWithJavac' task (current
-target is 1.8) and 'kspDebugKotlin' task (current target is 17) jvm target compatibility should be set to the same Java version. ».
+Lorsque vous tentez de lancer dans l'émulateur une application Android qui utilise Room, vous obtenez le message « 'compileDebugJavaWithJavac' task (current target is 1.8) and 'kspDebugKotlin' task (current target is 17) jvm target compatibility should be set to the same Java version. ».
 
 
 ### Contexte :
@@ -313,8 +309,7 @@ Ce problème semble lié à un bogue de Gradle.
 Voici une solution temporaire si vous n'arrivez pas à faire fonctionner l'application par un simple changement de version de ksp.
 
 
-Le problème avec cette solution, c'est qu'il faudra réeffectuer une série d'étapes à chaque fois qu'il faut recompiler l'application après y avoir apporté des
-modifications.
+Le problème avec cette solution, c'est qu'il faudra réeffectuer une série d'étapes à chaque fois qu'il faut recompiler l'application après y avoir apporté des modifications.
 
 
 Voilà pourquoi le code déclare une variable qu'il suffira de mettre à true puis à false dans la liste d'étapes plus bas (merci Carlos pour le truc de la variable!).
@@ -363,8 +358,7 @@ Maintenant, vous aurez à réaliser ces étapes à chaque vous que vous recompil
 
 
 #### Lorsque votre projet utilisera du code qui n'est pas compatible avec cette version, par exemple lorsque vous définirez
-une classe qui hérite de RoomDatabase, vous obtiendrez un message du genre « jlink executable C:\Program
-Files\JetBrains\IntelliJ IDEA 2023.2.2\jbr\bin\jlink.exe does not exist », ce qui est normal.
+une classe qui hérite de RoomDatabase, vous obtiendrez un message du genre « jlink executable C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.2\jbr\bin\jlink.exe does not exist », ce qui est normal.
 
 
 #### Remettez la variable java_1_8 à true.
@@ -385,8 +379,7 @@ Tout devrait être entré dans l'ordre.
 ### Problème :
 
 
-Lorsque vous développez un module composable qui utilise un modifieur, par exemple Modifier.weight(1f) ou Modifier.fillMaxSize(), vous obtenez un message
-« Unresolved reference » sans possibilité d'ajouter un import pour régler le problème.
+Lorsque vous développez un module composable qui utilise un modifieur, par exemple Modifier.weight(1f) ou Modifier.fillMaxSize(), vous obtenez un message « Unresolved reference » sans possibilité d'ajouter un import pour régler le problème.
 
 
 ### Contexte :
@@ -448,8 +441,7 @@ Dans IntelliJ, ouvrez le Device Manager.
 Cliquez sur les trois points verticaux vis-à-vis le périphérique virtuel désiré puis choisissez Cold Boot Now .
 
 
-Notez que parfois, il faut d'abord supprimer les fichiers .lock dans le dossier de l'émulateur ( /Users/monnom/.android/avd/Nom_de_l_emulateur.avd ).  Pour atteindre
-rapidement ce dossier à partir d'IntelliJ, cliquez sur les trois points verticaux vis-à-vis le périphérique virtuel désiré puis choisissez  Show on Disk .
+Notez que parfois, il faut d'abord supprimer les fichiers .lock dans le dossier de l'émulateur ( /Users/monnom/.android/avd/Nom_de_l_emulateur.avd ).  Pour atteindre rapidement ce dossier à partir d'IntelliJ, cliquez sur les trois points verticaux vis-à-vis le périphérique virtuel désiré puis choisissez  Show on Disk .
 
 
 ### 7.7 Erreur « Dependency 'androidx.navigation:navigation-common:2.7.3' requires... »
@@ -458,8 +450,7 @@ rapidement ce dossier à partir d'IntelliJ, cliquez sur les trois points vertica
 ### Problème :
 
 
-Lorsque vous tentez de compiler votre application Android bâtie avec Jetpack Compose, vous obtenez le message « Dependency 'androidx.navigation:navigation-
-common:2.7.3' requires libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
+Lorsque vous tentez de compiler votre application Android bâtie avec Jetpack Compose, vous obtenez le message « Dependency 'androidx.navigation:navigation- common:2.7.3' requires libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
 
 
 ### Contexte :
@@ -486,8 +477,7 @@ Vous tentez d'utiliser une bibliothèque qui requiert une version plus récente 
 ### Solution proposée :
 
 
-Si vous travaillez avec Android Studio, utilisez le Android SDK Upgrade Assistant
- pour passer à une version plus récente du SDK.
+Si vous travaillez avec Android Studio, utilisez le Android SDK Upgrade Assistant pour passer à une version plus récente du SDK.
 
 
 Si vous travaillez avec IntelliJ, cet outil n'est pas disponible. Le plus simple est de créer un nouveau projet basé sur le SDK désiré.
@@ -559,8 +549,7 @@ Si le paramètre items n'est toujours pas reconnu, c'est peut-être parce qu'il 
 ### Problème :
 
 
-Lorsque vous tentez de synchroniser votre application Android Jetpack Compose, vous obtenez l'erreur « Dependency 'androidx.emoji2:emoji2:1.4.0' requires
-libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
+Lorsque vous tentez de synchroniser votre application Android Jetpack Compose, vous obtenez l'erreur « Dependency 'androidx.emoji2:emoji2:1.4.0' requires libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
 
 
 ### Contexte :
@@ -578,8 +567,7 @@ libraries and applications that depend on it to compile against version 34 or la
 ### Cause possible :
 
 
-Une des bibliothèques fait appel à androidx.emoji2:emoji2 et cette bibliothèque est en incohérence avec certaines versions que vous utilisez et ce, même si vous
-n'utilisez pas androidx.emoji2:emoji2.
+Une des bibliothèques fait appel à androidx.emoji2:emoji2 et cette bibliothèque est en incohérence avec certaines versions que vous utilisez et ce, même si vous n'utilisez pas androidx.emoji2:emoji2.
 
 
 ### Solution proposée :
@@ -612,9 +600,7 @@ android {
 ### Problème :
 
 
-Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Duplicate class
-kotlin.collections.jdk8.CollectionsJDK8Kt found in modules kotlin-stdlib-1.8.10 (org.jetbrains.kotlin:kotlin-stdlib:1.8.10) and kotlin-stdlib-jdk8-1.7.20
-(org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20) ».
+Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules kotlin-stdlib-1.8.10 (org.jetbrains.kotlin:kotlin-stdlib:1.8.10) and kotlin-stdlib-jdk8-1.7.20 (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20) ».
 
 
 ### Contexte :
@@ -655,8 +641,7 @@ dependencies {
 ### Problème :
 
 
-Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Could not read workspace metadata from
-C:\...\metadata.bin  ».
+Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Could not read workspace metadata from C:\...\metadata.bin  ».
 
 
 ### Contexte :
@@ -695,8 +680,7 @@ Des fichiers de cache de Gradle sont corrompus.
 ### Problème :
 
 
-Lorsque vous tentez de lancer l'émulateur Android sous Android Studio, vous obtenez le message « Error running 'app'. ... is already running. If that is not the case,
-delete ...\.lock and try again. ».
+Lorsque vous tentez de lancer l'émulateur Android sous Android Studio, vous obtenez le message « Error running 'app'. ... is already running. If that is not the case, delete ...\.lock and try again. ».
 
 
 
@@ -776,8 +760,7 @@ En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui don
 ### Problème :
 
 
-Lorsque vous tentez de compiler votre application dans Android Studio, vous obtenez le message « Contenu non autorisé dans le prologue. » ou, en anglais,
-« Content is not allowed in prolog. ».
+Lorsque vous tentez de compiler votre application dans Android Studio, vous obtenez le message « Contenu non autorisé dans le prologue. » ou, en anglais, « Content is not allowed in prolog. ».
 
 
 
@@ -826,8 +809,7 @@ Parfois, il faut procéder à la création d'un nouveau projet, à la réinstall
 ### Problème :
 
 
-Lorsque vous testez votre application dans un émulateur avec Android Studio, vous obtenez le message « UI système ne répond pas » ou, en anglais, « System UI
-isn't responding » et ce, sans arrêt dans une fenêtre popup.
+Lorsque vous testez votre application dans un émulateur avec Android Studio, vous obtenez le message « UI système ne répond pas » ou, en anglais, « System UI isn't responding » et ce, sans arrêt dans une fenêtre popup.
 
 
 
@@ -868,9 +850,7 @@ Il y a un problème avec l'émulateur.
 ### Problème :
 
 
-Lorsque lancez votre application dans dans Android Studio, vous obtenez un message du genre « Looks like you've changed schema but forgot to update the
-version number. You can simply fix this by increasing the version number. Expected identity hash: fc52a3aea54e62ca9d025b65d3f27132, found:
-c9a7d3438fa6436ca51c76b3571e7cd7 ».
+Lorsque lancez votre application dans dans Android Studio, vous obtenez un message du genre « Looks like you've changed schema but forgot to update the version number. You can simply fix this by increasing the version number. Expected identity hash: fc52a3aea54e62ca9d025b65d3f27132, found: c9a7d3438fa6436ca51c76b3571e7cd7 ».
 
 
 ### Contexte :
@@ -885,15 +865,13 @@ c9a7d3438fa6436ca51c76b3571e7cd7 ».
 ### Cause possible :
 
 
-Vous avez modifié la structure de la base de données après avoir exécuté l'application alors Room n'arrive plus à faire le lien entre les classes d'entité et la base de
-données.
+Vous avez modifié la structure de la base de données après avoir exécuté l'application alors Room n'arrive plus à faire le lien entre les classes d'entité et la base de données.
 
 
 ### Solution proposée :
 
 
-Si la base de données ne contient que des données de test, il est possible de demander à ce que la base de données soit complètement détruite puis recréée avec
-la nouvelle structure.
+Si la base de données ne contient que des données de test, il est possible de demander à ce que la base de données soit complètement détruite puis recréée avec la nouvelle structure.
 
 
 Ceci sera réalisé comme suit :
@@ -965,8 +943,7 @@ Vous pouvez placer un point d'arrêt dans votre code à l'endroit désiré en cl
 Pour que l'application puisse s'arrêter sur un point d'arrêt, elle doit avoir été lancée en mode débogage.
 
 
-Une fois que vous avez **configuré un périphérique virtuel]**, démarrez l'application en
-cliquant sur l'icône Debug .
+Une fois que vous avez **configuré un périphérique virtuel]**, démarrez l'application en cliquant sur l'icône Debug .
 
 
 
@@ -1017,8 +994,7 @@ Comme dans tous les langages de programmation, le débogueur ne montrera que les
 Même les variables d'état n'échappent pas à cette règle.
 
 
-Si vous demandez d'évaluer une variable dans la zone Evaluate expression or add a watch  et que cette variable est hors de portée, vous obtiendrez le message
-« Unresolved reference » ou « Cannot find local variable » ou encore « org.jetbrains.kotlin.backend.common.BackendException : Backend Internal error ».
+Si vous demandez d'évaluer une variable dans la zone Evaluate expression or add a watch  et que cette variable est hors de portée, vous obtiendrez le message « Unresolved reference » ou « Cannot find local variable » ou encore « org.jetbrains.kotlin.backend.common.BackendException : Backend Internal error ».
 
 
 ### Variables avec un lien get()
@@ -1047,35 +1023,34 @@ Cliquez sur ce lien afin d'obtenir la valeur.
 Pour afficher une information dans la console d'Android Studio, la meilleure technique consiste à utiliser le système de journalisation (log).
 
 
-Ceci permet de spécifier le niveau d'information (ex : DEBUG, INFO, WARNING, ERROR). De plus, il est possible de spécifier une étiquette (tag) qui sera affichée
-avant l'information afin de faciliter son repérage.
+Ceci permet de spécifier le niveau d'information (ex : DEBUG, INFO, WARNING, ERROR). De plus, il est possible de spécifier une étiquette (tag) qui sera affichée avant l'information afin de faciliter son repérage.
 
 
 Vous utiliserez une de ces fonctions :
 
 
 #### Log.d()
- : niveau débogage
+: niveau débogage
 
 
 #### Log.i()
- : niveau information
+: niveau information
 
 
 #### Log.w()
- : niveau avertissement (Warning)
+: niveau avertissement (Warning)
 
 
 #### Log.e()
- : niveau erreur
+: niveau erreur
 
 
 #### Log.v()
- : niveau verbose
+: niveau verbose
 
 
 #### Log.wtf()
- : niveau problème terrible (What a Terrible Failure)
+: niveau problème terrible (What a Terrible Failure)
 
 
 Dans cet exemple, on utilise l'étiquette MainActivity pour afficher en mode débogage la valeur de la variable.
@@ -1124,12 +1099,10 @@ at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
 
 
 ### * [« How to Debug Jetpack Compose Recomposition with Logging? » - Vincent Tsen - AndroidDev Blog](https://vtsen.hashnode.dev/how-to-debug-jetpack-compose-)
-recomposition-with-logging
-25.4 Déboguer une application qui se referme sans préavis
+recomposition-with-logging 25.4 Déboguer une application qui se referme sans préavis
 
 
-Pendant le développement de votre application Android avec Jetpack Compose, il peut arriver que lors de vos tests dans le simulateur, l'application se referme sans
-préavis.
+Pendant le développement de votre application Android avec Jetpack Compose, il peut arriver que lors de vos tests dans le simulateur, l'application se referme sans préavis.
 
 
 Que faire alors pour trouver ce qui a causé le plantage?
@@ -1151,8 +1124,7 @@ En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui don
 ### 25.5 Layout Inspector
 
 
-Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs facteurs peuvent venir influencer l'apparence et l'alignement des composables,
-par exemple :
+Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs facteurs peuvent venir influencer l'apparence et l'alignement des composables, par exemple :
 
 
 #### L'utilisation de composables d'alignement comme Row(), Column() ou Box()
@@ -1177,8 +1149,7 @@ Afin de mieux visualiser l'emplacement de chaque composable, vous pouvez travail
 
 
 #### Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez
-un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront
-affichés.
+un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
 
 
 

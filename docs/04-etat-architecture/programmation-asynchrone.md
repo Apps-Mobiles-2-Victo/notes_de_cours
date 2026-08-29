@@ -8,8 +8,7 @@ title: "Programmation asynchrone et Coroutines"
 ### 81.1 Les coroutines
 
 
-Selon la documentation officielle d'Android
- :
+Selon la documentation officielle d'Android :
 
 
 ### Les coroutines sont la solution recommandée pour la programmation asynchrone sur Android.

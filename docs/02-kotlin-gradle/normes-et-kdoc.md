@@ -14,18 +14,13 @@ Au fur et à mesure que vous progresserez dans votre formation, de nombreux exem
 Dans les notes de cours, des extraits de code sont parfois présentés pour illustrer un propos. Il s'agit d'exemples qui pourraient convenir à vos besoins... ou pas!
 
 
-D'autres fois, il s'agit d'un algorithme ou d'un squelette qui assure que le code soit robuste, sécuritaire, performant, convivial, fonctionnel et clair (en PHP, voir
-« **les_qualites_d_un_bon_programme_php** » ; en WordPress, voir
-« **les_qualites_d_un_bon_programme_wordpress** »).
+D'autres fois, il s'agit d'un algorithme ou d'un squelette qui assure que le code soit robuste, sécuritaire, performant, convivial, fonctionnel et clair (en PHP, voir « **les_qualites_d_un_bon_programme_php** » ; en WordPress, voir « **les_qualites_d_un_bon_programme_wordpress** »).
 
 
 Intéressant! Ce serait dommage de réinventer la roue.
 
 
-Que ce soit un extrait de code, un algorithme ou un squelette, si vous l'utilisez dans votre programme, on parlera de code emprunté, terme tiré du document
-« Comment réutiliser correctement du code source dans un cours de programmation » par Christopher Fuhrman et Frédérick Henri de l'École de Technologie
-Supérieure (ÉTS)
-.
+Que ce soit un extrait de code, un algorithme ou un squelette, si vous l'utilisez dans votre programme, on parlera de code emprunté, terme tiré du document « Comment réutiliser correctement du code source dans un cours de programmation » par Christopher Fuhrman et Frédérick Henri de l'École de Technologie Supérieure (ÉTS) .
 
 
 Le code emprunté peut provenir de différentes sources :
@@ -58,8 +53,7 @@ La réponse est « ça dépend ».
 ### Présentation PowerPoint
 
 
-Les concepts présentés sur cette fiche sont repris et complétés dans la présentation PowerPoint adoptée par le département d'informatique du cégep de
-Victoriaville, révision 2023.
+Les concepts présentés sur cette fiche sont repris et complétés dans la présentation PowerPoint adoptée par le département d'informatique du cégep de Victoriaville, révision 2023.
 
 
 ### Conditions à respecter
@@ -108,8 +102,7 @@ vous exposez à des accusations de plagiat.
 
 
 ### Afin de mieux vous protéger contre d'éventuelles accusations de plagiat, dès que vous utilisez une structure de
-code différente de ce qui a été enseigné, il faut citer vos sources, sauf bien sûr si vous avez développé l'algorithme
-vous-mêmes.
+code différente de ce qui a été enseigné, il faut citer vos sources, sauf bien sûr si vous avez développé l'algorithme vous-mêmes.
 
 
 ### Fonction empruntée
@@ -125,19 +118,16 @@ Lorsqu'une fonction complète est empruntée, la source peut être citée dans l
 
 
 #### Dans le cas de code généré par une IA, si votre prof vous permet d'utiliser ce type d'outil , il faut ajouter la
-mention « Code généré par » suivie de la référence au format Auteur. (Année). Nom de l’intelligence
-artificielle (version) [Type de modèle]. URL
+mention « Code généré par » suivie de la référence au format Auteur. (Année). Nom de l’intelligence artificielle (version) [Type de modèle]. URL
 
 
 Ex : Code généré par OpenAI. (2023). ChatGPT (version 15 mars 2023) [Modèle massif de langage]. [https://chat.openai.com/chat](https://chat.openai.com/chat)
 
 
-ou encore : Code généré par Microsoft. (2024). Microsoft Copilot (version novembre 2024) [Modèle de langage basé sur l'IA].
-[https://www.microsoft.com/copilot](https://www.microsoft.com/copilot)
+ou encore : Code généré par Microsoft. (2024). Microsoft Copilot (version novembre 2024) [Modèle de langage basé sur l'IA]. [https://www.microsoft.com/copilot](https://www.microsoft.com/copilot)
 
 
-ou encore : Code généré par Google AI. (2023). Gemini (version 1.2.3, 15 octobre 2023) [Modèle de langage de grande taille].
-[https://gemini.google.com](https://gemini.google.com)
+ou encore : Code généré par Google AI. (2023). Gemini (version 1.2.3, 15 octobre 2023) [Modèle de langage de grande taille]. [https://gemini.google.com](https://gemini.google.com)
 
 
 #### Si vous avez adapté le code :
@@ -180,17 +170,13 @@ function authentifier(string $usager, string $motDePasse) : bool {
 Si le code emprunté n'est pas une fonction complète, la citation peut être réalisée à l'aide d'un simple commentaire dans le code.
 
 
-Dans leur document intitulé « Comment réutiliser correctement du code source dans un cours de programmation »
-, Christopher Fuhrman et Frédérick Henri de
-l'École de Technologie Supérieure (ÉTS) proposent une façon claire de citer les sources dans un programme.
+Dans leur document intitulé « Comment réutiliser correctement du code source dans un cours de programmation » , Christopher Fuhrman et Frédérick Henri de l'École de Technologie Supérieure (ÉTS) proposent une façon claire de citer les sources dans un programme.
 
 
-Cette technique offre l'avantage d'identifier clairement quelle partie du code a été empruntée, ce qui est essentiel dans le cas où le code emprunté n'est pas une
-fonction complète.
+Cette technique offre l'avantage d'identifier clairement quelle partie du code a été empruntée, ce qui est essentiel dans le cas où le code emprunté n'est pas une fonction complète.
 
 
-Ici encore, la citation parlera de « Source » ou « Code généré par » lorsque le code est utilisé tel quel et de « Inspiré de » ou « Code partiellement généré par »
-lorsque le code a été modifié.
+Ici encore, la citation parlera de « Source » ou « Code généré par » lorsque le code est utilisé tel quel et de « Inspiré de » ou « Code partiellement généré par » lorsque le code a été modifié.
 
 
 ```kotlin title="PHP"
@@ -217,8 +203,7 @@ else {
 Saviez-vous qu'il est possible de s'auto-plagier?
 
 
-Selon l'UQAM
-, l'autoplagiat :
+Selon l'UQAM , l'autoplagiat :
 
 
 ### C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été
@@ -235,12 +220,10 @@ La PIEA du Cégep de Victoriaville est claire à ce sujet :
 
 
 ### le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une
-partie d’évaluation déjà réalisée dans un cours, et ce, sans avoir obtenu au préalable l’autorisation
-explicite de l’enseignante ou de l’enseignant du ou des cours concernés ;
+partie d’évaluation déjà réalisée dans un cours, et ce, sans avoir obtenu au préalable l’autorisation explicite de l’enseignante ou de l’enseignant du ou des cours concernés ;
 
 
-Afin d'éviter l'autoplagiat, vous devez obtenir la permission de l'enseignante ou de l'enseignant avant de réutiliser une partie du code que vous avez vous-même
-écrit ou co-écrit et qui a déjà été évalué de façon formative ou sommative.
+Afin d'éviter l'autoplagiat, vous devez obtenir la permission de l'enseignante ou de l'enseignant avant de réutiliser une partie du code que vous avez vous-même écrit ou co-écrit et qui a déjà été évalué de façon formative ou sommative.
 
 
 ### De plus, vous devez vous citer.
@@ -276,8 +259,7 @@ and-how-to-add-them-to-your-projects-34310c3cf94/
 Chaque langage de programmation propose ses propres normes de documentation.
 
 
-Dans le mode de Kotlin, la documentation du code est réalisée à l'aide de KDoc
-.
+Dans le mode de Kotlin, la documentation du code est réalisée à l'aide de KDoc .
 
 
 Par exemple, pour documenter une fonction :
@@ -378,8 +360,7 @@ data class HomeUiState(
 ### Génération de la documentation
 
 
-Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format
-HTML **à l'aide de Dokka]**.
+Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML **à l'aide de Dokka]**.
 
 
 #### Pour plus d'information
@@ -412,8 +393,7 @@ Pour l'installer :
 #### Cliquez sur Install .
 
 
-Désormais, quand vous tapes /** au-dessus d'une fonction ou d'une classe, KDoc-er générera le squelette de la documentation. À vous de l'ajuster et de le
-compléter.
+Désormais, quand vous tapes /** au-dessus d'une fonction ou d'une classe, KDoc-er générera le squelette de la documentation. À vous de l'ajuster et de le compléter.
 
 
 Voici par exemple ce qui est généré automatiquement pour cette fonction.
@@ -451,8 +431,7 @@ fun colorToString(couleur: Color) : String {
 ### 36.3 Générer la documentation à l'aide de Dokka
 
 
-Dokka
- est un outil qui permet de générer la documentation notamment à partir de **commentaires KDoc]**.
+Dokka est un outil qui permet de générer la documentation notamment à partir de **commentaires KDoc]**.
 
 
 ### Variable d'environnement JAVA_HOME
@@ -483,8 +462,7 @@ ENV
 Si la variable n'existe pas ou si elle pointe sur une version de Java inférieure à 17, créez-la ou mettez-la à jour.
 
 
-Notez qu'une version de Java a été installée avec Android Studio. Il s'agit de Java JBR (JetBrains Runtime), une version optimisée du JDK (Java Development Kit) et
-dont la version est suffisamment récente pour Dokka.
+Notez qu'une version de Java a été installée avec Android Studio. Il s'agit de Java JBR (JetBrains Runtime), une version optimisée du JDK (Java Development Kit) et dont la version est suffisamment récente pour Dokka.
 
 
 Pour créer la variable d'environnement JAVA_HOME sous Windows :
@@ -589,8 +567,7 @@ plugins {
 ```
 
 
-Une fois ces lignes ajoutées, il faut **resynchroniser le projet pour qu'il en tienne
-compte**.
+Une fois ces lignes ajoutées, il faut **resynchroniser le projet pour qu'il en tienne compte**.
 
 
 ### Génération de la documentation
