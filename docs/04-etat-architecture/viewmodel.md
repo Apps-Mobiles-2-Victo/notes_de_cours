@@ -138,11 +138,10 @@ Lorsqu'on travaille avec un ViewModel, on n'aura plus de variables d'état décl
 Chacun des ViewModels de l'application sera placé dans un dossier nommé *ui*  et portera un nom qui se termine par ViewModel.
 
 
-Le ui dossier est au même niveau que le fichier *MainActiviy.kt* , par exemple *app/src/main/java/com/monnom/monprojet/ui/HomeViewModel.kt* .
+Le dossier *ui* est au même niveau que le fichier *MainActiviy.kt* , par exemple *app/src/main/java/com/monnom/monprojet/ui/HomeViewModel.kt* .
 
 
 Un ViewModel est simplement une classe qui hérite de la classe *ViewModel*.
-
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 import androidx.lifecycle.ViewModel
@@ -154,7 +153,6 @@ class HomeViewModel : ViewModel() {
     }
 }
 ```
-
 
 ### Propriétés
 
@@ -168,16 +166,16 @@ Ici, pas besoin du mot-clé *remember* puisque la classe ne sera pas réinstanci
 
 Notez que lorsqu'il n'y a aucun spécificateur d'accès, une propriété est considérée publique.
 
-> Le code ci-dessous est barré puisque je vous présente une technique plus intéressante plus bas.
-
+> Ne pas prendre le Le code ci-dessous comme exemple, je vous présente une technique plus intéressante plus bas.
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 
-~~class HomeViewModel : ViewModel() {
-~~    val points: MutableState<Int> = mutableStateOf(0)
-~~    val partieTerminee: MutableState<Boolean> = mutableStateOf(false)
-~~    ...
-~~}
+// Exemple à ne pas utiliser dans le cadre de ce cours. Voir plus bas pour la technique recommandée.
+class HomeViewModel : ViewModel() {
+    val points: MutableState<Int> = mutableStateOf(0)
+    val partieTerminee: MutableState<Boolean> = mutableStateOf(false)
+    ...
+}
 
 ```
 
@@ -191,10 +189,11 @@ Il est conseillé de créer des propriétés privées. Chaque propriété utilis
 ### Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même nom mais sans la barre en bas.
 
 
-Ici encore, le code est barré puisqu'on préférera utiliser la technique présentée plus bas.
+Ici encore, on préférera utiliser la technique présentée plus bas.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
+// Exemple à ne pas utiliser dans le cadre de ce cours. Voir plus bas pour la technique recommandée.
 class HomeViewModel : ViewModel() {
     private val _points: MutableState<Int> = mutableStateOf(0)
     val points: Int
@@ -217,19 +216,17 @@ class HomeViewModel : ViewModel() {
 La technique recommandée pour déclarer les variables d'état du ViewModel consiste à utiliser une classe spécialisée pour gérer ces valeurs.
 
 
-Puisque ces valeurs sont rattachées à l'état de l'interface utilisateur (UiState), la classe portera un nom qui se termine par UiState.
+Puisque ces valeurs sont rattachées à l'état de l'interface utilisateur (UiState), la classe portera un nom qui se termine par *UiState*.
 
 
 Le ViewModel utilisera une instance de cette classe comme variable d'état.
 
-
-### Dans le cadre de ce cours, un ViewModel qui n'utilise pas le UiState de façon appropriée ne sera pas accepté.
-
+> Dans le cadre de ce cours, un ViewModel qui n'utilise pas le UiState de façon appropriée ne sera pas accepté.
 
 Cette classe, qui est en fait une **classe de données** peut être déclarée dans le même fichier que le ViewModel.
 
 
-Afin d'améliorer les performances de l'application , les propriétés de la classe UiState doivent être déclarées avec val et non avec var.
+Afin d'améliorer les performances de l'application , les propriétés de la classe UiState doivent être déclarées avec *val* (lecture seulement) et non avec *var*.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -263,24 +260,17 @@ data class HomeUiState (
 
 Notez que dans le UiState, les variables peuvent avoir un get() mais pas de set() car ce sont les méthodes de logique métier du ViewModel qui sont en charge de modifier l'état de façon sûre (thread safe).
 
+On peut désormais ajouter au ViewModel une propriété, nommée ici *_uiState*, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
 
-On peut désormais ajouter au ViewModel une propriété, nommée ici _uiState, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
+Cette propriété est de type *MutableStateFlow*, c'est-à-dire un **flux observable** dont la valeur peut être modifiée.
 
+La propriété privée *_uiState* pourra être modifiée à l'intérieur de la classe HomeViewModel à l'aide de _uiState.update().
 
-Cette propriété est de type MutableStateFlow , c'est-à-dire un **flux observable** dont la valeur peut être modifiée.
-
-
-La propriété privée _uiState pourra être modifiée à l'intérieur de la classe HomeViewModel à l'aide de _uiState.update().
-
-
-Le ViewModel comprend une seconde propriété, nommée ici uiState. Cette fois, il s'agit d'une propriété publique.
-
+Le ViewModel comprend une seconde propriété, nommée ici *uiState*. Cette fois, il s'agit d'une propriété publique.
 
 La propriété uiState est immuable grâce à l'utilisation de .asStateFlow(). Il s'agit donc d'un flux en lecture seule. Sa valeur est toujours basée sur celle de _uiState.
 
-
 Important : sans le .asStateFlow(), l'objet sous-jacent serait toujours un MutableStateFlow donc il pourrait être modifié ailleurs que dans le ViewModel.
-
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
@@ -290,36 +280,29 @@ class HomeViewModel : ViewModel() {
 }
 ```
 
-
 Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous créerons un **ViewModel qui interagit avec une base de données**.
-
 
 Dans un projet qui n'a pas besoin de flux pour les variables d'état, le ViewModel pourrait faire référence au uiState comme suit :
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
+// Incorrecte : ne pas utiliser dans le cadre de ce cours
 var uiState by mutableStateOf(HomeUiState())
     private set
 ```
 
 
-J'ai barré ces lignes parce que, étant donné qu'on utilisera prochainement le ViewModel avec Room pour accéder à une base de données et qu'on désire être réactif quand les données de la BD changent, il est plus simple d'utiliser la syntaxe avec flux tout de suite.
+Étant donné qu'on utilisera prochainement le ViewModel avec Room pour accéder à une base de données et qu'on désire être réactif quand les données de la BD changent, il est plus simple d'utiliser la syntaxe avec flux tout de suite.
 
-
-### Le travail avec uiState sans flux n'est pas accepté dans le cadre de ce cours à moins d'avis contraire.
-
+> Le travail avec uiState sans flux n'est pas accepté dans le cadre de ce cours à moins d'avis contraire.
 
 ### Logique métier
 
-
 Grâce aux ViewModels, il est possible de coder au même endroit toute la logique métier, séparément du code qui gère l'interface utilisateur.
-
 
 On ajoutera au ViewModel (et non au UiState) une méthode pour chaque opération sur les données.
 
-
 Ces méthodes sont le seul endroit où les variables d'état peuvent être modifiées.
-
 
 Évidemment, il ne doit pas y avoir de composables dans le ViewModel. Le ViewModel gère des données mais ne fait pas d'affichage.
 
@@ -349,27 +332,18 @@ class HomeViewModel : ViewModel() {
 
 ### Mise à jour de l'état
 
-
 Ce sont les méthodes du ViewModel qui doivent se charger de modifier la variable d'état _uiState.
-
 
 Pour mettre à jour l'état de façon sécuritaire dans un environnement avec plusieurs fils d'exécution, il faut utiliser _uiState.update.
 
-
 À l'intérieur de cette méthode, il faudra effectuer une copie du UiState pour que Jetpack Compose soit informé de la modification de l'état.
 
-
-La copie utilisera un paramètre implicite nommé it, qui représente l'objet _uiState.
-
+La copie utilisera un paramètre implicite nommé *it*, qui représente l'objet *_uiState*.
 
 On peut d'ailleurs voir ce paramètre dans l'IDE :
 
 
-
-
 ![Illustration](../images/page_156_img_01_516x50.png)
-
-
 
 
 Voici un exemple de logique métier qui met à jour l'état :
@@ -401,7 +375,6 @@ class HomeViewModel : ViewModel() {
 
 Dans le cas particulier d'un tableau déclaré avec List<...> dans ale UiState, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
 
-
 On le transformera en tableau modifiable auquel on applique une instruction.
 
 
@@ -421,7 +394,7 @@ data class HomeUiState(
 ```
 
 
-!!! warning "Attention : pour ajo" Attention : pour ajouter un élément au tableau, il n'est pas possible de faire  _monTableau = it.monTableau.toMutableList.add(...)  puisque la méthode add() retourne un booléen.
+>Attention : pour ajouter un élément au tableau, la méthode il n'est pas possible de faire  _monTableau = it.monTableau.toMutableList.add(...)  puisque la méthode add() retourne un booléen. et non le tableau modifié. Il faut plutôt utiliser la méthode apply{} pour effectuer l'ajout et retourner le tableau modifié.
 
 
 Vous devrez plutôt faire ceci :
@@ -457,17 +430,13 @@ _uiState.update {
 
 L'application peut désormais travailler avec le conteneur d'état.
 
-
 Il doit y avoir une seule instance du ViewModel dans l'application.
 
-
-Une variable, nommée ici viewModel, sera instaanciée dans la classe MainActivity et elle sera passée en paramètre à ses descendants.
-
+Une variable, nommée ici viewModel, sera instanciée dans la classe MainActivity et elle sera passée en paramètre à ses descendants.
 
 Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions modulables . Cependant, dans le cadre de ce cours, cette pratique est autorisée afin de faciliter votre travail.
 
-
-Une variable uiState sera initialisée dans chacun des composables où elle est requise, en utilisant le ViewModel reçu en paramètre. Avant de pouvoir l'utiliser, il faut lui appliquer la méthode collectAsState() qui se charge recuillir les valeurs d'un flux (Flow ) et de représenter la dernière valeur émise en tant que variable d'état.
+Une variable *uiState* sera initialisée dans chacun des composables où elle est requise, en utilisant le ViewModel reçu en paramètre. Avant de pouvoir l'utiliser, il faut lui appliquer la méthode *collectAsState()* qui se charge recueillir les valeurs d'un flux (Flow ) et de représenter la dernière valeur émise en tant que variable d'état.
 
 
 ```kotlin title="Fichier MainActivity.kt"
@@ -707,12 +676,6 @@ fun MaListe(uiState: HomeUiState) {
 ```
 
 
-## 45. Exercice 6
-
-
-
----
-
 
 ### 69.1 ViewModelFactory
 
@@ -779,7 +742,7 @@ fun MainScreen() {
 Pour régler ce problème, il faudra travailler avec un ViewModelFactory, qui permet de passer des paramètres personnalisés au ViewModel.
 
 
-Cette classe peut être codée dans le même fichier que le ViewModel corrrespondant.
+Cette classe peut être codée dans le même fichier que le ViewModel correspondant.
 
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
@@ -817,13 +780,9 @@ Il est possible de coder une application mobile sans utiliser de ViewModelFactor
 Par contre, cette technique pourrait être intéressante des différentes situations :
 
 
-#### Le ViewModel travaille avec un contexte quelconque plutôt qu'avec celui de l'application
-
-
-#### Le ViewModel reçoit un id en paramètre afin d'aller chercher les données d'un enregistrement dès son instanciation
-
-
-#### Le ViewModel a besoin de connaître l'identifiant de l'usager actif dans une application multi-usagers
+- Le ViewModel travaille avec un contexte quelconque plutôt qu'avec celui de l'application
+- Le ViewModel reçoit un id en paramètre afin d'aller chercher les données d'un enregistrement dès son instanciation
+- Le ViewModel a besoin de connaître l'identifiant de l'usager actif dans une application multi-usagers
 
 
 #### Pour plus d'information
@@ -835,8 +794,3 @@ hl=fr
 
 ### * [« Why Use ViewModel Factory? Understanding Parameterized ViewModels » - Medium](https://medium.com/@dilip2882/why-use-viewmodel-factory-understanding-)
 parameterized-viewmodels-2dbfcf92a11d
-70. Exercice 12
-
-
-
----
