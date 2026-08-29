@@ -192,7 +192,7 @@ Quand vous lancez une application dans l'émulateur d'Android Studio, il peut ar
 Je vous présente ici deux techniques pour faire apparaître le clavier virtuel dans l'émulateur.
 
 
-!!! warning "Attention : quand vo" Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel.
+!!! warning "Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel."
 
 
 ### Afficher le clavier virtuel automatiquement
@@ -250,7 +250,6 @@ L'option Show on-screen keyboard fera apparaître le clavier virtuel.
 
 
 ### * [« Gérer la visibilité du mode de saisie » - Android Developer](https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/visibility?hl=fr)
-15. Jetpack Compose
 
 
 ---
