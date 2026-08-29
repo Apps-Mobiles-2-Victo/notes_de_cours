@@ -66,7 +66,7 @@ OU
 #### en forçant la recréation de la base de données à l'aide d'une de ces méthodes :
 
 
-#### en effectuant une suppression manuelle de la BD **dans le système de fichiers de l'émulateur]**
+#### en effectuant une suppression manuelle de la BD **dans le système de fichiers de l'émulateur**
 
 
 #### en désinstallant l'application et en la réinstallant (sur l'émulateur : cercle (Home) / faire glisser l'écran vers
@@ -107,7 +107,7 @@ Si vous ne prenez pas les précautions nécessaires, vous obtiendrez ce message 
 ### Ajustement des classes d'entité
 
 
-Dans une application Jetpack Compose avec Room, les modifications à la structure de la base de données seront réalisées dans les  **classes d'entité]**.
+Dans une application Jetpack Compose avec Room, les modifications à la structure de la base de données seront réalisées dans les  **classes d'entité**.
 
 
 Ces classes doivent refléter la  base de données avec la nouvelle structure.
@@ -119,7 +119,7 @@ Il est ensuite possible de spécifier si on désire que la base de données soit
 ### Recréation complète de la base de données
 
 
-Pendant la phase de développement, il y a une technique simple pour que l'application prenne en compte la nouvelle structure de la base de données. il suffit de supprimer manuellement la base de données dans le **Device Explorer]**.
+Pendant la phase de développement, il y a une technique simple pour que l'application prenne en compte la nouvelle structure de la base de données. il suffit de supprimer manuellement la base de données dans le **Device Explorer**.
 
 
 Avant Room 2.7, sorti en 2025, il était possible d'utiliser l'instruction .fallbackToDestructiveMigration() . Cette instruction est désormais obsolète.

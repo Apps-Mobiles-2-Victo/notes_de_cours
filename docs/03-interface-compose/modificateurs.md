@@ -11,7 +11,7 @@ title: "Modificateurs (Modifiers)"
 Le modificateur .padding() est une autre façon d'ajouter de l'espace dans une interface utilisateur.
 
 
-Contrairement à **Spacer()]**, qui est un composable en lui-même, .padding() est une méthode de la classe Modifier . Il doit être appliqué à un composable.
+Contrairement à **Spacer()**, qui est un composable en lui-même, .padding() est une méthode de la classe Modifier . Il doit être appliqué à un composable.
 
 
 De plus, Spacer() ajoute de l'espace entre des éléments alors que .padding() ajoute de l'espace alentour de l'élément auquel il est appliqué.

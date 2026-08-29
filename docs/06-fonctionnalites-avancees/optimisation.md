@@ -42,7 +42,7 @@ Pour afficher le nombre de recompositions de chaque fonction modulable :
 
 
 
-#### Lancez votre application **dans un émulateur]**.
+#### Lancez votre application **dans un émulateur**.
 
 
 #### Naviguez dans votre application et voyez au fur et à mesure :

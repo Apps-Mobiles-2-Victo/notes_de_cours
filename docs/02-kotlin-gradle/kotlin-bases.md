@@ -169,7 +169,7 @@ Le type Unit correspond au type void dans d'autres langages.
 En Kolin, la déclaration d'une variable se fait à l'aide du mot-clé var.
 
 
-Le nom des variables doit utiliser **la casse chameau]**.
+Le nom des variables doit utiliser **la casse chameau**.
 
 
 ```kotlin title="Kotlin"
@@ -218,7 +218,7 @@ var premiereLettre = 'A'
 La déclaration d'une constante se fait à l'aide du mot-clé val.
 
 
-Dans les cas les plus simples, le nom de la constante sera entièrement en majuscules et utilisera **la casse serpent]**.
+Dans les cas les plus simples, le nom de la constante sera entièrement en majuscules et utilisera **la casse serpent**.
 
 
 ```kotlin title="Kotlin"
@@ -369,7 +369,7 @@ while (i < nombreElements) {
 Cette structure de contrôle permet de boucler dans les éléments d'un tableau.
 
 
-Par défaut, on accède à l'élément en cours de traitement à l'aide du mot-clé **it]**.
+Par défaut, on accède à l'élément en cours de traitement à l'aide du mot-clé **it**.
 
 
 ```kotlin title="Kotlin"
@@ -1037,7 +1037,7 @@ Text(text = categorie. code )
 ```
 
 
-Pour l'utiliser dans un **modèle de chaîne]**, il faut ajouter des accolades.
+Pour l'utiliser dans un **modèle de chaîne**, il faut ajouter des accolades.
 
 
 ```kotlin title="Kotlin"
@@ -1145,7 +1145,7 @@ Lorsqu'une expression lambda ne reçoit qu'un seul paramètre, il est possible d
 Dans le code Kotlin, il est fréquent de voir une variable qui s'appelle it . Mais d'où vient cette variable et que représente-t-elle?
 
 
-Il s'agit du paramètre reçu dans une **expression lambda]** qui ne contient qu'un seul paramètre.
+Il s'agit du paramètre reçu dans une **expression lambda** qui ne contient qu'un seul paramètre.
 
 
 On l'appellera paramètre implicite.
@@ -1200,7 +1200,7 @@ Column {
 ### Paramètre implicite d'un Scaffold
 
 
-Lorsqu'on définit le contenu d'un **Scaffold]**, le paramètre implicite est de type PaddingValues et il représente les marges verticales à respecter pour ne pas que le contenu se retrouve sous les zones réservées en haut et en bas de l'écran.
+Lorsqu'on définit le contenu d'un **Scaffold**, le paramètre implicite est de type PaddingValues et il représente les marges verticales à respecter pour ne pas que le contenu se retrouve sous les zones réservées en haut et en bas de l'écran.
 
 
 ```kotlin title="Kotlin"
@@ -1561,10 +1561,3 @@ Button(
     ...
 }
 ```
-
-
-## 5. Quelques éléments d'interface utilisateur
-
-
-
----

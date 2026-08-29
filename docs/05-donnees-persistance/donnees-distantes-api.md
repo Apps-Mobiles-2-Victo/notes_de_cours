@@ -142,7 +142,7 @@ De plus, si vous travaillez avec un URL non sécurisé (http://) pendant le dév
 Lorsque l'application fera un appel à l'API, elle stockera les données reçues dans une instance d'une classe spécialisée.
 
 
-Cette classe, qui est une **classe de données]**, sera placée dans un dossier nommé  data  qui est au même niveau que le fichier MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Item.kt .
+Cette classe, qui est une **classe de données**, sera placée dans un dossier nommé  data  qui est au même niveau que le fichier MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Item.kt .
 
 
 Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /  New  /  Package .
@@ -473,7 +473,7 @@ try {
 ```
 
 
-Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman]**, Bruno ou curl . Vous devez concaténer la valeur de la constante BASE_URL avec le point d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
+Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman**, Bruno ou curl . Vous devez concaténer la valeur de la constante BASE_URL avec le point d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
 
 
 Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateur. Ceci arrive parfois si on utilise l'émulateur dans différents réseaux, par exemple à l'école et à la maison.
@@ -641,7 +641,7 @@ Pour effectuer la copie des données locales, il faut que l'application mobile a
 Pendant la phase de développement de votre application, le service Web peut tourner localement. Vous aurez besoin d'un serveur HTTP et d'un serveur de bases de données.
 
 
-Ces serveurs peuvent être installés sur votre ordinateur à l'aide d'un environnement de développement Web tel que Devilbox , un outil qui préconfigure des conteneurs **Docker]** qui font rouler Apache ou Ngnix, MySQL, etc.
+Ces serveurs peuvent être installés sur votre ordinateur à l'aide d'un environnement de développement Web tel que Devilbox , un outil qui préconfigure des conteneurs **Docker** qui font rouler Apache ou Ngnix, MySQL, etc.
 
 
 Quand vous aurez terminé le développement et la phase de tests de votre service Web, vous pourrez le mettre en ligne chez un hébergeur, comme vous le feriez pour un site Web.
@@ -650,7 +650,7 @@ Quand vous aurez terminé le développement et la phase de tests de votre servic
 ### Structure des informations envoyées au service Web puis retournées par le service Web
 
 
-Le format **JSON]** est très utilisé pour échanger des données entre applications.
+Le format **JSON** est très utilisé pour échanger des données entre applications.
 
 
 L'application mobile doit fournir au service Web une représentation JSON des données à synchroniser.
@@ -1217,10 +1217,10 @@ La technique pour effectuer un tel test est expliquée dans la fiche « **tester
 Une fois le service Web écrit et testé, vous êtes prêts à le consommer dans votre application.
 
 
-#### **avec SwiftUI]**
+#### **avec SwiftUI**
 
 
-#### **avec Jetpack Compose]**
+#### **avec Jetpack Compose**
 
 
 #### Pour plus d'information

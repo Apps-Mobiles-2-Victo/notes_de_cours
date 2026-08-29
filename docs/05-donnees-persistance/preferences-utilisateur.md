@@ -289,7 +289,7 @@ n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
 
 
 #### Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide
-du **Logcat]**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur.
+du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -368,7 +368,7 @@ comprehensive-guide-to-using-datastore-with-jetpack-compose-d89c813232d7
 32.2 Travailler avec le Preferences DataStore dans une fonction non composable
 
 
-La façon dont vous structurez votre application a un impact important sur la technique à utiliser pour travailler avec le **Preferences DataStore]**.
+La façon dont vous structurez votre application a un impact important sur la technique à utiliser pour travailler avec le **Preferences DataStore**.
 
 
 Par exemple, si vous choisissez de placer tout le code d'un gestionnaire d'événement dans une fonction, les instructions qui requièrent d'être appelées dans une fonction modulable ne pourront pas être placées dans cette fonction.

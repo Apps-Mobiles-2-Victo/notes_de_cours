@@ -79,7 +79,7 @@ sous-dossier, tous les fichiers qui correspondent à ce critère (ex :  ic_launc
 ```
 
 
-### Vous pouvez maintenant lancer votre application dans l'émulateur, **tester l'application sur votre téléphone]** ou encore **installer le fichier APK directement sur le téléphone]**. Vous constaterez que l'application utilise désormais votre icône personnalisée.
+### Vous pouvez maintenant lancer votre application dans l'émulateur, **tester l'application sur votre téléphone** ou encore **installer le fichier APK directement sur le téléphone**. Vous constaterez que l'application utilise désormais votre icône personnalisée.
 33.2 Générer un fichier APK
 
 
@@ -240,7 +240,7 @@ ici : [https://countrycode.org](https://countrycode.org) .
 ### Installer l'application
 
 
-Une fois le fichier APK généré, il est possible de l'installer **à partir de Google Play Store]** ou **en distribuant vous-mêmes le fichier APK]**.
+Une fois le fichier APK généré, il est possible de l'installer **à partir de Google Play Store** ou **en distribuant vous-mêmes le fichier APK**.
 
 
 #### Pour plus d'information
@@ -295,7 +295,7 @@ developer/answer/14151465?sjid=9146892187004698062-NC
 La publication d'une application sur Google Play Store passe par ces étapes :
 
 
-#### **Générer un fichier APK de production]**
+#### **Générer un fichier APK de production**
 
 
 #### Créer un compte de développeur (coût : 25 USD, valide tant que le compte est actif
@@ -350,7 +350,7 @@ développeurs soient authentifiés sur le Android Developer Console. À suivre..
 Pour déployer une application directement :
 
 
-#### **Générez le fichier APK de production]** (ou de
+#### **Générez le fichier APK de production** (ou de
 débogage si l'application est distribuée pour des fins de tests).
 
 

@@ -267,7 +267,7 @@ lors de la destruction de l'activité. Certaines classes, par exemple ExoPlayer,
 ### ViewModel
 
 
-### Dès qu'une application prend un peu d'envergure, il est préférable de travailler avec un **ViewModel]**.
+### Dès qu'une application prend un peu d'envergure, il est préférable de travailler avec un **ViewModel**.
 44. Le ViewModel
 
 

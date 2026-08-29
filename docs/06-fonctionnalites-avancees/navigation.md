@@ -96,7 +96,7 @@ Le NavHost sera placé dans une fonction modulable que l'on codera dans son prop
 Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction modulable à appeler.
 
 
-Lorsque l'application contient une **barre de navigation]**, la route passera le navController en paramètre seulement si la fonction modulable a besoin de travailler avec cette variable.
+Lorsque l'application contient une **barre de navigation**, la route passera le navController en paramètre seulement si la fonction modulable a besoin de travailler avec cette variable.
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -439,7 +439,7 @@ Cette limite du nombre d'icônes provient de la documentation du NavigationBar :
 ### destination.
 
 
-Si votre application ne répond pas à cette exigence, vous devrez **configurer la barre de navigation avec BottomAppBar]**.
+Si votre application ne répond pas à cette exigence, vous devrez **configurer la barre de navigation avec BottomAppBar**.
 
 
 Voici un exemple d'application qui utilise un NavigationBar pour afficher trois icônes dans sa barre de navigation.

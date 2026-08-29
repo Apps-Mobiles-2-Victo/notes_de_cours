@@ -11,10 +11,10 @@ title: "Fenêtres popup et dialogues"
 La fonction modulable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
 
 
-Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()]**.
+Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()**.
 
 
-Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
+Pour utiliser Popup(), on travaillera avec **une variable d'état** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -56,7 +56,7 @@ fun MainScreen() {
 Voici un exemple.
 
 
-Remarquez que pour donner une couleur de fond au popup, j'ai utilisé un **Card()]**.
+Remarquez que pour donner une couleur de fond au popup, j'ai utilisé un **Card()**.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -197,7 +197,7 @@ AlertDialog(
 Le snackbar est une notification qui apparaît au bas de l'écran pour informer l'usager du résultat d'une opération.
 
 
-Le snackbar est préférable au **toast]** puisqu'il offre plus de possibilités, notamment la possibilité qu'il se referme de lui-même après un laps de temps ou sur un clic de l'usager ou les deux.
+Le snackbar est préférable au **toast** puisqu'il offre plus de possibilités, notamment la possibilité qu'il se referme de lui-même après un laps de temps ou sur un clic de l'usager ou les deux.
 
 
 De plus, il se charge de gérer la file de notifications à afficher.
@@ -374,7 +374,7 @@ Button(
 screen-in-jetpack-compose-dd4b40c6829a 39.4 Toast : notification de courte durée
 
 
-Tout comme le **snackbar]**, un toast est une petite fenêtre popup qui apparaît au bas de l'écran pour informer l'usager du résultat d'une opération.
+Tout comme le **snackbar**, un toast est une petite fenêtre popup qui apparaît au bas de l'écran pour informer l'usager du résultat d'une opération.
 
 
 Le toast se referme de lui-même après un laps de temps.

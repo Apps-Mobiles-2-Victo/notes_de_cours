@@ -176,7 +176,7 @@ Scaffold(
 ```
 
 
-S'il n'est pas nommé, on dira que c'est un **paramètre implicite]** et il s'appellera it.
+S'il n'est pas nommé, on dira que c'est un **paramètre implicite** et il s'appellera it.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -431,7 +431,7 @@ bars
 27.2 topBar
 
 
-Il est possible de définir une barre de titre, située en haut de l'écran, à l'aide du **scaffold]**.
+Il est possible de définir une barre de titre, située en haut de l'écran, à l'aide du **scaffold**.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -453,7 +453,7 @@ fun MainScreen() {
 ```
 
 
-Notez qu'au moment d'écrire ces lignes, CenterAlignedTopAppBar et les autres fonctions pour définir la barre de titre **étaient encore expérimentales]** .
+Notez qu'au moment d'écrire ces lignes, CenterAlignedTopAppBar et les autres fonctions pour définir la barre de titre **étaient encore expérimentales** .
 
 
 !!! warning "Attention : avec Mat" Attention : avec Material Design 2, la barre du haut utilisait TopAppBar. Avec Material Design 3, il faut utiliser CenterAlignedTopAppBar, SmallTopAppBar, MediumTopAppBar ou LargeTopAppBar.

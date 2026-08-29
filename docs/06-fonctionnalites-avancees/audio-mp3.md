@@ -151,7 +151,7 @@ Pour instancier l'ExoPlayer qui sera rattaché à un son, qu'il soit en ligne ou
 On prendra soin de libérer les ressources lorsqu'elles ne sont plus utilisées.
 
 
-Remarquez qu'ici, l'utilisation de remember est tout à fait correcte puisqu'un si on avait utilisé **rememberSaveable]**, l'objet ExoPlayer n'aurait pas pu être conservé lors de la destruction de l'activité étant donné qu'il n'est pas sérialisable.
+Remarquez qu'ici, l'utilisation de remember est tout à fait correcte puisqu'un si on avait utilisé **rememberSaveable**, l'objet ExoPlayer n'aurait pas pu être conservé lors de la destruction de l'activité étant donné qu'il n'est pas sérialisable.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

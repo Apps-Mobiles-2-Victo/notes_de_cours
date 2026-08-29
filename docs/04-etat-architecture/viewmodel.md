@@ -167,7 +167,7 @@ class HomeViewModel : ViewModel() {
 La classe comprendra une propriété pour chacune des informations qu'elle doit conserver.
 
 
-Pour que la modification d'une propriété cause le rafraîchissement de la vue, il faut la déclarer en tant que **variable d'état]**.
+Pour que la modification d'une propriété cause le rafraîchissement de la vue, il faut la déclarer en tant que **variable d'état**.
 
 
 Ici, pas besoin du mot-clé remember puisque la classe ne sera pas réinstanciée à chaque recomposition ni lors de la recréation de l'activité.
@@ -233,7 +233,7 @@ Le ViewModel utilisera une instance de cette classe comme variable d'état.
 ### Dans le cadre de ce cours, un ViewModel qui n'utilise pas le UiState de façon appropriée ne sera pas accepté.
 
 
-Cette classe, qui est en fait une **classe de données]** peut être déclarée dans le même fichier que le ViewModel.
+Cette classe, qui est en fait une **classe de données** peut être déclarée dans le même fichier que le ViewModel.
 
 
 Afin d'améliorer les performances de l'application , les propriétés de la classe UiState doivent être déclarées avec val et non avec var.
@@ -274,7 +274,7 @@ Notez que dans le UiState, les variables peuvent avoir un get() mais pas de set(
 On peut désormais ajouter au ViewModel une propriété, nommée ici _uiState, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
 
 
-Cette propriété est de type MutableStateFlow , c'est-à-dire un **flux observable]** dont la valeur peut être modifiée.
+Cette propriété est de type MutableStateFlow , c'est-à-dire un **flux observable** dont la valeur peut être modifiée.
 
 
 La propriété privée _uiState pourra être modifiée à l'intérieur de la classe HomeViewModel à l'aide de _uiState.update().
@@ -298,7 +298,7 @@ class HomeViewModel : ViewModel() {
 ```
 
 
-Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous créerons un **ViewModel qui interagit avec une base de données]**.
+Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous créerons un **ViewModel qui interagit avec une base de données**.
 
 
 Dans un projet qui n'a pas besoin de flux pour les variables d'état, le ViewModel pourrait faire référence au uiState comme suit :
@@ -762,7 +762,7 @@ L'utilisation de viewModels() ou de viewModel() assure que le ViewModel ne sera 
 ### Application avec base de données
 
 
-Dans le **modèle proposé jusqu'ici pour un ViewModel qui interagit avec la base de données]**, le constructeur a besoin de recevoir l'application en paramètre. Pas de problème, les fonctions viewModels() et  viewModel() se chargeront d'injecter l'objet de type Application dans le constructeur.
+Dans le **modèle proposé jusqu'ici pour un ViewModel qui interagit avec la base de données**, le constructeur a besoin de recevoir l'application en paramètre. Pas de problème, les fonctions viewModels() et  viewModel() se chargeront d'injecter l'objet de type Application dans le constructeur.
 
 
 Mais si le ViewModel avait besoin d'un autre paramètre?

@@ -506,7 +506,7 @@ Box(
 5.5 Image()
 
 
-Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource]**.
+Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource**.
 
 
 Les types d'images supportés sont JPG, PNG, GIF, BMP, WebP et HEIF.
@@ -1298,10 +1298,10 @@ Button(
 La fonction modulable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
 
 
-Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()]**.
+Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()**.
 
 
-Pour utiliser Popup(), on travaillera avec **une variable d'état]** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
+Pour utiliser Popup(), on travaillera avec **une variable d'état** (la variable d'état pourrait aussi faire partie d'un ViewModel) qui détermine si le popup doit être affiché ou non.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1343,7 +1343,7 @@ fun MainScreen() {
 Voici un exemple.
 
 
-Remarquez que pour donner une couleur de fond au popup, j'ai utilisé un **Card()]**.
+Remarquez que pour donner une couleur de fond au popup, j'ai utilisé un **Card()**.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1731,7 +1731,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -1900,7 +1900,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.
@@ -2039,7 +2039,7 @@ Column(modifier = Modifier.fillMaxWidth()) {
 ```
 
 
-Parfois, il s'agira d'ajouter des **espaceurs]** (Spacer) à l'endroit approprié.
+Parfois, il s'agira d'ajouter des **espaceurs** (Spacer) à l'endroit approprié.
 
 
 Ici encore, on centre horizontalement un bouton :

@@ -943,7 +943,7 @@ Vous pouvez placer un point d'arrêt dans votre code à l'endroit désiré en cl
 Pour que l'application puisse s'arrêter sur un point d'arrêt, elle doit avoir été lancée en mode débogage.
 
 
-Une fois que vous avez **configuré un périphérique virtuel]**, démarrez l'application en cliquant sur l'icône Debug .
+Une fois que vous avez **configuré un périphérique virtuel**, démarrez l'application en cliquant sur l'icône Debug .
 
 
 
@@ -1167,8 +1167,6 @@ un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez ent
 
 ### * [« Déboguer votre mise en page avec l'outil d'inspection de la mise en page » - Android Developer](https://developer.android.com/studio/debug/layout-inspector?)
 hl=fr
-26. Le clavier virtuel
-
 
 
 ---

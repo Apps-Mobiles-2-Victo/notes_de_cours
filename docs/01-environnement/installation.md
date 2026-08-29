@@ -110,9 +110,9 @@ Côté programmation, j'ai exploré les langages disponibles pour les différent
 #### Application multiplateforme à l'aide d'un cadre d'application tel que Flutter ou React Native
 
 
-Mon désir était de développer une application native et j'ai choisi **Kotlin]** puisqu'il s'agit du langage de programmation recommandé par Google pour la programmation Android.
+Mon désir était de développer une application native et j'ai choisi **Kotlin** puisqu'il s'agit du langage de programmation recommandé par Google pour la programmation Android.
 
-Mais le choix du langage n'est pas tout. Il faut également regarder quelles technologies utiliser notamment pour générer l'interface graphique. J'ai arrêté mon choix sur **Jetpack Compose]**.
+Mais le choix du langage n'est pas tout. Il faut également regarder quelles technologies utiliser notamment pour générer l'interface graphique. J'ai arrêté mon choix sur **Jetpack Compose**.
 
 
 #### Pour plus d'information

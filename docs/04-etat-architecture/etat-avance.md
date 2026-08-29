@@ -11,7 +11,7 @@ title: "Variables d'état avancées et State Hoisting"
 Lorsqu'une fonction modulable déclare une variable d'état et qu'elle appelle une autre fonction (modulable ou non) qui doit modifier cette variable d'état, il faut utiliser un mécanisme qui s'appelle hissage d'état (en anglais : state hoisting) pour y parvenir.
 
 
-Il s'agit de passer en paramètre une **expression lambda]** qui permet de modifier la variable d'état.
+Il s'agit de passer en paramètre une **expression lambda** qui permet de modifier la variable d'état.
 
 
 Cette technique est nécessaire puisqu'en Kotlin, les paramètres sont immuables. Il n'est donc pas possible de passer une variable d'état en paramètre à une fonction qui doit modifier cet état.
@@ -23,7 +23,7 @@ Pour éviter d'avoir à hisser l'état trop de fois, le propriétaire d'état (l
 Le nom du paramètre de l'expression lamba sera habituellement du genre onXXXChange où XXX représente le nom de la variable d'état.
 
 
-Dans le traitement de l'expression lambda, on assignera le mot-clé **it]** à la variable d'état.
+Dans le traitement de l'expression lambda, on assignera le mot-clé **it** à la variable d'état.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -49,7 +49,7 @@ Dans la déclaration de la fonction, il faut préciser les types de l'expression
 l'expression lambda reçoit. Il s'agit du type de la variable d'état.
 
 
-#### À la suite de la flèche, on précisera le type de la valeur de retour de l'expression lambda, soit **Unit]**.
+#### À la suite de la flèche, on précisera le type de la valeur de retour de l'expression lambda, soit **Unit**.
 
 
 À l'intérieur de la fonction, on appellera l'expression lambda au moment approprié, en lui passant en paramètre la valeur qui doit être assignée à la variable d'état.

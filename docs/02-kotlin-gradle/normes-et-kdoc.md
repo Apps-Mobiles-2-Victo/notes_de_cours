@@ -360,7 +360,7 @@ data class HomeUiState(
 ### Génération de la documentation
 
 
-Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML **à l'aide de Dokka]**.
+Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML **à l'aide de Dokka**.
 
 
 #### Pour plus d'information
@@ -431,7 +431,7 @@ fun colorToString(couleur: Color) : String {
 ### 36.3 Générer la documentation à l'aide de Dokka
 
 
-Dokka est un outil qui permet de générer la documentation notamment à partir de **commentaires KDoc]**.
+Dokka est un outil qui permet de générer la documentation notamment à partir de **commentaires KDoc**.
 
 
 ### Variable d'environnement JAVA_HOME

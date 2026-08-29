@@ -136,10 +136,10 @@ Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /
 Par défaut, la table portera le même nom que la classe et chaque colonne de la table portera le même nom que le champ de la classe.
 
 
-Puisque la classe d'entité sert à définir des données, on lui ajoutera le mot-clé **data]**.
+Puisque la classe d'entité sert à définir des données, on lui ajoutera le mot-clé **data**.
 
 
-Les normes dictent que le nom de la classe doit être au singulier et utilise **la casse Pascal]**.
+Les normes dictent que le nom de la classe doit être au singulier et utilise **la casse Pascal**.
 
 
 Mais attention : le nom de la table doit être au pluriel et entièrement en lettres minuscules.
@@ -200,7 +200,7 @@ Plusieurs cadres d'application offrent une couche d'abstraction entre l'applicat
 Avec Jetpack Compose et Room, la couche d'abstraction utilise une interface DAO (Data Access Object ou objet d'accès aux données).
 
 
-Grâce à la **classe d'entité]**, Room est capable de générer lui-même les requêtes INSERT, UPDATE et DELETE pour gérer les données. Il suffit d'utiliser l'annotation appropriée (@Insert, @Update ou @Delete) et de passer une instance du modèle en paramètre à la fonction.
+Grâce à la **classe d'entité**, Room est capable de générer lui-même les requêtes INSERT, UPDATE et DELETE pour gérer les données. Il suffit d'utiliser l'annotation appropriée (@Insert, @Update ou @Delete) et de passer une instance du modèle en paramètre à la fonction.
 
 
 Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé suspend.
@@ -261,7 +261,7 @@ Une autre étape est nécessaire pour gérer les données locales à partir de l
 Dans une application qui utilise un DAO, l'application passera toujours par le dépôt de données pour accéder aux données. Le dépôt de données est une sorte d'isolant entre la source de données et le reste de l'application. Il est le seul à savoir d'où proviennent les données qu'il fournit à l'application, par exemple si elles proviennent directement de la base de données ou de la mémoire cache.
 
 
-C'est le dépôt qui fera appel aux méthodes définies dans l'interface **du DAO]**.
+C'est le dépôt qui fera appel aux méthodes définies dans l'interface **du DAO**.
 
 
 ```kotlin title="Fichier data/CategorieRepository.kt"
@@ -284,7 +284,7 @@ class CategorieRepository(
 53.5 La classe qui hérite de RoomDatabase
 
 
-Tous les  **DAO]** seront réunis dans une classe qui représente la base de données en tant que telle.
+Tous les  **DAO** seront réunis dans une classe qui représente la base de données en tant que telle.
 
 
 Le code utilise le patron de conception du singleton, c'est-à-dire qu'il y aura un et un seul objet instancié.
@@ -406,7 +406,7 @@ automatiquement si la BD change.
 ```
 
 
-!!! warning "Note : il est généra" Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory]**.
+!!! warning "Note : il est généra" Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory**.
 
 
 Comme toujours, chaque ViewModel ne doit exister qu'en un seul exemplaire.
@@ -442,7 +442,7 @@ l'application dans le constructeur de CategorieViewModel.
 ```
 
 
-Notez qu'une approche différente pourra être utilisée **pour les applications avec plusieurs écrans]**.
+Notez qu'une approche différente pourra être utilisée **pour les applications avec plusieurs écrans**.
 
 
 Les composables qui ont accès au ViewModel peuvent désormais interagir avec la base de données.

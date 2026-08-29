@@ -49,7 +49,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -218,7 +218,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.

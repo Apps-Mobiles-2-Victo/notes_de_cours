@@ -17,7 +17,7 @@ Selon la documentation Android :
 ### d'application d'une fonction modulable.
 
 
-Par exemple, on pourrait utiliser l'effet secondaire **LaunchedEffect()]** qui permet d'appeler une fonction asynchrone lorsqu'une condition survient, par exemple lors du chargement initial d'un composable ou encore lorsqu'une variable d'état change de valeur.
+Par exemple, on pourrait utiliser l'effet secondaire **LaunchedEffect()** qui permet d'appeler une fonction asynchrone lorsqu'une condition survient, par exemple lors du chargement initial d'un composable ou encore lorsqu'une variable d'état change de valeur.
 
 
 Autre exemple : l'effet secondaire **DisposableEffect** permet d'effectuer des tâches de nettoyage à certaines étapes du cycle de vie.

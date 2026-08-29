@@ -365,7 +365,7 @@ votre pouce est rapide pour cliquer sur un bouton.
 #### c. Elle doit utiliser un ViewModel comme conteneur d'état. Son UiState devra retenir notamment une
 
 
-#### **liste]** d'heures, vide au départ (je vous conseille
+#### **liste** d'heures, vide au départ (je vous conseille
 d'utiliser listOf()).
 
 

@@ -49,7 +49,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable]**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -218,7 +218,7 @@ TextField(
 ### TextField ou OulinedTextField avec ViewModel
 
 
-Dans une application qui utilise un **ViewModel comme conteneur d'état]**, la syntaxe d'une case de saisie sera légèrement différente.
+Dans une application qui utilise un **ViewModel comme conteneur d'état**, la syntaxe d'une case de saisie sera légèrement différente.
 
 
 Notez que j'ai utilisé ici un ViewModel de type HomeViewModel mais la classe du ViewModel pourrait porter un autre nom dans votre application.
@@ -369,7 +369,7 @@ OutlinedTextField(
 Je vous propose une technique pour internationaliser les message d'erreur de validation dans le ViewModel.
 
 
-On sait que pour **retrouver une chaîne internationalisée]**, il est possible d'utiliser stringResource.
+On sait que pour **retrouver une chaîne internationalisée**, il est possible d'utiliser stringResource.
 
 
 ```kotlin title="Composable (Kotlin)"
@@ -522,22 +522,22 @@ Les données seront retrouvées dans la base de données à l'aide du ViewModel.
 Vous devrez :
 
 
-#### **Dans le DAO]** :
+#### **Dans le DAO** :
 ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
 
 
 Remarquez que cette fonction n'a pas besoin d'être suspendue car le mécanisme de flux gère l'exécution asynchrone.
 
 
-#### **Dans le dépôt de données]** : définir une fonction qui
+#### **Dans le dépôt de données** : définir une fonction qui
 fait appel à la fonction du Dao pour retrouver les données.
 
 
-#### **Dans le ViewModel]** :
+#### **Dans le ViewModel** :
 définir une fonction qui fait appel au dépôt de données.
 
 
-Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect]**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
+Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
 
 
 Cette fois, la fonction doit être suspendue car elle utilise la fonction suspendue firstOrNull().
@@ -558,7 +558,7 @@ base de données comme suit :
 @Composable
 fun FormulaireCategorie( categorieId: Int , ...) {
     // initialiser les variables d'état du ViewModel dès que categorieId change
-    **LaunchedEffect]**(categorieId) {
+    **LaunchedEffect**(categorieId) {
         val categorie = categorieViewModel.retrouverCategorie(categorieId)
         ...
     } 

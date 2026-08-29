@@ -85,7 +85,7 @@ Heureusement, un petit raccourci permet de nous sauver du travail :
 #### Dans le code, repérez une chaîne codée en dur.
 
 
-#### Sélectionnez la chaîne. Vous pouvez sélectionner les guillemets ou pas. Si la chaîne est un **modèle de chaîne]** et donc qu'elle
+#### Sélectionnez la chaîne. Vous pouvez sélectionner les guillemets ou pas. Si la chaîne est un **modèle de chaîne** et donc qu'elle
 contient une variable, Android saura gérer.
 
 
@@ -102,7 +102,7 @@ contient une variable, Android saura gérer.
 
 
 
-#### Donnez un nom à la ressource. Les normes de programmation demandent d'utiliser la **casse serpent]** pour nommer les ressources.
+#### Donnez un nom à la ressource. Les normes de programmation demandent d'utiliser la **casse serpent** pour nommer les ressources.
 
 
 #### La ressource doit être ajoutée au fichier strings.xml pour chacune des localisations supportées par l'application.

@@ -80,7 +80,7 @@ Si vous ajoutez un LazyColumn et que vous obtenez l'erreur « No value passed fo
 Pour corriger le problème, vous devez ajouter cette instruction import.
 
 
-Il est possible qu'Android Studio ne l'ait pas fait même si vous avez configuré **l'ajout automatique des import]**.
+Il est possible qu'Android Studio ne l'ait pas fait même si vous avez configuré **l'ajout automatique des import**.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

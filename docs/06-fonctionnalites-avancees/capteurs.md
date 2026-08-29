@@ -137,7 +137,7 @@ Si l'application utilise un capteur qui fournit des données sensibles, par exem
 Voici les grandes lignes qui vous permettront de réagir aux changements de valeur d'un capteur.
 
 
-N'oubliez pas de **déclarer l'utilisation des capteurs]**.
+N'oubliez pas de **déclarer l'utilisation des capteurs**.
 
 
 Dans cette fiche :
