@@ -8,7 +8,7 @@ title: "Architecture avec ViewModel"
 ### 44.1 Ajouter un fichier directement dans le dossier ui
 
 
-Dans un projet Jetpack Compose de base, Android Studio montre les dossiers ui et theme fuisionnés puisqu'il n'y a rien d'autre que le dossier theme sous ui .
+Dans un projet Jetpack Compose de base, Android Studio montre les dossiers ui et theme fusionnés puisqu'il n'y a rien d'autre que le dossier theme sous ui .
 
 
 
@@ -50,7 +50,8 @@ Le fichier sera correctement créé sous le dossier ui .
 ### 44.2 class vs data class
 
 
-Avec Kotlin, il est possible d'utliser le mot-clé data pour déclarer une classe dont le but premier est de stocker des données.
+
+Avec Kotlin, il est possible d’utiliser le mot-clé *data* pour déclarer une classe dont le but premier est de stocker des données.
 
 
 ```kotlin title="Kotlin"
@@ -61,7 +62,7 @@ data class MaClasse(
 ```
 
 
-L'avantage, c'est que certaines méthodes sont automatiquement créées pour vous aider à manipuler ces données, par exemple hashcode(), equals(), copy() et toString().
+L'avantage, c'est que certaines méthodes sont automatiquement créées pour vous aider à manipuler ces données, par exemple *hashcode(), equals(), copy() et toString()*.
 
 
 Pour instancier un objet de cette classe :
@@ -79,21 +80,18 @@ val monObjet = MaClasse(1, "Une donnée")
 
 
 ### * [« Kotlin data class — Behind the mask » - Medium](https://proandroiddev.com/kotlin-data-class-behind-the-mask-51a05ad92ae9)
-44.3 Le ViewModel comme conteneur d'état
+
+## 44.3 Le ViewModel comme conteneur d'état
 
 
 Selon la documentation Android :
 
 
-### La classe ViewModel est une logique métier ou un conteneur d'état au niveau de l'écran. Elle expose l'état au niveau de l'UI et encapsule la logique métier associée. Son principal avantage est
-qu'elle assure la mise en cache et la persistance de l'état en cas de modification de la configuration.
+>La classe ViewModel est une logique métier ou un conteneur d'état au niveau de l'écran. Elle expose l'état au niveau de l'UI et encapsule la logique métier associée. Son principal avantage est qu'elle assure la mise en cache et la persistance de l'état en cas de modification de la configuration.
 
-
-On dira que le ViewModel est la source unique de vérité ou source unique de référence ou, en anglais, Single Source Of Truth (SSOT).
-
+On dira que le ViewModel est la source unique de vérité ou source unique de référence ou, en anglais, *Single Source Of Truth* (SSOT).
 
 L'utilisation d'un ViewModel dans une application Android facilitera notamment la gestion de données en provenance d'une base de données.
-
 
 Mais avant de se lancer dans la gestion d'une base de données, regardons comment utiliser le ViewModel dans une application sans BD.
 
@@ -137,13 +135,13 @@ Dans cette fiche :
 Lorsqu'on travaille avec un ViewModel, on n'aura plus de variables d'état déclarées directement dans les composables.
 
 
-Chacun des ViewModels de l'application sera placé dans un dossier nommé  ui  et portera un nom qui se termine par ViewModel.
+Chacun des ViewModels de l'application sera placé dans un dossier nommé *ui*  et portera un nom qui se termine par ViewModel.
 
 
-Le ui dossier est au même niveau que le fichier  MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/ui/HomeViewModel.kt .
+Le ui dossier est au même niveau que le fichier *MainActiviy.kt* , par exemple *app/src/main/java/com/monnom/monprojet/ui/HomeViewModel.kt* .
 
 
-Le ViewModel est simplement une classe qui hérite de la classe ViewModel.
+Un ViewModel est simplement une classe qui hérite de la classe *ViewModel*.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -166,33 +164,31 @@ La classe comprendra une propriété pour chacune des informations qu'elle doit 
 
 Pour que la modification d'une propriété cause le rafraîchissement de la vue, il faut la déclarer en tant que **variable d'état**.
 
-
-Ici, pas besoin du mot-clé remember puisque la classe ne sera pas réinstanciée à chaque recomposition ni lors de la recréation de l'activité.
-
+Ici, pas besoin du mot-clé *remember* puisque la classe ne sera pas réinstanciée à chaque recomposition ni lors de la recréation de l'activité.
 
 Notez que lorsqu'il n'y a aucun spécificateur d'accès, une propriété est considérée publique.
 
-
-Le code ci-dessous est barré puisque je vous présente une technique plus intéressante plus bas.
+> Le code ci-dessous est barré puisque je vous présente une technique plus intéressante plus bas.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
-class HomeViewModel : ViewModel() {
-    val points: MutableState<Int> = mutableStateOf(0)
-    val partieTerminee: MutableState<Boolean> = mutableStateOf(false)
-    ...
-}
+
+~~class HomeViewModel : ViewModel() {
+~~    val points: MutableState<Int> = mutableStateOf(0)
+~~    val partieTerminee: MutableState<Boolean> = mutableStateOf(false)
+~~    ...
+~~}
+
 ```
 
 
 ### Propriétés de support
 
 
-Il est conseillé de créer des propriétés privées. Chaque propriété utilisera une propriété de support (backing property) pour fournir une valeur au monde extérieur.
+Il est conseillé de créer des propriétés privées. Chaque propriété utilisera une propriété de support (*backing property*) pour fournir une valeur au monde extérieur.
 
 
-### Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même
-nom mais sans la barre en bas.
+### Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même nom mais sans la barre en bas.
 
 
 Ici encore, le code est barré puisqu'on préférera utiliser la technique présentée plus bas.
