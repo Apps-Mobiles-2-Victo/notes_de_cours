@@ -11,10 +11,7 @@ title: "Effets secondaires (Side Effects)"
 Selon la documentation Android :
 
 
-### Un effet secondaire est un changement d'état de l'application qui se produit en dehors du champ
-
-
-### d'application d'une fonction modulable.
+### Un effet secondaire est un changement d'état de l'application qui se produit en dehors du champ d'application d'une fonction modulable.
 
 
 Par exemple, on pourrait utiliser l'effet secondaire **LaunchedEffect()** qui permet d'appeler une fonction asynchrone lorsqu'une condition survient, par exemple lors du chargement initial d'un composable ou encore lorsqu'une variable d'état change de valeur.

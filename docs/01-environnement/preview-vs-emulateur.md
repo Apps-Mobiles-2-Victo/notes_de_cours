@@ -54,10 +54,7 @@ fun DefaultPreview() {
 
 
 
-#### Notez que si vous n'avez pas encore compilé votre application lorsque vous cliquez sur Split , vous verrez le message
-
-
-#### « A successful build is needed before the preview can be displayed ». Cliquez sur le lien pour compiler l'application.
+#### Notez que si vous n'avez pas encore compilé votre application lorsque vous cliquez sur Split , vous verrez le message « A successful build is needed before the preview can be displayed ». Cliquez sur le lien pour compiler l'application.
 
 
 

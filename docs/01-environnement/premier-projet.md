@@ -101,10 +101,7 @@ Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJ
 
 
 
-#### Quand le projet est prêt, vous pouvez obtenir un aperçu de l'application. Cliquez sur Split dans le coin supérieur
-
-
-#### droit. Un message vous indique que vous devez d'abord compiler l'application. Cliquez sur le lien Build & Refresh .
+#### Quand le projet est prêt, vous pouvez obtenir un aperçu de l'application. Cliquez sur Split dans le coin supérieur droit. Un message vous indique que vous devez d'abord compiler l'application. Cliquez sur le lien Build & Refresh .
 
 
 
@@ -128,10 +125,7 @@ Je vous suggère d'utiliser l'API 34 puisqu'il est le premier à supporter OpenJ
 de triangle vers la droite ou de flèche circulaire). Si aucun périphérique virtuel n'est configuré, Android Studio en créera un.
 
 
-#### À chaque fois que vous cliquez sur l'icône  Run dans la barre d'outils, vous voyez l'application telle qu'elle sera sur le
-
-
-#### téléphone. Le visuel est beaucoup plus intéressant qu'avec la simple prévisualisation.
+#### À chaque fois que vous cliquez sur l'icône  Run dans la barre d'outils, vous voyez l'application telle qu'elle sera sur le téléphone. Le visuel est beaucoup plus intéressant qu'avec la simple prévisualisation.
 
 
 

@@ -85,10 +85,7 @@ val monObjet = MaClasse(1, "Une donnée")
 Selon la documentation Android :
 
 
-### La classe ViewModel est une logique métier ou un conteneur d'état au niveau de l'écran. Elle
-
-
-### expose l'état au niveau de l'UI et encapsule la logique métier associée. Son principal avantage est
+### La classe ViewModel est une logique métier ou un conteneur d'état au niveau de l'écran. Elle expose l'état au niveau de l'UI et encapsule la logique métier associée. Son principal avantage est
 qu'elle assure la mise en cache et la persistance de l'état en cas de modification de la configuration.
 
 

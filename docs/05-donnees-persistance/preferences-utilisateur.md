@@ -78,10 +78,7 @@ Le chemin complet de la classe sera donc au format : app/src/main/java/com/mondo
 Pour créer un dossier dans Android Studio :
 
 
-#### Assurez-vous que l'affichage soit en mode Projet  (cliquez sur la liste déroulante dans le haut de la zone qui affiche
-
-
-#### les fichiers du projet puis sélectionnez  Project ).
+#### Assurez-vous que l'affichage soit en mode Projet  (cliquez sur la liste déroulante dans le haut de la zone qui affiche les fichiers du projet puis sélectionnez  Project ).
 
 
 #### Effectuez un clic droit sur le dossier parent /  New  /  Package .
@@ -461,10 +458,7 @@ fun traiter(
 Selon la documentation officielle de Android Developers :
 
 
-### Si vous utilisez actuellement SharedPreferences pour stocker des données, nous vous
-
-
-### recommandons d'effectuer une migration vers DataStore.
+### Si vous utilisez actuellement SharedPreferences pour stocker des données, nous vous recommandons d'effectuer une migration vers DataStore.
 
 
 > **Source** : 

@@ -51,10 +51,7 @@ Pour afficher le nombre de recompositions de chaque fonction modulable :
 #### en rouge dans l'aperçu : les zones recomposées
 
 
-#### à droite du nom de chaque module composable : le nombre de recompositon effectives
-
-
-#### en gris : le nombre de recompositions ignorées
+#### à droite du nom de chaque module composable : le nombre de recompositona effectives en gris : le nombre de recompositions ignorées
 
 
 

@@ -14,17 +14,11 @@ Gradle est un outil de construction (build script) qui permet de compiler une ap
 Selon la documentation Android :
 
 
-### Le système de compilation Android compile des ressources d'application et du code source, puis
-
-
-### les empaquette dans des APK ou des Android App Bundles (AAB) que vous pouvez tester,
+### Le système de compilation Android compile des ressources d'application et du code source, puis les empaquette dans des APK ou des Android App Bundles (AAB) que vous pouvez tester,
 déployer, signer et distribuer.
 
 
-### Android Studio utilise Gradle, une boîte à outils de compilation avancée, pour automatiser et gérer
-
-
-### le processus de compilation, tout en vous permettant de définir des configurations de compilation
+### Android Studio utilise Gradle, une boîte à outils de compilation avancée, pour automatiser et gérer le processus de compilation, tout en vous permettant de définir des configurations de compilation
 personnalisées flexibles.
 
 

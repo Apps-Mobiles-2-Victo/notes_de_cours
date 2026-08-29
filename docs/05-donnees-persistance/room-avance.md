@@ -82,10 +82,7 @@ le haut / Settings / Apps )
 En preuve de ce que j'avance, la documentation de la classe Callback spécifie :
 
 
-### onCreate: Called when the database is created for the first time. This is called after all the tables
-
-
-### are created.
+### onCreate: Called when the database is created for the first time. This is called after all the tables are created.
 
 
 

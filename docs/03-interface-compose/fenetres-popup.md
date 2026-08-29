@@ -383,10 +383,7 @@ Le toast se referme de lui-même après un laps de temps.
 Selon la documentation officielle d'Android : 1
 
 
-### Si votre application est exécutée au premier plan, envisagez d'utiliser un snackbar au lieu d'un
-
-
-### toast.
+### Si votre application est exécutée au premier plan, envisagez d'utiliser un snackbar au lieu d'un toast.
 
 
 Si vous êtes en train de développer une nouvelle application, suivez plutôt les exemples présentés sur cette fiche : « **snackbar** »

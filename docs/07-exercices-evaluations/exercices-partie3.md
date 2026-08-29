@@ -78,10 +78,7 @@ oublié de faire le nécessaire pour que la base de données soit recréée.
 ## 3. Prenez le temps de soigner la structure et l'apparence de votre application.
 
 
-#### a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel
-
-
-#### à ce composable dans sa boucle.
+#### a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel à ce composable dans sa boucle.
 
 
 #### b. Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un
@@ -223,16 +220,10 @@ Posez-lui des questions jusqu'à ce que vous saisissiez bien le rôle de chaque 
 ## 3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.
 
 
-#### a. Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré
+#### a. Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré puisse être enregistré dans la base de données.
 
 
-#### puisse être enregistré dans la base de données.
-
-
-#### b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible
-
-
-#### d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord
+#### b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord
 dans les cases de saisie.
 
 
@@ -242,17 +233,11 @@ dans les cases de saisie.
 #### d. Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.
 
 
-#### i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les
-
-
-#### affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans
+#### i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans
 la BD.
 
 
-#### ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le
-
-
-#### message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
+#### ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
 par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si l'usager clique sur Oui.
 
 
@@ -262,10 +247,7 @@ par la description du signet sur lequel l'usager a cliqué. La suppression n'aur
 #### f. Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.
 
 
-#### g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification
-
-
-#### d'un signet.
+#### g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification d'un signet.
 
 
 ## 71. Pour le prochain cours (deux cours)
@@ -305,10 +287,7 @@ les questions théoriques. Répondez-y en équipe de deux.
 Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 
 
-#### a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un
-
-
-#### testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les
+#### a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les
 points de terminaison fact, facts et breeds.
 
 
@@ -322,26 +301,17 @@ points de terminaison fact, facts et breeds.
 façon aléatoire.
 
 
-#### d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par
-
-
-#### exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point
+#### d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point
 d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not Found » ne sont pas acceptables.
 
 
 #### e. Modifiez l'icône d'application de votre application sur les chats.
 
 
-#### f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos
+#### f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication en sideload).
 
 
-#### collègues pour qu'il l'installe sur son téléphone (publication en sideload).
-
-
-#### g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque
-
-
-#### fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver
+#### g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver
 un API qui fournit de telles photos.
 
 

@@ -232,10 +232,7 @@ remember-mutablestateof-derivedstateof-and-remembersaveable-explained-270dbaa61b
 Selon la documentation officielle de Android :
 
 
-### Attention : Si vous utilisez des objets modifiables tels que ArrayList<T> ou mutableListOf() en tant
-
-
-### qu'état dans Compose, les utilisateurs verront des données incorrectes ou obsolètes dans votre
+### Attention : Si vous utilisez des objets modifiables tels que ArrayList<T> ou mutableListOf() en tant qu'état dans Compose, les utilisateurs verront des données incorrectes ou obsolètes dans votre
 application.
 
 

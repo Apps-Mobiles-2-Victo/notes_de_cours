@@ -54,10 +54,7 @@ s'il y a déjà un fichier nommé ic_launcher.webp , il faut le détruire avant 
 sous-dossier, tous les fichiers qui correspondent à ce critère (ex :  ic_launcher_round.xml , ic_launcher_round.webp ).
 
 
-#### Si vous n'avez plus de fichiers dont le nom se termine par _round, vous devez modifier le fichier
-
-
-#### app/src/main/AndroidManifest.xml . Vous devez modifier la ligne android:roundIcon.
+#### Si vous n'avez plus de fichiers dont le nom se termine par _round, vous devez modifier le fichier app/src/main/AndroidManifest.xml . Vous devez modifier la ligne android:roundIcon.
 
 
 #### Première option : vous supprimez cette ligne.
@@ -204,16 +201,10 @@ Suggestion : placez-le dans un dossier différent de votre application car il po
 #### Section Key  :
 
 
-#### Alias : un simple alias pour faire référence à cette clé. Suggestion : utiliser le nom de
+#### Alias : un simple alias pour faire référence à cette clé. Suggestion : utiliser le nom de l'application suivi de release pour indiquer que c'est la clé pour la version de production.
 
 
-#### l'application suivi de release pour indiquer que c'est la clé pour la version de production.
-
-
-#### Password : le mot de passe pour la clé de cette application. Il faut utiliser le même mot de
-
-
-#### passe que pour le gestionnaire de clés
+#### Password : le mot de passe pour la clé de cette application. Il faut utiliser le même mot de passe que pour le gestionnaire de clés
 .
 
 

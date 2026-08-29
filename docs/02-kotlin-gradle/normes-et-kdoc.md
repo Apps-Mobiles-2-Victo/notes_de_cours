@@ -206,20 +206,14 @@ Saviez-vous qu'il est possible de s'auto-plagier?
 Selon l'UQAM , l'autoplagiat :
 
 
-### C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été
-
-
-### soumis à un enseignant pour évaluation. Autrement dit, c'est refiler le même travail dans deux cours
+### C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été soumis à un enseignant pour évaluation. Autrement dit, c'est refiler le même travail dans deux cours
 différents.
 
 
 La PIEA du Cégep de Victoriaville est claire à ce sujet :
 
 
-### Est considéré comme du plagiat, de la tricherie ou de la fraude (liste non exhaustive), peu importe
-
-
-### le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une
+### Est considéré comme du plagiat, de la tricherie ou de la fraude (liste non exhaustive), peu importe le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une
 partie d’évaluation déjà réalisée dans un cours, et ce, sans avoir obtenu au préalable l’autorisation explicite de l’enseignante ou de l’enseignant du ou des cours concernés ;
 
 

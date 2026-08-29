@@ -49,43 +49,25 @@ souciez pas de la couleur de fond de la barre de titre pour l'instant.
 #### L'espacement par défaut n'est pas acceptable ici.
 
 
-#### iv. Un clic modifiera immédiatement la couleur. À vous de déterminer comment la couleur sera
-
-
-#### choisie (au hasard, prochaine couleur disponible, etc.).
+#### iv. Un clic modifiera immédiatement la couleur. À vous de déterminer comment la couleur sera choisie (au hasard, prochaine couleur disponible, etc.).
 
 
 #### e. Vous devez faire un minimum de découpage dans votre code.
 
 
-#### i. Assurez-vous que le contenu de l'application (paramètre content du scaffold ou partie entre
+#### i. Assurez-vous que le contenu de l'application (paramètre content du scaffold ou partie entre accolades) soit dans sa propre fonction.
 
 
-#### accolades) soit dans sa propre fonction.
+#### ii. De même, le code de chaque gestionnaire d'événement, par exemple la réaction à un clic, sera dans une fonction.
 
 
-#### ii. De même, le code de chaque gestionnaire d'événement, par exemple la réaction à un clic, sera
+#### iii. Notez qu'à moins d'avis contraire, ces deux exigences valent pour toutes vos applications à venir et ce, même lorsque ce n'est pas mentionné.
 
 
-#### dans une fonction.
+#### f. Lorsque la nouvelle couleur est connue, une fenêtre popup (Popup() ou Snackbar()) affiche de l'information sur cette couleur.
 
 
-#### iii. Notez qu'à moins d'avis contraire, ces deux exigences valent pour toutes vos applications à
-
-
-#### venir et ce, même lorsque ce n'est pas mentionné.
-
-
-#### f. Lorsque la nouvelle couleur est connue, une fenêtre popup (Popup() ou Snackbar()) affiche de
-
-
-#### l'information sur cette couleur.
-
-
-#### g. Retravaillez maintenant votre application pour que la couleur de fond apparaisse également sous la barre
-
-
-#### de titre.
+#### g. Retravaillez maintenant votre application pour que la couleur de fond apparaisse également sous la barre de titre.
 
 
 #### h. Assurez-vous de documenter correctement vos fonctions (modulables ou non) avec KDoc.
@@ -278,10 +260,7 @@ Puisqu'il s'agit d'un examen formatif, il n'y a aucun point attribué mais une g
 ## 1. Petite application
 
 
-#### a. Vous devez créer une application Android avec Jetpack Compose qui permet d'afficher des bananes à
-
-
-#### l'écran. Nommez votre projet au format NomPrenom-FormatifFormel.
+#### a. Vous devez créer une application Android avec Jetpack Compose qui permet d'afficher des bananes à l'écran. Nommez votre projet au format NomPrenom-FormatifFormel.
 
 
 #### b. L'image à afficher est disponible ici : Android-BananePourFormatifFormel-fjdksf54f.svg.
@@ -293,33 +272,21 @@ Puisqu'il s'agit d'un examen formatif, il n'y a aucun point attribué mais une g
 #### d. Au départ, il n'y aura rien à l'écran sauf la barre de titre.
 
 
-#### e. Il y aura également dans la barre de titre une icône en forme de + qui permet d'augmenter le décompte
+#### e. Il y aura également dans la barre de titre une icône en forme de + qui permet d'augmenter le décompte des bananes à afficher. L'application affichera les bananes l'une sous l'autre, centrées en largeur.
 
 
-#### des bananes à afficher. L'application affichera les bananes l'une sous l'autre, centrées en largeur.
-
-
-#### f. N'oubliez pas qu'afin de faciliter la lecture du code, le contenu du Scaffold devra être placé dans sa propre
-
-
-#### fonction composable. De même, les gestionnaires d'événement seront eux aussi dans leur propre
+#### f. N'oubliez pas qu'afin de faciliter la lecture du code, le contenu du Scaffold devra être placé dans sa propre fonction composable. De même, les gestionnaires d'événement seront eux aussi dans leur propre
 fonction.
 
 
-#### g. À chaque fois qu'une banane est ajoutée, elle apparaît à l'écran et un message de confirmation apparaît
-
-
-#### dans un Snackbar avec le texte « La banane no X a été ajoutée », où X représente le nombre de bananes
+#### g. À chaque fois qu'une banane est ajoutée, elle apparaît à l'écran et un message de confirmation apparaît dans un Snackbar avec le texte « La banane no X a été ajoutée », où X représente le nombre de bananes
 affichées. Il doit être possible de faire disparaître ce message à l'aide d'un clic.
 
 
 #### h. L'écran doit pouvoir défiler verticalement mais la barre de titre, elle, ne défilera pas.
 
 
-#### i. Assurez-vous que toutes vos fonctions soient bien documentées puis générez la documentation à l'aide
-
-
-#### de Dokka.
+#### i. Assurez-vous que toutes vos fonctions soient bien documentées puis générez la documentation à l'aide de Dokka.
 
 
 ## 2. Questions de compréhension. Inscrivez les réponses dans un fichier texte nommé au format NomPrenom-
@@ -328,10 +295,7 @@ affichées. Il doit être possible de faire disparaître ce message à l'aide d'
 #### comprehension.txt .
 
 
-#### a. Quand on désire travailler avec le Preferences DataStore dans une fonction non composable, expliquez
-
-
-#### dans vos propres mots pourquoi nous obligés de passer les objets preferencesUtilisateur et scope en
+#### a. Quand on désire travailler avec le Preferences DataStore dans une fonction non composable, expliquez dans vos propres mots pourquoi nous obligés de passer les objets preferencesUtilisateur et scope en
 paramètre à la fonction non composable? Soyez précis dans votre réponse.
 
 
@@ -369,44 +333,26 @@ votre pouce est rapide pour cliquer sur un bouton.
 d'utiliser listOf()).
 
 
-#### d. À chaque clic, l'application retient l'heure à laquelle le clic a eu lieu. La date et l'heure courantes peuvent
-
-
-#### être obtenues facilement à l'aide de LocalDateTime.now().
+#### d. À chaque clic, l'application retient l'heure à laquelle le clic a eu lieu. La date et l'heure courantes peuvent être obtenues facilement à l'aide de LocalDateTime.now().
 
 
 Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans _uiState.update et mettre le code dans it.copy. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
 
 
-#### e. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne
+#### e. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne doit pas bouger. Vous devez soigner le format d'affichage des heures.
 
 
-#### doit pas bouger. Vous devez soigner le format d'affichage des heures.
-
-
-#### f. Le but est de faire deux clics ultra-rapprochés le plus rapidement possible. Je vous laisse le soin d'établir
-
-
-#### le délai à atteindre pour dire que les deux clics ont été assez rapprochés. Je vous laisse le soin de trouver
+#### f. Le but est de faire deux clics ultra-rapprochés le plus rapidement possible. Je vous laisse le soin d'établir le délai à atteindre pour dire que les deux clics ont été assez rapprochés. Je vous laisse le soin de trouver
 la technique pour soustraire deux dates.
 
 
-#### g. Une fois ce délai atteint, il n'est plus possible de cliquer pour poursuivre. Le jeu se termine et l'application
+#### g. Une fois ce délai atteint, il n'est plus possible de cliquer pour poursuivre. Le jeu se termine et l'application affiche un message à cet effet.
 
 
-#### affiche un message à cet effet.
+#### h. OPTIONNEL : Modifiez votre application pour que le délai à atteindre soit saisi à l'écran. Rappel : toutes les variables d’état doivent être gérées par un ViewModel associé à un UiState.
 
 
-#### h. OPTIONNEL : Modifiez votre application pour que le délai à atteindre soit saisi à l'écran. Rappel : toutes les
-
-
-#### variables d’état doivent être gérées par un ViewModel associé à un UiState.
-
-
-#### i. DÉFI SUPPLÉMENTAIRE : organisez votre interface pour que lorsque le nombre de dates est plus long que
-
-
-#### l'espace disponible à l'écran, le défilement soit fait automatiquement de façon à voir la dernière date
+#### i. DÉFI SUPPLÉMENTAIRE : organisez votre interface pour que lorsque le nombre de dates est plus long que l'espace disponible à l'écran, le défilement soit fait automatiquement de façon à voir la dernière date
 entrée.
 
 

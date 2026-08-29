@@ -29,20 +29,11 @@ Il s'agit du langage de programmation recommandé par Google pour la programmati
 En effet, selon Wikipédia :
 
 
-### Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui
-
-
-### permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en
-
-
-### natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs
+### Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs
 chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).
 
 
-### Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de
-
-
-### programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors
+### Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors
 de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.
 
 

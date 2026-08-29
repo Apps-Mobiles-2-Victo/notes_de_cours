@@ -496,10 +496,7 @@ Avant 2025, la documentation officielle d'Android énonçait clairement qu'il fa
 Le texte a depuis été mis à jour mais cette affirmation demeure pertinente :
 
 
-### La transmission de structures de données complexes sur des arguments est considérée comme un
-
-
-### anti-modèle. Chaque destination doit être responsable de charger les données de l'interface
+### La transmission de structures de données complexes sur des arguments est considérée comme un anti-modèle. Chaque destination doit être responsable de charger les données de l'interface
 utilisateur en fonction des informations minimales nécessaires, telles que les ID des éléments. Cela simplifie la recréation des processus et évite d'éventuelles incohérences dans les données.
 
 

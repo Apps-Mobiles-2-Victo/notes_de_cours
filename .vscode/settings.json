@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "git rev-parse": true,
+        "/^python3 - <<'PY'\nfrom pathlib import Path\nimport re\n\nroot = Path\\('/home/strottier/repos/notes_de_cours/AppsMobiles2'\\)\nheading = re\\.compile\\(r'\\^\\(#\\{1,6\\}\\)\\\\s\\+\\(\\\\S\\.\\*\\)\\$'\\)\nfor path in sorted\\(root\\.rglob\\('\\*\\.md'\\)\\):\n    if 'site' in path\\.parts:\n        continue\n    lines = path\\.read_text\\(encoding='utf-8'\\)\\.splitlines\\(\\)\n    for index, line in enumerate\\(lines\\):\n        first = heading\\.match\\(line\\)\n        if not first:\n            continue\n        cursor = index \\+ 1\n        while cursor < len\\(lines\\) and not lines\\[cursor\\]\\.strip\\(\\):\n            cursor \\+= 1\n        if cursor >= len\\(lines\\):\n            continue\n        second = heading\\.match\\(lines\\[cursor\\]\\)\n        if not second or second\\.group\\(1\\) != first\\.group\\(1\\):\n            continue\n        starts_continuation = re\\.match\\(r'\\^\\(\\?:\\[a-zàâçéèêëîïôûùüÿñæœ\\]\\|\\[«\\(\\]\\)', second\\.group\\(2\\)\\)\n        ends_sentence = re\\.search\\(r'\\[\\.!\\?:;…»\\]\\$', first\\.group\\(2\\)\\)\n        if starts_continuation and not ends_sentence:\n            print\\(f'\\{path\\.relative_to\\(root\\)\\}:\\{index \\+ 1\\}-\\{cursor \\+ 1\\}'\\)\n            print\\(f'  \\{first\\.group\\(2\\)\\}'\\)\n            print\\(f'  \\{second\\.group\\(2\\)\\}'\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

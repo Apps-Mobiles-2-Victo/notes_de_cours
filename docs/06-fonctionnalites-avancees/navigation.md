@@ -433,10 +433,7 @@ Lorsqu'une application Android avec Jetpack Compose comprend de 3 à 5 icônes d
 Cette limite du nombre d'icônes provient de la documentation du NavigationBar :
 
 
-### NavigationBar should contain three to five NavigationBarItems, each representing a singular
-
-
-### destination.
+### NavigationBar should contain three to five NavigationBarItems, each representing a singular destination.
 
 
 Si votre application ne répond pas à cette exigence, vous devrez **configurer la barre de navigation avec BottomAppBar**.

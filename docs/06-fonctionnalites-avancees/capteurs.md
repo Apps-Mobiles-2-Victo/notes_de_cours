@@ -286,10 +286,7 @@ Afin d'économiser la batterie de l'appareil mobile, on s'assurera que le capteu
 En effet, selon la documentation officielle d'Android :
 
 
-### Si un écouteur de capteur est enregistré et que son activité est suspendue, le capteur continuera
-
-
-### d'acquérir des données et d'utiliser les ressources de la batterie, sauf si vous le désenregistrez.
+### Si un écouteur de capteur est enregistré et que son activité est suspendue, le capteur continuera d'acquérir des données et d'utiliser les ressources de la batterie, sauf si vous le désenregistrez.
 
 
 Puisque le ViewModel implémente l'interface DefaultLifecycleObserver, il est possible d'arrêter d'écouter quand l'application passe en arrière-plan puis de recommencer quand elle redevient active (le onResume a déjà été présenté plus haut).
