@@ -336,8 +336,4 @@ Un problème subsiste : un mot apparaît en rouge avec le message « Unresolved 
 
 ### Le problème sera automatiquement réglé quand vous demanderez de **resynchroniser le
 projet**.
-4. Le langage Kotlin
 
-
-
----

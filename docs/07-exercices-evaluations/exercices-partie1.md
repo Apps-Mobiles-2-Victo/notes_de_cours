@@ -178,29 +178,4 @@ Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exerc
 ![Illustration](../images/page_132_img_01_300x300.png)
 
 
-
-
 ### 9. Fournissez le fichier APK de votre application à un de vos collègues pour qu'il l'installe sur son téléphone (publication en sideload).
-
-
-## 35. Pour le prochain cours
-
-
-
----
-
-
-### 35.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d'un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 36. La documentation Kotlin avec KDoc
-
-
-
----
