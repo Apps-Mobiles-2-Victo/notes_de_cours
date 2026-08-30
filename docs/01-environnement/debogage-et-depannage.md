@@ -788,7 +788,7 @@ Un des fichiers XML du projet contient des caractères avant la première balise
 Dans chacun des fichiers XML du projet, par exemple app/src/main/AndroidManifest.xml , assurez-vous qu'il n'y ait aucun caractère avant la balise
 
 
-<?xml.
+`<?xml.`
 
 
 ### Autre cause possible :
@@ -849,7 +849,6 @@ Il y a un problème avec l'émulateur.
 
 ### Problème :
 
-
 Lorsque lancez votre application dans dans Android Studio, vous obtenez un message du genre « Looks like you've changed schema but forgot to update the version number. You can simply fix this by increasing the version number. Expected identity hash: fc52a3aea54e62ca9d025b65d3f27132, found: c9a7d3438fa6436ca51c76b3571e7cd7 ».
 
 
@@ -898,7 +897,6 @@ fun getDatabase(context: Context): MonprojetDatabase {
 ```
 
 
-
 ### 25.1 Atteindre rapidement la ligne qui cause une erreur de compilation
 
 
@@ -909,9 +907,7 @@ Il est possible à ce stade de cliquer sur une flèche pour déployer une sectio
 
 
 
-
 ![Illustration](../images/page_103_img_01_1000x212.png)
-
 
 
 
@@ -923,14 +919,10 @@ Pour trouver ce qui ne fonctionne pas dans une application, il n'y a rien comme 
 
 ### Démarrer l'application en mode débogage
 
-
 Vous pouvez placer un point d'arrêt dans votre code à l'endroit désiré en cliquant dans la marge gauche.
 
 
-
-
 ![Illustration](../images/page_104_img_01_400x169.png)
-
 
 
 
@@ -940,11 +932,7 @@ Pour que l'application puisse s'arrêter sur un point d'arrêt, elle doit avoir 
 Une fois que vous avez **configuré un périphérique virtuel**, démarrez l'application en cliquant sur l'icône Debug .
 
 
-
-
 ![Illustration](../images/page_104_img_02_400x88.png)
-
-
 
 
 Lorsque le programme atteint le point d'arrêt, vous pouvez :
@@ -1009,29 +997,14 @@ Ceci permet de spécifier le niveau d'information (ex : DEBUG, INFO, WARNING, ER
 
 Vous utiliserez une de ces fonctions :
 
-
-#### Log.d()
-: niveau débogage
-
-
-#### Log.i()
-: niveau information
-
-
-#### Log.w()
-: niveau avertissement (Warning)
-
-
-#### Log.e()
-: niveau erreur
-
-
-#### Log.v()
-: niveau verbose
-
-
-#### Log.wtf()
-: niveau problème terrible (What a Terrible Failure)
+| Fonction | Niveau |
+|----------|--------|
+| Log.d() | Débogage |
+| Log.i() | Information |
+| Log.w() | Avertissement |
+| Log.e() | Erreur |
+| Log.v() | Verbose |
+| Log.wtf() | Problème terrible |
 
 
 Dans cet exemple, on utilise l'étiquette MainActivity pour afficher en mode débogage la valeur de la variable.
@@ -1089,21 +1062,16 @@ Pendant le développement de votre application Android avec Jetpack Compose, il 
 Que faire alors pour trouver ce qui a causé le plantage?
 
 
-La préponse se trouve dans le Logcat d'Android Studio. S'il n'est pas affiché, rendez-vous dans le menu View / Tool Windows / Logcat .
+La réponse se trouve dans le Logcat d'Android Studio. S'il n'est pas affiché, rendez-vous dans le menu View / Tool Windows / Logcat .
 
 
 En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui donne des détails sur ce qui a fait planter l'application.
 
 
-
-
 ![Illustration](../images/page_105_img_01_1000x162.png)
 
 
-
-
 ### 25.5 Layout Inspector
-
 
 Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs facteurs peuvent venir influencer l'apparence et l'alignement des composables, par exemple :
 
@@ -1125,21 +1093,13 @@ Afin de mieux visualiser l'emplacement de chaque composable, vous pouvez travail
 #### Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
 
 
-
-
 ![Illustration](../images/page_106_img_01_800x726.png)
 
 
-
-
-#### Pour revenir à l'affichage normal dans l'émulateur, refaites  Tools / Layout Inspector .
+> Pour revenir à l'affichage normal dans l'émulateur, refaites *Tools / Layout Inspector* .
 
 
 #### Pour plus d'information
 
 
-### * [« Déboguer votre mise en page avec l'outil d'inspection de la mise en page » - Android Developer](https://developer.android.com/studio/debug/layout-inspector?)
-hl=fr
-
-
----
+### * [« Déboguer votre mise en page avec l'outil d'inspection de la mise en page » - Android Developer](https://developer.android.com/studio/debug/layout-inspector?hl=fr)
