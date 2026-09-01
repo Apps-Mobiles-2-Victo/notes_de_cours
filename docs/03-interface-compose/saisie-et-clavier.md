@@ -8,7 +8,7 @@ title: "Saisie de texte et clavier virtuel"
 ## TextField() et OutlinedTextField()
 
 
-Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
+Une case de saisie peut être ajoutée à l'aide du composable *TextField()* ou de *OutlinedTextField()* .
 
 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
@@ -41,7 +41,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser *rememberSaveable* pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec *remember*. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser *rememberSaveable* pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -64,7 +64,7 @@ Voici le TextField vide puis avec focus ou rempli.
 ### OutlinedTextField
 
 
-Voici le même exemple mais avec un OutlinedTextField.
+Voici le même exemple mais avec un *OutlinedTextField*.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -147,38 +147,36 @@ Les principaux types de clavier sont :
 
 ![Illustration](../images/page_049_img_04_200x146.png)
 
-
+KeyboardType.Text
 
 
 
 
 ![Illustration](../images/page_049_img_03_200x146.png)
 
-
+KeyboardType.Number
 
 
 
 
 ![Illustration](../images/page_049_img_01_200x146.png)
 
-
+ KeyboardType.Email 
 
 
 
 
 ![Illustration](../images/page_049_img_02_200x128.png)
 
-
+KeyboardType.Password
 
 
 
 
 ![Illustration](../images/page_049_img_05_200x128.png)
 
+KeyboardType.Phone
 
-
-
-KeyboardType.Text KeyboardType.Number KeyboardType.Email KeyboardType.Password KeyboardType.Phone
 
 
 Pour spécifier le type clavier désiré :
@@ -268,7 +266,7 @@ Quand vous lancez une application dans l'émulateur d'Android Studio, il peut ar
 Je vous présente ici deux techniques pour faire apparaître le clavier virtuel dans l'émulateur.
 
 
-!!! warning "Attention : quand vo" Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel.
+>Attention : quand vous testez une application, le clavier virtuel disparaîtra dès que vous appuyez sur une touche du clavier de l'ordinateur. Pour tester comme sur un téléphone physique, vous devez utiliser exclusivement le clavier virtuel.
 
 
 ### Afficher le clavier virtuel automatiquement
@@ -312,7 +310,8 @@ Si vous souhaitez faire apparaître le clavier virtuel seulement au besoin, n'aj
 Plutôt, quand vous lancerez l'application dans l'émulateur, vous cliquerez sur le menu rond qui apparaît au centre gauche de l'écran quand une case de saisie a le focus.
 
 
-L'option Show on-screen keyboard fera apparaître le clavier virtuel.
+
+L'option *Show on-screen keyboard* fera apparaître le clavier virtuel.
 
 
 
@@ -326,7 +325,8 @@ L'option Show on-screen keyboard fera apparaître le clavier virtuel.
 
 
 ### * [« Gérer la visibilité du mode de saisie » - Android Developer](https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/visibility?hl=fr)
-26.2 Cacher le clavier virtuel
+
+## Cacher le clavier virtuel
 
 
 Lorsqu'un usager clique sur une zone d'édition dans une application Android, le clavier virtuel apparaît automatiquement.
@@ -335,7 +335,7 @@ Lorsqu'un usager clique sur une zone d'édition dans une application Android, le
 Si ce comportement est généralement souhaitable, il peut arriver que ce clavier cache une partie importante de l'écran. D'où l'importance de pouvoir le cacher lorsqu'il n'est plus utile.
 
 
-Une technique intéressante pour y arriver conciste à enlever le focus de la zone d'édition.
+Une technique intéressante pour y arriver consiste à enlever le focus de la zone d'édition.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -375,8 +375,6 @@ Button(
 
 ### * [« Hide and Show Virtual Keyboard in Jetpack Compose » - Medium](https://medium.com/@RJnr6/hide-and-show-virtual-keyboard-in-jetpack-compose-)
 11b0da3e862f
-27. Scaffold
 
 
 
----
