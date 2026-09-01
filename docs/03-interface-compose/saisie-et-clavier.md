@@ -145,7 +145,7 @@ Les principaux types de clavier sont :
 
 
 
-![Illustration](../images/page_049_img_04_200x146.png)
+![Illustration](../images/page_049_img_01_200x146.png)
 
 <p align="center">KeyboardType.Text</p>
 
@@ -160,7 +160,7 @@ Les principaux types de clavier sont :
 
 
 
-![Illustration](../images/page_049_img_01_200x146.png)
+![Illustration](../images/page_049_img_04_200x146.png)
 
  <p align="center">KeyboardType.Password</p>
 
