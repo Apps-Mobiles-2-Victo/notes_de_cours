@@ -154,21 +154,23 @@ Les principaux types de clavier sont :
 
 ![Illustration](../images/page_049_img_03_200x146.png)
 
-<p align="center">KeyboardType.Number</p>
+<p align="center">KeyboardType.Email</p>
+
 
 
 
 
 ![Illustration](../images/page_049_img_01_200x146.png)
 
- <p align="center">KeyboardType.Email</p>
+ <p align="center">KeyboardType.Password</p>
 
 
 
 
 ![Illustration](../images/page_049_img_02_200x128.png)
 
-<p align="center">KeyboardType.Password</p>
+<p align="center">KeyboardType.Number</p>
+
 
 
 
