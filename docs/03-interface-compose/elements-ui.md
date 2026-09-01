@@ -5,7 +5,7 @@ title: "Éléments d'interface utilisateur Compose"
 # Éléments d'interface utilisateur Compose
 
 
-### 5.1 Text()
+## Text()
 
 
 La fonction modulable Text permet d'afficher un texte à l'écran.
@@ -52,7 +52,7 @@ Text(
 ### Texte enrichi
 
 
-buildAnnotatedString permet de créer du texte enrichi.
+*buildAnnotatedString* permet de créer du texte enrichi.
 
 
 Il est possible, par exemple, d'appliquer un style sur une partie précise d'une chaîne de caractères.
@@ -116,14 +116,9 @@ Text(
 )
 ```
 
+### Limiter la longueur du texte affiché à l'écran
 
-Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de Compose Foundation 1.7.0 en 2024.
-
-
-### Limiter la longuer du texte affiché à l'écran
-
-
-Prenons le cas où on a une ligne (Row()) avec du texte à gauche et une icône à droite. Dans le cas où le texte est plus long que la largeur de l'écran, l'icône ne sera plus visible.
+Prenons le cas où on a une ligne (*Row()*) avec du texte à gauche et une icône à droite. Dans le cas où le texte est plus long que la largeur de l'écran, l'icône ne sera plus visible.
 
 
 Pour corriger la situation, on peut limiter la largeur du texte à la place disponible et indiquer comment on veut que le débordement se comporte.
@@ -154,11 +149,7 @@ Row(
 ```
 
 
-
-
 ![Illustration](../images/page_030_img_01_422x61.png)
-
-
 
 
 #### Pour plus d'information
@@ -176,6 +167,7 @@ Row(
 ### * [« Composing AnnotatedString — Poetry, Music, Code, Blogs, Expandables and Beyond » - Medium](https://proandroiddev.com/composing-annotatedstring-poetry-)
 music-code-blogs-expandables-and-beyond-b5f7ec35a49b 5.2 Column()
 
+## Column()
 
 La fonction modulable Column permet de placer les composants en colonne, l'un sous l'autre.
 
@@ -216,10 +208,11 @@ Column(
 ### Espacement
 
 
-Ici, on ajoute de l'espace alentour du contenu de la colonne.
+Ici, on ajoute de l'espace autour du contenu de la colonne.
 
 
-!!! warning "Attention : le conce" Attention : le concept est différent du padding qu'on connaît en Web avec les feuilles de style. Dans JetPack compose, le padding est l'équivalent d'un margin en CSS. En effet, si la colonne avait une couleur de fond, l'espace créé par le padding ne prendrait pas la couleur de fond.
+
+> **Attention :** le concept est différent du padding qu'on connaît en Web avec les feuilles de style. Dans JetPack compose, le padding est l'équivalent d'un margin en CSS. En effet, si la colonne avait une couleur de fond, l'espace créé par le padding ne prendrait pas la couleur de fond.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -247,7 +240,7 @@ Column(
 ### Défilement
 
 
-Pour assurer que le contenu de la colonne puisse défiler à l'écran si jamais il est trop long, on peut lui ajouter un verticalScroll.
+Pour assurer que le contenu de la colonne puisse défiler à l'écran si jamais il est trop long, on peut lui ajouter un *verticalScroll*.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -271,7 +264,8 @@ Column(
 
 
 ### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
-5.3 Row()
+
+## Row()
 
 
 La fonction modulable Row permet de placer les composants en rangée, l'un à côté de l'autre.
@@ -323,7 +317,7 @@ Row(
 ### Espacement
 
 
-Ici, on ajoute de l'espace alentour de chaque composable de la ligne de façon à remplir toute la largeur disponible.
+Ici, on ajoute de l'espace autour de chaque composable de la ligne de façon à remplir toute la largeur disponible.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -359,10 +353,11 @@ Row(
 
 
 ### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
-5.4 Box()
+
+## Box()
 
 
-La fonction modulable Box permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
+La fonction modulable *Box* permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -415,8 +410,7 @@ Column(
 
 
 
-
-Un box peut aussi servir à encadrer autre chose.
+Un *Box* peut aussi servir à encadrer autre chose.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -475,7 +469,8 @@ Column(
 ```
 
 
-Comme beaucoup d'autres composables, un box peut réagir à un clic.
+
+Comme beaucoup d'autres composables, un *Box* peut réagir à un clic.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -503,7 +498,8 @@ Box(
 
 
 ### * [« Principes de base de la mise en page dans Compose » - Android Developers](https://developer.android.com/jetpack/compose/layouts/basics?hl=fr)
-5.5 Image()
+
+## Image()
 
 
 Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource**.
@@ -512,7 +508,8 @@ Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajou
 Les types d'images supportés sont JPG, PNG, GIF, BMP, WebP et HEIF.
 
 
-L'image sera affichée à l'aide de l'élément Image().
+
+L'image sera affichée à l'aide de l'élément *Image*.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -589,8 +586,7 @@ Dans les exemples précédents, le nom de l'image, ou plutôt son identifiant, �
 Lorsque le nom de l'image est contenu dans une variable sous forme de chaîne de caractères, il faut utiliser une technique pour retrouver l'identifiant de la ressource à partir de cette chaîne.
 
 
-### Attention : cette technique nuit à l'optimisation du code et devrait être réservée pour les cas où il n'est pas possible
-de fournir directement l'identifiant de l'image.
+> Attention : cette technique nuit à l'optimisation du code et devrait être réservée pour les cas où il n'est pas possible de fournir directement l'identifiant de l'image.
 
 
 Android Studio générera d'ailleurs cet avertissement : « Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. R.foo.bar) than by name (e.g. getIdentifier("bar", "foo", null)). ».
@@ -624,7 +620,8 @@ if (ressourceId != 0) {
 
 
 ### * [« Personnaliser une image » - Android Developers](https://developer.android.com/jetpack/compose/graphics/images/customize?hl=fr)
-5.6 AsyncImage()
+
+## AsyncImage()
 
 
 Avec AsyncImage() , il est possible d'afficher une image à partir d'un URL.
@@ -661,7 +658,7 @@ AsyncImage(
 ```
 
 
-### 5.7 Icône avec la bibliothèque Material Symbols
+### Icône avec la bibliothèque Material Symbols
 
 
 La fonction modulable Icon permet d'afficher une icône à l'écran.
@@ -714,7 +711,7 @@ Row() {
 
 
 
-Il est possible d'appliquer des attributs et des modifieurs afin de mieux contrôler l'apparence de l'icône.
+Il est possible d'appliquer des attributs et des *modifiers* afin de mieux contrôler l'apparence de l'icône.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -770,8 +767,7 @@ Pour avoir accès à une plus grande quantité d'icônes, soit aux icônes de la
 Ajoutez cette ligne dans le fichier build.gradle.kts  qui se trouve dans le dossier app .
 
 
-### Attention : ceci augmentera substentiellement la taille de l'application. Je vous conseille de vérifier parmi les icônes
-disponibles de base (il y en a près d'une cinquantaine) avant d'ajouter cette dépendance.
+> Attention : ceci augmentera substantiellement la taille de l'application. Je vous conseille de vérifier parmi les icônes disponibles de base (il y en a près d'une cinquantaine) avant d'ajouter cette dépendance.
 
 
 ```kotlin title="Fichier app/build.gradle.kts"
@@ -808,7 +804,7 @@ La gestion des couleurs dans une application Android basée sur Jetpack Compose 
 ### Constantes de couleur
 
 
-Pour défiir une couleur, Kotlin met à votre disposition des constantes pour identifier les principales couleurs , par exemple Color.Black.
+Pour définir une couleur, Kotlin met à votre disposition des constantes pour identifier les principales couleurs , par exemple Color.Black.
 
 
 Dans l'image qui suit, celle qui n'est pas visible s'appelle Color.Transparent ;-)
@@ -985,7 +981,8 @@ Modifier.background(color = MaterialTheme.colorScheme.outline).padding(10.dp))
 Les couleurs du thème peuvent être configurées pour répondre à vos besoins.
 
 
-Il faut d'abord définir des couleurs dans le fichier app/src/main/java/com/mondomaine/monprojet/ui/theme/Color.kt .
+
+Il faut d'abord définir des couleurs dans le fichier *app/src/main/java/com/mondomaine/monprojet/ui/theme/Color.kt*.
 
 
 ```kotlin title="Fichier Color.kt"
@@ -997,7 +994,7 @@ val BleuFonce = Color(0xFF20A1C9)
 Il faut ensuite associer ces couleurs à un rôle dans le fichier
 
 
-app/src/main/java/com/mondomaine/monprojet/ui/theme/Theme.kt .
+*app/src/main/java/com/mondomaine/monprojet/ui/theme/Theme.kt* .
 
 
 ```kotlin title="Fichier Theme.kt"
@@ -1687,7 +1684,8 @@ ElevatedCard(
 
 
 ### * [« Card » - Android Developers](https://developer.android.com/jetpack/compose/components/card)
-5.15 TextField() et OutlinedTextField()
+
+## TextField() et OutlinedTextField()
 
 
 Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
@@ -1696,22 +1694,14 @@ Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
 
 
-Dans cette fiche :
+En lien avec les cases de saisie:
 
 
-#### TextField
-
-
-#### OutlinedTextField
-
-
-#### supportingText
-
-
-#### Type de clavier
-
-
-#### TextField ou OulinedTextField avec ViewModel
+* TextField
+* OutlinedTextField
+* supportingText
+* Type de clavier
+* TextField ou OulinedTextField avec ViewModel
 
 
 ### TextField
@@ -1731,7 +1721,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser *rememberSaveable* pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -1825,26 +1815,13 @@ Afin d'améliorer l'expérience utilisateur, il est important de spécifier le t
 Les principaux types de clavier sont :
 
 
-#### Text (par défaut)
-
-
-#### Number
-
-
-#### Decimal (dans derniers tests effectués, était identique à Number)
-
-
-#### Email (semblable à Text mais la virgule est remplacée par un @)
-
-
-#### Password (lettres et chiffres dans un même écran)
-
-
-#### Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
-
-
-#### Uri (semblable à Text mais la virgule est remplacée par un /)
-
+* Text (par défaut)
+* Number
+* Decimal (dans derniers tests effectués, était identique à Number)
+* Email (semblable à Text mais la virgule est remplacée par un @)
+* Password (lettres et chiffres dans un même écran)
+* Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
+* Uri (semblable à Text mais la virgule est remplacée par un `/`)
 
 
 
@@ -1967,32 +1944,16 @@ Il existe plusieurs techniques pour spécifier l'alignement et l'espacement des 
 Parfois, il s'agira d'appliquer des attributs sur la ligne ou la colonne, par exemple :
 
 
-#### horizontalAlignment = Alignment.Start
 
-
-#### horizontalAlignment = Alignment.CenterHorizontally
-
-
-#### horizontalAlignment = Alignment.End
-
-
-#### verticalArrangement = Arrangement.Top
-
-
-#### verticalArrangement = Arrangement.Center
-
-
-#### verticalArrangement = Arrangement.Bottom
-
-
-#### horizontalArrangement = Arrangement.SpaceEvenly
-
-
-#### horizontalArrangement = Arrangement.Center
-
-
-#### horizontalArrangement = Arrangement.End
-
+* horizontalAlignment = Alignment.Start
+* horizontalAlignment = Alignment.CenterHorizontally
+* horizontalAlignment = Alignment.End
+* verticalArrangement = Arrangement.Top
+* verticalArrangement = Arrangement.Center
+* verticalArrangement = Arrangement.Bottom
+* horizontalArrangement = Arrangement.SpaceEvenly
+* horizontalArrangement = Arrangement.Center
+* horizontalArrangement = Arrangement.End
 
 Ici, on centre horizontalement tout le contenu d'une colonne :
 
@@ -2019,7 +1980,7 @@ Parfois, il s'agira d'ajouter des modificateurs sur le composable à aligner, pa
 #### Modifier.align(Alignment.End)
 
 
-Ceci est possible seulement si le composable auquel le modifieur est appliqué se trouve dans un Row, un Column ou un Box.
+Ceci est possible seulement si le composable auquel le *modifier* est appliqué se trouve dans un Row, un Column ou un Box.
 
 
 Ici, on centre horizontalement un bouton :
@@ -2087,37 +2048,21 @@ Text(
 
 
 ### * [« Cheatsheet for centering items in Jetpack Compose » - Medium](https://proandroiddev.com/cheatsheet-for-centering-items-in-jetpack-compose-1e3534415237)
-5.17 Changer le fond d'écran
+
+## Changer le fond d'écran
 
 
 Je vous présente ici quelques techniques pour modifier le fond de votre application Android avec Jetpack Compose.
 
 
-Dans cette fiche :
-
-
-#### Configurer une couleur de fond d'écran avec le thème
-
-
-#### Couleur des barres d'application
-
-
-#### Configurer une couleur de fond d'écran par programmation
-
-
-#### Couleur des barres d'application - technique 1
-
-
-#### Couleur des barres d'application - technique 2
-
-
-#### Utiliser une image en fond d'écran
-
-
-#### Image sous les barres d'application
-
-
-### Configurer une couleur de fond d'écran avec le thème
+* Configurer une couleur de fond d'écran avec le thème
+* Couleur des barres d'application
+* Configurer une couleur de fond d'écran par programmation
+* Couleur des barres d'application - technique 1
+* Couleur des barres d'application - technique 2
+* Utiliser une image en fond d'écran
+* Image sous les barres d'application
+* Configurer une couleur de fond d'écran avec le thème
 
 
 La technique la plus intéressante pour modifier la couleur de fond consiste à travailler avec le thème de l'application.
@@ -2165,8 +2110,6 @@ fun MonApplicationTheme(
 
 
 Sans rien changer de plus, le fond d'écran sera jaune pâle ou jaune foncé selon que l'appareil est en mode clair ou en mode sombre.
-
-
 
 
 ![Illustration](../images/page_052_img_01_300x633.png)
@@ -2420,7 +2363,7 @@ Box(
 ![Illustration](../images/page_056_img_01_300x646.png)
 
 
-
+<!--
 
 ### 5.18 Les fonctions expérimentales
 
@@ -2453,9 +2396,4 @@ fun ...() {
 }
 ```
 
-
-## 6. Quelques modificateurs
-
-
-
----
+-->
