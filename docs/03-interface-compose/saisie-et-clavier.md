@@ -5,7 +5,7 @@ title: "Saisie de texte et clavier virtuel"
 # Saisie de texte et clavier virtuel
 
 
-### 22.1 TextField() et OutlinedTextField()
+## TextField() et OutlinedTextField()
 
 
 Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de OutlinedTextField() .
@@ -14,22 +14,14 @@ Une case de saisie peut être ajoutée à l'aide du composble TextField() ou de 
 Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte, il faut que sa valeur provienne d'une variable d'état.
 
 
-Dans cette fiche :
+En lien avec les cases de saisie:
 
 
-#### TextField
-
-
-#### OutlinedTextField
-
-
-#### supportingText
-
-
-#### Type de clavier
-
-
-#### TextField ou OulinedTextField avec ViewModel
+* TextField
+* OutlinedTextField
+* supportingText
+* Type de clavier
+* TextField ou OutlinedTextField avec ViewModel
 
 
 ### TextField
@@ -49,7 +41,7 @@ TextField(
 ```
 
 
-Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser rememberSaveable pour la valeur d'une case de saisie.
+Remarquez l'utilisation de **rememberSaveable**. Si vous débutez avec Jetpack Compose, vous aurez sans doute appris à déclarer les variables d'état avec remember. Dès que vous avancerez dans vos apprentissages, vous comprendrez pourquoi il est préférable d'utiliser *rememberSaveable* pour la valeur d'une case de saisie.
 
 
 Voici le TextField vide puis avec focus ou rempli.
@@ -57,14 +49,14 @@ Voici le TextField vide puis avec focus ou rempli.
 
 
 
-![Illustration](../images/page_101_img_01_448x100.png)
+![Illustration](../images/page_047_img_02_448x100.png)
 
 
 
 
 
 
-![Illustration](../images/page_101_img_02_449x104.png)
+![Illustration](../images/page_048_img_01_449x104.png)
 
 
 
@@ -94,14 +86,14 @@ Voici le OutlinedTextField vide puis avec focus ou rempli.
 
 
 
-![Illustration](../images/page_101_img_03_451x105.png)
+![Illustration](../images/page_048_img_02_451x105.png)
 
 
 
 
 
 
-![Illustration](../images/page_101_img_04_453x104.png)
+![Illustration](../images/page_048_img_03_453x104.png)
 
 
 
@@ -129,7 +121,7 @@ OutlinedTextField(
 
 
 
-![Illustration](../images/page_101_img_05_453x139.png)
+![Illustration](../images/page_048_img_04_453x139.png)
 
 
 
@@ -143,58 +135,45 @@ Afin d'améliorer l'expérience utilisateur, il est important de spécifier le t
 Les principaux types de clavier sont :
 
 
-#### Text (par défaut)
-
-
-#### Number
-
-
-#### Decimal (dans derniers tests effectués, était identique à Number)
-
-
-#### Email (semblable à Text mais la virgule est remplacée par un @)
-
-
-#### Password (lettres et chiffres dans un même écran)
-
-
-#### Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
-
-
-#### Uri (semblable à Text mais la virgule est remplacée par un /)
+* Text (par défaut)
+* Number
+* Decimal (dans derniers tests effectués, était identique à Number)
+* Email (semblable à Text mais la virgule est remplacée par un @)
+* Password (lettres et chiffres dans un même écran)
+* Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
+* Uri (semblable à Text mais la virgule est remplacée par un `/`)
 
 
 
-
-![Illustration](../images/page_102_img_04_200x146.png)
+![Illustration](../images/page_049_img_04_200x146.png)
 
 
 
 
 
 
-![Illustration](../images/page_102_img_03_200x146.png)
+![Illustration](../images/page_049_img_03_200x146.png)
 
 
 
 
 
 
-![Illustration](../images/page_102_img_01_200x146.png)
+![Illustration](../images/page_049_img_01_200x146.png)
 
 
 
 
 
 
-![Illustration](../images/page_102_img_02_200x128.png)
+![Illustration](../images/page_049_img_02_200x128.png)
 
 
 
 
 
 
-![Illustration](../images/page_102_img_05_200x128.png)
+![Illustration](../images/page_049_img_05_200x128.png)
 
 
 
@@ -215,7 +194,7 @@ TextField(
 ```
 
 
-### TextField ou OulinedTextField avec ViewModel
+### TextField ou OutlinedTextField avec ViewModel
 
 
 Dans une application qui utilise un **ViewModel comme conteneur d'état**, la syntaxe d'une case de saisie sera légèrement différente.
@@ -271,15 +250,11 @@ class HomeViewModel: ViewModel() {
 * [« Textfields » - Material Design 3](https://m3.material.io/components/text-fields/overview)
 
 
-* [« androidx.compose.material3 - TextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
-summary#textfield
+* [« androidx.compose.material3 - TextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#textfield)
 
 
-### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
-summary
-23. Exercice 2
 
-
+### * [« androidx.compose.material3 - OutlinedTextField » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary)
 
 ---
 
