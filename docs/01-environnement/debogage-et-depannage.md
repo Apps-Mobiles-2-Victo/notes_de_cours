@@ -4,6 +4,12 @@ title: "Débogage et dépannage (Troubleshooting)"
 
 # Débogage et dépannage (Troubleshooting)
 
+* [Debugger](#debugger)
+* [Écrire dans Logcat](#logcat)
+* [Déboguer une application qui se referme sans préavis](#app-crash)
+* [Layout Inspector](#layout-inspector)
+
+## Troubleshooting d'erreurs communes
 
 ### 7.1 Failed to start monitoring emulator - 5554
 
@@ -911,13 +917,13 @@ Il est possible à ce stade de cliquer sur une flèche pour déployer une sectio
 
 
 
-### 25.2 Le débogueur d'Android Studio
+### 25.2 Le débogueur d'Android Studio {#debugger}
 
 
 Pour trouver ce qui ne fonctionne pas dans une application, il n'y a rien comme un débogueur. Et celui d'Android Studio travaille très bien!
 
 
-### Démarrer l'application en mode débogage
+#### Démarrer l'application en mode débogage
 
 Vous pouvez placer un point d'arrêt dans votre code à l'endroit désiré en cliquant dans la marge gauche.
 
@@ -983,10 +989,9 @@ Cliquez sur ce lien afin d'obtenir la valeur.
 
 
 #### Pour plus d'information
+ * [« Debugging Jetpack Compose » - Youtube](https://www.youtube.com/watch?v=Kp-aiSU8qCU)
 
-
-### * [« Debugging Jetpack Compose » - Youtube](https://www.youtube.com/watch?v=Kp-aiSU8qCU)
-25.3 Écrire dans Logcat
+### 25.3 Écrire dans Logcat {#logcat}
 
 
 Pour afficher une information dans la console d'Android Studio, la meilleure technique consiste à utiliser le système de journalisation (log).
@@ -1013,7 +1018,7 @@ Dans cet exemple, on utilise l'étiquette MainActivity pour afficher en mode dé
 ```kotlin title="Kotlin"
 import android.util.Log
 ...
-Log. d (" MainActivity ", maVariable )
+Log.d (" MainActivity ", maVariable )
 ```
 
 
@@ -1023,11 +1028,11 @@ Petit truc : pour mes informations de débogage, j'ajoute des astérisques devan
 ```kotlin title="Kotlin"
 import android.util.Log
 ...
-Log. d (" *************** MainActivity ", maVariable )
+Log.d (" *************** MainActivity ", maVariable )
 ```
 
 
-Ouvrez l'onglet Logcat à l'aide du menu View / Tool Windows / Logcat ou en cliquant sur l'icône de chat au bas de l'écran.
+Ouvrez l'onglet *Logcat* à l'aide du menu *View / Tool Windows / Logcat* ou en cliquant sur l'icône de chat au bas de l'écran.
 
 
 Parmi toutes les informations journalisées, vous trouverez une ligne de ce genre :
@@ -1050,9 +1055,7 @@ at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
 
 
 #### Pour plus d'information
-
-
-### * [« How to Debug Jetpack Compose Recomposition with Logging? » - Vincent Tsen - AndroidDev Blog](https://vtsen.hashnode.dev/how-to-debug-jetpack-compose-)
+ * [« How to Debug Jetpack Compose Recomposition with Logging? » - Vincent Tsen - AndroidDev Blog](https://vtsen.hashnode.dev/how-to-debug-jetpack-compose-)
 recomposition-with-logging 25.4 Déboguer une application qui se referme sans préavis
 
 
@@ -1062,16 +1065,17 @@ Pendant le développement de votre application Android avec Jetpack Compose, il 
 Que faire alors pour trouver ce qui a causé le plantage?
 
 
-La réponse se trouve dans le Logcat d'Android Studio. S'il n'est pas affiché, rendez-vous dans le menu View / Tool Windows / Logcat .
+La réponse se trouve dans le Logcat d'Android Studio. S'il n'est pas affiché, rendez-vous dans le menu *View / Tool Windows / Logcat* .
 
 
-En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui donne des détails sur ce qui a fait planter l'application.
+En faisant défiler l'écran, vous verrez une indication *FATAL EXCEPTION* qui donne des détails sur ce qui a fait planter l'application.
 
 
 ![Illustration](../images/page_105_img_01_1000x162.png)
 
 
-### 25.5 Layout Inspector
+
+### 25.5 Layout Inspector {#layout-inspector}
 
 Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs facteurs peuvent venir influencer l'apparence et l'alignement des composables, par exemple :
 
@@ -1084,13 +1088,9 @@ Quand vous développez une interface utilisateur avec Jetpack Compose, plusieurs
 Afin de mieux visualiser l'emplacement de chaque composable, vous pouvez travailler avec le Layout Inspector d'Android Studio.
 
 
-#### Lancez l'application dans l'émulateur.
-
-
-#### Rendez-vous dans le menu Tools / Layout Inspector .
-
-
-#### Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
+* Lancez l'application dans l'émulateur.
+* Rendez vous dans le menu Tools / Layout Inspector 
+* Un rectangle gris apparaîtra alentour de chaque composable afin d'indiquer ses limites. De plus, si vous sélectionnez un composable dans la hiérarchie présentée sous l'aperçu, vous le verrez entouré de bleu et ses attributs seront affichés.
 
 
 ![Illustration](../images/page_106_img_01_800x726.png)
