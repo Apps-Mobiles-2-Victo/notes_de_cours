@@ -1,0 +1,2876 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Sébastien Trottier, Christiane Lagacé, Cégep de Victoriaville">
+      
+      
+      
+        <link rel="prev" href="../preferences-utilisateur/">
+      
+      
+        <link rel="next" href="../room-base-de-donnees/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Système de fichiers de l'émulateur - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#systeme-de-fichiers-de-lemulateur" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Système de fichiers de l'émulateur
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-environnement/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-kotlin-gradle/gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-environnement/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/normes-et-kdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#541-database-inspector-pour-voir-la-base-de-donnees-dans-lemulateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        54.1 Database Inspector pour voir la base de données dans l'émulateur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="54.1 Database Inspector pour voir la base de données dans l&#39;émulateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lancez-lapplication-dans-lemulateur-le-peripherique-selectionne-doit-tourner-sur-lapi-26-oreo-ou-plus-recent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancez l'application dans l'émulateur. Le périphérique sélectionné doit tourner sur l'API 26 (Oreo) ou plus récent.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-travaillez-avec-une-application-avec-plusieurs-ecrans-assurez-vous-que-lecran-affiche-dans-lemulateur-utilise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous travaillez avec une application avec plusieurs écrans, assurez-vous que l'écran affiché dans l'émulateur utilise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-view-tool-windows-app-inspection-onglet-database-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu View / Tool Windows / App Inspection / onglet Database Inspector .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#au-besoin-cliquez-sur-le-nom-de-lemulateur-et-selectionnez-votre-application-parmi-les-processus-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Au besoin, cliquez sur le nom de l'émulateur et sélectionnez votre application parmi les processus disponibles.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-le-nom-dune-table-pour-voir-sa-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur le nom d'une table pour voir sa structure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-cliquez-sur-le-nom-dune-table-pour-voir-ses-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double-cliquez sur le nom d'une table pour voir ses données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-licone-open-new-query-tab-pour-pouvoir-entrer-une-requete-sql-vous-pouvez-ensuite-faire-des-requete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur l'icône Open New Query Tab pour pouvoir entrer une requête SQL. Vous pouvez ensuite faire des requête
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-insert-update-ou-delete-afin-daffecter-les-donnees-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT, INSERT, UPDATE ou DELETE afin d'affecter les données de la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database closed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detached" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [DETACHED]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[DETACHED]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-view-tool-windows-device-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu View / Tool Windows / Device Manager .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-licone-stop-vis-a-vis-lemulateur-que-vous-utilisez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur l'icône Stop vis-à-vis l'émulateur que vous utilisez.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-ensuite-sur-licone-start-pour-le-redemarrer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez ensuite sur l'icône Start pour le redémarrer.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-debuggable-processes-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No debuggable processes detected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="No debuggable processes detected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afficher-le-contenu-de-la-base-de-donnees-a-laide-de-loutil-dinspection-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Afficher le contenu de la base de données à l'aide de l'outil d'inspection » - Android Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Afficher le contenu de la base de données à l&#39;aide de l&#39;outil d&#39;inspection » - Android Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-view-tool-windows-device-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans View / Tool Windows / Device Explorer .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectionnez-lemulateur-qui-a-ete-utilise-pour-executer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionnez l'émulateur qui a été utilisé pour exécuter l'application.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrouvez-votre-application-sous-le-dossier-datadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrouvez votre application sous le dossier data/data .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vous-y-retrouverez-les-fichiers-utilises-par-lapplication-notamment-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vous y retrouverez les fichiers utilisés par l'application, notamment la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-clic-droit-vous-permettra-de-telecharger-le-fichier-de-votre-choix-sur-votre-ordinateur-de-le-supprimer-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un clic droit vous permettra de télécharger le fichier de votre choix sur votre ordinateur, de le supprimer de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afficher-les-fichiers-stockes-sur-lappareil-a-laide-de-lexplorateur-de-lappareil-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Afficher les fichiers stockés sur l'appareil à l'aide de l'Explorateur de l'appareil » - Android Developers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#541-database-inspector-pour-voir-la-base-de-donnees-dans-lemulateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        54.1 Database Inspector pour voir la base de données dans l'émulateur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="54.1 Database Inspector pour voir la base de données dans l&#39;émulateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lancez-lapplication-dans-lemulateur-le-peripherique-selectionne-doit-tourner-sur-lapi-26-oreo-ou-plus-recent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancez l'application dans l'émulateur. Le périphérique sélectionné doit tourner sur l'API 26 (Oreo) ou plus récent.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-travaillez-avec-une-application-avec-plusieurs-ecrans-assurez-vous-que-lecran-affiche-dans-lemulateur-utilise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous travaillez avec une application avec plusieurs écrans, assurez-vous que l'écran affiché dans l'émulateur utilise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-view-tool-windows-app-inspection-onglet-database-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu View / Tool Windows / App Inspection / onglet Database Inspector .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#au-besoin-cliquez-sur-le-nom-de-lemulateur-et-selectionnez-votre-application-parmi-les-processus-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Au besoin, cliquez sur le nom de l'émulateur et sélectionnez votre application parmi les processus disponibles.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-le-nom-dune-table-pour-voir-sa-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur le nom d'une table pour voir sa structure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-cliquez-sur-le-nom-dune-table-pour-voir-ses-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double-cliquez sur le nom d'une table pour voir ses données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-licone-open-new-query-tab-pour-pouvoir-entrer-une-requete-sql-vous-pouvez-ensuite-faire-des-requete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur l'icône Open New Query Tab pour pouvoir entrer une requête SQL. Vous pouvez ensuite faire des requête
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-insert-update-ou-delete-afin-daffecter-les-donnees-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELECT, INSERT, UPDATE ou DELETE afin d'affecter les données de la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database closed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detached" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [DETACHED]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[DETACHED]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-view-tool-windows-device-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu View / Tool Windows / Device Manager .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-licone-stop-vis-a-vis-lemulateur-que-vous-utilisez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur l'icône Stop vis-à-vis l'émulateur que vous utilisez.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-ensuite-sur-licone-start-pour-le-redemarrer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez ensuite sur l'icône Start pour le redémarrer.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-debuggable-processes-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No debuggable processes detected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="No debuggable processes detected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afficher-le-contenu-de-la-base-de-donnees-a-laide-de-loutil-dinspection-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Afficher le contenu de la base de données à l'aide de l'outil d'inspection » - Android Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Afficher le contenu de la base de données à l&#39;aide de l&#39;outil d&#39;inspection » - Android Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-view-tool-windows-device-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans View / Tool Windows / Device Explorer .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectionnez-lemulateur-qui-a-ete-utilise-pour-executer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionnez l'émulateur qui a été utilisé pour exécuter l'application.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrouvez-votre-application-sous-le-dossier-datadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrouvez votre application sous le dossier data/data .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vous-y-retrouverez-les-fichiers-utilises-par-lapplication-notamment-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vous y retrouverez les fichiers utilisés par l'application, notamment la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-clic-droit-vous-permettra-de-telecharger-le-fichier-de-votre-choix-sur-votre-ordinateur-de-le-supprimer-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un clic droit vous permettra de télécharger le fichier de votre choix sur votre ordinateur, de le supprimer de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afficher-les-fichiers-stockes-sur-lappareil-a-laide-de-lexplorateur-de-lappareil-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Afficher les fichiers stockés sur l'appareil à l'aide de l'Explorateur de l'appareil » - Android Developers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="systeme-de-fichiers-de-lemulateur">Système de fichiers de l'émulateur<a class="headerlink" href="#systeme-de-fichiers-de-lemulateur" title="Permanent link">&para;</a></h1>
+<h3 id="541-database-inspector-pour-voir-la-base-de-donnees-dans-lemulateur">54.1 Database Inspector pour voir la base de données dans l'émulateur<a class="headerlink" href="#541-database-inspector-pour-voir-la-base-de-donnees-dans-lemulateur" title="Permanent link">&para;</a></h3>
+<p>Dans Android Studio, l'outil Inspection de bases de données (Database Inspector) vous permet de voir le contenu de la base de données SQLite présente sur l'émulateur.</p>
+<p>Pour voir votre base de données :</p>
+<h4 id="lancez-lapplication-dans-lemulateur-le-peripherique-selectionne-doit-tourner-sur-lapi-26-oreo-ou-plus-recent">Lancez l'application dans l'émulateur. Le périphérique sélectionné doit tourner sur l'API 26 (Oreo) ou plus récent.<a class="headerlink" href="#lancez-lapplication-dans-lemulateur-le-peripherique-selectionne-doit-tourner-sur-lapi-26-oreo-ou-plus-recent" title="Permanent link">&para;</a></h4>
+<h4 id="si-vous-travaillez-avec-une-application-avec-plusieurs-ecrans-assurez-vous-que-lecran-affiche-dans-lemulateur-utilise">Si vous travaillez avec une application avec plusieurs écrans, assurez-vous que l'écran affiché dans l'émulateur utilise<a class="headerlink" href="#si-vous-travaillez-avec-une-application-avec-plusieurs-ecrans-assurez-vous-que-lecran-affiche-dans-lemulateur-utilise" title="Permanent link">&para;</a></h4>
+<p>la base de données.</p>
+<h4 id="rendez-vous-dans-le-menu-view-tool-windows-app-inspection-onglet-database-inspector">Rendez-vous dans le menu View / Tool Windows / App Inspection / onglet Database Inspector .<a class="headerlink" href="#rendez-vous-dans-le-menu-view-tool-windows-app-inspection-onglet-database-inspector" title="Permanent link">&para;</a></h4>
+<p>!!! warning "Note : si vous voyez" Note : si vous voyez le message « No devices detected », rendez-vous dans le menu  File / Invalidate Caches .</p>
+<h4 id="au-besoin-cliquez-sur-le-nom-de-lemulateur-et-selectionnez-votre-application-parmi-les-processus-disponibles">Au besoin, cliquez sur le nom de l'émulateur et sélectionnez votre application parmi les processus disponibles.<a class="headerlink" href="#au-besoin-cliquez-sur-le-nom-de-lemulateur-et-selectionnez-votre-application-parmi-les-processus-disponibles" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-le-nom-dune-table-pour-voir-sa-structure">Cliquez sur le nom d'une table pour voir sa structure.<a class="headerlink" href="#cliquez-sur-le-nom-dune-table-pour-voir-sa-structure" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_170_img_01_400x336.png" /></p>
+<h4 id="double-cliquez-sur-le-nom-dune-table-pour-voir-ses-donnees">Double-cliquez sur le nom d'une table pour voir ses données.<a class="headerlink" href="#double-cliquez-sur-le-nom-dune-table-pour-voir-ses-donnees" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_170_img_02_1000x182.png" /></p>
+<h4 id="cliquez-sur-licone-open-new-query-tab-pour-pouvoir-entrer-une-requete-sql-vous-pouvez-ensuite-faire-des-requete">Cliquez sur l'icône Open New Query Tab pour pouvoir entrer une requête SQL. Vous pouvez ensuite faire des requête<a class="headerlink" href="#cliquez-sur-licone-open-new-query-tab-pour-pouvoir-entrer-une-requete-sql-vous-pouvez-ensuite-faire-des-requete" title="Permanent link">&para;</a></h4>
+<h4 id="select-insert-update-ou-delete-afin-daffecter-les-donnees-de-la-base-de-donnees">SELECT, INSERT, UPDATE ou DELETE afin d'affecter les données de la base de données.<a class="headerlink" href="#select-insert-update-ou-delete-afin-daffecter-les-donnees-de-la-base-de-donnees" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_170_img_03_236x70.png" /></p>
+<p><img alt="Illustration" src="../../images/page_170_img_04_1000x182.png" /></p>
+<h3 id="database-closed">Database closed<a class="headerlink" href="#database-closed" title="Permanent link">&para;</a></h3>
+<p>Si vous voyez la mention (closed) à côté de la base de données, c'est que l'application qui roule dans l'émulateur n'a pas encore fait appel à la base de données.</p>
+<p>Effectuez une opération qui requiert une requête à la base de données, par exemple afficher la liste des enregistrements d'une table, puis vous aurez accès à la base de données dans l'outil Inspection de bases de données.</p>
+<p><img alt="Illustration" src="../../images/page_171_img_01_634x258.png" /></p>
+<h3 id="detached">[DETACHED]<a class="headerlink" href="#detached" title="Permanent link">&para;</a></h3>
+<p>Dans le cas où vous voyez [DETACHED] à côté du nom de votre application dans l'inspecteur d'applications, les requêtes SQL que vous tenterez d'exécuter dans l'inspecteur demeureront sans effet sur la base de données.</p>
+<p>Un redémarrage de l'émulateur pourrait régler le problème :</p>
+<h4 id="rendez-vous-dans-le-menu-view-tool-windows-device-manager">Rendez-vous dans le menu View / Tool Windows / Device Manager .<a class="headerlink" href="#rendez-vous-dans-le-menu-view-tool-windows-device-manager" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-licone-stop-vis-a-vis-lemulateur-que-vous-utilisez">Cliquez sur l'icône Stop vis-à-vis l'émulateur que vous utilisez.<a class="headerlink" href="#cliquez-sur-licone-stop-vis-a-vis-lemulateur-que-vous-utilisez" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-ensuite-sur-licone-start-pour-le-redemarrer">Cliquez ensuite sur l'icône Start pour le redémarrer.<a class="headerlink" href="#cliquez-ensuite-sur-licone-start-pour-le-redemarrer" title="Permanent link">&para;</a></h4>
+<p>Si cette technique ne fonctionne pas, un redémarrage de Android Studio pourrait faire l'affaire.</p>
+<p><img alt="Illustration" src="../../images/page_171_img_02_897x228.png" /></p>
+<h3 id="no-debuggable-processes-detected">No debuggable processes detected<a class="headerlink" href="#no-debuggable-processes-detected" title="Permanent link">&para;</a></h3>
+<p>Dans le cas où l'inspecteur d'application ne vous donne pas du tout accès à votre projet (message No debuggable processes detected), un redémarrage de l'émulateur pourrait également régler le problème (procédure ci-haut).</p>
+<p><img alt="Illustration" src="../../images/page_171_img_03_1014x264.png" /></p>
+<h4 id="pour-plus-dinformation">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://developer.android.com/studio/inspect/database?">« Déboguer votre base de données avec l'outil d'inspection de bases de données » - Android Developers</a>
+hl=fr</li>
+</ul>
+<h3 id="afficher-le-contenu-de-la-base-de-donnees-a-laide-de-loutil-dinspection-android-developers">* <a href="https://developer.android.com/codelabs/basic-android-kotlin-">« Afficher le contenu de la base de données à l'aide de l'outil d'inspection » - Android Developers</a><a class="headerlink" href="#afficher-le-contenu-de-la-base-de-donnees-a-laide-de-loutil-dinspection-android-developers" title="Permanent link">&para;</a></h3>
+<p>compose-persisting-data-room?hl=fr#9 54.2 Voir les fichiers stockés sur un émulateur Android</p>
+<p>Pour voir les fichiers stockés sur l'émulateur dans Android Studio :</p>
+<h4 id="rendez-vous-dans-view-tool-windows-device-explorer">Rendez-vous dans View / Tool Windows / Device Explorer .<a class="headerlink" href="#rendez-vous-dans-view-tool-windows-device-explorer" title="Permanent link">&para;</a></h4>
+<h4 id="selectionnez-lemulateur-qui-a-ete-utilise-pour-executer-lapplication">Sélectionnez l'émulateur qui a été utilisé pour exécuter l'application.<a class="headerlink" href="#selectionnez-lemulateur-qui-a-ete-utilise-pour-executer-lapplication" title="Permanent link">&para;</a></h4>
+<h4 id="retrouvez-votre-application-sous-le-dossier-datadata">Retrouvez votre application sous le dossier data/data .<a class="headerlink" href="#retrouvez-votre-application-sous-le-dossier-datadata" title="Permanent link">&para;</a></h4>
+<h4 id="vous-y-retrouverez-les-fichiers-utilises-par-lapplication-notamment-la-base-de-donnees">Vous y retrouverez les fichiers utilisés par l'application, notamment la base de données.<a class="headerlink" href="#vous-y-retrouverez-les-fichiers-utilises-par-lapplication-notamment-la-base-de-donnees" title="Permanent link">&para;</a></h4>
+<h4 id="un-clic-droit-vous-permettra-de-telecharger-le-fichier-de-votre-choix-sur-votre-ordinateur-de-le-supprimer-de">Un clic droit vous permettra de télécharger le fichier de votre choix sur votre ordinateur, de le supprimer de<a class="headerlink" href="#un-clic-droit-vous-permettra-de-telecharger-le-fichier-de-votre-choix-sur-votre-ordinateur-de-le-supprimer-de" title="Permanent link">&para;</a></h4>
+<p>l'émulateur, etc.</p>
+<p><img alt="Illustration" src="../../images/page_172_img_01_800x439.png" /></p>
+<h4 id="pour-plus-dinformation_1">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_1" title="Permanent link">&para;</a></h4>
+<h3 id="afficher-les-fichiers-stockes-sur-lappareil-a-laide-de-lexplorateur-de-lappareil-android-developers">* <a href="https://developer.android.com/studio/debug/device-file-">« Afficher les fichiers stockés sur l'appareil à l'aide de l'Explorateur de l'appareil » - Android Developers</a><a class="headerlink" href="#afficher-les-fichiers-stockes-sur-lappareil-a-laide-de-lexplorateur-de-lappareil-android-developers" title="Permanent link">&para;</a></h3>
+<p>explorer?hl=fr
+55. Lister des données</p>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

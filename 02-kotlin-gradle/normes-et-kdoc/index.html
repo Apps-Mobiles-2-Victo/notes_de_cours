@@ -1,0 +1,4155 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Sébastien Trottier, Christiane Lagacé, Cégep de Victoriaville">
+      
+      
+      
+        <link rel="prev" href="../kotlin-bases/">
+      
+      
+        <link rel="next" href="../../03-interface-compose/jetpack-compose-bases/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Normes de code, KDoc et extraits de code - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#normes-de-code-kdoc-et-extraits-de-code" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Normes de code, KDoc et extraits de code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-environnement/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-environnement/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-environnement/publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-est-ce-que-je-peux-utiliser-du-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Est-ce que je peux utiliser du code emprunté?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 Est-ce que je peux utiliser du code emprunté?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes-de-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes de cours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anciens-travaux-formatifs-ou-sommatifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anciens travaux formatifs ou sommatifs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-officielle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation officielle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generateur-de-code-ou-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générateur de code ou IA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ou-ailleurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ou ailleurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-powerpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Présentation PowerPoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-a-respecter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions à respecter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cest-lenseignante-ou-lenseignant-qui-decide-sil-est-permis-dutiliser-dans-vos-programmes-le-code-emprunte-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C'est l'enseignante ou l'enseignant qui décide s'il est permis d'utiliser dans vos programmes le code emprunté en
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C&#39;est l&#39;enseignante ou l&#39;enseignant qui décide s&#39;il est permis d&#39;utiliser dans vos programmes le code emprunté en">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citer-vos-sources-en-precisant-lauteur-etou-lurl-ou-le-code-a-ete-trouve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citer vos sources en précisant l'auteur et/ou l'URL où le code a été trouvé.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprendre-chacune-des-lignes-de-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprendre chacune des lignes de code.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#au-besoin-adapter-le-code-emprunte-a-votre-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Au besoin, adapter le code emprunté à votre situation .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citer-la-source-du-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citer la source du code emprunté
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Citer la source du code emprunté">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dabord-ceci-permet-de-rendre-a-cesar-ce-qui-est-a-cesar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'abord, ceci permet de rendre à César ce qui est à César.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensuite-il-sera-plus-facile-de-retrouver-le-code-original-et-den-comprendre-le-contexte-ah-oui-cest-de-la-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ensuite, il sera plus facile de retrouver le code original et d'en comprendre le contexte (« Ah, oui! C'est de là que
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-plus-si-vous-omettez-de-citer-vos-sources-ou-si-vous-utilisez-du-code-emprunte-sans-en-avoir-lautorisation-vous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De plus, si vous omettez de citer vos sources ou si vous utilisez du code emprunté sans en avoir l'autorisation, vous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afin-de-mieux-vous-proteger-contre-deventuelles-accusations-de-plagiat-des-que-vous-utilisez-une-structure-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afin de mieux vous protéger contre d'éventuelles accusations de plagiat, dès que vous utilisez une structure de
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-empruntee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonction empruntée
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fonction empruntée">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lorsque-le-code-est-utilise-tel-quel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lorsque le code est utilisé tel quel :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-faut-ajouter-la-mention-source-suivie-de-lurl-vous-devez-conserver-le-nom-de-lauteur-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il faut ajouter la mention « Source » suivie de l'URL. Vous devez conserver le nom de l'auteur original.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-cas-de-code-genere-par-une-ia-si-votre-prof-vous-permet-dutiliser-ce-type-doutil-il-faut-ajouter-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le cas de code généré par une IA, si votre prof vous permet d'utiliser ce type d'outil , il faut ajouter la
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-avez-adapte-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous avez adapté le code :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-mention-sera-inspire-de-suivie-de-lurl-vous-pouvez-a-ce-moment-indiquer-votre-nom-comme-nom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La mention sera « Inspiré de » suivie de l'URL. Vous pouvez à ce moment indiquer votre nom comme nom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-cas-de-lia-ce-sera-code-partiellement-genere-par-suivie-de-la-reference-vous-pouvez-indiquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le cas de l'IA, ce sera « Code partiellement généré par » suivie de la référence. Vous pouvez indiquer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrait-de-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extrait de code emprunté
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votre-propre-code-tire-de-travaux-des-sessions-passees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Votre propre code tiré de travaux des sessions passées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cest-lorsquune-etudiante-ou-un-etudiant-remet-un-travail-ou-une-partie-de-travail-qui-a-deja-ete-soumis-a-un-enseignant-pour-evaluation-autrement-dit-cest-refiler-le-meme-travail-dans-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été soumis à un enseignant pour évaluation. Autrement dit, c'est refiler le même travail dans deux cours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#est-considere-comme-du-plagiat-de-la-tricherie-ou-de-la-fraude-liste-non-exhaustive-peu-importe-le-type-devaluation-le-fait-de-sautoplagier-cest-a-dire-de-remettre-une-evaluation-ou-une" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Est considéré comme du plagiat, de la tricherie ou de la fraude (liste non exhaustive), peu importe le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-plus-vous-devez-vous-citer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De plus, vous devez vous citer.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-christopher-fuhrman-et-frederick-henri-comment-reutiliser-correctement-du-code-source-dans-un-cours-de-programmation-ecole-de-technologie-superieure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Christopher Fuhrman et Frédérick Henri, « Comment réutiliser correctement du code source dans un cours de programmation ». École de Technologie Supérieure.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tricherie-et-integrite-academique-quest-ce-que-lautoplagiat-uqam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. * « Tricherie et intégrité académique - Qu'est-ce que l'autoplagiat? » - UQAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. * « Tricherie et intégrité académique - Qu&#39;est-ce que l&#39;autoplagiat? » - UQAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-open-source-licenses-work-and-how-to-add-them-to-your-projects-freecodecamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « How open source licenses work and how to add them to your projects » - freeCodeCamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#361-kdoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.1 KDoc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-de-la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de la documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de la documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-plugin-android-studio-intellij-pour-generer-la-structure-des-commentaires-kdoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-rendez-vous-dans-le-menu-file-settings-plugins-windows-ou-android-studio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, rendez-vous dans le menu File / Settings / Plugins (Windows) ou Android Studio / Settings /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugins (macOS).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-longlet-marketplace-recherchez-kdoc-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans l'onglet Marketplace , recherchez KDoc-er.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Install .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#363-generer-la-documentation-a-laide-de-dokka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.3 Générer la documentation à l'aide de Dokka
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-denvironnement-java_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable d'environnement JAVA_HOME
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable d&#39;environnement JAVA_HOME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appuyez-sur-les-touches-windows-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appuyez sur les touches Windows + I .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-systeme-dans-la-zone-de-gauche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Système dans la zone de gauche.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-a-propos-de-ou-informations-systeme-selon-votre-version-de-windows-au-bas-de-la-zone-de-droite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur À propos de (ou Informations système selon votre version de Windows) au bas de la zone de droite.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-parametres-avances-du-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Paramètres avancés du système .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-variables-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Variables d'environnement .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-la-zone-variables-systeme-cliquez-sur-nouvelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans la zone Variables système , cliquez sur Nouvelle .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nom-de-la-variable-entrez-java_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nom de la variable : entrez JAVA_HOME.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valeur-de-la-variable-entrez-le-chemin-du-dossier-dinstallation-de-java-typiquement-quand-java-a-ete-installe-avec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valeur de la variable : entrez le chemin du dossier d'installation de Java. Typiquement, quand Java a été installé avec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrez-la-configuration-puis-redemarrez-votre-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrez la configuration puis redémarrez votre ordinateur.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-trouver-le-chemin-dinstallation-de-java-avec-une-installation-dandroid-studio-ouvrez-le-finder-puis-faites-un-clic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour trouver le chemin d'installation de Java avec une installation d'Android Studio, ouvrez le Finder puis faites un clic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choisissez-afficher-le-contenu-du-paquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choisissez Afficher le contenu du paquet .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-chemin-cherche-devrait-ressembler-a-applicationsandroid-studioappcontentsjbrcontentshome-pour-copier-ce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le chemin cherché devrait ressembler à /Applications/Android Studio.app/Contents/jbr/Contents/Home . Pour copier ce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copier-en-tant-que-nom-de-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copier en tant que nom de chemin .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ouvrez-maintenant-une-fenetre-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ouvrez maintenant une fenêtre Terminal.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lancez-cette-commande-pour-editer-le-fichier-de-configuration-du-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancez cette commande pour éditer le fichier de configuration du shell :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajoutez-cette-ligne-au-bas-du-fichier-en-ajustant-le-nom-du-chemin-a-ce-que-vous-avez-trouve-plus-haut-notez-lajout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajoutez cette ligne au bas du fichier en ajustant le nom du chemin à ce que vous avez trouvé plus haut. Notez l'ajout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrez-le-fichier-puis-redemarrez-votre-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrez le fichier puis redémarrez votre ordinateur.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration du projet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration du projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-fichier-buildgradlekts-principal-aussi-appele-top-level-buildgradle-file-soit-celui-present-directement-a-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le fichier build.gradle.kts principal (aussi appelé top-level build.gradle file), soit celui présent directement à la
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-de-la-documentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de la documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de la documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ouvrez-une-fenetre-terminal-dans-android-studio-view-tool-windows-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ouvrez une fenêtre Terminal dans Android Studio : View / Tool Windows / Terminal .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrez-y-la-commande-qui-lance-la-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrez-y la commande qui lance la génération :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceci-a-genere-le-fichier-appbuilddokkahtmlindexhtml-ouvrez-ce-fichier-dans-un-navigateur-en-naviguant-dans-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceci a généré le fichier app/build/dokka/html/index.html . Ouvrez ce fichier dans un navigateur. En naviguant dans les
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-la-couleur-de-fond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37. La couleur de fond
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/systeme-fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-est-ce-que-je-peux-utiliser-du-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Est-ce que je peux utiliser du code emprunté?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 Est-ce que je peux utiliser du code emprunté?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes-de-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes de cours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anciens-travaux-formatifs-ou-sommatifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anciens travaux formatifs ou sommatifs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-officielle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation officielle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generateur-de-code-ou-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générateur de code ou IA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ou-ailleurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ou ailleurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-powerpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Présentation PowerPoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-a-respecter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions à respecter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cest-lenseignante-ou-lenseignant-qui-decide-sil-est-permis-dutiliser-dans-vos-programmes-le-code-emprunte-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C'est l'enseignante ou l'enseignant qui décide s'il est permis d'utiliser dans vos programmes le code emprunté en
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C&#39;est l&#39;enseignante ou l&#39;enseignant qui décide s&#39;il est permis d&#39;utiliser dans vos programmes le code emprunté en">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citer-vos-sources-en-precisant-lauteur-etou-lurl-ou-le-code-a-ete-trouve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citer vos sources en précisant l'auteur et/ou l'URL où le code a été trouvé.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprendre-chacune-des-lignes-de-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprendre chacune des lignes de code.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#au-besoin-adapter-le-code-emprunte-a-votre-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Au besoin, adapter le code emprunté à votre situation .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citer-la-source-du-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citer la source du code emprunté
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Citer la source du code emprunté">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dabord-ceci-permet-de-rendre-a-cesar-ce-qui-est-a-cesar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'abord, ceci permet de rendre à César ce qui est à César.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensuite-il-sera-plus-facile-de-retrouver-le-code-original-et-den-comprendre-le-contexte-ah-oui-cest-de-la-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ensuite, il sera plus facile de retrouver le code original et d'en comprendre le contexte (« Ah, oui! C'est de là que
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-plus-si-vous-omettez-de-citer-vos-sources-ou-si-vous-utilisez-du-code-emprunte-sans-en-avoir-lautorisation-vous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De plus, si vous omettez de citer vos sources ou si vous utilisez du code emprunté sans en avoir l'autorisation, vous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afin-de-mieux-vous-proteger-contre-deventuelles-accusations-de-plagiat-des-que-vous-utilisez-une-structure-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afin de mieux vous protéger contre d'éventuelles accusations de plagiat, dès que vous utilisez une structure de
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-empruntee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonction empruntée
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fonction empruntée">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lorsque-le-code-est-utilise-tel-quel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lorsque le code est utilisé tel quel :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-faut-ajouter-la-mention-source-suivie-de-lurl-vous-devez-conserver-le-nom-de-lauteur-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il faut ajouter la mention « Source » suivie de l'URL. Vous devez conserver le nom de l'auteur original.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-cas-de-code-genere-par-une-ia-si-votre-prof-vous-permet-dutiliser-ce-type-doutil-il-faut-ajouter-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le cas de code généré par une IA, si votre prof vous permet d'utiliser ce type d'outil , il faut ajouter la
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-avez-adapte-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous avez adapté le code :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-mention-sera-inspire-de-suivie-de-lurl-vous-pouvez-a-ce-moment-indiquer-votre-nom-comme-nom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La mention sera « Inspiré de » suivie de l'URL. Vous pouvez à ce moment indiquer votre nom comme nom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-cas-de-lia-ce-sera-code-partiellement-genere-par-suivie-de-la-reference-vous-pouvez-indiquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le cas de l'IA, ce sera « Code partiellement généré par » suivie de la référence. Vous pouvez indiquer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrait-de-code-emprunte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extrait de code emprunté
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votre-propre-code-tire-de-travaux-des-sessions-passees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Votre propre code tiré de travaux des sessions passées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cest-lorsquune-etudiante-ou-un-etudiant-remet-un-travail-ou-une-partie-de-travail-qui-a-deja-ete-soumis-a-un-enseignant-pour-evaluation-autrement-dit-cest-refiler-le-meme-travail-dans-deux-cours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été soumis à un enseignant pour évaluation. Autrement dit, c'est refiler le même travail dans deux cours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#est-considere-comme-du-plagiat-de-la-tricherie-ou-de-la-fraude-liste-non-exhaustive-peu-importe-le-type-devaluation-le-fait-de-sautoplagier-cest-a-dire-de-remettre-une-evaluation-ou-une" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Est considéré comme du plagiat, de la tricherie ou de la fraude (liste non exhaustive), peu importe le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-plus-vous-devez-vous-citer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De plus, vous devez vous citer.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-christopher-fuhrman-et-frederick-henri-comment-reutiliser-correctement-du-code-source-dans-un-cours-de-programmation-ecole-de-technologie-superieure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Christopher Fuhrman et Frédérick Henri, « Comment réutiliser correctement du code source dans un cours de programmation ». École de Technologie Supérieure.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tricherie-et-integrite-academique-quest-ce-que-lautoplagiat-uqam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. * « Tricherie et intégrité académique - Qu'est-ce que l'autoplagiat? » - UQAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. * « Tricherie et intégrité académique - Qu&#39;est-ce que l&#39;autoplagiat? » - UQAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-open-source-licenses-work-and-how-to-add-them-to-your-projects-freecodecamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « How open source licenses work and how to add them to your projects » - freeCodeCamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#361-kdoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.1 KDoc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-de-la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de la documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de la documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-plugin-android-studio-intellij-pour-generer-la-structure-des-commentaires-kdoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-rendez-vous-dans-le-menu-file-settings-plugins-windows-ou-android-studio-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, rendez-vous dans le menu File / Settings / Plugins (Windows) ou Android Studio / Settings /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugins (macOS).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-longlet-marketplace-recherchez-kdoc-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans l'onglet Marketplace , recherchez KDoc-er.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Install .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#363-generer-la-documentation-a-laide-de-dokka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36.3 Générer la documentation à l'aide de Dokka
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-denvironnement-java_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable d'environnement JAVA_HOME
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable d&#39;environnement JAVA_HOME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appuyez-sur-les-touches-windows-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appuyez sur les touches Windows + I .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-systeme-dans-la-zone-de-gauche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Système dans la zone de gauche.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-a-propos-de-ou-informations-systeme-selon-votre-version-de-windows-au-bas-de-la-zone-de-droite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur À propos de (ou Informations système selon votre version de Windows) au bas de la zone de droite.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-parametres-avances-du-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Paramètres avancés du système .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-variables-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Variables d'environnement .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-la-zone-variables-systeme-cliquez-sur-nouvelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans la zone Variables système , cliquez sur Nouvelle .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nom-de-la-variable-entrez-java_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nom de la variable : entrez JAVA_HOME.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valeur-de-la-variable-entrez-le-chemin-du-dossier-dinstallation-de-java-typiquement-quand-java-a-ete-installe-avec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valeur de la variable : entrez le chemin du dossier d'installation de Java. Typiquement, quand Java a été installé avec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrez-la-configuration-puis-redemarrez-votre-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrez la configuration puis redémarrez votre ordinateur.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-trouver-le-chemin-dinstallation-de-java-avec-une-installation-dandroid-studio-ouvrez-le-finder-puis-faites-un-clic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour trouver le chemin d'installation de Java avec une installation d'Android Studio, ouvrez le Finder puis faites un clic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choisissez-afficher-le-contenu-du-paquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choisissez Afficher le contenu du paquet .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-chemin-cherche-devrait-ressembler-a-applicationsandroid-studioappcontentsjbrcontentshome-pour-copier-ce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le chemin cherché devrait ressembler à /Applications/Android Studio.app/Contents/jbr/Contents/Home . Pour copier ce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copier-en-tant-que-nom-de-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copier en tant que nom de chemin .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ouvrez-maintenant-une-fenetre-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ouvrez maintenant une fenêtre Terminal.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lancez-cette-commande-pour-editer-le-fichier-de-configuration-du-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancez cette commande pour éditer le fichier de configuration du shell :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajoutez-cette-ligne-au-bas-du-fichier-en-ajustant-le-nom-du-chemin-a-ce-que-vous-avez-trouve-plus-haut-notez-lajout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajoutez cette ligne au bas du fichier en ajustant le nom du chemin à ce que vous avez trouvé plus haut. Notez l'ajout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrez-le-fichier-puis-redemarrez-votre-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrez le fichier puis redémarrez votre ordinateur.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration du projet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration du projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-fichier-buildgradlekts-principal-aussi-appele-top-level-buildgradle-file-soit-celui-present-directement-a-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le fichier build.gradle.kts principal (aussi appelé top-level build.gradle file), soit celui présent directement à la
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-de-la-documentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de la documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de la documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ouvrez-une-fenetre-terminal-dans-android-studio-view-tool-windows-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ouvrez une fenêtre Terminal dans Android Studio : View / Tool Windows / Terminal .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrez-y-la-commande-qui-lance-la-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrez-y la commande qui lance la génération :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceci-a-genere-le-fichier-appbuilddokkahtmlindexhtml-ouvrez-ce-fichier-dans-un-navigateur-en-naviguant-dans-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceci a généré le fichier app/build/dokka/html/index.html . Ouvrez ce fichier dans un navigateur. En naviguant dans les
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-la-couleur-de-fond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37. La couleur de fond
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="normes-de-code-kdoc-et-extraits-de-code">Normes de code, KDoc et extraits de code<a class="headerlink" href="#normes-de-code-kdoc-et-extraits-de-code" title="Permanent link">&para;</a></h1>
+<h3 id="91-est-ce-que-je-peux-utiliser-du-code-emprunte">9.1 Est-ce que je peux utiliser du code emprunté?<a class="headerlink" href="#91-est-ce-que-je-peux-utiliser-du-code-emprunte" title="Permanent link">&para;</a></h3>
+<p>Au fur et à mesure que vous progresserez dans votre formation, de nombreux exemples et extraits de code vous seront présentés.</p>
+<p>Dans les notes de cours, des extraits de code sont parfois présentés pour illustrer un propos. Il s'agit d'exemples qui pourraient convenir à vos besoins... ou pas!</p>
+<p>D'autres fois, il s'agit d'un algorithme ou d'un squelette qui assure que le code soit robuste, sécuritaire, performant, convivial, fonctionnel et clair (en PHP, voir « <strong>les_qualites_d_un_bon_programme_php</strong> » ; en WordPress, voir « <strong>les_qualites_d_un_bon_programme_wordpress</strong> »).</p>
+<p>Intéressant! Ce serait dommage de réinventer la roue.</p>
+<p>Que ce soit un extrait de code, un algorithme ou un squelette, si vous l'utilisez dans votre programme, on parlera de code emprunté, terme tiré du document « Comment réutiliser correctement du code source dans un cours de programmation » par Christopher Fuhrman et Frédérick Henri de l'École de Technologie Supérieure (ÉTS) .</p>
+<p>Le code emprunté peut provenir de différentes sources :</p>
+<h4 id="notes-de-cours">Notes de cours<a class="headerlink" href="#notes-de-cours" title="Permanent link">&para;</a></h4>
+<h4 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h4>
+<h4 id="anciens-travaux-formatifs-ou-sommatifs">Anciens travaux formatifs ou sommatifs<a class="headerlink" href="#anciens-travaux-formatifs-ou-sommatifs" title="Permanent link">&para;</a></h4>
+<h4 id="documentation-officielle">Documentation officielle<a class="headerlink" href="#documentation-officielle" title="Permanent link">&para;</a></h4>
+<h4 id="generateur-de-code-ou-ia">Générateur de code ou IA<a class="headerlink" href="#generateur-de-code-ou-ia" title="Permanent link">&para;</a></h4>
+<h4 id="ou-ailleurs">ou ailleurs<a class="headerlink" href="#ou-ailleurs" title="Permanent link">&para;</a></h4>
+<p>La question qui tue : est-ce que vous avez le droit d'utiliser dans vos programmes du code emprunté des notes de cours ou d'autres sources?</p>
+<p>La réponse est « ça dépend ».</p>
+<h3 id="presentation-powerpoint">Présentation PowerPoint<a class="headerlink" href="#presentation-powerpoint" title="Permanent link">&para;</a></h3>
+<p>Les concepts présentés sur cette fiche sont repris et complétés dans la présentation PowerPoint adoptée par le département d'informatique du cégep de Victoriaville, révision 2023.</p>
+<h3 id="conditions-a-respecter">Conditions à respecter<a class="headerlink" href="#conditions-a-respecter" title="Permanent link">&para;</a></h3>
+<h3 id="cest-lenseignante-ou-lenseignant-qui-decide-sil-est-permis-dutiliser-dans-vos-programmes-le-code-emprunte-en">C'est l'enseignante ou l'enseignant qui décide s'il est permis d'utiliser dans vos programmes le code emprunté en<a class="headerlink" href="#cest-lenseignante-ou-lenseignant-qui-decide-sil-est-permis-dutiliser-dans-vos-programmes-le-code-emprunte-en" title="Permanent link">&para;</a></h3>
+<p>provenance de différentes sources. En cas de doute, demandez-lui.</p>
+<p>Dans le cas où vous avez la permission d'utiliser du code emprunté, vous devez absolument respecter ces conditions :</p>
+<h4 id="citer-vos-sources-en-precisant-lauteur-etou-lurl-ou-le-code-a-ete-trouve">Citer vos sources en précisant l'auteur et/ou l'URL où le code a été trouvé.<a class="headerlink" href="#citer-vos-sources-en-precisant-lauteur-etou-lurl-ou-le-code-a-ete-trouve" title="Permanent link">&para;</a></h4>
+<p>La technique est expliquée un peu plus bas.</p>
+<h4 id="comprendre-chacune-des-lignes-de-code">Comprendre chacune des lignes de code.<a class="headerlink" href="#comprendre-chacune-des-lignes-de-code" title="Permanent link">&para;</a></h4>
+<p>Vous devez être prêt en tout temps à expliquer votre code à votre prof.</p>
+<h4 id="au-besoin-adapter-le-code-emprunte-a-votre-situation">Au besoin, adapter le code emprunté à votre situation .<a class="headerlink" href="#au-besoin-adapter-le-code-emprunte-a-votre-situation" title="Permanent link">&para;</a></h4>
+<p>Sans une adaptation adéquate, le code risque de ne pas répondre à votre besoin.</p>
+<h3 id="citer-la-source-du-code-emprunte">Citer la source du code emprunté<a class="headerlink" href="#citer-la-source-du-code-emprunte" title="Permanent link">&para;</a></h3>
+<p>Il y a plusieurs buts à la citation des sources :</p>
+<h4 id="dabord-ceci-permet-de-rendre-a-cesar-ce-qui-est-a-cesar">D'abord, ceci permet de rendre à César ce qui est à César.<a class="headerlink" href="#dabord-ceci-permet-de-rendre-a-cesar-ce-qui-est-a-cesar" title="Permanent link">&para;</a></h4>
+<h4 id="ensuite-il-sera-plus-facile-de-retrouver-le-code-original-et-den-comprendre-le-contexte-ah-oui-cest-de-la-que">Ensuite, il sera plus facile de retrouver le code original et d'en comprendre le contexte (« Ah, oui! C'est de là que<a class="headerlink" href="#ensuite-il-sera-plus-facile-de-retrouver-le-code-original-et-den-comprendre-le-contexte-ah-oui-cest-de-la-que" title="Permanent link">&para;</a></h4>
+<p>m'était venue cette idée! »).</p>
+<h4 id="de-plus-si-vous-omettez-de-citer-vos-sources-ou-si-vous-utilisez-du-code-emprunte-sans-en-avoir-lautorisation-vous">De plus, si vous omettez de citer vos sources ou si vous utilisez du code emprunté sans en avoir l'autorisation, vous<a class="headerlink" href="#de-plus-si-vous-omettez-de-citer-vos-sources-ou-si-vous-utilisez-du-code-emprunte-sans-en-avoir-lautorisation-vous" title="Permanent link">&para;</a></h4>
+<p>vous exposez à des accusations de plagiat.</p>
+<h3 id="afin-de-mieux-vous-proteger-contre-deventuelles-accusations-de-plagiat-des-que-vous-utilisez-une-structure-de">Afin de mieux vous protéger contre d'éventuelles accusations de plagiat, dès que vous utilisez une structure de<a class="headerlink" href="#afin-de-mieux-vous-proteger-contre-deventuelles-accusations-de-plagiat-des-que-vous-utilisez-une-structure-de" title="Permanent link">&para;</a></h3>
+<p>code différente de ce qui a été enseigné, il faut citer vos sources, sauf bien sûr si vous avez développé l'algorithme vous-mêmes.</p>
+<h3 id="fonction-empruntee">Fonction empruntée<a class="headerlink" href="#fonction-empruntee" title="Permanent link">&para;</a></h3>
+<p>Lorsqu'une fonction complète est empruntée, la source peut être citée dans le commentaire de documentation de la fonction.</p>
+<h4 id="lorsque-le-code-est-utilise-tel-quel">Lorsque le code est utilisé tel quel :<a class="headerlink" href="#lorsque-le-code-est-utilise-tel-quel" title="Permanent link">&para;</a></h4>
+<h4 id="il-faut-ajouter-la-mention-source-suivie-de-lurl-vous-devez-conserver-le-nom-de-lauteur-original">Il faut ajouter la mention « Source » suivie de l'URL. Vous devez conserver le nom de l'auteur original.<a class="headerlink" href="#il-faut-ajouter-la-mention-source-suivie-de-lurl-vous-devez-conserver-le-nom-de-lauteur-original" title="Permanent link">&para;</a></h4>
+<h4 id="dans-le-cas-de-code-genere-par-une-ia-si-votre-prof-vous-permet-dutiliser-ce-type-doutil-il-faut-ajouter-la">Dans le cas de code généré par une IA, si votre prof vous permet d'utiliser ce type d'outil , il faut ajouter la<a class="headerlink" href="#dans-le-cas-de-code-genere-par-une-ia-si-votre-prof-vous-permet-dutiliser-ce-type-doutil-il-faut-ajouter-la" title="Permanent link">&para;</a></h4>
+<p>mention « Code généré par » suivie de la référence au format Auteur. (Année). Nom de l’intelligence artificielle (version) [Type de modèle]. URL</p>
+<p>Ex : Code généré par OpenAI. (2023). ChatGPT (version 15 mars 2023) [Modèle massif de langage]. <a href="https://chat.openai.com/chat">https://chat.openai.com/chat</a></p>
+<p>ou encore : Code généré par Microsoft. (2024). Microsoft Copilot (version novembre 2024) [Modèle de langage basé sur l'IA]. <a href="https://www.microsoft.com/copilot">https://www.microsoft.com/copilot</a></p>
+<p>ou encore : Code généré par Google AI. (2023). Gemini (version 1.2.3, 15 octobre 2023) [Modèle de langage de grande taille]. <a href="https://gemini.google.com">https://gemini.google.com</a></p>
+<h4 id="si-vous-avez-adapte-le-code">Si vous avez adapté le code :<a class="headerlink" href="#si-vous-avez-adapte-le-code" title="Permanent link">&para;</a></h4>
+<h4 id="la-mention-sera-inspire-de-suivie-de-lurl-vous-pouvez-a-ce-moment-indiquer-votre-nom-comme-nom">La mention sera « Inspiré de » suivie de l'URL. Vous pouvez à ce moment indiquer votre nom comme nom<a class="headerlink" href="#la-mention-sera-inspire-de-suivie-de-lurl-vous-pouvez-a-ce-moment-indiquer-votre-nom-comme-nom" title="Permanent link">&para;</a></h4>
+<p>d'auteur.</p>
+<h4 id="dans-le-cas-de-lia-ce-sera-code-partiellement-genere-par-suivie-de-la-reference-vous-pouvez-indiquer">Dans le cas de l'IA, ce sera « Code partiellement généré par » suivie de la référence. Vous pouvez indiquer<a class="headerlink" href="#dans-le-cas-de-lia-ce-sera-code-partiellement-genere-par-suivie-de-la-reference-vous-pouvez-indiquer" title="Permanent link">&para;</a></h4>
+<p>votre nom comme nom d'auteur.</p>
+<div class="language-kotlin highlight"><span class="filename">PHP</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/**</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> * Vérifie si l'usager est authentifié.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> *</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> * Utilisation : if !authentifier('$usager, $passecrypte) { (affiche le formulaire...) }</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm"> * Suppositions critiques : Le formulaire doit avoir un champ nommé usager et un champ nommé motdepasse.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm"> *                          Le mot de passe doit être crypté dans la BD à l'aide de password_hash ('...', PASSWORD_DEFAULT ).</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm"> *                          La variable de session usager sera initialisée si l'authentification fonctionne.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm"> *</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cm"> * @param string $usager Code d'usager</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cm"> * @param string $motDePasse Mot de passe crypté avec password_hash ('...', PASSWORD_DEFAULT )</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cm"> *</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm"> * @author Christiane Lagacé &lt;christiane.lagace@hotmail.com&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm"> * Inspiré de https://...</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm"> * @return Boolean true si code d'usager et mot de passe valides, false si non valides</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="cm"> *</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="cm"> */</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">function</span><span class="w"> </span><span class="n">authentifier</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="err">$</span><span class="n">usager</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="err">$</span><span class="n">motDePasse</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="extrait-de-code-emprunte">Extrait de code emprunté<a class="headerlink" href="#extrait-de-code-emprunte" title="Permanent link">&para;</a></h3>
+<p>Si le code emprunté n'est pas une fonction complète, la citation peut être réalisée à l'aide d'un simple commentaire dans le code.</p>
+<p>Dans leur document intitulé « Comment réutiliser correctement du code source dans un cours de programmation » , Christopher Fuhrman et Frédérick Henri de l'École de Technologie Supérieure (ÉTS) proposent une façon claire de citer les sources dans un programme.</p>
+<p>Cette technique offre l'avantage d'identifier clairement quelle partie du code a été empruntée, ce qui est essentiel dans le cas où le code emprunté n'est pas une fonction complète.</p>
+<p>Ici encore, la citation parlera de « Source » ou « Code généré par » lorsque le code est utilisé tel quel et de « Inspiré de » ou « Code partiellement généré par » lorsque le code a été modifié.</p>
+<div class="language-kotlin highlight"><span class="filename">PHP</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// gestion des erreurs</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Code emprunté. Source : https://apical.xyz/fiches/reutiliser_des_parties_de_code/fichier_configuration_inc</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">DEVEL</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">// journalise et affiche tous les niveaux d'erreurs en mode développement</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">error_reporting</span><span class="p">(</span><span class="n">E_ALL</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">ini_set</span><span class="p">(</span><span class="err">'</span><span class="n">display_errors</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="sc">'1'</span><span class="p">);</span><span class="w">   </span><span class="c1">// mettre à 0 si on ne veut pas voir les message à l'écran</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="c1">// en mode production, ne journalise pas certains niveaux pour des raisons de performance</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">error_reporting</span><span class="p">(</span><span class="n">E_ALL</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">E_STRICT</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">E_DEPRECATED</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="c1">// aucun message ne sera affiché pour des raisons de sécurité</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">ini_set</span><span class="p">(</span><span class="err">'</span><span class="n">display_errors</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="sc">'0'</span><span class="p">);</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">// Fin du code emprunté</span>
+</span></code></pre></div>
+<h3 id="votre-propre-code-tire-de-travaux-des-sessions-passees">Votre propre code tiré de travaux des sessions passées<a class="headerlink" href="#votre-propre-code-tire-de-travaux-des-sessions-passees" title="Permanent link">&para;</a></h3>
+<p>Saviez-vous qu'il est possible de s'auto-plagier?</p>
+<p>Selon l'UQAM , l'autoplagiat :</p>
+<h3 id="cest-lorsquune-etudiante-ou-un-etudiant-remet-un-travail-ou-une-partie-de-travail-qui-a-deja-ete-soumis-a-un-enseignant-pour-evaluation-autrement-dit-cest-refiler-le-meme-travail-dans-deux-cours">C'est lorsqu’une étudiante ou un étudiant remet un travail, ou une partie de travail, qui a déjà été soumis à un enseignant pour évaluation. Autrement dit, c'est refiler le même travail dans deux cours<a class="headerlink" href="#cest-lorsquune-etudiante-ou-un-etudiant-remet-un-travail-ou-une-partie-de-travail-qui-a-deja-ete-soumis-a-un-enseignant-pour-evaluation-autrement-dit-cest-refiler-le-meme-travail-dans-deux-cours" title="Permanent link">&para;</a></h3>
+<p>différents.</p>
+<p>La PIEA du Cégep de Victoriaville est claire à ce sujet :</p>
+<h3 id="est-considere-comme-du-plagiat-de-la-tricherie-ou-de-la-fraude-liste-non-exhaustive-peu-importe-le-type-devaluation-le-fait-de-sautoplagier-cest-a-dire-de-remettre-une-evaluation-ou-une">Est considéré comme du plagiat, de la tricherie ou de la fraude (liste non exhaustive), peu importe le type d’évaluation : [...] Le fait de s’autoplagier, c’est-à-dire de remettre une évaluation ou une<a class="headerlink" href="#est-considere-comme-du-plagiat-de-la-tricherie-ou-de-la-fraude-liste-non-exhaustive-peu-importe-le-type-devaluation-le-fait-de-sautoplagier-cest-a-dire-de-remettre-une-evaluation-ou-une" title="Permanent link">&para;</a></h3>
+<p>partie d’évaluation déjà réalisée dans un cours, et ce, sans avoir obtenu au préalable l’autorisation explicite de l’enseignante ou de l’enseignant du ou des cours concernés ;</p>
+<p>Afin d'éviter l'autoplagiat, vous devez obtenir la permission de l'enseignante ou de l'enseignant avant de réutiliser une partie du code que vous avez vous-même écrit ou co-écrit et qui a déjà été évalué de façon formative ou sommative.</p>
+<h3 id="de-plus-vous-devez-vous-citer">De plus, vous devez vous citer.<a class="headerlink" href="#de-plus-vous-devez-vous-citer" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Source</strong> : </p>
+</blockquote>
+<h3 id="1-christopher-fuhrman-et-frederick-henri-comment-reutiliser-correctement-du-code-source-dans-un-cours-de-programmation-ecole-de-technologie-superieure">1. Christopher Fuhrman et Frédérick Henri, « Comment réutiliser correctement du code source dans un cours de programmation ». École de Technologie Supérieure.<a class="headerlink" href="#1-christopher-fuhrman-et-frederick-henri-comment-reutiliser-correctement-du-code-source-dans-un-cours-de-programmation-ecole-de-technologie-superieure" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.etsmtl.ca/docs/etudes/citer-pas-plagier/documents/programmation-plagiat-ets">https://www.etsmtl.ca/docs/etudes/citer-pas-plagier/documents/programmation-plagiat-ets</a></p>
+<h2 id="2-tricherie-et-integrite-academique-quest-ce-que-lautoplagiat-uqam">2. * <a href="https://r18.uqam.ca/7-faq/13-qu-est-ce-que-l-autoplagiat.html">« Tricherie et intégrité académique - Qu'est-ce que l'autoplagiat? » - UQAM</a><a class="headerlink" href="#2-tricherie-et-integrite-academique-quest-ce-que-lautoplagiat-uqam" title="Permanent link">&para;</a></h2>
+<h4 id="pour-plus-dinformation">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation" title="Permanent link">&para;</a></h4>
+<p>« Programmation et plagiat ». École de Technologie Supérieure. <a href="https://cours.etsmtl.ca/log725/private/notes/plagiat.pdf">https://cours.etsmtl.ca/log725/private/notes/plagiat.pdf</a></p>
+<h3 id="how-open-source-licenses-work-and-how-to-add-them-to-your-projects-freecodecamp">* <a href="https://www.freecodecamp.org/news/how-open-source-licenses-work-">« How open source licenses work and how to add them to your projects » - freeCodeCamp</a><a class="headerlink" href="#how-open-source-licenses-work-and-how-to-add-them-to-your-projects-freecodecamp" title="Permanent link">&para;</a></h3>
+<p>and-how-to-add-them-to-your-projects-34310c3cf94/
+10. Pour vous aider dans ce cours</p>
+<hr />
+<h3 id="361-kdoc">36.1 KDoc<a class="headerlink" href="#361-kdoc" title="Permanent link">&para;</a></h3>
+<p>Chaque langage de programmation propose ses propres normes de documentation.</p>
+<p>Dans le mode de Kotlin, la documentation du code est réalisée à l'aide de KDoc .</p>
+<p>Par exemple, pour documenter une fonction :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/**</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cm">* Vérifie si la réponse est bonne.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">*</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">* @param reponse La réponse à valider.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cm">* @return true si valide.</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">*/</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">valider</span><span class="p">(</span><span class="n">reponse</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Exemple avec hissage d'état :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/**</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * Vérifie si la réponse est bonne.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm"> *</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cm"> * @param reponse La réponse à valider.</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cm"> * @param onValideChange Lambda pour retenir si valide ou non.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cm"> */</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">valider</span><span class="p">(</span><span class="n">reponse</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">onValideChange</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">Boolean</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span></code></pre></div>
+<p>Exemple pour une fonction composable :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/**</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cm"> * Écran principal.</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm"> */</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nd">@Composable</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">MainScreen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span></code></pre></div>
+<p>ou encore :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/**</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm"> * Contenu principal.</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm"> *</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cm"> * @param innerPadding Espace à appliquer pour que le contenu ne soit pas sous les barres d'application.</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="cm"> */</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nd">@Composable</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">MainContent</span><span class="p">(</span><span class="n">innerPadding</span><span class="p">:</span><span class="w"> </span><span class="n">PaddingValues</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span></code></pre></div>
+<p>Et pour une classe :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/**</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * Gestion des préférences utilisateur.</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm"> *</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cm"> * @author Christiane Lagacé, inspiré de https://medium.com/@rowaido.game/persistent-data-storage-using-datastore-preferences-</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cm">in-jetpack-compose-90c481bfed12</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm"> *</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="cm"> * @property dataStore DataStore qui stocke les préférences utilisateur.</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="cm"> */</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kd">class</span><span class="w"> </span><span class="nc">UserPreferences</span><span class="p">(</span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dataStore</span><span class="p">:</span><span class="w"> </span><span class="n">DataStore</span><span class="o">&lt;</span><span class="n">Preferences</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span><span class="w">   </span>
+</span></code></pre></div>
+<p>Autre exemple :</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/**</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cm">* État du UI de l'écran d'accueil.</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cm">*</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cm">* @author Christiane Lagacé</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="cm">*</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="cm">* @property _points Nombre de points obtenus</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="cm">* @property _partieTerminee Indique si la partie est terminée</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="cm">*/</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">HomeUiState</span><span class="p">(</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">_points</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">_partieTerminee</span><span class="p">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="generation-de-la-documentation">Génération de la documentation<a class="headerlink" href="#generation-de-la-documentation" title="Permanent link">&para;</a></h3>
+<p>Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML <strong>à l'aide de Dokka</strong>.</p>
+<h4 id="pour-plus-dinformation_1">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://kotlinlang.org/docs/kotlin-doc.html">« Document Kotlin code: KDoc » - Kotlin</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@drflakelorenzgerman/documentation-with-kdoc-for-kotlin-android-a93c99dfe74">« Documentation with KDoc for Kotlin/Android » - Medium</a></p>
+</li>
+</ul>
+<h3 id="362-plugin-android-studio-intellij-pour-generer-la-structure-des-commentaires-kdoc">36.2 Plugin Android Studio / IntelliJ pour générer la structure des commentaires KDoc<a class="headerlink" href="#362-plugin-android-studio-intellij-pour-generer-la-structure-des-commentaires-kdoc" title="Permanent link">&para;</a></h3>
+<p>KDoc-er est un plugin populaire pour Android Studio ou IntelliJ. Il permet de générer facilement la structure des commentaires KDoc.</p>
+<p>Pour l'installer :</p>
+<h4 id="dans-android-studio-rendez-vous-dans-le-menu-file-settings-plugins-windows-ou-android-studio-settings">Dans Android Studio, rendez-vous dans le menu File / Settings / Plugins (Windows) ou Android Studio / Settings /<a class="headerlink" href="#dans-android-studio-rendez-vous-dans-le-menu-file-settings-plugins-windows-ou-android-studio-settings" title="Permanent link">&para;</a></h4>
+<h4 id="plugins-macos">Plugins (macOS).<a class="headerlink" href="#plugins-macos" title="Permanent link">&para;</a></h4>
+<h4 id="dans-longlet-marketplace-recherchez-kdoc-er">Dans l'onglet Marketplace , recherchez KDoc-er.<a class="headerlink" href="#dans-longlet-marketplace-recherchez-kdoc-er" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-install">Cliquez sur Install .<a class="headerlink" href="#cliquez-sur-install" title="Permanent link">&para;</a></h4>
+<p>Désormais, quand vous tapes /** au-dessus d'une fonction ou d'une classe, KDoc-er générera le squelette de la documentation. À vous de l'ajuster et de le compléter.</p>
+<p>Voici par exemple ce qui est généré automatiquement pour cette fonction.</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/**</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cm"> * Color to string</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cm"> *</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cm"> * @param couleur</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cm"> * @return</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cm"> */</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">colorToString</span><span class="p">(</span><span class="n">couleur</span><span class="p">:</span><span class="w"> </span><span class="n">Color</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Et voici la documentation après qu'un développeur l'ait ajustée et complétée.</p>
+<div class="language-kotlin highlight"><span class="filename">KDoc</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/**</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cm"> * Convertit un objet de type Color en une chaîne qui représente cette couleur.</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm"> *</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm"> * @param couleur Objet Color. Valeurs supportées : Color.Blue, Color.Black, Color.White, Color.Red.</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm"> * @return Chaîne qui représente la couleur. Valeurs possibles : Bleu, Noir, Blanc, Rouge. </span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="cm"> */</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">colorToString</span><span class="p">(</span><span class="n">couleur</span><span class="p">:</span><span class="w"> </span><span class="n">Color</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="363-generer-la-documentation-a-laide-de-dokka">36.3 Générer la documentation à l'aide de Dokka<a class="headerlink" href="#363-generer-la-documentation-a-laide-de-dokka" title="Permanent link">&para;</a></h3>
+<p>Dokka est un outil qui permet de générer la documentation notamment à partir de <strong>commentaires KDoc</strong>.</p>
+<h3 id="variable-denvironnement-java_home">Variable d'environnement JAVA_HOME<a class="headerlink" href="#variable-denvironnement-java_home" title="Permanent link">&para;</a></h3>
+<p>Pour utiliser Dokka, vous aurez besoin d'une variable d'environnement nommée JAVA_HOME.</p>
+<p>Ces manipulations permettront d'utiliser Dokka sur l'ensemble de vos projets.</p>
+<p>Pour vérifier si JAVA_HOME existe sous Windows, ouvrez une fenêtre Terminal et entrez cette commande :</p>
+<div class="language-kotlin highlight"><span class="filename">Terminal (Windows)</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">dir</span><span class="w"> </span><span class="n">env</span><span class="p">:</span>
+</span></code></pre></div>
+<p>Sous Mac, entrez plutôt ceci :</p>
+<div class="language-kotlin highlight"><span class="filename">Terminal (Mac)</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ENV</span>
+</span></code></pre></div>
+<p>Si la variable n'existe pas ou si elle pointe sur une version de Java inférieure à 17, créez-la ou mettez-la à jour.</p>
+<p>Notez qu'une version de Java a été installée avec Android Studio. Il s'agit de Java JBR (JetBrains Runtime), une version optimisée du JDK (Java Development Kit) et dont la version est suffisamment récente pour Dokka.</p>
+<p>Pour créer la variable d'environnement JAVA_HOME sous Windows :</p>
+<h4 id="appuyez-sur-les-touches-windows-i">Appuyez sur les touches Windows + I .<a class="headerlink" href="#appuyez-sur-les-touches-windows-i" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-systeme-dans-la-zone-de-gauche">Cliquez sur Système dans la zone de gauche.<a class="headerlink" href="#cliquez-sur-systeme-dans-la-zone-de-gauche" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-a-propos-de-ou-informations-systeme-selon-votre-version-de-windows-au-bas-de-la-zone-de-droite">Cliquez sur À propos de  (ou Informations système selon votre version de Windows) au bas de la zone de droite.<a class="headerlink" href="#cliquez-sur-a-propos-de-ou-informations-systeme-selon-votre-version-de-windows-au-bas-de-la-zone-de-droite" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-parametres-avances-du-systeme">Cliquez sur Paramètres avancés du système .<a class="headerlink" href="#cliquez-sur-parametres-avances-du-systeme" title="Permanent link">&para;</a></h4>
+<h4 id="cliquez-sur-variables-denvironnement">Cliquez sur Variables d'environnement .<a class="headerlink" href="#cliquez-sur-variables-denvironnement" title="Permanent link">&para;</a></h4>
+<h4 id="dans-la-zone-variables-systeme-cliquez-sur-nouvelle">Dans la zone Variables système , cliquez sur Nouvelle .<a class="headerlink" href="#dans-la-zone-variables-systeme-cliquez-sur-nouvelle" title="Permanent link">&para;</a></h4>
+<h4 id="nom-de-la-variable-entrez-java_home">Nom de la variable : entrez JAVA_HOME.<a class="headerlink" href="#nom-de-la-variable-entrez-java_home" title="Permanent link">&para;</a></h4>
+<h4 id="valeur-de-la-variable-entrez-le-chemin-du-dossier-dinstallation-de-java-typiquement-quand-java-a-ete-installe-avec">Valeur de la variable : entrez le chemin du dossier d'installation de Java. Typiquement, quand Java a été installé avec<a class="headerlink" href="#valeur-de-la-variable-entrez-le-chemin-du-dossier-dinstallation-de-java-typiquement-quand-java-a-ete-installe-avec" title="Permanent link">&para;</a></h4>
+<p>Android Studio sous Windows, ce chemin est C:\Program Files\Android\Android Studio\jbr .</p>
+<h4 id="enregistrez-la-configuration-puis-redemarrez-votre-ordinateur">Enregistrez la configuration puis redémarrez votre ordinateur.<a class="headerlink" href="#enregistrez-la-configuration-puis-redemarrez-votre-ordinateur" title="Permanent link">&para;</a></h4>
+<p>Sous macOS :</p>
+<h4 id="pour-trouver-le-chemin-dinstallation-de-java-avec-une-installation-dandroid-studio-ouvrez-le-finder-puis-faites-un-clic">Pour trouver le chemin d'installation de Java avec une installation d'Android Studio, ouvrez le Finder puis faites un clic<a class="headerlink" href="#pour-trouver-le-chemin-dinstallation-de-java-avec-une-installation-dandroid-studio-ouvrez-le-finder-puis-faites-un-clic" title="Permanent link">&para;</a></h4>
+<p>droit sur le fichier Applications/Android Studio.app .</p>
+<h4 id="choisissez-afficher-le-contenu-du-paquet">Choisissez Afficher le contenu du paquet .<a class="headerlink" href="#choisissez-afficher-le-contenu-du-paquet" title="Permanent link">&para;</a></h4>
+<h4 id="le-chemin-cherche-devrait-ressembler-a-applicationsandroid-studioappcontentsjbrcontentshome-pour-copier-ce">Le chemin cherché devrait ressembler à  /Applications/Android Studio.app/Contents/jbr/Contents/Home . Pour copier ce<a class="headerlink" href="#le-chemin-cherche-devrait-ressembler-a-applicationsandroid-studioappcontentsjbrcontentshome-pour-copier-ce" title="Permanent link">&para;</a></h4>
+<p>chemin, faites un clic droit sur le dossier puis, en appuyant sur la touche  ⌥ Option , choisissez</p>
+<h4 id="copier-en-tant-que-nom-de-chemin">Copier en tant que nom de chemin .<a class="headerlink" href="#copier-en-tant-que-nom-de-chemin" title="Permanent link">&para;</a></h4>
+<h4 id="ouvrez-maintenant-une-fenetre-terminal">Ouvrez maintenant une fenêtre Terminal.<a class="headerlink" href="#ouvrez-maintenant-une-fenetre-terminal" title="Permanent link">&para;</a></h4>
+<h4 id="lancez-cette-commande-pour-editer-le-fichier-de-configuration-du-shell">Lancez cette commande pour éditer le fichier de configuration du shell :<a class="headerlink" href="#lancez-cette-commande-pour-editer-le-fichier-de-configuration-du-shell" title="Permanent link">&para;</a></h4>
+<div class="language-kotlin highlight"><span class="filename">Terminal</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">nano</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="na">zshrc</span>
+</span></code></pre></div>
+<h4 id="ajoutez-cette-ligne-au-bas-du-fichier-en-ajustant-le-nom-du-chemin-a-ce-que-vous-avez-trouve-plus-haut-notez-lajout">Ajoutez cette ligne au bas du fichier en ajustant le nom du chemin à ce que vous avez trouvé plus haut. Notez l'ajout<a class="headerlink" href="#ajoutez-cette-ligne-au-bas-du-fichier-en-ajustant-le-nom-du-chemin-a-ce-que-vous-avez-trouve-plus-haut-notez-lajout" title="Permanent link">&para;</a></h4>
+<p>d'une barre oblique inverse devant l'espace.</p>
+<div class="language-kotlin highlight"><span class="filename">Fichier ~/.zshrc</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">export</span><span class="w"> </span><span class="n">JAVA_HOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">Android</span><span class="err">\</span><span class="w"> </span><span class="n">Studio</span><span class="p">.</span><span class="na">app</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">jbr</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">Home</span>
+</span></code></pre></div>
+<h4 id="enregistrez-le-fichier-puis-redemarrez-votre-ordinateur">Enregistrez le fichier puis redémarrez votre ordinateur.<a class="headerlink" href="#enregistrez-le-fichier-puis-redemarrez-votre-ordinateur" title="Permanent link">&para;</a></h4>
+<h3 id="configuration-du-projet">Configuration du projet<a class="headerlink" href="#configuration-du-projet" title="Permanent link">&para;</a></h3>
+<p>Maintenant que la variable d'environnement JAVA_HOME est correctement configurée, vous pouvez procéder aux configurations du projet.</p>
+<h4 id="dans-le-fichier-buildgradlekts-principal-aussi-appele-top-level-buildgradle-file-soit-celui-present-directement-a-la">Dans le fichier build.gradle.kts principal (aussi appelé top-level build.gradle file), soit celui présent directement à la<a class="headerlink" href="#dans-le-fichier-buildgradlekts-principal-aussi-appele-top-level-buildgradle-file-soit-celui-present-directement-a-la" title="Permanent link">&para;</a></h4>
+<p>racine du projet, ajoutez ceci :</p>
+<div class="language-kotlin highlight"><span class="filename">Fichier build.gradle.kts principal</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1">// pour Dokka</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">"org.jetbrains.dokka"</span><span class="p">)</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s">"2.0.0"</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ajoutez ceci dans le fichier build.gradle.kts  qui se trouve dans le dossier app .</p>
+<div class="language-kotlin highlight"><span class="filename">Fichier app/build.gradle.kts</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="c1">// pour Dokka</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">"org.jetbrains.dokka"</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Une fois ces lignes ajoutées, il faut <strong>resynchroniser le projet pour qu'il en tienne compte</strong>.</p>
+<h3 id="generation-de-la-documentation_1">Génération de la documentation<a class="headerlink" href="#generation-de-la-documentation_1" title="Permanent link">&para;</a></h3>
+<p>Pour générer la documentation :</p>
+<h4 id="ouvrez-une-fenetre-terminal-dans-android-studio-view-tool-windows-terminal">Ouvrez une fenêtre Terminal dans Android Studio : View / Tool Windows / Terminal .<a class="headerlink" href="#ouvrez-une-fenetre-terminal-dans-android-studio-view-tool-windows-terminal" title="Permanent link">&para;</a></h4>
+<h4 id="entrez-y-la-commande-qui-lance-la-generation">Entrez-y la commande qui lance la génération :<a class="headerlink" href="#entrez-y-la-commande-qui-lance-la-generation" title="Permanent link">&para;</a></h4>
+<div class="language-kotlin highlight"><span class="filename">Terminal Android Studio</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">.</span><span class="o">/</span><span class="n">gradlew</span><span class="w"> </span><span class="n">dokkaHtml</span>
+</span></code></pre></div>
+<h4 id="ceci-a-genere-le-fichier-appbuilddokkahtmlindexhtml-ouvrez-ce-fichier-dans-un-navigateur-en-naviguant-dans-les">Ceci a généré le fichier  app/build/dokka/html/index.html . Ouvrez ce fichier dans un navigateur. En naviguant dans les<a class="headerlink" href="#ceci-a-genere-le-fichier-appbuilddokkahtmlindexhtml-ouvrez-ce-fichier-dans-un-navigateur-en-naviguant-dans-les" title="Permanent link">&para;</a></h4>
+<p>liens qu'il propose, vous reconnaîtrez la documentation KDoc que vous avez ajoutée à votre code et même plus!</p>
+<p><img alt="Illustration" src="../../images/page_136_img_01_1000x738.png" /></p>
+<p><img alt="Illustration" src="../../images/page_136_img_02_1000x733.png" /></p>
+<h2 id="37-la-couleur-de-fond">37. La couleur de fond<a class="headerlink" href="#37-la-couleur-de-fond" title="Permanent link">&para;</a></h2>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

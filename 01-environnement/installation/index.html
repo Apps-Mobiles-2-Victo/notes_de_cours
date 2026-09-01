@@ -1,0 +1,3179 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Sébastien Trottier, Christiane Lagacé, Cégep de Victoriaville">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../premier-projet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Installation et outils de développement - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-et-outils-de-developpement" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation et outils de développement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-kotlin-gradle/gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-installation-dandroid-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Installation d'Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-installation-de-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Installation de Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gradle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-vous-avez-dit-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Vous avez dit Android?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.1 Vous avez dit Android?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-les-versions-dandroid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Les versions d'Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-android-version-history-wikipedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. * « Android version history » - Wikipedia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. * « Android version history » - Wikipedia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-api-levels-api-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Android API Levels » - API Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Android API Levels » - API Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-native-a-laide-dun-langage-tel-que-java-ou-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application native à l'aide d'un langage tel que Java ou Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-hybride-base-sur-html-css-et-javascript-a-laide-dun-cadre-dapplication-framework-tel-que-cordova-ou-phonegab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application hybride (basé sur HTML, CSS et JavaScript) à l'aide d'un cadre d'application (framework) tel que Cordova ou PhoneGab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-multiplateforme-a-laide-dun-cadre-dapplication-tel-que-flutter-ou-react-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application multiplateforme à l'aide d'un cadre d'application tel que Flutter ou React Native
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-kotlin-le-langage-recommande-par-google-pour-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Kotlin, le langage recommandé par Google pour Android
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.4 Kotlin, le langage recommandé par Google pour Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-natives-pour-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications natives pour Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-multi-plateformes-pour-appareils-mobiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications multi-plateformes pour appareils mobiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-web-cote-client-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications Web côté client (front-end)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-web-cote-serveur-back-end-et-services-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications Web côté serveur (back-end) et services Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kotlin-est-un-langage-de-programmation-oriente-objet-et-fonctionnel-avec-un-typage-dynamique-qui-permet-de-compiler-pour-la-machine-virtuelle-java-javascript-et-vers-plusieurs-plateformes-en-natif-grace-a-llvm-son-developpement-provient-principalement-dune-equipe-de-programmeurs-chez-jetbrains-basee-a-saint-petersbourg-en-russie-son-nom-vient-de-lile-de-kotline-pres-de-st-petersbourg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-annonce-pendant-la-conference-google-io-2017-que-kotlin-devient-le-second-langage-de-programmation-officiellement-pris-en-charge-par-android-apres-java-le-8-mai-2019-toujours-lors-de-la-conference-google-io-kotlin-devient-officiellement-le-langage-de-programmation-voulu-et-recommande-par-le-geant-americain-google-pour-le-developpement-des-applications-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-kotlin-langage-wikipedia-httpsfrwikipediaorgwikikotlin_langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principes-de-base-dandroid-avec-compose-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Principes de base d'Android avec Compose » - Android Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Principes de base d&#39;Android avec Compose » - Android Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntelliJ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-creation-dun-projet-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Création d'un projet Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/normes-et-kdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/systeme-fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-installation-dandroid-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Installation d'Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-installation-de-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Installation de Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gradle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-vous-avez-dit-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Vous avez dit Android?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.1 Vous avez dit Android?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-les-versions-dandroid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Les versions d'Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-android-version-history-wikipedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. * « Android version history » - Wikipedia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. * « Android version history » - Wikipedia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-api-levels-api-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Android API Levels » - API Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Android API Levels » - API Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-native-a-laide-dun-langage-tel-que-java-ou-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application native à l'aide d'un langage tel que Java ou Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-hybride-base-sur-html-css-et-javascript-a-laide-dun-cadre-dapplication-framework-tel-que-cordova-ou-phonegab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application hybride (basé sur HTML, CSS et JavaScript) à l'aide d'un cadre d'application (framework) tel que Cordova ou PhoneGab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-multiplateforme-a-laide-dun-cadre-dapplication-tel-que-flutter-ou-react-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application multiplateforme à l'aide d'un cadre d'application tel que Flutter ou React Native
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-kotlin-le-langage-recommande-par-google-pour-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Kotlin, le langage recommandé par Google pour Android
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.4 Kotlin, le langage recommandé par Google pour Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-natives-pour-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications natives pour Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-multi-plateformes-pour-appareils-mobiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications multi-plateformes pour appareils mobiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-web-cote-client-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications Web côté client (front-end)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-web-cote-serveur-back-end-et-services-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applications Web côté serveur (back-end) et services Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kotlin-est-un-langage-de-programmation-oriente-objet-et-fonctionnel-avec-un-typage-dynamique-qui-permet-de-compiler-pour-la-machine-virtuelle-java-javascript-et-vers-plusieurs-plateformes-en-natif-grace-a-llvm-son-developpement-provient-principalement-dune-equipe-de-programmeurs-chez-jetbrains-basee-a-saint-petersbourg-en-russie-son-nom-vient-de-lile-de-kotline-pres-de-st-petersbourg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-annonce-pendant-la-conference-google-io-2017-que-kotlin-devient-le-second-langage-de-programmation-officiellement-pris-en-charge-par-android-apres-java-le-8-mai-2019-toujours-lors-de-la-conference-google-io-kotlin-devient-officiellement-le-langage-de-programmation-voulu-et-recommande-par-le-geant-americain-google-pour-le-developpement-des-applications-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-kotlin-langage-wikipedia-httpsfrwikipediaorgwikikotlin_langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. « Kotlin (langage) ». Wikipédia. https://fr.wikipedia.org/wiki/Kotlin_(langage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principes-de-base-dandroid-avec-compose-android-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Principes de base d'Android avec Compose » - Android Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="* « Principes de base d&#39;Android avec Compose » - Android Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntelliJ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-creation-dun-projet-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Création d'un projet Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation-et-outils-de-developpement">Installation et outils de développement<a class="headerlink" href="#installation-et-outils-de-developpement" title="Permanent link">&para;</a></h1>
+<h3 id="21-installation-dandroid-studio">2.1 Installation d'Android Studio<a class="headerlink" href="#21-installation-dandroid-studio" title="Permanent link">&para;</a></h3>
+<p>Android Studio est un environnement de développement intégré (IDE : Integrated Development Environment) spécialement conçu pour développer des applications natives pour Android.</p>
+<p>Il est basé sur IntelliJ, l'application de la suite JetBrains pour développer des applications notamment en Java et en Kotlin.</p>
+<p>Android Studio est complètement gratuit.</p>
+<p>Pour l'installer, rendez-vous sur <a href="https://developer.android.com/">https://developer.android.com/</a> puis téléchargez la version qui correspond à votre système d'exploitation.</p>
+<h3 id="22-installation-de-kotlin">2.2 Installation de Kotlin<a class="headerlink" href="#22-installation-de-kotlin" title="Permanent link">&para;</a></h3>
+<p>Si vous travaillez avec l'environnement de développement intrégré (IDE) IntelliJ ou Android Studio, vous n'avez pas besoin d'installer Kotlin. Tout ce qui est nécessaire a été installé avec l'IDE.</p>
+<p><img alt="Illustration" src="../../images/page_009_img_01_55x54.jpeg" /></p>
+<p>Dans le cas contraire, vous pouvez installer Kotlin en suivant les instructions ici : <a href="https://kotlinlang.org/docs/command-line.html">https://kotlinlang.org/docs/command-line.html</a>.</p>
+<h2 id="3-gradle">3. Gradle<a class="headerlink" href="#3-gradle" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="111-vous-avez-dit-android">11.1 Vous avez dit Android?<a class="headerlink" href="#111-vous-avez-dit-android" title="Permanent link">&para;</a></h3>
+<p>Android est un système d'exploitation pour appareils mobiles basé sur Linux et développé par le Open Handset Alliance.</p>
+<p>La version la plus utilisée a été développée par Google. C'est une version propriétaire.</p>
+<h4 id="pour-plus-dinformation">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.android.com/what-is-android/">« What is Android - The platform changing what mobile can do. » - Android Developers</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Android_(operating_system)">« Android (operating system) » - Wikipedia</a></li>
+</ul>
+<h3 id="112-les-versions-dandroid">11.2 Les versions d'Android<a class="headerlink" href="#112-les-versions-dandroid" title="Permanent link">&para;</a></h3>
+<p>Les concepteurs d'Android ont pris l'habitude de nommer les différentes versions à l'aide d'un nom de dessert. Les noms suivent un ordre alphabétique à mesure que les versions augmentent.</p>
+<p>Voici une liste de ces versions tirée de Wikipédia.</p>
+<table>
+<thead>
+<tr>
+<th>Numéro</th>
+<th>Nom</th>
+<th>Niveau API</th>
+<th>Date de sortie</th>
+<th>Nouveautés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>---</td>
+<td>1</td>
+<td>septembre 2008</td>
+<td></td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>Petit Four</td>
+<td>2</td>
+<td>février 2009</td>
+<td></td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>Cupcake</td>
+<td>3</td>
+<td>avril 2009</td>
+<td></td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>Donut</td>
+<td>4</td>
+<td>septembre 2009</td>
+<td></td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>Eclair</td>
+<td>5-6-7</td>
+<td>octobre 2009</td>
+<td></td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Froyo</td>
+<td>8</td>
+<td>mai 2010</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Gingerbread</td>
+<td>9-10</td>
+<td>décembre 2010</td>
+<td></td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>Honeycomb</td>
+<td>11-12-13</td>
+<td>février 2011</td>
+<td></td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>Ice Cream Sandwich</td>
+<td>14-15</td>
+<td>octobre 2011</td>
+<td></td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>Jelly Bean</td>
+<td>16-17-18</td>
+<td>juillet 2012</td>
+<td></td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>KitKat</td>
+<td>(à l'interne : Key Lime Pie)</td>
+<td>19-20</td>
+<td>octobre 2013</td>
+</tr>
+<tr>
+<td>Lollipop</td>
+<td></td>
+<td>21-22</td>
+<td>novembre 2014</td>
+<td></td>
+</tr>
+<tr>
+<td>5.0</td>
+<td>(à l'interne : Lemon Meringue Pie)</td>
+<td></td>
+<td>septembre 2015</td>
+<td></td>
+</tr>
+<tr>
+<td>Marshmallow</td>
+<td>(à l'interne : Macadamia Nut Cookie)</td>
+<td>23</td>
+<td>août 2016</td>
+<td></td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>Oreo</td>
+<td>(à l'interne : Oatmeal Cookie)</td>
+<td>24-25</td>
+<td>août 2017</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>Nougat</td>
+<td>(à l'interne : New York Cheesecake)</td>
+<td>26-27</td>
+<td>août 2018</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>Pie</td>
+<td>(à l'interne : Pistachio Ice Cream)</td>
+<td>28</td>
+<td>septembre 2019</td>
+</tr>
+<tr>
+<td>9.0</td>
+<td>Quince Tart</td>
+<td>(nom utilisé à l'interne)</td>
+<td>30</td>
+<td>octobre 2021</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Red Velvet Cake</td>
+<td>(nom utilisé à l'interne)</td>
+<td>31-32</td>
+<td>août 2022</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Snow Cone</td>
+<td>(nom utilisé à l'interne)</td>
+<td>33</td>
+<td>septembre 2023</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Tiramisu</td>
+<td>(nom utilisé à l'interne)</td>
+<td>34</td>
+<td>octobre 2024</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Upside Down Cake</td>
+<td>(nom utilisé à l'interne)</td>
+<td>35</td>
+<td>juin 2025</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Vegan Ice Cream</td>
+<td>(nom utilisé à l'interne)</td>
+<td>36</td>
+<td>juillet 2025</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Vanilla Ice Cream</td>
+<td>(nom utilisé à l'interne)</td>
+<td>35</td>
+<td>septembre 3, 2024</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Baklava</td>
+<td>(nom utilisé à l'interne)</td>
+<td>36</td>
+<td>juin 10, 2025</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Cinnamon Bun</td>
+<td>(nom utilisé à l'interne)</td>
+<td>37</td>
+<td>juin 16, 2026</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Illustration" src="../../images/page_076_img_01_1000x460.png" /></p>
+<blockquote>
+<p><strong>Source</strong> : </p>
+</blockquote>
+<h2 id="1-android-version-history-wikipedia">1. * <a href="https://en.wikipedia.org/wiki/Android_version_history">« Android version history » - Wikipedia</a><a class="headerlink" href="#1-android-version-history-wikipedia" title="Permanent link">&para;</a></h2>
+<h4 id="pour-plus-dinformation_1">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_1" title="Permanent link">&para;</a></h4>
+<p>« Historique des versions d'Android ». Wikipédia. <a href="https://fr.wikipedia.org/wiki/Historique_des_versions_d%27Android">https://fr.wikipedia.org/wiki/Historique_des_versions_d%27Android</a></p>
+<h3 id="android-api-levels-api-levels">* <a href="https://apilevels.com/">« Android API Levels » - API Levels</a><a class="headerlink" href="#android-api-levels-api-levels" title="Permanent link">&para;</a></h3>
+<p>11.3 Quel langage pour programmer une application mobile Android?</p>
+<p>Lorsqu'on débute le développement d'une application à l'aide d'une nouvelle technologie, il est important de se baser sur les meilleures pratiques et d'utiliser des outils récents.</p>
+<p>Avant d'écrire la première version de cette formation à l'automne 2023, j'ai pris le temps de bien explorer les technologies existantes afin de choisir celles qui me semblaient le plus à jour pour développer une application mobile Android.</p>
+<p>Côté programmation, j'ai exploré les langages disponibles pour les différents types d'applications Android :</p>
+<h4 id="application-native-a-laide-dun-langage-tel-que-java-ou-kotlin">Application native à l'aide d'un langage tel que Java ou Kotlin<a class="headerlink" href="#application-native-a-laide-dun-langage-tel-que-java-ou-kotlin" title="Permanent link">&para;</a></h4>
+<h4 id="application-hybride-base-sur-html-css-et-javascript-a-laide-dun-cadre-dapplication-framework-tel-que-cordova-ou-phonegab">Application hybride (basé sur HTML, CSS et JavaScript) à l'aide d'un cadre d'application (framework) tel que Cordova ou PhoneGab<a class="headerlink" href="#application-hybride-base-sur-html-css-et-javascript-a-laide-dun-cadre-dapplication-framework-tel-que-cordova-ou-phonegab" title="Permanent link">&para;</a></h4>
+<h4 id="application-multiplateforme-a-laide-dun-cadre-dapplication-tel-que-flutter-ou-react-native">Application multiplateforme à l'aide d'un cadre d'application tel que Flutter ou React Native<a class="headerlink" href="#application-multiplateforme-a-laide-dun-cadre-dapplication-tel-que-flutter-ou-react-native" title="Permanent link">&para;</a></h4>
+<p>Mon désir était de développer une application native et j'ai choisi <strong>Kotlin</strong> puisqu'il s'agit du langage de programmation recommandé par Google pour la programmation Android.</p>
+<p>Mais le choix du langage n'est pas tout. Il faut également regarder quelles technologies utiliser notamment pour générer l'interface graphique. J'ai arrêté mon choix sur <strong>Jetpack Compose</strong>.</p>
+<h4 id="pour-plus-dinformation_2">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.imaginarycloud.com/blog/techstack-mobile-app/">« What's the best tech stack for your mobile app in 2023? » - Imaginary cloud</a></li>
+</ul>
+<h3 id="114-kotlin-le-langage-recommande-par-google-pour-android">11.4 Kotlin, le langage recommandé par Google pour Android<a class="headerlink" href="#114-kotlin-le-langage-recommande-par-google-pour-android" title="Permanent link">&para;</a></h3>
+<p>Kotlin est un langage de programmation orienté objet qui permet de développer différents types d'applications :</p>
+<h4 id="applications-natives-pour-android">applications natives pour Android<a class="headerlink" href="#applications-natives-pour-android" title="Permanent link">&para;</a></h4>
+<h4 id="applications-multi-plateformes-pour-appareils-mobiles">applications multi-plateformes pour appareils mobiles<a class="headerlink" href="#applications-multi-plateformes-pour-appareils-mobiles" title="Permanent link">&para;</a></h4>
+<h4 id="applications-web-cote-client-front-end">applications Web côté client (front-end)<a class="headerlink" href="#applications-web-cote-client-front-end" title="Permanent link">&para;</a></h4>
+<h4 id="applications-web-cote-serveur-back-end-et-services-web">applications Web côté serveur (back-end) et services Web<a class="headerlink" href="#applications-web-cote-serveur-back-end-et-services-web" title="Permanent link">&para;</a></h4>
+<p>Il s'agit du langage de programmation recommandé par Google pour la programmation Android depuis 2019.</p>
+<p>En effet, selon Wikipédia :</p>
+<h3 id="kotlin-est-un-langage-de-programmation-oriente-objet-et-fonctionnel-avec-un-typage-dynamique-qui-permet-de-compiler-pour-la-machine-virtuelle-java-javascript-et-vers-plusieurs-plateformes-en-natif-grace-a-llvm-son-developpement-provient-principalement-dune-equipe-de-programmeurs-chez-jetbrains-basee-a-saint-petersbourg-en-russie-son-nom-vient-de-lile-de-kotline-pres-de-st-petersbourg">Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage dynamique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).<a class="headerlink" href="#kotlin-est-un-langage-de-programmation-oriente-objet-et-fonctionnel-avec-un-typage-dynamique-qui-permet-de-compiler-pour-la-machine-virtuelle-java-javascript-et-vers-plusieurs-plateformes-en-natif-grace-a-llvm-son-developpement-provient-principalement-dune-equipe-de-programmeurs-chez-jetbrains-basee-a-saint-petersbourg-en-russie-son-nom-vient-de-lile-de-kotline-pres-de-st-petersbourg" title="Permanent link">&para;</a></h3>
+<h3 id="google-annonce-pendant-la-conference-google-io-2017-que-kotlin-devient-le-second-langage-de-programmation-officiellement-pris-en-charge-par-android-apres-java-le-8-mai-2019-toujours-lors-de-la-conference-google-io-kotlin-devient-officiellement-le-langage-de-programmation-voulu-et-recommande-par-le-geant-americain-google-pour-le-developpement-des-applications-android">Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.<a class="headerlink" href="#google-annonce-pendant-la-conference-google-io-2017-que-kotlin-devient-le-second-langage-de-programmation-officiellement-pris-en-charge-par-android-apres-java-le-8-mai-2019-toujours-lors-de-la-conference-google-io-kotlin-devient-officiellement-le-langage-de-programmation-voulu-et-recommande-par-le-geant-americain-google-pour-le-developpement-des-applications-android" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Source</strong> : </p>
+</blockquote>
+<h2 id="1-kotlin-langage-wikipedia-httpsfrwikipediaorgwikikotlin_langage">1. « Kotlin (langage) ». Wikipédia. <a href="https://fr.wikipedia.org/wiki/Kotlin_(langage)">https://fr.wikipedia.org/wiki/Kotlin_(langage</a><a class="headerlink" href="#1-kotlin-langage-wikipedia-httpsfrwikipediaorgwikikotlin_langage" title="Permanent link">&para;</a></h2>
+<h4 id="pour-plus-dinformation_3">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://kotlinlang.org/docs/getting-started.html">« Get started with Kotlin » - Kotlin</a></li>
+<li><a href="https://developer.android.com/courses/kotlin-bootcamp/overview?hl=fr">« Formation Kotlin pour les programmeurs » - Android Developers</a></li>
+<li><a href="https://kotlinlang.org/docs/home.html">« Kotlin docs » - Kotlin</a></li>
+<li><a href="https://kotlin-quick-reference.com/">« Kotlin quick reference » - Alvin Alexander</a></li>
+<li><a href="https://kotlinlang.org/docs/keyword-reference.html">« Keywords and operators » - Kotlin</a></li>
+<li><a href="https://developer.android.com/topic/architecture?hl=fr">« Guide de l'architecture des applications » - Android Developers</a></li>
+</ul>
+<h3 id="principes-de-base-dandroid-avec-compose-android-developers">* <a href="https://developer.android.com/courses/android-basics-compose/course?hl=fr">« Principes de base d'Android avec Compose » - Android Developers</a><a class="headerlink" href="#principes-de-base-dandroid-avec-compose-android-developers" title="Permanent link">&para;</a></h3>
+<p>11.5 Quel IDE pour programmer une application mobile Android?</p>
+<p>Pour développer un projet Android, plusieurs environnements de développement intégrés (IDE) sont disponibles.</p>
+<p>Les plus utilisés sont :</p>
+<h4 id="android-studio">Android Studio<a class="headerlink" href="#android-studio" title="Permanent link">&para;</a></h4>
+<h4 id="intellij">IntelliJ<a class="headerlink" href="#intellij" title="Permanent link">&para;</a></h4>
+<p>IntelliJ est un IDE très populaire qui permet de développer des programmes en Java, en Kotlin et en bien d'autres langages.</p>
+<p>Android Studio est également très populaire mais comme son nom l'indique, il ne permet que le développement d'applications Android.</p>
+<p>Android Studio est basé sur IntelliJ.</p>
+<p>Certains préféreront Android Studio pour les fonctionnalités spécialisées qu'il offre et surtout pour sa gratuité.</p>
+<p>D'autres préféreront IntelliJ pour sa polyvalence.</p>
+<p>Il est à noter que les développeurs d'Android donnent l'avantage à Android Studio pour certaines fonctionnalités récentes, qui ne seront disponibles dans IntelliJ que plus tard.</p>
+<h2 id="12-creation-dun-projet-android">12. Création d'un projet Android<a class="headerlink" href="#12-creation-dun-projet-android" title="Permanent link">&para;</a></h2>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

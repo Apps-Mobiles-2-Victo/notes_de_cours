@@ -1,0 +1,3994 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes de cours pour le développement d'applications mobiles Android avec Jetpack Compose et Kotlin - 420-5B4-VI">
+      
+      
+        <meta name="author" content="Sébastien Trottier, Christiane Lagacé, Cégep de Victoriaville">
+      
+      
+      
+        <link rel="prev" href="../debogage-et-depannage/">
+      
+      
+        <link rel="next" href="../../02-kotlin-gradle/gradle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Publication d'une application Android - Notes de cours - Applications mobiles Android avec Jetpack Compose</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#publication-dune-application-android" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-header__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes de cours - Applications mobiles Android avec Jetpack Compose
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Publication d'une application Android
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Environnement
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-kotlin-gradle/gradle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Kotlin & Gradle
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interface Compose
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-etat-architecture/etat-dans-compose/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. État & Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Persistance & Données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  6. Fonctionnalités avancées
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  7. Exercices & Évaluations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes de cours - Applications mobiles Android avec Jetpack Compose" class="md-nav__button md-logo" aria-label="Notes de cours - Applications mobiles Android avec Jetpack Compose" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes de cours - Applications mobiles Android avec Jetpack Compose
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Environnement
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Environnement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../premier-projet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création du projet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio & Ressources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview-vs-emulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prévisualiser vs Émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debogage-et-depannage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Débogage & Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publication d'application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#331-icone-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.1 Icône d'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="33.1 Icône d&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-de-lediteur-dimages-de-votre-choix-creez-ou-ajustez-limage-qui-sera-utilisee-comme-icone-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À l'aide de l'éditeur d'images de votre choix, créez ou ajustez l'image qui sera utilisée comme icône d'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-sur-le-site-web-iconkitchen-httpsiconkitchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous sur le site Web IconKitchen : https://icon.kitchen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#televersez-votre-image-puis-ajustez-les-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Téléversez votre image puis ajustez les paramètres.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quand-le-resultat-est-satisfaisant-telechargez-le-resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quand le résultat est satisfaisant, téléchargez le résultat.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompressez-le-fichier-les-fichiers-qui-nous-interessent-sont-dans-le-dossier-androidres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Décompressez le fichier. Les fichiers qui nous intéressent sont dans le dossier android/res .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placez-votre-gestionnaire-de-fichiers-et-android-studio-cote-a-cote-et-faites-glisser-les-icones-dans-les-dossiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placez votre gestionnaire de fichiers et Android Studio côte-à-côte et faites glisser les icônes dans les dossiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention-un-dossier-ne-peut-pas-contenir-deux-fichiers-dont-le-nom-differe-seulement-par-lextension-par-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention : un dossier ne peut pas contenir deux fichiers dont le nom diffère seulement par l'extension. Par exemple,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-le-generateur-dicones-na-pas-genere-de-fichiers-dont-le-nom-se-termine-par-_round-supprimez-dans-chaque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si le générateur d'icônes n'a pas généré de fichiers dont le nom se termine par _round, supprimez, dans chaque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-navez-plus-de-fichiers-dont-le-nom-se-termine-par-_round-vous-devez-modifier-le-fichier-appsrcmainandroidmanifestxml-vous-devez-modifier-la-ligne-androidroundicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous n'avez plus de fichiers dont le nom se termine par _round, vous devez modifier le fichier app/src/main/AndroidManifest.xml . Vous devez modifier la ligne android:roundIcon.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiere-option-vous-supprimez-cette-ligne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Première option : vous supprimez cette ligne.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deuxieme-option-vous-la-modifiez-pour-quelle-pointe-vers-licone-que-vous-avez-telecharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deuxième option : vous la modifiez pour qu'elle pointe vers l'icône que vous avez téléchargé.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vous-pouvez-maintenant-lancer-votre-application-dans-lemulateur-tester-lapplication-sur-votre-telephone-ou-encore-installer-le-fichier-apk-directement-sur-le-telephone-vous-constaterez-que-lapplication-utilise-desormais-votre-icone-personnalisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vous pouvez maintenant lancer votre application dans l'émulateur, tester l'application sur votre téléphone ou encore installer le fichier APK directement sur le téléphone. Vous constaterez que l'application utilise désormais votre icône personnalisée.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vous pouvez maintenant lancer votre application dans l&#39;émulateur, tester l&#39;application sur votre téléphone ou encore installer le fichier APK directement sur le téléphone. Vous constaterez que l&#39;application utilise désormais votre icône personnalisée.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-code-source-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le code source compilé
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les ressources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidmanifestxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AndroidManifest.xml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-debogage-generalement-nomme-app-debugapk-il-ne-peut-pas-etre-utilise-pour-deployer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier de débogage, généralement nommé app-debug.apk . Il ne peut pas être utilisé pour déployer l'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-production-aussi-appele-fichier-apk-signe-ou-fichier-apk-pret-a-etre-publie-il-peut-etre-genere-a-laide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier de production aussi appelé fichier APK signé ou fichier APK prêt à être publié. Il peut être généré à l'aide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-debogage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de débogage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Générer un fichier APK de débogage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-rendez-vous-dans-le-menu-build-build-app-bundlesapks-build-apks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, rendez-vous dans le menu Build / Build App Bundle(s)/APK(s) / Build APK(s) .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceci-generera-le-fichier-app-debugapk-dans-le-dossier-appbuildoutputsapkdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceci générera le fichier app-debug.apk dans le dossier app/build/outputs/apk/debug .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Générer un fichier APK de production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-cliquez-sur-licone-dauthentification-dans-le-coin-superieur-droit-afin-dassocier-android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, cliquez sur l'icône d'authentification dans le coin supérieur droit afin d'associer Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-build-generate-signed-app-bundleapk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu Build / Generate Signed App Bundle/APK .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-la-fenetre-qui-suit-selectionnez-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans la fenêtre qui suit, sélectionnez APK.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-create-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Create New .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplissez-les-informations-demandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplissez les informations demandées :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-store-path-entrez-le-chemin-et-le-nom-du-fichier-qui-contiendra-les-differentes-cles-generees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key store path : entrez le chemin et le nom du fichier qui contiendra les différentes clés générées.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-le-mot-de-passe-qui-permettra-dacceder-au-gestionnaire-de-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password : Le mot de passe qui permettra d'accéder au gestionnaire de clés.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Key :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-un-simple-alias-pour-faire-reference-a-cette-cle-suggestion-utiliser-le-nom-de-lapplication-suivi-de-release-pour-indiquer-que-cest-la-cle-pour-la-version-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alias : un simple alias pour faire référence à cette clé. Suggestion : utiliser le nom de l'application suivi de release pour indiquer que c'est la clé pour la version de production.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-le-mot-de-passe-pour-la-cle-de-cette-application-il-faut-utiliser-le-meme-mot-de-passe-que-pour-le-gestionnaire-de-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password : le mot de passe pour la clé de cette application. Il faut utiliser le même mot de passe que pour le gestionnaire de clés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Certificate :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplissez-les-informations-demandees-les-codes-de-pays-peuvent-etre-trouves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplissez les informations demandées. Les codes de pays peuvent être trouvés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-dernier-ecran-choisissez-release-puis-cliquez-sur-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le dernier écran, choisissez release puis cliquez sur Create .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-genere-sappelle-app-releaseapk-et-il-est-place-dans-le-dossier-apprelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier généré s'appelle app-release.apk et il est placé dans le dossier app/release .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installer l'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installer l&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-generating-apk-of-android-application-geeks-for-geeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Methods of Generating APK of Android Application » - Geeks for Geeks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exigences-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exigences de l'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exigences de l&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-respecter-les-regles-de-google-play-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit respecter les règles de Google Play Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-etre-exempte-de-bogues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit être exempte de bogues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-offrir-une-bonne-experience-utilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit offrir une bonne expérience utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elle-doit-etre-signee-a-laide-dun-certificat-numerique-httpsdeveloperandroidcomstudiopublishapp-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elle doit être signée à l'aide d'un certificat numérique : https://developer.android.com/studio/publish/app-signing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elle-doit-egalement-repondre-a-des-exigences-de-tests-httpssupportgooglecomgoogleplayandroid-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elle doit également répondre à des exigences de tests : https://support.google.com/googleplay/android-
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-sur-google-play-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publication sur Google Play Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publication sur Google Play Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-production_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-compte-de-developpeur-cout-25-usd-valide-tant-que-le-compte-est-actif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer un compte de développeur (coût : 25 USD, valide tant que le compte est actif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplir-la-fiche-de-lapplication-description-de-lapplication-et-de-ses-fonctionnalites-icone-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplir la fiche de l'application : description de l'application et de ses fonctionnalités, icône de l'application,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#televerser-le-fichier-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Téléverser le fichier APK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixer-le-prix-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixer le prix de l'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patienter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patienter!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publier-votre-application-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Publier votre application » - Google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-google-a-annonce-que-des-2027-la-publication-sans-passer-par-google-play-store-necessitera-que-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note : Google a annoncé que dès 2027, la publication sans passer par Google Play Store nécessitera que les
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note : Google a annoncé que dès 2027, la publication sans passer par Google Play Store nécessitera que les">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generez-le-fichier-apk-de-production-ou-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générez le fichier APK de production (ou de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribuez-le-fichier-apk-a-vos-utilisateurs-a-laide-de-la-methode-de-votre-choix-par-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distribuez le fichier APK à vos utilisateurs à l'aide de la méthode de votre choix, par exemple :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#par-courriel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        par courriel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-un-site-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sur un site Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-dun-code-qr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        à l'aide d'un code QR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-transferant-le-fichier-directement-entre-lordinateur-et-lappareil-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        en transférant le fichier directement entre l'ordinateur et l'appareil Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lusager-pourra-alors-cliquer-sur-le-fichier-afin-dinstaller-lapplication-sur-son-appareil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'usager pourra alors cliquer sur le fichier afin d'installer l'application sur son appareil.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-lappareil-android-rendez-vous-dans-parametres-applications-acces-special-des-applis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur l'appareil Android, rendez-vous dans Paramètres / Applications / Accès spécial des applis /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installer-des-applis-inconnues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installer des applis inconnues .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectionnez-la-source-dou-provient-lapplication-que-vous-desirez-installer-ex-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionnez la source d'où provient l'application que vous désirez installer (ex : Chrome).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cochez-autoriser-a-partir-de-cette-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cochez Autoriser à partir de cette source .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-installer-des-apps-android-de-sources-inconnues-appaloosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Comment installer des apps Android de sources inconnues ? » - Appaloosa
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kotlin & Gradle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Kotlin & Gradle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/gradle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gradle & Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/kotlin-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kotlin - Fondamentaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-kotlin-gradle/normes-et-kdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normes & Documentation KDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interface Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interface Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/jetpack-compose-bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases de Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/elements-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Éléments d'interface (UI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/modificateurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificateurs (Modifiers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/mise-en-page-scaffold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en page & Scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/saisie-et-clavier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saisie & Clavier virtuel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/couleurs-et-ressources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couleurs, Thèmes & Hasard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/icones-et-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Icônes & Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/fenetres-popup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fenêtres Popup & Dialogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-interface-compose/listes-dynamiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listes dynamiques (LazyColumn)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. État & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. État & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-dans-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État dans Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/etat-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État avancé & State Hoisting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/viewmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture ViewModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/effets-secondaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effets secondaires (Side Effects)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-etat-architecture/programmation-asynchrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Persistance & Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Persistance & Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/preferences-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préférences utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/systeme-fichiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système de fichiers émulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-base-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/room-avance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room avancé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/formulaires-crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaires CRUD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-donnees-persistance/donnees-distantes-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données distantes & API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fonctionnalités avancées
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Fonctionnalités avancées
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/audio-mp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio & Sons MP3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation multi-écrans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/internationalisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalisation (i18n)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/liens-hypertexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liens hypertexte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/capteurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capteurs (Sensors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-fonctionnalites-avancees/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exercices & Évaluations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Exercices & Évaluations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 1 (1 à 4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 2 (5 à 8 & Formatif)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/exercices-partie3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercices Partie 3 (9 à 14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-exercices-evaluations/examens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examens & Épreuve finale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#331-icone-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.1 Icône d'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="33.1 Icône d&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-de-lediteur-dimages-de-votre-choix-creez-ou-ajustez-limage-qui-sera-utilisee-comme-icone-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À l'aide de l'éditeur d'images de votre choix, créez ou ajustez l'image qui sera utilisée comme icône d'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-sur-le-site-web-iconkitchen-httpsiconkitchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous sur le site Web IconKitchen : https://icon.kitchen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#televersez-votre-image-puis-ajustez-les-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Téléversez votre image puis ajustez les paramètres.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quand-le-resultat-est-satisfaisant-telechargez-le-resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quand le résultat est satisfaisant, téléchargez le résultat.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompressez-le-fichier-les-fichiers-qui-nous-interessent-sont-dans-le-dossier-androidres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Décompressez le fichier. Les fichiers qui nous intéressent sont dans le dossier android/res .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placez-votre-gestionnaire-de-fichiers-et-android-studio-cote-a-cote-et-faites-glisser-les-icones-dans-les-dossiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placez votre gestionnaire de fichiers et Android Studio côte-à-côte et faites glisser les icônes dans les dossiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention-un-dossier-ne-peut-pas-contenir-deux-fichiers-dont-le-nom-differe-seulement-par-lextension-par-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention : un dossier ne peut pas contenir deux fichiers dont le nom diffère seulement par l'extension. Par exemple,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-le-generateur-dicones-na-pas-genere-de-fichiers-dont-le-nom-se-termine-par-_round-supprimez-dans-chaque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si le générateur d'icônes n'a pas généré de fichiers dont le nom se termine par _round, supprimez, dans chaque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-vous-navez-plus-de-fichiers-dont-le-nom-se-termine-par-_round-vous-devez-modifier-le-fichier-appsrcmainandroidmanifestxml-vous-devez-modifier-la-ligne-androidroundicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Si vous n'avez plus de fichiers dont le nom se termine par _round, vous devez modifier le fichier app/src/main/AndroidManifest.xml . Vous devez modifier la ligne android:roundIcon.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiere-option-vous-supprimez-cette-ligne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Première option : vous supprimez cette ligne.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deuxieme-option-vous-la-modifiez-pour-quelle-pointe-vers-licone-que-vous-avez-telecharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deuxième option : vous la modifiez pour qu'elle pointe vers l'icône que vous avez téléchargé.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vous-pouvez-maintenant-lancer-votre-application-dans-lemulateur-tester-lapplication-sur-votre-telephone-ou-encore-installer-le-fichier-apk-directement-sur-le-telephone-vous-constaterez-que-lapplication-utilise-desormais-votre-icone-personnalisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vous pouvez maintenant lancer votre application dans l'émulateur, tester l'application sur votre téléphone ou encore installer le fichier APK directement sur le téléphone. Vous constaterez que l'application utilise désormais votre icône personnalisée.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vous pouvez maintenant lancer votre application dans l&#39;émulateur, tester l&#39;application sur votre téléphone ou encore installer le fichier APK directement sur le téléphone. Vous constaterez que l&#39;application utilise désormais votre icône personnalisée.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-code-source-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le code source compilé
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les ressources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidmanifestxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AndroidManifest.xml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-debogage-generalement-nomme-app-debugapk-il-ne-peut-pas-etre-utilise-pour-deployer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier de débogage, généralement nommé app-debug.apk . Il ne peut pas être utilisé pour déployer l'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-production-aussi-appele-fichier-apk-signe-ou-fichier-apk-pret-a-etre-publie-il-peut-etre-genere-a-laide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier de production aussi appelé fichier APK signé ou fichier APK prêt à être publié. Il peut être généré à l'aide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-debogage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de débogage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Générer un fichier APK de débogage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-rendez-vous-dans-le-menu-build-build-app-bundlesapks-build-apks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, rendez-vous dans le menu Build / Build App Bundle(s)/APK(s) / Build APK(s) .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceci-generera-le-fichier-app-debugapk-dans-le-dossier-appbuildoutputsapkdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ceci générera le fichier app-debug.apk dans le dossier app/build/outputs/apk/debug .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Générer un fichier APK de production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dans-android-studio-cliquez-sur-licone-dauthentification-dans-le-coin-superieur-droit-afin-dassocier-android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans Android Studio, cliquez sur l'icône d'authentification dans le coin supérieur droit afin d'associer Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendez-vous-dans-le-menu-build-generate-signed-app-bundleapk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendez-vous dans le menu Build / Generate Signed App Bundle/APK .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-la-fenetre-qui-suit-selectionnez-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans la fenêtre qui suit, sélectionnez APK.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cliquez-sur-create-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cliquez sur Create New .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplissez-les-informations-demandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplissez les informations demandées :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-store-path-entrez-le-chemin-et-le-nom-du-fichier-qui-contiendra-les-differentes-cles-generees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key store path : entrez le chemin et le nom du fichier qui contiendra les différentes clés générées.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-le-mot-de-passe-qui-permettra-dacceder-au-gestionnaire-de-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password : Le mot de passe qui permettra d'accéder au gestionnaire de clés.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Key :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-un-simple-alias-pour-faire-reference-a-cette-cle-suggestion-utiliser-le-nom-de-lapplication-suivi-de-release-pour-indiquer-que-cest-la-cle-pour-la-version-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alias : un simple alias pour faire référence à cette clé. Suggestion : utiliser le nom de l'application suivi de release pour indiquer que c'est la clé pour la version de production.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-le-mot-de-passe-pour-la-cle-de-cette-application-il-faut-utiliser-le-meme-mot-de-passe-que-pour-le-gestionnaire-de-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password : le mot de passe pour la clé de cette application. Il faut utiliser le même mot de passe que pour le gestionnaire de clés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Certificate :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplissez-les-informations-demandees-les-codes-de-pays-peuvent-etre-trouves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplissez les informations demandées. Les codes de pays peuvent être trouvés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dans-le-dernier-ecran-choisissez-release-puis-cliquez-sur-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dans le dernier écran, choisissez release puis cliquez sur Create .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-genere-sappelle-app-releaseapk-et-il-est-place-dans-le-dossier-apprelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le fichier généré s'appelle app-release.apk et il est placé dans le dossier app/release .
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installer-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installer l'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installer l&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-generating-apk-of-android-application-geeks-for-geeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Methods of Generating APK of Android Application » - Geeks for Geeks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exigences-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exigences de l'application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exigences de l&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-respecter-les-regles-de-google-play-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit respecter les règles de Google Play Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-etre-exempte-de-bogues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit être exempte de bogues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lapplication-doit-offrir-une-bonne-experience-utilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'application doit offrir une bonne expérience utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elle-doit-etre-signee-a-laide-dun-certificat-numerique-httpsdeveloperandroidcomstudiopublishapp-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elle doit être signée à l'aide d'un certificat numérique : https://developer.android.com/studio/publish/app-signing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elle-doit-egalement-repondre-a-des-exigences-de-tests-httpssupportgooglecomgoogleplayandroid-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elle doit également répondre à des exigences de tests : https://support.google.com/googleplay/android-
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-sur-google-play-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publication sur Google Play Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publication sur Google Play Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generer-un-fichier-apk-de-production_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générer un fichier APK de production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-compte-de-developpeur-cout-25-usd-valide-tant-que-le-compte-est-actif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer un compte de développeur (coût : 25 USD, valide tant que le compte est actif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remplir-la-fiche-de-lapplication-description-de-lapplication-et-de-ses-fonctionnalites-icone-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remplir la fiche de l'application : description de l'application et de ses fonctionnalités, icône de l'application,
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#televerser-le-fichier-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Téléverser le fichier APK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixer-le-prix-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixer le prix de l'application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patienter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patienter!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publier-votre-application-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Publier votre application » - Google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-google-a-annonce-que-des-2027-la-publication-sans-passer-par-google-play-store-necessitera-que-les" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note : Google a annoncé que dès 2027, la publication sans passer par Google Play Store nécessitera que les
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note : Google a annoncé que dès 2027, la publication sans passer par Google Play Store nécessitera que les">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generez-le-fichier-apk-de-production-ou-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Générez le fichier APK de production (ou de
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribuez-le-fichier-apk-a-vos-utilisateurs-a-laide-de-la-methode-de-votre-choix-par-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distribuez le fichier APK à vos utilisateurs à l'aide de la méthode de votre choix, par exemple :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#par-courriel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        par courriel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-un-site-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sur un site Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-laide-dun-code-qr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        à l'aide d'un code QR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-transferant-le-fichier-directement-entre-lordinateur-et-lappareil-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        en transférant le fichier directement entre l'ordinateur et l'appareil Android
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lusager-pourra-alors-cliquer-sur-le-fichier-afin-dinstaller-lapplication-sur-son-appareil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'usager pourra alors cliquer sur le fichier afin d'installer l'application sur son appareil.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-lappareil-android-rendez-vous-dans-parametres-applications-acces-special-des-applis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur l'appareil Android, rendez-vous dans Paramètres / Applications / Accès spécial des applis /
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installer-des-applis-inconnues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installer des applis inconnues .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectionnez-la-source-dou-provient-lapplication-que-vous-desirez-installer-ex-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sélectionnez la source d'où provient l'application que vous désirez installer (ex : Chrome).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cochez-autoriser-a-partir-de-cette-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cochez Autoriser à partir de cette source .
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-plus-dinformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour plus d'information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-installer-des-apps-android-de-sources-inconnues-appaloosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * « Comment installer des apps Android de sources inconnues ? » - Appaloosa
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="publication-dune-application-android">Publication d'une application Android<a class="headerlink" href="#publication-dune-application-android" title="Permanent link">&para;</a></h1>
+<h3 id="331-icone-dapplication">33.1 Icône d'application<a class="headerlink" href="#331-icone-dapplication" title="Permanent link">&para;</a></h3>
+<p>Pour générer une icône pour votre application Android :</p>
+<h4 id="a-laide-de-lediteur-dimages-de-votre-choix-creez-ou-ajustez-limage-qui-sera-utilisee-comme-icone-dapplication">À l'aide de l'éditeur d'images de votre choix, créez ou ajustez l'image qui sera utilisée comme icône d'application<a class="headerlink" href="#a-laide-de-lediteur-dimages-de-votre-choix-creez-ou-ajustez-limage-qui-sera-utilisee-comme-icone-dapplication" title="Permanent link">&para;</a></h4>
+<p>(AppIcon). Elle doit faire idéalement 512x512 px.</p>
+<h4 id="rendez-vous-sur-le-site-web-iconkitchen-httpsiconkitchen">Rendez-vous sur le site Web IconKitchen : <a href="https://icon.kitchen">https://icon.kitchen</a><a class="headerlink" href="#rendez-vous-sur-le-site-web-iconkitchen-httpsiconkitchen" title="Permanent link">&para;</a></h4>
+<p>(il s'agit du successeur d'Android Asset Studio).</p>
+<h4 id="televersez-votre-image-puis-ajustez-les-parametres">Téléversez votre image puis ajustez les paramètres.<a class="headerlink" href="#televersez-votre-image-puis-ajustez-les-parametres" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_125_img_01_1000x428.png" /></p>
+<h4 id="quand-le-resultat-est-satisfaisant-telechargez-le-resultat">Quand le résultat est satisfaisant, téléchargez le résultat.<a class="headerlink" href="#quand-le-resultat-est-satisfaisant-telechargez-le-resultat" title="Permanent link">&para;</a></h4>
+<h4 id="decompressez-le-fichier-les-fichiers-qui-nous-interessent-sont-dans-le-dossier-androidres">Décompressez le fichier. Les fichiers qui nous intéressent sont dans le dossier android/res .<a class="headerlink" href="#decompressez-le-fichier-les-fichiers-qui-nous-interessent-sont-dans-le-dossier-androidres" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_125_img_02_350x424.png" /></p>
+<h4 id="placez-votre-gestionnaire-de-fichiers-et-android-studio-cote-a-cote-et-faites-glisser-les-icones-dans-les-dossiers">Placez votre gestionnaire de fichiers et Android Studio côte-à-côte et faites glisser les icônes dans les dossiers<a class="headerlink" href="#placez-votre-gestionnaire-de-fichiers-et-android-studio-cote-a-cote-et-faites-glisser-les-icones-dans-les-dossiers" title="Permanent link">&para;</a></h4>
+<p>correspondants sous app/src/main/res ( mipmap-hdpi , mipmap-mdpi , etc.).</p>
+<h4 id="attention-un-dossier-ne-peut-pas-contenir-deux-fichiers-dont-le-nom-differe-seulement-par-lextension-par-exemple">Attention : un dossier ne peut pas contenir deux fichiers dont le nom diffère seulement par l'extension. Par exemple,<a class="headerlink" href="#attention-un-dossier-ne-peut-pas-contenir-deux-fichiers-dont-le-nom-differe-seulement-par-lextension-par-exemple" title="Permanent link">&para;</a></h4>
+<p>s'il y a déjà un fichier nommé ic_launcher.webp , il faut le détruire avant de copier le fichier ic_launcher.png .</p>
+<h4 id="si-le-generateur-dicones-na-pas-genere-de-fichiers-dont-le-nom-se-termine-par-_round-supprimez-dans-chaque">Si le générateur d'icônes n'a pas généré de fichiers dont le nom se termine par _round, supprimez, dans chaque<a class="headerlink" href="#si-le-generateur-dicones-na-pas-genere-de-fichiers-dont-le-nom-se-termine-par-_round-supprimez-dans-chaque" title="Permanent link">&para;</a></h4>
+<p>sous-dossier, tous les fichiers qui correspondent à ce critère (ex :  ic_launcher_round.xml , ic_launcher_round.webp ).</p>
+<h4 id="si-vous-navez-plus-de-fichiers-dont-le-nom-se-termine-par-_round-vous-devez-modifier-le-fichier-appsrcmainandroidmanifestxml-vous-devez-modifier-la-ligne-androidroundicon">Si vous n'avez plus de fichiers dont le nom se termine par _round, vous devez modifier le fichier app/src/main/AndroidManifest.xml . Vous devez modifier la ligne android:roundIcon.<a class="headerlink" href="#si-vous-navez-plus-de-fichiers-dont-le-nom-se-termine-par-_round-vous-devez-modifier-le-fichier-appsrcmainandroidmanifestxml-vous-devez-modifier-la-ligne-androidroundicon" title="Permanent link">&para;</a></h4>
+<h4 id="premiere-option-vous-supprimez-cette-ligne">Première option : vous supprimez cette ligne.<a class="headerlink" href="#premiere-option-vous-supprimez-cette-ligne" title="Permanent link">&para;</a></h4>
+<h4 id="deuxieme-option-vous-la-modifiez-pour-quelle-pointe-vers-licone-que-vous-avez-telecharge">Deuxième option : vous la modifiez pour qu'elle pointe vers l'icône que vous avez téléchargé.<a class="headerlink" href="#deuxieme-option-vous-la-modifiez-pour-quelle-pointe-vers-licone-que-vous-avez-telecharge" title="Permanent link">&para;</a></h4>
+<div class="language-xml highlight"><span class="filename">Fichier app/src/main/AndroidManifest.xml</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;application</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="na">android:allowBackup=</span><span class="s">"true"</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="na">android:dataExtractionRules=</span><span class="s">"@xml/data_extraction_rules"</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="na">android:fullBackupContent=</span><span class="s">"@xml/backup_rules"</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher"</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="err">...</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="err">&lt;/application</span><span class="nt">&gt;</span>
+</span></code></pre></div>
+<h3 id="vous-pouvez-maintenant-lancer-votre-application-dans-lemulateur-tester-lapplication-sur-votre-telephone-ou-encore-installer-le-fichier-apk-directement-sur-le-telephone-vous-constaterez-que-lapplication-utilise-desormais-votre-icone-personnalisee">Vous pouvez maintenant lancer votre application dans l'émulateur, <strong>tester l'application sur votre téléphone</strong> ou encore <strong>installer le fichier APK directement sur le téléphone</strong>. Vous constaterez que l'application utilise désormais votre icône personnalisée.<a class="headerlink" href="#vous-pouvez-maintenant-lancer-votre-application-dans-lemulateur-tester-lapplication-sur-votre-telephone-ou-encore-installer-le-fichier-apk-directement-sur-le-telephone-vous-constaterez-que-lapplication-utilise-desormais-votre-icone-personnalisee" title="Permanent link">&para;</a></h3>
+<p>33.2 Générer un fichier APK</p>
+<p>Le fichier APK (Android Package Kit) permet de déployer une application Android.</p>
+<p>Le fichier APK est constitué de plusieurs fichiers, par exemple :</p>
+<h4 id="le-code-source-compile">Le code source compilé<a class="headerlink" href="#le-code-source-compile" title="Permanent link">&para;</a></h4>
+<h4 id="les-ressources">Les ressources<a class="headerlink" href="#les-ressources" title="Permanent link">&para;</a></h4>
+<h4 id="androidmanifestxml">AndroidManifest.xml<a class="headerlink" href="#androidmanifestxml" title="Permanent link">&para;</a></h4>
+<p>Il existe deux types de fichiers APK :</p>
+<h4 id="le-fichier-de-debogage-generalement-nomme-app-debugapk-il-ne-peut-pas-etre-utilise-pour-deployer-lapplication">Le fichier de débogage, généralement nommé app-debug.apk .  Il ne peut pas être utilisé pour déployer l'application<a class="headerlink" href="#le-fichier-de-debogage-generalement-nomme-app-debugapk-il-ne-peut-pas-etre-utilise-pour-deployer-lapplication" title="Permanent link">&para;</a></h4>
+<p>sur Google Play Store ni sur la plupart des autres plateformes de distribution mais il peut être utilisé pour installer manuellement l'application sur un téléphone pour des fins de tests.</p>
+<h4 id="le-fichier-de-production-aussi-appele-fichier-apk-signe-ou-fichier-apk-pret-a-etre-publie-il-peut-etre-genere-a-laide">Le fichier de production aussi appelé fichier APK signé ou fichier APK prêt à être publié. Il peut être généré à l'aide<a class="headerlink" href="#le-fichier-de-production-aussi-appele-fichier-apk-signe-ou-fichier-apk-pret-a-etre-publie-il-peut-etre-genere-a-laide" title="Permanent link">&para;</a></h4>
+<p>d'Android Studio après avoir signé l'application.</p>
+<h3 id="generer-un-fichier-apk-de-debogage">Générer un fichier APK de débogage<a class="headerlink" href="#generer-un-fichier-apk-de-debogage" title="Permanent link">&para;</a></h3>
+<p>Lorsque vous lancez une application dans l'émulateur, un fichier APK de débogage est automatiquement généré.</p>
+<p>Ce fichier sera utilisé si vous lancez l'application dans Android Studio en utilisant le téléphone comme cible plutôt qu'un émulateur.</p>
+<p>Vous ne pouvez cependant pas copier ce fichier directement sur le téléphone puisqu'il requiert l'utilisation d'Android Studio. Si vous tentez de l'installer, vous obtiendrez le message « L'application n'a pas été installée, car elle ne semble pas être valide. ».</p>
+<p><img alt="Illustration" src="../../images/page_126_img_01_311x652.png" /></p>
+<p>Pour générer un fichier APK de débogage qui pourra être installé sur le téléphone :</p>
+<h4 id="dans-android-studio-rendez-vous-dans-le-menu-build-build-app-bundlesapks-build-apks">Dans Android Studio, rendez-vous dans le menu Build / Build App Bundle(s)/APK(s) / Build APK(s) .<a class="headerlink" href="#dans-android-studio-rendez-vous-dans-le-menu-build-build-app-bundlesapks-build-apks" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_127_img_01_300x307.png" /></p>
+<h4 id="ceci-generera-le-fichier-app-debugapk-dans-le-dossier-appbuildoutputsapkdebug">Ceci générera le fichier app-debug.apk dans le dossier app/build/outputs/apk/debug .<a class="headerlink" href="#ceci-generera-le-fichier-app-debugapk-dans-le-dossier-appbuildoutputsapkdebug" title="Permanent link">&para;</a></h4>
+<h3 id="generer-un-fichier-apk-de-production">Générer un fichier APK de production<a class="headerlink" href="#generer-un-fichier-apk-de-production" title="Permanent link">&para;</a></h3>
+<p>Pour générer un fichier APK de production :</p>
+<h4 id="dans-android-studio-cliquez-sur-licone-dauthentification-dans-le-coin-superieur-droit-afin-dassocier-android-studio">Dans Android Studio, cliquez sur l'icône d'authentification dans le coin supérieur droit afin d'associer Android Studio<a class="headerlink" href="#dans-android-studio-cliquez-sur-licone-dauthentification-dans-le-coin-superieur-droit-afin-dassocier-android-studio" title="Permanent link">&para;</a></h4>
+<p>avec votre compte Google.</p>
+<p><img alt="Illustration" src="../../images/page_127_img_02_300x212.png" /></p>
+<h4 id="rendez-vous-dans-le-menu-build-generate-signed-app-bundleapk">Rendez-vous dans le menu Build / Generate Signed App Bundle/APK .<a class="headerlink" href="#rendez-vous-dans-le-menu-build-generate-signed-app-bundleapk" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_127_img_03_300x425.png" /></p>
+<h4 id="dans-la-fenetre-qui-suit-selectionnez-apk">Dans la fenêtre qui suit, sélectionnez APK.<a class="headerlink" href="#dans-la-fenetre-qui-suit-selectionnez-apk" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_128_img_01_500x361.png" /></p>
+<h4 id="cliquez-sur-create-new">Cliquez sur Create New .<a class="headerlink" href="#cliquez-sur-create-new" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_128_img_02_500x361.png" /></p>
+<h4 id="remplissez-les-informations-demandees">Remplissez les informations demandées :<a class="headerlink" href="#remplissez-les-informations-demandees" title="Permanent link">&para;</a></h4>
+<h4 id="key-store-path-entrez-le-chemin-et-le-nom-du-fichier-qui-contiendra-les-differentes-cles-generees">Key store path : entrez le chemin et le nom du fichier qui contiendra les différentes clés générées.<a class="headerlink" href="#key-store-path-entrez-le-chemin-et-le-nom-du-fichier-qui-contiendra-les-differentes-cles-generees" title="Permanent link">&para;</a></h4>
+<p>Suggestion : placez-le dans un dossier différent de votre application car il pourra contenir les clés de différentes applications. Ici, puisque je désire générer une clé qui servira à une version de production, j'ai choisi d'appeler le gestionnaire de clés  release-key.jks .</p>
+<h4 id="password-le-mot-de-passe-qui-permettra-dacceder-au-gestionnaire-de-cles">Password : Le mot de passe qui permettra d'accéder au gestionnaire de clés.<a class="headerlink" href="#password-le-mot-de-passe-qui-permettra-dacceder-au-gestionnaire-de-cles" title="Permanent link">&para;</a></h4>
+<h4 id="section-key">Section Key  :<a class="headerlink" href="#section-key" title="Permanent link">&para;</a></h4>
+<h4 id="alias-un-simple-alias-pour-faire-reference-a-cette-cle-suggestion-utiliser-le-nom-de-lapplication-suivi-de-release-pour-indiquer-que-cest-la-cle-pour-la-version-de-production">Alias : un simple alias pour faire référence à cette clé. Suggestion : utiliser le nom de l'application suivi de release pour indiquer que c'est la clé pour la version de production.<a class="headerlink" href="#alias-un-simple-alias-pour-faire-reference-a-cette-cle-suggestion-utiliser-le-nom-de-lapplication-suivi-de-release-pour-indiquer-que-cest-la-cle-pour-la-version-de-production" title="Permanent link">&para;</a></h4>
+<h4 id="password-le-mot-de-passe-pour-la-cle-de-cette-application-il-faut-utiliser-le-meme-mot-de-passe-que-pour-le-gestionnaire-de-cles">Password : le mot de passe pour la clé de cette application. Il faut utiliser le même mot de passe que pour le gestionnaire de clés<a class="headerlink" href="#password-le-mot-de-passe-pour-la-cle-de-cette-application-il-faut-utiliser-le-meme-mot-de-passe-que-pour-le-gestionnaire-de-cles" title="Permanent link">&para;</a></h4>
+<p>.</p>
+<h4 id="section-certificate">Section Certificate :<a class="headerlink" href="#section-certificate" title="Permanent link">&para;</a></h4>
+<h4 id="remplissez-les-informations-demandees-les-codes-de-pays-peuvent-etre-trouves">Remplissez les informations demandées. Les codes de pays peuvent être trouvés<a class="headerlink" href="#remplissez-les-informations-demandees-les-codes-de-pays-peuvent-etre-trouves" title="Permanent link">&para;</a></h4>
+<p>ici : <a href="https://countrycode.org">https://countrycode.org</a> .</p>
+<p><img alt="Illustration" src="../../images/page_129_img_01_500x553.png" /></p>
+<h4 id="dans-le-dernier-ecran-choisissez-release-puis-cliquez-sur-create">Dans le dernier écran, choisissez release  puis cliquez sur Create .<a class="headerlink" href="#dans-le-dernier-ecran-choisissez-release-puis-cliquez-sur-create" title="Permanent link">&para;</a></h4>
+<h4 id="le-fichier-genere-sappelle-app-releaseapk-et-il-est-place-dans-le-dossier-apprelease">Le fichier généré s'appelle app-release.apk et il est placé dans le dossier  app/release .<a class="headerlink" href="#le-fichier-genere-sappelle-app-releaseapk-et-il-est-place-dans-le-dossier-apprelease" title="Permanent link">&para;</a></h4>
+<h3 id="installer-lapplication">Installer l'application<a class="headerlink" href="#installer-lapplication" title="Permanent link">&para;</a></h3>
+<p>Une fois le fichier APK généré, il est possible de l'installer <strong>à partir de Google Play Store</strong> ou <strong>en distribuant vous-mêmes le fichier APK</strong>.</p>
+<h4 id="pour-plus-dinformation">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://developer.android.com/studio/publish/preparing?hl=fr">« Préparer la publication de votre application » - Android Developer</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/publish/app-signing?hl=fr">« Signer votre application en vue de sa publication sur Google Play » - Android Developer</a></p>
+</li>
+</ul>
+<h3 id="methods-of-generating-apk-of-android-application-geeks-for-geeks">* <a href="https://www.geeksforgeeks.org/methods-of-generating-apk-of-android-application/">« Methods of Generating APK of Android Application » - Geeks for Geeks</a><a class="headerlink" href="#methods-of-generating-apk-of-android-application-geeks-for-geeks" title="Permanent link">&para;</a></h3>
+<p>33.3 Publier une application sur Google Play Store</p>
+<p>Publier une application Android sur Google Play Store permet de rendre cette application disponible à un nombre impressionnant d'utilisateurs. Intéressant!</p>
+<p>D'abord, voyons quelles sont les exigences pour que Google Play Store accepte de publier votre application. Nous verrons ensuite les grandes lignes à suivre pour publier l'application.</p>
+<h3 id="exigences-de-lapplication">Exigences de l'application<a class="headerlink" href="#exigences-de-lapplication" title="Permanent link">&para;</a></h3>
+<p>Google Play Store ne permet pas de publier n'importe quelle application.</p>
+<p>Avant de vous lancer dans le processus de publication, assurez que votre application réponde aux exigences suivantes :</p>
+<h4 id="lapplication-doit-respecter-les-regles-de-google-play-store">L'application doit respecter les règles de Google Play Store<a class="headerlink" href="#lapplication-doit-respecter-les-regles-de-google-play-store" title="Permanent link">&para;</a></h4>
+<p>, par exemple ne présenter aucun contenu nuisible ou inapproprié, respecter la propriété intellectuelle ou encore être conforme aux exigences d'optimisation par défaut du système Android</p>
+<h4 id="lapplication-doit-etre-exempte-de-bogues">L'application doit être exempte de bogues<a class="headerlink" href="#lapplication-doit-etre-exempte-de-bogues" title="Permanent link">&para;</a></h4>
+<h4 id="lapplication-doit-offrir-une-bonne-experience-utilisateur">L'application doit offrir une bonne expérience utilisateur<a class="headerlink" href="#lapplication-doit-offrir-une-bonne-experience-utilisateur" title="Permanent link">&para;</a></h4>
+<h4 id="elle-doit-etre-signee-a-laide-dun-certificat-numerique-httpsdeveloperandroidcomstudiopublishapp-signing">Elle doit être signée à l'aide d'un certificat numérique : <a href="https://developer.android.com/studio/publish/app-signing?">https://developer.android.com/studio/publish/app-signing?</a><a class="headerlink" href="#elle-doit-etre-signee-a-laide-dun-certificat-numerique-httpsdeveloperandroidcomstudiopublishapp-signing" title="Permanent link">&para;</a></h4>
+<p>hl=fr</p>
+<h4 id="elle-doit-egalement-repondre-a-des-exigences-de-tests-httpssupportgooglecomgoogleplayandroid-">Elle doit également répondre à des exigences de tests : <a href="https://support.google.com/googleplay/android-">https://support.google.com/googleplay/android-</a><a class="headerlink" href="#elle-doit-egalement-repondre-a-des-exigences-de-tests-httpssupportgooglecomgoogleplayandroid-" title="Permanent link">&para;</a></h4>
+<p>developer/answer/14151465?sjid=9146892187004698062-NC</p>
+<h3 id="publication-sur-google-play-store">Publication sur Google Play Store<a class="headerlink" href="#publication-sur-google-play-store" title="Permanent link">&para;</a></h3>
+<p>La publication d'une application sur Google Play Store passe par ces étapes :</p>
+<h4 id="generer-un-fichier-apk-de-production_1"><strong>Générer un fichier APK de production</strong><a class="headerlink" href="#generer-un-fichier-apk-de-production_1" title="Permanent link">&para;</a></h4>
+<h4 id="creer-un-compte-de-developpeur-cout-25-usd-valide-tant-que-le-compte-est-actif">Créer un compte de développeur (coût : 25 USD, valide tant que le compte est actif<a class="headerlink" href="#creer-un-compte-de-developpeur-cout-25-usd-valide-tant-que-le-compte-est-actif" title="Permanent link">&para;</a></h4>
+<p>)</p>
+<h4 id="remplir-la-fiche-de-lapplication-description-de-lapplication-et-de-ses-fonctionnalites-icone-de-lapplication">Remplir la fiche de l'application : description de l'application et de ses fonctionnalités, icône de l'application,<a class="headerlink" href="#remplir-la-fiche-de-lapplication-description-de-lapplication-et-de-ses-fonctionnalites-icone-de-lapplication" title="Permanent link">&para;</a></h4>
+<p>impressions d'écrans, catégorie, contact, etc.</p>
+<h4 id="televerser-le-fichier-apk">Téléverser le fichier APK<a class="headerlink" href="#televerser-le-fichier-apk" title="Permanent link">&para;</a></h4>
+<h4 id="fixer-le-prix-de-lapplication">Fixer le prix de l'application<a class="headerlink" href="#fixer-le-prix-de-lapplication" title="Permanent link">&para;</a></h4>
+<h4 id="patienter">Patienter!<a class="headerlink" href="#patienter" title="Permanent link">&para;</a></h4>
+<p>Sachez que l'application pourrait être soumise à une vérification, ce qui peut entraîner des délais d'environ 7 jours. Sinon, la première application prendra environ 48 heures avant d'être disponible alors que les publications subséquentes ne nécessiteront que quelques heures.</p>
+<p>Les étapes de publication sont bien détaillés dans cet article : Comment publier une application sur le Play Store de Google ?</p>
+<h4 id="pour-plus-dinformation_1">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://support.google.com/googleplay/android-developer/answer/9859152?hl=fr-CA">« Créer et configurer votre application » - Google</a></li>
+</ul>
+<h3 id="publier-votre-application-google">* <a href="https://support.google.com/googleplay/android-developer/answer/9859751?hl=fr-CA">« Publier votre application » - Google</a><a class="headerlink" href="#publier-votre-application-google" title="Permanent link">&para;</a></h3>
+<p>33.4 Publier une application sans passer par Google Play Store</p>
+<p>Il est possible de déployer une application sur un appareil Android sans passer par Google Play Store.</p>
+<p>Ceci offre l'avantage de ne pas avoir à partager les profits avec Google via les commissions. Par contre, il sera plus difficile de rejoindre vos clients potentiels.</p>
+<p>Sachez qu'il existe des plateformes de publications tierces, par exemple Amazon App Store ou SlideMe.</p>
+<p>Dans cette fiche, je vous montre plutôt comment déployer directement une application. Le processus est connu sous le terme sideloading.</p>
+<h3 id="note-google-a-annonce-que-des-2027-la-publication-sans-passer-par-google-play-store-necessitera-que-les">Note : Google a annoncé  que dès 2027, la publication sans passer par Google Play Store nécessitera que les<a class="headerlink" href="#note-google-a-annonce-que-des-2027-la-publication-sans-passer-par-google-play-store-necessitera-que-les" title="Permanent link">&para;</a></h3>
+<p>développeurs soient authentifiés sur le Android Developer Console. À suivre...</p>
+<p>Pour déployer une application directement :</p>
+<h4 id="generez-le-fichier-apk-de-production-ou-de"><strong>Générez le fichier APK de production</strong> (ou de<a class="headerlink" href="#generez-le-fichier-apk-de-production-ou-de" title="Permanent link">&para;</a></h4>
+<p>débogage si l'application est distribuée pour des fins de tests).</p>
+<h4 id="distribuez-le-fichier-apk-a-vos-utilisateurs-a-laide-de-la-methode-de-votre-choix-par-exemple">Distribuez le fichier APK à vos utilisateurs à l'aide de la méthode de votre choix, par exemple :<a class="headerlink" href="#distribuez-le-fichier-apk-a-vos-utilisateurs-a-laide-de-la-methode-de-votre-choix-par-exemple" title="Permanent link">&para;</a></h4>
+<h4 id="par-courriel">par courriel<a class="headerlink" href="#par-courriel" title="Permanent link">&para;</a></h4>
+<h4 id="sur-un-site-web">sur un site Web<a class="headerlink" href="#sur-un-site-web" title="Permanent link">&para;</a></h4>
+<h4 id="a-laide-dun-code-qr">à l'aide d'un code QR<a class="headerlink" href="#a-laide-dun-code-qr" title="Permanent link">&para;</a></h4>
+<p>publié sur un site Web</p>
+<h4 id="en-transferant-le-fichier-directement-entre-lordinateur-et-lappareil-android">en transférant le fichier directement entre l'ordinateur et l'appareil Android<a class="headerlink" href="#en-transferant-le-fichier-directement-entre-lordinateur-et-lappareil-android" title="Permanent link">&para;</a></h4>
+<h4 id="lusager-pourra-alors-cliquer-sur-le-fichier-afin-dinstaller-lapplication-sur-son-appareil">L'usager pourra alors cliquer sur le fichier afin d'installer l'application sur son appareil.<a class="headerlink" href="#lusager-pourra-alors-cliquer-sur-le-fichier-afin-dinstaller-lapplication-sur-son-appareil" title="Permanent link">&para;</a></h4>
+<p>Pour que l'installation puisse être réalisée, l'usager devra autoriser l'installation d'une application provenant de source non reconnue.</p>
+<p>Si vous tentez d'installer l'application alors que le téléphone n'est pas configuré à cet effet, une notification vous permettra d'activer l'installation d'applications en provenance de sources inconnues.</p>
+<p><img alt="Illustration" src="../../images/page_130_img_01_308x654.png" /></p>
+<p>Vous pouvez aussi activer cette option manuellement :</p>
+<h4 id="sur-lappareil-android-rendez-vous-dans-parametres-applications-acces-special-des-applis">Sur l'appareil Android, rendez-vous dans Paramètres / Applications / Accès spécial des applis /<a class="headerlink" href="#sur-lappareil-android-rendez-vous-dans-parametres-applications-acces-special-des-applis" title="Permanent link">&para;</a></h4>
+<h4 id="installer-des-applis-inconnues">Installer des applis inconnues .<a class="headerlink" href="#installer-des-applis-inconnues" title="Permanent link">&para;</a></h4>
+<h4 id="selectionnez-la-source-dou-provient-lapplication-que-vous-desirez-installer-ex-chrome">Sélectionnez la source d'où provient l'application que vous désirez installer (ex : Chrome).<a class="headerlink" href="#selectionnez-la-source-dou-provient-lapplication-que-vous-desirez-installer-ex-chrome" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_131_img_01_309x654.png" /></p>
+<h4 id="cochez-autoriser-a-partir-de-cette-source">Cochez Autoriser à partir de cette source .<a class="headerlink" href="#cochez-autoriser-a-partir-de-cette-source" title="Permanent link">&para;</a></h4>
+<p><img alt="Illustration" src="../../images/page_131_img_02_309x653.png" /></p>
+<h4 id="pour-plus-dinformation_2">Pour plus d'information<a class="headerlink" href="#pour-plus-dinformation_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://developer.android.com/distribute/marketing-tools/alternative-distribution?hl=fr">« Différentes options de distribution » - Google Developer</a></li>
+</ul>
+<h3 id="comment-installer-des-apps-android-de-sources-inconnues-appaloosa">* <a href="https://www.appaloosa.io/fr/blog/guides/comment-installer-app-source-inconnue-">« Comment installer des apps Android de sources inconnues ? » - Appaloosa</a><a class="headerlink" href="#comment-installer-des-apps-android-de-sources-inconnues-appaloosa" title="Permanent link">&para;</a></h3>
+<p>android
+34. Exercice 4</p>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
