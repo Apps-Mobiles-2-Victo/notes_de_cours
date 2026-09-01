@@ -4,7 +4,7 @@ title: "Introduction et vue d'ensemble du cours"
 
 # Introduction et vue d'ensemble du cours
 
-
+<!--
 ### 60. Liens hypertexte
 61. Exercice 10
 62. Pour le prochain cours
@@ -41,6 +41,7 @@ title: "Introduction et vue d'ensemble du cours"
 81. La programmation asynchrone
 82. Les notifications
 
+-->
 
 ## 1. Où trouver de l'aide
 

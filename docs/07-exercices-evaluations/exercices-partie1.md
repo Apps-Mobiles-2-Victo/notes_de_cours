@@ -73,10 +73,10 @@ Si vous choisissez d'utiliser les outils d'IA générative pour vous aider à tr
 Dans cet exercice et dans toutes vos applications à venir, le code complet de chaque gestionnaire d'événement, par exemple la réaction à un clic, doit obligatoirement être placé dans une fonction.
 
 
-#### Ceci permet d'assurer que vous pratiquez certaines notions enseignées, par exemple le hissage d'état.
+> Ceci permet d'assurer que vous pratiquez certaines notions enseignées, par exemple le hissage d'état.
 
 
-#### Ceci met en lumière le fait que le code du gestionnaire d'événement n'est pas un composable. Il n'est donc pas possible d'y définir d'autres composables, par exemple un Text().
+> Ceci met en lumière le fait que le code du gestionnaire d'événement n'est pas un composable. Il n'est donc pas possible d'y définir d'autres composables, par exemple un Text().
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -93,57 +93,19 @@ fun verifier(...) {
 ```
 
 
-## 1. Ajoutez une barre de titre à l'application. Le titre doit être votre nom.
-
-
-### 2. Ajoutez un bouton pour permettre de comparer le mot saisi avec le mot recherché. Ce bouton appellera une fonction qui doit modifier la valeur d'une variable d'état pour indiquer si c'est une réussite ou un échec.
-
-
-### 3. Mettez un point d'arrêt au début de votre fonction modulable principale et lancez l'application en mode débogage. Inspectez les différentes variables et paramètres.
-
-
-### 4. Afin de vous pratiquer à utiliser le Logcat, faites-y afficher la valeur saisie par l'usager. Prenez soin d'utiliser une étiquette qui vous permettra de retrouver rapidement cette information.
-
-
-## 5. Selon la valeur de la variable d'état, l'application doit afficher l'image de réussite ou l'image d'échec.
-
-
-## 6. Si la licence d'utilisation de l'image l'exige, affichez la source de l'image en petit texte italique.
-
-
-## 7. Dès que le bouton est cliqué, le clavier virtuel doit disparaître.
-
-
-### 8. Apportez un grand soin à l'apparence de votre application : alignements espacements, couleurs, etc. Au besoin, faites appel à votre prof qui vous indiquera les éléments visuels à améliorer.
-
-
-### 9. OPTIONNEL : plutôt que d'utiliser une seule case de saisie pour entrer le mot, utilisez une case de saisie par lettre à deviner.
-
-
-## 10. Testez votre application sur un vrai téléphone.
-
-
-## 30. Pour le prochain cours
-
-
-
----
-
-
-### 30.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d'un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
+1. Ajoutez une barre de titre à l'application. Le titre doit être votre nom.
+1. Ajoutez un bouton pour permettre de comparer le mot saisi avec le mot recherché. Ce bouton appellera une fonction qui doit modifier la valeur d'une variable d'état pour indiquer si c'est une réussite ou un échec.
+1. Mettez un point d'arrêt au début de votre fonction modulable principale et lancez l'application en mode débogage. Inspectez les différentes variables et paramètres.
+1. Afin de vous pratiquer à utiliser le *Logcat*, faites-y afficher la valeur saisie par l'usager. Prenez soin d'utiliser une étiquette qui vous permettra de retrouver rapidement cette information.
+1. Selon la valeur de la variable d'état, l'application doit afficher l'image de réussite ou l'image d'échec.
+1. Si la licence d'utilisation de l'image l'exige, affichez la source de l'image en petit texte italique.
+1. Dès que le bouton est cliqué, le clavier virtuel doit disparaître.
+1. Apportez un grand soin à l'apparence de votre application : alignements espacements, couleurs, etc. Au besoin, faites appel à votre prof qui vous indiquera les éléments visuels à améliorer.
+1. OPTIONNEL : plutôt que d'utiliser une seule case de saisie pour entrer le mot, utilisez une case de saisie par lettre à deviner.
+1. Testez votre application sur un vrai téléphone.
 
 
 ## 31. Les icônes
-
-
-
----
 
 
 ### 34.1 Jeu de devinette - partie 3
