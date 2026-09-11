@@ -502,10 +502,10 @@ Box(
 ## Image()
 
 
-Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource**.
+Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource** dans l'onglet *Resource Manager*.
 
 
-Les types d'images supportés sont JPG, PNG, GIF, BMP, WebP et HEIF.
+Plusieurs types d'images sont supportés: JPG, PNG, SVG, GIF, BMP, WebP, HEIF et autres.
 
 
 
