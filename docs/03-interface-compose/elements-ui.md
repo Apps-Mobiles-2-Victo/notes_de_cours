@@ -502,14 +502,12 @@ Box(
 ## Image()
 
 
-Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource** dans l'onglet *Resource Manager*.
-
+Pour afficher une image dans une interface utilisateur, il faut d'abord **l'ajouter en tant que ressource** dans l'onglet *Resource Manager* -> *Import Drawables*.
 
 Plusieurs types d'images sont supportés: JPG, PNG, SVG, GIF, BMP, WebP, HEIF et autres.
 
 
-
-L'image sera affichée à l'aide de l'élément *Image*.
+L'image sera affichée à l'aide de l'élément *Image* et le nom de resource sera fourni à l'aide de `R.drawable.<nom_ressource>`.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
