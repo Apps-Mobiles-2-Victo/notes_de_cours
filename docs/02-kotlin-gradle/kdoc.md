@@ -4,6 +4,8 @@ title: "Documentation KDoc"
 
 # Documentation KDoc
 
+[Générer la documentation à l'aide de Dokka](#generer-la-documentation-a-laide-de-dokka)
+
 Chaque langage de programmation propose ses propres normes de documentation.
 
 Dans le monde de Kotlin, la documentation du code est réalisée à l'aide de KDoc.
@@ -91,10 +93,6 @@ data class HomeUiState(
 }
 ```
 
-## Génération de la documentation
-
-Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML **à l'aide de Dokka**.
-
 ### Pour plus d'information
 
 * [« Document Kotlin code: KDoc » - Kotlin](https://kotlinlang.org/docs/kotlin-doc.html)
@@ -144,7 +142,37 @@ fun colorToString(couleur: Color) : String {
 
 ## Générer la documentation à l'aide de Dokka
 
-Dokka est un outil qui permet de générer la documentation notamment à partir de **commentaires KDoc**.
+
+Une fois que les classes et fonctions sont correctement documentées, il est possible de générer automatiquement la documentation au format HTML **à l'aide de Dokka**.
+
+### Installation du plugin Dokka
+
+Pour commencer, vous devez activer le paramètre de Gradle pour configurer et afficher toutes les tâches disponibles.
+
+Pour ce faire, dans Android Studio, rendez-vous dans le menu File / Settings / Experimental et cochez la case *Configure all Gradle tasks*.
+
+![Illustration](../images/AppsMobiles2_Gradle_AutoSync_2.png)
+
+Ensuite pour utiliser le plugin Dokka pour Gradle dans votre app, vous devez ajouter la dépendance suivante à votre fichier `app/build.gradle.kts` :
+
+```kotlin title="Fichier app/build.gradle.kts"
+plugins {
+    ...
+    // pour Dokka
+    id("org.jetbrains.dokka") version "2.2.0"
+}
+```
+
+Puis faites une synchronisation du projet pour que Gradle prenne en compte cette nouvelle dépendance.
+
+La tâche dokka/dokkaGenerateHtml devrait être disponible dans la section *Gradle* (icône de tête d'éléphant dans la barre d'outils à droite de l'IDE)
+
+![Illustration](../images/AppsMobiles2_Dokka_task.png)
+
+Un lien vers un serveur local sera généré dans le terminal d'Android Studio. Vous pourrez cliquer sur ce lien pour visualiser la documentation générée.
+
+
+## RÉFÉRENCE POUR L'UTILISATION À LA LIGNE DE COMMANDE (OPTIONNEL)
 
 ### Variable d'environnement JAVA_HOME
 
@@ -222,7 +250,7 @@ Maintenant que la variable d'environnement JAVA_HOME est correctement configuré
 plugins {
     ...
     // pour Dokka
-    id("org.jetbrains.dokka") version "2.0.0" apply false
+    id("org.jetbrains.dokka") version "2.2.0" apply false
 }
 ```
 
