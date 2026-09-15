@@ -5,40 +5,31 @@ title: "Préférences utilisateur"
 # Préférences utilisateur
 
 
-### 32.1 Preferences DataStore
+## Preferences DataStore
 
 
-Une préférence utilisateur est une configuration qui est choisie par l'utilisateur et enregistrée dans l'application de sorte qu'elle est toujours active lors du prochain démarrage de l'application.
+Une préférence utilisateur est une configuration qui est choisie par l'utilisateur et sauvegardée sur le disque de l'appareil mobile. 
 
+Elle est enregistrée dans l'espace disque privé réservé à l'application. Elle est toujours active lors du prochain démarrage de l'application.
 
 Il s'agit d'une information simple représentée par une paire clé-valeur.
-
 
 Dans cette fiche :
 
 
-#### Dépendance
+* Dépendance
+* Classe pour gérer la lecture et l'enregistrement
+* Supprimer une paire clé-valeur
+* Consulter les données du Preferences DataStore
+* Ajustements pour le Preview
 
 
-#### Classe pour gérer la lecture et l'enregistrement
-
-
-#### Supprimer une paire clé-valeur
-
-
-#### Consulter les données du Preferences DataStore
-
-
-#### Ajustements pour le Preview
-
-
-### Dépendance
+## Dépendance
 
 
 Avant de vous lancer dans l'enregistrement de préférences utilisateur, il faut ajouter une dépendance à votre projet.
 
-
-Cette ligne doit être ajoutée dans le fichier build.gradle.kts  qui se trouve dans le dossier app .
+Cette ligne doit être ajoutée dans le fichier `app/build.gradle.kts`.
 
 
 ```kotlin title="Fichier app/build.gradle.kts"
@@ -46,42 +37,32 @@ Cette ligne doit être ajoutée dans le fichier build.gradle.kts  qui se trouve 
 dependencies {
     ...
     // pour enregistrer des paires clé-valeur (préférences utilisateur)
-    implementation("androidx.datastore:datastore-preferences:1.1.7")
+    implementation(libs.datastore.preferences)
 }
 ```
 
-
 Notez que la version de la dépendance pourrait être différente. Android Studio vous le fera savoir si une version plus récente est disponible.
-
 
 Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
-
-### Classe pour gérer la lecture et l'enregistrement
+## Classe pour gérer la lecture et l'enregistrement
 
 
 Les instructions pour gérer les préférences utilisateur seront codées dans leur propre classe.
 
-
 Cette classe devra être dans son propre fichier et le fichier portera le même nom que la classe.
 
+Toutes les classes qui servent à gérer des données seront placées dans un dossier nommé `data` .
 
-Toutes les classes qui servent à gérer des données seront placées dans un dossier nommé  data .
-
-
-Ce dossier sera au même niveau que le fichier  MainActiviy.kt .
+Ce dossier sera au même niveau que le fichier `MainActiviy.kt` .
 
 
-Le chemin complet de la classe sera donc au format : app/src/main/java/com/mondomaine/monprojet/data/PreferencesUtilisateur.kt .
-
+Le chemin complet de la classe sera donc au format : `app/src/main/java/com/mondomaine/monprojet/data/PreferencesUtilisateur.kt` .
 
 Pour créer un dossier dans Android Studio :
 
-
-#### Assurez-vous que l'affichage soit en mode Projet  (cliquez sur la liste déroulante dans le haut de la zone qui affiche les fichiers du projet puis sélectionnez  Project ).
-
-
-#### Effectuez un clic droit sur le dossier parent /  New  /  Package .
+* Assurez-vous que l'affichage soit en mode Projet  (cliquez sur la liste déroulante dans le haut de la zone qui affiche les fichiers du projet puis sélectionnez  Project ).
+* Effectuez un clic droit sur le dossier parent /  New  /  Package .
 
 
 Voici le contenu de cette classe pour gérer deux préférences utilisateur : une de type String ainsi qu'une autre de type Int.
@@ -90,7 +71,7 @@ Voici le contenu de cette classe pour gérer deux préférences utilisateur : un
 À vous de l'adapter à vos besoins.
 
 
-### Vous ne devez surtout pas conserver les noms uneCle et autreCle ;-)
+    Vous ne devez surtout pas conserver les noms uneCle et autreCle ;-)
 
 
 ```kotlin title="Fichier data/PreferencesUtilisateur.kt (Kotlin)"
@@ -138,18 +119,9 @@ class PreferencesUtilisateur(private val dataStore: DataStore<Preferences>) {
 
 Quelques explications :
 
-
-#### Le companion object
-en Kotlin est semblable aux propriétés statiques dans d'autres langages. On pourra accéder à ces propriétés directement à l'aide du nom de la classe.
-
-
-#### La lecture et l'écriture sont réalisées de façon asynchrone. C'est pourquoi la lecture retourne un Flow<String> plutôt
-que directement un String.
-
-
-#### Lors de la lecture et de l'écriture, on utilise une constante (ex : UNE_CLE) pour référer au nom physique de la clé (ex :
-une_cle). Ceci assure qu'on utilise le bon nom de clé pour lire et pour  écrire la valeur d'une préférence utilisateur.
-
+* Le companion object en Kotlin est semblable aux propriétés statiques dans d'autres langages. On pourra accéder à ces propriétés directement à l'aide du nom de la classe.
+* La lecture et l'écriture sont réalisées de façon asynchrone. C'est pourquoi la lecture retourne un Flow<String> plutôt que directement un String.
+* Lors de la lecture et de l'écriture, on utilise une constante (ex : UNE_CLE) pour référer au nom physique de la clé (ex :une_cle). Ceci assure qu'on utilise le bon nom de clé pour lire et pour  écrire la valeur d'une préférence utilisateur.
 
 Pour utiliser cette classe, ajoutez ceci à votre code.
 
@@ -198,32 +170,19 @@ fun MainScreen( preferencesUtilisateur: PreferencesUtilisateur , ...) {
 Quelques explications :
 
 
-#### Pour accéder aux préférences utilisateur stockées dans un conteneur que l'on a choisi de nommer settings, on ajoute
-une propriété d'extension (extension property) à la classe Context.
-
-
-#### Le by preferencesDataStore fait beaucoup de travail. C'est lui qui crée le DataStore, gère le fichier, etc.
-
-
-#### Puisque la lecture et l'écriture des préférences utilisateur sont asynchrones, il n'est pas possible d'appeler
+* Pour accéder aux préférences utilisateur stockées dans un conteneur que l'on a choisi de nommer settings, on ajoute une propriété d'extension (extension property) à la classe Context.
+* Le by preferencesDataStore fait beaucoup de travail. C'est lui qui crée le DataStore, gère le fichier, etc.
+* Puisque la lecture et l'écriture des préférences utilisateur sont asynchrones, il n'est pas possible d'appeler
 directement les méthodes codées dans la classe PreferencesUtilisateur.
-
-
-#### Pour la lecture, on créera une variable d'état qui écoute en tout temps pour connaître la valeur de la préférence
+* Pour la lecture, on créera une variable d'état qui écoute en tout temps pour connaître la valeur de la préférence
 utilisateur. On utilisera collectAsState qui se charge de collecter un flux (Flow) et de le transformer en état (State).
-
-
-#### Cette variable est ici simplement affichée dans un Text().
-
-
-#### Dans cette application, j'ai choisi de modifier la valeur de la préférence utilisateur sur le clic d'un bouton.
-
-
-#### Pour enregistrer la valeur, il faut utiliser scope.launch()
+* Cette variable est ici simplement affichée dans un Text().
+* Dans cette application, j'ai choisi de modifier la valeur de la préférence utilisateur sur le clic d'un bouton.
+* Pour enregistrer la valeur, il faut utiliser scope.launch()
 afin de ne pas bloquer le fil d'exécution lors de l'appel asynchrone.
 
 
-### Supprimer une paire clé-valeur
+## Supprimer une paire clé-valeur
 
 
 Il est possible d'ajouter des méthodes dans la classe PreferencesUtilisateur pour effectuer différentes tâches, par exemple supprimer une paire clé-valeur.
@@ -256,37 +215,24 @@ class PreferencesUtilisateur(private val dataStore: DataStore<Preferences>) {
 ```
 
 
-### Consulter les données du Preferences DataStore
+## Consulter les données du Preferences DataStore
 
 
 Il est possible de consulter le contenu du Preferences DataStore à l'aide d'Android Studio.
 
 
-#### Lancez votre projet dans l'émulateur.
-
-
-#### Dans Android Studio, faites afficher le Device Explorer : View / Tool Windows / Device Explorer .
-
-
-#### Rendez-vous dans le dossier data/data .
-
-
-#### Retrouvez le nom de domaine inversé de votre projet (ex : com.mondomaine.monprojet).
-
-
-#### Dans le dossier files/datastore , le fichier settings.preferences_pb contient les paires clé-valeur enregistrées. Le fichier
+* Lancez votre projet dans l'émulateur.
+* Dans Android Studio, faites afficher le Device Explorer : View / Tool Windows / Device Explorer .
+* Dans le Device Explorer, naviguez vers le dossier data/data .
+* Dans le dossier data/data, retrouvez le nom de domaine inversé de votre projet (ex : com.mondomaine.monprojet).
+* Dans le dossier files/datastore , le fichier settings.preferences_pb contient les paires clé-valeur enregistrées. Le fichier
 n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
-
-
 
 
 ![Illustration](../images/page_122_img_01_1000x347.png)
 
 
-
-
-#### Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide
-du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur.
+    Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -362,6 +308,7 @@ comprehensive-guide-to-using-datastore-with-jetpack-compose-d89c813232d7
 
 
 ### * [« Consuming flows safely in Jetpack Compose » - Manuel.vivo.dev](https://manuelvivo.dev/consuming-flows-compose)
+
 32.2 Travailler avec le Preferences DataStore dans une fonction non composable
 
 
