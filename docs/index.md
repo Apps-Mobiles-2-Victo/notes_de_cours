@@ -26,7 +26,8 @@ Ces notes sont structurées de façon **thématique** afin de faciliter l'appren
 ### 💻 2. Référence Kotlin et Outils de Build
 * [**Gestion de projet avec Gradle**](02-kotlin-gradle/gradle.md) : Fichiers `build.gradle.kts`, catalogue de versions `libs.versions.toml`, gestion des dépendances et cache.
 * [**Kotlin Fondamentaux**](02-kotlin-gradle/kotlin-bases.md) : Variables (`var`/`val`), types de base, string templates, structures de contrôle (`if`, `when`, `for`, `while`), optionnels et null-safety.
-* [**Normes de code, KDoc et Licences**](02-kotlin-gradle/normes-et-kdoc.md) : Conventions de nommage, documentation avec KDoc et génération Dokka.
+* [**Normes de code**](02-kotlin-gradle/normes.md) : Conventions de nommage et utilisation de code emprunté.
+* [**Documentation KDoc**](02-kotlin-gradle/kdoc.md) : Documentation Kotlin, KDoc et génération Dokka.
 
 ---
 

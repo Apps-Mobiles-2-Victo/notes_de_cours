@@ -64,7 +64,7 @@ nav:
   - "2. Kotlin & Gradle":
       - "Gradle & Dépendances": "02-kotlin-gradle/gradle.md"
       - "Kotlin - Fondamentaux": "02-kotlin-gradle/kotlin-bases.md"
-      - "Normes de code": "02-kotlin-gradle/normes-et-kdoc.md"
+      - "Normes de code": "02-kotlin-gradle/normes.md"
       - "Documentation KDoc": "02-kotlin-gradle/kdoc.md"
   - "3. Interface Compose":
       - "Bases de Jetpack Compose": "03-interface-compose/jetpack-compose-bases.md"
