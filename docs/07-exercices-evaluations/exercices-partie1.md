@@ -54,14 +54,10 @@ L'application contient un mot codé en dur. Elle affiche la première et la dern
 - Testez l'apparence de votre application en mode clair puis en mode sombre.
 
 
-
-## 25. Déboguer une application Android
-
-
 ---
 
 
-### 29.1 Jeu de devinette - partie 2
+## Exercice 2: Jeu de devinette - partie 2
 
 
 Poursuivez le développement de votre application. Le jeu devient réactif!
@@ -105,13 +101,8 @@ fun verifier(...) {
 1. Testez votre application sur un vrai téléphone.
 
 
-## 31. Les icônes
 
-
-### 34.1 Jeu de devinette - partie 3
-
-
-### 1. Demandez à votre outil d'IA favori de vous expliquer les lignes de code données dans la théorie sur les préférences utilisateur. Raffinez vos demandes jusqu'à ce que vous compreniez bien le code. S'il vous offre des commentaires que vous jugez aidants, vous pouvez les copier dans votre code mais prenez soin de noter la source dans l'en-tête de votre code (ex : La majorité des commentaires de ce code ont été générés par claude.ai le 2 septembre 2025).
+## Exercice 2:  Jeu de devinette - partie 3
 
 
 ### 2. À chaque fois que l'usager clique sur le bouton de vérification et que la vérification dit que ce n'est pas le bon mot, l'application doit mettre à jour une préférence utilisateur qui retient le nombre d'essais réalisés. Ceci permettra de refermer l'application et de poursuivre le jeu une autre fois.
