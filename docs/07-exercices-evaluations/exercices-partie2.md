@@ -289,10 +289,7 @@ affichées. Il doit être possible de faire disparaître ce message à l'aide d'
 #### i. Assurez-vous que toutes vos fonctions soient bien documentées puis générez la documentation à l'aide de Dokka.
 
 
-## 2. Questions de compréhension. Inscrivez les réponses dans un fichier texte nommé au format NomPrenom-
-
-
-#### comprehension.txt .
+## 2. Questions de compréhension. Inscrivez les réponses dans un fichier texte nommé au format NomPrenom-comprehension.txt .
 
 
 #### a. Quand on désire travailler avec le Preferences DataStore dans une fonction non composable, expliquez dans vos propres mots pourquoi nous obligés de passer les objets preferencesUtilisateur et scope en
@@ -313,32 +310,14 @@ propres mots, d'où le mot it prend sa valeur et pourquoi il porte ce nom.
 
 
 1. Vous désirez développer une petite application inutile, juste pour passer le temps. Elle permet de vérifier à quel point votre pouce est rapide pour cliquer sur un bouton.
-
-
 1. Vous devez afficher le titre de l'application dans la barre de titre.
-
-
 1. L'application présente un bouton sur lequel il faut cliquer rapidement.
-
-
-1. Elle doit utiliser un ViewModel comme conteneur d'état. Son UiState devra retenir notamment une **liste** d'heures, vide au départ (je vous conseille d'utiliser listOf()).
-
-
+1. Elle doit utiliser un ViewModel comme conteneur d'état. Son UiState devra retenir notamment une **liste** d'heures, vide au départ (je vous conseille d'utiliser `listOf()`).
 1. À chaque clic, l'application retient l'heure à laquelle le clic a eu lieu. La date et l'heure courantes peuvent être obtenues facilement à l'aide de LocalDateTime.now().
-
-
-Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans `_uiState.update` et mettre le code dans it.copy. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
-
-
+1. Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans `_uiState.update` et mettre le code dans `it.copy`. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
 1. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne doit pas bouger. Vous devez soigner le format d'affichage des heures.
-
-
 1. Le but est de faire deux clics ultra-rapprochés le plus rapidement possible. Je vous laisse le soin d'établir le délai à atteindre pour dire que les deux clics ont été assez rapprochés. Je vous laisse le soin de trouver la technique pour soustraire deux dates.
-
-
 1. Une fois ce délai atteint, il n'est plus possible de cliquer pour poursuivre. Le jeu se termine et l'application affiche un message à cet effet.
-
-
 1. OPTIONNEL : Modifiez votre application pour que le délai à atteindre soit saisi à l'écran. Rappel : toutes les variables d’état doivent être gérées par un ViewModel associé à un UiState.
 
 
@@ -348,12 +327,10 @@ entrée.
 1. OPTIONNEL : Prenez le code présenté dans la fiche « **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si l'état est conservé quand l'activité est recréée.
 
 
-
-
 ---
 
 
-### 48.1 Jeu Simon
+## 48.1 Jeu Simon
 
 
 Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : [https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon](https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon) ).
@@ -361,90 +338,41 @@ Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple
 
 Voici le fonctionnement normal du jeu :
 
-
-#### Le jeu présente quatre boutons de couleurs. Chaque bouton est associé à un son.
-
-
-#### Le système « illumine » une séquence de boutons tout en faisant jouer les sons correspondants.
-
-
-#### L'usager doit cliquer sur les boutons afin de reproduire la séquence.
-
-
-#### S'il réussit, un bouton supplémentaire est ajouté à la séquence à reproduire.
-
-
-#### Le jeu se poursuit tant que l'usager ne fait pas d'erreur dans la séquence.
-
-
-Le jeu sera simplifié afin de ne pas être trop long à coder.
+1. Le jeu présente quatre boutons de couleurs. Chaque bouton est associé à un son.
+1. Le système « illumine » une séquence de boutons tout en faisant jouer les sons correspondants.
+1. L'usager doit cliquer sur les boutons afin de reproduire la séquence.
+1. S'il réussit, un bouton supplémentaire est ajouté à la séquence à reproduire.
+1. Le jeu se poursuit tant que l'usager ne fait pas d'erreur dans la séquence.
+1. Le jeu sera simplifié afin de ne pas être trop long à coder.
 
 
 Voici les consignes à respecter :
 
+1. Toutes les variables d'état doivent être gérées à l'aide d'un ViewModel et d'un UiState.
+1. Les boutons sont de simples rectangles placés en damier (deux par ligne). Suggestion : utiliser des Box().
+1. Dans un premier temps, la séquence à reproduire, stockée dans le ViewModel, est codée en dur (ex : bouton 1, bouton 3, bouton 1, bouton 2).
+1. Le jeu ne fera pas « illuminer » les boutons selon la séquence. L'usager devra donc deviner la séquence à reproduire et non reproduire ce qu'il aura vu.
+1. Le jeu se termine dès que l'usager fait une erreur. S'il réussit la séquence, le jeu se termine après le dernier clic. C'est le ViewModel (ou son uiState) qui est responsable de dire si le jeu est terminé ou non.
+1. Une fois le jeu fonctionnel, modifiez-le pour que la séquence à reproduire soit générée au hasard. Ceci sera codé dans une méthode du ViewModel.
 
-#### Toutes les variables d'état doivent être gérées à l'aide d'un ViewModel et d'un UiState.
-
-
-#### Les boutons sont de simples rectangles placés en damier (deux par ligne). Suggestion : utiliser des Box().
-
-
-#### Dans un premier temps, la séquence à reproduire, stockée dans le ViewModel, est codée en dur (ex : bouton 1,
-bouton 3, bouton 1, bouton 2).
-
-
-#### Le jeu ne fera pas « illuminer » les boutons selon la séquence. L'usager devra donc deviner la séquence à reproduire
-et non reproduire ce qu'il aura vu.
-
-
-#### Le jeu se termine dès que l'usager fait une erreur. S'il réussit la séquence, le jeu se termine après le dernier clic. C'est
-le ViewModel (ou son uiState) qui est responsable de dire si le jeu est terminé ou non.
-
-
-#### Soignez l'apparence des boutons afin que le jeu ait une apparence professionnelle. Par exemple, ajoutez un ombrage,
-une bordure, un point lumineux pour donner un effet 3D. Le code pour afficher un bouton sera placé dans sa propre fonction composable.
-
-
-#### Une fois le jeu fonctionnel, modifiez-le pour que la séquence à reproduire soit générée au hasard. Ceci sera codé
-dans une méthode du ViewModel.
-
-
-#### OPTIONNEL : ajustez le jeu pour qu'il génère d'abord une série d'un seul bouton à cliquer. Une fois la série
+### OPTIONNEL : ajustez le jeu pour qu'il génère d'abord une série d'un seul bouton à cliquer. Une fois la série
 correctement reproduite par l'usager, il en ajoutera un 2e puis un 3e, etc., comme dans le vrai jeu. Ici encore, le jeu se termine quand l'usager fait une erreur. S'il est très bon, la séquence peut devenir très longue.
 
 
-#### OPTIONNEL : quand l'usager clique sur le bouton « Démarrer », les boutons s'illuminent selon la séquence.
+### OPTIONNEL : quand l'usager clique sur le bouton « Démarrer », les boutons s'illuminent selon la séquence.
 L'illumination peut être une modification dans l'opacité de la couleur, l'ajout d'une bordure ou tout autre effet visuel de votre choix. Une fois la séquence jouée, un texte invite l'usager à cliquer sur les boutons pour reproduire la séquence.
 
 
-#### OPTIONNEL : associez un son à chacun des boutons, comme dans le vrai jeu (vous pouvez utiliser ces sons :
+### OPTIONNEL : associez un son à chacun des boutons, comme dans le vrai jeu (vous pouvez utiliser ces sons :
 [https://sounddino.com/en/effects/notes/](https://sounddino.com/en/effects/notes/) ). Le son sera entendu quand l'application montre la séquence à reproduire de même que quand l'usager cliquera sur les boutons.
 
 
-#### OPTIONNEL : assurez-vous que les boutons ne soient cliquable que lorsque c'est opportun dans le jeu. Par exemple,
+### OPTIONNEL : assurez-vous que les boutons ne soient cliquable que lorsque c'est opportun dans le jeu. Par exemple,
 il ne doit pas être possible de cliquer sur les boutons de couleur pendant que le jeu illumine les boutons pour montrer la séquence.
 
 
 ### Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication
 en sideload).
-49. Pour le prochain cours
-
-
-
----
-
-
-### 49.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 50. Exercice 8
-
 
 
 ---
@@ -476,9 +404,6 @@ Vous disposez de deux cours pour acquérir les connaissances théoriques et fina
 
 
 Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 52. Examen 1
 
 
 
