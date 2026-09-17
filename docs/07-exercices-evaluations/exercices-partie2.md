@@ -303,78 +303,50 @@ paramètre à la fonction non composable? Soyez précis dans votre réponse.
 
 
 ### sous la forme onMaVariableDEtatChange = { maVariableDEtat = it }. Expliquez clairement, dans vos
-propres mots, d'où le mot it prend sa valeur et pourquoi il porte ce nom. ────────── Semaine 4 ──────────
-
-
-## 43. État persistant
-
+propres mots, d'où le mot it prend sa valeur et pourquoi il porte ce nom. 
 
 
 ---
 
 
-### 45.1 Le pouce rapide
+## Exercice 6 - Le pouce rapide
 
 
-### 1. Vous désirez développer une petite application inutile, juste pour passer le temps. Elle permet de vérifier à quel point
-votre pouce est rapide pour cliquer sur un bouton.
+1. Vous désirez développer une petite application inutile, juste pour passer le temps. Elle permet de vérifier à quel point votre pouce est rapide pour cliquer sur un bouton.
 
 
-#### a. Vous devez afficher le titre de l'application dans la barre de titre.
+1. Vous devez afficher le titre de l'application dans la barre de titre.
 
 
-#### b. L'application présente un bouton sur lequel il faut cliquer rapidement.
+1. L'application présente un bouton sur lequel il faut cliquer rapidement.
 
 
-#### c. Elle doit utiliser un ViewModel comme conteneur d'état. Son UiState devra retenir notamment une
+1. Elle doit utiliser un ViewModel comme conteneur d'état. Son UiState devra retenir notamment une **liste** d'heures, vide au départ (je vous conseille d'utiliser listOf()).
 
 
-#### **liste** d'heures, vide au départ (je vous conseille
-d'utiliser listOf()).
+1. À chaque clic, l'application retient l'heure à laquelle le clic a eu lieu. La date et l'heure courantes peuvent être obtenues facilement à l'aide de LocalDateTime.now().
 
 
-#### d. À chaque clic, l'application retient l'heure à laquelle le clic a eu lieu. La date et l'heure courantes peuvent être obtenues facilement à l'aide de LocalDateTime.now().
+Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans `_uiState.update` et mettre le code dans it.copy. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
 
 
-Pour bien mettre à jour le ViewModel, vous devez faire l'ajout dans _uiState.update et mettre le code dans it.copy. Prenez soin d'utiliser la bonne syntaxe pour mettre à jour un tableau.
+1. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne doit pas bouger. Vous devez soigner le format d'affichage des heures.
 
 
-#### e. La liste des heures apparaît sous le bouton. Si la liste est trop longue, elle peut défiler mais le bouton ne doit pas bouger. Vous devez soigner le format d'affichage des heures.
+1. Le but est de faire deux clics ultra-rapprochés le plus rapidement possible. Je vous laisse le soin d'établir le délai à atteindre pour dire que les deux clics ont été assez rapprochés. Je vous laisse le soin de trouver la technique pour soustraire deux dates.
 
 
-#### f. Le but est de faire deux clics ultra-rapprochés le plus rapidement possible. Je vous laisse le soin d'établir le délai à atteindre pour dire que les deux clics ont été assez rapprochés. Je vous laisse le soin de trouver
-la technique pour soustraire deux dates.
+1. Une fois ce délai atteint, il n'est plus possible de cliquer pour poursuivre. Le jeu se termine et l'application affiche un message à cet effet.
 
 
-#### g. Une fois ce délai atteint, il n'est plus possible de cliquer pour poursuivre. Le jeu se termine et l'application affiche un message à cet effet.
+1. OPTIONNEL : Modifiez votre application pour que le délai à atteindre soit saisi à l'écran. Rappel : toutes les variables d’état doivent être gérées par un ViewModel associé à un UiState.
 
 
-#### h. OPTIONNEL : Modifiez votre application pour que le délai à atteindre soit saisi à l'écran. Rappel : toutes les variables d’état doivent être gérées par un ViewModel associé à un UiState.
-
-
-#### i. DÉFI SUPPLÉMENTAIRE : organisez votre interface pour que lorsque le nombre de dates est plus long que l'espace disponible à l'écran, le défilement soit fait automatiquement de façon à voir la dernière date
+1. DÉFI SUPPLÉMENTAIRE : organisez votre interface pour que lorsque le nombre de dates est plus long que l'espace disponible à l'écran, le défilement soit fait automatiquement de façon à voir la dernière date
 entrée.
 
+1. OPTIONNEL : Prenez le code présenté dans la fiche « **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si l'état est conservé quand l'activité est recréée.
 
-### 2. OPTIONNEL : Prenez le code présenté dans la fiche
-« **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si l'état est conservé quand l'activité est recréée.
-
-
-## 46. Pour le prochain cours
-
-
-
----
-
-
-### 46.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-### Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-47. Faire jouer des sons MP3
 
 
 
