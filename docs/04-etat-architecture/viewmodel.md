@@ -373,7 +373,7 @@ class HomeViewModel : ViewModel() {
 ### Modifier un tableau
 
 
-Dans le cas particulier d'un tableau déclaré avec List<...> dans ale UiState, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
+Dans le cas particulier d'un tableau déclaré avec List<...> dans le UiState, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
 
 On le transformera en tableau modifiable auquel on applique une instruction.
 
