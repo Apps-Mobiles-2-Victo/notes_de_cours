@@ -342,9 +342,11 @@ La copie utilisera un paramètre implicite nommé *it*, qui représente l'objet 
 
 On peut d'ailleurs voir ce paramètre dans l'IDE :
 
-
 ![Illustration](../images/page_156_img_01_516x50.png)
 
+`.copy()` est une méthode qui est automatiquement créée par Kotlin lorsqu'on déclare une classe de données. Elle permet de créer une copie d'un objet en modifiant seulement certaines propriétés.
+
+On précise les propriétés à modifier dans la copie en utilisant le nom de la propriété suivi du signe = et de la nouvelle valeur.  Ce sont des arguments nommés, donc l'ordre n'a pas d'importance. Les propriétés qui ne sont pas mentionnées dans la copie conserveront leur valeur initiale.
 
 Voici un exemple de logique métier qui met à jour l'état :
 
@@ -377,7 +379,6 @@ Dans le cas particulier d'un tableau déclaré avec List<...> dans le UiState, i
 
 On le transformera en tableau modifiable auquel on applique une instruction.
 
-
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
     ...
@@ -394,16 +395,12 @@ data class HomeUiState(
 ```
 
 
->Attention : pour ajouter un élément au tableau, la méthode il n'est pas possible de faire  _monTableau = it.monTableau.toMutableList.add(...)  puisque la méthode add() retourne un booléen. et non le tableau modifié. Il faut plutôt utiliser la méthode apply{} pour effectuer l'ajout et retourner le tableau modifié.
-
-
-Vous devrez plutôt faire ceci :
-
+Pour ajouter un élément au tableau, on peut faire ceci :
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 _uiState.update {
     it.copy (
-        _monTableau = it.monTableau.toMutableList().apply { add(...) }
+        _monTableau = it.monTableau + nouvelElement
     )
 }
 ```
@@ -412,7 +409,7 @@ _uiState.update {
 ### Modifier plusieurs variables
 
 
-Pour modifier plusieurs variables, il faut faire le traitement dans un seul it.copy() et ajouter une virgule entre les instructions.
+Pour modifier plusieurs variables, il faut faire le traitement dans un seul it.copy() avec toutes les variables à modifier. Il est déconseillé de faire plusieurs it.copy() à la suite car cela pourrait causer des problèmes de performance et de cohérence de l'état.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -429,8 +426,6 @@ _uiState.update {
 
 
 L'application peut désormais travailler avec le conteneur d'état.
-
-Il doit y avoir une seule instance du ViewModel dans l'application.
 
 Une variable, nommée ici viewModel, sera instanciée dans la classe MainActivity et elle sera passée en paramètre à ses descendants.
 
@@ -497,8 +492,7 @@ Pour éviter de passer le ViewModel en paramètre à une foule de fonctions, il 
 Pour instancier le ViewModel dans un composable, il faudra apporter quelques ajustements au projet.
 
 
-### Attention : il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui
-suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
+### Attention : dans le cadre su cours il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
 
 
 D'abord, il faut ajouter une dépendance.
@@ -554,8 +548,7 @@ Dans le cas où la fonction composable principale (souvent nommée MainScreen) r
 @Composable
 fun DefaultPreview() {
     MonProjetTheme {
-        val previewViewModel = viewModel<HomeViewModel>()    // cette ligne nécessite l'ajout de dépendance dans
-build.gradle.kts (voir plus haut)
+        val previewViewModel = viewModel<HomeViewModel>()    // cette ligne nécessite l'ajout de dépendance dans build.gradle.kts (voir plus haut)
         MainScreen( viewModel = previewViewModel )
     }
 }
