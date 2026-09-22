@@ -5,50 +5,19 @@ title: "Architecture avec ViewModel"
 # Architecture avec ViewModel
 
 
-### 44.1 Ajouter un fichier directement dans le dossier ui
+### 44.1 Ajouter un fichier dans le dossier ui
 
-
-Dans un projet Jetpack Compose de base, Android Studio montre les dossiers ui et theme fusionnés puisqu'il n'y a rien d'autre que le dossier theme sous ui .
-
-
-
+Dans la vue `Project`, Android Studio montre les dossiers ui et theme fusionnés puisqu'il n'y a rien d'autre que le dossier theme sous ui .
 
 ![Illustration](../images/page_153_img_01_306x192.png)
 
 
+Pour ajouter un fichier dans le dossier ui, vous pouvez passer à la vue `Project Files`.
 
-
-Si vous désirez ajouter un fichier directement dans le dossier ui  :
-
-
-#### Faites un clic droit sur le dossier parent ( monprojet )
-
-
-#### Choisissez  New / Kotlin Class/File .
-
-
-#### Nommez le fichier en débutant par ui suivi d'un point (ex : ui.HomeViewModel.kt).
-
-
-
-
-![Illustration](../images/page_153_img_02_347x280.png)
-
-
-
-
-Le fichier sera correctement créé sous le dossier ui .
-
-
-
-
-![Illustration](../images/page_153_img_03_302x240.png)
-
-
+Faites un clic droit sur le dossier `ui` et choisissez `New / Kotlin Class/File` .
 
 
 ### 44.2 class vs data class
-
 
 
 Avec Kotlin, il est possible d’utiliser le mot-clé *data* pour déclarer une classe dont le but premier est de stocker des données.
@@ -492,7 +461,7 @@ Pour éviter de passer le ViewModel en paramètre à une foule de fonctions, il 
 Pour instancier le ViewModel dans un composable, il faudra apporter quelques ajustements au projet.
 
 
- >Attention : dans le cadre su cours il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
+ >Attention : dans le cadre du cours il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
 
 
 D'abord, il faut ajouter une dépendance.
