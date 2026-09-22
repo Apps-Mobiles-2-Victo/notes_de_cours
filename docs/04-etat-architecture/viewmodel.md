@@ -492,7 +492,7 @@ Pour éviter de passer le ViewModel en paramètre à une foule de fonctions, il 
 Pour instancier le ViewModel dans un composable, il faudra apporter quelques ajustements au projet.
 
 
-### Attention : dans le cadre su cours il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
+ >Attention : dans le cadre su cours il ne doit y avoir qu'une seule instance du ViewModel dans l'application. Dans les extraits de code qui suivent, le ViewModel est instancié dans une fonction composable mais pas dans MainActivity.
 
 
 D'abord, il faut ajouter une dépendance.
