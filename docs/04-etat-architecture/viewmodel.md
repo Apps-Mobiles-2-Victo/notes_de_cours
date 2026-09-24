@@ -68,34 +68,16 @@ Mais avant de se lancer dans la gestion d'une base de données, regardons commen
 Dans cette fiche :
 
 
-#### Création du ViewModel
-
-
-#### Propriétés
-
-
-#### Propriétés de support
-
-
-#### Création de la classe UiState
-
-
-#### Logique métier
-
-
-#### Accéder à une variable d'état dans le ViewModel
-
-
-#### Mise à jour de l'état
-
-
-#### Accéder au ViewModel dans MainActivity
-
-
-#### Instancier le ViewModel dans un composable plutôt que dans la classe MainActivity
-
-
-#### Ajustements pour le Preview
+* [Création du ViewModel](#creation-du-viewmodel)
+* [Propriétés](#proprietes)
+* [Propriétés de support](#proprietes-de-support)
+* [Création de la classe UiState](#creation-de-la-classe-uistate)
+* [Logique métier](#logique-metier)
+* [Accéder à une variable d'état dans le ViewModel](#acceder-a-une-variable-detat-dans-le-viewmodel)
+* [Mise à jour de l'état](#mise-a-jour-de-letat)
+* [Accéder au ViewModel dans MainActivity](#acceder-au-viewmodel-dans-mainactivity)
+* [Instancier le ViewModel dans un composable plutôt que dans la classe MainActivity](#instancier-le-viewmodel-dans-un-composable-plutot-que-dans-la-classe-mainactivity)
+* [Ajustements pour le Preview](#ajustements-pour-le-preview)
 
 
 ### Création du ViewModel
@@ -155,7 +137,7 @@ class HomeViewModel : ViewModel() {
 Il est conseillé de créer des propriétés privées. Chaque propriété utilisera une propriété de support (*backing property*) pour fournir une valeur au monde extérieur.
 
 
-### Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même nom mais sans la barre en bas.
+>Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même nom mais sans la barre en bas.
 
 
 Ici encore, on préférera utiliser la technique présentée plus bas.
@@ -194,40 +176,26 @@ Le ViewModel utilisera une instance de cette classe comme variable d'état.
 
 Cette classe, qui est en fait une **classe de données** peut être déclarée dans le même fichier que le ViewModel.
 
-
-Afin d'améliorer les performances de l'application , les propriétés de la classe UiState doivent être déclarées avec *val* (lecture seulement) et non avec *var*.
+Les propriétés de la classe UiState doivent être déclarées avec *val* (lecture seulement) et non avec *var*.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
     ...
 }
+
 data class HomeUiState (
-    private val _points: Int = 0,
-    private val _partieTerminee: Boolean = false,
-    private val _autreVariable: String = ""
+    val points: Int = 0,
+    val message: String = ""
 ) {
-    val points: Int
-        get() {
-            if (_points >= 0) {
-                return _points
-            } else {
-                return 0
-            }
-        }
     val partieTerminee: Boolean
-        get() {
-            return _points >= 5
-        }
-    val autreVariable: String
-        get() {
-            return _autreVariable
-        }
+        get() = points >= 5
 }
 ```
 
+Ici, `points` et `message` sont déclarées avec *val* donc elles ne peuvent pas être modifiées. Le ViewModel change l'état de l'application en utilisant une nouvelle instance de la classe `HomeUiState`, via la méthode *copy()*.
 
-Notez que dans le UiState, les variables peuvent avoir un get() mais pas de set() car ce sont les méthodes de logique métier du ViewModel qui sont en charge de modifier l'état de façon sûre (thread safe).
+`partieTerminee` est une propriété calculée qui retourne *true* si le nombre de points est supérieur ou égal à 5. Elle n'est pas stockée dans la classe mais calculée à la demande.
 
 On peut désormais ajouter au ViewModel une propriété, nommée ici *_uiState*, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
 
