@@ -106,35 +106,22 @@ Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 ## Pour plus d'information
 
 
-### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?) hl=fr 
+### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?hl=fr) 
 
 ## Modèle pour représenter les données (classe d'entité)
 
 Il est possible de générer vos tables dans une BD SQLite sans même avoir à utiliser du code SQL ni même un outil de gestion de base de données.
 
-
 Chaque table sera définie dans une classe Kotlin précédée de l'annotation `@Entity`. On dira de cette classe que c'est une entité de données ou encore un modèle de données, parfois également appelée classe d'entité.
 
 
-Toutes les entités de données seront placées dans un dossier nommé `data`.
-
-
-Ce dossier sera au même niveau que le fichier  MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Categorie.kt .
-
-
-Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /  New  /  Package .
-
-
-Par défaut, la table portera le même nom que la classe et chaque colonne de la table portera le même nom que le champ de la classe.
-
-
-Puisque la classe d'entité sert à définir des données, on lui ajoutera le mot-clé **data**.
-
-
-Les normes dictent que le nom de la classe doit être au singulier et utilise **la casse Pascal**.
-
-
-Mais attention : le nom de la table doit être au pluriel et entièrement en lettres minuscules.
+* Toutes les entités de données seront placées dans un dossier nommé `data`.
+* Ce dossier sera au même niveau que le fichier `MainActiviy.kt`, par exemple `app/src/main/java/com/monnom/monprojet/data/Categorie.kt`.
+* Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /  New  /  Package .
+* Par défaut, la table portera le même nom que la classe et chaque colonne de la table portera le même nom que le champ de la classe.
+* Puisque la classe d'entité sert à définir des données, on lui ajoutera le mot-clé **data**.
+* Les normes dictent que le nom de la classe doit être au singulier et utilise **la casse Pascal**.
+    * Mais attention : le nom de la table doit être au pluriel et entièrement en lettres minuscules.
 
 
 ```kotlin title="Fichier data/Categorie.kt"
@@ -148,7 +135,7 @@ data class Categorie (
 ```
 
 
-### Table avec clé étrangère
+## Table avec clé étrangère
 
 
 Pour une table qui comprend une clé étrangère :
@@ -176,15 +163,13 @@ data class Item(
 ```
 
 
-#### Pour plus d'information
-
+### Pour plus d'information
 
 * [« Définir des données à l'aide d'entités Room » - Android Developers](https://developer.android.com/training/data-storage/room/defining-data?hl=fr)
+* [« Entity » - Android Developers](https://developer.android.com/reference/androidx/room/Entity)
 
 
-### * [« Entity » - Android Developers](https://developer.android.com/reference/androidx/room/Entity)
-53.3 Le DAO : couche intermédiaire entre l'application et la BD
-
+# Le DAO : couche intermédiaire entre l'application et la BD
 
 Plusieurs cadres d'application offrent une couche d'abstraction entre l'application et la base de données, généralement sous forme de classes qui représentent les tables de la BD. Cette couche d'abstraction est connue sous l'acronyme ORM (Object Relational Mapper).
 
