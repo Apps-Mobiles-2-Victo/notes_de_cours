@@ -225,16 +225,13 @@ interface CategorieDao {
 ```
 
 
-### Ordre des enregistrements
+## Ordre des enregistrements
 
 
 Lorsqu'une requête peut retourner plus d'un enregistrement, il est important de spécifier dans quel ordre les enregistrements doivent être placés.
 
 
-Rappel : il n'est pas acceptable de faire ORDER BY id puisque l'identifiant est une information interne que l'on ne devrait pas présenter à l'usager.
-
-
-#### Pour plus d'information
+## Pour plus d'information
 
 
 * [« Accéder aux données à l'aide des DAO Room » - Android Developers](https://developer.android.com/training/data-storage/room/accessing-data?hl=fr)
@@ -246,7 +243,7 @@ Rappel : il n'est pas acceptable de faire ORDER BY id puisque l'identifiant est 
 * [« Créer le DAO » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#5)
 
 
-### 53.4 Le dépôt de données (repository)
+# Le dépôt de données (repository)
 
 
 Une autre étape est nécessaire pour gérer les données locales à partir de l'application Android : définir le dépôt de données (en anglais : repository).
@@ -271,11 +268,13 @@ class CategorieRepository(
 ```
 
 
-#### Pour plus d'information
+## Pour plus d'information
 
 
-### * [« Implémenter le dépôt » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#7)
-53.5 La classe qui hérite de RoomDatabase
+* [« Implémenter le dépôt » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#7)
+53.5
+
+# La classe qui hérite de RoomDatabase
 
 
 Tous les  **DAO** seront réunis dans une classe qui représente la base de données en tant que telle.
@@ -311,7 +310,8 @@ abstract class MonprojetDatabase : RoomDatabase() {
         // obtient une instance de la BD ou la crée si elle n'existait pas
         fun getDatabase(context: Context): MonprojetDatabase {
             return Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, MonprojetDatabase::class.java, "monprojet_database")
+                Room.databaseBuilder(context, 
+                                     MonprojetDatabase::class.java, "monprojet_database")
                     .build()
                     .also { Instance = it }
             }
@@ -321,29 +321,27 @@ abstract class MonprojetDatabase : RoomDatabase() {
 ```
 
 
-#### Pour plus d'information
+## Pour plus d'information
 
 
-* [« Créer une instance de base de données » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?)
-hl=fr#6
-
+* [« Créer une instance de base de données » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#6)
 
 * [« Create ROOM Schema Export Directory » - Medium](https://medium.com/@vontonnie/create-room-schema-export-directory-7066d427eae8)
 
 
-### 53.6 Utiliser le dépôt de données via le ViewModel
+# Utiliser le dépôt de données via le ViewModel
 
 
 C'est le ViewModel qui créera la base de données si elle n'existe pas puis qui interagira avec le dépôt de données.
 
 
-Ce fichier sera placé dans le dossier ui .
+Ce fichier sera placé dans le dossier `ui` .
 
 
-Ici, le fait de déclarer le uiState avec MutableStateFlow assure que les informations seront automatiquement mises à jour lorsqu'il y a des changements dans les données de la BD.
+Ici, le fait de déclarer le uiState avec `MutableStateFlow` assure que les informations seront automatiquement mises à jour lorsqu'il y a des changements dans les données de la BD.
 
 
-Remarquez que viewModelScope.launch(Dispatchers.IO) retournera une tâche (objet de type Job ), c'est-à-dire une référence (handle) vers une coroutine.
+Remarquez que viewModelScope.launch(Dispatchers.IO) retournera une tâche (objet de type Job ), c'est-à-dire une référence (`handle`) vers une coroutine.
 
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
@@ -387,8 +385,7 @@ composable (LocalContext.current dans un Composable) sinon, le ViewModel serait 
     ...
 }
 data class CategorieUiState(
-    private var _listeCategories:List<Categorie> = emptyList(),   // Sera initialisé dans le init() du ViewModel puis ajusté
-automatiquement si la BD change.
+    private var _listeCategories:List<Categorie> = emptyList(),   // Sera initialisé dans le init() du ViewModel puis ajusté automatiquement si la BD change.
     ...
 ) {
     val listeCategories: List<Categorie>
@@ -400,19 +397,19 @@ automatiquement si la BD change.
 ```
 
 
-!!! warning "Note : il est généra" Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory**.
+!!! warning Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory**.
 
 
 Comme toujours, chaque ViewModel ne doit exister qu'en un seul exemplaire.
 
 
-Une variable viewModel sera instanciée dans le plus proche parent des composables qui en ont besoin et elle sera passée en paramètre à ses descendants.
+Une variable `viewModel` sera instanciée dans le plus proche parent des composables qui en ont besoin et elle sera passée en paramètre à ses descendants.
 
 
 Dans cet exemple, elle est instanciée directement dans l'écran principal.
 
 
-!!! warning "Attention : il faut " Attention : il faut **ajouter une dépendance** pour que ce code fonctionne puisque le ViewModel est instancié dans un composable.
+!!! warning Attention : il faut **ajouter une dépendance** pour que ce code fonctionne puisque le ViewModel est instancié dans un composable.
 
 
 ```kotlin title="Fichier MainsActivity.kt"
@@ -453,12 +450,12 @@ fun MainContent(paddingValues: PaddingValues, categorieViewModel: CategorieViewM
 ```
 
 
-#### Pour plus d'information
+## Pour plus d'information
 
 
-### * [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-)
+* [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-)
 purpose
-54. Le système de fichiers de l'émulateur
+
 
 
 
