@@ -68,6 +68,13 @@ plugins {
 
 Avant de poursuivre, il faut **resynchroniser le projet**.
 
+### Fichier gradle.properties
+
+Vous devez ajouter la ligne suivante dans le fichier `gradle.properties` du projet (à la racine) :
+
+`android.disallowKotlinSourceSets=false`
+
+(symptôme: erreur de compilation liée à `kotlin.sourceSets`)
 
 ### Ajouts dans le fichier build.gradle.kts du module
 
@@ -86,10 +93,10 @@ dependencies {
     ...
      // pour Room
     val room_version = "2.6.1"
-    implementation("androidx.room:room-runtime: $room_version ")
-    implementation("androidx.room:room-ktx: $room_version ")
-    annotationProcessor("androidx.room:room-compiler: $room_version ")
-    ksp("androidx.room:room-compiler: $room_version ")
+    implementation("androidx.room:room-runtime: $room_version")
+    implementation("androidx.room:room-ktx: $room_version")
+    annotationProcessor("androidx.room:room-compiler: $room_version")
+    ksp("androidx.room:room-compiler: $room_version")
     // fin pour Room
 }
 ```
