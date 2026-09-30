@@ -227,7 +227,6 @@ interface CategorieDao {
 
 ## Ordre des enregistrements
 
-
 Lorsqu'une requête peut retourner plus d'un enregistrement, il est important de spécifier dans quel ordre les enregistrements doivent être placés.
 
 
@@ -453,10 +452,4 @@ fun MainContent(paddingValues: PaddingValues, categorieViewModel: CategorieViewM
 ## Pour plus d'information
 
 
-* [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-)
-purpose
-
-
-
-
----
+* [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-purpose)
