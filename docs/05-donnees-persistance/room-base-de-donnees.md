@@ -198,16 +198,15 @@ Avec Jetpack Compose et Room, la couche d'abstraction utilise une interface DAO 
 Grâce à la **classe d'entité**, Room est capable de générer lui-même les requêtes INSERT, UPDATE et DELETE pour gérer les données. Il suffit d'utiliser l'annotation appropriée (@Insert, @Update ou @Delete) et de passer une instance du modèle en paramètre à la fonction.
 
 
-Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé suspend.
+Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé `suspend`.
 
 
-Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera l'annotation @Query. La fonction retournera l'information sous le type Flow ., soit un flux de données asynchrone observable.
+Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera l'annotation @Query. La fonction retournera l'information sous le type `Flow`, soit un flux de données asynchrone observable.
 
 
-Le nom de l'interface du DAO – et du fichier – se terminera par Dao. Lorsque le DAO interagit avec une seule table, le nom sera sous la forme EntiteDao, par exemple CategorieDao.
+Le nom de l'interface du DAO – et du fichier – se terminera par `Dao`. Lorsque le DAO interagit avec une seule table, le nom sera sous la forme `<Entite>Dao`, par exemple `CategorieDao`.
 
-
-Tous les DAO seront placés dans un dossier nommé  data .
+Tous les DAO seront placés dans un dossier nommé `data`.
 
 
 ```kotlin title="Fichier data/CategorieDao.kt"
