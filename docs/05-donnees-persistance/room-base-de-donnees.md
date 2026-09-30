@@ -104,7 +104,6 @@ dependencies {
 
 Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 
-
 * Vous avez ajouté l'instruction requise dans le bloc plugin (voir au début de l'extrait pour le fichier `app/build.gradle.kts`).
 * Vous avez utilisé la version qui correspond à votre version de Kotlin dans le fichier `build.gradle.kts` principal.
 * Vous avez lancé la synchronisation (même si vous l'avez fait, il faut parfois **synchroniser le projet** à nouveau).
@@ -115,7 +114,8 @@ Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 
 ### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?hl=fr) 
 
-## Modèle pour représenter les données (classe d'entité)
+
+# Modèle pour représenter les données (classe d'entité)
 
 Il est possible de générer vos tables dans une BD SQLite sans même avoir à utiliser du code SQL ni même un outil de gestion de base de données.
 
@@ -132,7 +132,12 @@ Chaque table sera définie dans une classe Kotlin précédée de l'annotation `@
 
 
 ```kotlin title="Fichier data/Categorie.kt"
-@Entity(tableName = " categories ")
+package com.monnom.monprojet.data
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "categories")
 data class Categorie (
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
@@ -149,12 +154,18 @@ Pour une table qui comprend une clé étrangère :
 
 
 ```kotlin title="Fichier data/Item.kt"
+package com.monnom.monprojet.data
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.ForeignKey
+
 @Entity(
     tableName = "items",
     foreignKeys = [ForeignKey(
-        entity = Categorie ::class,
-        parentColumns = arrayOf(" id "),
-        childColumns = arrayOf(" categorie_id "),
+        entity = Categorie::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("categorie_id"),
         onDelete = ForeignKey.CASCADE
     )]
 )
@@ -165,7 +176,7 @@ data class Item(
     val titre: String = "",
     val description: String = "",
     val prix: Double = 0.0,
-    val categorie_id : Int,
+    val categorie_id : Int
 )
 ```
 
