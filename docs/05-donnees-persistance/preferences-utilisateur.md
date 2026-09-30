@@ -171,7 +171,7 @@ Quelques explications :
 
 
 * Pour accéder aux préférences utilisateur stockées dans un conteneur que l'on a choisi de nommer settings, on ajoute une propriété d'extension (extension property) à la classe Context.
-* Le by preferencesDataStore fait beaucoup de travail. C'est lui qui crée le DataStore, gère le fichier, etc.
+* Le `by preferencesDataStore` fait beaucoup de travail. C'est lui qui crée le DataStore, gère le fichier, etc.
 * Puisque la lecture et l'écriture des préférences utilisateur sont asynchrones, il n'est pas possible d'appeler
 directement les méthodes codées dans la classe PreferencesUtilisateur.
 * Pour la lecture, on créera une variable d'état qui écoute en tout temps pour connaître la valeur de la préférence
@@ -231,9 +231,9 @@ n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
 
 ![Illustration](../images/page_122_img_01_1000x347.png)
 
-
-    Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur
-
+<div class="grid cards" markdown>
+Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur
+</div>
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 Log.d("MainActivity", uneCle ?: "Il n'y a aucune clé nommée uneCle")
