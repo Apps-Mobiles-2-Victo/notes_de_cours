@@ -245,33 +245,16 @@ Lorsqu'une requête peut retourner plus d'un enregistrement, il est important de
 # Le dépôt de données (repository)
 
 
-Une autre étape est nécessaire pour gérer les données locales à partir de l'application Android : définir le dépôt de données (en anglais : repository).
+Un dépôt de données (repository) sert d'intermédiaire entre le ViewModel et les sources de données. Il peut, par exemple, combiner Room et une API ou appliquer des règles avant de transmettre les données.
 
 
-Dans une application qui utilise un DAO, l'application passera toujours par le dépôt de données pour accéder aux données. Le dépôt de données est une sorte d'isolant entre la source de données et le reste de l'application. Il est le seul à savoir d'où proviennent les données qu'il fournit à l'application, par exemple si elles proviennent directement de la base de données ou de la mémoire cache.
-
-
-C'est le dépôt qui fera appel aux méthodes définies dans l'interface **du DAO**.
-
-
-```kotlin title="Fichier data/CategorieRepository.kt"
-class CategorieRepository(
-    private val _categorieDao: CategorieDao
-) {
-    suspend fun insererCategorie(categorie: Categorie) = _categorieDao.insererCategorie(categorie)
-    suspend fun mettreAJourCategorie(categorie: Categorie) = _categorieDao.mettreAJourCategorie(categorie)
-    suspend fun supprimerCategorie(categorie: Categorie) = _categorieDao.supprimerCategorie(categorie)
-    fun listerCategories(): Flow<List<Categorie>> = _categorieDao.listerCategories()
-    ...
-}
-```
+Pour une petite application, un dépôt qui ne fait que relayer les appels du DAO est facultatif. L'exemple suivant utilise donc directement le DAO dans le ViewModel.
 
 
 ## Pour plus d'information
 
 
 * [« Implémenter le dépôt » - Android Developers](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=fr#7)
-53.5
 
 # La classe qui hérite de RoomDatabase
 
@@ -293,28 +276,26 @@ Le fichier sera placé dans le dossier data .
 
 ```kotlin title="Fichier data/MonprojetDatabase.kt"
 @Database(
-    entities = [
-        Categorie::class,
-        Item::class,
-    ],
+    entities = [Categorie::class, Item::class],
     version = 1,
-    exportSchema = false   // Room ne générera pas de fichier json de cette version de la BD
+    exportSchema = false
 )
 abstract class MonprojetDatabase : RoomDatabase() {
     abstract fun categorieDao(): CategorieDao
     abstract fun itemDao(): ItemDao
+
     companion object {
         @Volatile
-        private var Instance: MonprojetDatabase? = null
-        // obtient une instance de la BD ou la crée si elle n'existait pas
-        fun getDatabase(context: Context): MonprojetDatabase {
-            return Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, 
-                                     MonprojetDatabase::class.java, "monprojet_database")
-                    .build()
-                    .also { Instance = it }
+        private var instance: MonprojetDatabase? = null
+
+        fun getDatabase(context: Context): MonprojetDatabase =
+            instance ?: synchronized(this) {
+                instance ?: Room.databaseBuilder(
+                    context,
+                    MonprojetDatabase::class.java,
+                    "monprojet_database"
+                ).build().also { instance = it }
             }
-        }
     }
 }
 ```
@@ -328,123 +309,55 @@ abstract class MonprojetDatabase : RoomDatabase() {
 * [« Create ROOM Schema Export Directory » - Medium](https://medium.com/@vontonnie/create-room-schema-export-directory-7066d427eae8)
 
 
-# Utiliser le dépôt de données via le ViewModel
+# Utiliser le DAO via le ViewModel
 
 
-C'est le ViewModel qui créera la base de données si elle n'existe pas puis qui interagira avec le dépôt de données.
+Le ViewModel obtient le DAO depuis la base de données et l'utilise pour lire ou modifier les données. Le fichier sera placé dans le dossier `ui`.
 
 
-Ce fichier sera placé dans le dossier `ui` .
+`AndroidViewModel` est une variante de `ViewModel` qui reçoit l'objet `Application` dans son constructeur. Le contexte de l'application permet ici d'obtenir la base de données; il ne faut pas lui transmettre le contexte d'un composable, qui peut être recréé.
 
 
-Ici, le fait de déclarer le uiState avec `MutableStateFlow` assure que les informations seront automatiquement mises à jour lorsqu'il y a des changements dans les données de la BD.
-
-
-Remarquez que viewModelScope.launch(Dispatchers.IO) retournera une tâche (objet de type Job ), c'est-à-dire une référence (`handle`) vers une coroutine.
+Le DAO retourne un `Flow` pour la liste des catégories. Compose peut collecter ce flux et actualiser l'interface lorsque les données changent. Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine. Room gère l'exécution de ces opérations, donc aucun `Dispatchers.IO` n'est nécessaire ici.
 
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
 class CategorieViewModel(application: Application) : AndroidViewModel(application) {
-    private val _repository: CategorieRepository
-    private val _uiState = MutableStateFlow(CategorieUiState())
-    val uiState: StateFlow<CategorieUiState> = _uiState.asStateFlow()
-   
-    init {
-        val context = application.applicationContext   // on utilise le contexte de l'application et non le contexte d'un
-composable (LocalContext.current dans un Composable) sinon, le ViewModel serait recréé à chaque rotation du téléphone.
-        // instancie la base de données et la crée physiquement au besoin
-        val db = MonprojetDatabase.getDatabase(context)
-        val dao = db.categorieDao()
-        _repository = CategorieRepository(dao)
-        
-        observerCategories()
+    private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
+    val categories = categorieDao.listerCategories()
+
+    fun insererCategorie(categorie: Categorie) = viewModelScope.launch {
+        categorieDao.insererCategorie(categorie)
     }
-    fun observerCategories() {
-        viewModelScope.launch {
-            // .collect permet de récupérer la valeur du flux observable
-            _repository.listerCategories()
-                .collect { categories ->
-                    _uiState.update {
-                        it.copy (
-                            _listeCategories = categories
-                        )
-                    }
-                }
-        }
+
+    fun mettreAJourCategorie(categorie: Categorie) = viewModelScope.launch {
+        categorieDao.mettreAJourCategorie(categorie)
     }
-    fun insererCategorie(categorie: Categorie) = viewModelScope.launch(Dispatchers.IO){
-        _repository.insererCategorie(categorie)
+
+    fun supprimerCategorie(categorie: Categorie) = viewModelScope.launch {
+        categorieDao.supprimerCategorie(categorie)
     }
-    fun mettreAJourCategorie(categorie: Categorie) = viewModelScope.launch(Dispatchers.IO){
-        _repository.mettreAJourCategorie(categorie)
-    }
-    fun supprimerCategorie(categorie: Categorie) = viewModelScope.launch(Dispatchers.IO){
-        _repository.supprimerCategorie(categorie)
-    }
-    ...
-}
-data class CategorieUiState(
-    private var _listeCategories:List<Categorie> = emptyList(),   // Sera initialisé dans le init() du ViewModel puis ajusté automatiquement si la BD change.
-    ...
-) {
-    val listeCategories: List<Categorie>
-        get() {
-            return _listeCategories
-        }
-    ...
 }
 ```
 
 
-!!! warning Note : il est généralement préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel. Ceci facilite notamment les tests unitaires. Cependant, AndroidViewModel donne accès au contexte de l'application, ce qui permet d'accéder à la base de données sans devoir créer un **ViewModeFactory**.
+Pour simplifier cet exemple, `AndroidViewModel` donne accès au contexte de l'application. Dans une application plus grande, on injecte généralement le DAO ou le dépôt dans un `ViewModel` afin de faciliter les tests.
 
 
-Comme toujours, chaque ViewModel ne doit exister qu'en un seul exemplaire.
+Compose conserve le ViewModel associé à l'écran; on peut le passer aux composables enfants qui en ont besoin. La fonction `viewModel()` nécessite la dépendance Compose pour ViewModel.
 
 
-Une variable `viewModel` sera instanciée dans le plus proche parent des composables qui en ont besoin et elle sera passée en paramètre à ses descendants.
-
-
-Dans cet exemple, elle est instanciée directement dans l'écran principal.
-
-
-!!! warning Attention : il faut **ajouter une dépendance** pour que ce code fonctionne puisque le ViewModel est instancié dans un composable.
-
-
-```kotlin title="Fichier MainsActivity.kt"
-@OptIn(ExperimentalMaterial3Api::class)
+```kotlin title="Fichier MainActivity.kt"
 @Composable
 fun MainScreen() {
-    val categorieViewModel: CategorieViewModel = viewModel()    // la fonction viewModel() se chargera d'injecter
-l'application dans le constructeur de CategorieViewModel.
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(text = "Test Room")
-                },
-            )
-        }
-    ) {
-         MainContent(it, categorieViewModel)
-    }
+    val categorieViewModel: CategorieViewModel = viewModel()
+    MainContent(categorieViewModel)
 }
-```
 
-
-Notez qu'une approche différente pourra être utilisée **pour les applications avec plusieurs écrans**.
-
-
-Les composables qui ont accès au ViewModel peuvent désormais interagir avec la base de données.
-
-
-```kotlin title="Fichier MainsActivity.kt"
 @Composable
-fun MainContent(paddingValues: PaddingValues, categorieViewModel: CategorieViewModel) {
-    val categorieUiState by categorieViewModel.uiState.collectAsState()
-    // ici, on a accès aux données en provenance de la base de données
-    val nombreCategories = categorieUiState.listeCategories.size
-    ...
+fun MainContent(categorieViewModel: CategorieViewModel) {
+    val categories by categorieViewModel.categories.collectAsState(initial = emptyList())
+    Text(text = "Nombre de catégories : ${categories.size}")
 }
 ```
 
