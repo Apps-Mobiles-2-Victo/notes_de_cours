@@ -5,7 +5,7 @@ title: "Base de données locale avec Room"
 # Base de données locale avec Room
 
 
-### 53.1 Installation de Room
+## Installation de Room
 
 
 Room est une bibliothèque de persistance de données pour Android Jetpack Compose. Elle fournit une couche d'abstraction entre votre application et une base de données SQLite.
@@ -14,22 +14,20 @@ Room est une bibliothèque de persistance de données pour Android Jetpack Compo
 Pour utiliser Room, vous devez d'abord ajouter des dépendances au projet.
 
 
-### Ajouts dans le fichier build.gradle.kts principal
-
+## Ajouts dans le fichier `build.gradle.kts` principal
 
 La ligne à ajouter dépend de la version de Kotlin utilisée dans le projet.
 
 
-### Retrouver la version de Kotlin du projet
+## Retrouver la version de Kotlin du projet
 
-
-Si votre projet utilise des catalogues de versions (présence d'un fichier gradle/libs.versions.toml ), la version de Kotlin est disponible à cette ligne :
+Si votre projet utilise des catalogues de versions (présence d'un fichier `gradle/libs.versions.toml`), la version de Kotlin est disponible à cette ligne :
 
 
 ```toml title="Fichier libs.versions.toml"
 [versions]
 ...
-kotlin = " 2.0.21 "
+kotlin = "2.2.10"
 ```
 
 
@@ -37,34 +35,33 @@ Sinon, la version de Kotlin est disponible à cette ligne dans le build.gradle.k
 
 
 ```kotlin title="Fichier build.gradle.kts principal"
-id ("org.jetbrains.kotlin.android") version " 2.0.21 " apply false
+id ("org.jetbrains.kotlin.android") version "2.2.10" apply false
 ```
 
 
-### Retrouver la version de kps correspondante
+## Retrouver la version de kps correspondante
 
 
-Vous trouverez la liste des versions de kps (Kotlin Symbol Processing) sur le site [https://github.com/google/ksp/releases](https://github.com/google/ksp/releases) .
+Vous trouverez la liste des versions de KPS (Kotlin Symbol Processing) sur le site <https://github.com/google/ksp/releases>.
 
 
-### Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
+## Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
 
 
-Par exemple, pour Kotlin 2.0.21, il faut utiliser KPS 2.0.21-1.0.28.
+Par exemple, pour Kotlin 2.2.10, il faut utiliser KPS 2.2.10-2.0.2.
 
 
 ### Ajout au fichier
 
 
-Dans le fichier build.gradle.kts  principal (aussi appelé top-level build.gradle file), soit celui présent directement à la racine du projet, ajoutez ceci en prenant soin d'utiliser la version de l'API KPS qui correspond à votre version de Kotlin.
+Dans le fichier `build.gradle.kts` principal (aussi appelé top-level build.gradle file), soit celui présent directement à la racine du projet, ajoutez ceci en prenant soin d'utiliser la version de l'API KPS qui correspond à votre version de Kotlin.
 
 
 ```kotlin title="Fichier build.gradle.kts principal"
 plugins {
     ...
     // pour Room
-    id ("com.google.devtools.ksp") version "2.0.21-1.0.28" apply false // utiliser la version qui correspond à la version de
-Kotlin : https://github.com/google/ksp/releases
+    id ("com.google.devtools.ksp") version "2.2.10-2.0.2" apply false // utiliser la version qui correspond à la version de Kotlin : https://github.com/google/ksp/releases
 }
 ```
 
@@ -88,9 +85,9 @@ plugins {
 dependencies {
     ...
      // pour Room
-    val room_version = "2.8.0"
+    val room_version = "2.6.1"
     implementation("androidx.room:room-runtime: $room_version ")
-     implementation("androidx.room:room-ktx: $room_version ")
+    implementation("androidx.room:room-ktx: $room_version ")
     annotationProcessor("androidx.room:room-compiler: $room_version ")
     ksp("androidx.room:room-compiler: $room_version ")
     // fin pour Room
@@ -101,30 +98,25 @@ dependencies {
 Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 
 
-#### Vous avez ajouté l'instruction requise dans le bloc plugin (voir au début de l'extrait pour le fichier
-app/build.gradle.kts).
+* Vous avez ajouté l'instruction requise dans le bloc plugin (voir au début de l'extrait pour le fichier `app/build.gradle.kts`).
+* Vous avez utilisé la version qui correspond à votre version de Kotlin dans le fichier `build.gradle.kts` principal.
+* Vous avez lancé la synchronisation (même si vous l'avez fait, il faut parfois **synchroniser le projet** à nouveau).
 
 
-#### Dans le fichier build.gradle.kts principal, vous avez utilisé la version qui correspond à votre version de Kotlin.
+## Pour plus d'information
 
 
-#### Vous avez lancé la synchronisation (même si vous l'avez fait, il faut parfois **synchroniser le projet** à nouveau).
+### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?) hl=fr 
 
-
-#### Pour plus d'information
-
-
-### * [« Enregistrer des données dans une base de données locale à l'aide de Room » - Android Developers](https://developer.android.com/training/data-storage/room?)
-hl=fr 53.2 Modèle pour représenter les données (classe d'entité)
-
+## Modèle pour représenter les données (classe d'entité)
 
 Il est possible de générer vos tables dans une BD SQLite sans même avoir à utiliser du code SQL ni même un outil de gestion de base de données.
 
 
-Chaque table sera définie dans une classe Kotlin précédée de l'annotation @Entity. On dira de cette classe que c'est une entité de données ou encore un modèle de données, parfois également appelée classe d'entité.
+Chaque table sera définie dans une classe Kotlin précédée de l'annotation `@Entity`. On dira de cette classe que c'est une entité de données ou encore un modèle de données, parfois également appelée classe d'entité.
 
 
-Toutes les entités de données seront placées dans un dossier nommé  data .
+Toutes les entités de données seront placées dans un dossier nommé `data`.
 
 
 Ce dossier sera au même niveau que le fichier  MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Categorie.kt .
