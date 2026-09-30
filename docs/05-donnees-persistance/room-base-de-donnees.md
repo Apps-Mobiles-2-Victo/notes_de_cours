@@ -72,7 +72,7 @@ Avant de poursuivre, il faut **resynchroniser le projet**.
 ### Ajouts dans le fichier build.gradle.kts du module
 
 
-Dans le fichier build.gradle.kts  qui se trouve dans le dossier app , ajoutez ceci :
+Dans le fichier `app/build.gradle.kts`, ajoutez ceci :
 
 
 ```kotlin title="Fichier app/build.gradle.kts"

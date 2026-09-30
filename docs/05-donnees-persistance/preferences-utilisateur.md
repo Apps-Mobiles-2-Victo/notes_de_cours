@@ -231,7 +231,7 @@ n'est pas un fichier texte mais on peut tout de même y voir certaines valeurs.
 
 ![Illustration](../images/page_122_img_01_1000x347.png)
 
-<div class="grid">
+<div class="grid" markdown>
 Dans tous les cas, il est toujours possible de vérifier la si une clé existe et quelle est sa valeur à l'aide du **Logcat**, en autant qu'on ait une variable d'état qui écoute pour connaître la valeur
 </div>
 
