@@ -214,15 +214,18 @@ Tous les DAO seront placés dans un dossier nommé `data`.
 ```kotlin title="Fichier data/CategorieDao.kt"
 @Dao
 interface CategorieDao {
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insererCategorie(categorie: Categorie)
+
     @Update
     suspend fun mettreAJourCategorie(categorie: Categorie)
+
     @Delete
     suspend fun supprimerCategorie(categorie: Categorie)
-    @Query("SELECT * FROM categories ...")
+
+    @Query("SELECT * FROM categories")
     fun listerCategories(): Flow<List<Categorie>>
-    ...
 }
 ```
 
