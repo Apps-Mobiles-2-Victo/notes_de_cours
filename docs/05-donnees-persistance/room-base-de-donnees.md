@@ -49,7 +49,7 @@ Room nécessite l'utilisation de KPS (Kotlin Symbol Processing) pour générer l
 >Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
 
 
-Par exemple, pour Kotlin 2.2.10, il faut utiliser KPS 2.2.10-2.0.2.
+Par exemple, pour Kotlin 2.2.10, il faut utiliser KPS *2.2.10-2.0.2*.
 
 
 ## Ajout de KSP au fichier build.gradle.kts principal
@@ -61,13 +61,12 @@ Dans le fichier `build.gradle.kts` principal (aussi appelé top-level build.grad
 ```kotlin title="Fichier build.gradle.kts principal"
 plugins {
     ...
-    // pour Room
-    id ("com.google.devtools.ksp") version "2.2.10-2.0.2" apply false // utiliser la version qui correspond à la version de Kotlin : https://github.com/google/ksp/releases
+    // KSP nécessaire pour Room
+    // Utiliser la version qui correspond à la version de Kotlin : https://github.com/google/ksp/releases
+    id ("com.google.devtools.ksp") version "2.2.10-2.0.2" apply false 
 }
 ```
 
-
-Avant de poursuivre, il faut **resynchroniser le projet**.
 
 ## Fichier gradle.properties
 
@@ -76,6 +75,8 @@ Vous devez ajouter la ligne suivante dans le fichier `gradle.properties` du proj
 `android.disallowKotlinSourceSets=false`
 
 (symptôme: erreur de compilation liée à `kotlin.sourceSets`)
+
+    Avant de poursuivre, il faut **resynchroniser le projet**.
 
 ## Ajouts dans le fichier build.gradle.kts du module
 
@@ -102,6 +103,7 @@ dependencies {
 }
 ```
 
+    Il faut **resynchroniser le projet** une fois les modifications apportées au fichier
 
 Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 
@@ -121,7 +123,6 @@ Si le ksp() dans la dernière configuration apparaît en rouge, vérifiez si :
 Il est possible de générer vos tables dans une BD SQLite sans même avoir à utiliser du code SQL ni même un outil de gestion de base de données.
 
 Chaque table sera définie dans une classe Kotlin précédée de l'annotation `@Entity`. On dira de cette classe que c'est une entité de données ou encore un modèle de données, parfois également appelée classe d'entité.
-
 
 * Toutes les entités de données seront placées dans un dossier nommé `data`.
 * Ce dossier sera au même niveau que le fichier `MainActiviy.kt`, par exemple `app/src/main/java/com/monnom/monprojet/data/Categorie.kt`.
