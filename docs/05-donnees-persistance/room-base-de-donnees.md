@@ -39,19 +39,20 @@ id ("org.jetbrains.kotlin.android") version "2.2.10" apply false
 ```
 
 
-## Retrouver la version de kps correspondante
+## Retrouver la version de KPS correspondante
 
 
-Vous trouverez la liste des versions de KPS (Kotlin Symbol Processing) sur le site <https://github.com/google/ksp/releases>.
+
+Room nécessite l'utilisation de KPS (Kotlin Symbol Processing) pour générer le code nécessaire à l'interaction avec la base de données. Vous trouverez la liste des versions de KPS (Kotlin Symbol Processing) sur le site <https://github.com/google/ksp/releases>.
 
 
-## Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
+>Choisissez celle dont le numéro débute par votre numéro de version de Kotlin.
 
 
 Par exemple, pour Kotlin 2.2.10, il faut utiliser KPS 2.2.10-2.0.2.
 
 
-### Ajout au fichier
+## Ajout de KSP au fichier build.gradle.kts principal
 
 
 Dans le fichier `build.gradle.kts` principal (aussi appelé top-level build.gradle file), soit celui présent directement à la racine du projet, ajoutez ceci en prenant soin d'utiliser la version de l'API KPS qui correspond à votre version de Kotlin.
@@ -68,7 +69,7 @@ plugins {
 
 Avant de poursuivre, il faut **resynchroniser le projet**.
 
-### Fichier gradle.properties
+## Fichier gradle.properties
 
 Vous devez ajouter la ligne suivante dans le fichier `gradle.properties` du projet (à la racine) :
 
@@ -76,10 +77,10 @@ Vous devez ajouter la ligne suivante dans le fichier `gradle.properties` du proj
 
 (symptôme: erreur de compilation liée à `kotlin.sourceSets`)
 
-### Ajouts dans le fichier build.gradle.kts du module
+## Ajouts dans le fichier build.gradle.kts du module
 
 
-Dans le fichier `app/build.gradle.kts`, ajoutez ceci :
+Dans le fichier `app/build.gradle.kts`, ajoutez ceci (utiliser la dernière version stable de Room disponible sur le site <https://developer.android.com/jetpack/androidx/releases/room>). :
 
 
 ```kotlin title="Fichier app/build.gradle.kts"
