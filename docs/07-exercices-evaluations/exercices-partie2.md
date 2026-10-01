@@ -327,10 +327,8 @@ entrée.
 1. OPTIONNEL : Prenez le code présenté dans la fiche « **survivre_a_la_recreation_de_l_activite** » et convertissez-le pour qu'il utilise un ViewModel. Lancez l'application dans l'émulateur et modifiez l'orientation du téléphone afin de vérifier si l'état est conservé quand l'activité est recréée.
 
 
----
 
-
-## 48.1 Jeu Simon
+## Exercice 7 - Jeu Simon
 
 
 Vous devez coder un jeu Simon pour Android avec Jetpack Compose (voir un exemple ici : [https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon](https://www.memozor.com/fr/jeux-du-simon/jeu-du-simon) ).
@@ -378,7 +376,8 @@ en sideload).
 ---
 
 
-### 50.1 Devinette avec ViewModel
+
+### Exercice 8 - Devinette avec ViewModel
 
 
 Reprenez votre jeu de devinette. Cette fois, toutes les variables d’état doivent être gérées par un ViewModel associé à un UiState.
@@ -388,23 +387,3 @@ Suggestion : commencez par reproduire l'application avec un ViewModel mais sans 
 
 
 Une fois que cela fonctionne, ajoutez les préférences utilisateur. À vous de faire les recherches pour trouver la bonne façon de procéder.
-
-
-## 51. Pour le prochain cours (deux cours)
-
-
-
----
-
-
-### 51.1 Je me prépare pour l'exercice suivant (deux cours)
-
-
-Vous disposez de deux cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-
----

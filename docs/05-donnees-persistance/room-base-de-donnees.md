@@ -268,10 +268,11 @@ Le code utilise le patron de conception du singleton, c'est-à-dire qu'il y aura
 La base de données peut porter n'importe quel nom. Une bonne pratique consiste à lui donner le même nom que l'application.
 
 
-La classe qui définit la base de données de même que le fichier dans lequel elle est codée porteront un nom qui débute par le nom de la base de données et qui se termine par Database. Ex : MonprojetDatabase.
+La classe qui définit la base de données de même que le fichier dans lequel elle est codée porteront un nom qui débute par le nom de la base de données et qui se termine par "Database". Ex : MonprojetDatabase.
 
 
-Le fichier sera placé dans le dossier data .
+
+Le fichier sera placé dans le dossier `data`.
 
 
 ```kotlin title="Fichier data/MonprojetDatabase.kt"

@@ -5,7 +5,8 @@ title: "Exercices pratiques - Partie 3 (9 à 14)"
 # Exercices pratiques - Partie 3 (9 à 14)
 
 
-### 56.1 Gestionnaire de signets - partie 1
+
+## Exercice 9 - Gestionnaire de signets - partie 1
 
 
 Vous devez développer une application Android qui permet de gérer vos signets vers des pages Web (favoris, bookmarks).
@@ -14,200 +15,55 @@ Vous devez développer une application Android qui permet de gérer vos signets 
 Dans cette première version, n'utilisez pas de Scaffold. Nous allons voir plus tard comment bien structurer ce type d'application.
 
 
-### 1. Créez le modèle de données qui permettra de stocker dans une base de données SQLite l'URL du signet ainsi qu'une
-courte description.
+1. Créez le modèle de données qui permettra de stocker dans une base de données SQLite l'URL du signet ainsi qu'une courte description.
+1. Créez le DAO.
+1. Créez la classe qui hérite de RoomDatabase.
+1. Créez le ViewModel.
+1. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste des signets. Dans un premier temps, un message approprié apparaîtra à l'écran pour indique que la BD est vide. Par contre, ceci fera en sorte que la base de données sera créée physiquement dans l'émulateur.
+1. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide de la fenêtre d'outils *App Inspection* onglet *Database Inspector* puis exécutez des requêtes SQL pour ajouter ou modifier quelques enregistrements. Voyez les modifications qui se reflètent à l'écran sans nécessiter de rechargement.
 
 
-## 2. Créez le DAO.
-
-
-## 3. Créez le dépôt de données.
-
-
-## 4. Créez la classe qui hérite de RoomDatabase.
-
-
-## 5. Créez le ViewModel.
-
-
-### 6. Dans la fonction MainScreen() (la vôtre pourrait porter un nom différent), faites le nécessaire pour faire afficher la liste
-des signets. Dans un premier temps, un message approprié apparaîtra à l'écran pour indique que la BD est vide. Par contre, ceci fera en sorte que la base de données sera créée physiquement dans l'émulateur.
-
-
-### 7. Pendant que l'application est en exécution dans l'émulateur, ouvrez la base de données de l'émulateur à l'aide du
-Database Inspector puis exécutez des requêtes SQL pour ajouter ou modifier quelques enregistrements. Voyez les modifications qui se réflètent à l'écran sans nécessiter de rechargement.
-
-
-## 57. Pour le prochain cours
-
-
-
----
-
-
-### 57.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 58. Room (suite)
-
-
-
----
-
-
-### 61.1 Gestionnaire de signets - partie 2
+##  Exercice 10 - Gestionnaire de signets - partie 2
 
 
 Vous devez poursuivre le développement de votre application Android qui permet de gérer vos signets vers des pages Web.
 
 
-### 1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors
-de sa création.
-
-
-### 2. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez
+1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors de sa création.
+1. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez
 oublié de faire le nécessaire pour que la base de données soit recréée.
+1. Prenez le temps de soigner la structure et l'apparence de votre application.
+    * L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel à ce composable dans sa boucle.
+    * Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre choix afin d'obtenir une apparence professionnelle.
+    * Comme toujours, il ne doit y avoir aucun texte collé sur le bord de l'écran ou collé sur une bordure.
+    * Le lien hypertexte doit être cliquable et mener vers la page Web appropriée.
+    * Effectuez l'internationalisation puis la localisation de votre application. Votre application doit pouvoir être affichée en français et en anglais. Les données tirées de la base de données n'ont pas besoin d'être internationalisées.
 
 
-## 3. Prenez le temps de soigner la structure et l'apparence de votre application.
+## Exercice 11 - Gestionnaire de signets - partie 3
 
-
-#### a. L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel à ce composable dans sa boucle.
-
-
-#### b. Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un
-
-
-#### Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre
-choix afin d'obtenir une apparence professionnelle.
-
-
-#### c. Comme toujours, il ne doit y avoir aucun texte collé sur le bord de l'écran ou collé sur une bordure.
-
-
-#### d. Le lien hypertexte doit être cliquable et mener vers la page Web appropriée.
-
-
-### 4. Effectuez l'internationalisation puis la localisation de votre application. Votre application doit pouvoir être affichée en
-français et en anglais. Les données tirées de la base de données n'ont pas besoin d'être internationalisées.
-
-
-## 62. Pour le prochain cours
-
-
-
----
-
-
-### 62.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 63. Application avec plusieurs écrans (navigation)
-
-
-
----
-
-
-### 64.1 Gestionnaire de signets - partie 3
-
-
-## 1. Votre application doit contenir les pages suivantes.
-
-
-#### Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.
-
-
-#### Une page qui liste vos signets.
-
-
-#### Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».
-
-
-### 2. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
+1. Votre application doit contenir les pages suivantes.
+    * Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.
+    * Une page qui liste vos signets.
+    * Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».
+1. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
 doit être définie dans un composable placé dans son propre fichier.
-
-
-## 3. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
-
-
-### 4. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous
+1. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
+1. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous
 pouvez utiliser un simple Text() pour y parvenir.
+1. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros ou suffisamment espacés pour les gros doigts, etc.
+1. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux fichiers, l'ajout de dépendances, etc.
+    * Pour faciliter votre travail, il serait intéressant de pouvoir avoir un projet modèle qui servirait de base à vos prochains projets.
+    * Je vous propose d'automatiser la tâche qui consiste à créer un nouveau projet à partir d'un projet de base.
+    * Voici quelques pistes de solution :
+    *   Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.Saurez-vous en trouver une?
+    *  J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
+    *     [https://github.com/erdo/commercial-template/blob/main/change_package.sh](https://github.com/erdo/commercial-template/blob/main/change_package.sh)
+(discussion reddit qui m'a mené à ce script : [https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?tl=fr) )
+    *  La solution passe peut-être par la copie du dossier de base et le renommage du projet. Saurez-vous trouver la technique laplus efficace pour y parvenir?
 
 
-### 5. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros
-ou suffisamment espacés pour les gros doigts, etc.
-
-
-### 6. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux
-fichiers, l'ajout de dépendances, etc.
-
-
-Pour faciliter votre travail, il serait intéressant de pouvoir avoir un projet modèle qui servirait de base à vos prochains projets.
-
-
-Je vous propose d'automatiser la tâche qui consiste à créer un nouveau projet à partir d'un projet de base.
-
-
-Voici quelques pistes de solution :
-
-
-#### a. Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.
-
-
-#### Saurez-vous en trouver une?
-
-
-#### b. J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
-
-
-#### [https://github.com/erdo/commercial-template/blob/main/change_package.sh](https://github.com/erdo/commercial-template/blob/main/change_package.sh)
-(discussion reddit qui m'a mené à ce script : [https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?) tl=fr )
-
-
-#### c. La solution passe peut-être par la copie du dossier de base et le [apical_lien_interne]
-
-
-#### [renommer_un_projet,renommage du projet][/apical_lien_interne]. Saurez-vous trouver la technique la
-plus efficace pour y parvenir?
-
-
-## 65. Pour le prochain cours
-
-
-
----
-
-
-### 65.1 Je me prépare pour l'exercice suivant (un cours)
-
-
-Vous disposez d' un cours pour acquérir les connaissances théoriques et finaliser cet exercice.
-
-
-Une fois cet exercice complété, vous devez effectuer vos lectures pour l'exercice suivant.
-
-
-## 66. Formulaire d'ajout de données
-
-
-
----
-
-
-### 70.1 Gestionnaire de signets - partie 4 et questions théoriques
+## Exercice 12 - Gestionnaire de signets - partie 4 et questions théoriques
 
 
 ### 1. Afin de bien comprendre le code du ViewModelFactory, demandez à votre outil d'IA favori de vous expliquer ce code.
