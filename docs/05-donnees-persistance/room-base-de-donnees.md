@@ -92,7 +92,7 @@ plugins {
 dependencies {
     ...
      // pour Room
-    val room_version = "2.6.1"
+    val room_version = "2.8.5"
     implementation("androidx.room:room-runtime: $room_version")
     implementation("androidx.room:room-ktx: $room_version")
     annotationProcessor("androidx.room:room-compiler: $room_version")
@@ -285,11 +285,10 @@ abstract class MonprojetDatabase : RoomDatabase() {
     abstract fun itemDao(): ItemDao
 
     companion object {
-        @Volatile
         private var instance: MonprojetDatabase? = null
 
         fun getDatabase(context: Context): MonprojetDatabase =
-            instance ?: synchronized(this) {
+            synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context,
                     MonprojetDatabase::class.java,
@@ -318,8 +317,7 @@ Le ViewModel obtient le DAO depuis la base de données et l'utilise pour lire ou
 `AndroidViewModel` est une variante de `ViewModel` qui reçoit l'objet `Application` dans son constructeur. Le contexte de l'application permet ici d'obtenir la base de données; il ne faut pas lui transmettre le contexte d'un composable, qui peut être recréé.
 
 
-Le DAO retourne un `Flow` pour la liste des catégories. Compose peut collecter ce flux et actualiser l'interface lorsque les données changent. Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine. Room gère l'exécution de ces opérations, donc aucun `Dispatchers.IO` n'est nécessaire ici.
-
+Le DAO retourne un `Flow` pour la liste des catégories. Compose peut collecter ce flux et actualiser l'interface lorsque les données changent. Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine.
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
 class CategorieViewModel(application: Application) : AndroidViewModel(application) {
@@ -360,9 +358,3 @@ fun MainContent(categorieViewModel: CategorieViewModel) {
     Text(text = "Nombre de catégories : ${categories.size}")
 }
 ```
-
-
-## Pour plus d'information
-
-
-* [« viewModelScope.launch(Dispatchers.IO) purpose » - Stack Overflow](https://stackoverflow.com/questions/55974539/viewmodelscope-launchdispatchers-io-purpose)
