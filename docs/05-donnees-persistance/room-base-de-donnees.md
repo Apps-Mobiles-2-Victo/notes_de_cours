@@ -277,6 +277,9 @@ La classe qui définit la base de données de même que le fichier dans lequel e
 Le fichier sera placé dans le dossier `data`.
 
 
+La classe est abstraite parce que Room génère son implémentation concrète à la compilation, y compris les méthodes qui donnent accès aux DAO. L'appel à `build()` fournit une instance de cette implémentation.
+
+
 ```kotlin title="Fichier data/MonprojetDatabase.kt"
 @Database(
     entities = [Categorie::class, Item::class],
@@ -345,10 +348,15 @@ class CategorieViewModel(application: Application) : AndroidViewModel(applicatio
 Pour simplifier cet exemple, `AndroidViewModel` donne accès au contexte de l'application. Dans une application plus grande, on injecte généralement le DAO ou le dépôt dans un `ViewModel` afin de faciliter les tests.
 
 
-Compose conserve le ViewModel associé à l'écran; on peut le passer aux composables enfants qui en ont besoin. La fonction `viewModel()` nécessite la dépendance Compose pour ViewModel.
+La fonction `viewModel()` nécessite la dépendance Compose pour ViewModel 
+* (`implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")` dans le fichier `app/build.gradle.kts`).
+* importez `import androidx.lifecycle.viewmodel.compose.viewModel` dans le fichier du composable.
 
 
 ```kotlin title="Fichier MainActivity.kt"
+
+import androidx.lifecycle.viewmodel.compose.viewModel
+
 @Composable
 fun MainScreen() {
     val categorieViewModel: CategorieViewModel = viewModel()
