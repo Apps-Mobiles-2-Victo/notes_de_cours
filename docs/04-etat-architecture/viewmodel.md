@@ -169,6 +169,7 @@ Pour un état local qui ne provient pas d'une source de données asynchrone, `mu
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
+    // Compose observe cette propriété et réagit à ses changements.
     var uiState by mutableStateOf(HomeUiState())
         private set
 

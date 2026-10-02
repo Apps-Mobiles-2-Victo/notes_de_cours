@@ -296,6 +296,7 @@ abstract class MonprojetDatabase : RoomDatabase() {
     companion object {
         private var instance: MonprojetDatabase? = null
 
+        // Le verrou évite de créer plusieurs instances en cas d'appels simultanés.
         fun getDatabase(context: Context): MonprojetDatabase =
             synchronized(this) {
                 instance ?: Room.databaseBuilder(
@@ -336,7 +337,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class CategorieViewModel(application: Application) : AndroidViewModel(application) {
+    // Récupère le DAO des catégories depuis l'instance de base de données Room.
     private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
+    // Chaque émission de Room devient un nouvel état d'écran.
     val uiState: Flow<CategorieUiState> = categorieDao.listerCategories()
         .map { categories -> CategorieUiState(categories) }
 
@@ -379,6 +382,7 @@ fun MainScreen() {
 
 @Composable
 fun MainContent(categorieViewModel: CategorieViewModel) {
+    // Convertit le Flow en état Compose observable pendant la composition.
     val uiState by categorieViewModel.uiState.collectAsState(initial = CategorieUiState())
     Text(text = "Nombre de catégories : ${uiState.categories.size}")
 }
