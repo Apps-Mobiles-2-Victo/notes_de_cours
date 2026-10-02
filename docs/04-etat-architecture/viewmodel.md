@@ -163,41 +163,24 @@ Ici, `points` et `message` sont déclarées avec *val* dans la signature du cons
 
 Le ViewModel change l'état de l'application en utilisant une nouvelle instance de la classe `HomeUiState`, via la méthode *copy()*.  Cette méthode est automatiquement créée par Kotlin lorsqu'on déclare une classe de données. Elle permet de créer une copie d'un objet en modifiant seulement certaines propriétés.
 
-On peut désormais ajouter au ViewModel une propriété, nommée ici *_uiState*, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
+On peut désormais ajouter au ViewModel une propriété, nommée ici *uiState*, qui fait référence à une instance de cette classe plutôt qu'à une liste de propriétés distinctes.
 
-Cette propriété est de type *MutableStateFlow*, c'est-à-dire un **flux observable** dont la valeur peut être modifiée.
-
-La propriété privée *_uiState* pourra être modifiée à l'intérieur de la classe HomeViewModel à l'aide de _uiState.update().
-
-Le ViewModel comprend une seconde propriété, nommée ici *uiState*. Cette fois, il s'agit d'une propriété publique.
-
-La propriété uiState est immuable grâce à l'utilisation de .asStateFlow(). Il s'agit donc d'un flux en lecture seule. Sa valeur est toujours basée sur celle de _uiState.
-
-Important : sans le .asStateFlow(), l'objet sous-jacent serait toujours un MutableStateFlow donc il pourrait être modifié ailleurs que dans le ViewModel.
+Pour un état local qui ne provient pas d'une source de données asynchrone, `mutableStateOf` suffit. Compose observe cette propriété et réexécute les composables qui la lisent lorsqu'elle change. Le setter privé réserve les modifications au ViewModel.
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(HomeUiState())
-    val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
-    ...
+    var uiState by mutableStateOf(HomeUiState())
+        private set
+
+    fun jouer() {
+        if (!uiState.partieTerminee) {
+            uiState = uiState.copy(points = uiState.points + 1)
+        }
+    }
 }
 ```
 
-Remarque : il n'est pas toujours requis de travailler avec un flux. J'ai utilisé cette approche ici puisque prochainement, nous aurons besoin d'un flux lorsque nous créerons un **ViewModel qui interagit avec une base de données**.
-
-Dans un projet qui n'a pas besoin de flux pour les variables d'état, le ViewModel pourrait faire référence au uiState comme suit :
-
-
-```kotlin title="Fichier ui/HomeViewModel.kt"
-// Incorrecte : ne pas utiliser dans le cadre de ce cours
-var uiState by mutableStateOf(HomeUiState())
-    private set
-```
-
-
-Étant donné qu'on utilisera prochainement le ViewModel avec Room pour accéder à une base de données et qu'on désire être réactif quand les données de la BD changent, il est plus simple d'utiliser la syntaxe avec flux tout de suite.
-
-> Le travail avec uiState sans flux n'est pas accepté dans le cadre de ce cours à moins d'avis contraire.
+Dans un composable, on lit directement `viewModel.uiState`; il n'est pas nécessaire d'appeler `collectAsState()`. Lorsqu'un état doit suivre un `Flow` provenant de Room, on peut plutôt l'exposer comme `StateFlow` dans le ViewModel. Cette situation est présentée dans la fiche [Base de données locale avec Room](../05-donnees-persistance/room-base-de-donnees.md).
 
 ### Logique métier
 
@@ -205,7 +188,7 @@ Grâce aux ViewModels, il est possible de coder au même endroit toute la logiqu
 
 On ajoutera au ViewModel (et non au UiState) une méthode pour chaque opération sur les données.
 
-Ces méthodes sont le seul endroit où les variables d'état peuvent être modifiées.
+Ces méthodes sont le seul endroit où le ViewModel modifie l'état. Le setter privé empêche les composables de le modifier directement.
 
 Évidemment, il ne doit pas y avoir de composables dans le ViewModel. Le ViewModel gère des données mais ne fait pas d'affichage.
 
@@ -213,19 +196,13 @@ Ces méthodes sont le seul endroit où les variables d'état peuvent être modif
 ### Accéder à une variable d'état dans le ViewModel
 
 
-Si le ViewModel a besoin de connaître la valeur d'une propriété du UiState, il doit utiliser uiState.value.nomPropriete.
-
-
-Le mot-clé value est requis puisque la variable uiState est un flux. C'est un flux et non la valeur qu'il contient. uiState.value permet d'obtenir la valeur courante de ce flux.
+Le ViewModel peut lire directement `uiState.nomPropriete`.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(HomeUiState())
-    val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
-    
     fun jouer() {
-        if (! uiState.value.partieTerminee ) {
+        if (!uiState.partieTerminee) {
             ...
         }
     }
@@ -235,17 +212,9 @@ class HomeViewModel : ViewModel() {
 
 ### Mise à jour de l'état
 
-Ce sont les méthodes du ViewModel qui doivent se charger de modifier la variable d'état _uiState.
+Ce sont les méthodes du ViewModel qui doivent se charger de modifier la propriété d'état `uiState`.
 
-Pour mettre à jour l'état de façon sécuritaire dans un environnement avec plusieurs fils d'exécution, il faut utiliser _uiState.update.
-
-À l'intérieur de cette méthode, il faudra effectuer une copie du UiState pour que Jetpack Compose soit informé de la modification de l'état.
-
-La copie utilisera un paramètre implicite nommé *it*, qui représente l'objet *_uiState*.
-
-On peut d'ailleurs voir ce paramètre dans l'IDE :
-
-![Illustration](../images/page_156_img_01_516x50.png)
+Pour signaler un changement à Compose, il faut attribuer au `uiState` une nouvelle instance, généralement créée avec `copy()`.
 
 `.copy()` est une méthode qui est automatiquement créée par Kotlin lorsqu'on déclare une classe de données. Elle permet de créer une copie d'un objet en modifiant seulement certaines propriétés.
 
@@ -256,19 +225,12 @@ Voici un exemple de logique métier qui met à jour l'état :
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(HomeUiState())
-    val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
-    
-     fun jouer() {
-        // technique thread-safe pour mettre à jour l'état
-        // Attention : le update ne suspend pas l'exécution du thread.
-        // Il n'est pas garanti qu'il soit terminé avant l'exécution des lignes de code qui viennent après.
+    var uiState by mutableStateOf(HomeUiState())
+        private set
+
+    fun jouer() {
         if (...) {
-             _uiState.update {
-                it.copy (
-                    points = it.points + 1
-                )
-            }
+            uiState = uiState.copy(points = uiState.points + 1)
         }
     }
 }
@@ -289,11 +251,9 @@ data class HomeUiState(
 Pour ajouter un élément au tableau (à la fin):
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
-_uiState.update {
-    it.copy (
-        monTableau = it.monTableau + nouvelElement
-    )
-}
+uiState = uiState.copy(
+    monTableau = uiState.monTableau + nouvelElement
+)
 ```
 
 Pour modifier chaque élément du tableau, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
@@ -302,12 +262,9 @@ On le transformera en tableau modifiable auquel on applique une instruction.
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 class HomeViewModel : ViewModel() {
-    ...
-    _uiState.update {
-        it.copy (
-             monTableau = it.monTableau.toMutableList().apply { this[indice] = ... }
-        )
-    }
+    uiState = uiState.copy(
+        monTableau = uiState.monTableau.toMutableList().apply { this[indice] = ... }
+    )
 }
 
 ```
@@ -317,16 +274,14 @@ class HomeViewModel : ViewModel() {
 ### Modifier plusieurs variables
 
 
-Pour modifier plusieurs variables, il faut faire le traitement dans un seul it.copy() avec toutes les variables à modifier. Il est déconseillé de faire plusieurs it.copy() à la suite car cela pourrait causer des problèmes de performance et de cohérence de l'état.
+Pour modifier plusieurs variables, il faut faire le traitement dans un seul `copy()` avec toutes les propriétés à modifier. Il est déconseillé de faire plusieurs copies à la suite, pour éviter des mises à jour incohérentes ou inutiles.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
-_uiState.update {
-    it.copy (
-        points = it.points + 1 ,
-        autreChose = autreValeur
-    )
-}
+uiState = uiState.copy(
+    points = uiState.points + 1,
+    autreChose = autreValeur
+)
 ```
 
 
@@ -339,7 +294,7 @@ Une variable, nommée ici viewModel, sera instanciée dans la classe MainActivit
 
 Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions modulables . Cependant, dans le cadre de ce cours, cette pratique est autorisée afin de faciliter votre travail.
 
-Une variable *uiState* sera initialisée dans chacun des composables où elle est requise, en utilisant le ViewModel reçu en paramètre. Avant de pouvoir l'utiliser, il faut lui appliquer la méthode *collectAsState()* qui se charge recueillir les valeurs d'un flux (Flow ) et de représenter la dernière valeur émise en tant que variable d'état.
+Le composable peut lire directement la propriété `uiState` du ViewModel. Compose observe cette lecture parce que l'état est créé avec `mutableStateOf`.
 
 
 ```kotlin title="Fichier MainActivity.kt"
@@ -357,8 +312,7 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun MainScreen( viewModel: HomeViewModel ) {
-    // création d'un observateur de l'état
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState = viewModel.uiState
     ...
     Button(
         onClick = {
@@ -373,22 +327,10 @@ fun MainScreen( viewModel: HomeViewModel ) {
 ```
 
 
-Grâce à collectAsState(), l'interface utilisateur (UI) sera rafraîchie quand une variable du ViewModel est mise à jour.
+Compose rafraîchit l'interface lorsque le ViewModel remplace `uiState` par une nouvelle valeur. `collectAsState()` est nécessaire lorsque le composable collecte un `Flow` ou un `StateFlow`, comme dans l'exemple Room.
 
 
-Le code qui suit est réservé aux fonctions non composables, par exemple dans une méthode du cycle de vie (onStop, onPause, ...). Il permet de connaître les valeurs du uiState au moment actuel mais ne demeure pas à l'écoute pour les actualiser lorsqu'elles sont modifiées.
-
-
-Si on avait utilisé ce code dans un composable, on n'aurait vu aucun changement à l'écran. De plus, on aurait reçu l'avertissement « StateFlow.value should not be called within composition ».
-
-
-```kotlin title="Fichier MainActivity.kt"
-@Composable
-fun MonComposable(viewModel: HomeViewModel) {
-    val uiState = viewModel.uiState.value
-    ...
-}
-```
+Pour un `StateFlow` provenant de Room, `.value` permet de lire sa valeur courante dans du code non composable. Dans un composable, il faut plutôt le collecter avec `collectAsState()` pour que l'interface soit réactualisée lors des émissions.
 
 
 ### Instancier le ViewModel dans un composable plutôt que dans la classe MainActivity
@@ -536,8 +478,7 @@ fun MainContent(innerPadding: PaddingValues, viewModel: HomeViewModel) {
     // afin de passer le uiState en paramètre.
     // Ceci est le plus petit ancêtre commun des composables qui ont besoin du ViewModel (ou du UiState).
     // Le ViewModel aurait dû être instancié ici.
-    // création d'un observateur de l'état 
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState = viewModel.uiState
     Column(
         modifier = Modifier
             .padding(innerPadding)

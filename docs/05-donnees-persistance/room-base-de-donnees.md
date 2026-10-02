@@ -326,12 +326,19 @@ Le ViewModel obtient le DAO depuis la base de données et l'utilise pour lire ou
 `AndroidViewModel` est une variante de `ViewModel` qui reçoit l'objet `Application` dans son constructeur. Le contexte de l'application permet ici d'obtenir la base de données; il ne faut pas lui transmettre le contexte d'un composable, qui peut être recréé.
 
 
-Le DAO retourne un `Flow` pour la liste des catégories. Compose peut collecter ce flux et actualiser l'interface lorsque les données changent. Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine.
+Le DAO retourne un `Flow` pour la liste des catégories. Le ViewModel le transforme en `Flow<CategorieUiState>` avec `map`, puis Compose le collecte directement avec `collectAsState`. Il n'est pas nécessaire de le convertir en `StateFlow` avec `stateIn` lorsque Compose est son seul consommateur. Pour un état local qui ne dépend pas de Room, `mutableStateOf` suffit.
+
+
+Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine.
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
 class CategorieViewModel(application: Application) : AndroidViewModel(application) {
     private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
-    val categories = categorieDao.listerCategories()
+    val uiState: Flow<CategorieUiState> = categorieDao.listerCategories()
+        .map { categories -> CategorieUiState(categories) }
 
     fun insererCategorie(categorie: Categorie) = viewModelScope.launch {
         categorieDao.insererCategorie(categorie)
@@ -345,6 +352,10 @@ class CategorieViewModel(application: Application) : AndroidViewModel(applicatio
         categorieDao.supprimerCategorie(categorie)
     }
 }
+
+data class CategorieUiState(
+    val categories: List<Categorie> = emptyList()
+)
 ```
 
 
@@ -368,7 +379,7 @@ fun MainScreen() {
 
 @Composable
 fun MainContent(categorieViewModel: CategorieViewModel) {
-    val categories by categorieViewModel.categories.collectAsState(initial = emptyList())
-    Text(text = "Nombre de catégories : ${categories.size}")
+    val uiState by categorieViewModel.uiState.collectAsState(initial = CategorieUiState())
+    Text(text = "Nombre de catégories : ${uiState.categories.size}")
 }
 ```
