@@ -48,8 +48,3 @@ with-lifecycle-scope-in-a-correct-way-973a7e1bfe63
 * [« Composing suspending functions » - Kotlin](https://kotlinlang.org/docs/composing-suspending-functions.html)
 
 
-## 82. Les notifications
-
-
-
----

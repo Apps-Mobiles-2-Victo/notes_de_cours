@@ -203,12 +203,15 @@ Grâce à la **classe d'entité**, Room est capable de générer lui-même les r
 Ces fonctions doivent être exécutées sur leur propre fil d'exécution (thread) pour ne pas bloquer l'application. C'est pourquoi les fonctions doivent utiliser le mot-clé `suspend`.
 
 
-Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera l'annotation @Query. La fonction retournera l'information sous le type `Flow`, soit un flux de données asynchrone observable.
+Vous aurez besoin de requêtes SQL lorsque Room ne peut pas deviner vos besoins précis, par exemple pour les requêtes SELECT. À ce moment, la fonction utilisera l'annotation `@Query` et retournera un `Flow`. Un `Flow` est une séquence asynchrone de valeurs qui peuvent être émises au fil du temps. Ici, Room émet les résultats de la requête et en fournit de nouveaux lorsque les tables observées changent.
 
 
 Le nom de l'interface du DAO – et du fichier – se terminera par `Dao`. Lorsque le DAO interagit avec une seule table, le nom sera sous la forme `<Entite>Dao`, par exemple `CategorieDao`.
 
 Tous les DAO seront placés dans un dossier nommé `data`.
+
+
+`OnConflictStrategy.IGNORE` demande à Room d'ignorer l'insertion si elle viole une contrainte, par exemple si une clé primaire ou une valeur unique existe déjà.
 
 
 ```kotlin title="Fichier data/CategorieDao.kt"

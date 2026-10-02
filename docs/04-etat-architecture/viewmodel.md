@@ -181,7 +181,7 @@ class HomeViewModel : ViewModel() {
 }
 ```
 
-Dans un composable, on lit directement `viewModel.uiState`; il n'est pas nécessaire d'appeler `collectAsState()`. Lorsqu'un état doit suivre un `Flow` provenant de Room, on peut plutôt l'exposer comme `StateFlow` dans le ViewModel. Cette situation est présentée dans la fiche [Base de données locale avec Room](../05-donnees-persistance/room-base-de-donnees.md).
+Dans un composable, on lit directement `viewModel.uiState`; il n'est pas nécessaire d'appeler `collectAsState()`.
 
 ### Logique métier
 
@@ -328,12 +328,6 @@ fun MainScreen( viewModel: HomeViewModel ) {
 ```
 
 
-Compose rafraîchit l'interface lorsque le ViewModel remplace `uiState` par une nouvelle valeur. `collectAsState()` est nécessaire lorsque le composable collecte un `Flow` ou un `StateFlow`, comme dans l'exemple Room.
-
-
-Pour un `StateFlow` provenant de Room, `.value` permet de lire sa valeur courante dans du code non composable. Dans un composable, il faut plutôt le collecter avec `collectAsState()` pour que l'interface soit réactualisée lors des émissions.
-
-
 ### Instancier le ViewModel dans un composable plutôt que dans la classe MainActivity
 
 
@@ -421,13 +415,7 @@ hl=fr#0
 * [« ViewModel Jetpack Compose Android Simple Example » - Bigknol](https://bigknol.com/jetpack-compose/viewmodel-jetpack-compose-android-simple-example/)
 
 
-* [« Make sure to update your StateFlow safely in Kotlin! » - Droidcon](https://www.droidcon.com/2021/08/25/make-sure-to-update-your-stateflow-safely-in-kotlin/)
-
-
 * [« View Model Creation in Jetpack Compose » - dev.to](https://dev.to/vtsen/view-model-creation-in-jetpack-compose-2b9e)
-
-
-* [« Getting started with Jetpack Compose - StateFlow » - Sentry](https://blog.sentry.io/getting-started-with-jetpack-compose/#stateflow)
 
 
 ## Plus petit ancêtre commun des fonctions qui ont besoin du ViewModel
