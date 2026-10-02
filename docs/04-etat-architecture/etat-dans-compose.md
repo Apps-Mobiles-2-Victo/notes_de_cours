@@ -5,7 +5,7 @@ title: "Gestion de l'état dans Jetpack Compose"
 # Gestion de l'état dans Jetpack Compose
 
 
-### 21.1 Les variables d'état
+## Les variables d'état
 
 
 Dans un projet Android avec Jetpack Compose, la vue est rafraîchie à chaque fois qu'une variable d'état change de valeur. Ce concept s'appelle la programmation réactive.
@@ -55,12 +55,12 @@ Si vous utilisez la syntaxe *by remember* et que vous oubliez les deux import, v
 !!! warning "Attention : si vous " Attention : si vous désirez utiliser une liste d'objets comme variable d'état, vous devez apporter quelques ajustements à votre code comme démontré sur cette fiche : « **mutablelistof_comme_variable_d_etat** ».
 
 
-#### Pour plus d'information
+### Pour plus d'information
 
 * [« What does 'by' keyword do in Kotlin? » - StackOverflow](https://stackoverflow.com/questions/38250022/what-does-by-keyword-do-in-kotlin)
 
 
-### 21.2 Où déclarer les variables d'état?
+## Où déclarer les variables d'état?
 
 
 Avec Jetpack Compose, si l'application n'utilise pas les **ViewModels**, les variables d'état doivent être déclarées dans une fonction modulable.
@@ -92,14 +92,15 @@ fun MainScreen (innerPadding: PaddingValues) {
 }
 ```
 
-### Dans le cas où une autre fonction modulable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état**.
-21.3 Où peut-on modifier la valeur d'une variable d'état
+Dans le cas où une autre fonction modulable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état**.
+
+## Où peut-on modifier la valeur d'une variable d'état
 
 
 Il faut faire attention à l'endroit où la modification d'une variable d'état est effectuée. Ceci ne doit jamais être fait directement dans un composable.
 
 
-### Une variable d'état doit être modifiée en réponse à un événement, par exemple un clic sur un bouton.
+    Une variable d'état doit être modifiée en réponse à un événement, par exemple un clic sur un bouton.
 
 
 Si vous effectuez la modification à un endroit inapproprié, l'application aura un fonctionnement erratique.
