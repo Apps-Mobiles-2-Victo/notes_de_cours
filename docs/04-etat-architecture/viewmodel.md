@@ -293,7 +293,7 @@ L'application peut désormais travailler avec le conteneur d'état.
 
 Une variable, nommée ici viewModel, sera instanciée dans la classe MainActivity et elle sera passée en paramètre à ses descendants.
 
-Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions modulables . Cependant, dans le cadre de ce cours, cette pratique est autorisée afin de faciliter votre travail.
+Notez qu'il est déconseillé de passer un ViewModel en paramètre à des fonctions composables . Cependant, dans le cadre de ce cours, cette pratique est autorisée afin de faciliter votre travail.
 
 Le composable peut lire directement la propriété `uiState` du ViewModel. Compose observe cette lecture parce que l'état est créé avec `mutableStateOf`.
 

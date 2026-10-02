@@ -70,7 +70,7 @@ souciez pas de la couleur de fond de la barre de titre pour l'instant.
 #### g. Retravaillez maintenant votre application pour que la couleur de fond apparaisse également sous la barre de titre.
 
 
-#### h. Assurez-vous de documenter correctement vos fonctions (modulables ou non) avec KDoc.
+#### h. Assurez-vous de documenter correctement vos fonctions (composables ou non) avec KDoc.
 
 
 #### i. Générez la documentation de votre code à l'aide de Dokka.

@@ -14,13 +14,13 @@ Jetpack Compose est une boîte d'outils qui permet de définir des interfaces ut
 Jetpack Compose implémente Material Design , une bibliothèque spécialisée pour bâtir des interfaces utilisateur.
 
 
-Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack Compose, l'interface sera décrite par programmation à l'aide de **fonctions modulables**.
+Auparavant, les interfaces étaient bâties à l'aide de code XML. Avec Jetpack Compose, l'interface sera décrite par programmation à l'aide de **fonctions composables**.
 
 
 Si vous avez déjà programmé des applications mobiles pour iPhone avec SwiftUI ou des applications pour iPhone ou Android avec Flutter, vous trouverez plusieurs ressemblances entre ces technologies.
 
 
-À titre d'exemple, voici une fonction modulable qui permet d'afficher le mot Hello suivi d'une information reçue en paramètre. Chaque fonction modulable est en fait un élément graphique.
+À titre d'exemple, voici une fonction composable qui permet d'afficher le mot Hello suivi d'une information reçue en paramètre. Chaque fonction composable est en fait un élément graphique.
 
 
 ```kotlin title="Kotlin"
@@ -52,19 +52,19 @@ fun Greeting(name: String) {
 * [« Introducing the Compose Material Catalog » - Material Design Blog](https://material.io/blog/jetpack-compose-catalog)
 
 
-### 15.2 Les fonctions modulables
+### 15.2 Les fonctions composables
 
 
-Avec Jetpack Compose, tout ce qui est affiché à l'écran est défini dans une fonction modulable, aussi appelée fonction composable ou simplement composable.
+Avec Jetpack Compose, tout ce qui est affiché à l'écran est défini dans une fonction composable, aussi appelée fonction composable ou simplement composable.
 
 
-Il s'agit d'une fonction précédée par l'annotation @Composable. Cette fonction appelle généralement d'autres fonctions modulables, par exemple Text() ou Image().
+Il s'agit d'une fonction précédée par l'annotation @Composable. Cette fonction appelle généralement d'autres fonctions composables, par exemple Text() ou Image().
 
 
-Chaque fonction modulable est en fait un élément graphique.
+Chaque fonction composable est en fait un élément graphique.
 
 
-À titre d'exemple, lors de la création initiale d'un projet, une fonction modulable est définie pour afficher le mot Hello suivi d'une information reçue en paramètre.
+À titre d'exemple, lors de la création initiale d'un projet, une fonction composable est définie pour afficher le mot Hello suivi d'une information reçue en paramètre.
 
 
 ```kotlin title="Kotlin"
@@ -177,7 +177,7 @@ Quelques explications :
 - Dans son constructeur, on commence par exécuter le constructeur de la classe parent. On définit ensuite que l'application utilise le thème nommé HelloWorldTheme . Ce thème est défini dans le fichier
 - `app/src/main/java/com.mondomaine.helloworld/ui.theme/Theme.kt` . On peut y accéder facilement en faisant Ctrl +Clic (Windows) ou  ⌘ Cmd +Clic (Mac) sur son nom.
 - Le constructeur spécifie ensuite la structure de l'écran ( **Scaffold** ) et son contenu.
-- Le contenu est défini par la fonction modulable *Greeting()* .
+- Le contenu est défini par la fonction composable *Greeting()* .
 - Au bas du fichier, on remarque l'annotation @Preview . Ceci permet d'avoir un aperçu en temps réel de l'interface
 utilisateur dans l'environnement de développement sans avoir à lancer l'application.
 

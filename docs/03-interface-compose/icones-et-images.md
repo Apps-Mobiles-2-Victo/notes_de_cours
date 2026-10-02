@@ -8,7 +8,7 @@ title: "Icônes et gestion d'images"
 ### 31.1 Icône avec la bibliothèque Material Symbols
 
 
-La fonction modulable Icon permet d'afficher une icône à l'écran.
+La fonction composable Icon permet d'afficher une icône à l'écran.
 
 
 Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons .

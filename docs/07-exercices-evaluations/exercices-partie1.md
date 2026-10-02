@@ -91,7 +91,7 @@ fun verifier(...) {
 
 1. Ajoutez une barre de titre à l'application. Le titre doit être votre nom.
 1. Ajoutez un bouton pour permettre de comparer le mot saisi avec le mot recherché. Ce bouton appellera une fonction qui doit modifier la valeur d'une variable d'état pour indiquer si c'est une réussite ou un échec.
-1. Mettez un point d'arrêt au début de votre fonction modulable principale et lancez l'application en mode débogage. Inspectez les différentes variables et paramètres.
+1. Mettez un point d'arrêt au début de votre fonction composable principale et lancez l'application en mode débogage. Inspectez les différentes variables et paramètres.
 1. Afin de vous pratiquer à utiliser le *Logcat*, faites-y afficher la valeur saisie par l'usager. Prenez soin d'utiliser une étiquette qui vous permettra de retrouver rapidement cette information.
 1. Selon la valeur de la variable d'état, l'application doit afficher l'image de réussite ou l'image d'échec.
 1. Si la licence d'utilisation de l'image l'exige, affichez la source de l'image en petit texte italique.

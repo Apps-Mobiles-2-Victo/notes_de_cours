@@ -8,7 +8,7 @@ title: "Éléments d'interface utilisateur Compose"
 ## Text()
 
 
-La fonction modulable Text permet d'afficher un texte à l'écran.
+La fonction composable Text permet d'afficher un texte à l'écran.
 
 
 ```kotlin title="Kotlin"
@@ -169,7 +169,7 @@ music-code-blogs-expandables-and-beyond-b5f7ec35a49b 5.2 Column()
 
 ## Column()
 
-La fonction modulable Column permet de placer les composants en colonne, l'un sous l'autre.
+La fonction composable Column permet de placer les composants en colonne, l'un sous l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -268,7 +268,7 @@ Column(
 ## Row()
 
 
-La fonction modulable Row permet de placer les composants en rangée, l'un à côté de l'autre.
+La fonction composable Row permet de placer les composants en rangée, l'un à côté de l'autre.
 
 
 ```kotlin title="Kotlin"
@@ -357,7 +357,7 @@ Row(
 ## Box()
 
 
-La fonction modulable *Box* permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
+La fonction composable *Box* permet de placer les éléments en couches perpendiculaires à l'écran, l'un par-dessus l'autre.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -659,7 +659,7 @@ AsyncImage(
 ### Icône avec la bibliothèque Material Symbols
 
 
-La fonction modulable Icon permet d'afficher une icône à l'écran.
+La fonction composable Icon permet d'afficher une icône à l'écran.
 
 
 Les icônes disponibles par défaut sont tirées de la bibliothèque gratuite Material Icons .
@@ -1183,7 +1183,7 @@ Surface(
 ### Dessiner une forme
 
 
-La fonction modulable Canvas permet de dessiner une forme.
+La fonction composable Canvas permet de dessiner une forme.
 
 
 Vous utiliserez une des méthodes proposées , par exemple drawRect, drawRoundRect, drawCircle, drawLine, drawOval, drawArc, drawPoints.
@@ -1233,7 +1233,7 @@ Image(
 ### 5.12 Button()
 
 
-Avec Jetpack Compose, un bouton est défini à l'aide de la fonction modulable Button .
+Avec Jetpack Compose, un bouton est défini à l'aide de la fonction composable Button .
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -1290,7 +1290,7 @@ Button(
 ### 5.13 Popup()
 
 
-La fonction modulable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
+La fonction composable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
 
 
 Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()**.
@@ -1389,7 +1389,7 @@ Popup(
 5.14 Card()
 
 
-La fonction modulable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
+La fonction composable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
 
 
 Voici un exemple de base du Card.
@@ -2123,7 +2123,7 @@ Selon la version de Jetpack Compose que vous utilisez, certaines fonctions peuve
 Il est permis d'utiliser les fonctions expérimentales. Cependant, si vous ne prenez pas certaines précautions, vous obtiendrez le message d'erreur « This material API is experimental and is likely to change or to be removed in the future. ».
 
 
-Par exemple, voici ce qu'on obtenais lorsque la fonction modulable Card était expérimentale.
+Par exemple, voici ce qu'on obtenais lorsque la fonction composable Card était expérimentale.
 
 
 

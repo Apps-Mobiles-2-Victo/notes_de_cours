@@ -101,7 +101,7 @@ casse chameau fun recommencerPartie() {...}
 @Composable
 
 
-#### Nom des fonctions modulables casse Pascal
+#### Nom des fonctions composables casse Pascal
 
 
 fun ImageRonde(...) {...}

@@ -63,9 +63,9 @@ Si vous utilisez la syntaxe *by remember* et que vous oubliez les deux import, v
 ## Où déclarer les variables d'état?
 
 
-Avec Jetpack Compose, si l'application n'utilise pas les **ViewModels**, les variables d'état doivent être déclarées dans une fonction modulable.
+Avec Jetpack Compose, si l'application n'utilise pas les **ViewModels**, les variables d'état doivent être déclarées dans une fonction composable.
 
-La plupart du temps, elles seront déclarées dans la toute première fonction modulable. Cette fonction peut porter n'importe quel nom. Cependant, on lui donnera souvent le nom *MainScreen*.
+La plupart du temps, elles seront déclarées dans la toute première fonction composable. Cette fonction peut porter n'importe quel nom. Cependant, on lui donnera souvent le nom *MainScreen*.
 
 
 ```kotlin title="Kotlin"
@@ -92,7 +92,7 @@ fun MainScreen (innerPadding: PaddingValues) {
 }
 ```
 
-Dans le cas où une autre fonction modulable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état**.
+Dans le cas où une autre fonction composable doit utiliser la même variable d'état, il faudra utiliser une technique nommée **hissage d'état**.
 
 ## Où peut-on modifier la valeur d'une variable d'état
 

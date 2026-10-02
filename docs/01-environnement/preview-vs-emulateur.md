@@ -14,14 +14,14 @@ Pendant que vous développez votre application Android avec Kotlin dans Android 
 #### Ouvrez le fichier qui contient l'interface utilisateur, par exemple MainActivity.kt .
 
 
-#### Pour qu'une prévisualisation soit possible, l'application doit contenir une **fonction modulable** précédée de l'annotation @Preview
+#### Pour qu'une prévisualisation soit possible, l'application doit contenir une **fonction composable** précédée de l'annotation @Preview
 .
 
 
-Cette fonction modulable ne peut pas recevoir de paramètre. C'est pourquoi on nommera généralement cette fonction DefaultPreview(). Elle pourra au besoin se charger d'appeler une fonction modulable avec paramètres.
+Cette fonction composable ne peut pas recevoir de paramètre. C'est pourquoi on nommera généralement cette fonction DefaultPreview(). Elle pourra au besoin se charger d'appeler une fonction composable avec paramètres.
 
 
-Pour que la prévisualisation corresponde à ce que vous êtes en train de coder, la fonction modulable appelée dans DefaultPreview() devra être la même que dans MainActivity.
+Pour que la prévisualisation corresponde à ce que vous êtes en train de coder, la fonction composable appelée dans DefaultPreview() devra être la même que dans MainActivity.
 
 
 ```kotlin title="Kotlin"
@@ -29,7 +29,7 @@ Pour que la prévisualisation corresponde à ce que vous êtes en train de coder
 @Composable
 fun DefaultPreview() {
     MonApplicationTheme {
-        MaFonctionModulable()
+        MaFonctionComposable()
     }
 }
 ```

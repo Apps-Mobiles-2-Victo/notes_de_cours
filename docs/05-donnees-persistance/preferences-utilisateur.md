@@ -315,7 +315,7 @@ comprehensive-guide-to-using-datastore-with-jetpack-compose-d89c813232d7
 La façon dont vous structurez votre application a un impact important sur la technique à utiliser pour travailler avec le **Preferences DataStore**.
 
 
-Par exemple, si vous choisissez de placer tout le code d'un gestionnaire d'événement dans une fonction, les instructions qui requièrent d'être appelées dans une fonction modulable ne pourront pas être placées dans cette fonction.
+Par exemple, si vous choisissez de placer tout le code d'un gestionnaire d'événement dans une fonction, les instructions qui requièrent d'être appelées dans une fonction composable ne pourront pas être placées dans cette fonction.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"

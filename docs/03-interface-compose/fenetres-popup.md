@@ -8,7 +8,7 @@ title: "Fenêtres popup et dialogues"
 ### 39.1 Popup()
 
 
-La fonction modulable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
+La fonction composable Popup permet d'afficher un composable à l'écran par-dessus ce qui y est déjà affiché.
 
 
 Popup() servira généralement à afficher un message. Si vous avez besoin d'une confirmation, vous utiliserez plutôt **AlertDialog()**.

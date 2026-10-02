@@ -20,7 +20,7 @@ Dans cette fiche :
 #### Zones définies par le scaffold
 
 
-#### Contenu de l'application dans un fonction modulable distincte
+#### Contenu de l'application dans un fonction composable distincte
 
 
 #### Paramètre innerPadding (ou it)
@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
 ```
 
 
-Au besoin, il est possible de déplacer le Scaffold dans une fonction modulable.
+Au besoin, il est possible de déplacer le Scaffold dans une fonction composable.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -127,10 +127,10 @@ Scaffold(
 ```
 
 
-### Contenu de l'application dans un fonction modulable distincte
+### Contenu de l'application dans un fonction composable distincte
 
 
-Afin d'alléger le code, il est intéressant de placer le contenu dans sa propre fonction modulable.
+Afin d'alléger le code, il est intéressant de placer le contenu dans sa propre fonction composable.
 
 
 Vous pouvez appeler cette fonction comme vous voulez.
@@ -191,10 +191,10 @@ Scaffold(
 Ce paramètre, qu'il soit nommé ou non, doit obligatoirement être utilisé dans le contenu.
 
 
-Dans cet exemple, il est passé en paramètre à une fonction modulable.
+Dans cet exemple, il est passé en paramètre à une fonction composable.
 
 
-### Si la fonction modulable en fait bon usage, ceci assurera que le contenu de l'application ne soit pas caché sous une
+### Si la fonction composable en fait bon usage, ceci assurera que le contenu de l'application ne soit pas caché sous une
 des barres.
 
 
@@ -250,7 +250,7 @@ Bonne utilisation du innerPadding innerPadding pas utilisé Aucune barre de titr
 ### Modifier vs modifier
 
 
-Dans le code généré lors de la création d'un projet, le paramètre innerPadding n'est pas passé directement à la fonction modulable.
+Dans le code généré lors de la création d'un projet, le paramètre innerPadding n'est pas passé directement à la fonction composable.
 
 
 Plutôt, il est utilisé pour initialiser un modifieur qui, lui, est passé en paramètre.
@@ -266,7 +266,7 @@ Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 ```
 
 
-Si vous conservez cette approche dans votre projet, vous devez être conscients de la différence entre l'utilisation de Modifier (M majuscule) et modifier (m minuscule) à l'intérieur de la fonction modulable.
+Si vous conservez cette approche dans votre projet, vous devez être conscients de la différence entre l'utilisation de Modifier (M majuscule) et modifier (m minuscule) à l'intérieur de la fonction composable.
 
 
 Selon vous, laquelle de ces approche est correcte ?
@@ -392,7 +392,7 @@ Dans la version A, chaque composable utilise le modifieur reçu en paramètre (c
 Le problème avec cette approche, c'est que le padding a été calculé par Jetpack Compose pour tenir compte des barres de l'application et de la barre d'état du téléphone. Dans une application avec une barre de titre, par exemple, l'espacement devriendrait inutilement trop grand entre les composables.
 
 
-Sur l'image qui suit, la fonction modulable est identique à la version A présentée plus haut. Seul le scaffold s'est vu ajouter un titre.
+Sur l'image qui suit, la fonction composable est identique à la version A présentée plus haut. Seul le scaffold s'est vu ajouter un titre.
 
 
 

@@ -17,13 +17,13 @@ title: "Optimisation des performances Compose"
 * [« Suivez les bonnes pratiques - Reporter les lectures le plus longtemps possible » - Android Developers](https://developer.android.com/jetpack/compose/performance/bestpractices?hl=fr#defer-reads)
 
 
-### 80.2 Afficher le nombre de recompostion de chaque fonction modulable
+### 80.2 Afficher le nombre de recompostion de chaque fonction composable
 
 
-Avec IntelliJ, il est possible d'afficher le nombre de fois qu'une fonction modulable est recomposée. Ceci est utile pour cibler les endroits où il y a perte de performance.
+Avec IntelliJ, il est possible d'afficher le nombre de fois qu'une fonction composable est recomposée. Ceci est utile pour cibler les endroits où il y a perte de performance.
 
 
-Pour afficher le nombre de recompositions de chaque fonction modulable :
+Pour afficher le nombre de recompositions de chaque fonction composable :
 
 
 #### Ouvrez l'inspecteur de mise en page (Layout Inspector) : View / Tool Windows / Layout Inspector .

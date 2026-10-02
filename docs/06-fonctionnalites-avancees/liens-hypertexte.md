@@ -78,7 +78,7 @@ ClickableText(
 ### 60.2 Card()
 
 
-La fonction modulable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
+La fonction composable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
 
 
 Voici un exemple de base du Card.

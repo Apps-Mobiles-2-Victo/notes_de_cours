@@ -547,7 +547,7 @@ suspend fun retrouverCategorie(id: Int) : Categorie? {
 ```
 
 
-#### La fonction modulable qui affiche le formulaire recevra l'identifiant en paramètre et retrouvera les données dans la
+#### La fonction composable qui affiche le formulaire recevra l'identifiant en paramètre et retrouvera les données dans la
 base de données comme suit :
 
 

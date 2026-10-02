@@ -240,7 +240,7 @@ Vous utilisez une fonctionnalité expérimentale et Jetpack Compose vous empêch
 ### Solution proposée :
 
 
-Ajoutez une instruction @OptIn en haut de la fonction modulable qui utilise la fonctionnalité expérimentale.
+Ajoutez une instruction @OptIn en haut de la fonction composable qui utilise la fonctionnalité expérimentale.
 
 
 C'est par cette instruction que vous donnez votre consentement.

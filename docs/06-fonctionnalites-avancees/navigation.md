@@ -90,13 +90,13 @@ Scaffold(
 La liste des composables qui peuvent être rejoints par navigation sera définie dans un NavHost . Cette liste est en fait une liste des routes possibles dans l'application. Ces routes sont parfois appelées itinéraires ou destinations.
 
 
-Le NavHost sera placé dans une fonction modulable que l'on codera dans son propre fichier, placé au même niveau que MainActivity.kt .
+Le NavHost sera placé dans une fonction composable que l'on codera dans son propre fichier, placé au même niveau que MainActivity.kt .
 
 
-Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction modulable à appeler.
+Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction composable à appeler.
 
 
-Lorsque l'application contient une **barre de navigation**, la route passera le navController en paramètre seulement si la fonction modulable a besoin de travailler avec cette variable.
+Lorsque l'application contient une **barre de navigation**, la route passera le navController en paramètre seulement si la fonction composable a besoin de travailler avec cette variable.
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -120,7 +120,7 @@ fun NavigationHost (navController: NavHostController) {
 ```
 
 
-### Il est d'usage de placer chaque fonction modulable de cette liste dans son propre fichier, sous le dossier ui .
+### Il est d'usage de placer chaque fonction composable de cette liste dans son propre fichier, sous le dossier ui .
 Le nom du fichier sera le même que le nom de la fonction.
 
 
@@ -212,7 +212,7 @@ NavHost(navController = navController, startDestination = "home") {
     composable("rechercherItem/{texte}") { navBackStackEntry ->
         // extraire le paramètre à partir de la route
         val texte: String? = navBackStackEntry.arguments?.getString("texte")
-        // passer le paramètre à la fonction modulable
+        // passer le paramètre à la fonction composable
         RechercherItem(navController, texte)
     }
 }
@@ -258,7 +258,7 @@ NavHost(navController = navController, startDestination = "home") {
     ) { navBackStackEntry ->
         // extraire le paramètre à partir de la route
         val itemId: Int = navBackStackEntry.arguments?. getInt ("itemId") ?: -1
-        // passer le paramètre à la fonction modulable
+        // passer le paramètre à la fonction composable
         EditerItem(navController, itemId)
     }
 }
@@ -285,7 +285,7 @@ NavHost(navController = navController, startDestination = "home") {
     composable("detailsItem ? {itemId}") { navBackStackEntry ->
         // extraire le paramètre à partir de la route
         val itemId: String? = navBackStackEntry.arguments?.getString("itemId") ?: ""
-        // passer le paramètre à la fonction modulable
+        // passer le paramètre à la fonction composable
         DetailsItem(navController, itemId)
     }
 }
@@ -310,7 +310,7 @@ navController.navigate("detailsItem")
 63.2 Le ViewModel et la navigation
 
 
-On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux fonctions modulables qui en ont besoin.
+On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux fonctions composables qui en ont besoin.
 
 
 Dans le cas où une application qui travaille avec un ViewModel a besoin de navigation, une solution consiste à déclarer le ViewModel dans le NavigationHost puis à le passer en paramètre aux composables dans les routes où c'est nécessaire.
