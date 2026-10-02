@@ -327,21 +327,18 @@ Le ViewModel obtient le DAO depuis la base de données et l'utilise pour lire ou
 `AndroidViewModel` est une variante de `ViewModel` qui reçoit l'objet `Application` dans son constructeur. Le contexte de l'application permet ici d'obtenir la base de données; il ne faut pas lui transmettre le contexte d'un composable, qui peut être recréé.
 
 
-Le DAO retourne un `Flow` pour la liste des catégories. Le ViewModel le transforme en `Flow<CategorieUiState>` avec `map`, puis Compose le collecte directement avec `collectAsState`. Il n'est pas nécessaire de le convertir en `StateFlow` avec `stateIn` lorsque Compose est son seul consommateur. Pour un état local qui ne dépend pas de Room, `mutableStateOf` suffit.
+Le DAO retourne un `Flow<List<Categorie>>`. Si l'écran n'a besoin que de la liste, le ViewModel peut exposer ce flux directement. Compose le collecte avec `collectAsState` et se met à jour lorsque Room émet une nouvelle liste.
 
 
 Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine.
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 class CategorieViewModel(application: Application) : AndroidViewModel(application) {
     // Récupère le DAO des catégories depuis l'instance de base de données Room.
     private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
-    // Chaque émission de Room devient un nouvel état d'écran.
-    val uiState: Flow<CategorieUiState> = categorieDao.listerCategories()
-        .map { categories -> CategorieUiState(categories) }
+    val categories: Flow<List<Categorie>> = categorieDao.listerCategories()
 
     fun insererCategorie(categorie: Categorie) = viewModelScope.launch {
         categorieDao.insererCategorie(categorie)
@@ -355,10 +352,6 @@ class CategorieViewModel(application: Application) : AndroidViewModel(applicatio
         categorieDao.supprimerCategorie(categorie)
     }
 }
-
-data class CategorieUiState(
-    val categories: List<Categorie> = emptyList()
-)
 ```
 
 
@@ -383,7 +376,60 @@ fun MainScreen() {
 @Composable
 fun MainContent(categorieViewModel: CategorieViewModel) {
     // Convertit le Flow en état Compose observable pendant la composition.
-    val uiState by categorieViewModel.uiState.collectAsState(initial = CategorieUiState())
-    Text(text = "Nombre de catégories : ${uiState.categories.size}")
+    val categories by categorieViewModel.categories.collectAsState(initial = emptyList())
+    Text(text = "Nombre de catégories : ${categories.size}")
+}
+```
+
+
+## Regrouper plusieurs valeurs dans un UiState
+
+
+Si l'écran doit aussi présenter un message, un `CategorieUiState` peut regrouper les deux valeurs. Ici, `map` transforme chaque liste émise par Room en un nouvel état d'écran.
+
+
+```kotlin title="Variante de ui/CategorieViewModel.kt"
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+data class CategorieUiState(
+    val categories: List<Categorie> = emptyList(),
+    val message: String = "Chargement..."
+)
+
+class CategorieViewModel(application: Application) : AndroidViewModel(application) {
+    private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
+
+    val uiState: Flow<CategorieUiState> = categorieDao.listerCategories()
+        .map { categories ->
+            CategorieUiState(
+                categories = categories,
+                message = if (categories.isEmpty()) {
+                    "Aucune catégorie"
+                } else {
+                    "Nombre de catégories : ${categories.size}"
+                }
+            )
+        }
+}
+```
+
+
+Le composable collecte alors cet état et affiche le message ainsi que les catégories :
+
+
+```kotlin title="Extrait de MainActivity.kt"
+@Composable
+fun MainContentAvecUiState(categorieViewModel: CategorieViewModel) {
+    val uiState by categorieViewModel.uiState.collectAsState(
+        initial = CategorieUiState()
+    )
+
+    Column {
+        Text(text = uiState.message)
+        uiState.categories.forEach { categorie ->
+            Text(text = categorie.titre)
+        }
+    }
 }
 ```
