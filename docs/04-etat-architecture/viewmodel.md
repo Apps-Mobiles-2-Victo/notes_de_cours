@@ -85,12 +85,9 @@ Dans cette fiche :
 
 Lorsqu'on travaille avec un ViewModel, on n'aura plus de variables d'état déclarées directement dans les composables.
 
-
 Chacun des ViewModels de l'application sera placé dans un dossier nommé *ui*  et portera un nom qui se termine par ViewModel.
 
-
 Le dossier *ui* est au même niveau que le fichier *MainActiviy.kt* , par exemple *app/src/main/java/com/monnom/monprojet/ui/HomeViewModel.kt* .
-
 
 Un ViewModel est simplement une classe qui hérite de la classe *ViewModel*.
 
@@ -110,25 +107,11 @@ class HomeViewModel : ViewModel() {
 
 La classe comprendra une propriété pour chacune des informations qu'elle doit conserver.
 
-
 Pour que la modification d'une propriété cause le rafraîchissement de la vue, il faut la déclarer en tant que **variable d'état**.
 
 Ici, pas besoin du mot-clé *remember* puisque la classe ne sera pas réinstanciée à chaque recomposition ni lors de la recréation de l'activité.
 
 Notez que lorsqu'il n'y a aucun spécificateur d'accès, une propriété est considérée publique.
-
-> Ne pas prendre le Le code ci-dessous comme exemple, je vous présente une technique plus intéressante plus bas.
-
-```kotlin title="Fichier ui/HomeViewModel.kt"
-
-// Exemple à ne pas utiliser dans le cadre de ce cours. Voir plus bas pour la technique recommandée.
-class HomeViewModel : ViewModel() {
-    val points: MutableState<Int> = mutableStateOf(0)
-    val partieTerminee: MutableState<Boolean> = mutableStateOf(false)
-    ...
-}
-
-```
 
 
 ### Propriétés de support
@@ -140,35 +123,13 @@ Il est conseillé de créer des propriétés privées. Chaque propriété utilis
 >Par convention, le nom d'une propriété privée débute par une barre en bas (_). Son vis-à-vis public porte le même nom mais sans la barre en bas.
 
 
-Ici encore, on préférera utiliser la technique présentée plus bas.
 
-
-```kotlin title="Fichier ui/HomeViewModel.kt"
-// Exemple à ne pas utiliser dans le cadre de ce cours. Voir plus bas pour la technique recommandée.
-class HomeViewModel : ViewModel() {
-    private val _points: MutableState<Int> = mutableStateOf(0)
-    val points: Int
-        get() {
-            if (_points.value >= 0) {
-                return _points.value
-            }
-            else {
-                return 0
-            }
-        }
-    ...
-} 
-```
-
-
-### Création de la classe UiState
+### Classe UiState
 
 
 La technique recommandée pour déclarer les variables d'état du ViewModel consiste à utiliser une classe spécialisée pour gérer ces valeurs.
 
-
 Puisque ces valeurs sont rattachées à l'état de l'interface utilisateur (UiState), la classe portera un nom qui se termine par *UiState*.
-
 
 Le ViewModel utilisera une instance de cette classe comme variable d'état.
 
@@ -193,9 +154,14 @@ data class HomeUiState (
 }
 ```
 
-Ici, `points` et `message` sont déclarées avec *val* donc elles ne peuvent pas être modifiées. Le ViewModel change l'état de l'application en utilisant une nouvelle instance de la classe `HomeUiState`, via la méthode *copy()*.
+Ici, `points` et `message` sont déclarées avec *val* dans la signature du constructeur, donc:
+
+1. Des propriétés de classe vont être créées, avec des accesseurs. (sans *val* se serait des paramètres d'appel de fonction ordinaires)
+1. Ces propriétés sont en lecture seule, elles ne peuvent pas être modifiées (avec *var* l'écriture serait possible). .
 
 `partieTerminee` est une propriété calculée qui retourne *true* si le nombre de points est supérieur ou égal à 5. Elle n'est pas stockée dans la classe mais calculée à la demande.
+
+Le ViewModel change l'état de l'application en utilisant une nouvelle instance de la classe `HomeUiState`, via la méthode *copy()*.  Cette méthode est automatiquement créée par Kotlin lorsqu'on déclare une classe de données. Elle permet de créer une copie d'un objet en modifiant seulement certaines propriétés.
 
 On peut désormais ajouter au ViewModel une propriété, nommée ici *_uiState*, qui fait référence à une instance de cette classe plutôt qu'une liste de propriétés distinctes.
 
@@ -300,7 +266,7 @@ class HomeViewModel : ViewModel() {
         if (...) {
              _uiState.update {
                 it.copy (
-                    _points = it.points + 1
+                    points = it.points + 1
                 )
             }
         }
@@ -311,8 +277,26 @@ class HomeViewModel : ViewModel() {
 
 ### Modifier un tableau
 
+Dans le cas d'un tableau déclaré avec List<...> dans le UiState
 
-Dans le cas particulier d'un tableau déclaré avec List<...> dans le UiState, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
+```kotlin title="Fichier ui/HomeViewModel.kt"
+data class HomeUiState(
+    val monTableau: List<String> = listOf(...),
+    ...
+}
+```
+
+Pour ajouter un élément au tableau (à la fin):
+
+```kotlin title="Fichier ui/HomeViewModel.kt"
+_uiState.update {
+    it.copy (
+        monTableau = it.monTableau + nouvelElement
+    )
+}
+```
+
+Pour modifier chaque élément du tableau, il faudra prendre une précaution supplémentaire car à la base, il est immuable.
 
 On le transformera en tableau modifiable auquel on applique une instruction.
 
@@ -321,26 +305,13 @@ class HomeViewModel : ViewModel() {
     ...
     _uiState.update {
         it.copy (
-             _monTableau = it.monTableau.toMutableList().apply { this[indice] = ... }
+             monTableau = it.monTableau.toMutableList().apply { this[indice] = ... }
         )
     }
 }
-data class HomeUiState(
-    private val _monTableau: List<String> = listOf(...),
-    ...
-}
+
 ```
 
-
-Pour ajouter un élément au tableau, on peut faire ceci :
-
-```kotlin title="Fichier ui/HomeViewModel.kt"
-_uiState.update {
-    it.copy (
-        _monTableau = it.monTableau + nouvelElement
-    )
-}
-```
 
 
 ### Modifier plusieurs variables
@@ -352,8 +323,8 @@ Pour modifier plusieurs variables, il faut faire le traitement dans un seul it.c
 ```kotlin title="Fichier ui/HomeViewModel.kt"
 _uiState.update {
     it.copy (
-        _points = it.points + 1 ,
-        _autreChose = autreValeur
+        points = it.points + 1 ,
+        autreChose = autreValeur
     )
 }
 ```
@@ -513,8 +484,10 @@ hl=fr#0
 * [« View Model Creation in Jetpack Compose » - dev.to](https://dev.to/vtsen/view-model-creation-in-jetpack-compose-2b9e)
 
 
-### * [« Getting started with Jetpack Compose - StateFlow » - Sentry](https://blog.sentry.io/getting-started-with-jetpack-compose/#stateflow)
-44.4 Plus petit ancêtre commun des fonctions qui ont besoin du ViewModel
+* [« Getting started with Jetpack Compose - StateFlow » - Sentry](https://blog.sentry.io/getting-started-with-jetpack-compose/#stateflow)
+
+
+## Plus petit ancêtre commun des fonctions qui ont besoin du ViewModel
 
 
 Je vous illustre ici comment déterminer quel est le plus petit ancêtre commun des composables qui ont besoin du ViewModel.
