@@ -5,31 +5,34 @@ title: "Room avancé et requêtes réactives"
 # Room avancé et requêtes réactives
 
 
-### 58.1 Ajouter des données initiales
+## Ajouter des données initiales
 
 
 Il est rare qu'une application soit installée avec une base de données vide. Généralement, il y aura des données initiales, par exemple des pays, des devises, des couleurs, des catégories.
 
 
-Pour insérer des données initiales dans une application qui utilise Room, ajoutez ceci dans la classe qui hérite de RoomDatabase :
+Pour insérer des données initiales dans une application qui utilise Room, ajoutez ceci dans la classe qui hérite de `RoomDatabase` :
 
 
 ```kotlin title="Fichier data/MonprojetDatabase.kt"
-fun getDatabase(context: Context): MonprojetDatabase {
-    return Instance ?: synchronized(this) {
-        Room.databaseBuilder(context, MonprojetDatabase::class.java, "monprojet_database")
-            .addCallback( DatabaseCallback() )
+fun getDatabase(context: Context): MonprojetDatabase =
+    synchronized(this) {
+        instance ?: Room.databaseBuilder(
+            context,
+            MonprojetDatabase::class.java,
+            "monprojet_database"
+        )
+            .addCallback(DatabaseCallback())
             .build()
-            .also { Instance = it }
+            .also { instance = it }
     }
-}
 ```
 
 
-Au bas de cette classe, définissez la classe DatabaseCallback, qui contiendra les requêtes INSERT désirées.
+Au bas de cette classe, définissez la classe `DatabaseCallback`, qui contiendra les requêtes *INSERT* désirées.
 
 
-Notez que si une donnée doit contenir un apostrophe, il faudra doubler l'apostrophe dans la requête.
+Utilisez la surcharge de `execSQL` qui accepte les paramètres séparément du texte SQL. Placez un `?` à l'emplacement de chaque valeur, puis passez les valeurs dans un tableau, dans le même ordre. Les paramètres sont traités comme des données; concaténer directement une valeur non fiable au SQL pourrait permettre une injection SQL.
 
 
 Cette fonction sera exécutée lors de la création de la base de données (voir conditions au bas de l'extrait de code).
@@ -43,7 +46,10 @@ class DatabaseCallback : RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) = db.run {
         beginTransaction()
         try {
-            execSQL("INSERT INTO categories(titre, description) VALUES('catégorie 1', 'la catégorie no 1')")
+            execSQL(
+                "INSERT INTO categories(titre, description) VALUES(?, ?)",
+                arrayOf("catégorie 1", "description de la catégorie")
+            )
             ...
             setTransactionSuccessful()
         } finally {
@@ -54,37 +60,23 @@ class DatabaseCallback : RoomDatabase.Callback() {
 ```
 
 
-!!! warning "Attention : la métho" Attention : la méthode onCreate() n'est exécutée que lors de la CRÉATION DE LA BASE DE DONNÉES (et non des tables), c'est-à-dire :
+!!! warning  Attention : la méthode onCreate() n'est exécutée que lors de la CRÉATION DE LA BASE DE DONNÉES (et non des tables), c'est-à-dire :
 
-
-#### la première fois que l'application est lancée sur un périphérique
-
+* la première fois que l'application est lancée sur un périphérique
 
 OU
 
-
-#### en forçant la recréation de la base de données à l'aide d'une de ces méthodes :
-
-
-#### en effectuant une suppression manuelle de la BD **dans le système de fichiers de l'émulateur**
-
-
-#### en désinstallant l'application et en la réinstallant (sur l'émulateur : cercle (Home) / faire glisser l'écran vers
+* en forçant la recréation de la base de données à l'aide d'une de ces méthodes :
+    * en effectuant une suppression manuelle de la BD **dans le système de fichiers de l'émulateur**
+    * en désinstallant l'application et en la réinstallant (sur l'émulateur : cercle (Home) / faire glisser l'écran vers
 le haut / Settings / Apps )
+   * en supprimant toutes les données de l'émulateur ( Device Manager / points verticaux / Wipe Data )
+   * en lançant l'application dans un nouvel émulateur
 
 
-#### en supprimant toutes les données de l'émulateur ( Device Manager / points verticaux / Wipe Data )
+La documentation de la classe Callback spécifie :
 
-
-#### en lançant l'application dans un nouvel émulateur
-
-
-En preuve de ce que j'avance, la documentation de la classe Callback spécifie :
-
-
-### onCreate: Called when the database is created for the first time. This is called after all the tables are created.
-
-
+    onCreate: Called when the database is created for the first time. This is called after all the tables are created.
 
 
 ![Illustration](../images/page_175_img_01_800x567.png)
@@ -92,7 +84,7 @@ En preuve de ce que j'avance, la documentation de la classe Callback spécifie :
 
 
 
-### 58.2 Modifier la structure de la base de données en phase de développement
+## Modifier la structure de la base de données en phase de développement
 
 
 Pendant le développement d'une application, il arrive que la structure de la base de données soit changée. Il peut s'agir de l'ajout d'une table, de l'ajout d'un champ ou même de la modification d'un champ existant.
