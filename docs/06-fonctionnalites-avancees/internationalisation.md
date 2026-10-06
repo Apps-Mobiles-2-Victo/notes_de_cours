@@ -51,8 +51,6 @@ Une application peut supporter une ou plusieurs langues et régions, par exemple
 
 Pour ajouter une langue et région dans un projet dans Android Studio :
 
-
-
 * Faites un clic droit sur le fichier `MonProjet/app/src/main/res/values/strings.xml`  puis choisissez *Open Translations Editor*.
 * Cliquez sur l'icône de planète ( *Add Locale* ) dans le haut de l'écran.
 * Sélectionnez la langue et région désirée. Ceci a pour effet :
@@ -124,22 +122,37 @@ Pour entrer les textes qui seront effectivement utilisés par l'application selo
 
 ## Pour plus d'information
 
-
 * [« Localiser votre application » - Android Developers](https://developer.android.com/guide/topics/resources/localization?hl=fr)
-
-
 * [« Localiser l'interface utilisateur avec l'éditeur de traductions » - Android Developers](https://developer.android.com/studio/write/translations-editor?hl=fr)
-
-
-### * [« A Deep Dive into Internationalizing Jetpack Compose Android Apps » - Phrase](https://phrase.com/blog/posts/internationalizing-jetpack-compose-android-apps/)
+* [« A Deep Dive into Internationalizing Jetpack Compose Android Apps » - Phrase](https://phrase.com/blog/posts/internationalizing-jetpack-compose-android-apps/)
 
 ## Retrouver la configuration de localisation par programmation
 
 Si votre application Jetpack Compose a besoin de réagir différemment selon la langue configurée sur l'appareil mobile, ou simplement d'afficher cette configuration, vous pouvez faire ceci :
 
+Commencez par récupérer la locale configurée sur l'appareil :
 
 ```kotlin title="Jetpack Compose (Kotlin)"
-val configuration = LocalConfiguration.current
-val codeLocalisation = configuration.locales.get(0)   // chaîne du genre fr_CA ou en_US
-Text("Langue: $codeLocalisation")   
+val locale = LocalConfiguration.current.locales[0]
+```
+
+`locale` est un objet `Locale`. Sa propriété `country` contient le code du pays, par exemple `CA`, `FR` ou `US`. 
+
+Par exemple, on peut faire ceci pour choisir l'image d'un drapeau à afficher:
+
+```kotlin title="Jetpack Compose (Kotlin)"
+val locale = LocalConfiguration.current.locales[0]
+val drapeauResId = when (locale.country) {
+    "CA" -> R.drawable.drapeau_ca
+    "FR" -> R.drawable.drapeau_fr
+    "US" -> R.drawable.drapeau_us
+    else -> null
+}
+
+if (drapeauResId != null) {
+    Image(
+        painter = painterResource(id = drapeauResId),
+        contentDescription = "Drapeau ${locale.displayCountry}"
+    )
+}
 ```
