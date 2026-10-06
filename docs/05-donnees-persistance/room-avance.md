@@ -117,4 +117,4 @@ fun getDatabase(context: Context): MonprojetDatabase {
 
 On peut aussi supprimer manuellement la base de données dans le **Device Explorer**, à l'emplacement `/data/data/<nom_du_package>/databases`.
 
-    La définition de migrations afin de conserver les données existantes n'est pas couverte dans le cadre de ce cours.
+**La définition de migrations afin de conserver les données existantes n'est pas couverte dans le cadre de ce cours.**

@@ -5,7 +5,8 @@ title: "Liens hypertexte"
 # Liens hypertexte
 
 
-### 60.1 Lien hypertexte avec buildAnnotatedString()
+
+### Lien hypertexte avec buildAnnotatedString()
 
 
 Dans une application Android avec Jetpack Compose, il est possible de créer un lien hypertexte qui permettra d'ouvrir l'URL dans un navigateur.
@@ -16,10 +17,10 @@ Text(
     buildAnnotatedString {
         withLink(
             LinkAnnotation.Url(
-                "https://apical.xyz",
+                "https://www.cegepvicto.ca/",
             )
         ) {
-            append("Apical")
+            append("CÉGEP de Victoriaville")
         }
     }
 )
@@ -34,7 +35,7 @@ Text(
     buildAnnotatedString {
         withLink(
             LinkAnnotation.Url(
-                "https://apical.xyz",
+                "https://www.cegepvicto.ca/",
                 styles = TextLinkStyles(
                     style = SpanStyle(
                         fontSize = 25.sp,
@@ -42,40 +43,15 @@ Text(
                 ),
             )
         ) {
-            append("Apical")
+            append("CÉGEP de Victoriaville")
         }
     }
 )
 ```
 
 
-Notez qu'auparavant, on utilisait un texte enrichi avec un addStringAnnotation et le composable ClickableText. Ce composable est obsolète depuis la sortie de Compose Foundation 1.7.0 en 2024.
 
-
-```kotlin title="Jetpack Compose (Kotlin)"
-val texteAvecHyperlien = buildAnnotatedString {
-    append("Source : Android Developers")
-    addStringAnnotation(
-        tag = "URL",
-        annotation = "https://developer.android.com/jetpack/compose",
-        start = 9, // le caractère à l'indice 9 sera le premier cliquable
-        end = 27 // le caractère à l'indice 27 ne sera plus cliquable (la fin de la chaîne est à la position 26)
-    )
-}
-ClickableText(
-    text = texteAvecHyperlien,
-    onClick = { offset ->
-        texteAvecHyperlien.getStringAnnotations(tag = "URL", start = offset, end = offset)
-            .firstOrNull()?.let { annotation ->
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(annotation.item))
-                    context.startActivity(intent)    // Ouvre le lien dans un navigateur
-            }
-    }
-)
-```
-
-
-### 60.2 Card()
+# Card()
 
 
 La fonction composable Card permet de regrouper des composables en les plaçant par exemple dans un rectangle stylisé.
@@ -92,14 +68,11 @@ Card {
 ```
 
 
-
-
 ![Illustration](../images/page_181_img_01_156x76.png)
 
 
 
-
-Si on fait Ctrl +Clic sur le mot Card dans Android Studio, on voit que le Card est simplement un composable Surface qui contient un Column.
+Si on fait *Ctrl + Clic* sur le mot Card dans Android Studio, on voit que le Card est simplement un composable Surface qui contient un Column.
 
 
 Dans les faits, on ajoutera souvent un Column ou un Row à l'intérieur du Card pour ajouter de l'espacement intérieur (padding).
@@ -361,18 +334,10 @@ ElevatedCard(
 
 
 
-
 ![Illustration](../images/page_184_img_01_342x164.png)
 
 
 
 
-#### Pour plus d'information
-
-
-### * [« Card » - Android Developers](https://developer.android.com/jetpack/compose/components/card)
-61. Exercice 10
-
-
-
----
+## Pour plus d'information
+* [« Card » - Android Developers](https://developer.android.com/jetpack/compose/components/card)

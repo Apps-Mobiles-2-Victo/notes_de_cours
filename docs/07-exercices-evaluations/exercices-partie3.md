@@ -30,8 +30,7 @@ Vous devez poursuivre le développement de votre application Android qui permet 
 
 
 1. Modifiez votre application pour que quelques signets soient automatiquement insérés dans la base de données lors de sa création.
-1. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez
-oublié de faire le nécessaire pour que la base de données soit recréée.
+1. Lancez à nouveau votre application afin de voir les signets enregistrés. Si vous ne les voyez pas, c'est que vous avez oublié de faire le nécessaire pour que la base de données soit recréée.
 1. Prenez le temps de soigner la structure et l'apparence de votre application.
     * L'affichage d'un signet doit être réalisé dans sa propre fonction composable. La liste de signets fera appel à ce composable dans sa boucle.
     * Chaque signet doit être affiché dans un rectangle de l'apparence de votre choix. Suggestion : utilisez un Card. Jouez avec les couleurs, bordures, ombrages, espacements, polices ou tout autre aspect de votre choix afin d'obtenir une apparence professionnelle.
@@ -49,8 +48,7 @@ oublié de faire le nécessaire pour que la base de données soit recréée.
 1. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
 doit être définie dans un composable placé dans son propre fichier.
 1. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
-1. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous
-pouvez utiliser un simple Text() pour y parvenir.
+1. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous pouvez utiliser un simple Text() pour y parvenir.
 1. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros ou suffisamment espacés pour les gros doigts, etc.
 1. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux fichiers, l'ajout de dépendances, etc.
     * Pour faciliter votre travail, il serait intéressant de pouvoir avoir un projet modèle qui servirait de base à vos prochains projets.
