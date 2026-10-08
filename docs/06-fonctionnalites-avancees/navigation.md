@@ -88,10 +88,11 @@ Scaffold(
 
 La liste des composables qui peuvent être rejoints par navigation sera définie dans un composable *NavHost*. Cette liste est en fait une liste des routes possibles dans l'application. Ces routes sont parfois appelées itinéraires ou destinations.
 
+La navigation est en fait une pile de routes. La route qui est affichée est celle qui se trouve au sommet de la pile. Lorsque l'on navigue vers une nouvelle route, elle est ajoutée au sommet de la pile. Lorsque l'on revient à la route précédente, la route du sommet est retirée de la pile et la route précédente devient visible.
 
+Le *NavHost* affiche la composante correspondant à la route qui se trouve au sommet.
 
-Le *NavHost* sera placé dans une fonction composable que l'on codera dans son propre fichier, placé au même niveau que *MainActivity.kt* .
-
+Le *NavHost* sera placé dans une fonction composable *NavigationHost* que l'on codera dans son propre fichier *NavigationHost.kt*, placé au même niveau que *MainActivity.kt* .
 
 Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction composable à appeler.
 
@@ -177,7 +178,6 @@ Scaffold(
 ## Naviguer vers une page
 
 
-
 La méthode *navController.navigate* permet d'atteindre la page souhaitée et de l'ajouter à la pile des pages affichées.
 
 
@@ -192,7 +192,8 @@ Button(
 ```
 
 
-Pour revenir à la page d'avant et ainsi la sortir de la pile, on utilisera .popBackStack() .
+
+Pour revenir à la page d'avant et ainsi la sortir de la pile, on utilisera *popBackStack()*.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -210,10 +211,13 @@ Pour définir une route qui peut recevoir un paramètre, on utilise des accolade
 NavHost(navController = navController, startDestination = "home") {
     ...
     composable("rechercherItem/{texte}") { navBackStackEntry ->
-        // extraire le paramètre à partir de la route
-        val texte = requireNotNull(navBackStackEntry.arguments?.getString("texte"))
-        // passer le paramètre à la fonction composable
-        RechercherItem(navController, texte)
+        // Extraire le paramètre à partir de la route
+        // .getString() retourne un String? (nullable) 
+        val texte:String? = navBackStackEntry.arguments?.getString("texte")
+        // Passer le paramètre à la fonction composable
+        //   requireNotNull() permet de transformer un String? en String
+        //   Ici on sait que le paramètre ne peut pas être null car il est obligatoire dans la route
+        RechercherItem(navController, requireNotNull(texte))
     }
 }
 ```
@@ -231,7 +235,8 @@ Pour naviguer vers une route avec paramètre :
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
-navController.navigate("rechercherItem/$variable")
+val texteRecherche = "exemple"
+navController.navigate("rechercherItem/$texteRecherche")
 ```
 
 
@@ -264,7 +269,7 @@ Pour naviguer vers cette route :
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
-navController.navigate("editerItem/${item.id}")
+navController.navigate("editerItem/2")
 ```
 
 
@@ -277,20 +282,44 @@ Si le paramètre est optionnel :
 ```kotlin title="Fichier NavigationHost.kt"
 NavHost(navController = navController, startDestination = "home") {
     ...
-    composable("detailsItem?{itemId}") { navBackStackEntry ->
+    composable(
+        route = "detailsItem?itemId={itemId}",
+        arguments = listOf(
+            navArgument("itemId") {
+                type = NavType.StringType
+                nullable = true
+                defaultValue = null
+            }
+        )
+    ) { navBackStackEntry ->
         // extraire le paramètre à partir de la route
-        val itemId: String? = navBackStackEntry.arguments?.getString("itemId") ?: ""
+        val itemId: String? = navBackStackEntry.arguments?.getString("itemId")
         // passer le paramètre à la fonction composable
         DetailsItem(navController, itemId)
     }
 }
 ```
 
+Le paramètre de `DetailsItem` doit être de type `String?` (*nullable*).
+
+```kotlin title="Jetpack Compose (Kotlin)"
+@Composable
+fun DetailsItem(navController: NavController, itemId: String?) {
+    if (itemId != null) {
+        Text(text = "Détails de l'élément $itemId")
+    } else {
+        Text(text = "Aucun élément sélectionné")
+    }
+}
+```
 
 Cette fois, il sera possible de ne pas passer de paramètre au besoin.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
+navController.navigate("detailsItem?itemId=3")
+...
+// Page de détails vide
 navController.navigate("detailsItem")
 ```
 
@@ -309,17 +338,17 @@ navController.navigate("detailsItem")
 On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux fonctions composables qui en ont besoin.
 
 
-Dans le cas où une application qui travaille avec un ViewModel a besoin de navigation, une solution consiste à déclarer le ViewModel dans le NavigationHost puis à le passer en paramètre aux composables dans les routes où c'est nécessaire.
+Dans le cas où une application qui travaille avec un ViewModel a besoin de navigation, une solution consiste à déclarer le ViewModel dans le *NavigationHost* puis à le passer en paramètre aux composables dans les routes où c'est nécessaire.
 
 
 ```kotlin title="Fichier NavigationHost.kt"
 @Composable
 fun NavigationHost(navController: NavHostController) {
-     val categorieViewModel: CategorieViewModel = viewModel()
+    val categorieViewModel: CategorieViewModel = viewModel()
     NavHost(navController = navController, startDestination = "home") {
         ...
         composable("listeCategories") {
-            ListeCategories( categorieViewModel , ...)
+            ListeCategories( categorieViewModel, ...)
         }
     }
 }
@@ -333,12 +362,12 @@ Une autre technique consiste à déclarer le ViewModel au même endroit que le n
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
-     val categorieViewModel: CategorieViewModel = viewModel()
+    val categorieViewModel: CategorieViewModel = viewModel()
     Scaffold(
         ...,
         content = {
             ...
-            NavigationHost(navController, categorieViewModel )
+            NavigationHost(navController, categorieViewModel)
         }
     )
 }
@@ -358,7 +387,7 @@ fun NavigationHost(navController: NavHostController, categorieViewModel: Categor
 ```
 
 
-### 63.3 BottomAppBar
+## BottomAppBar
 
 
 La classe BottomAppBar permet de définir ce qui apparaîtra dans le bas de l'écran.
@@ -397,7 +426,6 @@ Notez que l'espacement entre les icônes doit être effectué manuellement.
 
 
 
-
 ![Illustration](../images/page_189_img_01_350x101.png)
 
 
@@ -419,8 +447,10 @@ Voici un exemple de barre de navigation qui utilise des Button plutôt que des i
 * [« Barres d'application » - Android Developer](https://developer.android.com/develop/ui/compose/components/app-bars?hl=fr)
 
 
-### * [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-)
-bars 63.4 NavigationBar
+* [« Composants et mises en page Material - Barres d'application » - Android Developpers](https://developer.android.com/jetpack/compose/layouts/material?hl=fr#app-bars)
+ 
+ 
+ ## NavigationBar
 
 
 Lorsqu'une application Android avec Jetpack Compose comprend de 3 à 5 icônes de navigation, il est possible d'utiliser un NavigationBar plutôt que de styliser manuellement les liens de navigation.
@@ -429,7 +459,9 @@ Lorsqu'une application Android avec Jetpack Compose comprend de 3 à 5 icônes d
 Cette limite du nombre d'icônes provient de la documentation du NavigationBar :
 
 
-### NavigationBar should contain three to five NavigationBarItems, each representing a singular destination.
+```
+NavigationBar should contain three to five NavigationBarItems, each representing a singular destination.
+```
 
 
 Si votre application ne répond pas à cette exigence, vous devrez **configurer la barre de navigation avec BottomAppBar**.
@@ -437,10 +469,12 @@ Si votre application ne répond pas à cette exigence, vous devrez **configurer 
 
 Voici un exemple d'application qui utilise un NavigationBar pour afficher trois icônes dans sa barre de navigation.
 
+`currentBackStackEntryAsState()` expose l'entrée courante de la pile de navigation sous forme d'un état observable par Compose. Quand la destination change, Compose recalcule le composable et met à jour l'élément sélectionné. 
+
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 val navController = rememberNavController()
-val currentBackStackEntry = navController.currentBackStackEntryAsState().value?.destination?.route
+val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 Scaffold(
     ...
     bottomBar = {
@@ -455,7 +489,7 @@ Scaffold(
                  label = {
                     Text("Accueil")
                  },
-                 selected = currentBackStackEntry == "home",
+                 selected = currentRoute == "home",
                  onClick = {
                     navController.navigate("home")
                 }
@@ -470,7 +504,7 @@ Scaffold(
                  label = {
                     Text("Information")
                  },
-                 selected = currentBackStackEntry == "information",
+                 selected = currentRoute == "information",
                  onClick = {
                     navController.navigate("information")
                 }
@@ -485,7 +519,7 @@ Scaffold(
                  label = {
                     Text("Mon compte")
                  },
-                 selected = currentBackStackEntry == "compte",
+                 selected = currentRoute == "compte",
                  onClick = {
                     navController.navigate("compte")
                 }
@@ -504,22 +538,12 @@ Voici la barre de navigation obtenue.
 Remarquez que les icônes sont automatiquement espacés pour prendre toute la largeur de l'écran.
 
 
-De plus, un indicatif visuel marque l'icône qui correpond à la page active.
-
-
+De plus, un indicatif visuel marque l'icône qui correspond à la page active.
 
 
 ![Illustration](../images/page_190_img_01_350x101.png)
 
 
+**Source** : 
 
-
-> **Source** : 
-
-### 1. * [« androidx.compose.material3 - NavigationBar » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-)
-summary#navigationbar
-64. Exercice 11
-
-
-
----
+* [« androidx.compose.material3 - NavigationBar » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#navigationbar)
