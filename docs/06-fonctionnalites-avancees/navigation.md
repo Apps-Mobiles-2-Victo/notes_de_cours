@@ -5,43 +5,43 @@ title: "Navigation multi-écrans"
 # Navigation multi-écrans
 
 
-### 63.1 La navigation
+## La navigation
 
 
 Beaucoup d'applications mobiles nécessitent un système de navigation pour gérer comment l'application passe d'un écran à l'autre.
 
 
-Je vous propose ici une technique à appliquer dans une application mobile Android avec JetPack Compose qui utilise l'API NavController .
+Je vous propose ici une technique à appliquer dans une application mobile Android avec JetPack Compose qui utilise l'API *NavController* .
 
 
 Dans cette fiche :
 
 
-#### Ajout de dépendances
+#### [Ajout de dépendances](#ajout-de-dépendances)
 
 
-#### NavController
+#### [NavController](#navcontroller)
 
 
-#### NavHost
+#### [NavHost](#navhost)
 
 
-#### Affichage de la page actuelle
+#### [Affichage de la page actuelle](#affichage-de-la-page-actuelle)
 
 
-#### Naviguer vers une page
+#### [Naviguer vers une page](#naviguer-vers-une-page)
 
 
-#### Passer des paramètres à une route
+#### [Passer des paramètres à une route](#passer-des-paramètres-à-une-route)
 
 
-#### Route avec paramètres de types différents
+#### [Route avec paramètres de types différents](#route-avec-paramètres-de-types-différents)
 
 
-#### Route avec paramètres optionnels
+#### [Route avec paramètres optionnels](#route-avec-paramètres-optionnels)
 
 
-### Ajout de dépendances
+## Ajout de dépendances
 
 
 Pour ajouter une fonctionnalité de navigation dans votre application, vous devez d'abord ajouter une dépendance au projet.
@@ -54,7 +54,7 @@ Dans le fichier build.gradle.kts qui se trouve dans le dossier app , ajoutez cec
 dependencies {
     ...
      // pour la navigation
-    implementation("androidx.navigation:navigation-compose:2.9.5")
+    implementation("androidx.navigation:navigation-compose:2.10.2")
 }
 ```
 
@@ -62,16 +62,14 @@ dependencies {
 Une fois la dépendance ajoutée, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
-### NavController
+## NavController
 
-
-Votre application doit avoir accès à une instance de NavController.
+Votre application doit avoir accès à une instance de *NavController*.
 
 
 L'instanciation doit avoir lieu dans un composable. Il faut choisir l'endroit le plus près de où on en aura besoin.
 
-
-Dans cet exemple, le Scaffold est le premier composable qui a besoin du NavController.
+Dans cet exemple, le *Scaffold* est le premier composable qui a besoin du NavController.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -84,13 +82,15 @@ Scaffold(
 ```
 
 
-### NavHost
+
+## NavHost
 
 
-La liste des composables qui peuvent être rejoints par navigation sera définie dans un NavHost . Cette liste est en fait une liste des routes possibles dans l'application. Ces routes sont parfois appelées itinéraires ou destinations.
+La liste des composables qui peuvent être rejoints par navigation sera définie dans un composable *NavHost*. Cette liste est en fait une liste des routes possibles dans l'application. Ces routes sont parfois appelées itinéraires ou destinations.
 
 
-Le NavHost sera placé dans une fonction composable que l'on codera dans son propre fichier, placé au même niveau que MainActivity.kt .
+
+Le *NavHost* sera placé dans une fonction composable que l'on codera dans son propre fichier, placé au même niveau que *MainActivity.kt* .
 
 
 Pour chaque route, on spécifiera le nom qui sera utilisé pour la rejoindre puis le nom de la fonction composable à appeler.
@@ -109,7 +109,7 @@ fun NavigationHost (navController: NavHostController) {
         composable("home") {
             HomeScreen (...)
         }
-        composable(" pageUn ") {
+        composable("pageUn") {
               PageUn (...)
         }
         composable("pageDeux") {
@@ -120,11 +120,10 @@ fun NavigationHost (navController: NavHostController) {
 ```
 
 
-### Il est d'usage de placer chaque fonction composable de cette liste dans son propre fichier, sous le dossier ui .
-Le nom du fichier sera le même que le nom de la fonction.
+Il est d'usage de placer chaque fonction composable de cette liste dans son propre fichier, sous le dossier *ui*. Le nom du fichier sera le même que le nom de la fonction.
 
 
-```kotlin title="Fichier ui/ HomeScreen .kt"
+```kotlin title="Fichier ui/HomeScreen.kt"
 @Composable
 fun HomeScreen(...) {
     ...
@@ -132,15 +131,14 @@ fun HomeScreen(...) {
 ```
 
 
-```kotlin title="Fichier ui/ PageUn .kt"
+```kotlin title="Fichier ui/PageUn.kt"
 @Composable
 fun PageUn(...) {
     ...
 }
 ```
 
-
-```kotlin title="Fichier ui/ PageDeux .kt"
+```kotlin title="Fichier ui/PageDeux.kt"
 @Composable
 fun PageDeux(...) {
     ...
@@ -148,13 +146,14 @@ fun PageDeux(...) {
 ```
 
 
-### Affichage de la page actuelle
+## Affichage de la page actuelle
 
 
-Dans le Scaffold, c'est le NavigationHost qui indiquera quelle page doit être affichée.
+Dans le Scaffold, c'est le *NavigationHost* qui indiquera quelle page doit être affichée.
 
 
-Remarquez l'utilisation du Column qui permet de spécifier une fois pour toutes les espacements à utiliser.
+
+Remarquez l'utilisation du *Column* qui permet de spécifier les espacements à utiliser pour toutes les pages.
 
 
 D'autres configurations peuvent y être apportées au besoin.
@@ -169,22 +168,23 @@ Scaffold(
         modifier = Modifier
             .padding(it)
     ) {
-         NavigationHost (navController = navController)
+         NavigationHost(navController = navController)
     }
 }
 ```
 
 
-### Naviguer vers une page
+## Naviguer vers une page
 
 
-La méthode navController.navigate permet d'atteindre la page souhaitée et de l'ajouter à la pile des pages affichées.
+
+La méthode *navController.navigate* permet d'atteindre la page souhaitée et de l'ajouter à la pile des pages affichées.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 Button(
     onClick = {
-        navController.navigate(" pageUn ")
+        navController.navigate("pageUn")
     }
 ) {
     Text(text = "Page un")
@@ -200,10 +200,10 @@ navController.popBackStack()
 ```
 
 
-### Passer des paramètres à une route
+## Passer des paramètres à une route
 
 
-Pour définir une route qui peut recevoir un paramètre :
+Pour définir une route qui peut recevoir un paramètre, on utilise des accolades dans le nom de la route. Dans cet exemple, le paramètre est nommé *texte*:
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -211,24 +211,21 @@ NavHost(navController = navController, startDestination = "home") {
     ...
     composable("rechercherItem/{texte}") { navBackStackEntry ->
         // extraire le paramètre à partir de la route
-        val texte: String? = navBackStackEntry.arguments?.getString("texte")
+        val texte = requireNotNull(navBackStackEntry.arguments?.getString("texte"))
         // passer le paramètre à la fonction composable
         RechercherItem(navController, texte)
     }
 }
 ```
 
-
-Le composable qui recevra un paramètre devra le déclarer comme pouvant être nul. Sachez cependant que si vous ne passez pas de paramètre lorsque vous naviguez vers cette route, le programme plantera.
-
+Le composable recevra le paramètre comme argument.
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 @Composable
-fun RechercherItem(navController: NavController, texte: String?) {
+fun RechercherItem(navController: NavController, texte: String) {
     ...
 }
 ```
-
 
 Pour naviguer vers une route avec paramètre :
 
@@ -238,13 +235,11 @@ navController.navigate("rechercherItem/$variable")
 ```
 
 
-### Route avec paramètres de types différents
+## Route avec paramètres de types différents
 
+Par défaut, les paramètres sont des chaînes de caractères (*String*).  Dans ce cas, les noms de paramètres sont extraits de la route automatiquement.
 
-Par défaut, les paramètres sont des chaînes de caractères.
-
-
-Si vous avez besoin d'un paramètre d'un autre type, par exemple un entier, vous devez le spécifier comme suit :
+Si vous avez besoin d'un paramètre d'un autre type, par exemple un entier, vous devez fournir le paramètre *arguments* à la route. Dans cet exemple, le paramètre *itemId* est de type entier.:
 
 
 ```kotlin title="Fichier NavigationHost.kt"
@@ -257,7 +252,7 @@ NavHost(navController = navController, startDestination = "home") {
         )
     ) { navBackStackEntry ->
         // extraire le paramètre à partir de la route
-        val itemId: Int = navBackStackEntry.arguments?. getInt ("itemId") ?: -1
+        val itemId: Int = navBackStackEntry.arguments?.getInt("itemId") ?: -1
         // passer le paramètre à la fonction composable
         EditerItem(navController, itemId)
     }
@@ -273,7 +268,7 @@ navController.navigate("editerItem/${item.id}")
 ```
 
 
-### Route avec paramètres optionnels
+## Route avec paramètres optionnels
 
 
 Si le paramètre est optionnel :
@@ -282,7 +277,7 @@ Si le paramètre est optionnel :
 ```kotlin title="Fichier NavigationHost.kt"
 NavHost(navController = navController, startDestination = "home") {
     ...
-    composable("detailsItem ? {itemId}") { navBackStackEntry ->
+    composable("detailsItem?{itemId}") { navBackStackEntry ->
         // extraire le paramètre à partir de la route
         val itemId: String? = navBackStackEntry.arguments?.getString("itemId") ?: ""
         // passer le paramètre à la fonction composable
@@ -300,14 +295,15 @@ navController.navigate("detailsItem")
 ```
 
 
-#### Pour plus d'information
+## Pour plus d'information
 
 
 * [« Naviguer avec Compose » - Android Developers](https://developer.android.com/jetpack/compose/navigation?hl=fr)
 
+* « Navigation et pile "Retour" » - Android Developers](https://developer.android.com/guide/navigation/backstack?hl=fr)
 
-### « Navigation et pile "Retour* [«  » - Android Developers](https://developer.android.com/guide/navigation/backstack?hl=fr)
-63.2 Le ViewModel et la navigation
+
+# Le ViewModel et la navigation
 
 
 On sait que dans une application, le ViewModel ne doit exister qu'en un seul exemplaire. Il doit donc être instancié à l'endroit approprié puis passé en paramètre aux fonctions composables qui en ont besoin.

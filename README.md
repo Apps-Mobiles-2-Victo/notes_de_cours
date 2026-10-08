@@ -4,3 +4,8 @@
 
 * déplacer la section Card de 06-fonctionnalites-avancees/liens-hypertexte.md vers une section dans 03-interface-compose/
 ** C'est là parce que demandé à être utilisé dans l'exercice 10
+
+* Hypertexte : code généré par AI utilise 
+
+uriHandler = LocalUriHandler.current
+Modifier.clickable { uriHandler.openUri() }
