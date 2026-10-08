@@ -474,7 +474,9 @@ Voici un exemple d'application qui utilise un NavigationBar pour afficher trois 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 val navController = rememberNavController()
-val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
+val currentBackStackEntryState = navController.currentBackStackEntryAsState()
+val currentRoute:String? = currentBackStackEntryState.value?.destination.route
+
 Scaffold(
     ...
     bottomBar = {
@@ -543,7 +545,29 @@ De plus, un indicatif visuel marque l'icône qui correspond à la page active.
 
 ![Illustration](../images/page_190_img_01_350x101.png)
 
-
 **Source** : 
 
 * [« androidx.compose.material3 - NavigationBar » - Android Developers](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#navigationbar)
+
+## topBar et navigation
+
+Le **topBar** du *Scaffold* peut être utilisé pour afficher un titre en lien avec la page active en accord avec le *currentRoute*.
+
+```kotlin title="Jetpack Compose (Kotlin)"
+Scaffold(
+    topBar = {
+        TopAppBar(
+            title = {
+                Text(
+                    when (currentRoute) {
+                        "home" -> "Accueil"
+                        "information" -> "Information"
+                        "compte" -> "Mon compte"
+                        else -> ""
+                    }
+                )
+            }
+        )        
+    },
+    // ... le reste du Scaffold
+)
