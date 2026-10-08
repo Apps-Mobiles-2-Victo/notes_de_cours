@@ -165,9 +165,9 @@ val navController = rememberNavController()
 Scaffold(
     ...
 ) {
+    // contenu du Scaffold
     Column(
-        modifier = Modifier
-            .padding(it)
+        modifier = Modifier.padding(it)
     ) {
          NavigationHost(navController = navController)
     }
@@ -551,7 +551,7 @@ De plus, un indicatif visuel marque l'icône qui correspond à la page active.
 
 ## topBar et navigation
 
-Le **topBar** du *Scaffold* peut être utilisé pour afficher un titre en lien avec la page active en accord avec le *currentRoute*.
+Le **topBar** du *Scaffold* peut être utilisé pour afficher un titre (ou sous-titre) en lien avec la page active en accord avec le *currentRoute*.
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 Scaffold(
@@ -571,3 +571,4 @@ Scaffold(
     },
     // ... le reste du Scaffold
 )
+```

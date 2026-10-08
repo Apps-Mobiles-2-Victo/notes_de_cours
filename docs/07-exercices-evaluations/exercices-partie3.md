@@ -45,11 +45,13 @@ Vous devez poursuivre le développement de votre application Android qui permet 
     * Une page d'accueil. Pour l'instant, elle ne fera qu'afficher un message ou une image de votre choix.
     * Une page qui liste vos signets.
     * Une page pour ajouter un signet. Pour l'instant, elle ne fera qu'afficher « À venir... ».
-1. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas
-doit être définie dans un composable placé dans son propre fichier.
+1. Dans la barre du bas, l'application doit présenter des icônes pour naviguer vers chacune des pages. La barre du bas doit être définie dans un composable placé dans son propre fichier.
 1. Les icônes de la barre du bas doivent être espacés pour remplir toute la largeur de l'écran.
 1. Assurez-vous que chaque page ait, en plus du titre de l'application, un sous-titre qui définit ce qu'elle affiche. Vous pouvez utiliser un simple Text() pour y parvenir.
 1. Vous devez soigner l'apparence de votre application : couleurs agréables, espacements suffisants, icônes assez gros ou suffisamment espacés pour les gros doigts, etc.
+
+<!-- STROTTIER voir script fourni par Ahmed
+
 1. OPTIONNEL : vous constatez certainement que la création d'un nouveau projet exige la création de nombreux fichiers, l'ajout de dépendances, etc.
     * Pour faciliter votre travail, il serait intéressant de pouvoir avoir un projet modèle qui servirait de base à vos prochains projets.
     * Je vous propose d'automatiser la tâche qui consiste à créer un nouveau projet à partir d'un projet de base.
@@ -57,9 +59,10 @@ doit être définie dans un composable placé dans son propre fichier.
     *   Je n'ai pas trouvé de fonctionnalités intégrée dans Android Studio pour effectuer ce type de tâche.Saurez-vous en trouver une?
     *  J'ai vu un script bash qui semblait faire à peu près cette tâche mais je ne l'ai pas testé :
     *     [https://github.com/erdo/commercial-template/blob/main/change_package.sh](https://github.com/erdo/commercial-template/blob/main/change_package.sh)
-(discussion reddit qui m'a mené à ce script : [https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?](https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?tl=fr) )
+(discussion reddit qui m'a mené à ce script : [https://www.reddit.com/r/androiddev/comments/1c3txyz/is_there_a_good_way_to_start_a_project_using_a/?]() )
     *  La solution passe peut-être par la copie du dossier de base et le renommage du projet. Saurez-vous trouver la technique la plus efficace pour y parvenir?
-
+<>
+-->
 
 ## Exercice 12 - Gestionnaire de signets - partie 4 et questions théoriques
 
@@ -76,8 +79,7 @@ Posez-lui des questions jusqu'à ce que vous saisissiez bien le rôle de chaque 
  Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré puisse être enregistré dans la base de données.
 
 
-#### b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord
-dans les cases de saisie.
+#### b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord dans les cases de saisie.
 
 
 #### c. L'application doit retourner automatiquement à la liste des signets après l'ajout.
