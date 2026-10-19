@@ -204,6 +204,7 @@ coroutineScope.launch {
 ##  Retrouver les données de l'enregistrement à modifier
 
 
+<!-- STROTTIER - DELETE ME
 Avant 2025, la documentation officielle d'Android énonçait clairement qu'il faut passer un id en paramètre à une route plutôt qu'un objet.
 
 
@@ -224,6 +225,7 @@ En effet, si on voulait passer un objet complet :
 
 Pour ces raisons, on ne passera pas une instance du modèle en paramètre à la route. On travaillera plutôt avec un identifiant.
 
+-->
 
 Les données seront retrouvées dans la base de données à l'aide du ViewModel.
 
@@ -256,8 +258,8 @@ suspend fun retrouverCategorie(id: Int) : Categorie? {
 ```
 
 
-#### La fonction composable qui affiche le formulaire recevra l'identifiant en paramètre et retrouvera les données dans la
-base de données comme suit :
+
+La fonction composable qui affiche le formulaire recevra l'identifiant en paramètre et retrouvera les données dans la base de données comme suit :
 
 
 ```kotlin title="Fichier ui/FormulaireCategorie.kt"
@@ -271,10 +273,3 @@ fun FormulaireCategorie( categorieId: Int , ...) {
     ...
 }
 ```
-
-
-## 69. Amélioration du ViewModel
-
-
-
----
