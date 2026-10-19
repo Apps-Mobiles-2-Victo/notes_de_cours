@@ -1,8 +1,8 @@
 ---
-title: "Room avancé et requêtes réactives"
+title: "Room: données initiales et migrations"
 ---
 
-# Room avancé et requêtes réactives
+# Room: données initiales et migrations
 
 
 ## Ajouter des données initiales

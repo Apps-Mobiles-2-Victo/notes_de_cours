@@ -86,7 +86,7 @@ nav:
       - "Préférences utilisateur": "05-donnees-persistance/preferences-utilisateur.md"
       - "Système de fichiers émulateur": "05-donnees-persistance/systeme-fichiers.md"
       - "Base de données Room": "05-donnees-persistance/room-base-de-donnees.md"
-      - "Room avancé": "05-donnees-persistance/room-avance.md"
+      - "Room: données initiales et migrations": "05-donnees-persistance/room-avance.md"
       - "Formulaires CRUD": "05-donnees-persistance/formulaires-crud.md"
       - "Données distantes & API": "05-donnees-persistance/donnees-distantes-api.md"
   - "6. Fonctionnalités avancées":

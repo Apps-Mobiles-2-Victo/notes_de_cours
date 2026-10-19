@@ -57,7 +57,7 @@ Ces notes sont structurées de façon **thématique** afin de faciliter l'appren
 * [**Préférences utilisateur**](05-donnees-persistance/preferences-utilisateur.md) : Stockage clé-valeur avec DataStore Preferences.
 * [**Système de fichiers de l'émulateur**](05-donnees-persistance/systeme-fichiers.md) : Explorateur de fichiers, répertoires internes de l'application et bases de données SQLite.
 * [**Base de données locale avec Room**](05-donnees-persistance/room-base-de-donnees.md) : Entités (`@Entity`), DAO (`@Dao`), base de données (`@Database`) et requêtes CRUD.
-* [**Room avancé**](05-donnees-persistance/room-avance.md) : Observation réactive en continu avec `Flow`, tris et filtres dynamiques.
+* [**Room: données initiales et migrations**](05-donnees-persistance/room-avance.md) : Données initiales et évolution de la structure de la base de données.
 * [**Formulaires CRUD**](05-donnees-persistance/formulaires-crud.md) : Formulaires d'ajout, de validation, de modification et de suppression de données.
 * [**Données distantes & API REST**](05-donnees-persistance/donnees-distantes-api.md) : Appels réseau HTTP, sérialisation JSON et gestion des autorisations Internet.
 

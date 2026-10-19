@@ -17,19 +17,19 @@ Pour que le texte entré dans une boîte de saisie soit affiché dans la boîte,
 Dans cette fiche :
 
 
-#### TextField
+- TextField
 
 
-#### OutlinedTextField
+- OutlinedTextField
 
 
-#### supportingText
+- supportingText
 
 
-#### Type de clavier
+- Type de clavier
 
 
-#### TextField ou OulinedTextField avec ViewModel
+- TextField ou OulinedTextField avec ViewModel
 
 
 ### TextField
@@ -143,25 +143,25 @@ Afin d'améliorer l'expérience utilisateur, il est important de spécifier le t
 Les principaux types de clavier sont :
 
 
-#### Text (par défaut)
+- Text (par défaut)
 
 
-#### Number
+- Number
 
 
-#### Decimal (dans derniers tests effectués, était identique à Number)
+- Decimal (dans derniers tests effectués, était identique à Number)
 
 
-#### Email (semblable à Text mais la virgule est remplacée par un @)
+- Email (semblable à Text mais la virgule est remplacée par un @)
 
 
-#### Password (lettres et chiffres dans un même écran)
+- Password (lettres et chiffres dans un même écran)
 
 
-#### Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
+- Phone (chiffres avec lettres imprimées sur les touches correspondantes - ex : 2 ABC)
 
 
-#### Uri (semblable à Text mais la virgule est remplacée par un /)
+- Uri (semblable à Text mais la virgule est remplacée par un /)
 
 
 
@@ -288,10 +288,10 @@ Les bonnes pratiques de programmations demandent d'utiliser un ViewModel propre 
 Ceci permet de mieux séparer les responsabilités (Single Responsibility Principle) :
 
 
-#### Un ViewModel gère la liste et les opérations CRUD avec la base de données.
+- Un ViewModel gère la liste et les opérations CRUD avec la base de données.
 
 
-#### L'autre gère l'état du formulaire et sa validation (il n'accèdera pas à la base de données donc pas de référence au
+- L'autre gère l'état du formulaire et sa validation (il n'accèdera pas à la base de données donc pas de référence au
 Repository)
 
 
@@ -503,11 +503,10 @@ utilisateur en fonction des informations minimales nécessaires, telles que les 
 En effet, si on voulait passer un objet complet :
 
 
-#### On serait confrontés à une limite de taille puisque l'objet sera **passé en paramètre
-à la route**.
+- On serait confrontés à une limite de taille puisque l'objet sera **passé en paramètre à la route**.
 
 
-#### Les données pourraient être obsolètes si modifiées ailleurs.
+- Les données pourraient être obsolètes si modifiées ailleurs.
 
 
 Pour ces raisons, on ne passera pas une instance du modèle en paramètre à la route. On travaillera plutôt avec un identifiant.
@@ -519,19 +518,16 @@ Les données seront retrouvées dans la base de données à l'aide du ViewModel.
 Vous devrez :
 
 
-#### **Dans le DAO** :
-ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
+- **Dans le DAO** : ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
 
 
 Remarquez que cette fonction n'a pas besoin d'être suspendue car le mécanisme de flux gère l'exécution asynchrone.
 
 
-#### **Dans le dépôt de données** : définir une fonction qui
-fait appel à la fonction du Dao pour retrouver les données.
+- **Dans le dépôt de données** : définir une fonction qui fait appel à la fonction du Dao pour retrouver les données.
 
 
-#### **Dans le ViewModel** :
-définir une fonction qui fait appel au dépôt de données.
+- **Dans le ViewModel** : définir une fonction qui fait appel au dépôt de données.
 
 
 Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
