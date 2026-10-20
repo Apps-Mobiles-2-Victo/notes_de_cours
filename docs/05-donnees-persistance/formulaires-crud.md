@@ -4,8 +4,18 @@ title: "Formulaires de données (Ajout, Modification, Suppression)"
 
 # Formulaires de données (Ajout, Modification, Suppression)
 
-## Validation
 
+Via le DAO, on peut effectuer des opérations CRUD (Create, Read, Update, Delete) sur les données de la base de données.
+
+Les requêtes SQL pour *Create*, *Update* et *Delete* sont automatiquement générées par Room à partir des annotations `@Insert`, `@Update` et `@Delete` placées sur les méthodes du DAO.
+
+Par contre, pour *Read*, il faut écrire une requête SQL avec l'annotation `@Query` sur la méthode du DAO. On peut avoir à obtenir une liste, ou un seul élément à partir d'un identifiant.
+
+Les requêtes Create et Update sont généralement effectuées à partir d'un formulaire de saisie de données. Le formulaire peut être utilisé pour ajouter de nouvelles données ou pour modifier des données existantes.  
+
+Une validation des données saisies est souvent nécessaire avant de les enregistrer dans la base de données. 
+
+## Validation
 
 C'est dans un ViewModel que la logique de validation sera codée.
 
@@ -24,7 +34,7 @@ Ceci permet de mieux séparer les responsabilités (*Single Responsibility Princ
 Je vous suggère d'ajouter la validation à la méthode qui met à jour la valeur saisie. En effet, si vous travaillez avec deux méthodes séparées, vous n'aurez pas de garantie que le _uiState.update qui met à jour la valeur saisie soit terminé avant qu'une autre méthode, telle la validation, tente d'utiliser cette valeur.
 
 
-Voici un exemple simple :
+Voici un exemple:
 
 
 ```kotlin title="ViewModel"
@@ -201,7 +211,7 @@ coroutineScope.launch {
 ```
 
 
-##  Retrouver les données de l'enregistrement à modifier
+##  Retrouver les données d'un enregistrement à modifier
 
 
 <!-- STROTTIER - DELETE ME
@@ -227,25 +237,29 @@ Pour ces raisons, on ne passera pas une instance du modèle en paramètre à la 
 
 -->
 
-Les données seront retrouvées dans la base de données à l'aide du ViewModel.
+Les données seront retrouvées à partir de l'identifiant dans la base de données à l'aide du ViewModel.
 
 
 Vous devrez :
 
 
-- **Dans le DAO** : ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id, identifié par :id. L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
+- **Dans le DAO** : ajouter une annotation @Query pour spécifier la requête à effectuer pour retrouver les données à partir d'un identifiant. La requête travaillera avec un paramètre id (identifié par :id dans le SQL). L'annotation @Query sera suivie par une fonction qui retourne un Flow<T>.
+
+```kotlin title="Fichier data/CategorieDao.kt"
+@Query("SELECT * FROM categories WHERE id = :id")
+fun retrouverCategorie(id: Int): Flow<Categorie?>
+```
 
 
 Remarquez que cette fonction n'a pas besoin d'être suspendue car le mécanisme de flux gère l'exécution asynchrone.
 
 
-- **Dans le dépôt de données** : définir une fonction qui fait appel à la fonction du Dao pour retrouver les données.
+- **Dans le ViewModel** : obtenir le DAO de la base de données et définir une fonction qui appelle le DAO pour retrouver les données.
 
 
-- **Dans le ViewModel** : définir une fonction qui fait appel au dépôt de données.
+Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. 
 
-
-Remarquez que cette fonction utilise firstOrNull() pour retrouver le premier élément émis par le flux puis arrêter le flux. Si elle utilisait collect(), la fonction demeurerait suspendue tant que le flux n'aurait pas terminé d'émettre des éléments. À moins d'être initialisées dans un **LaunchedEffect**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
+À moins d'être initialisées dans un **LaunchedEffect**, les informations recherchées pourraient donc ne pas encore être disponibles au moment où elles doivent être utilisées.
 
 
 Cette fois, la fonction doit être suspendue car elle utilise la fonction suspendue firstOrNull().
@@ -253,7 +267,7 @@ Cette fois, la fonction doit être suspendue car elle utilise la fonction suspen
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
 suspend fun retrouverCategorie(id: Int) : Categorie? {
-    return _repository.retrouverCategorie(id).firstOrNull()
+    return categorieDao.retrouverCategorie(id).firstOrNull()
 }
 ```
 
