@@ -132,49 +132,53 @@ Dans le cas où le ViewModel hérite de AndroidViewModel et reçoit une référe
 val message = application.applicationContext.getString(R.string.le_titre_est_requis)
 ```
 
-<!-- STROTTIER déplacer vers une section avancée
-Mais, lorsque possible, il est préférable de créer un ViewModel qui hérite de ViewModel plutôt que de AndroidViewModel afin de faciliter les tests unitaires. Le contexte de l'application n'est alors plus disponible.
 
 
-Pour internationaliser les messages d'erreur, une solution intéressante consiste à initialiser dans le ViewModel seulement l'identifiant de la chaîne.
+Une autre approche, qui évite de fournir un contexte au ViewModel, consiste à y conserver l'identifiant de la ressource plutôt que le texte traduit. Le ViewModel peut retourner cet identifiant ou, comme dans l'exemple ci-dessous, le placer dans le `UiState`. Le composable utilise ensuite `stringResource` pour afficher le message.
 
+L'annotation `@StringRes` indique que cette propriété contient un identifiant de ressource de chaîne.
 
-On changera le UIState comme suit.
+```kotlin title="UiState et ViewModel (Kotlin)"
+data class FormulaireCategorieUiState(
+    val titre: String = "",
+    @StringRes val erreurTitreId: Int? = null
+)
 
+class FormulaireCategorieViewModel : ViewModel() {
+    private val _uiState = mutableStateOf(FormulaireCategorieUiState())
+    val uiState: FormulaireCategorieUiState
+        get() = _uiState.value
 
-L'annotation @StringRes agit comme un garde-fou pour assurer qu'on n'entre pas une valeur qui ne correspond pas à une chaîne internationalisée.
-
-
-```kotlin title="UIState (Kotlin)"
-@StringRes private var _erreurTitreId: Int? = null,
-```
-
-
-Et on initialisera cette variable dans le ViewModel :
-
-
-```kotlin title="ViewModel (Kotlin)"
-var messageErreurId: Int? = null
-if (titre.isBlank()) {
-    messageErreurId = R.string.le_titre_est_requis
-}
-...
-_uiState.update {
-    it.copy (
-        ...,
-        _erreurTitreId = messageErreurId
-    )
+    fun ajusterEtValiderTitre(titre: String) {
+        val erreurTitreId = if (titre.isBlank()) {
+            R.string.le_titre_est_requis
+        } else {
+            null
+        }
+        _uiState.value = _uiState.value.copy(
+            titre = titre,
+            erreurTitreId = erreurTitreId
+        )
+    }
 }
 ```
 
-
-C'est le composable qui se chargera de charger la chaîne à l'aide du contexte.
-
+Dans le composable, on affiche le message seulement lorsqu'un identifiant est présent (remarquer *stringResource*):
 
 ```kotlin title="Composable (Kotlin)"
-Text(stringResource(formulaireCategorieUiState.erreurTitreId!!))
+OutlinedTextField(
+    value = uiState.titre,
+    onValueChange = formulaireViewModel::ajusterEtValiderTitre,
+    label = { Text("Titre") },
+    isError = uiState.erreurTitreId != null,
+    supportingText = {
+        val erreurId = uiState.erreurTitreId
+        if (erreurId != null) {
+            Text(stringResource(erreurId))
+        }
+    }
+)
 ```
--->
 
 ### Enregistrement
 
