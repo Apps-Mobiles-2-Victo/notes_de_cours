@@ -64,83 +64,62 @@ Vous devez poursuivre le développement de votre application Android qui permet 
 <>
 -->
 
-## Exercice 12 - Gestionnaire de signets - partie 4 et questions théoriques
+## Exercice 12 - Gestionnaire de signets - partie 4
 
 
-1. Afin de bien comprendre le code du ViewModelFactory, demandez à votre outil d'IA favori de vous expliquer ce code.
-Posez-lui des questions jusqu'à ce que vous saisissiez bien le rôle de chaque ligne de code.
+Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.
+
+Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré puisse être enregistré dans la base de données.
 
 
-2. Demandez à votre prof de vous remettre une feuille avec les questions théoriques. Répondez-y en équipe de deux.
+- Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord dans les cases de saisie.
 
+- L'application doit retourner automatiquement à la liste des signets après l'ajout.
 
-3. Vous avez désormais en main tous les morceaux pour finaliser le CRUD de vos signets.
+- Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.
 
- Développez le formulaire d'ajout de données et faites le nécessaire pour que le contenu qui y est entré puisse être enregistré dans la base de données.
+    - Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans la BD.
 
+    - Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si l'usager clique sur Oui.
 
-#### b. Effectuez la validation requise pour l'URL et la description. Assurez-vous qu'il ne soit pas possible d'esquiver les validations en cliquant directement sur le bouton d'enregistrement sans cliquer d'abord dans les cases de saisie.
+- Assurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.
 
+- Lorsque l'usager clique sur l'icône d'édition, les données du signet sont retrouvées dans la base de données et affichées dans le formulaire d'édition. Le bouton d'enregistrement modifie les données dans la BD.
 
-#### c. L'application doit retourner automatiquement à la liste des signets après l'ajout.
+- Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.
 
-
-#### d. Dans la liste des signets, chaque entrée doit afficher une icône d'édition et une icône de suppression.
-
-
-#### i. Un clic sur l'icône d'édition retrouvera les informations dans la base de données puis les affichera dans le formulaire d'édition. Le bouton d'enregistrement modifiera les données dans
-la BD.
-
-
-#### ii. Lorsque l'usager clique sur l'icône de suppression, une boîte de confirmation affiche le message « Désirez-vous vraiment supprimer le signet xxx ». Les xxx doivent être remplacés
-par la description du signet sur lequel l'usager a cliqué. La suppression n'aura lieu que si l'usager clique sur Oui.
-
-
-#### e. Assurez-vous que l'affichage soit correct dans le cas où un signet a un très long titre ou un très long URL.
-
-
-#### f. Assurez-vous que toutes les chaînes soient correctement internationalisées et localisées.
-
-
-#### g. OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification d'un signet.
+- OPTIONNEL : faites en sorte que le même formulaire soit utilisé lors de l'ajout et lors de la modification d'un signet.
 
 
 
-### API, APK et questions théoriques
+## Exercice 13 - API, APK et questions théoriques
 
-
-## 1. Demandez à votre prof de vous remettre une feuille avec les questions théoriques.  Répondez-y en équipe de deux.
-
-
-### 2. Au début du second cours consacré à cet exercice, demandez à votre prof de vous remettre une nouvelle feuille avec les questions théoriques. Répondez-y en équipe de deux.
-
-
-### 3. Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
+-Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
 Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 
 
-#### a. Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les points de terminaison fact, facts et breeds.
+- Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les points de terminaison fact, facts et breeds.
 
 
-#### b. Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.
+- Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.
 
 
-#### c. Écrivez une application Android avec Jetpack Compose qui affiche de façon aléatoire un fait sur les chats.
+- Écrivez une application Android avec Jetpack Compose qui affiche de façon aléatoire un fait sur les chats.
 
 
-#### Un premier fait est affiché dès le démarrage de l'application. Un bouton permet d'afficher un autre fait de façon aléatoire.
+- Un premier fait est affiché dès le démarrage de l'application. Un bouton permet d'afficher un autre fait de façon aléatoire.
 
 
-#### d. Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not Found » ne sont pas acceptables.
+- Assurez-vous qu'en cas de problème quel qu'il soit, l'usager soit bien informé de ce qui se passe. Par exemple, modifiez le point d'accès pour simuler ce qui se passerait si l'API changeait et que le point d'accès n'était plus valide. L'application doit afficher un message explicite. Les messages du genre « Not Found » ne sont pas acceptables.
 
 
-#### e. Modifiez l'icône d'application de votre application sur les chats.
+- Modifiez l'icône d'application de votre application sur les chats.
 
 
-#### f. Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication en sideload).
+- Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication en sideload).
 
 
-#### g. OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver un API qui fournit de telles photos.
+- OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver un API qui fournit de telles photos.
 
 
 

@@ -11,7 +11,11 @@ Les requêtes SQL pour *Create*, *Update* et *Delete* sont automatiquement gén�
 
 Par contre, pour *Read*, il faut écrire une requête SQL avec l'annotation `@Query` sur la méthode du DAO. On peut avoir à obtenir une liste, ou un seul élément à partir d'un identifiant.
 
-Les requêtes Create et Update sont généralement effectuées à partir d'un formulaire de saisie de données. Le formulaire peut être utilisé pour ajouter de nouvelles données ou pour modifier des données existantes.  
+Le `@Delete` généré par Room supprime l'enregistrement correspondant à l'objet passé en paramètre.  Si vous ne possédez que l'identifiant, vous devrez soit:
+- écrire manuellement la requête de suppression, soit
+- d'abord retrouver l'objet complet dans la base de données à l'aide d'une requête SQL avec l'annotation `@Query` sur la méthode du DAO.
+
+Les requêtes *Create* et *Update* sont généralement effectuées à partir d'un formulaire de saisie de données. Le formulaire peut être utilisé pour ajouter de nouvelles données ou pour modifier des données existantes.  
 
 Une validation des données saisies est souvent nécessaire avant de les enregistrer dans la base de données. 
 
@@ -19,8 +23,7 @@ Une validation des données saisies est souvent nécessaire avant de les enregis
 
 C'est dans un ViewModel que la logique de validation sera codée.
 
-
-Les bonnes pratiques de programmations demandent d'utiliser un ViewModel propre à la page du formulaire.
+Les bonnes pratiques de programmation demandent d'utiliser un ViewModel propre à la page du formulaire.
 
 
 Ceci permet de mieux séparer les responsabilités (*Single Responsibility Principle*) :
