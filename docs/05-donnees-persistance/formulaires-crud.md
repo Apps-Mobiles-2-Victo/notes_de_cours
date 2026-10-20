@@ -35,26 +35,33 @@ Ceci permet de mieux séparer les responsabilités (*Single Responsibility Princ
 - L'autre gère l'état du formulaire et sa validation (il n'accédera pas à la base de données)
 
 
-Je vous suggère d'ajouter la validation à la méthode qui met à jour la valeur saisie. En effet, si vous travaillez avec deux méthodes séparées, vous n'aurez pas de garantie que le _uiState.update qui met à jour la valeur saisie soit terminé avant qu'une autre méthode, telle la validation, tente d'utiliser cette valeur.
+Je vous suggère d'ajouter la validation à la méthode qui met à jour la valeur saisie. Ainsi, le texte et son éventuel message d'erreur sont calculés ensemble et publiés dans le même `UiState`, sans afficher temporairement le nouveau texte avec l'ancien message d'erreur.
 
 
 Voici un exemple:
 
 
 ```kotlin title="ViewModel"
+data class FormulaireCategorieUiState(
+    val titre: String = "",
+    val erreurTitre: String? = null
+)
+
 class FormulaireCategorieViewModel : ViewModel() {
-    ...
+    private val _uiState = mutableStateOf(FormulaireCategorieUiState())
+    val uiState: FormulaireCategorieUiState
+        get() = _uiState.value
+
     fun ajusterEtValiderTitre(titre: String) {
-        var messageErreur= ""
-        if (titre.length > 100) {
-            messageErreur = "Le titre doit comporter 100 caractères ou moins."
+        val erreurTitre = if (titre.length > 100) {
+            "Le titre doit comporter 100 caractères ou moins."
+        } else {
+            null
         }
-        _uiState.update {
-            it.copy (
-                _titre = titre,
-                _messageErreurTitre = messageErreur
-            )
-        }
+        _uiState.value = _uiState.value.copy(
+            titre = titre,
+            erreurTitre = erreurTitre
+        )
     }
 }
 ```
@@ -62,13 +69,13 @@ class FormulaireCategorieViewModel : ViewModel() {
 
 ```kotlin title="Jetpack Compose (Kotin)"
 OutlinedTextField(
-    value = ...,
+    value = formulaireCategorieUiState.titre,
     onValueChange = {
         formulaireCategorieViewModel.ajusterEtValiderTitre(it)
     },
     label = { Text("Titre") },
     ...,   // autres configurations, par exemple choix du clavier
-    isError = formulaireCategorieUiState.messageErreurTitre != "",
+    isError = formulaireCategorieUiState.erreurTitre != null,
 )
 ```
 
@@ -78,17 +85,15 @@ Pour afficher le message, vous pouvez utiliser l'attribut supportingText du comp
 
 ```kotlin title="Jetpack Compose (Kotin)"
 OutlinedTextField(
-    value = ...,
+    value = formulaireCategorieUiState.titre,
     onValueChange = {
-       formulaireCategorieViewModel.validerEtAjusterTitre(it)
+         formulaireCategorieViewModel.ajusterEtValiderTitre(it)
     },
     label = { Text("Titre") },
     ...,   // autres configurations, par exemple choix du clavier
-    isError = formulaireCategorieUiState.messageErreurTitre != "",
+    isError = formulaireCategorieUiState.erreurTitre != null,
     supportingText = {
-        if (formulaireCategorieUiState.messageErreurTitre != "") {
-            Text(formulaireCategorieUiState.messageErreurTitre)
-        }
+        formulaireCategorieUiState.erreurTitre?.let { Text(it) }
     }
 )
 ```
