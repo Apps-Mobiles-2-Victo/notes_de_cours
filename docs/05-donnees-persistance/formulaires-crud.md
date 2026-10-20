@@ -187,37 +187,44 @@ Dans cet exemple, les données sont insérées dans la base de données à l'aid
 
 ```kotlin title="Jetpack Compose (Kotlin)"
 @Composable
-fun FormulaireCategorie(viewModel: CategorieViewModel) {
+fun AjouterCategorieScreen(
+    categorieViewModel: CategorieViewModel,
+    navController: NavController,
+    formulaireViewModel: FormulaireCategorieViewModel = viewModel()
+) {
+    val uiState = formulaireViewModel.uiState
     val coroutineScope = rememberCoroutineScope()
-    ...
-    Button(
-        onClick = {
-            enregistrer(...)
-        },
-    ) {
-        Text(text = "Enregistrer")
+
+    Column {
+        OutlinedTextField(
+            value = uiState.titre,
+            onValueChange = formulaireViewModel::ajusterEtValiderTitre,
+            label = { Text("Titre") },
+            isError = uiState.erreurTitre != null,
+            supportingText = {
+                uiState.erreurTitre?.let { Text(it) }
+            }
+        )
+
+        Button(
+            enabled = uiState.titre.isNotBlank() && uiState.erreurTitre == null,
+            onClick = {
+                coroutineScope.launch {
+                    categorieViewModel.insererCategorie(
+                        Categorie(titre = uiState.titre)
+                    )
+                    navController.navigate("listeCategories")
+                }
+            }
+        ) {
+            Text("Enregistrer")
+        }
     }
-    ...
-}
-fun enregistrer(...) {
-    coroutineScope.launch {
-        viewModel.insererCategorie(...)
-    }
-    ...
 }
 ```
 
 
-Une fois l'enregistrement terminé, il est intéressant de retourner à la page qui liste les données.
-
-
-```kotlin title="Jetpack Compose (Kotlin)"
-coroutineScope.launch {
-    categorieViewModel.insererCategorie(...)
-    ...    // on pourrait par exemple réinitialiser les données du formulaire
-    navController.navigate("...")
-}
-```
+Comme `insererCategorie()` est suspendue, la navigation a lieu après la fin de l'insertion. Remplacez `"listeCategories"` par la route de la page qui affiche la liste dans votre application.
 
 
 ##  Retrouver les données d'un enregistrement à modifier

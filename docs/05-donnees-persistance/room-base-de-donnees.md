@@ -333,7 +333,7 @@ Le ViewModel obtient le DAO depuis la base de données et l'utilise pour lire ou
 Le DAO retourne un `Flow<List<Categorie>>`. Si l'écran n'a besoin que de la liste, le ViewModel peut exposer ce flux directement. Compose le collecte avec `collectAsState` et se met à jour lorsque Room émet une nouvelle liste.
 
 
-Les opérations d'écriture du DAO étant `suspend`, le ViewModel les appelle dans une coroutine.
+Les opérations d'écriture du DAO étant `suspend`, elles doivent être appelées depuis une coroutine. Ici, `insererCategorie` est également `suspend` : l'appelant peut donc attendre la fin de l'insertion avant de poursuivre.
 
 ```kotlin title="Fichier ui/CategorieViewModel.kt"
 import kotlinx.coroutines.flow.Flow
@@ -343,7 +343,7 @@ class CategorieViewModel(application: Application) : AndroidViewModel(applicatio
     private val categorieDao = MonprojetDatabase.getDatabase(application).categorieDao()
     val categories: Flow<List<Categorie>> = categorieDao.listerCategories()
 
-    fun insererCategorie(categorie: Categorie) = viewModelScope.launch {
+    suspend fun insererCategorie(categorie: Categorie) {
         categorieDao.insererCategorie(categorie)
     }
 
