@@ -12,6 +12,7 @@ Les requêtes SQL pour *Create*, *Update* et *Delete* sont automatiquement gén�
 Par contre, pour *Read*, il faut écrire une requête SQL avec l'annotation `@Query` sur la méthode du DAO. On peut avoir à obtenir une liste, ou un seul élément à partir d'un identifiant.
 
 Le `@Delete` généré par Room supprime l'enregistrement correspondant à l'objet passé en paramètre.  Si vous ne possédez que l'identifiant, vous devrez soit:
+
 - écrire manuellement la requête de suppression, soit
 - d'abord retrouver l'objet complet dans la base de données à l'aide d'une requête SQL avec l'annotation `@Query` sur la méthode du DAO.
 
@@ -283,7 +284,7 @@ La fonction composable qui affiche le formulaire recevra l'identifiant en param�
 @Composable
 fun FormulaireCategorie( categorieId: Int , ...) {
     // initialiser les variables d'état du ViewModel dès que categorieId change
-    **LaunchedEffect**(categorieId) {
+    LaunchedEffect(categorieId) {
         val categorie = categorieViewModel.retrouverCategorie(categorieId)
         ...
     } 
