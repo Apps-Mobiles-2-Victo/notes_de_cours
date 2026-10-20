@@ -5,13 +5,15 @@ title: "Programmation asynchrone et Coroutines"
 # Programmation asynchrone et Coroutines
 
 
-### 81.1 Les coroutines
+## Les coroutines
 
 
 Selon la documentation officielle d'Android :
 
 
-### Les coroutines sont la solution recommandée pour la programmation asynchrone sur Android.
+```
+Les coroutines sont la solution recommandée pour la programmation asynchrone sur Android.
+```
 
 
 > **Source** : 
@@ -19,7 +21,7 @@ Selon la documentation officielle d'Android :
 1, * [« Coroutines Kotlin sur Android » - Android Developers](https://developer.android.com/kotlin/coroutines?hl=fr)
 
 
-#### Pour plus d'information
+### Pour plus d'information
 
 
 * [« Asynchronous programming with coroutines » - Kotlin](https://kotlinlang.org/spec/asynchronous-programming-with-coroutines.html)
@@ -36,13 +38,13 @@ with-lifecycle-scope-in-a-correct-way-973a7e1bfe63
 * [« Flux Kotlin sur Android » - Android Developers](https://developer.android.com/kotlin/flow?hl=fr)
 
 
-### 81.2 Appeler des fonctions asynchrones
+## Appeler des fonctions asynchrones
 
 
 ...
 
 
-#### Pour plus d'information
+### Pour plus d'information
 
 
 * [« Composing suspending functions » - Kotlin](https://kotlinlang.org/docs/composing-suspending-functions.html)
