@@ -5,7 +5,7 @@ title: "Données distantes et consommation d'API REST"
 # Données distantes et consommation d'API REST
 
 
-### 72.1 Application qui se sert d'informations distantes
+## 72.1 Application qui se sert d'informations distantes
 
 
 Dans un monde idéal, une application mobile travaillera avec des données locales afin de pouvoir fonctionner même si elle n'a pas accès à Internet.
@@ -17,21 +17,9 @@ De plus, elle synchronisera ces données avec une base de données distante dès
 Vous pouvez cependant développer une application qui n'utilise qu'une base de données distante si votre application répond à l'une de ces conditions :
 
 
-#### l'application que vous désirez développer n'a pas besoin d'être fonctionnelle en tout temps (donc c'est OK qu'elle ne
-fonctionne pas lorsqu'on est dans le fond du bois ou lorsqu'il y a une panne Internet mondiale)
-
-
-ou
-
-
-#### vous savez que vos utilisateurs s'en serviront seulement lorsqu'ils ont accès à Internet
-
-
-ou
-
-
-#### les données distantes ne sont pas centrales dans l'application. L'application pourra donc fonctionner partiellement
-sans ces données.
+- L'application que vous désirez développer n'a pas besoin d'être fonctionnelle en tout temps (donc c'est OK qu'elle ne fonctionne pas hors réseau)
+- Vous savez que vos utilisateurs s'en serviront seulement lorsqu'ils ont accès à Internet
+- Les données distantes ne sont pas centrales dans l'application. L'application pourra donc fonctionner partiellement sans ces données.
 
 
 Vous désirez coder une telle application? Suivez ces étapes!
@@ -40,40 +28,25 @@ Vous désirez coder une telle application? Suivez ces étapes!
 Dans cette fiche :
 
 
-#### Ajout de dépendances
-
-
-#### Permission d'accéder au réseau
-
-
-#### Classe pour représenter les données reçues de l'API
-
-
-#### Interface pour accéder à l'API
-
-
-#### Instance Retrofit
-
-
-#### Effectuer un appel à l'API
-
-
-#### Utiliser les données de l'API dans un composable
-
-
-#### Cas des API qui peuvent retourner différents types de données selon la réussite ou l'erreur
-
-
-#### Erreur « Unable to resolve host "....com": No address associated with hostname »
+- [Ajout de dépendances](#ajout-de-dépendances)
+- [Permission d'accéder au réseau](#permission-daccéder-au-réseau)
+- [Classe pour représenter les données reçues de l'API](#classe-pour-représenter-les-données-reçues-de-lapi)
+- [Interface pour accéder à l'API](#interface-pour-accéder-à-lapi)
+- [Instance Retrofit](#instance-retrofit)
+- [Effectuer un appel à l'API](#effectuer-un-appel-à-lapi)
+- [Utiliser les données de l'API dans un composable](#utiliser-les-données-de-lapi-dans-un-composable)
+- [Cas des API qui peuvent retourner différents types de données selon la réussite ou l'erreur](#cas-des-api-qui-peuvent-retourner-différents-types-de-données-selon-la-réussite-ou-lerreur)
+- [Erreur « Unable to resolve host "....com": No address associated with hostname »](#erreur-unable-to-resolve-host-com-no-address-associated-with-hostname)
 
 
 ### Ajout de dépendances
 
 
-Pour permettre l'utilisation d'un API qui permettra d'accéder aux données distantes, il faut ajouter des dépendances à votre projet.
+Pour permettre l'utilisation d'un API qui permettra d'accéder aux données distantes, il faut ajouter des dépendances à votre projet.  Nous utiliserons Retrofit 2, une librairie qui facilite l'appel d'API REST.
 
 
-Ces lignes doivent être ajoutées dans le fichier build.gradle.kts  qui se trouve dans le dossier app .
+
+Ces lignes doivent être ajoutées dans le fichier *build.gradle.kts*  qui se trouve dans le dossier app .
 
 
 ```kotlin title="Fichier app/build.gradle.kts"
@@ -90,16 +63,17 @@ dependencies {
 Une fois les dépendances ajoutées, il faut **resynchroniser le projet pour qu'il tienne compte de l'ajout**.
 
 
-!!! warning "Note : si vous obten" Note : si vous obtenez un message du genre « Unresolved reference retrofit2 », rendez-vous dans le menu File / Invalidate Caches .
+**Note** : si vous obtenez un message du genre « Unresolved reference retrofit2 », rendez-vous dans le menu File / Invalidate Caches .
 
 
 ### Permission d'accéder au réseau
 
 
-Pour qu'une application Android puisse utiliser une ressource en ligne, il faut ajouter une balise uses-permission dans le fichier  AndroidManifest.xml  que l'on retrouve dans le dossier  app/src/main .
+Pour qu'une application Android puisse utiliser une ressource en ligne, il faut ajouter une balise *uses-permission* dans le fichier *AndroidManifest.xml* que l'on retrouve dans le dossier *app/src/main*.
 
 
-Sans cette permission, le programme plantera avec le message « Permission denied (missing INTERNET permission?) ».
+
+Sans cette permission, le programme se terminera avec le message « Permission denied (missing INTERNET permission?) ».
 
 
 Remarquez que l'usager n'aura pas à donner son accord avant d'accéder à Internet. La permission est une simple déclaration dans le manifeste.
@@ -119,9 +93,7 @@ Remarquez que l'usager n'aura pas à donner son accord avant d'accéder à Inter
 
 De plus, si vous travaillez avec un URL non sécurisé (http://) pendant le développement, vous devrez le préciser comme suit.
 
-
-### Important : il faut remettre cette configuration à false lorsque l'application sera en production.
-
+**Important** : il faut remettre cette configuration à false lorsque l'application sera en production.
 
 ```xml title="Fichier AndroidManifest.xml"
 <?xml version="1.0" encoding="utf-8"?>
@@ -142,7 +114,7 @@ De plus, si vous travaillez avec un URL non sécurisé (http://) pendant le dév
 Lorsque l'application fera un appel à l'API, elle stockera les données reçues dans une instance d'une classe spécialisée.
 
 
-Cette classe, qui est une **classe de données**, sera placée dans un dossier nommé  data  qui est au même niveau que le fichier MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/data/Item.kt .
+Cette classe, qui est une **classe de données**, sera placée dans un dossier nommé  data  qui est au même niveau que le fichier MainActivity.kt , par exemple *app/src/main/java/com/monnom/monprojet/data/Item.kt*.
 
 
 Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /  New  /  Package .
@@ -151,7 +123,14 @@ Pour créer ce dossier dans Android Studio : Clic droit sur son dossier parent /
 La classe doit avoir une propriété pour chacune des informations reçues. Le nom d'une propriété doit correspondre à une clé JSON reçue.
 
 
-Par exemple, si l'API retourne un item dont les données sont au format : {" id ": 3, " titre ": "abc"}, vous devez déclarer une classe avec les propriétés suivantes :
+Par exemple, si l'API retourne un item dont les données sont au format : 
+
+```
+{"id": 3, 
+ "titre": "abc"}
+```
+
+vous devez déclarer une classe avec les propriétés suivantes :
 
 
 ```kotlin title="Fichier data/Item.kt"
@@ -162,7 +141,7 @@ data class Item(
 ```
 
 
-La conversion des données JSON retournées par l'API en objets Kotlin utilisés par l'application sera automatisée grâce à l'instruction addConverterFactory(GsonConverterFactory.create()) dans l'instance Retrofit que nous créerons plus bas.
+La conversion des données JSON retournées par l'API en objets Kotlin utilisés par l'application sera automatisée grâce à l'instruction *addConverterFactory(GsonConverterFactory.create())* dans l'instance Retrofit que nous créerons plus bas.
 
 
 Notez que si l'API retourne des informations dont la clé n'a pas de propriété correspondante, ces informations ne seront simplement pas traitées par l'application.
@@ -180,30 +159,18 @@ Mais attention : si vous devez envoyer des données de ce type dans le corps de 
 Il faut créer une interface qui fera le lien entre l'application et l'API.
 
 
-Cette interface sera codée dans un fichier dont le nom se termine par Api, placé dans le dossier service  qui est au même niveau que le fichier  MainActiviy.kt , par exemple  app/src/main/java/com/monnom/monprojet/service/ItemApi.kt .
+Cette interface sera codée dans un fichier dont le nom se termine par Api, placé dans le dossier service  qui est au même niveau que le fichier *MainActivity.kt* , par exemple *app/src/main/java/com/monnom/monprojet/service/ItemApi.kt*.
 
 
 L'interface doit définir, pour chaque type de requête à réaliser :
 
 
-#### le verbe HTTP (@GET, @POST, @PUT, @PATCH, @DELETE)
-
-
-#### le point d'accès (endpoint), c'est-à-dire la partie qui suit l'URL de base de la requête à exécuter.
-
-
-Par exemple, si on appelle l'API [https://monapi.com/v1/items](https://monapi.com/v1/items) , le point d'accès est items. Avec l'API [https://monapi.com/v1/ajouter.php](https://monapi.com/v1/ajouter.php) , le point d'accès est ajouter.php.
-
-
-Pour un URL qui contient des paramètres dans son chemin , par exemple  [https://monapi.com/v1/items/12](https://monapi.com/v1/items/12) , le point d'accès est items/ {id} . Les paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
-
-
-Dans le cas où l'URL utilise des paramètres de requête , par exemple [https://monapi.com/v1/items?](https://monapi.com/v1/items?) id =12 , le point d'accès est items. Les paramètres de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
-
-
-#### Le nom de la fonction que l'application utilisera pour effectuer l'appel de l'API, avec ses paramètres et son type de
-retour. Cette fonction ne contient aucun code. Lorsqu'elle est appelée, elle effectue automatiquement l'appel API à l'aide du point d'accès spécifié dans l'interface.
-
+- le verbe HTTP (@GET, @POST, @PUT, @PATCH, @DELETE)
+- le point d'accès (endpoint), c'est-à-dire la partie qui suit l'URL de base de la requête à exécuter.
+    - Par exemple, si on appelle l'API *https://monapi.com/v1/items* , le point d'accès est items. Avec l'API *https://monapi.com/v1/ajouter.php* , le point d'accès est ajouter.php.
+    - Pour un URL qui contient des paramètres dans son chemin , par exemple *https://monapi.com/v1/items/12* , le point d'accès est *items/{id}* . Les paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
+    - Dans le cas où l'URL utilise des paramètres de requête, par exemple *https://monapi.com/v1/items?id=12* , le point d'accès est *items*. Les paramètres de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
+- le nom de la fonction que l'application utilisera pour appeler l'API, ses paramètres et son type de retour. La fonction est déclarée sans corps : Retrofit effectue la requête lorsqu'elle est appelée, selon le point d'accès défini dans l'interface.
 
 Notez que si le type de retour est Response<...> , il sera possible de retrouver le code d'état HTTP retourné par l'API.
 
