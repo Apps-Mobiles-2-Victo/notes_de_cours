@@ -92,13 +92,13 @@ Développez le formulaire d'ajout de données et faites le nécessaire pour que 
 
 
 
-## Exercice 13 - API, APK et questions théoriques
+## Exercice 13 - API
 
 -Vous devez coder une application qui affiche des données sur les chats. Ces données sont obtenues à partir de l'API
 Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 
 
-- Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les points de terminaison fact, facts et breeds.
+- Pour bien comprendre le type d'informations retournées par l'API, effectuez différents appels à l'aide d'un testeur de requêtes REST comme Postman, Bruno ou curl. Faites vos tests, par exemple, en utilisant les points de terminaison *fact*, *facts* et *breeds*.
 
 
 - Testez un appel à l'API erroné afin de voir ce qui se passe lorsque le point de terminaison n'existe pas.
@@ -115,9 +115,9 @@ Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 
 - Modifiez l'icône d'application de votre application sur les chats.
 
-
+<!--
 - Quand votre projet est terminé, générez un fichier APK de production et fournissez ce fichier à un de vos collègues pour qu'il l'installe sur son téléphone (publication en sideload).
-
+-->
 
 - OPTIONNEL : bonifiez votre application pour qu'elle utilise un API qui fournit des photos de chat. À chaque fois que les données sur les chats changent, on aura une nouvelle photo qui apparaîtra. À vous de trouver un API qui fournit de telles photos.
 
