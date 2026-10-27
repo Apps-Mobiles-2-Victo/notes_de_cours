@@ -256,7 +256,7 @@ object RetrofitInstance {
 Dans cet extrait de code, l'instruction *addConverterFactory(GsonConverterFactory.create())* permet d'automatiser la conversion de données JSON en objets Kotlin et vice versa.
 
 
-Comme *RetrofitInstance* est un object, *itemApi* est créée une seule fois et réutilisée chaque fois qu'on y accède.
+*itemApi* est créée une seule fois, au premier accès à *RetrofitInstance*.
 
 
 ### Effectuer un appel à l'API
@@ -273,11 +273,7 @@ Chacune de ces fonctions fera appel à la fonction dont le nom a été spécifi�
 
 Remarquez que dans cet extrait, il n'est pas utile de déclarer le uiState comme un flux puisque l'application n'écoute pas pour recevoir les modifications aux données distantes.
 
-
-J'ai mis en caractères gras le code qui diffère lorsque le uiState n'est pas un flux.
-
-
-Remarquez l'utilisation de private set qui rend la propriété immuable.
+Remarquez l'utilisation de *private set* qui rend la propriété immuable.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
@@ -290,12 +286,11 @@ class HomeViewModel : ViewModel() {
     fun rechercherItems() {
         viewModelScope.launch {
             try {
-                val reponse = RetrofitInstance.itemApi. retrouverItems ()
+                val reponse = RetrofitInstance.itemApi.retrouverItems()
                 if (reponse.isSuccessful) {
                     uiState.value = uiState.value.copy(
                          _listeItems = reponse.body() ,
-                        ...    // on a accès à reponse.code() pour retrouver le code
-d'état HTTP retourné par l'API
+                        ...    // on a accès à reponse.code() pour retrouver le code d'état HTTP retourné par l'API
                     )
                 }
                 else {
@@ -308,12 +303,12 @@ d'état HTTP retourné par l'API
     }
     fun rechercherUnItem (id: Int) {
         ...
-        val reponse = RetrofitInstance.itemApi. retrouverUnItem ( id )
+        val reponse = RetrofitInstance.itemApi.retrouverUnItem(id)
         ...
     }
     fun insererItem(item: Item) {
         ...
-        val reponse = RetrofitInstance.itemApi. ajouterItem (item)
+        val reponse = RetrofitInstance.itemApi.ajouterItem(item)
         ...
     }
 }
@@ -335,7 +330,7 @@ Un composable pourra alors appeler une méthode du ViewModel pour réaliser l'ap
 fun AfficherItem(viewModel: HomeViewModel, id: Int) {
     Button(
         onClick = {
-            viewModel. rechercherUnItem (id)
+            viewModel.rechercherUnItem(id)
         }
     ) {
         Text(text = "Rechercher")
@@ -354,7 +349,6 @@ Une fois l'appel à l'API complété (et les informations stockées dans le View
 Remarquez la syntaxe pour initialiser le uiState lorsqu'on ne travaille pas avec un flux.
 
 
-Ici aussi, j'ai mis en caractères gras le code qui diffère quand le uiState n'est pas un flux.
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
@@ -374,7 +368,7 @@ fun UnItem(viewModel: HomeViewModel) {
 Prenons le cas d'un API qui retourne un tableau d'items quand la requête fonctionne ou un message d'erreur si un problème survient.
 
 
-Ce message d'erreur, initialisé par l'API, est plus précis qu'un simple Not Found ou Internal Server Error.
+Ce message d'erreur, initialisé par l'API, est plus précis qu'un simple *Not Found* ou *Internal Server Error*.
 
 
 Pour avoir accès à ce message, il faut d'abord créer une classe dont les propriétés correspondent aux clés JSON reçues.
@@ -387,10 +381,12 @@ data class ReponseAvecMessage (
 ```
 
 
-Dans le ViewModel, il sera possible de retrouver le message d'erreur retourné par l'API à l'aide manipulations JSON.
+Dans le ViewModel, il sera possible de retrouver le message d'erreur retourné par l'API à l'aide de manipulations JSON.
 
 
 ```kotlin title="Fichier ui/HomeViewModel.kt"
+import com.google.gson.Gson
+
 fun retrouverItems() {
     viewModelScope.launch {
         try {
@@ -400,8 +396,10 @@ fun retrouverItems() {
             }
             else {
                 val gson = Gson()
-                val reponseAvecMessage: ReponseAvecMessage ? = gson?.fromJson(reponse?.errorBody()?.charStream()?.readText(),
-ReponseAvecMessage ::class.java)
+                val reponseAvecMessage: ReponseAvecMessage? = gson.fromJson(
+                    reponse.errorBody()?.charStream()?.readText(),
+                    ReponseAvecMessage::class.java
+                )
                 val message = reponseAvecMessage?.message ?: "Aucun message"
                 ...
             }
@@ -433,7 +431,7 @@ try {
 ```
 
 
-Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman**, Bruno ou curl . Vous devez concaténer la valeur de la constante BASE_URL avec le point d'accès précisé à la suite du @GET ou du @POST (ex :  [https://monapi.com/v1/](https://monapi.com/v1/) liste ).
+Si vous voyez cette erreur, commencez par vérifier si l'URL est exact à l'aide d'un navigateur Web ou d'un testeur de requêtes REST comme **Postman**, Bruno ou curl . Vous devez concaténer la valeur de la constante BASE_URL avec le point d'accès précisé à la suite du @GET ou du @POST (ex :  *https://monapi.com/v1/liste* ).
 
 
 Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateur. Ceci arrive parfois si on utilise l'émulateur dans différents réseaux, par exemple à l'école et à la maison.
@@ -442,59 +440,39 @@ Si l'URL est exact, l'erreur pourrait être due à un problème avec l'émulateu
 Pour régler ce problème :
 
 
-#### Rendez-vous dans le menu  View  /  Tool Windows  /  Device Manager .
+- Rendez-vous dans le menu  View  /  Tool Windows  /  Device Manager .
+- Parfois, un simple redémarrage de l'émulateur fonctionne. Cliquez sur Stop vis-à-vis l'émulateur que vous utilisez.
+- Cliquez ensuite sur Start puis relancez votre application.
+- Il peut arriver qu'une action plus costaude soit nécessaire. Toujours dans Device Manager, cliquez sur les trois points
+verticaux vis-à-vis l'émulateur que vous utilisez puis choisissez Wipe Data . Relancez ensuite votre application. 
 
 
-#### Parfois, un simple redémarrage de l'émulateur fonctionne. Cliquez sur Stop vis-à-vis l'émulateur que vous utilisez.
-
-
-#### Cliquez ensuite sur Start puis relancez votre application.
-
-
-### Il peut arriver qu'une action plus costaude soit nécessaire. Toujours dans Device Manager, cliquez sur les trois points
-verticaux vis-à-vis l'émulateur que vous utilisez puis choisissez Wipe Data . Relancez ensuite votre application. 72.2 Appeler deux API dans la même application
-
+## 72.2 Appeler deux API dans la même application
 
 Si votre application Jetpack Compose a besoin de faire appel à deux API :
 
-
-#### Chaque API aura sa propre **classe pour
-représenter les données reçues de l'API**.
-
-
-#### Chaque API aura sa propre **Interface pour
-accéder à l'API**.
+- Chaque API aura sa propre **classe pour représenter les données reçues de l'API**.
+- Chaque API aura sa propre **Interface pour accéder à l'API**.
+- Chaque API aura sa propre instance Retrofit si elle utilise une URL de base différente.
 
 
-#### Les deux pourront se partager l'**Instance
-Retrofit**.
-
-
-On voit ici que dans la même instance Retrofit, on définit ce qu'il faut pour chaque API.
+On crée ici une instance Retrofit par API, chacune avec sa propre URL de base.
 
 
 ```kotlin title="Fichier service/RetrofitInstance.kt"
 object RetrofitInstance {
-    private const val BASE_URL _ABC = "https://.../"
+    private const val BASE_URL_ABC = "https://.../"
     private const val BASE_URL_DEF = "https://.../"
-    private val retrofit Abc : Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL_ABC)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-    private val retrofitDef: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL_DEF)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }   
-    val abc Api: AbcApi by lazy {
-        retrofit.create(AbcApi::class.java)
-    }
-    val defApi: DefApi by lazy {
-        retrofit.create(DefApi::class.java)
-    }
+    private val retrofitAbc: Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL_ABC)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    private val retrofitDef: Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL_DEF)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    val abcApi: AbcApi = retrofitAbc.create(AbcApi::class.java)
+    val defApi: DefApi = retrofitDef.create(DefApi::class.java)
 }
 ```
 
@@ -503,11 +481,11 @@ On pourra faire appel à l'un ou l'autre de ces API en utilisant la propriété 
 
 
 ```kotlin title="Jetpack Compose (Kotlin)"
-val reponse = RetrofitInstance. abc Api.retrouverDonnees()
+val reponse = RetrofitInstance.abcApi.retrouverDonnees()
 ```
 
 
-### 72.3 Synchroniser les données locales avec les données distantes
+## 72.3 Synchroniser les données locales avec les données distantes
 
 
 Une application mobile qui travaille avec des données locales a tout avantage à synchroniser ses données avec une base de données distante afin de s'assurer de ne rien perdre en cas de bris du téléphone.
