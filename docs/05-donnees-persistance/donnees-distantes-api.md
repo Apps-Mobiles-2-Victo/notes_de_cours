@@ -461,18 +461,20 @@ On crée ici une instance Retrofit par API, chacune avec sa propre URL de base.
 
 ```kotlin title="Fichier service/RetrofitInstance.kt"
 object RetrofitInstance {
+    
     private const val BASE_URL_ABC = "https://.../"
-    private const val BASE_URL_DEF = "https://.../"
-    private val retrofitAbc: Retrofit = Retrofit.Builder()
+    val abcApi: AbcApi = Retrofit.Builder()
         .baseUrl(BASE_URL_ABC)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    private val retrofitDef: Retrofit = Retrofit.Builder()
+        .create(AbcApi::class.java)
+
+    private const val BASE_URL_DEF = "https://.../"
+    val defApi: DefApi = Retrofit.Builder()
         .baseUrl(BASE_URL_DEF)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    val abcApi: AbcApi = retrofitAbc.create(AbcApi::class.java)
-    val defApi: DefApi = retrofitDef.create(DefApi::class.java)
+        .create(DefApi::class.java)
 }
 ```
 
