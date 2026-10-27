@@ -171,11 +171,8 @@ L'interface doit définir, pour chaque type de requête à réaliser :
     - Pour un URL qui contient des paramètres dans son chemin , par exemple *https://monapi.com/v1/items/12* , le point d'accès est *items/{id}* . Les paramètres du chemin seront identifiés à l'aide de l'annotation @Path (voir exemple plus bas).
     - Dans le cas où l'URL utilise des paramètres de requête, par exemple *https://monapi.com/v1/items?id=12* , le point d'accès est *items*. Les paramètres de requête seront identifiés à l'aide de l'annotation @Query (voir exemple plus bas).
 - le nom de la fonction que l'application utilisera pour appeler l'API, ses paramètres et son type de retour. La fonction est déclarée sans corps : Retrofit effectue la requête lorsqu'elle est appelée, selon le point d'accès défini dans l'interface.
-
-Notez que si le type de retour est Response<...> , il sera possible de retrouver le code d'état HTTP retourné par l'API.
-
-
-#### S'il y a lieu, les données à envoyer dans le corps du message, identifiées avec @Body.
+    - Notez que si le type de retour est Response<...> , il sera possible de retrouver le code d'état HTTP retourné par l'API.
+- s'il y a lieu, les données à envoyer dans le corps du message, identifiées avec @Body.
 
 
 Voici un exemple d'interface qui définit quelques appels. Le premier permet de retrouver tous les items et le second, un seul item retrouvé par son identifiant, passé comme paramètre de requête (ex : ?id=12).
@@ -187,7 +184,7 @@ Le nom du paramètre n'a pas d'importance. Je l'ai appelé identifiant pour illu
 Un troisième appel permet d'ajouter un item dans la base de données distante.
 
 
-!!! warning "Attention : si vous " Attention : si vous effectuez le mauvais import pour la classe Retrofit, vous obtiendrez une erreur du genre « No type arguments expected for class Response : Closeable. ».
+*Attention* : si vous effectuez le mauvais import pour la classe Retrofit, vous obtiendrez une erreur du genre « No type arguments expected for class Response : Closeable. ».
 
 
 ```kotlin title="Fichier service/ItemApi.kt"
@@ -195,12 +192,12 @@ import retrofit2.Response
 import retrofit2.http.GET
 ...
 interface ItemApi {
-    @GET(" liste ")
-    suspend fun retrouverItems (): Response<List<Item>>
-    @GET(" liste ")
-    suspend fun retrouverUnItem ( @Query("id") identifiant : Int): Response<Item>
-    @POST(" ajout ")
-    suspend fun ajouterItem (@Body item: Item): Response<Void>
+    @GET("liste")
+    suspend fun retrouverItems(): Response<List<Item>>
+    @GET("liste")
+    suspend fun retrouverUnItem(@Query("id") identifiant: Int): Response<Item>
+    @POST("ajout")
+    suspend fun ajouterItem(@Body item: Item): Response<Void>
 }
 ```
 
@@ -209,21 +206,21 @@ Si on avait utilisé un API qui utilise des paramètres de chemin, la seconde re
 
 
 ```kotlin title="Fichier service/ItemApi.kt"
-@GET("liste/ {id} ")
+@GET("liste/{id} ")
 suspend fun retrouverUnItem( @Path("id") identifiant : Int): Response<Item>
 ```
 
 
-!!! warning "Note : si vous effec" Note : si vous effectuez des recherches sur le Web ou dans des anciens projets, vous rencontrerez parfois des instructions du genre :
+*Note* : si vous effectuez des recherches sur le Web ou dans des anciens projets, vous rencontrerez parfois des instructions du genre :
 
-
+```kotlin
 fun retrouverUnItem(@Path("id") identifiant: Int): Call<Item>.
+```
+
+Ce type de code était utilisé avant l'arrivée des coroutine de Kotlin. Bien qu'il fonctionne encore, il est préférable d'utiliser l'approche avec coroutines (avec le mot-clé suspend, tel qu'illustré plus haut) puisque le code sera plus facile à écrire, à lire et à maintenir.
 
 
-Ce type de code était utilisé avant l'arrivée des coroutine de Kotlin. Bien qu'il fonctionne encore, il est préférable d'utiliser l'approche avec coroutines (avec le mot- clé suspend, tel qu'illustré plus haut) puisque le code sera plus facile à écrire, à lire et à maintenir.
-
-
-### Dans le cadre de ce cours, la forme avec Call est interdite.
+**Dans le cadre de ce cours, la forme avec Call est interdite.**
 
 
 ### Instance Retrofit
@@ -235,7 +232,7 @@ L'application travaillera avec une seule instance de Retrofit.
 L'instanciation sera codée dans le fichier service/RetrofitInstance.kt .
 
 
-On utilisera le mot-clé object et non class. En Kotlin, le mot-clé object permet de déclarer une classe et d'instancier un singleton de cette classe, tout ça en une seule étape.
+On utilisera le mot-clé *object* et non *class*. En Kotlin, le mot-clé object permet de déclarer une classe et d'instancier un singleton de cette classe, tout ça en une seule étape.
 
 
 Il s'agit de spécifier l'URL de base, d'effectuer l'instanciation en tant que telle et de faire le lien avec l'interface (fichier créé plus tôt, dont le nom se termine par Api).
@@ -246,24 +243,20 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 ...
 object RetrofitInstance {
-    private const val BASE_URL = " https://monapi.com/v1/ "
-    private val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-    val itemApi: ItemApi by lazy {
-        retrofit.create( ItemApi ::class.java)
-    }
+    private const val BASE_URL = "https://monapi.com/v1/"
+    val itemApi: ItemApi = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(ItemApi::class.java)
 }
 ```
 
 
-Dans cet extrait de code, l'instruction addConverterFactory(GsonConverterFactory.create()) permet d'automatiser la conversion de données JSON en objets Kotlin et vice versa.
+Dans cet extrait de code, l'instruction *addConverterFactory(GsonConverterFactory.create())* permet d'automatiser la conversion de données JSON en objets Kotlin et vice versa.
 
 
-Remarquez l'utilisation de by lazy qui fait en sorte que le code de l'initialisation ne sera exécuté que lors du premier accès à la variable.
+Comme *RetrofitInstance* est un object, *itemApi* est créée une seule fois et réutilisée chaque fois qu'on y accède.
 
 
 ### Effectuer un appel à l'API
