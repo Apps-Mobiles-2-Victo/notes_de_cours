@@ -323,6 +323,4 @@ Un problème subsiste : un mot apparaît en rouge avec le message « Unresolved 
 
 ![Illustration](../images/page_012_img_01_1000x99.png)
 
-
-
-### Le problème sera automatiquement réglé quand vous demanderez de **resynchroniser le projet**.
+Le problème sera automatiquement réglé quand vous demanderez de **resynchroniser le projet**.
