@@ -1,0 +1,899 @@
+---
+title: "Dépannage d’erreurs courantes"
+---
+
+# Dépannage d’erreurs courantes
+
+
+### 7.1 Failed to start monitoring emulator - 5554
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer l'émulateur Android sous IntelliJ, vous obtenez le message « Failed to start monitoring emulator - 5554 ».
+
+
+
+
+![Illustration](../images/page_061_img_01_500x56.png)
+
+
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.1.1 Ultimate
+
+
+### Cause possible :
+
+
+L'éditeur croit que l'émulateur est déjà en cour d'exécution.
+
+
+Vous saurez que c'est le cas quand vous lancez l'émulateur en ligne de commande et que vous obtenez le message « Running multiple emulators with the same AVD is an experimental feature. ».
+
+
+#### Ouvrez une fenêtre Terminal.
+
+
+#### Placez-vous dans le dossier de l'émulateur
+
+
+```kotlin title="Terminal"
+cd /Users/monnom/Library/Android/sdk/emulator
+```
+
+
+#### Vérifiez le nom des émulateurs disponibles.
+
+
+```kotlin title="Terminal"
+./emulator -list-avds
+```
+
+
+```kotlin title="Résultat à l'écran"
+monnom@MacBook-Pro-de-MonNom emulator %./emulator -list-avds
+Pixel_2_API_33_2
+```
+
+
+#### Lancez l'émulateur en ligne de commande.
+
+
+```kotlin title="Terminal"
+./emulator -avd Pixel_2_API_33_2 -netdelay none -netspeed full
+```
+
+
+```kotlin title="Résultat à l'écran"
+monnom@MacBook-Pro-de-MonNom emulator %./emulator -avd Pixel_2_API_33_2 -netdelay none -netspeed full
+INFO | Android emulator version 32.1.13.0 (build_id 10086546) (CL:N/A)
+INFO | Found systemPath /Users/christianelagace/Library/Android/sdk/system-images/android-
+33/google_apis_playstore/x86_64/
+INFO | Storing crashdata in: /tmp/android-christianelagace/emu-crash.db, detection is enabled
+INFO | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter
+flag.
+ERROR | Running multiple emulators with the same AVD
+ERROR | is an experimental feature.
+ERROR | Please use -read-only flag to enable this feature.
+```
+
+
+### Solution proposée :
+
+
+Supprimez les fichiers .lock dans le dossier de l'émulateur ( /Users/monnom/.android/avd/Nom_de_l_emulateur.avd ).
+
+
+Ceci peut être réalisé dans une fenêtre Terminal :
+
+
+```kotlin title="Terminal"
+cd /Users/monnom/.android/avd/Pixel_2_API_33_2.avd
+rm *.lock
+```
+
+
+ou encore à partir d'IntelliJ  :
+
+
+#### Rendez-vous dans le menu View / Tool Windows / Device Manager .
+
+
+#### Cliquez sur les trois points verticaux à droite de l'émulateur en question puis choisissez Show on Disk .
+
+
+#### Une fois le dossier de l'émulateur affiché dans le gestionnaire de fichiers de votre ordinateur, vous pouvez retrouver
+le ou les fichiers .lock et les suprpimer.
+
+
+
+
+![Illustration](../images/page_062_img_01_600x587.png)
+
+
+
+
+### 7.2 Erreur « The emulator process for AVD has terminated »
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer l'émulateur Android, vous obtenez le message « Device Manager - The emulator process for AVD has terminated ».
+
+
+
+
+![Illustration](../images/page_062_img_02_400x156.png)
+
+
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.1.1 Ultimate
+
+
+### Cause possible :
+
+
+IntelliJ (ou Android Studio) ne réussit pas à lancer l'émulateur parce qu'il n'y a pas suffisamment d'espace disque disponible sur votre ordinateur.
+
+
+### Solution proposée :
+
+
+Libérez de l'espace disque.
+
+
+### Autre cause possible :
+
+
+Un problème inconnu empêche le lancement de l'émulateur.
+
+
+### Solution proposée :
+
+
+Voici quelques pistes  de solution.
+
+
+#### Tentez de lancer l'émulateur directement dans le gestionnaire de périphériques d'Android Studio : View /
+
+
+#### Tool Windows / Device Manager / Clic sur Play devant l'émulateur.
+
+
+#### Vérifiez s'il y a des indices sur ce qui pose problème dans le fichier
+journal  C:\Users\MonNom\AppData\Local\Google\AndroidStudio4.2\log\idea.log .
+
+
+#### Essayez de désinstaller puis réinstaller Android Emulator dans le menu SDK Manager .
+
+
+#### Essayez de supprimer l'émulateur puis d'en créer un nouveau avec un différent modèle de téléphone ou une
+différente version du système d'exploitation.
+
+
+#### Vérifiez si l'émulateur est connecté en lançant cette commande dans une fenêtre Terminal à partir du dossier de
+l'application :
+
+
+```kotlin title="Terminal"
+adb devices
+```
+
+
+#### Si vous ne trouvez pas de pistes et que toutes les configurations ont été vérifiées et revérifiées, il reste l'option de
+travailler avec un vrai téléphone Android branché à l'ordinateur.
+
+
+### 7.3 Erreur « This material API is experimental and is likely to change or to be removed in the future »
+
+
+### Problème :
+
+
+Lorsque vous utilisez une fonctionnalité expérimentale, vous obtenez le message « This material API is experimental and is likely to change or to be removed in the future. ».
+
+
+
+
+![Illustration](../images/page_063_img_01_800x122.png)
+
+
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.1.1 Ultimate
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.2.0
+
+
+#### Android 7.0 (API 24)
+
+
+#### Material Design 3
+
+
+### Cause possible :
+
+
+Vous utilisez une fonctionnalité expérimentale et Jetpack Compose vous empêche de poursuivre sans que vous ayiez donné votre consentement.
+
+
+### Solution proposée :
+
+
+Ajoutez une instruction @OptIn en haut de la fonction composable qui utilise la fonctionnalité expérimentale.
+
+
+C'est par cette instruction que vous donnez votre consentement.
+
+
+```kotlin title="Jetpack Compose"
+@OptIn(ExperimentalMaterial3Api::class) // pour retirer le message vis-à-vis Card : "This material API is experimental and
+is likely to change or to be removed in the future"
+@Composable
+fun ...() {
+    ...
+}
+```
+
+
+### 7.4 Erreur « jvm target compatibility should be set to the same Java version »
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer dans l'émulateur une application Android qui utilise Room, vous obtenez le message « 'compileDebugJavaWithJavac' task (current target is 1.8) and 'kspDebugKotlin' task (current target is 17) jvm target compatibility should be set to the same Java version. ».
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.2.2 Ultimate
+
+
+#### Kotlin 1.8.10
+
+
+#### Émulateur avec l'API 33 (Tiramisu)
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.4.3
+
+
+#### Gradle 8.0
+
+
+### Cause possible :
+
+
+Il y a une incompatibilité entre la version de com.google.devtools.ksp et un autre paquet utilisé par l'application.
+
+
+### Solution proposée :
+
+
+Modifiez la version de ksp pour une moins récente. J'ai fait le test avec 1.8.0-1.0.8 et l'application pouvait travailler avec une base de données Room sans problème.
+
+
+```kotlin title="Kotlin"
+plugins {
+    ...
+    // pour Room
+    id ("com.google.devtools.ksp") version " 1.8.0-1.0.8 " apply false}
+```
+
+
+### Autre cause possible :
+
+
+Ce problème semble lié à un bogue de Gradle.
+
+
+### Autre solution proposée :
+
+
+Voici une solution temporaire si vous n'arrivez pas à faire fonctionner l'application par un simple changement de version de ksp.
+
+
+Le problème avec cette solution, c'est qu'il faudra réeffectuer une série d'étapes à chaque fois qu'il faut recompiler l'application après y avoir apporté des modifications.
+
+
+Voilà pourquoi le code déclare une variable qu'il suffira de mettre à true puis à false dans la liste d'étapes plus bas (merci Carlos pour le truc de la variable!).
+
+
+D'abord, modifiez le fichier  build.gradle.kts  qui se trouve dans le dossier  app  comme ceci.
+
+
+```kotlin title="Fichier app/build.gradle.kts"
+android {
+    val java_1_8 = true
+    ...
+    compileOptions {
+        if (java_1_8 == true) {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+        }
+        else {
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
+        }
+    }    
+    kotlinOptions {
+         if (java_1_8 == true) {
+            jvmTarget = "1.8"
+        }
+        else {
+            jvmTarget = "17"
+        }
+    }
+    ...
+}
+```
+
+
+Maintenant, vous aurez à réaliser ces étapes à chaque vous que vous recompilez l'application :
+
+
+#### Mettez la variable java_1_8 à false.
+
+
+#### Synchronisez la solution en appuyant sur  ⌘ Cmd + ⇧ Maj + I   (macOS) ou  Ctrl + Maj + O  (Windows/Linux).
+
+
+#### Lancez l'application.
+
+
+#### Lorsque votre projet utilisera du code qui n'est pas compatible avec cette version, par exemple lorsque vous définirez
+une classe qui hérite de RoomDatabase, vous obtiendrez un message du genre « jlink executable C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.2\jbr\bin\jlink.exe does not exist », ce qui est normal.
+
+
+#### Remettez la variable java_1_8 à true.
+
+
+#### Synchronisez la solution.
+
+
+#### Lancez l'application.
+
+
+Tout devrait être entré dans l'ordre.
+
+
+### 7.5 Erreur « Unresolved reference » avec Modifier
+
+
+### Problème :
+
+
+Lorsque vous développez un module composable qui utilise un modifieur, par exemple Modifier.weight(1f) ou Modifier.fillMaxSize(), vous obtenez un message « Unresolved reference » sans possibilité d'ajouter un import pour régler le problème.
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.1.1 Ultimate
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.2.0
+
+
+### Cause possible :
+
+
+Vous avez importé le mauvais paquet pour l'objet companion Modifier. Ce sera le cas par exemple si vous avez l'instruction import java.lang.reflect.Modifier.
+
+
+### Solution proposée :
+
+
+Dans la liste des import, retirez l'importation qui se termine par Modifier.
+
+
+Ajoutez ceci à la place :
+
+
+```kotlin title="Kotlin"
+import androidx.compose.ui.Modifier
+```
+
+
+### 7.6 Erreur « Cannot Delete Running AVD »
+
+
+### Problème :
+
+
+Lorsque vous tentez de supprimer un périphérique virtuel Android sous IntelliJ, vous obtenez le message « Cannot Delete Running AVD ».
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.1.1 Ultimate
+
+
+### Cause possible :
+
+
+Un processus roule toujours pour ce périphérique.
+
+
+### Solution proposée :
+
+
+Dans IntelliJ, ouvrez le Device Manager.
+
+
+Cliquez sur les trois points verticaux vis-à-vis le périphérique virtuel désiré puis choisissez Cold Boot Now .
+
+
+Notez que parfois, il faut d'abord supprimer les fichiers .lock dans le dossier de l'émulateur ( /Users/monnom/.android/avd/Nom_de_l_emulateur.avd ).  Pour atteindre rapidement ce dossier à partir d'IntelliJ, cliquez sur les trois points verticaux vis-à-vis le périphérique virtuel désiré puis choisissez  Show on Disk .
+
+
+### 7.7 Erreur « Dependency 'androidx.navigation:navigation-common:2.7.3' requires... »
+
+
+### Problème :
+
+
+Lorsque vous tentez de compiler votre application Android bâtie avec Jetpack Compose, vous obtenez le message « Dependency 'androidx.navigation:navigation- common:2.7.3' requires libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
+
+
+### Contexte :
+
+
+#### IntelliJ IDEA 2023.2.2 Ultimate
+
+
+#### Kotlin 1.8.10
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.4.3
+
+
+#### Gradle 8.0
+
+
+### Cause possible :
+
+
+Vous tentez d'utiliser une bibliothèque qui requiert une version plus récente du SDK Android que celle utilisée par votre projet (targetSdk).
+
+
+### Solution proposée :
+
+
+Si vous travaillez avec Android Studio, utilisez le Android SDK Upgrade Assistant pour passer à une version plus récente du SDK.
+
+
+Si vous travaillez avec IntelliJ, cet outil n'est pas disponible. Le plus simple est de créer un nouveau projet basé sur le SDK désiré.
+
+
+### 7.8 Erreur « Cannot find a parameter with this name: items »
+
+
+### Problème :
+
+
+Lorsque vous tentez d'ajouter un LazyColumn dans un composable, le mot items à l'intérieur des parenthèse n'est pas reconnu.
+
+
+Vous obtenez le message « Cannot find a parameter with this name: items ».
+
+
+```kotlin title="Jetpack Compose (Kotlin)"
+LazyColumn {
+    items( items = listeCategories.value) {
+        Text(text=it.titre)
+    }
+}
+```
+
+
+### Contexte :
+
+
+#### Kotlin 1.8.10
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.4.3
+
+
+#### Gradle 8.0
+
+
+### Cause possible :
+
+
+Il manque une instruction import.
+
+
+### Solution proposée :
+
+
+Ajoutez ceci à votre fichier.
+
+
+```kotlin title="Jetpack Compose (Kotlin)"
+import androidx.compose.foundation.lazy.items
+```
+
+
+### Autre cause possible :
+
+
+Si le paramètre items n'est toujours pas reconnu, c'est peut-être parce qu'il y a une erreur de syntaxe (ex : pas de parenthèse fermante).
+
+
+### Autre solution proposée :
+
+
+### Vérifiez votre syntaxe!
+7.9 Erreur « Dependency 'androidx.emoji2:emoji2:1.4.0'... »
+
+
+### Problème :
+
+
+Lorsque vous tentez de synchroniser votre application Android Jetpack Compose, vous obtenez l'erreur « Dependency 'androidx.emoji2:emoji2:1.4.0' requires libraries and applications that depend on it to compile against version 34 or later of the Android APIs. ».
+
+
+### Contexte :
+
+
+#### Kotlin 1.8.10
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.4.3
+
+
+#### Gradle 8.0
+
+
+### Cause possible :
+
+
+Une des bibliothèques fait appel à androidx.emoji2:emoji2 et cette bibliothèque est en incohérence avec certaines versions que vous utilisez et ce, même si vous n'utilisez pas androidx.emoji2:emoji2.
+
+
+### Solution proposée :
+
+
+Puisque vous n'avez pas besoin de androidx.emoji2:emoji2, vous pouvez ajouter ceci au fichier  build.gradle.kts  qui se trouve dans le dossier  app .
+
+
+```kotlin title="Fichier app/build.gradle.kts"
+android {
+    namespace = "..."
+    compileSdk = 33
+    defaultConfig {
+        configurations.all {
+            resolutionStrategy {
+                force("androidx.emoji2:emoji2-views-helper:1.3.0")
+                force("androidx.emoji2:emoji2:1.3.0")
+            }
+        }
+        applicationId "..."  
+        ...  
+    }
+}
+```
+
+
+### 7.10 Erreur « Duplicate class »
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules kotlin-stdlib-1.8.10 (org.jetbrains.kotlin:kotlin-stdlib:1.8.10) and kotlin-stdlib-jdk8-1.7.20 (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20) ».
+
+
+### Contexte :
+
+
+#### Kotlin 1.8.10
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.4.3
+
+
+#### Gradle 8.0
+
+
+### Cause possible :
+
+
+Il y a un conflit dû à certaines dépendances.
+
+
+### Solution proposée :
+
+
+Ajoutez cette ligne de code dans le fichier build.gradle.kts de l'application.
+
+
+```kotlin title="Fichier app/build.gradle.kts"
+...
+dependencies {
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+}
+```
+
+
+### 7.11 Erreur « Could not read workspace metadata from C:\...\metadata.bin »
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer votre application Android Jetpack Compose, vous obtenez une erreur du genre « Could not read workspace metadata from C:\...\metadata.bin  ».
+
+
+### Contexte :
+
+
+#### Android Studio 2024.1.1 Patch 1
+
+
+#### Jetpack Compose (kotlinCompilerExtensionVersion) version 1.5.1
+
+
+### Cause possible :
+
+
+Des fichiers de cache de Gradle sont corrompus.
+
+
+### Solution proposée :
+
+
+#### Refermez Android Studio.
+
+
+#### Détruisez tout le contenu du fichier C:\Users\monnom\.gradle\caches.
+
+
+#### Redémarrez Android Studio.
+
+
+#### Recompilez l'application.
+
+
+### 7.12 Erreur « Error running 'app' »
+
+
+### Problème :
+
+
+Lorsque vous tentez de lancer l'émulateur Android sous Android Studio, vous obtenez le message « Error running 'app'. ... is already running. If that is not the case, delete ...\.lock and try again. ».
+
+
+
+
+![Illustration](../images/page_067_img_01_1000x65.png)
+
+
+
+
+### Contexte :
+
+
+#### Android Studio 2024.1.1 Patch 1
+
+
+### Cause possible :
+
+
+L'éditeur croit que l'émulateur est déjà en cour d'exécution.
+
+
+### Solution proposée :
+
+
+Supprimez les fichiers .lock dans le dossier de l'émulateur ( C:\Users\monnom\.android\avd\Nom_de_l_emulateur.avd ).
+
+
+Ceci peut être réalisé dans l'explorateur de fichiers ou encore dans une fenêtre Terminal :
+
+
+```kotlin title="Terminal"
+cd C:\Users\monnom\.android\avd\Nom_de_l_emulateur.avd
+rm *.lock
+```
+
+
+### 7.13 L'application se referme sans préavis
+
+
+### Problème :
+
+
+Lorsque vous testez votre application dans le simulateur d'Android Studio, l'application se referme sans préavis.
+
+
+### Contexte :
+
+
+#### Android Studio 2024.1.1 Patch 1
+
+
+### Cause possible :
+
+
+Quelque chose a causé un plantage de l'application.
+
+
+### Solution proposée :
+
+
+Pour avoir un indice sur ce qui s'est passé, ouvrez le Logcat d'Android Studio. S'il n'est pas affiché, rendez-vous dans le menu View / Tool Windows / Logcat .
+
+
+En faisant défiler l'écran, vous verrez une indication FATAL EXCEPTION qui donne des détails sur ce qui a fait planter l'application.
+
+
+
+
+![Illustration](../images/page_068_img_01_1000x162.png)
+
+
+
+
+### 7.14 Erreur « Contenu non autorisé dans le prologue »
+
+
+### Problème :
+
+
+Lorsque vous tentez de compiler votre application dans Android Studio, vous obtenez le message « Contenu non autorisé dans le prologue. » ou, en anglais, « Content is not allowed in prolog. ».
+
+
+
+
+![Illustration](../images/page_068_img_02_800x167.png)
+
+
+
+
+### Contexte :
+
+
+#### Android Studio 2024.1.1 Patch 1
+
+
+### Cause possible :
+
+
+Un des fichiers XML du projet contient des caractères avant la première balise.
+
+
+### Solution proposée :
+
+
+Dans chacun des fichiers XML du projet, par exemple app/src/main/AndroidManifest.xml , assurez-vous qu'il n'y ait aucun caractère avant la balise
+
+
+`<?xml.`
+
+
+### Autre cause possible :
+
+
+Un fichier du projet est corrompu.
+
+
+### Solution proposée :
+
+
+Parfois, il faut procéder à la création d'un nouveau projet, à la réinstallation d'Android Studio ou même à la réinstallation du système d'exploitation :-(
+
+
+### 7.15 Erreur « UI système ne répond pas »
+
+
+### Problème :
+
+
+Lorsque vous testez votre application dans un émulateur avec Android Studio, vous obtenez le message « UI système ne répond pas » ou, en anglais, « System UI isn't responding » et ce, sans arrêt dans une fenêtre popup.
+
+
+
+
+![Illustration](../images/page_069_img_01_300x634.png)
+
+
+
+
+### Contexte :
+
+
+#### Android Studio 2024.1.1 Patch 1
+
+
+### Cause possible :
+
+
+Il y a un problème avec l'émulateur.
+
+
+### Solution proposée :
+
+
+#### Rendez-vous dans le menu View / Tool Windows / Device Manager .
+
+
+#### Si l'émulateur est en cours d'exécution, arrêtez-le en cliquant sur le carré vis-à-vis son nom.
+
+
+#### Cliquez sur les trois points verticaux vis-à-vis son nom puis choisissez Cold Boot .
+
+
+### Relancez l'application. Vous ne devriez plus être importunés par la fenêtre popup.
+7.16 Erreur « Looks like you've changed schema but forgot to update the version number »
+
+
+### Problème :
+
+Lorsque lancez votre application dans dans Android Studio, vous obtenez un message du genre « Looks like you've changed schema but forgot to update the version number. You can simply fix this by increasing the version number. Expected identity hash: fc52a3aea54e62ca9d025b65d3f27132, found: c9a7d3438fa6436ca51c76b3571e7cd7 ».
+
+
+### Contexte :
+
+
+#### Kotlin 1.9.0
+
+
+#### Room 2.6.1
+
+
+### Cause possible :
+
+
+Vous avez modifié la structure de la base de données après avoir exécuté l'application alors Room n'arrive plus à faire le lien entre les classes d'entité et la base de données.
+
+
+### Solution proposée :
+
+
+Si la base de données ne contient que des données de test, il est possible de demander à ce que la base de données soit complètement détruite puis recréée avec la nouvelle structure.
+
+
+Ceci sera réalisé comme suit :
+
+
+```kotlin title="Fichier data/MonprojetDatabase.kt"
+@Database(
+    entities = [
+        Categorie::class,
+        Item::class,
+    ],
+    version = 2,
+    exportSchema = false
+)
+...
+fun getDatabase(context: Context): MonprojetDatabase {
+    return Instance ?: synchronized(this) {
+        Room.databaseBuilder(context, MonprojetDatabase::class.java, "monprojet_database")
+        .fallbackToDestructiveMigration()
+        .build()
+        .also { Instance = it }
+    }
+}
+```
+
+
