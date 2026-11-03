@@ -184,8 +184,7 @@ En faisant défiler l'écran, vous verrez une indication *FATAL EXCEPTION* qui d
 
 
 
-!!! info
-Vous pouvez limiter l'affichage aux logs de niveau ERROR et plus en ajoutant *level:error* dans la zone de recherche.  Vous pouvez aussi arrêter l'affichage de nouveau logs en cliquant sur l'icône Pause.
+!!! info "Vous pouvez limiter l'affichage aux logs de niveau ERROR et plus en ajoutant *level:error* dans la zone de recherche.  Vous pouvez aussi arrêter l'affichage de nouveau logs en cliquant sur l'icône Pause."
 
 
 ### 25.5 Layout Inspector {#layout-inspector}
