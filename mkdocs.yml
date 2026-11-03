@@ -60,6 +60,7 @@ nav:
       - "Android Studio & Ressources": "01-environnement/android-studio.md"
       - "Prévisualiser vs Émulateur": "01-environnement/preview-vs-emulateur.md"
       - "Débogage & Dépannage": "01-environnement/debogage-et-depannage.md"
+      - "Dépannage d'erreurs courantes": "01-environnement/erreurs-courantes.md"
       - "Publication d'application": "01-environnement/publication.md"
   - "2. Kotlin & Gradle":
       - "Gradle & Dépendances": "02-kotlin-gradle/gradle.md"
