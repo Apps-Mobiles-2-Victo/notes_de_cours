@@ -14,28 +14,14 @@ Un téléphone Android peut être muni de capteur physiques et de capteur logiqu
 Parmi les capteurs qui peuvent être disponibles sur un téléphone Android, notons :
 
 
-#### Accéléromètre
-
-
-#### Gyroscope
-
-
-#### Thermomètre
-
-
-#### Magnétomètre
-
-
-#### Capteur de proximité
-
-
-#### Capteur de luminosité
-
-
-#### Capteur de pression
-
-
-#### Capteur d'humidité
+- Accéléromètre
+- Gyroscope
+- Thermomètre
+- Magnétomètre
+- Capteur de proximité
+- Capteur de luminosité
+- Capteur de pression
+- Capteur d'humidité
 
 
 Fait intéressant, depuis l'API 14, l'émulateur dans Android Studio permet de simuler les capteurs d'un téléphone.
