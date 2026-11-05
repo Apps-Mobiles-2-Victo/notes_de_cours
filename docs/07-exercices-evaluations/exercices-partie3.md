@@ -132,7 +132,7 @@ Cat Facts : [https://catfact.ninja](https://catfact.ninja) .
 ### Travailler avec des capteurs
 
 
-Écrivez une petite application Android avec Jetpack Compose qui détecte si un objet est près ou loin du téléphone. Elle utilisera pour cela le capteur de proximité .
+Écrivez une petite application Android avec Jetpack Compose qui détecte si un objet est près ou loin du téléphone. Elle utilisera pour cela le [capteur de proximité](https://developer.android.com/develop/sensors-and-location/sensors/sensors_position?hl=fr#sensors-pos-prox) .
 
 
 ### 1. Si le capteur détecte qu'un objet est près, l'écran sera entièrement vert et il sera écrit en gros « PRÈS ». Sinon, l'écran sera bleu et il sera écrit « LOIN ». À vous de déterminer quelle distance est considérée près ou loin.
